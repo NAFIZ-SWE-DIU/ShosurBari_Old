@@ -17,41 +17,108 @@ $sql="SELECT * FROM customer WHERE cust_id = $id";
 $result = mysqlexec($sql);
 if($result){
 $row=mysqli_fetch_assoc($result);
-
+if($row){
 	$fname=$row['firstname'];
+}
+if($row){
 	$lname=$row['lastname'];
+}
+if($row){
 	$sex=$row['sex'];
+}
+if($row){
 	$email=$row['email'];
+}
+if($row){
 	$dob=$row['dateofbirth'];
+}
+if($row){
 	$religion=$row['religion'];
+}
+if($row){
 	$caste = $row['caste'];
+}
+if($row){
 	$subcaste=$row['subcaste'];
+}
+if($row){
 	$country = $row['country'];
+}
+if($row){
 	$state=$row['state'];
+}
+if($row){
 	$district=$row['district'];
+}
+if($row){
 	$age=$row['age'];
+}
+if($row){
 	$maritalstatus=$row['maritalstatus'];
+}
+if($row){
 	$profileby=$row['profilecreatedby'];
+}
+if($row){
 	$education=$row['education'];
+}
+if($row){
 	$edudescr=$row['education_sub'];
+}
+if($row){
 	$bodytype=$row['body_type'];
+}
+if($row){
 	$physicalstatus=$row['physical_status'];
+}
+if($row){
 	$drink=$row['drink'];
+}
+if($row){
 	$smoke=$row['smoke'];
+}
+if($row){
 	$mothertounge=$row['mothertounge'];
+}
+if($row){
 	$bloodgroup=$row['blood_group'];
+}
+if($row){
 	$weight=$row['weight'];
+}
+if($row){
 	$height=$row['height'];
+}
+if($row){
 	$colour=$row['colour'];
+}
+if($row){
 	$diet=$row['diet'];
+}
+if($row){
 	$occupation=$row['occupation'];
+}
+if($row){
 	$occupationdescr=$row['occupation_descr'];
+}
+if($row){
 	$fatheroccupation=$row['fathers_occupation'];
+}
+if($row){
 	$motheroccupation=$row['mothers_occupation'];
+}
+if($row){
 	$income=$row['annual_income'];
+}
+if($row){
 	$bros=$row['no_bro'];
+}
+if($row){
 	$sis=$row['no_sis'];
+}
+if($row){
 	$aboutme=$row['aboutme'];
+}
 
 //end of getting profile detils
 
@@ -59,8 +126,6 @@ $row=mysqli_fetch_assoc($result);
 
 	$pic1="";
 	$pic2="";
-	$pic3="";
-	$pic4="";
 //getting image filenames from db
 $sql2="SELECT * FROM photos WHERE cust_id = $profileid";
 $result2 = mysqlexec($sql2);
@@ -68,8 +133,6 @@ if($result2){
 	$row2=mysqli_fetch_array($result2);
 	$pic1=$row2['pic1'];
 	$pic2=$row2['pic2'];
-	$pic3=$row2['pic3'];
-	$pic4=$row2['pic4'];
 }
 }else{
 	echo "<script>alert(\"Invalid Profile ID\")</script>";
@@ -127,56 +190,79 @@ $(document).ready(function(){
    </div>
    <div class="profile">
    	 <div class="col-md-8 profile_left">
+		<?php if (!empty($profileid)) { ?>
    	 	<h2>Profile Id : <?php echo $profileid;?></h2>
+			<?php } ?>
    	 	<div class="col_3">
    	        <div class="col-sm-4 row_2">
 				<div class="flexslider">
 					 <ul class="slides">
+
 						<li data-thumb="profile/<?php echo $profileid;?>/<?php echo $pic1;?>">
 							<img src="profile/<?php echo $profileid;?>/<?php echo $pic1;?>" />
 						</li>
+
 						<li data-thumb="profile/<?php echo $profileid;?>/<?php echo $pic2;?>">
 							<img src="profile/<?php echo $profileid;?>/<?php echo $pic2;?>" />
 						</li>
-						<li data-thumb="profile/<?php echo $profileid;?>/<?php echo $pic3;?>">
-							<img src="profile/<?php echo $profileid;?>/<?php echo $pic3;?>" />
-						</li>
-						<li data-thumb="profile/<?php echo $profileid;?>/<?php echo $pic4;?>">
-							<img src="profile/<?php echo $profileid;?>/<?php echo $pic4;?>" />
-						</li>
+
 					 </ul>
 				  </div>
 			</div>
 			<div class="col-sm-8 row_1">
 				<table class="table_working_hours">
 		        	<tbody>
+
 		        		<tr class="opened_1">
 							<td class="day_label">Name :</td>
+							<?php if (!empty($fname)) { ?>
 							<td class="day_value"><?php echo $fname . " " .$lname; ?></td>
-						</tr><tr class="opened_1">
-							<td class="day_label">Age / Height :</td>
-							<td class="day_value"><?php echo $age . " Years"; ?>/<?php echo $height . " Cm";?> </td>
+						    <?php } ?>
 						</tr>
+							
+						<tr class="opened_1">
+							<td class="day_label">Age / Height :</td>
+							<?php if (!empty($age)) { ?>
+							<td class="day_value"><?php echo $age . " Years"; ?>/<?php echo $height . " Cm";?> </td>
+							<?php } ?>
+						</tr>
+
 					  	<tr class="opened">
 							<td class="day_label">Religion :</td>
+							<?php if (!empty($religion)) { ?>
 							<td class="day_value"><?php echo $religion;?></td>
+							<?php } ?>
 						</tr>
+
 					    <tr class="opened">
 							<td class="day_label">Marital Status :</td>
+							<?php if (!empty($maritalstatus)) { ?>
 							<td class="day_value"><?php echo $maritalstatus;?></td>
+							<?php } ?>
 						</tr>
+
 					    <tr class="opened">
 							<td class="day_label">Country :</td>
+							<?php if (!empty($country)) { ?>
 							<td class="day_value"><?php echo $country;?></td>
+							<?php } ?>
 						</tr>
+
 					    <tr class="closed">
 							<td class="day_label">Profile Created by :</td>
+							<?php if (!empty ($profileby)) { ?>
 							<td class="day_value closed"><span><?php echo $profileby;?></span></td>
+							<?php } ?>
+
 						</tr>
+
 					    <tr class="closed">
 							<td class="day_label">Education :</td>
+							<?php if (!empty ($education)) { ?>
 							<td class="day_value closed"><span><?php echo $education;?></span></td>
+							<?php } ?>
 						</tr>
+
 				    </tbody>
 				</table>
 				</div>
@@ -191,78 +277,125 @@ $(document).ready(function(){
 			   </ul>
 			   <div id="myTabContent" class="tab-content">
 				  <div role="tabpanel" class="tab-pane fade in active" id="home" aria-labelledby="home-tab">
+
 				    <div class="tab_box">
 				    	<h1>About Me.</h1>
+						<?php if (!empty ($aboutme)) { ?>
 				    	<p><?php echo $aboutme; ?></p>
+						<?php } ?>
 				    </div>
+
 				    <div class="basic_1">
 				    	<h3>Basics &amp; Lifestyle</h3>
 				    	<div class="col-md-6 basic_1-left">
 				    	  <table class="table_working_hours">
 				        	<tbody>
+
 				        		<tr class="opened_1">
 									<td class="day_label">Name :</td>
+									<?php if (!empty ($fname)) { ?>
 									<td class="day_value"><?php echo $fname . " " .$lname; ?></td>
+									<?php } ?>
 								</tr>
+
 							    <tr class="opened">
 									<td class="day_label">Marital Status :</td>
+									<?php if (!empty ($maritalstatus)) { ?>
 									<td class="day_value"><?php echo $maritalstatus;?></td>
+									<?php } ?>
 								</tr>
+
 							    <tr class="opened">
 									<td class="day_label">Body Type :</td>
+									<?php if (!empty ($bodytype)) { ?>
 									<td class="day_value"><?php echo $bodytype;?></td>
+									<?php } ?>
 								</tr>
 							    
 							    <tr class="opened">
 									<td class="day_label">Age / Height :</td>
+									<?php if (!empty ($age)) { ?>
 									<td class="day_value"><?php echo $age; ?>/<?php echo $height;?> cm</td>
+									<?php } ?>
 								</tr>
+
 							    <tr class="opened">
 									<td class="day_label">Physical Status :</td>
+									<?php if (!empty ($physicalstatus)) { ?>
 									<td class="day_value closed"><span><?php echo $physicalstatus;?></span></td>
+									<?php } ?>
 								</tr>
+
 							    <tr class="opened">
 									<td class="day_label">Profile Created by :</td>
+									<?php if (!empty ($profileby)) { ?>
 									<td class="day_value closed"><span><?php echo $profileby;?></span></td>
+									<?php } ?>
 								</tr>
+
 								<tr class="opened">
 									<td class="day_label">Drink :</td>
+									<?php if (!empty ($drink)) { ?>
 									<td class="day_value closed"><span><?php echo $drink;?></span></td>
+									<?php } ?>
 								</tr>
+
 						    </tbody>
 				          </table>
 				         </div>
 				         <div class="col-md-6 basic_1-left">
 				          <table class="table_working_hours">
 				        	<tbody>
+
 				        		<tr class="opened_1">
 									<td class="day_label">Age :</td>
+									<?php if (!empty ($age)) { ?>
 									<td class="day_value"><?php echo $age;?></td>
+									<?php } ?>
 								</tr>
+
 							    <tr class="opened">
 									<td class="day_label">Mother Tongue :</td>
+									<?php if (!empty ($mothertounge)) { ?>
 									<td class="day_value"><?php echo $mothertounge;?></td>
+									<?php } ?>
 								</tr>
+
 							    <tr class="opened">
 									<td class="day_label">Complexion :</td>
+									<?php if (!empty ($colour)) { ?>
 									<td class="day_value"><?php echo $colour;?></td>
+									<?php } ?>
 								</tr>
+
 							    <tr class="opened">
 									<td class="day_label">Weight :</td>
+									<?php if (!empty ($weight)) { ?>
 									<td class="day_value"><?php echo $weight;?> KG</td>
+									<?php } ?>
 								</tr>
+
 							    <tr class="opened">
 									<td class="day_label">Blood Group :</td>
+									<?php if (!empty ($bloodgroup)) { ?>
 									<td class="day_value"><?php echo $bloodgroup;?></td>
+									<?php } ?>
 								</tr>
+
 							    <tr class="closed">
 									<td class="day_label">Diet :</td>
+									<?php if (!empty ($diet)) { ?>
 									<td class="day_value closed"><span><?php echo $diet;?></span></td>
+									<?php } ?>
 								</tr>
+
 							    <tr class="closed">
 									<td class="day_label">Smoke :</td>
+									<?php if (!empty ($smoke)) { ?>
 									<td class="day_value closed"><span><?php echo $smoke;?></span></td>
+									<?php } ?>
 								</tr>
+
 						    </tbody>
 				        </table>
 				        </div>
@@ -273,28 +406,40 @@ $(document).ready(function(){
 				    	<div class="col-md-6 basic_1-left">
 				    	  <table class="table_working_hours">
 				        	<tbody>
+
 				        		<tr class="opened">
 									<td class="day_label">Caste :</td>
+									<?php if (!empty ($caste)) { ?>
 									<td class="day_value"><?php echo $caste;?></td>
+									<?php } ?>
 								</tr>
+								
 							    <tr class="opened">
-									<td class="day_label">
- of Birth :</td>
+									<td class="day_label">of Birth :</td>
+									<?php if (!empty ($dob)) { ?>
 									<td class="day_value closed"><span><?php echo $dob;?></span></td>
+									<?php } ?>
 								</tr>
+
 							</tbody>
 				          </table>
 				         </div>
 				         <div class="col-md-6 basic_1-left">
 				          <table class="table_working_hours">
 				        	<tbody>
+
 				        		<tr class="opened_1">
 									<td class="day_label">Religion :</td>
+									<?php if (!empty ($religion)) { ?>
 									<td class="day_value"><?php echo $religion;?></td>
+									<?php } ?>
 								</tr>
+
 							    <tr class="opened">
 									<td class="day_label">Sub Caste :</td>
+									<?php if (!empty ($subcaste)) { ?>
 									<td class="day_value"><?php echo $subcaste;?></td>
+									<?php } ?>
 								</tr>
 							    
 							</tbody>
@@ -307,22 +452,35 @@ $(document).ready(function(){
 				    	<div class="basic_1-left">
 				    	  <table class="table_working_hours">
 				        	<tbody>
+
 				        		<tr class="opened">
 									<td class="day_label">Education   :</td>
+									<?php if (!empty ($education)) { ?>
 									<td class="day_value"><?php echo $education;?></td>
+									<?php } ?>
 								</tr>
+
 				        		<tr class="opened">
 									<td class="day_label">Education Detail :</td>
+									<?php if (!empty ($edudescr)) { ?>
 									<td class="day_value"><?php echo $edudescr;?></td>
+									<?php } ?>
 								</tr>
+
 							    <tr class="opened">
 									<td class="day_label">Occupation Detail :</td>
+									<?php if (!empty ($occupationdescr)) { ?>
 									<td class="day_value closed"><span><?php echo $occupationdescr;?></span></td>
+									<?php } ?>
 								</tr>
+
 							    <tr class="opened">
 									<td class="day_label">Annual Income :</td>
+									<?php if (!empty ($income)) { ?>
 									<td class="day_value closed"><span><?php echo $income;?></span></td>
+									<?php } ?>
 								</tr>
+
 							 </tbody>
 				          </table>
 				         </div>
@@ -337,22 +495,35 @@ $(document).ready(function(){
 				    	<div class="col-md-6 basic_1-left">
 				    	  <table class="table_working_hours">
 				        	<tbody>
+
 				        		<tr class="opened">
 									<td class="day_label">Father's Occupation :</td>
+									<?php if (!empty ($fatheroccupation)) { ?>
 									<td class="day_value"><?php echo $fatheroccupation;?></td>
+									<?php } ?>
 								</tr>
+
 				        		<tr class="opened">
 									<td class="day_label">Mother's Occupation :</td>
+									<?php if (!empty ($motheroccupation)) { ?>
 									<td class="day_value"><?php echo $motheroccupation;?></td>
+									<?php } ?>
 								</tr>
+
 							    <tr class="opened">
 									<td class="day_label">No. of Brothers :</td>
+									<?php if (!empty ($bros)) { ?>
 									<td class="day_value closed"><span><?php echo $bros;?></span></td>
+									<?php } ?>
 								</tr>
+
 							    <tr class="opened">
 									<td class="day_label">No. of Sisters :</td>
+									<?php if (!empty ($sis)) { ?>
 									<td class="day_value closed"><span><?php echo $sis;?></span></td>
+									<?php } ?>
 								</tr>
+
 							 </tbody>
 				          </table>
 				         </div>
@@ -365,20 +536,45 @@ $(document).ready(function(){
 $sql = "SELECT * FROM partnerprefs WHERE custId = $id";
 $result = mysqlexec($sql);
 $row= mysqli_fetch_assoc($result);
-
+if($row){
 $agemin=$row['agemin'];
+}
+if($row){
 $agemax=$row['agemax'];
+}
+if($row){
 $maritalstatus=$row['maritalstatus'];
+}
+if($row){
 $complexion=$row['complexion'];
+}
+if($row){
 $height=$row['height'];
+}
+if($row){
 $diet=$row['diet'];
+}
+if($row){
 $religion=$row['religion'];
+}
+if($row){
 $caste=$row['caste'];
+}
+if($row){
 $mothertounge=$row['mothertounge'];
+}
+if($row){
 $education=$row['education'];
+}
+if($row){
 $occupation=$row['occupation'];
+}
+if($row){
 $country=$row['country'];
+}
+if($row){
 $descr=$row['descr'];
+}
 
 
 
@@ -390,55 +586,93 @@ $descr=$row['descr'];
 				        	<tbody>
 				        		<tr class="opened">
 									<td class="day_label">Age   :</td>
+									<?php if (!empty ($agemin)) { ?>
 									<td class="day_value"><?php echo $agemin . " to " . $agemax;?></td>
+									<?php } ?>
 								</tr>
+
 				        		<tr class="opened">
 									<td class="day_label">Marital Status :</td>
+									<?php if (!empty ($maritalstatus)) { ?>
 									<td class="day_value"><?php echo $maritalstatus;?></td>
+									<?php } ?>
 								</tr>
+
 							    <tr class="opened">
 									<td class="day_label">Body Type :</td>
+									<?php if (!empty ($bodytype)) { ?>
 									<td class="day_value closed"><span><?php echo $bodytype;?></span></td>
+									<?php } ?>
 								</tr>
+
 							    <tr class="opened">
 									<td class="day_label">Complexion :</td>
+									<?php if (!empty ($colour)) { ?>
 									<td class="day_value closed"><span><?php echo $colour;?></span></td>
+									<?php } ?>
 								</tr>
+
 								<tr class="opened">
 									<td class="day_label">Height:</td>
+									<?php if (!empty ($height)) { ?>
 									<td class="day_value closed"><span><?php echo $height;?> Cm</span></td>
+									<?php } ?>
 								</tr>
+
 								<tr class="opened">
 									<td class="day_label">Diet :</td>
+									<?php if (!empty ($diet)) { ?>
 									<td class="day_value closed"><span><?php echo $diet;?></span></td>
+									<?php } ?>
 								</tr>
+
 								<tr class="opened">
 									<td class="day_label">Religion :</td>
+									<?php if (!empty ($religion)) { ?>
 									<td class="day_value closed"><span><?php echo $religion;?></span></td>
+									<?php } ?>
 								</tr>
+
 								<tr class="opened">
 									<td class="day_label">Caste :</td>
+									<?php if (!empty ($caste)) { ?>
 									<td class="day_value closed"><span><?php echo $caste;?></span></td>
+									<?php } ?>
 								</tr>
+
 								<tr class="opened">
 									<td class="day_label">Mother Tongue :</td>
+									<?php if (!empty ($mothertounge)) { ?>
 									<td class="day_value closed"><span><?php echo $mothertounge;?></span></td>
+									<?php } ?>
 								</tr>
+
 								<tr class="opened">
 									<td class="day_label">Education :</td>
+									<?php if (!empty ($education)) { ?>
 									<td class="day_value closed"><span><?php echo $education;?></span></td>
+									<?php } ?>
 								</tr>
+
 								<tr class="opened">
 									<td class="day_label">Occupation :</td>
+									<?php if (!empty ($occupation)) { ?>
 									<td class="day_value closed"><span><?php echo $occupation;?></span></td>
+									<?php } ?>
 								</tr>
+
 								<tr class="opened">
 									<td class="day_label">Country of Residence :</td>
+									<?php if (!empty ($country)) { ?>
 									<td class="day_value closed"><span><?php echo $country;?></span></td>
+									<?php } ?>
 								</tr>
+
 								<tr class="opened">
 									<td class="day_label">State :</td>
+									<?php if (!empty ($state)) { ?>
 									<td class="day_value closed"><span><?php echo $state;?></span></td>
+									<?php } ?>
 								</tr>
 								
 							 </tbody>
@@ -482,8 +716,7 @@ $descr=$row['descr'];
       echo "</ul>";
       $count++;
       }
-     ?>
-           
+     ?>       
 </div>
        
         </div>
