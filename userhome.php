@@ -59,7 +59,15 @@ $(document).ready(function(){
         <span class="divider">&nbsp;|&nbsp;</span>
         <li class="current-page">User Home</li>
      </ul>
+     <?php
+			If(isset($_SESSION['username'])) {
+Echo "Welcome : " . $_SESSION ['username'];
+} else {
+Echo "<a href=\”/login.php\”>Login</a>";
+}
+?>
    </div>
+   
    <div class="navigation" style="background-color: #ff0080;"><!-- Innernavigation starts -->
    	
    	  	<div class="collapse navbar-collapse" id="bs-megadropdown-tabs">
