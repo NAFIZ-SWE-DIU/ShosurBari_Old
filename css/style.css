@@ -3983,3 +3983,9 @@ form {
   .form-actions input{
     margin-top: 0px;
   }
+
+  ul.nav_1{
+    font-size: 20px;
+    font-weight: 500;
+    color: #00008B;
+  }
