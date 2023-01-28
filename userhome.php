@@ -60,25 +60,18 @@ $(document).ready(function(){
         <li class="current-page">User Home</li>
      </ul>
    </div>
-   <div class="navigation" style="background-color: #ccc;"><!-- Innernavigation starts -->
+   <div class="navigation" style="background-color: #ff0080;"><!-- Innernavigation starts -->
    	
    	  	<div class="collapse navbar-collapse" id="bs-megadropdown-tabs">
 		        <ul class="nav navbar-nav nav_1">
 		            <li><a href="view_profile.php?id=<?php echo $id;?>">View Profile</a></li>
+                <li><a href="create_profile.php?id=<?php echo $id;?>">Edit Profile</a></li>  
 		            <li><a href="partner_preference.php?id=<?php echo $id;?>">Partner Preference</a></li>
-		    		<li class="dropdown">
-		              <a href="#" class="dropdown-toggle" data-toggle="dropdown">Profile<span class="caret"></span></a>
-		              <ul class="dropdown-menu" role="menu">
-		               <li><a href="photouploader.php?id=<?php echo $id;?>">Upload Photos</a></li>
-		               <li><a href="view_profile.php?id=<?php echo $id;?>">View Profile</a></li>
-		               <li><a href="create_profile.php?id=<?php echo $id;?>">Edit Profile</a></li>  
-		              </ul>
-		            </li>
+
 					<li class="dropdown">
 		              <a href="#" class="dropdown-toggle" data-toggle="dropdown">Search<span class="caret"></span></a>
 		              <ul class="dropdown-menu" role="menu">
-		                <li><a href="search.php">Regular Search</a></li>
-		                <li><a href="faq.php">Faq</a></li>
+		                <li><a href="search-id.php">ID Search</a></li>
 		              </ul>
 		            </li>
 		        </ul>
