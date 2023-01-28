@@ -200,15 +200,39 @@ $(document).ready(function(){
 
 						<li data-thumb="profile/<?php echo $profileid;?>/<?php echo $pic1;?>">
 							<img src="profile/<?php echo $profileid;?>/<?php echo $pic1;?>" />
+							<div class="deletbtn">
+							  <button type="submit"  name='delete'>Delete Photo </button>
+							  <button class="default" onClick="javascript:window.location.href='?update&id=<?php echo $row['id']; ?>'">update</button>
+                              <button class="cancel" onClick="javascript:window.location.href='process.php?id=<?php echo $row['id']; ?>'">delete</button>
+		                    </div>
 						</li>
 
 						<li data-thumb="profile/<?php echo $profileid;?>/<?php echo $pic2;?>">
-							<img src="profile/<?php echo $profileid;?>/<?php echo $pic2;?>" />
+							<img id="demo" src="profile/<?php echo $profileid;?>/<?php echo $pic2;?>" />
+							<form action='uploadphoto.php' method='POST'>
+							<div class="deletbtn">
+							  <button type="submit"  name='submit'>Delete Photo </button>
+							  <button type="remove_btn" onClick="javascript:window.location.href='profile?id=<?php echo $row['id']; ?>'">Remove</button>
+                              <button class="cancel"  onClick="javascript:window.location.href='profile?id=<?php echo $row['id']; ?>'"[>delete</button>
+		                    </div>
+		                    </form>
 						</li>
 
 					 </ul>
 				  </div>
 			</div>
+
+
+
+
+
+
+
+
+
+
+
+
 			<div class="col-sm-8 row_1">
 				<table class="table_working_hours">
 		        	<tbody>
