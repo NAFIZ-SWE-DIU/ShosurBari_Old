@@ -193,6 +193,7 @@ $(document).ready(function(){
 		<?php if (!empty($profileid)) { ?>
    	 	<h2>Profile Id : <?php echo $profileid;?></h2>
 			<?php } ?>
+
    	 	<div class="col_3">
    	        <div class="col-sm-4 row_2">
 				<div class="flexslider">
