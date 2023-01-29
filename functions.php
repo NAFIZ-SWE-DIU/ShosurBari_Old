@@ -4,6 +4,7 @@ function mysqlexec($sql){
 	$username="root"; // Mysql username
 	$password=""; // Mysql password
 	$db_name="matrimony"; // Database name
+	error_reporting(0);
 
 // Connect to server and select databse.
 	$conn=mysqli_connect("$host", "$username", "$password")or die("cannot connect");
@@ -30,14 +31,30 @@ function searchid(){
 
 function search(){
   if ($_SERVER['REQUEST_METHOD'] == 'POST') {
+	if($row){
     $agemin=$_POST['agemin'];
+	}
+	if($row){
     $agemax=$_POST['agemax'];
+	}
+	if($row){
     $maritalstatus=$_POST['maritalstatus'];
+	}
+	if($row){
     $country=$_POST['country'];
+	}
+	if($row){
     $state=$_POST['state'];
+	}
+	if($row){
     $religion=$_POST['religion'];
+	}
+	if($row){
     $mothertounge=$_POST['mothertounge'];
+	}
+	if($row){
     $sex = $_POST['sex'];
+	}
 
     $sql="SELECT * FROM customer WHERE 
     sex='$sex' 
@@ -57,19 +74,45 @@ function search(){
 }
 function writepartnerprefs($id){
 	if ($_SERVER['REQUEST_METHOD'] == 'POST') {
+		if($row){
 		$agemin=$_POST['agemin'];
+		}
+		if($row){
 		$agemax=$_POST['agemax'];
+		}
+		if($row){
 		$maritalstatus=$_POST['maritalstatus'];
+		}
+		if($row){
 		$complexion=$_POST['colour'];
+		}
+		if($row){
 		$height=$_POST['height'];
+		}
+		if($row){
 		$diet=$_POST['diet'];
+		}
+		if($row){
 		$religion=$_POST['religion'];
+		}
+		if($row){
 		$caste=$_POST['caste'];
+		}
+		if($row){
 		$mothertounge=$_POST['mothertounge'];
+		}
+		if($row){
 		$education=$_POST['education'];
+		}
+		if($row){
 		$occupation=$_POST['occupation'];
+		}
+		if($row){
 		$country=$_POST['country'];
+		}
+		if($row){
 		$descr=$_POST['descr'];
+		}
 
 		$sql = "UPDATE
 				   partnerprefs 
@@ -109,27 +152,17 @@ function register(){
 	$uname=$_POST['name'];
 	$pass=$_POST['pass'];
 	$email=$_POST['email'];
-	$day=$_POST['day'];
-	$month=$_POST['month'];
-	$year=$_POST['year'];
-		$day=$_POST['day'];
-		$month=$_POST['month'];
-		$year=$_POST['year'];
-	$dob=$year ."-" . $month . "-" .$day ;
-	$gender=$_POST['gender'];
 	require_once("includes/dbconn.php");
 
 	$sql = "INSERT 
 			INTO
 			   users
-			   ( profilestat, username, password, email, dateofbirth, gender, userlevel) 
+			   ( profilestat, username, password, email, userlevel) 
 			VALUES
-			   (0, '$uname', '$pass', '$email', '$dob', '$gender', 0)";
+			   (0, '$uname', '$pass', '$email', 0)";
 
 	if (mysqli_query($conn,$sql)) {
-	  echo "Successfully Registered";
 	  echo "<a href=\"login.php\">";
-	  echo "Login to your account";
 	  echo "</a>";
 	} else {
 	  echo "Error: " . $sql . "<br>" . $conn->error;
@@ -277,15 +310,11 @@ if (!file_exists($target)) {
 //specifying target for each file
 $target1 = $target . basename( $_FILES['pic1']['name']);
 $target2 = $target . basename( $_FILES['pic2']['name']);
-$target3 = $target . basename( $_FILES['pic3']['name']);
-$target4 = $target . basename( $_FILES['pic4']['name']);
 
 
 // This gets all the other information from the form
 $pic1=($_FILES['pic1']['name']);
 $pic2=($_FILES['pic2']['name']);
-$pic3=($_FILES['pic3']['name']);
-$pic4=($_FILES['pic4']['name']);
 
 $sql="SELECT id FROM photos WHERE cust_id = '$id'";
 $result = mysqlexec($sql);
@@ -293,20 +322,20 @@ $result = mysqlexec($sql);
 //code part to check weather a photo already exists
 if(mysqli_num_rows($result) == 0) {
      // no photo for curret user, do stuff...
-		$sql="INSERT INTO photos (id, cust_id, pic1, pic2, pic3, pic4) VALUES ('', '$id', '$pic1' ,'$pic2', '$pic3','$pic4')";
+		$sql="INSERT INTO photos (id, cust_id, pic1, pic2) VALUES ('', '$id', '$pic1' ,'$pic2')";
 		// Writes the information to the database
 		mysqlexec($sql);
 
 		
 } else {
     // There is a photo for customer so up
-     $sql="UPDATE photos SET pic1 = '$pic1', pic2 = '$pic2', pic3 = '$pic3', pic4 = '$pic4' WHERE cust_id=$id";
+     $sql="UPDATE photos SET pic1 = '$pic1', pic2 = '$pic2' WHERE cust_id=$id";
 		// Writes the information to the database
 	mysqlexec($sql);
 }
 
 // Writes the photo to the server
-if(move_uploaded_file($_FILES['pic1']['tmp_name'], $target1)&&move_uploaded_file($_FILES['pic2']['tmp_name'], $target2)&&move_uploaded_file($_FILES['pic3']['tmp_name'], $target3)&&move_uploaded_file($_FILES['pic4']['tmp_name'], $target4))
+if(move_uploaded_file($_FILES['pic1']['tmp_name'], $target1)&&move_uploaded_file($_FILES['pic2']['tmp_name'], $target2))
 {
 
 // Tells you if its all ok
