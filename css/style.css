@@ -11,7 +11,8 @@ p {margin: 0;}
 html, body{
 	font-family: 'Ubuntu', sans-serif;
 	font-size: 100%;
-    background:#fff; 
+    background:#fff;
+    padding-top: 28px;
 }
 body a{
 	transition:0.5s all;
@@ -30,7 +31,7 @@ body a{
 .navigation {
     float: left;
     margin-right: 3%;
-    margin-top: 1px;
+    margin-top: 10px;
 }
 #colorNav > ul{
 	padding: 0;
@@ -181,9 +182,10 @@ body a{
 	border: none;
 }
 .navbar {
-   min-height:100%;
+   min-height: 0%;
    margin-bottom:0;
-   border:none;
+   border: 2px; 
+   box-shadow: 0px 5px 10px 0px #aaa;
 }
 .navbar-nav {
    margin:0;
@@ -308,6 +310,7 @@ ul.nav_1 li.last{
     background-color:#048cc0 !important;
     border-color:#048cc0;
     color:#fff !important;
+    border-radius: 16px 1px 16px 1px;
 }
 .banner{
 	background:url(../images/wed.jpg)no-repeat center top;
@@ -3989,3 +3992,61 @@ form {
     font-weight: 500;
     color: #00008B;
   }
+
+
+.navigationpro{
+    margin: auto;
+    width: 50%;
+    border: 2px solid #aaa;
+    border-radius: 6px;
+    padding: 5px;
+    box-shadow: 0px 5px 10px 0px #aaa;
+    text-align: center;
+    background: #fff;
+}
+
+.navigationpro ul{
+    margin: auto;
+    background: #fff;
+    border-radius: 4px;
+}
+
+.navigationpro ul li{
+    background: #ff0080;
+  border: 2px solid gray;
+  padding: 0px;
+  margin: 5px;
+  text-align: center;
+  border-radius: 17px 1px 17px 1px;
+}
+
+.navigationpro ul li a:hover{
+  margin: 0px;
+  border-radius: 17px 1px 17px 1px;
+  border: 2px solid #ff0080;
+  padding: 10px;
+}
+
+.navigationpro .dropdown{
+    border-radius: 17px 1px 17px 1px;
+}
+
+  .navigationpro ul .dropdown-toggle {
+    margin: 0px;
+    border-radius: 16px 1px 16px 1px;
+    border: 2px solid #ff0080;
+    padding: 10px;
+  }
+
+  .navigationpro .navbar-nav>li>.dropdown-menu{
+    border-radius: 17px 1px 17px 1px;
+    padding-right: 4px;
+  }
+
+  .navigationpro .nav .open>a, .nav .open>a:hover{
+    border-radius: 16px 1px 16px 1px;
+    border: 2px solid #ff0080;
+
+  }
+
+  
