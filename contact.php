@@ -1,11 +1,5 @@
 <?php include_once("includes/basic_includes.php");?>
 <?php include_once("functions.php"); ?>
-<?php if(isloggedin()){
- //do nothing stay here
-} else{
-   header("location:login.php");
-}
- ?>
 
 <!DOCTYPE HTML>
 <html>
