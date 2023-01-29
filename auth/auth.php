@@ -1,5 +1,6 @@
 <?php
 session_start();
+error_reporting(0);
 require_once("../includes/dbconn.php");
 $userlevel=$_GET['user'];
 // username and password sent from form 
@@ -16,7 +17,9 @@ $result=mysqli_query($conn,$sql);
 // Mysql_num_row is counting table row
 $count=mysqli_num_rows($result);
 $row=mysqli_fetch_assoc($result);
+if($row){
 $id=$row['id'];
+}
 // If result matched $myusername and $mypassword, table row must be 1 row
 if($count==1){
 
