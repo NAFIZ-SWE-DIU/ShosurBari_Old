@@ -1,6 +1,6 @@
 /*  color: #ff0080; pink
-  color: #048cc0; sky blue
-    color: #048cc0; blue
+  color: #02a7e6; sky blue
+    color: #02a7e6; blue
     color: #00008B; dark blue
 */
 
@@ -14,6 +14,16 @@ html, body{
     background:#fff;
     padding-top: 28px;
 }
+
+element{
+    --main-web-color:  #ff0080;
+    --main-bg-color: #02a7e6;
+    --name-text-color: #ffff00;
+    --body-text-color: #00008B;
+    --border-color: #ccc;
+
+}
+
 body a{
 	transition:0.5s all;
 	-webkit-transition:0.5s all;
@@ -24,6 +34,11 @@ body a{
 .header{
 	background:#999;
 	padding:2em 0;
+}
+
+::selection {
+    color: yellow;
+    background: #02a7e6;
 }
 /*----------------------------
 	The Navigation Menu
@@ -293,7 +308,7 @@ ul.nav_1 li{
     background: #ff0080;
 }
 .dropdown-menu li a:hover{
-    background: #048cc0;
+    background: #02a7e6;
     color: white;
 }
 
@@ -307,8 +322,8 @@ ul.nav_1 li.last{
 	margin-right:0;
 }
 .nav .open>a, .nav .open>a:hover, .nav .open>a:focus, .nav>li>a:hover, .nav>li>a:focus{
-    background-color:#048cc0 !important;
-    border-color:#048cc0;
+    background-color:#02a7e6 !important;
+    border-color:#02a7e6;
     color:#fff !important;
     border-radius: 16px 1px 16px 1px;
 }
@@ -390,21 +405,24 @@ ul.nav_1 li.last{
     -moz-box-shadow: none;
     -webkit-box-shadow: none;
     box-shadow: none;
-    -moz-border-radius: 0px;
-    -webkit-border-radius: 0px;
-    border-radius: 0px;
+    border: 2px #ccc;
+    border-radius: 4px;
     -moz-transition: 0.3s;
     -o-transition: 0.3s;
     -webkit-transition: 0.3s;
     transition: 0.3s;
-    background-color: #fff;
-    border: none;
-    font-size: 12px;
+    background-color: #02a7e6;
+    font-size: 16px;
     padding:5px;
     width: 100%;
-    color: #555;
+    color: white;
     outline: none;
+    height: 45px;
 }
+.input-group input[type="text"], select:hover{
+    color: black;
+}
+
 input.transparent{
     background-color:#fff;
     border: none;
@@ -1068,7 +1086,7 @@ a.religion_1 {
 }
 /*-- footer --*/
 .footer{
-	background:#048cc0;
+	background:#02a7e6;
 	padding:5em 0;
 }
 .col_2 h4{
@@ -1129,7 +1147,7 @@ i.fa1:hover {
     font-size: 15px;
 }
 .copy p a{
-	color:#FFFF00;
+	color:yellow;
     font-size: 15px;
 }
 .copy p a:hover{
@@ -1206,7 +1224,7 @@ td.day_label {
     display: inline-block;
     border-bottom: none;
     font-weight: 500;
-    background-color:#048cc0;
+    background-color:#02a7e6;
     width: 100%;
     padding: 0;
     margin-bottom: 2em;
@@ -1289,7 +1307,7 @@ a#profile-tab, a#home-tab, a#profile-tab1{
     -o-box-shadow: 0 5px 5px rgba(0,0,0,0.14);
 }
 .newsletter input[type="submit"]:hover{
-	background:#048cc0;
+	background:#02a7e6;
 }
 ul.profile_item{
 	padding:0;
@@ -1362,15 +1380,15 @@ ul.login_details li a{
 
 .select-block1 select, .input-group1 input[type="text"]{
     box-shadow: none;
-    border: 1px solid #ccc;
-    border-radius: 0;
+    border: 2px solid #ccc;
+    border-radius: 4px;
     outline: 0;
     background: #ffffff;
-    height: 35px;
+    height: 45px;
     line-height: 25px;
     padding: 5px 15px;
     width: 100%;
-    color:#999;
+    color:black;
 }
 .input-group1 input[type="text"]{
     border: 1px solid #e2e2e3;
@@ -1436,7 +1454,7 @@ ul.login_details li a{
     -o-box-shadow: 0 5px 5px rgba(0,0,0,0.14);
 }
 .profile_search1 input[type="submit"]:hover{
-	background:#048cc0;
+	background:#02a7e6;
 }
 .view_profile2{
 	margin:4em 0 0 0;
@@ -1508,7 +1526,7 @@ a:hover, a:focus {
     text-decoration:none;
 }
 .input-group1 input[type="submit"] {
-    background:#048cc0;
+    background:#02a7e6;
     color: #FFF;
     font-size: 12px;
     padding: 8px 30px;
@@ -1600,8 +1618,8 @@ ul.pagination {
 .pagination>.active>a, .pagination>.active>span, .pagination>.active>a:hover, .pagination>.active>span:hover, .pagination>.active>a:focus, .pagination>.active>span:focus {
     z-index: 2;
     color: #fff;
-    background-color:#048cc0;
-    border-color:#048cc0;
+    background-color:#02a7e6;
+    border-color:#02a7e6;
     cursor: default;
 }
 .pagination>li >a {
@@ -1835,7 +1853,7 @@ ul.phone li.phone_right p{
 	color:#FFF;
 }
 .pricing-table-grid ul li span{
-    background:#048cc0;
+    background:#02a7e6;
     padding: 10px;
     transition: 0.5s all;
     -webkit-transition: 0.5s all;
@@ -1861,7 +1879,7 @@ a.order-btn{
     outline: none;
 }
 .pricing-table-grid:hover a.order-btn{
-	background:#048cc0;
+	background:#02a7e6;
 }
 span.month1 {
     font-size: 13px;
@@ -2265,29 +2283,30 @@ i.icon_4{
 .services_top {
     margin-bottom: 2em;
 }
+
 /* -- login --*/
 .form-text, .form-textarea, .form-select {
     display: block;
-    width: 100%;
-    height: 34px;
+    width: 70%;
+    height: 45px;
     padding: 6px 12px;
-    font-size: 13px;
-    line-height: 1.42857143;
-    color: #999;
+    font-size: 16px;
+    line-height: 1.5;
+    color: black;
     background-color: #fff;
     background-image: none;
-    border: 1px solid #ccc;
-    border-radius: 2px;
-    -webkit-border-radius: 2px;
-    -moz-border-radius: 2px;
-    -o-border-radius: 2px;
+    border: 2px solid #ccc;
+    border-radius: 4px;
+    -webkit-border-radius: 4px;
+    -moz-border-radius: 4px;
+    -o-border-radius: 4px;
     outline: none;
     -webkit-transition: border-color ease-in-out .15s, -webkit-box-shadow ease-in-out .15s;
     -o-transition: border-color ease-in-out .15s, box-shadow ease-in-out .15s;
     transition: border-color ease-in-out .15s, box-shadow ease-in-out .15s;
 }
 .form-control:focus, .form-text:focus, .form-textarea:focus, .form-select:focus{
-    border-color: #66afe9;
+    border-color: #02a7e6;;
     outline: 0;
     box-shadow: none !important;
 }
@@ -2307,7 +2326,7 @@ i.icon_4{
     font-size: 0.85em;
 }
 .btn_1:hover{
-	background:#048cc0;
+	background:#02a7e6;
 }
 .sharing li {
     margin-bottom:1em;
@@ -2450,7 +2469,7 @@ p.m_5{
     position: relative;
     text-align: right;
     padding: 0 20px;
-    background: #048cc0;
+    background: #02a7e6;
     border-radius: 4px 0 0 4px;
     -webkit-box-shadow: none;
     box-shadow: none;
@@ -2521,7 +2540,7 @@ form#contact-form {
     font-size: 1em;
     padding: 13px 20px;
     text-transform: uppercase;
-    background: #048cc0;
+    background: #02a7e6;
     -webkit-transition: all 0.3s ease-out;
     -moz-transition: all 0.3s ease-out;
     -ms-transition: all 0.3s ease-out;
@@ -2826,7 +2845,7 @@ i.icon_4 {
    margin-right: 30%;
 }
 .nav_bottom {
-    background:#048cc0;
+    background:#02a7e6;
 }
 .inline-block {
     display: inline-block;
@@ -3603,7 +3622,7 @@ form {
     margin-bottom: auto;
     margin-top: 20px;
     padding-top: 20px;
-    background: url(https://bestanimations.com/media/many-hearts/260842010many-little-heart-make-big-heart-gif.gif); /* #048cc0; */
+    background: url(https://bestanimations.com/media/many-hearts/260842010many-little-heart-make-big-heart-gif.gif); /* #02a7e6; */
     border-radius: 1px 16px 1px 16px ;
   }
   
@@ -3612,8 +3631,8 @@ form {
   .styled-input {
     float: left;
     background: #fff;
-    border: 2px solid #048cc0;
-    box-shadow: 0px 5px 10px 0px #048cc0;
+    border: 2px solid #02a7e6;
+    box-shadow: 0px 5px 10px 0px #02a7e6;
     border-radius: 3px;
     -webkit-box-shadow: inset 0 -1px 4px 0 rgba(0,0,0,0.20);
             /* box-shadow: inset 0 -1px 4px 0 rgba(0,0,0,0.20); */
@@ -3735,7 +3754,7 @@ form {
   .styled-input textarea, 
   .styled-input select {
     color: #00008B;
-    border: 0;
+    border: 2px gray;
     width: 90%;
     font-size: 16px;
     padding-top: 25px;
@@ -3761,7 +3780,7 @@ form {
   .styled-input input#ln:valid ~ label, 
   .styled-input input#city[filled="true"]:valid ~ label, 
   .styled-input #select-state label {
-    font-size: 13px;
+    font-size: 16px;
     letter-spacing: 1.56px;
     color: #ff0080;
     top: -12.8px;
@@ -3916,7 +3935,7 @@ form {
   }
   
   .form-area button.serach-btn:hover {
-      background: #048cc0;
+      background: #02a7e6;
       -webkit-box-shadow: -2px -2px 4px -4px rgba(0, 0, 0, 0.02), 0 3px 9px 0 rgba(0, 0, 0, 0.1), 0 2px 4px 0 rgba(0, 0, 0, 0.14);
       box-shadow: -2px -2px 4px -4px rgba(0, 0, 0, 0.02), 0 3px 9px 0 rgba(0, 0, 0, 0.1), 0 2px 4px 0 rgba(0, 0, 0, 0.14);
   }
@@ -4007,7 +4026,7 @@ form {
   }
 
   .deletbtn button:hover{
-    background: #048cc0;
+    background: #02a7e6;
     color: black;
     border-color: gray;
     border-radius: 4px;
@@ -4028,7 +4047,7 @@ form {
   ul.nav_1{
     font-size: 20px;
     font-weight: 500;
-    color: #00008B;
+    color: yellow;
   }
 
 
@@ -4041,6 +4060,8 @@ form {
     box-shadow: 0px 5px 10px 0px #aaa;
     text-align: center;
     background: #fff;
+    margin-top: -80px;
+    margin-bottom: 50px;
 }
 
 .navigationpro ul{
@@ -4169,7 +4190,7 @@ form {
 .shosurbari-biodata .sb-biodata-5 .sb-biodata-field h2 span,
 .shosurbari-biodata .sb-biodata-6 .sb-biodata-field h2 span,
 .shosurbari-biodata .sb-biodata-7 .sb-biodata-field h2 span{
-    color: #048cc0;;
+    color: #02a7e6;;
 }
 
 
@@ -4208,3 +4229,7 @@ form {
 /* .shosurbari-biodata .sb-biodata-field .sb-biodata_option .shosurbari-biodata-field */
 
 
+.sb-biodata-option .shosurbari-biodata-field .input{
+    margin: 100px;
+    margin: 100px;
+}
