@@ -634,4 +634,4 @@ Echo "<a href=\”/login.php\”>Login</a>";
 <?php include_once("footer.php");?>
 
 </body>
-</html>	
+</html>
