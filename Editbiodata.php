@@ -85,7 +85,7 @@ Echo "<a href=\”/login.php\”>Login</a>";
 
             <div class="sb-biodata-1">
                 <div class="sb-biodata-field">
-		            <h2>Basics & Lifestyle</h2>
+		            <h2>Basics & <span>Lifestyle</span></h2>
                 </div>
 
 				<div class="sb-biodata-option">
@@ -229,7 +229,7 @@ Echo "<a href=\”/login.php\”>Login</a>";
  <!-- sb-biodata_2 start-->
                 <div class="sb-biodata-2">
                     <div class="sb-biodata-field">
-		               <h2>Religious / Social & Astro Background</h2>
+		               <h2>Religious / Social & <span>Astro Background</span></h2>
                     </div>
 
 				    <div class="sb-biodata-option">
@@ -279,7 +279,7 @@ Echo "<a href=\”/login.php\”>Login</a>";
  <!-- sb-biodata_3 start-->
                     <div class="sb-biodata-3">
                         <div class="sb-biodata-field">
-		                   <h2>Present & Permanent Address</h2>
+		                   <h2>Present & Permanent <span>Address</span></h2>
                         </div>
 
 						<div class="sb-biodata-option">
@@ -329,7 +329,7 @@ Echo "<a href=\”/login.php\”>Login</a>";
  <!-- sb-biodata_4 start-->
                     <div class="sb-biodata-4">
                         <div class="sb-biodata-field">
-		                   <h2>About</h2>
+		                   <h2>About <span>You</span></h2>
                         </div>
 
 						<div class="sb-biodata-option">
@@ -395,7 +395,7 @@ Echo "<a href=\”/login.php\”>Login</a>";
 <!-- sb-biodata_5 start-->
                     <div class="sb-biodata-5">
                         <div class="sb-biodata-field">
-		                   <h2>Habit Details</h2>
+		                   <h2>Habit <span>Details</span></h2>
                         </div>
 
 						    <div class="sb-biodata-option">
@@ -456,7 +456,7 @@ Echo "<a href=\”/login.php\”>Login</a>";
 <!-- sb-biodata_5-2 start-->
 <div class="sb-biodata-5">
                         <div class="sb-biodata-field">
-		                   <h2>Habit Details</h2>
+		                   <h2>Your <span>Physical</span></h2>
                         </div>
 
 						    <div class="sb-biodata-option">
@@ -520,7 +520,7 @@ Echo "<a href=\”/login.php\”>Login</a>";
 <!-- sb-biodata_6 starts-->
                         <div class="sb-biodata-6">
                             <div class="sb-biodata-field">
-		                        <h2>Personal Details</h2>
+		                        <h2>Personal <span>Details</span></h2>
                             </div>
 
 							<div class="sb-biodata-option">
@@ -579,7 +579,7 @@ Echo "<a href=\”/login.php\”>Login</a>";
  <!-- sb-biodata_7 starts-->
                         <div class="sb-biodata-7">
                             <div class="sb-biodata-field">
-		                        <h2>Family Details</h2>
+		                        <h2>Family <span>Details</span></h2>
                             </div>
 
 							<div class="sb-biodata-option">
@@ -625,7 +625,7 @@ Echo "<a href=\”/login.php\”>Login</a>";
 
 
 		            <div class="form-actions">
-			          <input type="submit" id="edit-submit" name="op" value="Submit" class="btn_1 submit">
+			          <input type="submit" id="edit-submit" name="op" value="Submit Biodata" class="btn_1 submit">
 			        </div>
 	    </form>
     </div>
