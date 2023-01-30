@@ -318,7 +318,8 @@ ul.nav_1 li.last{
 	-webkit-background-size:cover;
 	-moz-background-size:cover;
 	-o-background-size:cover;
-	min-height:650px;
+	/* min-height:650px; */
+    min-height: 450px;
 }
 .banner_info{
    margin: 10em 0 0 0;
@@ -1353,6 +1354,7 @@ ul.login_details li a{
 .search_left{
 	padding-left:0;
 }
+
 .select-block1 select, .input-group1 input[type="text"]{
     box-shadow: none;
     border: 1px solid #ccc;
@@ -2584,7 +2586,8 @@ ul.feature_list.feature_list1 {
     margin:7em 0 0 0;
 }
 .banner {
-    min-height:508px;
+    /* min-height:508px; */
+    min-height:334px;
 }
 .post-meta {
     margin-right: 6%;
@@ -2751,7 +2754,9 @@ label.gender_1 {
     margin-right: 0px;
 }    
 .banner {
-    min-height: 429px;
+    /* min-height: 429px;  */
+    min-height: 309px; 
+
 }
 .grid_1 {
     padding: 3em 0;
@@ -2843,7 +2848,8 @@ i.icon_4 {
     padding:10px;
 }
 .banner {
-    min-height: 386px;
+    /* min-height: 386px; */
+    min-height: 280px; 
 }
 .age_box2 {
     max-width: 100% !important;
@@ -3017,7 +3023,8 @@ input#submit-btn {
     margin-bottom: 5px;
 }
 .banner {
-    min-height: 281px;
+    /* min-height: 281px; */
+    min-height: 195px;
 }
 .heart-divider {
     margin: 1em auto 1em;
@@ -3110,7 +3117,8 @@ ul.phone li.phone_right p {
     padding:5px;
 }
 .banner {
-    min-height: 254px;
+    /* min-height: 254px; */
+    min-height: 180px;
 }
 .navigation {
     margin-right: 23%;
@@ -3264,7 +3272,8 @@ a.brand img {
     margin-top: -6px;
 }
 .banner {
-    min-height: 231px;
+    /* min-height: 231px; */
+    min-height: 155px;
     zoom: .9;
 }
 .grid_1 {
@@ -3560,26 +3569,49 @@ ul.feature_list.feature_list1 {
 
 
 
-/* abcd */
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* Home Search Form Start*/
 
 form {
     max-width: 1100px;
     width: 100%;
-    margin: auto;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: auto;
+    margin-top: 20px;
     padding-top: 20px;
+    background: url(https://bestanimations.com/media/many-hearts/260842010many-little-heart-make-big-heart-gif.gif); /* #048cc0; */
+    border-radius: 1px 16px 1px 16px ;
   }
   
   /* Search Form */
-  
+
   .styled-input {
     float: left;
     background: #fff;
-    border: 1px solid #EFEFEF;
+    border: 2px solid #048cc0;
+    box-shadow: 0px 5px 10px 0px #048cc0;
     border-radius: 3px;
     -webkit-box-shadow: inset 0 -1px 4px 0 rgba(0,0,0,0.20);
-            box-shadow: inset 0 -1px 4px 0 rgba(0,0,0,0.20);
+            /* box-shadow: inset 0 -1px 4px 0 rgba(0,0,0,0.20); */
     width: 100%;
     position: relative;
     margin-bottom: 10px;
@@ -3616,7 +3648,7 @@ form {
   }
   
   .styled-input.multi label {
-    padding: 10px 0 0;
+    padding: 8px 0 0;
   }
   
   .styled-input.active {
@@ -3684,7 +3716,7 @@ form {
   }
   
   .styled-input.multi > div input {
-    padding-top: 20px;
+    padding-top: 25px;
   }
   
   
@@ -3697,11 +3729,11 @@ form {
   .styled-input input, 
   .styled-input textarea, 
   .styled-input select {
-    color: #4A4A4A;
+    color: #00008B;
     border: 0;
     width: 90%;
-    font-size: 18px;
-    padding-top: 20px;
+    font-size: 16px;
+    padding-top: 25px;
     background: transparent;
   }
   
@@ -3726,7 +3758,7 @@ form {
   .styled-input #select-state label {
     font-size: 13px;
     letter-spacing: 1.56px;
-    color: #4A3B8F;;
+    color: #ff0080;
     top: -12.8px;
     -webkit-transition: all 0.125s cubic-bezier(0.2, 0, 0.03, 1);
     -o-transition: all 0.125s cubic-bezier(0.2, 0, 0.03, 1);
@@ -3821,7 +3853,7 @@ form {
     }
     .styled-input select {
       left: 0;
-      padding-top: 2px;
+      padding-top: 8px;
     }
     
     .styled-input.multi.error {
@@ -3864,7 +3896,7 @@ form {
     -moz-border-radius: 6px;
     border: none;
     font-size: 24px;
-    background: #81B44C;
+    background: #ff0080;;
     text-align: center;
     color: white;
     text-transform: uppercase;
@@ -3879,7 +3911,7 @@ form {
   }
   
   .form-area button.serach-btn:hover {
-      background: #638A3A;
+      background: #048cc0;
       -webkit-box-shadow: -2px -2px 4px -4px rgba(0, 0, 0, 0.02), 0 3px 9px 0 rgba(0, 0, 0, 0.1), 0 2px 4px 0 rgba(0, 0, 0, 0.14);
       box-shadow: -2px -2px 4px -4px rgba(0, 0, 0, 0.02), 0 3px 9px 0 rgba(0, 0, 0, 0.1), 0 2px 4px 0 rgba(0, 0, 0, 0.14);
   }
@@ -3925,7 +3957,8 @@ form {
 }
 
 .form-area .Findpartner h1{
-    margin-bottom: 20;
+    margin-bottom: 20px;
+    color: #ff0080; 
 }
 
 .first-name label{
@@ -4048,5 +4081,105 @@ form {
     border: 2px solid #ff0080;
 
   }
+  .grid_3 {
+    padding: 5em 0;
+    padding-top: 5em;
+    padding-right: 0px;
+    padding-bottom: 5em;
+    padding-left: 0px;
+}
 
-  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* shosurbari-biodata sb-biodata_1 */
+/* B I O D A T A FORM START */
+
+/*
+.shosurbari-biodata .sb-biodata_1{
+    display: flex;
+    border: 2px solid yellow;
+    border-radius: 4px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1.5rem;
+} */
+
+.sb-biodata-1, .sb-biodata-2,
+.sb-biodata-3, .sb-biodata-4,
+.sb-biodata-5, .sb-biodata-6,
+.sb-biodata-7{
+    border: 2px solid #ff0080;;
+    border-radius: 6px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1.5rem;
+    padding: 20px;
+    margin: 40px;
+    background: rgb(241, 239, 239);
+}
+
+.shosurbari-biodata .sb-biodata-1 .sb-biodata-field h2,
+.shosurbari-biodata .sb-biodata-2 .sb-biodata-field h2,
+.shosurbari-biodata .sb-biodata-3 .sb-biodata-field h2,
+.shosurbari-biodata .sb-biodata-4 .sb-biodata-field h2,
+.shosurbari-biodata .sb-biodata-5 .sb-biodata-field h2,
+.shosurbari-biodata .sb-biodata-6 .sb-biodata-field h2,
+.shosurbari-biodata .sb-biodata-7 .sb-biodata-field h2{
+    padding: 10px;
+    margin: 10px;
+    width: 100%;
+}
+
+.shosurbari-biodata .shosurbari-biodata-edit{
+    text-align: center;
+    width: 100%;
+    margin-bottom: -20px;
+    margin-top: -50px;
+}
+
+.shosurbari-biodata .shosurbari-biodata-edit h1 span{
+    color: #ff0080;;
+}
+
+
+.shosurbari-biodata .sb-biodata-1 .sb-biodata-field,
+.shosurbari-biodata .sb-biodata-2 .sb-biodata-field,
+.shosurbari-biodata .sb-biodata-3 .sb-biodata-field,
+.shosurbari-biodata .sb-biodata-4 .sb-biodata-field,
+.shosurbari-biodata .sb-biodata-5 .sb-biodata-field,
+.shosurbari-biodata .sb-biodata-6 .sb-biodata-field,
+.shosurbari-biodata .sb-biodata-7 .sb-biodata-field{
+    padding: 10px;
+    margin: 10px;
+    align-items: center;
+    text-align: center;
+    width: 100%;
+    margin-bottom: -30px;
+    margin-top: -30px;
+}
+
+.shosurbari-biodata .sb-biodata-option{
+    display: flex;
+    gap: 1.5rem;
+    padding: 10px;
+    margin: 5px;
+    flex-wrap: wrap;
+}
+/* .shosurbari-biodata .sb-biodata-field .sb-biodata_option .shosurbari-biodata-field */
+
+
