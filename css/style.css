@@ -4149,7 +4149,7 @@ form {
 .sb-biodata-3, .sb-biodata-4,
 .sb-biodata-5, .sb-biodata-6,
 .sb-biodata-7{
-    border: 2px solid #ff0080;;
+    border: 2px solid #ff0080;
     border-radius: 6px;
     display: flex;
     flex-wrap: wrap;
@@ -4170,6 +4170,7 @@ form {
     margin: 10px;
     width: 100%;
     color: #00008B;
+    background: #ff0080;
 }
 
 .shosurbari-biodata .shosurbari-biodata-edit{
@@ -4180,7 +4181,7 @@ form {
 }
 
 .shosurbari-biodata .shosurbari-biodata-edit h1 span{
-    color: #ff0080;
+    color: white;
 }
 
 .shosurbari-biodata .sb-biodata-1 .sb-biodata-field h2 span,
