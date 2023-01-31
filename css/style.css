@@ -414,10 +414,12 @@ ul.nav_1 li.last{
     background-color: #02a7e6;
     font-size: 16px;
     padding:5px;
-    width: 100%;
+    width: 35%;
     color: white;
     outline: none;
     height: 45px;
+    margin-top: 20px;
+    margin-bottom: 10px;
 }
 .input-group input[type="text"], select:hover{
     color: black;
@@ -2285,7 +2287,48 @@ i.icon_4{
 }
 
 /* -- login --*/
-.form-text, .form-textarea, .form-select {
+.form-text-describe {
+    display: block;
+    width: 100%;
+    height: 100px;
+    margin-top: 2px;
+    margin-bottom: 20px;
+    padding: 6px 12px;
+   /* margin-top: 0px;
+    margin-bottom: 20px; */
+    font-size: 16px;
+    line-height: 1.5;
+    color: black;
+    background-color: #fff;
+    background-image: none;
+    border: 2px solid #ccc;
+    border-radius: 4px;
+    -webkit-border-radius: 4px;
+    -moz-border-radius: 4px;
+    -o-border-radius: 4px;
+    outline: none;
+    -webkit-transition: border-color ease-in-out .15s, -webkit-box-shadow ease-in-out .15s;
+    -o-transition: border-color ease-in-out .15s, box-shadow ease-in-out .15s;
+    transition: border-color ease-in-out .15s, box-shadow ease-in-out .15s;
+}
+
+label span{
+    color: red;
+}
+label{
+    display: inline-block;
+    margin-bottom: 2px;
+    font-weight: 700;
+    margin-top: 25px;
+}
+
+.form-text-describe:focus{
+    border-color: #02a7e6;;
+    outline: 0;
+    box-shadow: none !important;
+}
+
+.form-text, .form-select, .form-textarea {
     display: block;
     width: 70%;
     height: 45px;
@@ -2305,6 +2348,7 @@ i.icon_4{
     -o-transition: border-color ease-in-out .15s, box-shadow ease-in-out .15s;
     transition: border-color ease-in-out .15s, box-shadow ease-in-out .15s;
 }
+
 .form-control:focus, .form-text:focus, .form-textarea:focus, .form-select:focus{
     border-color: #02a7e6;;
     outline: 0;
@@ -3620,7 +3664,7 @@ form {
     margin-left: auto;
     margin-right: auto;
     margin-bottom: auto;
-    margin-top: 20px;
+    margin-top: 0px;
     padding-top: 20px;
     background: url(https://bestanimations.com/media/many-hearts/260842010many-little-heart-make-big-heart-gif.gif); /* #02a7e6; */
     border-radius: 1px 16px 1px 16px ;
@@ -4145,18 +4189,106 @@ form {
     gap: 1.5rem;
 } */
 
-.sb-biodata-1, .sb-biodata-2,
-.sb-biodata-3, .sb-biodata-4,
-.sb-biodata-5, .sb-biodata-6,
+.sb-biodata-1,
+.sb-biodata-2,
+.sb-biodata-3,
+.sb-biodata-4,
+.sb-biodata-5,
+.sb-biodata-6,
 .sb-biodata-7{
     border: 2px solid #ff0080;
     border-radius: 6px;
-    display: flex;
-    flex-wrap: wrap;
+    width: 45%;
     gap: 1.5rem;
     padding: 20px;
-    margin: 40px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 40px;
+    margin-top: 20px;
     background: rgb(241, 239, 239);
+}
+
+@media (max-width: 765px) {
+    .sb-biodata-1,
+.sb-biodata-2,
+.sb-biodata-3,
+.sb-biodata-4,
+.sb-biodata-5,
+.sb-biodata-6,
+.sb-biodata-7{
+    border: 2px solid #ff0080;
+    border-radius: 6px;
+    width: 80%;
+    padding: 20px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 40px;
+    margin-top: 20px;
+    background: rgb(241, 239, 239);
+}
+  }
+
+  @media (max-width: 736px) {
+.sb-biodata-1,
+.sb-biodata-2,
+.sb-biodata-3,
+.sb-biodata-4,
+.sb-biodata-5,
+.sb-biodata-6,
+.sb-biodata-7{
+    border: 2px solid #ff0080;
+    border-radius: 6px;
+    width: 80%;
+    padding: 20px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 40px;
+    margin-top: 20px;
+    background: rgb(241, 239, 239);
+}
+.sb-biodata-field h2,
+.sb-biodata-field h2,
+.sb-biodata-field h2,
+.sb-biodata-field h2,
+ .sb-biodata-field h2,
+.sb-biodata-field h2{
+    font-size: 25px;
+}
+  }
+
+  @media (max-width: 350px) {
+    .sb-biodata-1,
+    .sb-biodata-2,
+    .sb-biodata-3,
+    .sb-biodata-4,
+    .sb-biodata-5,
+    .sb-biodata-6,
+    .sb-biodata-7{
+        border: 2px solid #ff0080;
+        border-radius: 6px;
+        width: 70%;
+        padding: 20px;
+        margin-left: auto;
+        margin-right: auto;
+        margin-bottom: 40px;
+        margin-top: 20px;
+        background: rgb(241, 239, 239);
+    }
+    .sb-biodata-field h2,
+.sb-biodata-field h2,
+.sb-biodata-field h2,
+.sb-biodata-field h2,
+ .sb-biodata-field h2,
+.sb-biodata-field h2{
+    font-size: 20px;
+}
+      }
+
+
+.sb-biodata-field h2{
+    padding: 10px;
+    margin: 10px;
+    width: 100%;
 }
 
 .shosurbari-biodata .sb-biodata-1 .sb-biodata-field h2,
@@ -4167,22 +4299,24 @@ form {
 .shosurbari-biodata .sb-biodata-6 .sb-biodata-field h2,
 .shosurbari-biodata .sb-biodata-7 .sb-biodata-field h2{
     padding: 10px;
-    margin: 10px;
     width: 100%;
-    color: #00008B;
+    color: yellow;
     background: #ff0080;
+    border-bottom: 2px gray;
+    border-radius: 0px 0px 6px 6px;
+    margin-top: auto;
+    margin-bottom: 30px;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 .shosurbari-biodata .shosurbari-biodata-edit{
     text-align: center;
     width: 100%;
-    margin-bottom: -20px;
-    margin-top: -50px;
+    margin-bottom: 0px;
+    margin-top: -90px;
 }
 
-.shosurbari-biodata .shosurbari-biodata-edit h1 span{
-    color: white;
-}
 
 .shosurbari-biodata .sb-biodata-1 .sb-biodata-field h2 span,
 .shosurbari-biodata .sb-biodata-2 .sb-biodata-field h2 span,
@@ -4191,7 +4325,7 @@ form {
 .shosurbari-biodata .sb-biodata-5 .sb-biodata-field h2 span,
 .shosurbari-biodata .sb-biodata-6 .sb-biodata-field h2 span,
 .shosurbari-biodata .sb-biodata-7 .sb-biodata-field h2 span{
-    color: #02a7e6;;
+    color: white;
 }
 
 
@@ -4203,21 +4337,24 @@ form {
 .shosurbari-biodata .sb-biodata-6 .sb-biodata-field,
 .shosurbari-biodata .sb-biodata-7 .sb-biodata-field{
     padding: 10px;
-    margin: 10px;
+    margin: 0px;
     align-items: center;
     text-align: center;
     width: 100%;
-    margin-bottom: -30px;
+    margin-bottom: -20px;
     margin-top: -30px;
 }
-
-.shosurbari-biodata .sb-biodata-option{
+.shosurbari-biodata{
     display: flex;
-    gap: 1.5rem;
-    padding: 10px;
-    margin: 5px;
     flex-wrap: wrap;
+    margin-top:0px;
 }
+
+.flex-container{
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+  }
 
 .shosurbari-biodata .form-actions{
     width: 100%;
@@ -4227,10 +4364,14 @@ form {
     font-size: 30px;
 }
 
-/* .shosurbari-biodata .sb-biodata-field .sb-biodata_option .shosurbari-biodata-field */
+/* .shosurbari-biodata .sb-biodata_option .shosurbari-biodata-field */
 
 
-.sb-biodata-option .shosurbari-biodata-field .input{
-    margin: 100px;
-    margin: 100px;
-}
+#progress-bar {
+    --progress: 0;
+    height: 6px;
+    width: var(--progress);
+    background-color: #1F45FC;
+  }
+
+  
