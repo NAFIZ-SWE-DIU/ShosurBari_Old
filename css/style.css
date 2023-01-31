@@ -4179,23 +4179,15 @@ form {
 /* shosurbari-biodata sb-biodata_1 */
 /* B I O D A T A FORM START */
 
-/*
-.shosurbari-biodata .sb-biodata_1{
-    display: flex;
-    border: 2px solid yellow;
-    border-radius: 4px;
-    display: flex;
-    flex-wrap: wrap;
-    gap: 1.5rem;
-} */
 
-.sb-biodata-1,
+
+/*.sb-biodata-1,
 .sb-biodata-2,
 .sb-biodata-3,
 .sb-biodata-4,
 .sb-biodata-5,
-.sb-biodata-6,
-.sb-biodata-7{
+.sb-biodata-6, */
+.sb-biodata{
     border: 2px solid #ff0080;
     border-radius: 6px;
     width: 45%;
@@ -4209,13 +4201,13 @@ form {
 }
 
 @media (max-width: 765px) {
-    .sb-biodata-1,
+/* .sb-biodata-1,
 .sb-biodata-2,
 .sb-biodata-3,
 .sb-biodata-4,
 .sb-biodata-5,
-.sb-biodata-6,
-.sb-biodata-7{
+.sb-biodata-6, */
+.sb-biodata{
     border: 2px solid #ff0080;
     border-radius: 6px;
     width: 80%;
@@ -4229,13 +4221,13 @@ form {
   }
 
   @media (max-width: 736px) {
-.sb-biodata-1,
+/*.sb-biodata-1,
 .sb-biodata-2,
 .sb-biodata-3,
 .sb-biodata-4,
 .sb-biodata-5,
-.sb-biodata-6,
-.sb-biodata-7{
+.sb-biodata-6, */
+.sb-biodata{
     border: 2px solid #ff0080;
     border-radius: 6px;
     width: 80%;
@@ -4246,24 +4238,19 @@ form {
     margin-top: 20px;
     background: rgb(241, 239, 239);
 }
-.sb-biodata-field h2,
-.sb-biodata-field h2,
-.sb-biodata-field h2,
-.sb-biodata-field h2,
- .sb-biodata-field h2,
 .sb-biodata-field h2{
     font-size: 25px;
 }
   }
 
   @media (max-width: 350px) {
-    .sb-biodata-1,
+    /* .sb-biodata-1,
     .sb-biodata-2,
     .sb-biodata-3,
     .sb-biodata-4,
     .sb-biodata-5,
-    .sb-biodata-6,
-    .sb-biodata-7{
+    .sb-biodata-6, */
+    .sb-biodata{
         border: 2px solid #ff0080;
         border-radius: 6px;
         width: 70%;
@@ -4274,15 +4261,11 @@ form {
         margin-top: 20px;
         background: rgb(241, 239, 239);
     }
-    .sb-biodata-field h2,
-.sb-biodata-field h2,
-.sb-biodata-field h2,
-.sb-biodata-field h2,
- .sb-biodata-field h2,
+
 .sb-biodata-field h2{
     font-size: 20px;
 }
-      }
+}
 
 
 .sb-biodata-field h2{
@@ -4291,13 +4274,13 @@ form {
     width: 100%;
 }
 
-.shosurbari-biodata .sb-biodata-1 .sb-biodata-field h2,
+/* .shosurbari-biodata .sb-biodata-1 .sb-biodata-field h2,
 .shosurbari-biodata .sb-biodata-2 .sb-biodata-field h2,
 .shosurbari-biodata .sb-biodata-3 .sb-biodata-field h2,
 .shosurbari-biodata .sb-biodata-4 .sb-biodata-field h2,
 .shosurbari-biodata .sb-biodata-5 .sb-biodata-field h2,
-.shosurbari-biodata .sb-biodata-6 .sb-biodata-field h2,
-.shosurbari-biodata .sb-biodata-7 .sb-biodata-field h2{
+.shosurbari-biodata .sb-biodata-6 .sb-biodata-field h2, */
+.shosurbari-biodata .sb-biodata .sb-biodata-field h2{
     padding: 10px;
     width: 100%;
     color: yellow;
@@ -4318,24 +4301,24 @@ form {
 }
 
 
-.shosurbari-biodata .sb-biodata-1 .sb-biodata-field h2 span,
+/* .shosurbari-biodata .sb-biodata-1 .sb-biodata-field h2 span,
 .shosurbari-biodata .sb-biodata-2 .sb-biodata-field h2 span,
 .shosurbari-biodata .sb-biodata-3 .sb-biodata-field h2 span,
 .shosurbari-biodata .sb-biodata-4 .sb-biodata-field h2 span,
 .shosurbari-biodata .sb-biodata-5 .sb-biodata-field h2 span,
-.shosurbari-biodata .sb-biodata-6 .sb-biodata-field h2 span,
-.shosurbari-biodata .sb-biodata-7 .sb-biodata-field h2 span{
+.shosurbari-biodata .sb-biodata-6 .sb-biodata-field h2 span, */
+.shosurbari-biodata .sb-biodata .sb-biodata-field h2 span{
     color: white;
 }
 
 
-.shosurbari-biodata .sb-biodata-1 .sb-biodata-field,
+/* .shosurbari-biodata .sb-biodata-1 .sb-biodata-field,
 .shosurbari-biodata .sb-biodata-2 .sb-biodata-field,
 .shosurbari-biodata .sb-biodata-3 .sb-biodata-field,
 .shosurbari-biodata .sb-biodata-4 .sb-biodata-field,
 .shosurbari-biodata .sb-biodata-5 .sb-biodata-field,
-.shosurbari-biodata .sb-biodata-6 .sb-biodata-field,
-.shosurbari-biodata .sb-biodata-7 .sb-biodata-field{
+.shosurbari-biodata .sb-biodata-6 .sb-biodata-field, */
+.shosurbari-biodata .sb-biodata .sb-biodata-field{
     padding: 10px;
     margin: 0px;
     align-items: center;
