@@ -89,9 +89,21 @@
 		        </ul>
 		     </div><!-- /.navbar-collapse -->
 		    </nav>
+			<div id="progress-bar"></div>
 		   </div> <!-- end pull-right -->
           <div class="clearfix"> </div>
         </div> <!-- end container -->
       </div> <!-- end navbar-inner -->
     </div> <!-- end navbar-inverse-blue -->
 <!-- ============================  Navigation End ============================ -->
+
+
+<script>
+	function updateProgressBar(){
+  const {scrollTop, scrollHeight} = document.documentElement;
+  const scrollPercent = scrollTop / (scrollHeight - window.innerHeight) * 100 + '%';
+  document.querySelector('#progress-bar').style.setProperty('--progress', scrollPercent);
+}
+
+document.addEventListener('scroll', updateProgressBar);
+</script>
