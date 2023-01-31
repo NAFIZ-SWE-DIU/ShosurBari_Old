@@ -110,7 +110,8 @@ Echo "<a href=\”/login.php\”>Login</a>";
 --                                               --
 -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- ---
 -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -->
-            <div class="sb-biodata-1">
+            <div class="sb-biodata">
+
                 <div class="sb-biodata-field">
 		            <h2>Basics & <span>Lifestyle</span></h2>
                 </div>
@@ -327,7 +328,8 @@ Echo "<a href=\”/login.php\”>Login</a>";
 --                                               --
 -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- ---
 -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -->
-<div class="sb-biodata-5">
+                    <div class="sb-biodata">
+
                         <div class="sb-biodata-field">
 		                   <h2>Personal & Physical <span>Information</span></h2>
                         </div>
@@ -406,7 +408,8 @@ Echo "<a href=\”/login.php\”>Login</a>";
 --                                               --
 -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- ---
 -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -->
-                    <div class="sb-biodata-3">
+                    <div class="sb-biodata">
+
                         <div class="sb-biodata-field">
 		                   <h2>Educational <span>Qualifications</span></h2>
                         </div>
@@ -511,8 +514,7 @@ Echo "<a href=\”/login.php\”>Login</a>";
 --                                               --
 -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- ---
 -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -->
- <div class="sb-biodata-2">
-
+ <div class="sb-biodata">
 					
 <div class="sb-biodata-field">
    <h2>Address <span>Details</span></h2>
@@ -565,7 +567,8 @@ Echo "<a href=\”/login.php\”>Login</a>";
 --                                               --
 -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- ---
 -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -->
- <div class="sb-biodata-4">
+                   <div class="sb-biodata">
+
                         <div class="sb-biodata-field">
 		                   <h2>Family <span>Information</span></h2>
                         </div>
@@ -659,7 +662,8 @@ Echo "<a href=\”/login.php\”>Login</a>";
 --                                               --
 -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- ---
 -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -->
-<div class="sb-biodata-6">
+                        <div class="sb-biodata">
+
                             <div class="sb-biodata-field">
 		                        <h2>Marriage related <span>Information</span></h2>
                             </div>
@@ -731,7 +735,8 @@ Echo "<a href=\”/login.php\”>Login</a>";
 --                                               --
 -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- ---
 -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -->
-                        <div class="sb-biodata-6">
+                        <div class="sb-biodata">
+
                             <div class="sb-biodata-field">
 		                        <h2>Marriage related <span>Information</span></h2>
                             </div>
@@ -798,7 +803,8 @@ Echo "<a href=\”/login.php\”>Login</a>";
 --                                               --
 -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- ---
 -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -->
-                        <div class="sb-biodata-7">
+                        <div class="sb-biodata">
+
                             <div class="sb-biodata-field">
 		                        <h2>Religion <span>Details</span></h2>
                             </div>
@@ -853,7 +859,8 @@ Echo "<a href=\”/login.php\”>Login</a>";
 --                                               --
 -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- ---
 -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -->
- <div class="sb-biodata-4">
+                    <div class="sb-biodata">
+						
                         <div class="sb-biodata-field">
 		                   <h2>Expected Life <span>Partner</span></h2>
                         </div>
@@ -931,7 +938,7 @@ Echo "<a href=\”/login.php\”>Login</a>";
     </div>
 <!-- -- -- -- -- -- -- -- -- -- -- -- -- ---- -- --
 -- -- -- -- -- -- -- -- --- -- -- -- -- -- -- -- --
---                S  T  A  R  T                  --
+--                   E   N   D                   --
 --     SHOSURBARI BIODATA FIELD ALL SECTION      --
 --                                               --
 -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- ---
