@@ -3635,28 +3635,13 @@ ul.feature_list.feature_list1 {
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-/* Home Search Form Start*/
+/*-- -- -- -- -- -- -- -- -- -- -- -- -- ---- -- --
+-- -- -- -- -- -- -- -- --- -- -- -- -- -- -- -- --
+--                S  T  A  R  T                  --
+--      SHOSUR BARI BIODATA SEARCH - HOME        --
+--                                               --
+-- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- ---
+-- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -*/
 
 form {
     max-width: 1100px;
@@ -3679,10 +3664,10 @@ form {
     box-shadow: 0px 5px 10px 0px #02a7e6;
     border-radius: 3px;
     -webkit-box-shadow: inset 0 -1px 4px 0 rgba(0,0,0,0.20);
-            /* box-shadow: inset 0 -1px 4px 0 rgba(0,0,0,0.20); */
+    /* box-shadow: inset 0 -1px 4px 0 rgba(0,0,0,0.20); */
     width: 100%;
     position: relative;
-    margin-bottom: 10px;
+    margin-bottom: 30px;
     font-family: "Lato", sans-serif;
   }
   
@@ -3691,11 +3676,11 @@ form {
     display: -ms-flexbox;
     display: flex;
     -webkit-box-align: stretch;
-        -ms-flex-align: stretch;
-            align-items: stretch;
+    -ms-flex-align: stretch;
+    align-items: stretch;
     -webkit-box-pack: justify;
-        -ms-flex-pack: justify;
-            justify-content: space-between;
+    -ms-flex-pack: justify;
+    justify-content: space-between;
     padding: 12px 0;
     height: auto;
   }
@@ -3705,9 +3690,9 @@ form {
     font-size: 16px;
     text-transform: uppercase;
     font-weight: bold;
-    letter-spacing: 1.92px;
+    letter-spacing: 1.8px;
     position: absolute;
-    top: 0;
+    top: -35px; /* abcd input cng */
     left: 0;
     -webkit-transition: all 0.25s cubic-bezier(0.2, 0, 0.03, 1);
     -o-transition: all 0.25s cubic-bezier(0.2, 0, 0.03, 1);
@@ -3772,6 +3757,7 @@ form {
     position: relative;
     width: 100%;
     border-right: 2px solid #ccc;
+    margin-top: 10px; /* abcd search form */
   }
   
   .styled-input.multi > div:nth-last-of-type(1) {
@@ -3780,13 +3766,13 @@ form {
   
   .styled-input.multi > div input,
   .styled-input.multi > div label {
-    padding-left: 12px;
+    padding-left: 10px;
   }
   
   .styled-input.multi > div input {
-    padding-top: 25px;
-  }
-  
+    padding-top: 40px;
+    font-size: 25px;    /* abcd biodata number input search button */
+}
   
   .styled-input input:focus, 
   .styled-input textarea:focus, 
@@ -3801,7 +3787,7 @@ form {
     border: 2px gray;
     width: 90%;
     font-size: 16px;
-    padding-top: 25px;
+    padding-top: 20px;
     background: transparent;
   }
   
@@ -3824,9 +3810,10 @@ form {
   .styled-input input#ln:valid ~ label, 
   .styled-input input#city[filled="true"]:valid ~ label, 
   .styled-input #select-state label {
-    font-size: 16px;
+    font-size: 15px;
     letter-spacing: 1.56px;
     color: #ff0080;
+    margin-top: 0px;
     top: -12.8px;
     -webkit-transition: all 0.125s cubic-bezier(0.2, 0, 0.03, 1);
     -o-transition: all 0.125s cubic-bezier(0.2, 0, 0.03, 1);
@@ -3835,13 +3822,13 @@ form {
   
   @media (min-width: 991px) {
     .styled-input.multi {
-      height: 70px;
+      height: 111px;
     }
   }
   
   @media (min-width: 768px) and (max-width: 990px) {
     .styled-input.multi {
-      height: 60px;
+      height: 111px;
       padding: 8px 0;
     }
     .styled-input.multi > div input {
@@ -3868,7 +3855,7 @@ form {
       top: 53px;
     }
     .search-area .form-area button.serach-btn {
-      height: 60px;
+      height: 111px;
       padding: 0;
     }
   }
@@ -3885,10 +3872,10 @@ form {
       border: 1px solid #EFEFEF;
       border-radius: 3px;
       -webkit-box-shadow: inset 0 -1px 4px 0 rgba(0,0,0,0.20);
-              box-shadow: inset 0 -1px 4px 0 rgba(0,0,0,0.20);
+      box-shadow: inset 0 -1px 4px 0 rgba(0,0,0,0.20);
       width: 100%;
       padding: 16px 16px 8px 11.2px;
-      height: 50px;
+      height: 70px; /* abcd search form height */
     }
   
     .styled-input.multi {
@@ -3914,14 +3901,16 @@ form {
   
     .styled-input.multi > div input {
       padding-left: 0;
-      padding-top: 2px;
+      padding-top: 10px;
       position: relative;
+      font-size: 20;
       z-index: 2;
       width: 100%;
     }
     .styled-input select {
       left: 0;
       padding-top: 8px;
+      margin: 10px;
     }
     
     .styled-input.multi.error {
@@ -3971,7 +3960,7 @@ form {
     font-weight: 700;
     letter-spacing: 1.01px;
     width: 100%;
-    height: 70px;
+    height: 111px;
     -o-transition: all 0.25s ease-out;
     transition: all 0.25s ease-out;
     -webkit-transition: all 0.25s ease-out;
@@ -4001,7 +3990,7 @@ form {
       font-size: 22px;
       padding: 7px 20px;
       width: 100%;
-      height: 50px;
+      height: 70px;
       border-radius: 6px;
       -webkit-border-radius: 6px;
       -moz-border-radius: 6px;
@@ -4021,7 +4010,7 @@ form {
     text-align: center;
     font-size: 2.5em;
     color: #000;
-    font-weight: 500;
+    font-weight: 450;
 }
 
 .form-area .Findpartner h1{
@@ -4158,6 +4147,13 @@ form {
     padding-bottom: 5em;
     padding-left: 0px;
 }
+/*-- -- -- -- -- -- -- -- -- -- -- -- -- ---- -- --
+-- -- -- -- -- -- -- -- --- -- -- -- -- -- -- -- --
+--                   E   N   D                   --
+--      SHOSUR BARI BIODATA SEARCH - HOME        --
+--                                               --
+-- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- ---
+-- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -*/
 
 
 
@@ -4174,13 +4170,13 @@ form {
 
 
 
-
-
-/* shosurbari-biodata sb-biodata_1 */
-/* B I O D A T A FORM START */
-
-
-
+/*-- -- -- -- -- -- -- -- -- -- -- -- -- ---- -- --
+-- -- -- -- -- -- -- -- --- -- -- -- -- -- -- -- --
+--                S  T  A  R  T                  --
+--         SHOSUR BARI BIODATA FORM LIST         --
+--                                               --
+-- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- ---
+-- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -*/
 /*.sb-biodata-1,
 .sb-biodata-2,
 .sb-biodata-3,
@@ -4218,6 +4214,9 @@ form {
     margin-top: 20px;
     background: rgb(241, 239, 239);
 }
+h1{
+    font-size: 30px;
+}
   }
 
   @media (max-width: 736px) {
@@ -4240,6 +4239,9 @@ form {
 }
 .sb-biodata-field h2{
     font-size: 25px;
+}
+h1{
+    font-size: 28px;
 }
   }
 
@@ -4264,6 +4266,9 @@ form {
 
 .sb-biodata-field h2{
     font-size: 20px;
+}
+h1{
+    font-size: 25px;
 }
 }
 
@@ -4346,8 +4351,13 @@ form {
     text-align: center;
     font-size: 30px;
 }
-
-/* .shosurbari-biodata .sb-biodata_option .shosurbari-biodata-field */
+/*-- -- -- -- -- -- -- -- -- -- -- -- -- ---- -- --
+-- -- -- -- -- -- -- -- --- -- -- -- -- -- -- -- --
+--                    E   N   D                  --
+--         SHOSUR BARI BIODATA FORM LIST         --
+--                                               --
+-- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- ---
+-- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -*/
 
 
 #progress-bar {
