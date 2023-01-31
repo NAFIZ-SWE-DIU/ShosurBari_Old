@@ -1,4 +1,112 @@
 
+<?php include_once("includes/basic_includes.php");?>
+<?php include_once("functions.php"); ?>
+<?php require_once("includes/dbconn.php");?>
+<?php
+ // if(isloggedin()){ 
+ //do nothing stay here
+// } else{
+ //  header("location:login.php");
+//}
+ 
+$id=$_GET['id'];
+writepartnerprefs($id);
+
+///reading partnerprefs from db
+error_reporting(0);
+
+		$sql="SELECT * FROM partnerprefs WHERE custId = $id";
+		$result=mysqlexec($sql);
+		if($result){
+			if($row){
+			$row=mysqli_fetch_assoc($result);
+			}
+			if($row){
+			$agemin=$row['agemin'];
+			}
+			if($row){
+			$agemax=$row['agemax'];
+			}
+			if($row){
+			$marital_status=$row['maritalstatus'];
+			}
+			if($row){
+			$complexion=$row['complexion'];
+			}
+			if($row){
+			$height=$row['height'];
+			}
+			if($row){
+			$diet=$row['diet'];
+			}
+			if($row){
+			$religion=$row['religion'];
+			}
+			if($row){
+			$caste=$row['caste'];
+			}
+			if($row){
+			$sub_caste=$row['subcaste'];
+			}
+			if($row){
+			$mother_tounge=$row['mothertounge'];
+			}
+			if($row){
+			$education=$row['education'];
+			}
+			if($row){
+			$occupation=$row['occupation'];
+			}
+			if($row){
+			$country=$row['country'];
+			}
+			if($row){
+			$descr=$row['descr'];
+			}
+			
+		}
+		else{
+			echo mysqli_error($conn);
+		}
+
+
+
+?>
+
+<!DOCTYPE HTML>
+<html>
+<head>
+<title>Partner Edit - ShosurBaris</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+
+<script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); } </script>
+<link href="css/bootstrap-3.1.1.min.css" rel='stylesheet' type='text/css' />
+<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+<script src="js/jquery.min.js"></script>
+<script src="js/bootstrap.min.js"></script>
+<!-- Custom Theme files -->
+<link href="css/style.css" rel='stylesheet' type='text/css' />
+<link href='//fonts.googleapis.com/css?family=Oswald:300,400,700' rel='stylesheet' type='text/css'>
+<link href='//fonts.googleapis.com/css?family=Ubuntu:300,400,500,700' rel='stylesheet' type='text/css'>
+<!--font-Awesome-->
+<link href="css/font-awesome.css" rel="stylesheet"> 
+<!--font-Awesome-->
+<script>
+$(document).ready(function(){
+    $(".dropdown").hover(            
+        function() {
+            $('.dropdown-menu', this).stop( true, true ).slideDown("fast");
+            $(this).toggleClass('open');        
+        },
+        function() {
+            $('.dropdown-menu', this).stop( true, true ).slideUp("fast");
+            $(this).toggleClass('open');       
+        }
+    );
+});
+</script>
+</head>
 <body>
 <!-- ============================  Navigation Start =========================== -->
  <?php include_once("includes/navigation.php");?>
