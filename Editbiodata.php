@@ -76,7 +76,21 @@ Echo "<a href=\”/login.php\”>Login</a>";
 
 
 
-<!-- sb-biodata_1 start-->
+
+
+
+
+
+
+
+
+<!-- -- -- -- -- -- -- -- -- -- -- -- -- ---- -- --
+-- -- -- -- -- -- -- -- --- -- -- -- -- -- -- -- --
+--                S  T  A  R  T                  --
+--     SHOSURBARI BIODATA FIELD ALL SECTION      --
+--                                               --
+-- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- ---
+-- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -->
     <div class="shosurbari-biodata">
 		<div class="shosurbari-biodata-edit">
             <h1>Edit <span>Biodata</span></h1>
@@ -86,12 +100,22 @@ Echo "<a href=\”/login.php\”>Login</a>";
 		<div class="flex-container">
 
 
+
+
+
+<!-- -- -- -- -- -- -- -- -- -- -- -- -- ---- -- --
+-- -- -- -- -- -- -- -- --- -- -- -- -- -- -- -- --
+--                S  T  A  R  T                  --
+--       Basics Lifestyle  / sb-biodata-1        --
+--                                               --
+-- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- ---
+-- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -->
             <div class="sb-biodata-1">
                 <div class="sb-biodata-field">
 		            <h2>Basics & <span>Lifestyle</span></h2>
                 </div>
 
-			<div class="sb-biodata-option">
+			  <div class="sb-biodata-option">
 
 		        <div class="shosurbari-biodata-field">
 		            <label for="edit-name">Biodata Type<span class="form-required" title="This field is required.">*</span></label>
@@ -272,9 +296,15 @@ Echo "<a href=\”/login.php\”>Login</a>";
 	                    </select>
 			        </div>
 
+                </div>
             </div>
-            </div>
- <!-- sb-biodata_1 end-->
+<!-- -- -- -- -- -- -- -- -- -- -- -- -- ---- -- --
+-- -- -- -- -- -- -- -- --- -- -- -- -- -- -- -- --
+--                    E   N   D                  --
+--       Basics Lifestyle  / sb-biodata-1        --
+--                                               --
+-- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- ---
+-- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -->
 
 
 
@@ -290,74 +320,70 @@ Echo "<a href=\”/login.php\”>Login</a>";
 
 
 
- 
- <!-- sb-biodata_2/4 start-->
- <div class="sb-biodata-4">
+<!-- -- -- -- -- -- -- -- -- -- -- -- -- ---- -- --
+-- -- -- -- -- -- -- -- --- -- -- -- -- -- -- -- --
+--                S  T  A  R  T                  --
+--       Personal & Physical  / sb-biodata-2     --
+--                                               --
+-- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- ---
+-- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -->
+<div class="sb-biodata-5">
                         <div class="sb-biodata-field">
-		                   <h2>Family <span>Information</span></h2>
+		                   <h2>Personal & Physical <span>Information</span></h2>
                         </div>
 
-						<div class="sb-biodata-option">
+						    <div class="sb-biodata-option">
 
-						<div class="shosurbari-biodata-field">
-		                    <label for="edit-name">Is your Father alive?<span class="form-required" title="This field is required.">*</span></label>
-			                <input type="text" id="edit-name" name="edudescr" value="" size="60" maxlength="60" class="form-text">
-		                </div>
+		                    <div class="shosurbari-biodata-field">
+		                        <label for="edit-name">Occupation<span class="form-required" title="This field is required.">*</span></label>
+			                    <input type="text" id="edit-name" name="occupation" value="" size="60" maxlength="60" class="form-text">
+		                    </div>
 
-						<div class="shosurbari-biodata-field">
-		    		        <label for="edit-name">Fathers Occupation<span class="form-required" title="This field is required.">*</span></label>
-			  		        <input type="text" id="edit-name" name="fatheroccupation" value="" size="60" maxlength="500" class="form-text">
-		                </div>
+		                    <div class="shosurbari-biodata-field">
+		                        <label for="edit-name">Occupation Describe<span class="form-required" title="This field is required.">*</span></label>
+								<textarea rows="5" id="edit-name" name="occupation" placeholder="Write about you" class="form-text-describe"></textarea>
+		                    </div>
 
-						<div class="shosurbari-biodata-field">
-		                    <label for="edit-name">Is your Mother alive?<span class="form-required" title="This field is required.">*</span></label>
-			                <input type="text" id="edit-name" name="edudescr" value="" size="60" maxlength="60" class="form-text">
-		                </div>
 
-						<div class="shosurbari-biodata-field">
-		                    <label for="edit-name">Mothers Occupation<span class="form-required" title="This field is required.">*</span></label>
-			                <input type="text" id="edit-name" name="motheroccupation" value="" size="60" maxlength="500" class="form-text">
-		                </div>
+						    <div class="shosurbari-biodata-field">
+		                       <label for="edit-name">Physical Status<span class="form-required" title="This field is required.">*</span></label>
+	                           <select name="physicalstatus">
+							        <option value=""></option>
+	                                <option value="No Problem">No Problem</option>
+	                                <option value="Blind">Blind</option> 
+	               		            <option value="Deaf">Deaf</option> 
+	                            </select>
+			                </div>
 
-						<div class="shosurbari-biodata-field">
-		                    <label for="edit-name">How many Sisters & Brothers do you have?<span class="form-required" title="This field is required.">*</span></label>
-			                <input type="text" id="edit-name" name="edudescr" value="" size="60" maxlength="60" class="form-text">
-		                </div>
+		                    <div class="shosurbari-biodata-field">
+		                        <label for="edit-name">Smoke or Drinks<span class="form-required" title="This field is required.">*</span></label>
+	                            <select name="smoke">
+								    <option value=""></option>
+	                                <option value="No">No</option>
+	                                <option value="Yes">Yes</option> 
+	               		            <option value="Sometimes">Sometimes</option>
+	                            </select>
+			                </div>
 
-						<div class="shosurbari-biodata-field">
-		                    <label for="edit-name">Sisters & Brothers information<span class="form-required" title="This field is required.">*</span></label>
-							<textarea rows="8" id="edit-name" name="edudescr" placeholder="Write about you" class="form-text-describe"></textarea>
-		                </div>
+							<div class="shosurbari-biodata-field">
+		    	               <label for="about me">Your Dress Code at Home or Out Side<span class="form-required" title="This field is required.">*</span></label>
+		    	               <textarea rows="5" name="aboutme" placeholder="Write about you" class="form-text-describe"></textarea>
+		                    </div>
 
-						<div class="shosurbari-biodata-field">
-		                    <label for="edit-name">Profession of uncles<span class="form-required" title="This field is required.">*</span></label>
-							<textarea rows="8" id="edit-name" name="edudescr" placeholder="Write about you" class="form-text-describe"></textarea>
-		                </div>
+							<div class="shosurbari-biodata-field">
+		    	               <label for="about me">Write Something About You<span class="form-required" title="This field is required.">*</span></label>
+		    	               <textarea rows="5" name="aboutme" placeholder="Write about you" class="form-text-describe"></textarea>
+		                    </div>
 
-						<div class="shosurbari-biodata-field">
-		                    <label for="edit-name">Family financial status<span class="form-required" title="This field is required.">*</span></label>
-	                        <select name="bodytype">
-							    <option value=""></option>
-	                            <option value="Slim">Higher Class</option>
-	                            <option value="Fat">Higher Middle Class</option> 
-	               		        <option value="Average">Middle Class</option>
-								<option value="Average">Lower Middle Class</option>
-								<option value="Average">Lower Class</option>  
-	                        </select>
-			            </div>
-
-						<div class="shosurbari-biodata-field">
-		                    <label for="edit-name">Description of financial condition<span class="form-required" title="This field is required.">*</span></label>
-							<textarea rows="5" id="edit-name" name="edudescr" placeholder="Write about you" class="form-text-describe"></textarea>
-		                </div>
-
-						<div class="shosurbari-biodata-field">
-		    	            <label for="about me">How is your family's religious condition?<span class="form-required" title="This field is required.">*</span></label>
-		    	            <textarea rows="5" name="aboutme" placeholder="Write about you" class="form-text-describe"></textarea>
-		                </div>
-                    </div>
-		        </div>
-<!-- sb-biodata_2/4 end-->
+                            </div>
+                        </div>
+<!-- -- -- -- -- -- -- -- -- -- -- -- -- ---- -- --
+-- -- -- -- -- -- -- -- --- -- -- -- -- -- -- -- --
+--                   E   N   D                   --
+--       Personal & Physical  / sb-biodata-2     --
+--                                               --
+-- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- ---
+-- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -->
 
 
 
@@ -370,42 +396,16 @@ Echo "<a href=\”/login.php\”>Login</a>";
 
 
 
- <!-- sb-biodata_3/2 start-->
-                <div class="sb-biodata-2">
-
-					
-                    <div class="sb-biodata-field">
-		               <h2>Address <span>Details</span></h2>
-                    </div>
-
-				    <div class="sb-biodata-option">
-
-					<div class="shosurbari-biodata-field">
-		                <label for="edit-name">Present Address<span class="form-required" title="This field is required.">*</span></label>
-		                <input type="text" id="edit-name" name="fname" value="" size="60" maxlength="60" class="form-text required">
-		            </div>
-
-					<div class="shosurbari-biodata-field">
-		                <label for="edit-name">Permanent Address<span class="form-required" title="This field is required.">*</span></label>
-		                <input type="text" id="edit-name" name="fname" value="" size="60" maxlength="60" class="form-text required">
-		            </div>
-
-					<div class="shosurbari-biodata-field">
-		                <label for="edit-name">Where did you grow up?<span class="form-required" title="This field is required.">*</span></label>
-		                <input type="text" id="edit-name" name="fname" value="" size="60" maxlength="60" class="form-text required">
-		            </div>
-                    </div>
-                </div>
- <!-- sb-biodata_3/2 end-->
 
 
 
-
-
-
-
-
- <!-- sb-biodata_3 start-->
+<!-- -- -- -- -- -- -- -- -- -- -- -- -- ---- -- --
+-- -- -- -- -- -- -- -- --- -- -- -- -- -- -- -- --
+--                S  T  A  R  T                  --
+--  Educational Qualifications  / sb-biodata-3   --
+--                                               --
+-- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- ---
+-- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -->
                     <div class="sb-biodata-3">
                         <div class="sb-biodata-field">
 		                   <h2>Educational <span>Qualifications</span></h2>
@@ -482,7 +482,13 @@ Echo "<a href=\”/login.php\”>Login</a>";
 		                </div>
                         </div>
                     </div>
- <!-- sb-biodata_3 end-->
+<!-- -- -- -- -- -- -- -- -- -- -- -- -- ---- -- --
+-- -- -- -- -- -- -- -- --- -- -- -- -- -- -- -- --
+--                   E   N   D                   --
+--  Educational Qualifications  / sb-biodata-3   --
+--                                               --
+-- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- ---
+-- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -->
 
 
 
@@ -498,58 +504,211 @@ Echo "<a href=\”/login.php\”>Login</a>";
 
 
 
-<!-- sb-biodata_5 start-->
-                    <div class="sb-biodata-5">
+<!-- -- -- -- -- -- -- -- -- -- -- -- -- ---- -- --
+-- -- -- -- -- -- -- -- --- -- -- -- -- -- -- -- --
+--                S  T  A  R  T                  --
+--       Address Details  /  sb-biodata-4        --
+--                                               --
+-- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- ---
+-- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -->
+ <div class="sb-biodata-2">
+
+					
+<div class="sb-biodata-field">
+   <h2>Address <span>Details</span></h2>
+</div>
+
+<div class="sb-biodata-option">
+
+<div class="shosurbari-biodata-field">
+	<label for="edit-name">Present Address<span class="form-required" title="This field is required.">*</span></label>
+	<input type="text" id="edit-name" name="fname" value="" size="60" maxlength="60" class="form-text required">
+</div>
+
+<div class="shosurbari-biodata-field">
+	<label for="edit-name">Permanent Address<span class="form-required" title="This field is required.">*</span></label>
+	<input type="text" id="edit-name" name="fname" value="" size="60" maxlength="60" class="form-text required">
+</div>
+
+<div class="shosurbari-biodata-field">
+	<label for="edit-name">Where did you grow up?<span class="form-required" title="This field is required.">*</span></label>
+	<input type="text" id="edit-name" name="fname" value="" size="60" maxlength="60" class="form-text required">
+</div>
+</div>
+</div>
+<!-- -- -- -- -- -- -- -- -- -- -- -- -- ---- -- --
+-- -- -- -- -- -- -- -- --- -- -- -- -- -- -- -- --
+--                   E   N   D                   --
+--       Address Details  /  sb-biodata-4        --
+--                                               --
+-- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- ---
+-- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- -- -- -- -- -- -- -- -- -- -- -- -- ---- -- --
+-- -- -- -- -- -- -- -- --- -- -- -- -- -- -- -- --
+--                S  T  A  R  T                  --
+--     Family Information  / sb-biodata-5        --
+--                                               --
+-- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- ---
+-- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -->
+ <div class="sb-biodata-4">
                         <div class="sb-biodata-field">
-		                   <h2>Personal & Physical <span>Information</span></h2>
+		                   <h2>Family <span>Information</span></h2>
                         </div>
 
-						    <div class="sb-biodata-option">
+						<div class="sb-biodata-option">
 
-		                    <div class="shosurbari-biodata-field">
-		                        <label for="edit-name">Occupation<span class="form-required" title="This field is required.">*</span></label>
-			                    <input type="text" id="edit-name" name="occupation" value="" size="60" maxlength="60" class="form-text">
-		                    </div>
+						<div class="shosurbari-biodata-field">
+		                    <label for="edit-name">Is your Father alive?<span class="form-required" title="This field is required.">*</span></label>
+			                <input type="text" id="edit-name" name="edudescr" value="" size="60" maxlength="60" class="form-text">
+		                </div>
 
-		                    <div class="shosurbari-biodata-field">
-		                        <label for="edit-name">Occupation Describe<span class="form-required" title="This field is required.">*</span></label>
-								<textarea rows="5" id="edit-name" name="occupation" placeholder="Write about you" class="form-text-describe"></textarea>
-		                    </div>
+						<div class="shosurbari-biodata-field">
+		    		        <label for="edit-name">Fathers Occupation<span class="form-required" title="This field is required.">*</span></label>
+			  		        <input type="text" id="edit-name" name="fatheroccupation" value="" size="60" maxlength="500" class="form-text">
+		                </div>
+
+						<div class="shosurbari-biodata-field">
+		                    <label for="edit-name">Is your Mother alive?<span class="form-required" title="This field is required.">*</span></label>
+			                <input type="text" id="edit-name" name="edudescr" value="" size="60" maxlength="60" class="form-text">
+		                </div>
+
+						<div class="shosurbari-biodata-field">
+		                    <label for="edit-name">Mothers Occupation<span class="form-required" title="This field is required.">*</span></label>
+			                <input type="text" id="edit-name" name="motheroccupation" value="" size="60" maxlength="500" class="form-text">
+		                </div>
+
+						<div class="shosurbari-biodata-field">
+		                    <label for="edit-name">How many Sisters & Brothers do you have?<span class="form-required" title="This field is required.">*</span></label>
+			                <input type="text" id="edit-name" name="edudescr" value="" size="60" maxlength="60" class="form-text">
+		                </div>
+
+						<div class="shosurbari-biodata-field">
+		                    <label for="edit-name">Sisters & Brothers information<span class="form-required" title="This field is required.">*</span></label>
+							<textarea rows="8" id="edit-name" name="edudescr" placeholder="Write about you" class="form-text-describe"></textarea>
+		                </div>
+
+						<div class="shosurbari-biodata-field">
+		                    <label for="edit-name">Profession of uncles<span class="form-required" title="This field is required.">*</span></label>
+							<textarea rows="8" id="edit-name" name="edudescr" placeholder="Write about you" class="form-text-describe"></textarea>
+		                </div>
+
+						<div class="shosurbari-biodata-field">
+		                    <label for="edit-name">Family financial status<span class="form-required" title="This field is required.">*</span></label>
+	                        <select name="bodytype">
+							    <option value=""></option>
+	                            <option value="Slim">Higher Class</option>
+	                            <option value="Fat">Higher Middle Class</option> 
+	               		        <option value="Average">Middle Class</option>
+								<option value="Average">Lower Middle Class</option>
+								<option value="Average">Lower Class</option>  
+	                        </select>
+			            </div>
+
+						<div class="shosurbari-biodata-field">
+		                    <label for="edit-name">Description of financial condition<span class="form-required" title="This field is required.">*</span></label>
+							<textarea rows="5" id="edit-name" name="edudescr" placeholder="Write about you" class="form-text-describe"></textarea>
+		                </div>
+
+						<div class="shosurbari-biodata-field">
+		    	            <label for="about me">How is your family's religious condition?<span class="form-required" title="This field is required.">*</span></label>
+		    	            <textarea rows="5" name="aboutme" placeholder="Write about you" class="form-text-describe"></textarea>
+		                </div>
+                    </div>
+		        </div>
+<!-- -- -- -- -- -- -- -- -- -- -- -- -- ---- -- --
+-- -- -- -- -- -- -- -- --- -- -- -- -- -- -- -- --
+--                   E   N   D                   --
+--     Family Information  / sb-biodata-5        --
+--                                               --
+-- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- ---
+-- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -->
 
 
-						    <div class="shosurbari-biodata-field">
-		                       <label for="edit-name">Physical Status<span class="form-required" title="This field is required.">*</span></label>
-	                           <select name="physicalstatus">
-							        <option value=""></option>
-	                                <option value="No Problem">No Problem</option>
-	                                <option value="Blind">Blind</option> 
-	               		            <option value="Deaf">Deaf</option> 
-	                            </select>
-			                </div>
 
-		                    <div class="shosurbari-biodata-field">
-		                        <label for="edit-name">Smoke or Drinks<span class="form-required" title="This field is required.">*</span></label>
-	                            <select name="smoke">
-								    <option value=""></option>
-	                                <option value="No">No</option>
-	                                <option value="Yes">Yes</option> 
-	               		            <option value="Sometimes">Sometimes</option>
-	                            </select>
-			                </div>
 
-							<div class="shosurbari-biodata-field">
-		    	               <label for="about me">Your Dress Code at Home or Out Side<span class="form-required" title="This field is required.">*</span></label>
-		    	               <textarea rows="5" name="aboutme" placeholder="Write about you" class="form-text-describe"></textarea>
-		                    </div>
 
-							<div class="shosurbari-biodata-field">
-		    	               <label for="about me">Write Something About You<span class="form-required" title="This field is required.">*</span></label>
-		    	               <textarea rows="5" name="aboutme" placeholder="Write about you" class="form-text-describe"></textarea>
-		                    </div>
 
+
+
+
+
+
+
+
+
+
+<!-- -- -- -- -- -- -- -- -- -- -- -- -- ---- -- --
+-- -- -- -- -- -- -- -- --- -- -- -- -- -- -- -- --
+--                S  T  A  R  T                  --
+--   Male Marriage related Info / sb-biodata-6   --
+--                                               --
+-- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- ---
+-- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -->
+<div class="sb-biodata-6">
+                            <div class="sb-biodata-field">
+		                        <h2>Marriage related <span>Information</span></h2>
                             </div>
-                        </div>
-<!-- sb-biodata_5 end-->
+
+							<div class="sb-biodata-option">
+
+							<div class="shosurbari-biodata-field">
+		                        <label for="edit-name">Do your guardians agree to your marriage?<span class="form-required" title="This field is required.">*</span></label>
+			                    <input type="text" id="edit-name" name="income" value="" size="60" maxlength="60" class="form-text">
+		                    </div>
+
+							<div class="shosurbari-biodata-field">
+		                        <label for="edit-name">Will you be able to keep your wife in the veil after marriage?<span class="form-required" title="This field is required.">*</span></label>
+			                    <input type="text" id="edit-name" name="income" value="" size="60" maxlength="60" class="form-text">
+		                    </div>
+
+							<div class="shosurbari-biodata-field">
+		                        <label for="edit-name">Would you like to allow your wife to study after marriage?<span class="form-required" title="This field is required.">*</span></label>
+			                    <input type="text" id="edit-name" name="income" value="" size="60" maxlength="60" class="form-text">
+		                    </div>
+
+							<div class="shosurbari-biodata-field">
+		                        <label for="edit-name">Would you like to allow your wife to do any job after marriage?<span class="form-required" title="This field is required.">*</span></label>
+			                    <input type="text" id="edit-name" name="income" value="" size="60" maxlength="60" class="form-text">
+		                    </div>
+
+							<div class="shosurbari-biodata-field">
+		                        <label for="edit-name">Where will you live with your wife after marriage?<span class="form-required" title="This field is required.">*</span></label>
+			                    <input type="text" id="edit-name" name="income" value="" size="60" maxlength="60" class="form-text">
+		                    </div>
+
+							<div class="shosurbari-biodata-field">
+		                        <label for="edit-name">Profile Created by<span class="form-required" title="This field is required.">*</span></label>
+	                            <select name="profileby">
+								<option value=""></option>
+	                            <option value="Self">Self</option>
+	                            <option value="Son/Daughter">Son/Daughter</option> 
+	               		        <option value="Other">Other</option> 
+	                            </select>
+			                </div>
+                        </div>    
+                    </div>
+<!-- -- -- -- -- -- -- -- -- -- -- -- -- ---- -- --
+-- -- -- -- -- -- -- -- --- -- -- -- -- -- -- -- --
+--                   E   N   D                   --
+--   Male Marriage related Info / sb-biodata-6   --
+--                                               --
+-- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- ---
+-- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -->
 
 
 
@@ -561,7 +720,17 @@ Echo "<a href=\”/login.php\”>Login</a>";
 
 
 
-<!-- sb-biodata_6 starts-->
+
+
+
+
+<!-- -- -- -- -- -- -- -- -- -- -- -- -- ---- -- --
+-- -- -- -- -- -- -- -- --- -- -- -- -- -- -- -- --
+--                S  T  A  R  T                  --
+--  Female Marriage related Info / sb-biodata-7  --
+--                                               --
+-- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- ---
+-- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -->
                         <div class="sb-biodata-6">
                             <div class="sb-biodata-field">
 		                        <h2>Marriage related <span>Information</span></h2>
@@ -575,12 +744,12 @@ Echo "<a href=\”/login.php\”>Login</a>";
 		                    </div>
 
 							<div class="shosurbari-biodata-field">
-		                        <label for="edit-name">Are you willing to do any job after marriage?<span class="form-required" title="This field is required."></span></label>
+		                        <label for="edit-name">Are you willing to do any job after marriage?<span class="form-required" title="This field is required.">*</span></label>
 			                    <input type="text" id="edit-name" name="income" value="" size="60" maxlength="60" class="form-text">
 		                    </div>
 
 							<div class="shosurbari-biodata-field">
-		                        <label for="edit-name">Would you like to continue your studies after marriage?<span class="form-required" title="This field is required."></span></label>
+		                        <label for="edit-name">Would you like to continue your studies after marriage?<span class="form-required" title="This field is required.">*</span></label>
 			                    <input type="text" id="edit-name" name="income" value="" size="60" maxlength="60" class="form-text">
 		                    </div>
 
@@ -600,7 +769,13 @@ Echo "<a href=\”/login.php\”>Login</a>";
 			                </div>
                         </div>    
                     </div>
-<!-- sb-biodata_6 ends-->
+<!-- -- -- -- -- -- -- -- -- -- -- -- -- ---- -- --
+-- -- -- -- -- -- -- -- --- -- -- -- -- -- -- -- --
+--                   E   N   D                   --
+--  Female Marriage related Info / sb-biodata-7  --
+--                                               --
+-- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- ---
+-- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -->
 
 
 
@@ -613,7 +788,16 @@ Echo "<a href=\”/login.php\”>Login</a>";
 
 
 
- <!-- sb-biodata_7 starts-->
+
+
+
+<!-- -- -- -- -- -- -- -- -- -- -- -- -- ---- -- --
+-- -- -- -- -- -- -- -- --- -- -- -- -- -- -- -- --
+--                S  T  A  R  T                  --
+--        Religion Details / sb-biodata-8        --
+--                                               --
+-- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- ---
+-- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -->
                         <div class="sb-biodata-7">
                             <div class="sb-biodata-field">
 		                        <h2>Religion <span>Details</span></h2>
@@ -640,7 +824,13 @@ Echo "<a href=\”/login.php\”>Login</a>";
 		                    </div>
                             </div>
                         </div>
-<!-- sb-biodata_7 end-->
+<!-- -- -- -- -- -- -- -- -- -- -- -- -- ---- -- --
+-- -- -- -- -- -- -- -- --- -- -- -- -- -- -- -- --
+--                   E   N   D                   --
+--        Religion Details / sb-biodata-8        --
+--                                               --
+-- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- ---
+-- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -->
 
 
 
@@ -654,7 +844,15 @@ Echo "<a href=\”/login.php\”>Login</a>";
 
 
 
- <!-- sb-biodata_8 start-->
+
+
+<!-- -- -- -- -- -- -- -- -- -- -- -- -- ---- -- --
+-- -- -- -- -- -- -- -- --- -- -- -- -- -- -- -- --
+--                S  T  A  R  T                  --
+--     Expected Life Partner / sb-biodata-9      --
+--                                               --
+-- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- ---
+-- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -->
  <div class="sb-biodata-4">
                         <div class="sb-biodata-field">
 		                   <h2>Expected Life <span>Partner</span></h2>
@@ -713,15 +911,13 @@ Echo "<a href=\”/login.php\”>Login</a>";
 		                </div>
                     </div>
 		        </div>
-<!-- sb-biodata_8 end-->
-
-
-
-
-
-
-
-
+<!-- -- -- -- -- -- -- -- -- -- -- -- -- ---- -- --
+-- -- -- -- -- -- -- -- --- -- -- -- -- -- -- -- --
+--                   E   N   D                   --
+--     Expected Life Partner / sb-biodata-9      --
+--                                               --
+-- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- ---
+-- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -->
 
 
 
@@ -732,9 +928,14 @@ Echo "<a href=\”/login.php\”>Login</a>";
 			        </div>
         </div>
 	    </form>
-
     </div>
-
+<!-- -- -- -- -- -- -- -- -- -- -- -- -- ---- -- --
+-- -- -- -- -- -- -- -- --- -- -- -- -- -- -- -- --
+--                S  T  A  R  T                  --
+--     SHOSURBARI BIODATA FIELD ALL SECTION      --
+--                                               --
+-- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- ---
+-- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -->
 
 <?php include_once("footer.php");?>
 
