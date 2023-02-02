@@ -6,9 +6,7 @@ error_reporting(0);
 <!DOCTYPE HTML>
 <html>
 <head>
-<title>Find Your Perfect Partner - Makemylove
- | Register :: Make My Love
-</title>
+<title>Register - ShosurBari</title>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 
@@ -58,25 +56,53 @@ $(document).ready(function(){
 
 
 
-
-
    <div class="services">
    	  <div class="col-sm-6 login_left">
 	     <form action="" method="POST">
 
 	  	    <div class="form-group">
-		      <label for="edit-name">Username <span class="form-required" title="This field is required.">*</span></label>
-		      <input type="text" id="edit-name" name="name" value="" size="60" maxlength="60" class="form-text required">
+		      <label for="edit-name">Full Name<span class="form-required" title="This field is required.">*</span></label>
+		      <input type="text" id="edit-name" name="fname" value="" size="60" maxlength="60" class="form-text required" required>
+		    </div>
+
+			<div class="form-group">
+		      <label for="edit-name">Username<span class="form-required" title="This field is required.">*</span></label>
+		      <input type="text" id="edit-name" name="uname" value="" size="60" maxlength="60" class="form-text required" required>
+		    </div>
+
+			<div class="form-group form-group1">
+                <label class="col-sm-7 control-lable" for="sex">Gender<span class="form-required" title="This field is required.">*</span></label>
+                <div class="col-sm-5">
+                    <div class="radios">
+				        <label for="radio-01" class="label_radio">
+				            <input type="radio" name="gender" value="male" required> Male
+				        </label>
+				        <label for="radio-02" class="label_radio">
+				            <input type="radio" name="gender" value="female"> Female
+				        </label>
+	                </div>
+                </div>
+                <div class="clearfix"> </div>
+             </div>
+
+			 <div class="form-group">
+		      <label for="edit-name">Email<span class="form-required" title="This field is required.">*</span></label>
+		      <input type="text" id="edit-name" name="email" value="" size="60" maxlength="60" class="form-text required" required>
+		    </div>
+
+			<div class="form-group">
+		      <label for="edit-name">Phone Number<span class="form-required" title="This field is required.">*</span></label>
+		      <input type="number" id="edit-number" name="pnumber" value="" size="60" maxlength="60" class="form-text required" required>
 		    </div>
 
 		    <div class="form-group">
-		      <label for="edit-pass">Password <span class="form-required" title="This field is required.">*</span></label>
-		      <input type="password" id="edit-pass" name="pass" size="60" maxlength="128" class="form-text required">
+		      <label for="edit-pass">Password<span class="form-required" title="This field is required.">*</span></label>
+		      <input type="password" id="edit-pass" name="pass_1" size="60" maxlength="128" class="form-text required" required>
 		    </div>
 
-		    <div class="form-group">
-		      <label for="edit-name">Email <span class="form-required" title="This field is required.">*</span></label>
-		      <input type="text" id="edit-name" name="email" value="" size="60" maxlength="60" class="form-text required">
+			<div class="form-group">
+		      <label for="edit-pass">Confirm Password<span class="form-required" title="This field is required.">*</span></label>
+		      <input type="password" id="edit-pass" name="pass_2" size="60" maxlength="128" class="form-text required" required>
 		    </div>
 			  
 			  <div class="form-actions">
