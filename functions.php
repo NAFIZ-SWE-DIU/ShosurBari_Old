@@ -142,24 +142,30 @@ function writepartnerprefs($id){
 		else{
 			echo "Error";
 		}
-
 	}
 }
 
 
+
+
 function register(){
 	if ($_SERVER['REQUEST_METHOD'] == 'POST') {
-	$uname=$_POST['name'];
-	$pass=$_POST['pass'];
+	$fname=$_POST['fname'];
+	$uname=$_POST['uname'];
+	$gender=$_POST['gender'];
+	$pnumber=$_POST['pnumber'];
 	$email=$_POST['email'];
+	$pass_1=$_POST['pass_1'];
+	$pass_2=$_POST['pass_2'];
 	require_once("includes/dbconn.php");
+
 
 	$sql = "INSERT 
 			INTO
 			   users
-			   ( profilestat, username, password, email, userlevel) 
+			   ( profilestat, fullname, username, gender, number, email, password, userlevel) 
 			VALUES
-			   (0, '$uname', '$pass', '$email', 0)";
+			   (0, '$fname', '$uname', '$gender', '$pnumber', '$email', '$pass_1', 0)";
 
 	if (mysqli_query($conn,$sql)) {
 	  echo "<a href=\"login.php\">";
@@ -177,8 +183,20 @@ function isloggedin(){
 	else{
 		return true;
 	}
-
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 function processprofile_form($id){
@@ -188,9 +206,9 @@ function processprofile_form($id){
 	$sex=$_POST['sex'];
 	$email=$_POST['email'];
 	
-		$day=$_POST['day'];
-		$month=$_POST['month'];
-		$year=$_POST['year'];
+	$day=$_POST['day'];
+	$month=$_POST['month'];
+	$year=$_POST['year'];
 	$dob=$year ."-" . $month . "-" .$day ;
 	
 	$religion=$_POST['religion'];
@@ -264,7 +282,7 @@ if(mysqli_num_rows($result)>=1){
 		   annual_income = '$income', 
 		   fathers_occupation = '$fatheroccupation',
 		   mothers_occupation = '$motheroccupation',
-		   no_bro = '$bros', 
+		   no_bro = '$bros',
 		   no_sis = '$sis', 
 		   aboutme = '$aboutme'
 		WHERE cust_id=$id; "
@@ -296,9 +314,28 @@ if(mysqli_num_rows($result)>=1){
 	  echo "Error: " . $sql . "<br>" . $conn->error;
 	}
 }
-
-	 
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 //function for upload photo
 
