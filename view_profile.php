@@ -344,10 +344,6 @@ $religion=$row['religion'];
 
 
 
-
-
-
-
 <!-- here 2/6 <div> -->
 		<div class="col_4">
 		    <div class="bs-example bs-example-tabs" role="tabpanel" data-example-id="togglable-tabs">
@@ -361,17 +357,6 @@ $religion=$row['religion'];
 				<!-- here 2/8 <div> -->
 			    <div id="myTabContent" class="tab-content">
 				<div role="tabpanel" class="tab-pane fade in active" id="home" aria-labelledby="home-tab">
-
-				    <div class="tab_box">
-				    	<h1>About Me</h1>
-						<?php if (!empty ($aboutme)) { ?>
-				    	<p><?php echo $aboutme; ?></p>
-						<?php } ?>
-				    </div>
-
-
-
-
 
 
 
