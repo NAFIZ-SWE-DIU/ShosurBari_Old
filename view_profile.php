@@ -16,6 +16,9 @@ $profileid=$id;
 
 //getting profile details from db
 $sql = "SELECT * FROM 1bd_personal_physical  WHERE user_id = $id";
+$sql = "SELECT * FROM 2bd_personal_lifestyle  WHERE user_id = $id";
+$sql = "SELECT * FROM 4bd_address_details  WHERE user_id = $id";
+$sql = "SELECT * FROM 8bd_religion_details  WHERE user_id = $id";
 $result = mysqlexec($sql);
 if($result){
 $row=mysqli_fetch_assoc($result);
@@ -28,19 +31,25 @@ if($row){
 $dob=$row['dateofbirth'];
 }
 if($row){
+$religion=$row['religion'];
+}
+if($row){
+$maritalstatus=$row['maritalstatus'];
+}
+if($row){
+$Skin_tones = $row['Skin_tones'];
+}
+if($row){
 $height=$row['height'];
 }
 if($row){
 $weight=$row['weight'];	
 }
 if($row){
-$physicalstatus=$row['physicalstatus'];
+$occupation = $row['occupation'];
 }
 if($row){
-$Skin_tones = $row['Skin_tones'];
-}
-if($row){
-$bloodgroup=$row['bloodgroup'];
+$country=$row['country'];
 }
 
 
@@ -163,7 +172,87 @@ $(document).ready(function(){
 
 
 
+<!-- -- -- -- -- -- -- -- -- -- -- -- -- ---- -- --
+-- -- -- -- -- -- -- -- --- -- -- -- -- -- -- -- --
+--               S  T  A  R  T                   --
+--   Heading Font Section  / SB Short Biodata    --
+--                                               --
+-- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- ---
+-- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -->
 
+<!-- -- -- -- -- -- -- -- -- -- -- -- -- ---- -- --
+--   SB Short Biodata / 1bd_personal_physical    --
+-- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -->
+<?php
+$sql = "SELECT * FROM 1bd_personal_physical  WHERE user_id = $id";
+$result = mysqlexec($sql);
+$row=mysqli_fetch_assoc($result);
+
+//Biodata 1
+if($row){
+$biodatagender=$row['biodatagender'];
+}
+if($row){
+$dob=$row['dateofbirth'];
+}
+if($row){
+$Skin_tones = $row['Skin_tones'];
+}
+if($row){
+$height=$row['height'];
+}
+if($row){
+$weight=$row['weight'];	
+}
+?>
+
+<!-- -- -- -- -- -- -- -- -- -- -- -- -- ---- -- --
+--   SB Short Biodata / 2bd_personal_lifestyle   --
+-- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -->
+<?php
+$sql = "SELECT * FROM 2bd_personal_lifestyle  WHERE user_id = $id";
+$result = mysqlexec($sql);
+$row=mysqli_fetch_assoc($result);
+
+//Biodata 2
+if($row){
+$maritalstatus=$row['maritalstatus'];
+}
+if($row){
+$occupation = $row['occupation'];
+}
+if($row){
+$country=$row['country'];
+}
+?>
+
+<!-- -- -- -- -- -- -- -- -- -- -- -- -- ---- -- --
+--     SB Short Biodata / 4bd_address_details    --
+-- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -->
+<?php
+$sql = "SELECT * FROM 4bd_address_details  WHERE user_id = $id";
+$result = mysqlexec($sql);
+$row=mysqli_fetch_assoc($result);
+
+//Biodata 4
+if($row){
+$country=$row['country'];
+}
+?>
+
+<!-- -- -- -- -- -- -- -- -- -- -- -- -- ---- -- --
+--    SB Short Biodata / 8bd_religion_details    --
+-- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -->
+<?php
+$sql = "SELECT * FROM 8bd_religion_details  WHERE user_id = $id";
+$result = mysqlexec($sql);
+$row=mysqli_fetch_assoc($result);
+
+//Biodata 8
+if($row){
+$religion=$row['religion'];
+}
+?>
 
 			    <div class="col-sm-8 row_1">
 				    <table class="table_working_hours">
@@ -207,7 +296,7 @@ $(document).ready(function(){
 					    <tr class="closed">
 							<td class="day_label">Height :</td>
 							<?php if (!empty ($height)) { ?>
-							<td class="day_value closed"><span><?php echo $height;?></span></td>
+							<td class="day_value closed"><?php echo $height;?></td>
 							<?php } ?>
 
 						</tr>
@@ -215,21 +304,21 @@ $(document).ready(function(){
 					    <tr class="closed">
 							<td class="day_label">Weight :</td>
 							<?php if (!empty ($weight)) { ?>
-							<td class="day_value closed"><span><?php echo $weight;?></span></td>
+							<td class="day_value closed"><?php echo $weight;?></td>
 							<?php } ?>
 						</tr>
 
 						<tr class="closed">
 							<td class="day_label">Occupation :</td>
 							<?php if (!empty ($occupation)) { ?>
-							<td class="day_value closed"><span><?php echo $occupation;?></span></td>
+							<td class="day_value closed"><?php echo $occupation;?></td>
 							<?php } ?>
 						</tr>
 
 						<tr class="closed">
 							<td class="day_label">Country :</td>
 							<?php if (!empty ($country)) { ?>
-							<td class="day_value closed"><span><?php echo $country;?></span></td>
+							<td class="day_value closed"><?php echo $country;?></td>
 							<?php } ?>
 						</tr>
 
@@ -239,7 +328,13 @@ $(document).ready(function(){
 
 			    <div class="clearfix"> </div>
 		    </div>
-
+<!-- -- -- -- -- -- -- -- -- -- -- -- -- ---- -- --
+-- -- -- -- -- -- -- -- --- -- -- -- -- -- -- -- --
+--                   E   N   D                   --
+--   Heading Font Section  / SB Short Biodata    --
+--                                               --
+-- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- ---
+-- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -->
 
 
 
@@ -273,6 +368,14 @@ $(document).ready(function(){
 				    	<p><?php echo $aboutme; ?></p>
 						<?php } ?>
 				    </div>
+
+
+
+
+
+
+
+					
 <!-- -- -- -- -- -- -- -- -- -- -- -- -- ---- -- --
 -- -- -- -- -- -- -- -- --- -- -- -- -- -- -- -- --
 --                S  T  A  R  T                  --
