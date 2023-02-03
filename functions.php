@@ -211,180 +211,19 @@ function isloggedin(){
 -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -*/
 
 function processprofile_form($id){
-
+//Biodata 1 change  
 	$biodatagender=$_POST['biodatagender'];
 	$day=$_POST['day'];
 	$month=$_POST['month'];
 	$year=$_POST['year'];
-	$dob=$year ."-" . $month . "-" .$day ;
+	$dob=$day ."-" . $month . "-" .$year ;
 	$height=$_POST['height'];
 	$weight=$_POST['weight'];	
 	$physicalstatus=$_POST['physicalstatus'];
 	$Skin_tones = $_POST['Skin_tones'];
 	$bloodgroup=$_POST['bloodgroup'];
 
-	require_once("includes/dbconn.php");
-	$sql="SELECT user_id FROM 1bd_personal_physical WHERE user_id=$id";
-	$result=mysqlexec($sql);
-
-if(mysqli_num_rows($result)>=1){
-	//there is already a profile in this table for loggedin 1bd_personal_physical
-	//update the data
-	$sql="UPDATE
-   			1bd_personal_physical 
-		SET
-		biodatagender = '$biodatagender',
-		dateofbirth = '$dob', 
-		height = '$height',
-		weight = '$weight',
-		physicalstatus = '$physicalstatus',
-		Skin_tones = '$Skin_tones',
-		bloodgroup = '$bloodgroup',
-
-		WHERE user_id=$id; "
-		   ;
-   $result=mysqlexec($sql);
-   if ($result) {
-   	echo "<script>alert(\"Successfully Updated Profile\")</script>";
-   	echo "<script> window.location=\"userhome.php?id=$id\"</script>";
-   }
-}else{
-	//Insert the data
-	$sql = "INSERT 
-				INTO
-				1bd_personal_physical
-				   (user_id, biodatagender, dateofbirth, height, weight, physicalstatus, Skin_tones, bloodgroup, profilecreationdate  ) 
-				VALUES
-				   ('$id','$biodatagender', '$dob', '$height', '$weight', '$physicalstatus', '$Skin_tones', '$bloodgroup', CURDATE())
-			";
-	if (mysqli_query($conn,$sql)) {
-	  echo "Successfully Created profile";
-	  echo "<a href=\"userhome.php?id={$id}\">";
-	  echo "Back to home";
-	  echo "</a>";
-	}
-	  
-	  //creating a slot for partner prefernce table for prefs details with cust id
-	  //$sql2="INSERT INTO partnerprefs (id, custId) VALUES('', '$id')";
-	  //mysqli_query($conn,$sql2);
-	  //$sql2="UPDATE TABLE users SET profilestat=1 WHERE id=$id";
-	//} else {
-	  echo "Error: " . $sql . "<br>" . $conn->error;
-	//}
-}
-}
-
-/*-- -- -- -- -- -- -- -- -- -- -- -- -- ---- -- --
--- -- -- -- -- -- -- -- --- -- -- -- -- -- -- -- --
---                   E   N   D                   --
---       Personal & Physical  / sb-biodata-1     --
---                                               --
--- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- ---
--- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -*/
-
-
-
-
-/*-- -- -- -- -- -- -- -- -- -- -- -- -- ---- -- --
--- -- -- -- -- -- -- -- --- -- -- -- -- -- -- -- --
---                S  T  A  R  T                  --
---      Personal & Physical  / sb-biodata-1      --
---                                               --
--- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- ---
--- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -*/
-
-function processprofile_form($id){
-
-	$biodatagender=$_POST['biodatagender'];
-	$day=$_POST['day'];
-	$month=$_POST['month'];
-	$year=$_POST['year'];
-	$dob=$year ."-" . $month . "-" .$day ;
-	$height=$_POST['height'];
-	$weight=$_POST['weight'];	
-	$physicalstatus=$_POST['physicalstatus'];
-	$Skin_tones = $_POST['Skin_tones'];
-	$bloodgroup=$_POST['bloodgroup'];
-
-	require_once("includes/dbconn.php");
-	$sql="SELECT user_id FROM 1bd_personal_physical WHERE user_id=$id";
-	$result=mysqlexec($sql);
-
-if(mysqli_num_rows($result)>=1){
-	//there is already a profile in this table for loggedin 1bd_personal_physical
-	//update the data
-	$sql="UPDATE
-   			1bd_personal_physical 
-		SET
-		biodatagender = '$biodatagender',
-		dateofbirth = '$dob', 
-		height = '$height',
-		weight = '$weight',
-		physicalstatus = '$physicalstatus',
-		Skin_tones = '$Skin_tones',
-		bloodgroup = '$bloodgroup',
-
-		WHERE user_id=$id; "
-		   ;
-   $result=mysqlexec($sql);
-   if ($result) {
-   	echo "<script>alert(\"Successfully Updated Profile\")</script>";
-   	echo "<script> window.location=\"userhome.php?id=$id\"</script>";
-   }
-}else{
-	//Insert the data
-	$sql = "INSERT 
-				INTO
-				1bd_personal_physical
-				   (user_id, biodatagender, dateofbirth, height, weight, physicalstatus, Skin_tones, bloodgroup, profilecreationdate  ) 
-				VALUES
-				   ('$id','$biodatagender', '$dob', '$height', '$weight', '$physicalstatus', '$Skin_tones', '$bloodgroup', CURDATE())
-			";
-	if (mysqli_query($conn,$sql)) {
-	  echo "Successfully Created profile";
-	  echo "<a href=\"userhome.php?id={$id}\">";
-	  echo "Back to home";
-	  echo "</a>";
-	}
-	  
-	  //creating a slot for partner prefernce table for prefs details with cust id
-	  //$sql2="INSERT INTO partnerprefs (id, custId) VALUES('', '$id')";
-	  //mysqli_query($conn,$sql2);
-	  //$sql2="UPDATE TABLE users SET profilestat=1 WHERE id=$id";
-	//} else {
-	  echo "Error: " . $sql . "<br>" . $conn->error;
-	//}
-}
-}
-
-/*-- -- -- -- -- -- -- -- -- -- -- -- -- ---- -- --
--- -- -- -- -- -- -- -- --- -- -- -- -- -- -- -- --
---                   E   N   D                   --
---       Personal & Physical  / sb-biodata-1     --
---                                               --
--- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- ---
--- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -*/
-
-
-
-
-
-
-
-
-
-
-
-
-/*-- -- -- -- -- -- -- -- -- -- -- -- -- ---- -- --
--- -- -- -- -- -- -- -- --- -- -- -- -- -- -- -- --
---                S  T  A  R  T                  --
---     Personal & Life Style  / sb-biodata-2     --
---                                               --
--- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- ---
--- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -*/
-function processprofile_form($id){
-
+	//Biodata 2 change
 	$maritalstatus=$_POST['maritalstatus'];
 	$smoke=$_POST['smoke'];
 	$occupation=$_POST['occupation'];
@@ -392,625 +231,81 @@ function processprofile_form($id){
 	$dress_code=$_POST['dress_code'];
 	$aboutme=$_POST['aboutme'];	
 
-	require_once("includes/dbconn.php");
-	$sql="SELECT user_id FROM 2bd_personal_lifestyle WHERE user_id=$id";
-	$result=mysqlexec($sql);
-
-if(mysqli_num_rows($result)>=1){
-	//there is already a profile in this table for loggedin 1bd_personal_physical
-	//update the data
-	$sql="UPDATE
-   			2bd_personal_lifestyle 
-		SET
-		maritalstatus = '$maritalstatus',
-		smoke = '$smoke', 
-		occupation = '$occupation',
-		occupation_describe = '$occupation_describe',
-		dress_code = '$dress_code',
-		aboutme = '$aboutme',
-
-		WHERE user_id=$id; "
-		   ;
-   $result=mysqlexec($sql);
-   if ($result) {
-   	echo "<script>alert(\"Successfully Updated Profile\")</script>";
-   	echo "<script> window.location=\"userhome.php?id=$id\"</script>";
-   }
-}else{
-	//Insert the data
-	$sql = "INSERT 
-				INTO
-				2bd_personal_lifestyle
-				   (user_id, maritalstatus, smoke, occupation, occupation_describe, dress_code, aboutme, profilecreationdate  ) 
-				VALUES
-				   ('$id','$maritalstatus', '$smoke', '$occupation', '$occupation_describe', '$dress_code', '$aboutme', CURDATE())
-			";
-	if (mysqli_query($conn,$sql)) {
-	  echo "Successfully Created profile";
-	  echo "<a href=\"userhome.php?id={$id}\">";
-	  echo "Back to home";
-	  echo "</a>";
-	}
-	 
-	  //creating a slot for partner prefernce table for prefs details with cust id
-	  //$sql2="INSERT INTO partnerprefs (id, custId) VALUES('', '$id')";
-	  //mysqli_query($conn,$sql2);
-	  //$sql2="UPDATE TABLE users SET profilestat=1 WHERE id=$id";
-	//} else {
-	  echo "Error: " . $sql . "<br>" . $conn->error;
-	//}
-}
-}
-/*-- -- -- -- -- -- -- -- -- -- -- -- -- ---- -- --
--- -- -- -- -- -- -- -- --- -- -- -- -- -- -- -- --
---                   E   N   D                   --
---     Personal & Life Style  / sb-biodata-2     --
---                                               --
--- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- ---
--- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -*/
-
-
-
-
-
-
-
-
-
-
-/*-- -- -- -- -- -- -- -- -- -- -- -- -- ---- -- --
--- -- -- -- -- -- -- -- --- -- -- -- -- -- -- -- --
---                S  T  A  R  T                  --
---  Educational Qualifications  / sb-biodata-3   --
---                                               --
--- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- ---
--- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -*/
-function processprofile_form($id){
-
+	//Biodata 3 change
 	$education_method=$_POST['education_method'];
 	$sscpassyear=$_POST['sscpassyear'];
 	$current_education=$_POST['current_education'];
 	$maximum_education=$_POST['maximum_education'];
 
-
-	require_once("includes/dbconn.php");
-	$sql="SELECT user_id FROM 3bd_educational_qualifications WHERE user_id=$id";
-	$result=mysqlexec($sql);
-
-if(mysqli_num_rows($result)>=1){
-	//there is already a profile in this table for loggedin 1bd_personal_physical
-	//update the data
-	$sql="UPDATE
-   			3bd_educational_qualifications 
-		SET
-		education_method = '$education_method',
-		sscpassyear = '$sscpassyear', 
-		current_education = '$current_education',
-		maximum_education = '$maximum_education',
-
-
-		WHERE user_id=$id; "
-		   ;
-   $result=mysqlexec($sql);
-   if ($result) {
-   	echo "<script>alert(\"Successfully Updated Profile\")</script>";
-   	echo "<script> window.location=\"userhome.php?id=$id\"</script>";
-   }
-}else{
-	//Insert the data
-	$sql = "INSERT 
-				INTO
-				3bd_educational_qualifications
-				   (user_id, education_method, sscpassyear, current_education, maximum_education, profilecreationdate  ) 
-				VALUES
-				   ('$id','$education_method', '$sscpassyear', '$current_education', '$maximum_education', CURDATE())
-			";
-	if (mysqli_query($conn,$sql)) {
-	  echo "Successfully Created profile";
-	  echo "<a href=\"userhome.php?id={$id}\">";
-	  echo "Back to home";
-	  echo "</a>";
-	}
-	 
-	  //creating a slot for partner prefernce table for prefs details with cust id
-	  //$sql2="INSERT INTO partnerprefs (id, custId) VALUES('', '$id')";
-	  //mysqli_query($conn,$sql2);
-	  //$sql2="UPDATE TABLE users SET profilestat=1 WHERE id=$id";
-	//} else {
-	  echo "Error: " . $sql . "<br>" . $conn->error;
-	//}
-}
-}
-/*-- -- -- -- -- -- -- -- -- -- -- -- -- ---- -- --
--- -- -- -- -- -- -- -- --- -- -- -- -- -- -- -- --
---                   E   N   D                   --
---  Educational Qualifications  / sb-biodata-3   --
---                                               --
--- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- ---
--- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -*/
-
-
-
-
-
-
-
-
-
-
-/*-- -- -- -- -- -- -- -- -- -- -- -- -- ---- -- --
--- -- -- -- -- -- -- -- --- -- -- -- -- -- -- -- --
---                S  T  A  R  T                  --
---       Address Details  /  sb-biodata-4        --
---                                               --
--- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- ---
--- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -*/
-function processprofile_form($id){
-
+	//Biodata 4 change
 	$country=$_POST['country'];
 	$present_address=$_POST['present_address'];
 	$permanent_address=$_POST['permanent_address'];
 	$childhood=$_POST['childhood'];
 
-
-	require_once("includes/dbconn.php");
-	$sql="SELECT user_id FROM 4bd_address_details WHERE user_id=$id";
-	$result=mysqlexec($sql);
-
-if(mysqli_num_rows($result)>=1){
-	//there is already a profile in this table for loggedin 1bd_personal_physical
-	//update the data
-	$sql="UPDATE
-   			4bd_address_details 
-		SET
-		country = '$country',
-		present_address = '$present_address', 
-		permanent_address = '$permanent_address',
-		childhood = '$childhood',
-
-
-		WHERE user_id=$id; "
-		   ;
-   $result=mysqlexec($sql);
-   if ($result) {
-   	echo "<script>alert(\"Successfully Updated Profile\")</script>";
-   	echo "<script> window.location=\"userhome.php?id=$id\"</script>";
-   }
-}else{
-	//Insert the data
-	$sql = "INSERT 
-				INTO
-				4bd_address_details
-				   (user_id, country, present_address, permanent_address, childhood, profilecreationdate  ) 
-				VALUES
-				   ('$id','$country', '$present_address', '$permanent_address', '$childhood', CURDATE())
-			";
-	if (mysqli_query($conn,$sql)) {
-	  echo "Successfully Created profile";
-	  echo "<a href=\"userhome.php?id={$id}\">";
-	  echo "Back to home";
-	  echo "</a>";
-	}
-	 
-	  //creating a slot for partner prefernce table for prefs details with cust id
-	  //$sql2="INSERT INTO partnerprefs (id, custId) VALUES('', '$id')";
-	  //mysqli_query($conn,$sql2);
-	  //$sql2="UPDATE TABLE users SET profilestat=1 WHERE id=$id";
-	//} else {
-	  echo "Error: " . $sql . "<br>" . $conn->error;
-	//}
-}
-}
-/*-- -- -- -- -- -- -- -- -- -- -- -- -- ---- -- --
--- -- -- -- -- -- -- -- --- -- -- -- -- -- -- -- --
---                   E   N   D                   --
---       Address Details  /  sb-biodata-4        --
---                                               --
--- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- ---
--- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -*/
-
-
-
-
-
-
-
-
-
-
-/*-- -- -- -- -- -- -- -- -- -- -- -- -- ---- -- --
--- -- -- -- -- -- -- -- --- -- -- -- -- -- -- -- --
---                S  T  A  R  T                  --
---     Family Information  / sb-biodata-5        --
---                                               --
--- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- ---
--- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -*/
-function processprofile_form($id){
-
+	//Biodata 5 change
 	$father_alive=$_POST['father_alive'];
 	$fatheroccupation=$_POST['fatheroccupation'];
 	$mother_alive=$_POST['mother_alive'];
 	$motheroccupation=$_POST['motheroccupation'];
-
 	$brosis_number=$_POST['brosis_number'];
 	$brosis_info=$_POST['brosis_info'];
 	$uncle_profession=$_POST['uncle_profession'];
 	$family_class=$_POST['family_class'];
-
 	$financial_condition=$_POST['financial_condition'];
 	$family_religious=$_POST['family_religious'];
 
-
-
-
-	require_once("includes/dbconn.php");
-	$sql="SELECT user_id FROM 5bd_family_information WHERE user_id=$id";
-	$result=mysqlexec($sql);
-
-if(mysqli_num_rows($result)>=1){
-	//there is already a profile in this table for loggedin 1bd_personal_physical
-	//update the data
-	$sql="UPDATE
-   			5bd_family_information 
-		SET
-		father_alive = '$father_alive',
-		fatheroccupation = '$fatheroccupation', 
-		mother_alive = '$mother_alive',
-		motheroccupation = '$motheroccupation',
-
-		brosis_number = '$brosis_number',
-		brosis_info = '$brosis_info', 
-		uncle_profession = '$uncle_profession',
-		family_class = '$family_class',
-
-		financial_condition = '$financial_condition',
-		family_religious = '$family_religious', 
-
-
-
-		WHERE user_id=$id; "
-		   ;
-   $result=mysqlexec($sql);
-   if ($result) {
-   	echo "<script>alert(\"Successfully Updated Profile\")</script>";
-   	echo "<script> window.location=\"userhome.php?id=$id\"</script>";
-   }
-}else{
-	//Insert the data
-	$sql = "INSERT 
-				INTO
-				5bd_family_information
-				   (user_id, father_alive, fatheroccupation, mother_alive, motheroccupation, brosis_number, brosis_info, uncle_profession, family_class, financial_condition, family_religious, profilecreationdate  ) 
-				VALUES
-				   ('$id','$father_alive', '$fatheroccupation', '$mother_alive', '$motheroccupation', '$brosis_number', '$brosis_info', '$uncle_profession', '$family_class', '$financial_condition', '$family_religious', CURDATE())
-			";
-	if (mysqli_query($conn,$sql)) {
-	  echo "Successfully Created profile";
-	  echo "<a href=\"userhome.php?id={$id}\">";
-	  echo "Back to home";
-	  echo "</a>";
-	}
-	 
-	  //creating a slot for partner prefernce table for prefs details with cust id
-	  //$sql2="INSERT INTO partnerprefs (id, custId) VALUES('', '$id')";
-	  //mysqli_query($conn,$sql2);
-	  //$sql2="UPDATE TABLE users SET profilestat=1 WHERE id=$id";
-	//} else {
-	  echo "Error: " . $sql . "<br>" . $conn->error;
-	//}
-}
-}
-/*-- -- -- -- -- -- -- -- -- -- -- -- -- ---- -- --
--- -- -- -- -- -- -- -- --- -- -- -- -- -- -- -- --
---                   E   N   D                   --
---     Family Information  / sb-biodata-5        --
---                                               --
--- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- ---
--- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -*/
-
-
-
-
-
-
-
-
-
-
-/*-- -- -- -- -- -- -- -- -- -- -- -- -- ---- -- --
--- -- -- -- -- -- -- -- --- -- -- -- -- -- -- -- --
---                S  T  A  R  T                  --
---   Male Marriage related Info / sb-biodata-6   --
---                                               --
--- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- ---
--- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -*/
-function processprofile_form($id){
-
+	//Biodata 6 change
 	$guardians_agree_male=$_POST['guardians_agree_male'];
 	$allowstudy_aftermarriage=$_POST['allowstudy_aftermarriage'];
 	$allowjob_aftermarriage=$_POST['allowjob_aftermarriage'];
 	$livewife_aftermarriage=$_POST['livewife_aftermarriage'];
 	$profileby_male=$_POST['profileby_male'];
-
-
-
-
-	require_once("includes/dbconn.php");
-	$sql="SELECT user_id FROM 6bd_marriage_related_qs_male WHERE user_id=$id";
-	$result=mysqlexec($sql);
-
-if(mysqli_num_rows($result)>=1){
-	//there is already a profile in this table for loggedin 1bd_personal_physical
-	//update the data
-	$sql="UPDATE
-   			6bd_marriage_related_qs_male 
-		SET
-		guardians_agree_male = '$guardians_agree_male',
-		allowstudy_aftermarriage = '$allowstudy_aftermarriage', 
-		allowjob_aftermarriage = '$allowjob_aftermarriage',
-		livewife_aftermarriage = '$livewife_aftermarriage',
-		profileby_male = '$profileby_male',
-
-
-
-		WHERE user_id=$id; "
-		   ;
-   $result=mysqlexec($sql);
-   if ($result) {
-   	echo "<script>alert(\"Successfully Updated Profile\")</script>";
-   	echo "<script> window.location=\"userhome.php?id=$id\"</script>";
-   }
-}else{
-	//Insert the data
-	$sql = "INSERT 
-				INTO
-				6bd_marriage_related_qs_male
-				   (user_id, guardians_agree_male, allowstudy_aftermarriage, allowjob_aftermarriage, livewife_aftermarriage, profileby_male, profilecreationdate  ) 
-				VALUES
-				   ('$id','$guardians_agree_male', '$allowstudy_aftermarriage', '$allowjob_aftermarriage', '$livewife_aftermarriage', '$profileby_male', CURDATE())
-			";
-	if (mysqli_query($conn,$sql)) {
-	  echo "Successfully Created profile";
-	  echo "<a href=\"userhome.php?id={$id}\">";
-	  echo "Back to home";
-	  echo "</a>";
-	}
-	
-	  //creating a slot for partner prefernce table for prefs details with cust id
-	  //$sql2="INSERT INTO partnerprefs (id, custId) VALUES('', '$id')";
-	  //mysqli_query($conn,$sql2);
-	  //$sql2="UPDATE TABLE users SET profilestat=1 WHERE id=$id";
-	//} else {
-	  echo "Error: " . $sql . "<br>" . $conn->error;
-	//}
-}
-}
-/*-- -- -- -- -- -- -- -- -- -- -- -- -- ---- -- --
--- -- -- -- -- -- -- -- --- -- -- -- -- -- -- -- --
---                   E   N   D                   --
---   Male Marriage related Info / sb-biodata-6   --
---                                               --
--- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- ---
--- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -*/
-
-
-
-
-
-
-
-
-
-
-/*-- -- -- -- -- -- -- -- -- -- -- -- -- ---- -- --
--- -- -- -- -- -- -- -- --- -- -- -- -- -- -- -- --
---                S  T  A  R  T                  --
---  Female Marriage related Info / sb-biodata-7  --
---                                               --
--- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- ---
--- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -*/
-function processprofile_form($id){
-
+ 
+	//Biodata 7 change
 	$guardians_agree_female=$_POST['guardians_agree_female'];
 	$anyjob_aftermarriage=$_POST['anyjob_aftermarriage'];
 	$studies_aftermarriage=$_POST['studies_aftermarriage'];
 	$agree_marriage_student=$_POST['agree_marriage_student'];
 	$profileby_female=$_POST['profileby_female'];
 
-
-
-	require_once("includes/dbconn.php");
-	$sql="SELECT user_id FROM 7bd_marriage_related_qs_female WHERE user_id=$id";
-	$result=mysqlexec($sql);
-
-if(mysqli_num_rows($result)>=1){
-	//there is already a profile in this table for loggedin 1bd_personal_physical
-	//update the data
-	$sql="UPDATE
-   			7bd_marriage_related_qs_female 
-		SET
-		guardians_agree_female = '$guardians_agree_female',
-		anyjob_aftermarriage = '$anyjob_aftermarriage', 
-		studies_aftermarriage = '$studies_aftermarriage',
-		agree_marriage_student = '$agree_marriage_student',
-		profileby_female = '$profileby_female',
-
-
-		WHERE user_id=$id; "
-		   ;
-   $result=mysqlexec($sql);
-   if ($result) {
-   	echo "<script>alert(\"Successfully Updated Profile\")</script>";
-   	echo "<script> window.location=\"userhome.php?id=$id\"</script>";
-   }
-}else{
-	//Insert the data
-	$sql = "INSERT 
-				INTO
-				7bd_marriage_related_qs_female
-				   (user_id, guardians_agree_female, anyjob_aftermarriage, studies_aftermarriage, agree_marriage_student, profileby_female, profilecreationdate  ) 
-				VALUES
-				   ('$id','$guardians_agree_female', '$anyjob_aftermarriage', '$studies_aftermarriage', '$agree_marriage_student', '$profileby_female', CURDATE())
-			";
-	if (mysqli_query($conn,$sql)) {
-	  echo "Successfully Created profile";
-	  echo "<a href=\"userhome.php?id={$id}\">";
-	  echo "Back to home";
-	  echo "</a>";
-	}
-	 
-	  //creating a slot for partner prefernce table for prefs details with cust id
-	  //$sql2="INSERT INTO partnerprefs (id, custId) VALUES('', '$id')";
-	  //mysqli_query($conn,$sql2);
-	  //$sql2="UPDATE TABLE users SET profilestat=1 WHERE id=$id";
-	//} else {
-	  echo "Error: " . $sql . "<br>" . $conn->error;
-	//}
-}
-}
-/*-- -- -- -- -- -- -- -- -- -- -- -- -- ---- -- --
--- -- -- -- -- -- -- -- --- -- -- -- -- -- -- -- --
---                   E   N   D                   --
---  Female Marriage related Info / sb-biodata-7  --
---                                               --
--- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- ---
--- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -*/
-
-
-
-
-
-
-
-
-
-
-/*-- -- -- -- -- -- -- -- -- -- -- -- -- ---- -- --
--- -- -- -- -- -- -- -- --- -- -- -- -- -- -- -- --
---                S  T  A  R  T                  --
---        Religion Details / sb-biodata-8        --
---                                               --
--- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- ---
--- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -*/
-function processprofile_form($id){
-
+	//Biodata 8 change
 	$religion=$_POST['religion'];
 	$yourreligion_condition=$_POST['yourreligion_condition'];
 
-
-	require_once("includes/dbconn.php");
-	$sql="SELECT user_id FROM 8bd_religion_details WHERE user_id=$id";
-	$result=mysqlexec($sql);
-
-if(mysqli_num_rows($result)>=1){
-	//there is already a profile in this table for loggedin 1bd_personal_physical
-	//update the data
-	$sql="UPDATE
-   			8bd_religion_details 
-		SET
-		religion = '$religion',
-		yourreligion_condition = '$yourreligion_condition', 
-
-
-		WHERE user_id=$id; "
-		   ;
-   $result=mysqlexec($sql);
-   if ($result) {
-   	echo "<script>alert(\"Successfully Updated Profile\")</script>";
-   	echo "<script> window.location=\"userhome.php?id=$id\"</script>";
-   }
-}else{
-	//Insert the data
-	$sql = "INSERT 
-				INTO
-				8bd_religion_details
-				   (user_id, religion, yourreligion_condition, profilecreationdate  ) 
-				VALUES
-				   ('$id','$religion', '$yourreligion_condition', CURDATE())
-			";
-	if (mysqli_query($conn,$sql)) {
-	  echo "Successfully Created profile";
-	  echo "<a href=\"userhome.php?id={$id}\">";
-	  echo "Back to home";
-	  echo "</a>";
-	}
-	 
-	  //creating a slot for partner prefernce table for prefs details with cust id
-	  //$sql2="INSERT INTO partnerprefs (id, custId) VALUES('', '$id')";
-	  //mysqli_query($conn,$sql2);
-	  //$sql2="UPDATE TABLE users SET profilestat=1 WHERE id=$id";
-	//} else {
-	  echo "Error: " . $sql . "<br>" . $conn->error;
-	//}
-}
-}
-/*-- -- -- -- -- -- -- -- -- -- -- -- -- ---- -- --
--- -- -- -- -- -- -- -- --- -- -- -- -- -- -- -- --
---                   E   N   D                   --
---        Religion Details / sb-biodata-8        --
---                                               --
--- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- ---
--- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -*/
-
-
-
-
-
-
-
-
-
-
-/*-- -- -- -- -- -- -- -- -- -- -- -- -- ---- -- --
--- -- -- -- -- -- -- -- --- -- -- -- -- -- -- -- --
---                S  T  A  R  T                  --
---     Expected Life Partner / sb-biodata-9      --
---                                               --
--- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- ---
--- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -*/
-function processprofile_form($id){
-
+	//Biodata 9 change
 	$partner_religius=$_POST['partner_religius'];
 	$partner_district=$_POST['partner_district'];
 	$partner_maritialstatus=$_POST['partner_maritialstatus'];
 	$partner_age=$_POST['partner_age'];
-
 	$partner_skintones=$_POST['partner_skintones'];
 	$partner_height=$_POST['partner_height'];
 	$partner_education=$_POST['partner_education'];
 	$partner_profession=$_POST['partner_profession'];
-
 	$partner_financial=$_POST['partner_financial'];
 	$partner_attributes=$_POST['partner_attributes'];
 
-
-
-
+//Section 1 change
 	require_once("includes/dbconn.php");
-	$sql="SELECT user_id FROM 9bd_expected_life_partner WHERE user_id=$id";
-	$result=mysqlexec($sql);
 
-if(mysqli_num_rows($result)>=1){
-	//there is already a profile in this table for loggedin 1bd_personal_physical
+	
+
+	//there is already a profile in this table for loggedin customer
 	//update the data
 	$sql="UPDATE
-   			9bd_expected_life_partner 
+          9bd_expected_life_partner
 		SET
+		biodatagender = '$biodatagender',
 		partner_religius = '$partner_religius',
-		partner_district = '$partner_district', 
+		partner_district = '$partner_district',
 		partner_maritialstatus = '$partner_maritialstatus',
 		partner_age = '$partner_age',
-
 		partner_skintones = '$partner_skintones',
-		partner_height = '$partner_height', 
+		partner_height = '$partner_height',
 		partner_education = '$partner_education',
-		partner_profession = '$partner_profession',
-
-		partner_financial = '$partner_financial',
-		partner_attributes = '$partner_attributes', 
-
-
-
+		   partner_profession = '$partner_profession',
+		   partner_financial = '$partner_financial',
+		   partner_attributes = '$partner_attributes',
 		WHERE user_id=$id; "
 		   ;
    $result=mysqlexec($sql);
@@ -1018,47 +313,93 @@ if(mysqli_num_rows($result)>=1){
    	echo "<script>alert(\"Successfully Updated Profile\")</script>";
    	echo "<script> window.location=\"userhome.php?id=$id\"</script>";
    }
-}else{
-	//Insert the data
-	$sql = "INSERT 
+
+//Biodata 1 change
+$sql = "INSERT 
 				INTO
-				9bd_expected_life_partner
-				   (user_id, partner_religius, partner_district, partner_maritialstatus, partner_age, partner_skintones, partner_height, partner_education, partner_profession, partner_financial, partner_attributes, profilecreationdate  ) 
+				1bd_personal_physical
+				   (user_id, biodatagender, dateofbirth, height, weight, physicalstatus, Skin_tones, bloodgroup, profilecreationdate  ) 
 				VALUES
-				   ('$id','$partner_religius', '$partner_district', '$partner_maritialstatus', '$partner_age', '$partner_skintones', '$partner_height', '$partner_education', '$partner_profession', '$partner_financial', '$partner_attributes', CURDATE())
+				   ('$id', '$biodatagender', '$dob', '$height', '$weight', '$physicalstatus', '$Skin_tones', '$bloodgroup', CURDATE())
 			";
-	if (mysqli_query($conn,$sql)) {
-	  echo "Successfully Created profile";
-	  echo "<a href=\"userhome.php?id={$id}\">";
-	  echo "Back to home";
-	  echo "</a>";
-	}
-	 
-	  //creating a slot for partner prefernce table for prefs details with cust id
-	  //$sql2="INSERT INTO partnerprefs (id, custId) VALUES('', '$id')";
-	  //mysqli_query($conn,$sql2);
-	  //$sql2="UPDATE TABLE users SET profilestat=1 WHERE id=$id";
-	//} else {
-	  echo "Error: " . $sql . "<br>" . $conn->error;
-	//}
+			if ($conn->multi_query($sql) === TRUE)
+
+//Biodata 2 change  
+		$sql = "INSERT INTO 2bd_personal_lifestyle
+		(user_id, maritalstatus, smoke, occupation, occupation_describe, dress_code, aboutme, profilecreationdate  ) 
+	 VALUES
+		('$id', '$maritalstatus', '$smoke', '$occupation', '$occupation_describe', '$dress_code', '$aboutme', CURDATE())";
+		if ($conn->multi_query($sql) === TRUE)
+
+//Biodata 3 change  
+		$sql = "INSERT INTO 3bd_educational_qualifications
+		(user_id, education_method, sscpassyear, current_education, maximum_education, profilecreationdate  ) 
+	 VALUES
+		('$id', '$education_method', '$sscpassyear', '$current_education', '$maximum_education', CURDATE())
+ ";
+ if ($conn->multi_query($sql) === TRUE)
+
+//Biodata 4 change  
+	$sql = "INSERT INTO 4bd_address_details
+	(user_id, country, present_address, permanent_address, childhood, profilecreationdate  ) 
+ VALUES
+	('$id', '$country', '$present_address', '$permanent_address', '$childhood', CURDATE())
+";
+if ($conn->multi_query($sql) === TRUE)
+
+//Biodata 5 change  
+$sql = "INSERT INTO 5bd_family_information
+	(user_id, father_alive, fatheroccupation, mother_alive, motheroccupation, brosis_number, brosis_info, uncle_profession, family_class, financial_condition, family_religious, profilecreationdate  ) 
+ VALUES
+	('$id', '$father_alive', '$fatheroccupation', '$mother_alive', '$motheroccupation', '$brosis_number', '$brosis_info', '$uncle_profession', '$family_class', '$financial_condition', '$family_religious', CURDATE())
+";
+if ($conn->multi_query($sql) === TRUE)
+
+//Biodata 6 change  
+$sql = "INSERT INTO 6bd_marriage_related_qs_male
+	(user_id, guardians_agree_male, allowstudy_aftermarriage, allowjob_aftermarriage, livewife_aftermarriage, profileby_male, profilecreationdate  ) 
+ VALUES
+	('$id', '$guardians_agree_male', '$allowstudy_aftermarriage', '$allowjob_aftermarriage', '$livewife_aftermarriage', '$profileby_male', CURDATE())
+";
+if ($conn->multi_query($sql) === TRUE)
+
+//Biodata 7 change  
+$sql = "INSERT INTO 7bd_marriage_related_qs_female
+	(user_id, guardians_agree_female, anyjob_aftermarriage, studies_aftermarriage, agree_marriage_student, profileby_female, profilecreationdate  ) 
+ VALUES
+	('$id', '$guardians_agree_female', '$anyjob_aftermarriage', '$studies_aftermarriage', '$agree_marriage_student', '$profileby_female', CURDATE())
+";
+if ($conn->multi_query($sql) === TRUE)
+
+//Biodata 8 change  
+$sql = "INSERT INTO 8bd_religion_details
+(user_id, religion, yourreligion_condition, profilecreationdate  ) 
+VALUES
+('$id', '$religion', '$yourreligion_condition', CURDATE())
+";
+if ($conn->multi_query($sql) === TRUE)
+
+//Biodata 9 change  
+$sql = "INSERT INTO 9bd_expected_life_partner
+(user_id, partner_religius, partner_district, partner_maritialstatus, partner_age, partner_skintones, partner_height, partner_education, partner_profession, partner_financial, partner_attributes, profilecreationdate  ) 
+VALUES
+('$id', '$partner_religius', '$partner_district', '$partner_maritialstatus', '$partner_age', '$partner_skintones', '$partner_height', '$partner_education', '$partner_profession', '$partner_financial', '$partner_attributes', CURDATE())
+";
+
+if ($conn->multi_query($sql) === TRUE) {
+	echo "Thanks! Your Biodata's New Records Created Successfully.";
+  }
+
 }
-}
+
 /*-- -- -- -- -- -- -- -- -- -- -- -- -- ---- -- --
 -- -- -- -- -- -- -- -- --- -- -- -- -- -- -- -- --
 --                   E   N   D                   --
---     Expected Life Partner / sb-biodata-9      --
+--       Personal & Physical  / sb-biodata-1     --
 --                                               --
 -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- ---
 -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -*/
 
-
-/*-- -- -- -- -- -- -- -- -- -- -- -- -- ---- -- --
--- -- -- -- -- -- -- -- --- -- -- -- -- -- -- -- --
---                   E   N   D                   --
---     SHOSURBARI BIODATA FIELD ALL SECTION      --
---                                               --
--- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- ---
--- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -*/
 
 
 
