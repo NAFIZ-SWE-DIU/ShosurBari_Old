@@ -13,60 +13,29 @@ $id=$_GET['id'];
 $profileid=$id;
 
 
-
 //getting profile details from db
 $sql = "SELECT * FROM 1bd_personal_physical  WHERE user_id = $id";
-$sql = "SELECT * FROM 2bd_personal_lifestyle  WHERE user_id = $id";
-$sql = "SELECT * FROM 4bd_address_details  WHERE user_id = $id";
-$sql = "SELECT * FROM 8bd_religion_details  WHERE user_id = $id";
 $result = mysqlexec($sql);
 if($result){
 $row=mysqli_fetch_assoc($result);
 
-//Biodata 1
-if($row){
-$biodatagender=$row['biodatagender'];
-}
-if($row){
-$dob=$row['dateofbirth'];
-}
-if($row){
-$religion=$row['religion'];
-}
-if($row){
-$maritalstatus=$row['maritalstatus'];
-}
-if($row){
-$Skin_tones = $row['Skin_tones'];
-}
-if($row){
-$height=$row['height'];
-}
-if($row){
-$weight=$row['weight'];	
-}
-if($row){
-$occupation = $row['occupation'];
-}
-if($row){
-$country=$row['country'];
-}
-
-
 //end of getting profile detils
-if($row){
 	$pic1="";
-}
-if($row){
 	$pic2="";
-}
+
+
+
 //getting image filenames from db
 $sql2="SELECT * FROM photos WHERE user_id = $profileid";
 $result2 = mysqlexec($sql2);
 if($result2){
 	$row2=mysqli_fetch_array($result2);
+	if($row2){
 	$pic1=$row2['pic1'];
+	}
+	if($row2){
 	$pic2=$row2['pic2'];
+	}
 }
 }else{
 	echo "<script>alert(\"Invalid Profile ID\")</script>";
@@ -143,10 +112,6 @@ $(document).ready(function(){
 <!-- here 2/4 <div> -->
     <div class="profile">
    	<div class="col-md-8 profile_left">
-		<?php if (!empty($profileid)) { ?>
-   	    <h2>Profile Id : <?php echo $profileid;?></h2>
-			<?php } ?>
-
    	 	    <div class="col_3">
    	            <div class="col-sm-4 row_2">
 				    <div class="flexslider">
@@ -256,16 +221,21 @@ $religion=$row['religion'];
 
 			    <div class="col-sm-8 row_1">
 				    <table class="table_working_hours">
+					    <div class="biodatanumber">
+						<?php if (!empty($profileid)) { ?>
+							<h2>Biodata No : <span><?php echo $profileid;?></span></h2>
+			                <?php } ?>
+						</div>
 		        	<tbody>
 
-		        		<tr class="opened_1">
+		        		<tr class="opened">
 							<td class="day_label">Biodata Type :</td>
 							<?php if (!empty($biodatagender)) { ?>
 							<td class="day_value"><?php echo $biodatagender;?></td>
 						    <?php } ?>
 						</tr>
 							
-						<tr class="opened_1">
+						<tr class="opened">
 							<td class="day_label">DOB :</td>
 							<?php if (!empty($dob)) { ?>
 							<td class="day_value"><?php echo $dob; ?></td>
@@ -351,7 +321,7 @@ $religion=$row['religion'];
 			    <ul id="myTab" class="nav nav-tabs nav-tabs1" role="tablist">
 				    <li role="presentation" class="active"><a href="#home" id="home-tab" role="tab" data-toggle="tab" aria-controls="home" aria-expanded="true">About Myself</a></li>
 				    <li role="presentation"><a href="#profile" role="tab" id="profile-tab" data-toggle="tab" aria-controls="profile">Family Details</a></li>
-				    <li role="presentation"><a href="#profile1" role="tab" id="profile-tab1" data-toggle="tab" aria-controls="profile1">Partner Preference</a></li>
+				    <li role="presentation"><a href="#profile1" role="tab" id="profile-tab1" data-toggle="tab" aria-controls="profile1">Extpected Partner</a></li>
 			    </ul>
 
 				<!-- here 2/8 <div> -->
@@ -398,12 +368,11 @@ $bloodgroup=$row['bloodgroup'];
 ?>		
 
 				    <div class="basic_1">
-				    	<h3>Personal & Physical</h3>
 				    	<div class="col-md-6 basic_1-left">
 				    	    <table class="table_working_hours">
+							<h3>Personal & Physical</h3>
 				        	<tbody>
-
-				        		<tr class="opened_1">
+				        		<tr class="opened">
 									<td class="day_label">Biodata Type :</td>
 									<?php if (!empty ($biodatagender)) { ?>
 									<td class="day_value"><?php echo $biodatagender; ?></td>
@@ -512,12 +481,12 @@ $aboutme=$row['aboutme'];
 ?>
 
 				    <div class="basic_1">
-				    	<h3>Personal & Life Style</h3>
 				    	<div class="col-md-6 basic_1-left">
 				    	    <table class="table_working_hours">
+							<h3>Personal & Life Style</h3>
 				        	<tbody>
 
-				        		<tr class="opened_1">
+				        		<tr class="opened">
 									<td class="day_label">Marital Status :</td>
 									<?php if (!empty ($maritalstatus)) { ?>
 									<td class="day_value"><?php echo $maritalstatus;?></td>
@@ -611,12 +580,12 @@ $maximum_education=$row['maximum_education'];
 ?>
 
 				    <div class="basic_1">
-				    	<h3>Educational Qualifications</h3>
 				    	<div class="col-md-6 basic_1-left">
 				    	    <table class="table_working_hours">
+							<h3>Educational Qualifications</h3>
 				        	<tbody>
 
-				        		<tr class="opened_1">
+				        		<tr class="opened">
 									<td class="day_label">Education Method :</td>
 									<?php if (!empty ($education_method)) { ?>
 									<td class="day_value"><?php echo $education_method; ?></td>
@@ -697,12 +666,12 @@ $childhood=$row['childhood'];
 ?>
 
 				    <div class="basic_1">
-				    	<h3>Address Details</h3>
 				    	<div class="col-md-6 basic_1-left">
 				    	    <table class="table_working_hours">
+							<h3>Address Details</h3>
 				        	<tbody>
 
-				        		<tr class="opened_1">
+				        		<tr class="opened">
 									<td class="day_label">Country :</td>
 									<?php if (!empty ($country)) { ?>
 									<td class="day_value"><?php echo $country; ?></td>
@@ -785,12 +754,12 @@ if($row){
 ?>
 
 				    <div class="basic_1">
-				    	<h3>Marriage related Information - M</h3>
 				    	<div class="col-md-6 basic_1-left">
 				    	    <table class="table_working_hours">
+							<h3>Marriage related Information - M</h3>
 				        	<tbody>
 
-				        		<tr class="opened_1">
+				        		<tr class="opened">
 									<td class="day_label">Guardians Agree :</td>
 									<?php if (!empty ($guardians_agree_male)) { ?>
 									<td class="day_value"><?php echo $guardians_agree_male; ?></td>
@@ -882,12 +851,12 @@ if($row){
 ?>
 
                     <div class="basic_1">
-				    	<h3>Marriage related Information - F</h3>
 				    	<div class="col-md-6 basic_1-left">
 				    	    <table class="table_working_hours">
+							<h3>Marriage related Information - F</h3>
 				        	<tbody>
 
-				        		<tr class="opened_1">
+				        		<tr class="opened">
 									<td class="day_label">Guardians Agree :</td>
 									<?php if (!empty ($guardians_agree_female)) { ?>
 									<td class="day_value"><?php echo $guardians_agree_female; ?></td>
@@ -970,12 +939,12 @@ if($row){
 ?>
 
                     <div class="basic_1">
-				    	<h3>Religion Details</h3>
 				    	<div class="col-md-6 basic_1-left">
 				    	    <table class="table_working_hours">
+							<h3>Religion Details</h3>
 				        	<tbody>
 
-				        		<tr class="opened_1">
+				        		<tr class="opened">
 									<td class="day_label">Religion :</td>
 									<?php if (!empty ($religion)) { ?>
 									<td class="day_value"><?php echo $religion; ?></td>
@@ -1068,11 +1037,10 @@ if($row){
 
 				<div role="tabpanel" class="tab-pane fade" id="profile" aria-labelledby="profile-tab">
 				    <div class="basic_3">
-				    	<h4>Family Details</h4>
 				    	<div class="basic_1 basic_2">
-				    	<h3>Basics</h3>
 				    	<div class="col-md-6 basic_1-left">
 				    	    <table class="table_working_hours">
+							<h3>Family Details</h3>
 				        	<tbody>
 
 				        		<tr class="opened">
@@ -1225,6 +1193,7 @@ if($row){
 				    <div class="basic_1 basic_2">
 				       <div class="basic_1-left">
 				    	    <table class="table_working_hours">
+							<h3>Expected Partner</h3>
 				        	<tbody>
 				        		<tr class="opened">
 									<td class="day_label">Partner Religius   :</td>
@@ -1393,5 +1362,7 @@ $(window).load(function() {
   });
 });
 </script> 
+
+
 </body>
 </html>	
