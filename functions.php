@@ -544,7 +544,6 @@ if(mysqli_num_rows($result)>=1){
 
 
 //function for upload photo
-
 function uploadphoto($id){
 	$target = "profile/". $id ."/";
 if (!file_exists($target)) {
