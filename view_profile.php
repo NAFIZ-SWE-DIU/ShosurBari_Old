@@ -114,18 +114,10 @@ $(document).ready(function(){
    	<div class="col-md-8 profile_left">
    	 	    <div class="col_3">
    	            <div class="col-sm-4 row_2">
-				    <div class="flexslider">
 					<ul class="slides">
-
-						<li data-thumb="profile/<?php echo $profileid;?>/<?php echo $pic1;?>">
 							<img src="profile/<?php echo $profileid;?>/<?php echo $pic1;?>" />
-						</li>
-						<li data-thumb="profile/<?php echo $profileid;?>/<?php echo $pic2;?>">
 							<img id="demo" src="profile/<?php echo $profileid;?>/<?php echo $pic2;?>" />
-						</li>
-
 					</ul>
-				    </div>
 			    </div>
 
 
@@ -1309,9 +1301,9 @@ if($row){
 		   </form>
         </div> -->
         <div class="view_profile view_profile2">
-        	<h3>View Recent Profiles</h3>
+        	<h2>View Recent Profiles</h2>
     <?php
-     $sql="SELECT * FROM 1bd_personal_physical, 2bd_personal_lifestyle, 3bd_educational_qualifications, 4bd_address_details, 5bd_family_information, 6bd_marriage_related_qs_male, 7bd_marriage_related_qs_female, 8bd_religion_details,   ORDER BY profilecreationdate ASC";
+     $sql="SELECT * FROM 1bd_personal_physical  ORDER BY profilecreationdate ASC";
       $result=mysqlexec($sql);
       $count=1;
       while($row=mysqli_fetch_assoc($result)){
@@ -1325,9 +1317,11 @@ if($row){
             echo"<a href=\"view_profile.php?id={$profid}\">";
               echo "<li class=\"profile_item-img\"><img src=\"profile/". $profid."/".$pic ."\"" . "class=\"img-responsive\" alt=\"\"/></li>";
                echo "<li class=\"profile_item-desc\">";
-                  echo "<h4>" . $row['firstname'] . " " . $row['lastname'] . "</h4>";
-                  echo "<p>" . $row['age']. "Yrs," . $row['religion'] . "</p>";
-                  echo "<h5>" . "View Full Profile" . "</h5>";
+                  echo "<h3>" . "Biodata No : " . $row['user_id'] ."</h3>";
+				  echo "<h5>" . "Biodata Type : " . $row['biodatagender'] . "</h5>";
+                  echo "<h5>" . "Birth : " . $row['dateofbirth']. "  |  Skin : " . $row['Skin_tones'] . "</h5>";
+				  echo "<h5>" . "Height : " . $row['height']. "  |  Weight : " . $row['weight'] . "</h5>";
+                  echo "<h6>" . "View Full Profile" . "</h6>";
                echo "</li>";
       echo "</a>";
       echo "</ul>";
@@ -1337,7 +1331,6 @@ if($row){
     </div>
     </div>
        <div class="clearfix"> </div>
-
     </div>
   </div>
 </div>           <!-- here 3/8 <div> -->
