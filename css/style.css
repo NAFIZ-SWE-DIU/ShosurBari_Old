@@ -15,6 +15,16 @@ html, body{
     padding-top: 28px;
 }
 
+#timedate {
+    font: small-caps lighter 43px/150% "Segoe UI", Frutiger, "Frutiger Linotype", "Dejavu Sans", "Helvetica Neue", Arial, sans-serif;
+    text-align:left;
+    width: 50%;
+    margin: 40px auto;
+    color:#fff;
+    border-left: 3px solid #ed1f24;
+    padding: 20px;
+  }
+
 element{
     --main-web-color:  #ff0080;
     --main-bg-color: #02a7e6;
@@ -417,7 +427,7 @@ ul.nav_1 li.last{
     width: 35%;
     color: white;
     outline: none;
-    height: 45px;
+    height: 35px;
     margin-top: 20px;
     margin-bottom: 10px;
 }
@@ -929,11 +939,19 @@ figure.thumbnail1{
 	color:#000;
 }
 .row_1{
-    padding: 15px;
+    padding-top: 2px;
+    padding-bottom: 2px;
+    padding-left: 0px;
+    padding-right: 0px;
+
     background: #02a7e6;
     border-radius: 4px;
-        width: 50%;
-        margin: auto;
+    width: 100%;
+    margin: 0px;
+
+   /*  background-image: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
+    background-size: 400% 400%;
+    animation: gradient 30s ease infinite; */
     }
 
 span.month {
@@ -1098,21 +1116,33 @@ a.religion_1 {
 .footer{
 	background:#02a7e6;
 	padding:5em 0;
+    box-shadow: 0px 16px 16px 16px;
 }
+
+
+
+.col_2{
+    margin-left: 40px;
+    margin-top: 20px;
+    }
+
 .col_2 h4{
 	color:#000;
 	font-size:1.3em;
 	margin-bottom:1em;
+    text-align: center;
 }
 .col_2 p{
     color: white;
 	font-size:0.85em;
 	line-height:1.8em;
+    text-align: center;
 }
 ul.footer_links{
 	padding:0;
 	margin:0;
 	list-style:none;
+    text-align: center;
 }
 ul.footer_links li{
 	font-size:0.85em;
@@ -1128,6 +1158,7 @@ ul.footer_social {
     padding: 0;
     margin: 0 0 1em;
     list-style: none;
+    text-align: center;
 }
 ul.footer_social li {
     display: inline-block;
@@ -1204,6 +1235,14 @@ span.divider {
 .col-sm-4.row_2 {
     padding-left: 0;
 }
+
+.col-sm-4 .row_2 {
+    padding-left: 0;
+}
+.row_22 {
+    padding-left: 0;
+    display: inline-flex;
+}
 /*
 .profile_left h2 {
 	color: white;
@@ -1232,6 +1271,7 @@ table.table_working_hours {
 }
 
 
+
 .biodatanumber h2{
     margin-bottom: 0px;
     padding: 10px;
@@ -1241,11 +1281,12 @@ table.table_working_hours {
     width: 100%;
     color: white;
 
+    box-shadow: 0px 2px 5px 4px rgba(0, 0, 0, 0.2);
     border-radius: 4px 4px 0px 0px;
     border-bottom: 0px;
-    border-top: 2px;
-    border-left: 2px;
-    border-right: 2px;
+    border-top: 0px;
+    border-left: 1px;
+    border-right: 1px;
     border-color: #02a7e6;
     border-style: groove;
 }
@@ -1288,6 +1329,7 @@ opened_1*/
 }
 .col_3 {
     margin-bottom:3em;
+    display: inline-flex;
 }
 /*
 .nav-tabs1 {
@@ -1353,6 +1395,7 @@ a#profile-tab, a#home-tab, a#profile-tab1{
     width: 100%;
     background: rgb(245, 242, 242);
     border-radius: 4px;
+    box-shadow: 0px 2px 7px 6px rgba(0, 0, 0, 0.2);
 }
 .basic_1 {
     margin-bottom: 2em;
@@ -1431,6 +1474,12 @@ ul.profile_item{
     padding-right: 0px;
     padding-bottom: 0px;
 }
+
+/* ul.profile_item li.profile_item-img{
+	width:30%;
+	float:left;
+    margin-right: 5%;
+} */
 ul.profile_item li.profile_item-img{
     width: 36%;
     float: left;
@@ -1442,12 +1491,6 @@ ul.profile_item li.profile_item-img{
     border-style: groove;
     border-color: #ccc;
 }
-
-/* ul.profile_item li.profile_item-img{
-	width:30%;
-	float:left;
-    margin-right: 5%;
-} */
 
 .row_2 ul img{
     height: 210px;
@@ -1461,6 +1504,18 @@ ul.profile_item li.profile_item-img{
     border-radius: 4px;
 }
 
+.row_22 ul img{
+    height: 170px;
+    width: 160px;
+    padding: 2px;
+    background: #f5f2f2;
+    box-shadow: 0px 2px 7px 6px rgba(0, 0, 0, 0.2);
+    margin-top: 10px;
+    margin-left: 5px;
+    margin-right: 2px;
+    margin-bottom: 10px;
+    border-radius: 4px;
+}
 
 .view_profile h3{
 	font-size:1.3em;
@@ -4381,7 +4436,7 @@ form {
     border: 2px gray;
     width: 90%;
     font-size: 16px;
-    padding-top: 20px;
+    padding-top: 10px;
     background: transparent;
   }
   
