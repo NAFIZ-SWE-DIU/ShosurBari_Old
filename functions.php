@@ -187,11 +187,6 @@ function isloggedin(){
 	}
 }
 
-
-
-
-
-
 /*-- -- -- -- -- -- -- -- -- -- -- -- -- ---- -- --
 -- -- -- -- -- -- -- -- --- -- -- -- -- -- -- -- --
 --                S  T  A  R  T                  --
@@ -292,29 +287,11 @@ function processprofile_form($id){
 
 	//there is already a profile in this table for loggedin customer
 	//update the data
-	$sql="UPDATE
-          9bd_expected_life_partner
-		SET
-		biodatagender = '$biodatagender',
-		partner_religius = '$partner_religius',
-		partner_district = '$partner_district',
-		partner_maritialstatus = '$partner_maritialstatus',
-		partner_age = '$partner_age',
-		partner_skintones = '$partner_skintones',
-		partner_height = '$partner_height',
-		partner_education = '$partner_education',
-		   partner_profession = '$partner_profession',
-		   partner_financial = '$partner_financial',
-		   partner_attributes = '$partner_attributes',
-		WHERE user_id=$id; "
-		   ;
-   $result=mysqlexec($sql);
-   if ($result) {
-   	echo "<script>alert(\"Successfully Updated Profile\")</script>";
-   	echo "<script> window.location=\"userhome.php?id=$id\"</script>";
-   }
 
-//Biodata 1 change
+	//Biodata 1 change
+	$sql="UPDATE 1bd_personal_physical SET biodatagender = '$biodatagender', dateofbirth = '$dob', height = '$height', weight = '$weight', physicalstatus = '$physicalstatus', Skin_tones = '$Skin_tones', bloodgroup = '$bloodgroup', WHERE user_id=$id";
+	$query = mysqli_query ($conn, $sql);
+
 $sql = "INSERT 
 				INTO
 				1bd_personal_physical
@@ -324,30 +301,51 @@ $sql = "INSERT
 			";
 			if ($conn->multi_query($sql) === TRUE)
 
-//Biodata 2 change  
-		$sql = "INSERT INTO 2bd_personal_lifestyle
+
+
+//Biodata 2 change
+$sql="UPDATE 2bd_personal_lifestyle SET maritalstatus = '$maritalstatus', smoke = '$smoke', occupation = '$occupation', occupation_describe = '$occupation_describe', dress_code = '$dress_code', aboutme = '$aboutme', WHERE user_id=$id";
+$query = mysqli_query ($conn, $sql);
+
+$sql = "INSERT INTO 2bd_personal_lifestyle
 		(user_id, maritalstatus, smoke, occupation, occupation_describe, dress_code, aboutme, profilecreationdate  ) 
 	 VALUES
 		('$id', '$maritalstatus', '$smoke', '$occupation', '$occupation_describe', '$dress_code', '$aboutme', CURDATE())";
 		if ($conn->multi_query($sql) === TRUE)
 
+
+
+
 //Biodata 3 change  
-		$sql = "INSERT INTO 3bd_educational_qualifications
+$sql="UPDATE 3bd_educational_qualifications SET education_method = '$education_method', sscpassyear = '$sscpassyear', current_education = '$current_education', maximum_education = '$maximum_education', WHERE user_id=$id";
+$query = mysqli_query ($conn, $sql);
+
+$sql = "INSERT INTO 3bd_educational_qualifications
 		(user_id, education_method, sscpassyear, current_education, maximum_education, profilecreationdate  ) 
 	 VALUES
 		('$id', '$education_method', '$sscpassyear', '$current_education', '$maximum_education', CURDATE())
  ";
  if ($conn->multi_query($sql) === TRUE)
 
-//Biodata 4 change  
-	$sql = "INSERT INTO 4bd_address_details
+
+
+//Biodata 4 change
+$sql="UPDATE 4bd_address_details SET country = '$country', present_address = '$present_address',permanent_address = '$permanent_address', childhood = '$childhood', WHERE user_id=$id";
+$query = mysqli_query ($conn, $sql);
+
+$sql = "INSERT INTO 4bd_address_details
 	(user_id, country, present_address, permanent_address, childhood, profilecreationdate  ) 
  VALUES
 	('$id', '$country', '$present_address', '$permanent_address', '$childhood', CURDATE())
 ";
 if ($conn->multi_query($sql) === TRUE)
 
-//Biodata 5 change  
+
+
+//Biodata 5 change 
+$sql="UPDATE 5bd_family_information SET father_alive = '$father_alive', fatheroccupation = '$fatheroccupation', mother_alive = '$mother_alive', motheroccupation = '$motheroccupation', brosis_number = '$brosis_number', brosis_info = '$brosis_info', uncle_profession = '$uncle_profession', family_class = '$family_class', financial_condition = '$financial_condition', family_religious = '$family_religious', WHERE user_id=$id";
+$query = mysqli_query ($conn, $sql);
+
 $sql = "INSERT INTO 5bd_family_information
 	(user_id, father_alive, fatheroccupation, mother_alive, motheroccupation, brosis_number, brosis_info, uncle_profession, family_class, financial_condition, family_religious, profilecreationdate  ) 
  VALUES
@@ -355,7 +353,12 @@ $sql = "INSERT INTO 5bd_family_information
 ";
 if ($conn->multi_query($sql) === TRUE)
 
-//Biodata 6 change  
+
+
+//Biodata 6 change 
+$sql="UPDATE 6bd_marriage_related_qs_male SET guardians_agree_male = '$guardians_agree_male', allowstudy_aftermarriage = '$allowstudy_aftermarriage', allowjob_aftermarriage = '$allowjob_aftermarriage', livewife_aftermarriage = '$livewife_aftermarriage', profileby_male = '$profileby_male', WHERE user_id=$id";
+$query = mysqli_query ($conn, $sql);
+
 $sql = "INSERT INTO 6bd_marriage_related_qs_male
 	(user_id, guardians_agree_male, allowstudy_aftermarriage, allowjob_aftermarriage, livewife_aftermarriage, profileby_male, profilecreationdate  ) 
  VALUES
@@ -363,7 +366,12 @@ $sql = "INSERT INTO 6bd_marriage_related_qs_male
 ";
 if ($conn->multi_query($sql) === TRUE)
 
-//Biodata 7 change  
+
+
+//Biodata 7 change
+$sql="UPDATE 7bd_marriage_related_qs_female SET guardians_agree_female = '$guardians_agree_female', anyjob_aftermarriage = '$anyjob_aftermarriage', studies_aftermarriage = '$studies_aftermarriage', agree_marriage_student = '$agree_marriage_student', profileby_female = '$profileby_female', WHERE user_id=$id";
+$query = mysqli_query ($conn, $sql);
+
 $sql = "INSERT INTO 7bd_marriage_related_qs_female
 	(user_id, guardians_agree_female, anyjob_aftermarriage, studies_aftermarriage, agree_marriage_student, profileby_female, profilecreationdate  ) 
  VALUES
@@ -371,7 +379,12 @@ $sql = "INSERT INTO 7bd_marriage_related_qs_female
 ";
 if ($conn->multi_query($sql) === TRUE)
 
-//Biodata 8 change  
+
+
+//Biodata 8 change 
+$sql="UPDATE 8bd_religion_details SET religion = '$religion', yourreligion_condition = '$yourreligion_condition', WHERE user_id=$id";
+$query = mysqli_query ($conn, $sql);
+
 $sql = "INSERT INTO 8bd_religion_details
 (user_id, religion, yourreligion_condition, profilecreationdate  ) 
 VALUES
@@ -379,7 +392,16 @@ VALUES
 ";
 if ($conn->multi_query($sql) === TRUE)
 
+
+
 //Biodata 9 change  
+$sql="UPDATE 9bd_expected_life_partner SET partner_religius = '$partner_religius', partner_district = '$partner_district', partner_maritialstatus = '$partner_maritialstatus', partner_age = '$partner_age', partner_skintones = '$partner_skintones', partner_height = '$partner_height', partner_education = '$partner_education', partner_profession = '$partner_profession', partner_financial = '$partner_financial', partner_attributes = '$partner_attributes', WHERE user_id=$id";
+$query = mysqli_query ($conn, $sql);
+if ($query){
+	echo 'Updated Successfully!';
+} else{
+	echo 'Not Updated!';
+}
 $sql = "INSERT INTO 9bd_expected_life_partner
 (user_id, partner_religius, partner_district, partner_maritialstatus, partner_age, partner_skintones, partner_height, partner_education, partner_profession, partner_financial, partner_attributes, profilecreationdate  ) 
 VALUES
@@ -544,6 +566,7 @@ if(mysqli_num_rows($result)>=1){
 
 
 //function for upload photo
+
 function uploadphoto($id){
 	$target = "profile/". $id ."/";
 if (!file_exists($target)) {
@@ -551,12 +574,10 @@ if (!file_exists($target)) {
 }
 //specifying target for each file
 $target1 = $target . basename( $_FILES['pic1']['name']);
-$target2 = $target . basename( $_FILES['pic2']['name']);
 
 
 // This gets all the other information from the form
 $pic1=($_FILES['pic1']['name']);
-$pic2=($_FILES['pic2']['name']);
 
 $sql="SELECT id FROM photos WHERE user_id = '$id'";
 $result = mysqlexec($sql);
@@ -564,20 +585,20 @@ $result = mysqlexec($sql);
 //code part to check weather a photo already exists
 if(mysqli_num_rows($result) == 0) {
      // no photo for curret user, do stuff...
-		$sql="INSERT INTO photos (id, user_id, pic1, pic2) VALUES ('', '$id', '$pic1' ,'$pic2')";
+		$sql="INSERT INTO photos (id, user_id, pic1) VALUES ('', '$id', '$pic1')";
 		// Writes the information to the database
 		mysqlexec($sql);
 
 		
 } else {
     // There is a photo for customer so up
-     $sql="UPDATE photos SET pic1 = '$pic1', pic2 = '$pic2' WHERE user_id=$id";
+     $sql="UPDATE photos SET pic1 = '$pic1' WHERE user_id=$id";
 		// Writes the information to the database
 	mysqlexec($sql);
 }
 
 // Writes the photo to the server
-if(move_uploaded_file($_FILES['pic1']['tmp_name'], $target1)&&move_uploaded_file($_FILES['pic2']['tmp_name'], $target2))
+if(move_uploaded_file($_FILES['pic1']['tmp_name'], $target1))
 {
 
 // Tells you if its all ok
