@@ -939,15 +939,15 @@ figure.thumbnail1{
 	color:#000;
 }
 .row_1{
-    padding-top: 2px;
-    padding-bottom: 2px;
+    padding-top: 0px;
+    padding-bottom: 5px;
     padding-left: 0px;
     padding-right: 0px;
-
     background: #02a7e6;
     border-radius: 4px;
     width: 100%;
     margin: 0px;
+    box-shadow: 1px 3px 20px 0px;
 
    /*  background-image: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
     background-size: 400% 400%;
@@ -1353,6 +1353,7 @@ opened_1*/
     margin-bottom: 2em;
     margin-left: 100px;
     margin-right: 100px;
+    white-space: nowrap;
 }
 .nav-tabs1>li.active>a, .nav-tabs1>li.active>a:focus, .nav-tabs1>li.active>a:hover {
     color: #fff;
@@ -4974,3 +4975,64 @@ h1{
     width: var(--progress);
     background-color: #1F45FC;
   }
+  
+    button:hover {
+      background: #ff0080;
+      color: yellow;
+    }
+
+
+
+/* Contact me & Profile Link Copy Start */
+    .Contactme1 {
+        border: 0;
+        padding: 6px;
+        border-radius: 2px;
+        background: white;
+        cursor: pointer;
+        color: #ff0080;
+        font-size: 13px;
+        position: relative;
+        top: 40px;
+        left: 15px;
+        transition: all .2s ease;
+        white-space: nowrap;
+    }
+    .background2 h5 {
+        cursor: pointer;
+        color: yellow;
+        font-size: 14px;
+        position: relative;
+        top: 44px;
+        left: 15px;
+        white-space: nowrap;
+        width: 50px;
+        font-weight: 700;
+    }
+    
+    .background p {
+        cursor: pointer;
+        color: yellow;
+        font-size: 14px;
+        position: relative;
+        top: 111px;
+        left: -65px;
+        white-space: nowrap;
+        width: 50px;
+        font-weight: 700;
+    }
+    .clipboard {
+        border: 0;
+        padding: 6px;
+        border-radius: 2px;
+        background: white;
+        cursor: pointer;
+        color: #ff0080;
+        font-size: 13px;
+        position: relative;
+        top: 110px;
+        left: -65px;
+        transition: all .2s ease;
+        white-space: nowrap;
+    }
+    /* Contact me & Profile Link Copy End */
