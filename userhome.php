@@ -14,9 +14,7 @@ if(isloggedin()){
 <!DOCTYPE HTML>
 <html>
 <head>
-<title>Find Your Perfect Partner - Makemylove
- | User Home :: Make My Love
-</title>
+<title>User Home - ShosurBari</title>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 
@@ -75,9 +73,8 @@ Echo "<a href=\”/login.php\”>Login</a>";
      <div class="collapse_userprofile navbar-collapseprofile" id="bs-megadropdown-tabs">
         <ul class="nav navbar-nav nav_1">
             <li><a href="view_profile.php?id=<?php echo $id;?>">View Profile</a></li>
-            <li><a href="create_profile.php?id=<?php echo $id;?>">Edit Profile</a></li>  
-            <li><a href="partner_preference.php?id=<?php echo $id;?>">Partner Preference</a></li>
-
+            <li><a href="editbiodata.php?id=<?php echo $id;?>">Edit Biodata</a></li>
+            <li><a href="photouploader.php?id=<?php echo $id;?>">Upload Photos</a></li>  
       <li class="dropdown">
               <a href="#" class="dropdown-toggle" data-toggle="dropdown">Search<span class="caret"></span></a>
               <ul class="dropdown-menu" role="menu">
