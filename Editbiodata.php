@@ -28,9 +28,12 @@ if(isloggedin()){
 <link href="css/bootstrap-3.1.1.min.css" rel='stylesheet' type='text/css' />
 <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
 <script src="js/jquery.min.js"></script>
+<script src="js/optionsearch.js"></script>
 <script src="js/bootstrap.min.js"></script>
 <!-- Custom Theme files -->
+<link  rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/chosen/1.8.7/chosen.min.css">
 <link href="css/style.css" rel='stylesheet' type='text/css' />
+
 <link href='//fonts.googleapis.com/css?family=Oswald:300,400,700' rel='stylesheet' type='text/css'>
 <link href='//fonts.googleapis.com/css?family=Ubuntu:300,400,500,700' rel='stylesheet' type='text/css'>
 <!--font-Awesome-->
@@ -84,6 +87,14 @@ Echo "<a href=\”/login.php\”>Login</a>";
 
 
 
+
+
+
+
+
+
+
+
 <!-- -- -- -- -- -- -- -- -- -- -- -- -- ---- -- --
 -- -- -- -- -- -- -- -- --- -- -- -- -- -- -- -- --
 --                S  T  A  R  T                  --
@@ -96,13 +107,30 @@ Echo "<a href=\”/login.php\”>Login</a>";
             <h1>Edit <span>Biodata</span></h1>
         </div>
 
-	    <form action="" method="POST">
+	    <form action="editbiodata.php" method="POST">
 		<div class="flex-container">
 
 
 
 
+<?php
+include("includes/dbconn.php");
+$sql = "SELECT * FROM 1bd_personal_physical";
+$query = mysqli_query ($conn, $sql);
 
+$data = mysqli_fetch_array($query);
+
+    $biodatagender=$data['biodatagender'];
+	$day=$data['dateofbirth'];
+	$month=$data['dateofbirth'];
+	$year=$data['dateofbirth'];
+	$height=$data['height'];
+	$weight=$data['weight'];
+	$physicalstatus=$data['physicalstatus'];
+	$Skin_tones = $data['Skin_tones'];
+	$bloodgroup=$data['bloodgroup']; 
+	//echo $biodatagender.' '.$dob.' '.$height.' '.	$weight.' '.$physicalstatus.' '.$Skin_tones.' '.$bloodgroup;
+?>
 <!-- -- -- -- -- -- -- -- -- -- -- -- -- ---- -- --
 -- -- -- -- -- -- -- -- --- -- -- -- -- -- -- -- --
 --                S  T  A  R  T                  --
@@ -121,7 +149,7 @@ Echo "<a href=\”/login.php\”>Login</a>";
 		        <div class="shosurbari-biodata-field">
 		            <label for="edit-name">Biodata Type<span class="form-required" title="This field is required.">*</span></label>
 	                <select name="biodatagender"  required>
-					    <option value="<?php if (isset($_POST['biodatagender'])) echo $_POST['biodatagender']; ?>"></option>
+					    <option value=""><?php echo $biodatagender; ?></option>
 	                    <option value="Male">Male's</option>
 	                    <option value="Female">Female's</option> 
 	                </select>
@@ -131,7 +159,7 @@ Echo "<a href=\”/login.php\”>Login</a>";
 	                <div class="shosurbari-biodata-field">
 					<label for="edit-pass">DOB-Date<span class="form-required" title="This field is required.">*</span></label>
 					    <select name="day" required>
-		                    <option value="<?php if (isset($_POST['day'])) echo $_POST['day']; ?>"></option>
+		                    <option value=""><?php echo $day; ?></option>
 		                    <option value="1">1</option>
 		                    <option value="2">2</option>
 		                    <option value="3">3</option>
@@ -169,7 +197,7 @@ Echo "<a href=\”/login.php\”>Login</a>";
 					<div class="shosurbari-biodata-field">
 			            <label for="edit-pass">DOB-Month<span class="form-required" title="This field is required.">*</span></label>
 						<select name="month" required>
-		                    <option value="<?php if (isset($_POST['month'])) echo $_POST['month']; ?>"></option>
+		                    <option value=""><?php echo $month; ?></option>
 		                    <option value="01">January</option>
 		                    <option value="02">February</option>
 		                    <option value="03">March</option>
@@ -188,7 +216,7 @@ Echo "<a href=\”/login.php\”>Login</a>";
 	                <div class="shosurbari-biodata-field">
 					<label for="edit-pass">DOB-Year<span class="form-required" title="This field is required.">*</span></label>
 	                    <select name="year" required>
-		                    <option value="<?php if (isset($_POST['year'])) echo $_POST['year']; ?>"></option>
+		                    <option value=""><?php echo $year; ?></option>
 		                    <option value="1980">1980</option>
 		                    <option value="1981">1981</option>
 		                    <option value="1981">1981</option>
@@ -228,18 +256,18 @@ Echo "<a href=\”/login.php\”>Login</a>";
 
 					<div class="shosurbari-biodata-field">
 		                <label for="edit-name">Height<span class="form-required" title="This field is required.">*</span></label>
-			            <input type="text" id="edit-name" name="height" value="<?php if (isset($_POST['height'])) echo $_POST['height']; ?>" size="100" maxlength="100" class="form-text" required>
+			            <input type="text" id="edit-name" name="height" value="<?php echo $height; ?>" size="100" maxlength="100" class="form-text" required>
                     </div>
 
 					<div class="shosurbari-biodata-field">
 		                <label for="edit-name">Weight <span class="form-required" title="This field is required.">*</span></label>
-			            <input type="text" id="edit-name" name="weight" value="<?php if (isset($_POST['weight'])) echo $_POST['weight']; ?>" size="100" maxlength="100" class="form-text" required>
+			            <input type="text" id="edit-name" name="weight" value="<?php echo $weight; ?>" size="100" maxlength="100" class="form-text" required>
 		            </div>
 
 					<div class="shosurbari-biodata-field">
 		                <label for="edit-name">Physical Status<span class="form-required" title="This field is required.">*</span></label>
 	                    <select name="physicalstatus" required>
-							<option value="<?php if (isset($_POST['physicalstatus'])) echo $_POST['physicalstatus']; ?>"></option>
+							<option value=""><?php echo $physicalstatus; ?></option>
 	                        <option value="No Problem">No Problem</option>
 	                        <option value="Blind">Blind</option> 
 	               		    <option value="Deaf">Deaf</option> 
@@ -249,7 +277,7 @@ Echo "<a href=\”/login.php\”>Login</a>";
 					<div class="shosurbari-biodata-field">
 					        <label for="edit-name">Skin Tones<span class="form-required" title="This field is required.">*</span></label>
 	                        <select name="Skin_tones" required>
-							<option value="<?php if (isset($_POST['Skin_tones'])) echo $_POST['Skin_tones']; ?>"></option>
+							<option value=""><?php echo $Skin_tones; ?></option>
 	                        <option value="Light">Light</option>
 	                        <option value="Fair">Fair</option> 
 	               		    <option value="Medium">Medium</option>
@@ -261,7 +289,7 @@ Echo "<a href=\”/login.php\”>Login</a>";
 					<div class="shosurbari-biodata-field">
 					<label for="edit-name">Blood Group<span class="form-required" title="This field is required.">*</span></label>
 	                        <select name="bloodgroup" required>
-							<option value="<?php if (isset($_POST['bloodgroup'])) echo $_POST['bloodgroup']; ?>"></option>
+							<option value=""><?php echo $bloodgroup; ?></option>
 	                        <option value="A+">A+</option>
 	                        <option value="B+">B+</option> 
 	               		    <option value="AB+">AB+</option>
@@ -295,7 +323,22 @@ Echo "<a href=\”/login.php\”>Login</a>";
 
 
 
+<?php
+include("includes/dbconn.php");
+$sql = "SELECT * FROM 2bd_personal_lifestyle";
+$query = mysqli_query ($conn, $sql);
 
+$data = mysqli_fetch_array($query);
+
+$maritalstatus=$data['maritalstatus'];
+$smoke=$data['smoke'];
+$occupation=$data['occupation'];
+$occupation_describe=$data['occupation_describe'];
+$dress_code=$data['dress_code'];
+$aboutme=$data['aboutme'];
+
+//echo $maritalstatus.' '.$smoke.' '.$occupation.' '.$occupation_describe.' '.$dress_code.' '.$aboutme;
+?>
 <!-- -- -- -- -- -- -- -- -- -- -- -- -- ---- -- --
 -- -- -- -- -- -- -- -- --- -- -- -- -- -- -- -- --
 --                S  T  A  R  T                  --
@@ -314,7 +357,7 @@ Echo "<a href=\”/login.php\”>Login</a>";
 							<div class="shosurbari-biodata-field">
 				                <label for="edit-name">Marital status<span class="form-required" title="This field is required.">*</span></label>
 	                            <select name="maritalstatus" required>
-					            <option value="<?php if (isset($_POST['maritalstatus'])) echo $_POST['maritalstatus']; ?>" ></option>
+					            <option value="" ><?php echo $maritalstatus; ?></option>
 	                            <option value="Unmarried">Unmarried</option>
 	                            <option value="Divorced">Divorced</option>
 	                            <option value="Widow">Widow</option>
@@ -326,31 +369,33 @@ Echo "<a href=\”/login.php\”>Login</a>";
 							<div class="shosurbari-biodata-field">
 		                        <label for="edit-name">Smoke or Drinks<span class="form-required" title="This field is required.">*</span></label>
 	                            <select name="smoke" required>
-								    <option  value="<?php if (isset($_POST['smoke'])) echo $_POST['smoke']; ?>" ></option>
+								    <option  value=""><?php echo $smoke; ?></option>
 	                                <option value="No">No</option>
 	                                <option value="Yes">Yes</option> 
 	               		            <option value="Sometimes">Sometimes</option>
 	                            </select>
 			                </div>
 
+
+
 		                    <div class="shosurbari-biodata-field">
 		                        <label for="edit-name">Occupation<span class="form-required" title="This field is required.">*</span></label>
-			                    <input type="text" id="edit-name" name="occupation" value="<?php if (isset($_POST['occupation'])) echo $_POST['occupation']; ?>" size="200" maxlength="200" class="form-text" required>
+			                    <input type="text" id="edit-name" name="occupation" value="<?php echo $occupation; ?>" size="200" maxlength="200" class="form-text" required>
 		                    </div>
 
 		                    <div class="shosurbari-biodata-field">
 		                        <label for="edit-name">Occupation Describe<span class="form-required" title="This field is required.">*</span></label>
-								<textarea rows="5" id="edit-name" name="occupation_describe" value="<?php if (isset($_POST['occupation_describe'])) echo $_POST['occupation_describe']; ?>" placeholder="Write about you" class="form-text-describe" required></textarea>
+								<textarea rows="5" id="edit-name" name="occupation_describe" placeholder="Write about you" class="form-text-describe" required><?php echo $occupation_describe; ?></textarea>
 		                    </div>
 
 							<div class="shosurbari-biodata-field">
 		    	               <label for="about me">Your Dress Code at Home or Out Side<span class="form-required" title="This field is required.">*</span></label>
-		    	               <textarea rows="5" name="dress_code" value="<?php if (isset($_POST['dress_code'])) echo $_POST['dress_code']; ?>" placeholder="Write about you" class="form-text-describe" required></textarea>
+		    	               <textarea rows="5" name="dress_code" placeholder="Write about you" class="form-text-describe" required><?php echo $dress_code; ?></textarea>
 		                    </div>
 
 							<div class="shosurbari-biodata-field">
 		    	               <label for="about me">Write Something About You<span class="form-required" title="This field is required.">*</span></label>
-		    	               <textarea rows="5" name="aboutme" value="<?php if (isset($_POST['aboutme'])) echo $_POST['aboutme']; ?>" placeholder="Write about you" class="form-text-describe" required></textarea>
+		    	               <textarea rows="5" name="aboutme" placeholder="Write about you" class="form-text-describe" required><?php echo $aboutme; ?></textarea>
 		                    </div>
 
                             </div>
@@ -376,7 +421,20 @@ Echo "<a href=\”/login.php\”>Login</a>";
 
 
 
+<?php
+include("includes/dbconn.php");
+$sql = "SELECT * FROM 3bd_educational_qualifications";
+$query = mysqli_query ($conn, $sql);
 
+$data = mysqli_fetch_array($query);
+
+$education_method=$data['education_method'];
+$sscpassyear=$data['sscpassyear'];
+$current_education=$data['current_education'];
+$maximum_education=$data['maximum_education']; 
+
+	//echo $education_method.' '.$sscpassyear.' '.$current_education.' '.$maximum_education;
+?>
 <!-- -- -- -- -- -- -- -- -- -- -- -- -- ---- -- --
 -- -- -- -- -- -- -- -- --- -- -- -- -- -- -- -- --
 --                S  T  A  R  T                  --
@@ -395,7 +453,7 @@ Echo "<a href=\”/login.php\”>Login</a>";
 						<div class="shosurbari-biodata-field">
 						   <label for="edit-name">Your Education Method<span class="form-required" title="This field is required.">*</span></label>
 	                        <select name="education_method" required>
-							   <option value="<?php if (isset($_POST['education_method'])) echo $_POST['education_method']; ?>"></option>
+							   <option value=""><?php echo $education_method; ?></option>
 		                       <option value="Genaral">General</option>
 		                       <option value="Dakhil">Dakhil</option>
 		                       <option value="Technical">Technical</option>
@@ -408,7 +466,7 @@ Echo "<a href=\”/login.php\”>Login</a>";
 						<div class="shosurbari-biodata-field">
 						<label for="edit-pass">SSC or Equivalent Passing Year<span class="form-required" title="This field is required.">*</span></label>
 						<select name="sscpassyear" required>
-		                    <option value="<?php if (isset($_POST['sscpassyear'])) echo $_POST['sscpassyear']; ?>"></option>
+		                    <option value=""><?php echo $sscpassyear; ?></option>
 							<option value="nonyear">None</option>
 		                    <option value="2024">SSC Candidet2024</option>
 		                    <option value="2023">2023</option>
@@ -452,12 +510,12 @@ Echo "<a href=\”/login.php\”>Login</a>";
 
 					<div class="shosurbari-biodata-field">
 		                    <label for="edit-name">Current Education Position<span class="form-required" title="This field is required.">*</span></label>
-		                    <input type="text" id="edit-name" name="current_education" value="<?php if (isset($_POST['current_education'])) echo $_POST['current_education']; ?>" size="200" maxlength="200" class="form-text required" required>
+		                    <input type="text" id="edit-name" name="current_education" value="<?php echo $current_education; ?>" size="200" maxlength="200" class="form-text required" required>
 		                </div>
 
 						<div class="shosurbari-biodata-field">
 		                    <label for="edit-name">Maximum Education Position<span class="form-required" title="This field is required.">*</span></label>
-		                    <input type="text" id="edit-name" name="maximum_education" value="<?php if (isset($_POST['maximum_education'])) echo $_POST['maximum_education']; ?>" size="200" maxlength="200" class="form-text required" required>
+		                    <input type="text" id="edit-name" name="maximum_education" value="<?php echo $maximum_education; ?>" size="200" maxlength="200" class="form-text required" required>
 		                </div>
                         </div>
                     </div>
@@ -482,7 +540,20 @@ Echo "<a href=\”/login.php\”>Login</a>";
 
 
 
+<?php
+include("includes/dbconn.php");
+$sql = "SELECT * FROM 4bd_address_details";
+$query = mysqli_query ($conn, $sql);
 
+$data = mysqli_fetch_array($query);
+
+$country=$data['country'];
+$present_address=$data['present_address'];
+$permanent_address=$data['permanent_address'];
+$childhood=$data['childhood'];
+
+	//echo $country.' '.$present_address.' '.$permanent_address.' '.$childhood;
+?>
 <!-- -- -- -- -- -- -- -- -- -- -- -- -- ---- -- --
 -- -- -- -- -- -- -- -- --- -- -- -- -- -- -- -- --
 --                S  T  A  R  T                  --
@@ -498,10 +569,10 @@ Echo "<a href=\”/login.php\”>Login</a>";
 
 <div class="sb-biodata-option">
 
-                <div class="shosurbari-biodata-field">
-					<label for="edit-pass">Nationality<span class="form-required" title="This field is required.">*</span></label>
+                    <div class="shosurbari-biodata-field">
+					    <label for="edit-pass">Nationality<span class="form-required" title="This field is required.">*</span></label>
 	                        <select name="country" required>
-						    <option value="<?php if (isset($_POST['country'])) echo $_POST['country']; ?>"></option>
+						    <option value=""><?php echo $country; ?></option>
 	                        <option value="Bangladesh">Bangladesh</option>
 	                        <option value="India">India</option> 
 	               		    <option value="Pakistan">Pakistan</option>
@@ -527,19 +598,123 @@ Echo "<a href=\”/login.php\”>Login</a>";
 	                    </select>
                     </div>
 
+<script src="https://code.jquery.com/jquery-3.6.3.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/chosen/1.8.7/chosen.jquery.min.js"></script>
+					<div class="shosurbari-biodata-field">
+					    <label for="edit-pass">Division<span class="form-required" title="This field is required.">*</span></label>
+	                        <select name="division" class="selectsearch" required>
+						    <option value=""><?php echo $division; ?></option>
+	                        <option value="Barishal	">Barishal</option>
+	                        <option value="Chattogram">Chattogram</option> 
+	               		    <option value="Dhaka">Dhaka</option>
+							<option value="Khulna">Khulna</option>
+	                        <option value="Mymensingh">Mymensingh</option> 
+	               		    <option value="Rajshahi">Rajshahi</option>
+							<option value="Rangpur">Rangpur</option>
+	                        <option value="Sylhet">Sylhet</option> 
+	                    </select>
+                    </div>
+					<script>
+						jQuery('.selectsearch').chosen();
+					</script>
+
+					<div class="shosurbari-biodata-field">
+					    <label for="edit-pass">District<span class="form-required" title="This field is required.">*</span></label>  
+						<select name="Distriict" class="selectsearch2" required>
+						    <option value=""><?php echo $Distriict; ?></option>
+	                        <option value="Barguna">Barguna</option>
+	                        <option value="Barishal">Barishal</option> 
+	               		    <option value="Bhola">Bhola</option>
+							<option value="Jhalokati">Jhalokati</option>
+	                        <option value="Patuakhali">Patuakhali</option> 
+	               		    <option value="Pirojpur">Pirojpur</option>
+
+							<option value="Bandarban">Bandarban</option>
+	                        <option value="Brahmanbaria">Brahmanbaria</option> 
+	               		    <option value="Chandpur">Chandpur</option>
+							<option value="Chattogram">Chattogram</option>
+	                        <option value="Cumilla">Cumilla</option>
+							<option value="Coxbazar">Cox's Bazar</option>  
+	               		    <option value="Feni">Feni</option>
+							<option value="Khagrachhari">Khagrachhari</option>
+							<option value="Lakshmipur">Lakshmipur</option>
+							<option value="Noakhali">Noakhali</option>
+	                        <option value="Rangamati">Rangamati</option>
+
+	               		    <option value="Dhaka">Dhaka</option>
+							<option value="Faridpur">Faridpur</option>
+	                        <option value="Gazipur">Gazipur</option> 
+	               		    <option value="Gopalganj">Gopalganj</option>
+							<option value="Kishoreganj">Kishoreganj</option>
+							<option value="Madaripur">Madaripur</option>
+	                        <option value="Manikganj">Manikganj</option> 
+	               		    <option value="Munshiganj">Munshiganj</option>
+							<option value="Narayanganj">Narayanganj</option>
+	                        <option value="Narsingdi">Narsingdi</option> 
+	               		    <option value="Rajbari">Rajbari</option>
+							<option value="Shariatpur">Shariatpur</option>
+	                        <option value="Tangail">Tangail</option>
+
+	               		    <option value="Bagerhat">Bagerhat</option>
+							<option value="Chuadanga">Chuadanga</option>
+	                        <option value="Jashore">Jashore</option>
+							<option value="Jhenaidah">Jhenaidah</option>  
+	               		    <option value="Khulna">Khulna</option>
+							<option value="Kushtia">Kushtia</option>
+							<option value="Magura">Magura</option>
+							<option value="Meherpur">Meherpur</option>
+	                        <option value="Narail">Narail</option> 
+	               		    <option value="Satkhira">Satkhira</option>
+
+							<option value="Jamalpur">Jamalpur</option>
+	                        <option value="Mymensingh">Mymensingh</option> 
+	               		    <option value="Netrokona">Netrokona</option>
+							<option value="Sherpur">Sherpur</option>
+
+							<option value="Bogura">Bogura</option>
+							<option value="Chapai Nawabganj">Chapai Nawabganj</option> 
+	                        <option value="Joypurhat">Joypurhat</option> 
+	               		    <option value="Naogaon">Naogaon</option>
+							<option value="Natore">Natore</option>
+	               		    <option value="Pabna">Pabna</option>
+							<option value="Rajshahi">Rajshahi</option>
+	                        <option value="Sirajganj">Sirajganj</option>
+
+	               		    <option value="Dinajpur">Dinajpur</option>
+							<option value="Gaibandha">Gaibandha</option>
+	                        <option value="Kurigram">Kurigram</option>
+							<option value="Lalmonirhat">Lalmonirhat</option>  
+	               		    <option value="Nilphamari">Nilphamari</option>
+							<option value="Panchagarh">Panchagarh</option>
+							<option value="Rangpur">Rangpur</option>
+							<option value="Thakurgaon">Thakurgaon</option>
+
+	                        <option value="Habiganj">Habiganj</option> 
+	               		    <option value="Moulvibazar">Moulvibazar</option>
+							<option value="Sunamganj">Sunamganj</option>
+	                        <option value="Sylhet">Sylhet</option> 
+	                    </select>
+                    </div>
+                    <script>
+						jQuery('.selectsearch2').chosen();
+					</script>
+
+
+
+
 <div class="shosurbari-biodata-field">
 	<label for="edit-name">Present Address<span class="form-required" title="This field is required.">*</span></label>
-	<input type="text" id="edit-name" name="present_address" value="<?php if (isset($_POST['present_address'])) echo $_POST['present_address']; ?>" size="100" maxlength="100" class="form-text required" required>
+	<input type="text" id="edit-name" name="present_address" value="<?php echo $present_address; ?>" size="100" maxlength="100" class="form-text required" required>
 </div>
 
 <div class="shosurbari-biodata-field">
 	<label for="edit-name">Permanent Address<span class="form-required" title="This field is required.">*</span></label>
-	<input type="text" id="edit-name" name="permanent_address" value="<?php if (isset($_POST['permanent_address'])) echo $_POST['permanent_address']; ?>" size="100" maxlength="100" class="form-text required" required>
+	<input type="text" id="edit-name" name="permanent_address" value="<?php echo $permanent_address; ?>" size="100" maxlength="100" class="form-text required" required>
 </div>
 
 <div class="shosurbari-biodata-field">
 	<label for="edit-name">Where did you grow up?<span class="form-required" title="This field is required.">*</span></label>
-	<input type="text" id="edit-name" name="childhood" value="<?php if (isset($_POST['childhood'])) echo $_POST['childhood']; ?>" size="100" maxlength="100" class="form-text required" required>
+	<input type="text" id="edit-name" name="childhood" value="<?php echo $childhood; ?>" size="100" maxlength="100" class="form-text required" required>
 </div>
 </div>
 </div>
@@ -564,7 +739,26 @@ Echo "<a href=\”/login.php\”>Login</a>";
 
 
 
+<?php
+include("includes/dbconn.php");
+$sql = "SELECT * FROM 5bd_family_information";
+$query = mysqli_query ($conn, $sql);
 
+$data = mysqli_fetch_array($query);
+
+$father_alive=$data['father_alive'];
+$fatheroccupation=$data['fatheroccupation'];
+$mother_alive=$data['mother_alive'];
+$motheroccupation=$data['motheroccupation'];
+$brosis_number=$data['brosis_number'];
+$brosis_info=$data['brosis_info'];
+$uncle_profession=$data['uncle_profession'];
+$family_class=$data['family_class'];
+$financial_condition=$data['financial_condition'];
+$family_religious=$data['family_religious'];
+
+	//echo $father_alive.' '.$fatheroccupation.' '.$mother_alive.' '.	$motheroccupation.' '.$brosis_number.' '.$brosis_info.' '.$uncle_profession.' '.$family_class.' '.$financial_condition.' '.$family_religious;
+?>
 <!-- -- -- -- -- -- -- -- -- -- -- -- -- ---- -- --
 -- -- -- -- -- -- -- -- --- -- -- -- -- -- -- -- --
 --                S  T  A  R  T                  --
@@ -582,43 +776,43 @@ Echo "<a href=\”/login.php\”>Login</a>";
 
 						<div class="shosurbari-biodata-field">
 		                    <label for="edit-name">Is your Father alive?<span class="form-required" title="This field is required.">*</span></label>
-			                <input type="text" id="edit-name" name="father_alive" value="<?php if (isset($_POST['father_alive'])) echo $_POST['father_alive']; ?>" size="100" maxlength="100" class="form-text" required>
+			                <input type="text" id="edit-name" name="father_alive" value="<?php echo $father_alive; ?>" size="100" maxlength="100" class="form-text" required>
 		                </div>
 
 						<div class="shosurbari-biodata-field">
 		    		        <label for="edit-name">Fathers Occupation<span class="form-required" title="This field is required.">*</span></label>
-			  		        <input type="text" id="edit-name" name="fatheroccupation" value="<?php if (isset($_POST['fatheroccupation'])) echo $_POST['fatheroccupation']; ?>" size="200" maxlength="200" class="form-text" required>
+			  		        <input type="text" id="edit-name" name="fatheroccupation" value="<?php echo $fatheroccupation; ?>" size="200" maxlength="200" class="form-text" required>
 		                </div>
 
 						<div class="shosurbari-biodata-field">
 		                    <label for="edit-name">Is your Mother alive?<span class="form-required" title="This field is required.">*</span></label>
-			                <input type="text" id="edit-name" name="mother_alive"  value="<?php if (isset($_POST['mother_alive'])) echo $_POST['mother_alive']; ?>"  size="100" maxlength="100" class="form-text" required>
+			                <input type="text" id="edit-name" name="mother_alive"  value="<?php echo $mother_alive; ?>"  size="100" maxlength="100" class="form-text" required>
 		                </div>
 
 						<div class="shosurbari-biodata-field">
 		                    <label for="edit-name">Mothers Occupation<span class="form-required" title="This field is required.">*</span></label>
-			                <input type="text" id="edit-name" name="motheroccupation"  value="<?php if (isset($_POST['motheroccupation'])) echo $_POST['motheroccupation']; ?>"  size="200" maxlength="200" class="form-text" required>
+			                <input type="text" id="edit-name" name="motheroccupation"  value="<?php echo $motheroccupation; ?>"  size="200" maxlength="200" class="form-text" required>
 		                </div>
 
 						<div class="shosurbari-biodata-field">
 		                    <label for="edit-name">How many Sisters & Brothers do you have?<span class="form-required" title="This field is required.">*</span></label>
-			                <input type="text" id="edit-name" name="brosis_number"  value="<?php if (isset($_POST['brosis_number'])) echo $_POST['brosis_number']; ?>"  size="100" maxlength="100" class="form-text" required>
+			                <input type="text" id="edit-name" name="brosis_number"  value="<?php echo $brosis_number; ?>"  size="100" maxlength="100" class="form-text" required>
 		                </div>
 
 						<div class="shosurbari-biodata-field">
 		                    <label for="edit-name">Sisters & Brothers information<span class="form-required" title="This field is required.">*</span></label>
-							<textarea rows="8" id="edit-name" name="brosis_info"  value="<?php if (isset($_POST['brosis_info'])) echo $_POST['brosis_info']; ?>"  placeholder="Write about you" class="form-text-describe" required></textarea>
+							<textarea rows="8" id="edit-name" name="brosis_info"   placeholder="Write about you" class="form-text-describe" required><?php echo $brosis_info; ?></textarea>
 		                </div>
 
 						<div class="shosurbari-biodata-field">
 		                    <label for="edit-name">Profession of uncles<span class="form-required" title="This field is required.">*</span></label>
-							<textarea rows="8" id="edit-name" name="uncle_profession"  value="<?php if (isset($_POST['uncle_profession'])) echo $_POST['uncle_profession']; ?>"  placeholder="Write about you" class="form-text-describe" required></textarea>
+							<textarea rows="8" id="edit-name" name="uncle_profession"  placeholder="Write about you" class="form-text-describe" required><?php echo $uncle_profession; ?></textarea>
 		                </div>
 
 						<div class="shosurbari-biodata-field">
 		                    <label for="edit-name">Family financial status<span class="form-required" title="This field is required.">*</span></label>
 	                        <select name="family_class" required>
-							    <option  value="<?php if (isset($_POST['family_class'])) echo $_POST['family_class']; ?>" ></option>
+							    <option  value="" ><?php echo $family_class; ?></option>
 	                            <option value="Slim">Higher Class</option>
 	                            <option value="Fat">Higher Middle Class</option> 
 	               		        <option value="Average">Middle Class</option>
@@ -629,12 +823,12 @@ Echo "<a href=\”/login.php\”>Login</a>";
 
 						<div class="shosurbari-biodata-field">
 		                    <label for="edit-name">Description of financial condition<span class="form-required" title="This field is required.">*</span></label>
-							<textarea rows="5" id="edit-name" name="financial_condition"  value="<?php if (isset($_POST['financial_condition'])) echo $_POST['financial_condition']; ?>"  placeholder="Write about you" class="form-text-describe" required></textarea>
+							<textarea rows="5" id="edit-name" name="financial_condition" placeholder="Write about you" class="form-text-describe" required><?php echo $financial_condition; ?></textarea>
 		                </div>
 
 						<div class="shosurbari-biodata-field">
 		    	            <label for="about me">How is your family's religious condition?<span class="form-required" title="This field is required.">*</span></label>
-		    	            <textarea rows="5" name="family_religious"  value="<?php if (isset($_POST['family_religious'])) echo $_POST['family_religious']; ?>"  placeholder="Write about you" class="form-text-describe" required></textarea>
+		    	            <textarea rows="5" name="family_religious"  placeholder="Write about you" class="form-text-describe" required><?php echo $family_religious; ?></textarea>
 		                </div>
                     </div>
 		        </div>
@@ -659,7 +853,21 @@ Echo "<a href=\”/login.php\”>Login</a>";
 
 
 
+<?php
+include("includes/dbconn.php");
+$sql = "SELECT * FROM 6bd_marriage_related_qs_male";
+$query = mysqli_query ($conn, $sql);
 
+$data = mysqli_fetch_array($query);
+
+$guardians_agree_male=$data['guardians_agree_male'];
+$allowstudy_aftermarriage=$data['allowstudy_aftermarriage'];
+$allowjob_aftermarriage=$data['allowjob_aftermarriage'];
+$livewife_aftermarriage=$data['livewife_aftermarriage'];
+$profileby_male=$data['profileby_male'];
+
+	//echo $guardians_agree_male.' '.$allowstudy_aftermarriage.' '.$allowjob_aftermarriage.' '.$livewife_aftermarriage.' '.$profileby_male;
+?>
 <!-- -- -- -- -- -- -- -- -- -- -- -- -- ---- -- --
 -- -- -- -- -- -- -- -- --- -- -- -- -- -- -- -- --
 --                S  T  A  R  T                  --
@@ -677,28 +885,28 @@ Echo "<a href=\”/login.php\”>Login</a>";
 
 							<div class="shosurbari-biodata-field">
 		                        <label for="edit-name">Do your guardians agree to your marriage?<span class="form-required" title="This field is required.">*</span></label>
-			                    <input type="text" id="edit-name" name="guardians_agree_male"  value="<?php if (isset($_POST['guardians_agree_male'])) echo $_POST['guardians_agree_male']; ?>"  size="100" maxlength="100" class="form-text" required>
+			                    <input type="text" id="edit-name" name="guardians_agree_male"  value="<?php echo $guardians_agree_male; ?>"  size="100" maxlength="100" class="form-text" required>
 		                    </div>
 
 							<div class="shosurbari-biodata-field">
 		                        <label for="edit-name">Would you like to allow your wife to study after marriage?<span class="form-required" title="This field is required.">*</span></label>
-			                    <input type="text" id="edit-name" name="allowstudy_aftermarriage"  value="<?php if (isset($_POST['allowstudy_aftermarriage'])) echo $_POST['allowstudy_aftermarriage']; ?>"  size="100" maxlength="100" class="form-text" required>
+			                    <input type="text" id="edit-name" name="allowstudy_aftermarriage"  value="<?php echo $allowstudy_aftermarriage; ?>"  size="100" maxlength="100" class="form-text" required>
 		                    </div>
 
 							<div class="shosurbari-biodata-field">
 		                        <label for="edit-name">Would you like to allow your wife to do any job after marriage?<span class="form-required" title="This field is required.">*</span></label>
-			                    <input type="text" id="edit-name" name="allowjob_aftermarriage"  value="<?php if (isset($_POST['allowjob_aftermarriage'])) echo $_POST['allowjob_aftermarriage']; ?>"  size="100" maxlength="100" class="form-text" required>
+			                    <input type="text" id="edit-name" name="allowjob_aftermarriage"  value="<?php echo $allowjob_aftermarriage; ?>"  size="100" maxlength="100" class="form-text" required>
 		                    </div>
 
 							<div class="shosurbari-biodata-field">
 		                        <label for="edit-name">Where will you live with your wife after marriage?<span class="form-required" title="This field is required.">*</span></label>
-			                    <input type="text" id="edit-name" name="livewife_aftermarriage"  value="<?php if (isset($_POST['livewife_aftermarriage'])) echo $_POST['livewife_aftermarriage']; ?>"  size="100" maxlength="100" class="form-text" required>
+			                    <input type="text" id="edit-name" name="livewife_aftermarriage"  value="<?php echo $livewife_aftermarriage; ?>"  size="100" maxlength="100" class="form-text" required>
 		                    </div>
 
 							<div class="shosurbari-biodata-field">
 		                        <label for="edit-name">Profile Created by<span class="form-required" title="This field is required.">*</span></label>
 	                            <select name="profileby_male" required>
-								<option  value="<?php if (isset($_POST['profileby_male'])) echo $_POST['profileby_male']; ?>" ></option>
+								<option value="" ><?php echo $profileby_male; ?></option>
 	                            <option value="Self">Self</option>
 								<option value="Father">Father</option>
 	                            <option value="Mother">Mother</option>
@@ -734,7 +942,21 @@ Echo "<a href=\”/login.php\”>Login</a>";
 
 
 
+<?php
+include("includes/dbconn.php");
+$sql = "SELECT * FROM 7bd_marriage_related_qs_female";
+$query = mysqli_query ($conn, $sql);
 
+$data = mysqli_fetch_array($query);
+
+$guardians_agree_female=$data['guardians_agree_female'];
+$anyjob_aftermarriage=$data['anyjob_aftermarriage'];
+$studies_aftermarriage=$data['studies_aftermarriage'];
+$agree_marriage_student=$data['agree_marriage_student'];
+$profileby_female=$data['profileby_female'];
+
+	//echo $guardians_agree_female.' '.$anyjob_aftermarriage.' '.$studies_aftermarriage.' '.$agree_marriage_student.' '.$profileby_female;
+?>
 <!-- -- -- -- -- -- -- -- -- -- -- -- -- ---- -- --
 -- -- -- -- -- -- -- -- --- -- -- -- -- -- -- -- --
 --                S  T  A  R  T                  --
@@ -752,28 +974,28 @@ Echo "<a href=\”/login.php\”>Login</a>";
 
 							<div class="shosurbari-biodata-field">
 		                        <label for="edit-name">Do your guardians agree to your marriage?<span class="form-required" title="This field is required.">*</span></label>
-			                    <input type="text" id="edit-name" name="guardians_agree_female"  value="<?php if (isset($_POST['guardians_agree_female'])) echo $_POST['guardians_agree_female']; ?>"  size="100" maxlength="100" class="form-text" required>
+			                    <input type="text" id="edit-name" name="guardians_agree_female"   value="<?php echo $guardians_agree_female; ?>"  size="100" maxlength="100" class="form-text" required>
 		                    </div>
 
 							<div class="shosurbari-biodata-field">
 		                        <label for="edit-name">Are you willing to do any job after marriage?<span class="form-required" title="This field is required.">*</span></label>
-			                    <input type="text" id="edit-name" name="anyjob_aftermarriage"  value="<?php if (isset($_POST['anyjob_aftermarriage'])) echo $_POST['anyjob_aftermarriage']; ?>"  size="100" maxlength="100" class="form-text" required>
+			                    <input type="text" id="edit-name" name="anyjob_aftermarriage"   value="<?php echo $anyjob_aftermarriage; ?>"  size="100" maxlength="100" class="form-text" required>
 		                    </div>
 
 							<div class="shosurbari-biodata-field">
 		                        <label for="edit-name">Would you like to continue your studies after marriage?<span class="form-required" title="This field is required.">*</span></label>
-			                    <input type="text" id="edit-name" name="studies_aftermarriage"  value="<?php if (isset($_POST['studies_aftermarriage'])) echo $_POST['studies_aftermarriage']; ?>"  size="200" maxlength="200" class="form-text" required>
+			                    <input type="text" id="edit-name" name="studies_aftermarriage"   value="<?php echo $studies_aftermarriage; ?>"  size="200" maxlength="200" class="form-text" required>
 		                    </div>
 
 							<div class="shosurbari-biodata-field">
 		                        <label for="edit-name">Are you agree Marriage to student?<span class="form-required" title="This field is required.">*</span></label>
-			                    <input type="text" id="edit-name" name="agree_marriage_student"  value="<?php if (isset($_POST['agree_marriage_student'])) echo $_POST['agree_marriage_student']; ?>"  size="200" maxlength="200" class="form-text" required>
+			                    <input type="text" id="edit-name" name="agree_marriage_student"   value="<?php echo $agree_marriage_student; ?>"size="200" maxlength="200" class="form-text" required>
 		                    </div>
 
 							<div class="shosurbari-biodata-field">
 		                        <label for="edit-name">Profile Created by<span class="form-required" title="This field is required.">*</span></label>
 	                            <select name="profileby_female" required>
-								<option  value="<?php if (isset($_POST['profileby_female'])) echo $_POST['profileby_female']; ?>" ></option>
+								<option value="" ><?php echo $profileby_female; ?></option>
 	                            <option value="Self">Self</option>
 								<option value="Father">Father</option>
 	                            <option value="Mother">Mother</option>
@@ -809,7 +1031,18 @@ Echo "<a href=\”/login.php\”>Login</a>";
 
 
 
+<?php
+include("includes/dbconn.php");
+$sql = "SELECT * FROM 8bd_religion_details";
+$query = mysqli_query ($conn, $sql);
 
+$data = mysqli_fetch_array($query);
+
+$religion=$data['religion'];
+$yourreligion_condition=$data['yourreligion_condition'];
+
+	//echo $religion.' '.$yourreligion_condition;
+?>
 <!-- -- -- -- -- -- -- -- -- -- -- -- -- ---- -- --
 -- -- -- -- -- -- -- -- --- -- -- -- -- -- -- -- --
 --                S  T  A  R  T                  --
@@ -827,9 +1060,9 @@ Echo "<a href=\”/login.php\”>Login</a>";
 
 							
 					        <div class="shosurbari-biodata-field">
-			                    <label for="edit-pass">Religion<span class="form-required" title="This field is required.">*</span></label>
+			                    <label for="edit-pass">Religion<span class="form-required" title="This field is required.">*</span><?php echo $religion; ?></label>
 	                            <select name="religion" required>
-								<option  value="<?php if (isset($_POST['religion'])) echo $_POST['religion']; ?>" ></option>
+								<option value="" ><?php echo $religion; ?></option>
 						        <option value="Muslim">Muslim</option>
 		                        <option value="Hindu">Hindu</option>
 		                        <option value="Christian">Christian</option>
@@ -840,7 +1073,7 @@ Echo "<a href=\”/login.php\”>Login</a>";
 
 					        <div class="shosurbari-biodata-field">
 		    	               <label for="about me">How is your religious condition?<span class="form-required" title="This field is required.">*</span></label>
-		    	               <textarea rows="5" name="yourreligion_condition" value="<?php if (isset($_POST['yourreligion_condition'])) echo $_POST['yourreligion_condition']; ?>" placeholder="Write about you" class="form-text-describe" required></textarea>
+		    	               <textarea rows="5" name="yourreligion_condition" placeholder="Write about you" class="form-text-describe" required><?php echo $yourreligion_condition; ?></textarea>
 		                    </div>
                             </div>
                         </div>
@@ -865,7 +1098,27 @@ Echo "<a href=\”/login.php\”>Login</a>";
 
 
 
+<?php
+include("includes/dbconn.php");
+$sql = "SELECT * FROM 9bd_expected_life_partner";
+$query = mysqli_query ($conn, $sql);
 
+$data = mysqli_fetch_array($query);
+
+$partner_religius=$data['partner_religius'];
+$partner_district=$data['partner_district'];
+$partner_maritialstatus=$data['partner_maritialstatus'];
+$partner_age=$data['partner_age'];
+$partner_skintones=$data['partner_skintones'];
+$partner_height=$data['partner_height'];
+$partner_education=$data['partner_education'];
+$partner_profession=$data['partner_profession'];
+$partner_financial=$data['partner_financial'];
+$partner_attributes=$data['partner_attributes'];
+
+//echo $partner_religius.' '.$partner_district.' '.$partner_maritialstatus.' '.$partner_age.' '.$partner_skintones.' '.$partner_height.' '.$partner_education.' '.$partner_profession.' '.$partner_financial.' '.$partner_attributes;
+
+?>
 <!-- -- -- -- -- -- -- -- -- -- -- -- -- ---- -- --
 -- -- -- -- -- -- -- -- --- -- -- -- -- -- -- -- --
 --                S  T  A  R  T                  --
@@ -883,52 +1136,52 @@ Echo "<a href=\”/login.php\”>Login</a>";
 
 						<div class="shosurbari-biodata-field">
 		                    <label for="edit-name">Religius Status<span class="form-required" title="This field is required.">*</span></label>
-			                <input type="text" id="edit-name" name="partner_religius"  value="<?php if (isset($_POST['partner_religius'])) echo $_POST['partner_religius']; ?>"  size="200" maxlength="200" class="form-text" required>
+			                <input type="text" id="edit-name" name="partner_religius"  value="<?php echo $partner_religius; ?>"  size="200" maxlength="200" class="form-text" required>
 		                </div>
 
 						<div class="shosurbari-biodata-field">
 		                    <label for="edit-name">District<span class="form-required" title="This field is required.">*</span></label>
-			                <input type="text" id="edit-name" name="partner_district"  value="<?php if (isset($_POST['partner_district'])) echo $_POST['partner_district']; ?>"  size="100" maxlength="100" class="form-text" required>
+			                <input type="text" id="edit-name" name="partner_district" value="<?php echo $partner_district; ?>"  size="100" maxlength="100" class="form-text" required>
 		                </div>
 
 						<div class="shosurbari-biodata-field">
 		                    <label for="edit-name">Marital Status<span class="form-required" title="This field is required.">*</span></label>
-			                <input type="text" id="edit-name" name="partner_maritialstatus"  value="<?php if (isset($_POST['partner_maritialstatus'])) echo $_POST['partner_maritialstatus']; ?>"  size="100" maxlength="100" class="form-text" required>
+			                <input type="text" id="edit-name" name="partner_maritialstatus"  value="<?php echo $partner_maritialstatus; ?>"  size="100" maxlength="100" class="form-text" required>
 		                </div>
 
 						<div class="shosurbari-biodata-field">
 		                    <label for="edit-name">Age<span class="form-required" title="This field is required.">*</span></label>
-			                <input type="text" id="edit-name" name="partner_age"  value="<?php if (isset($_POST['partner_age'])) echo $_POST['partner_age']; ?>"  size="100" maxlength="100" class="form-text" required>
+			                <input type="text" id="edit-name" name="partner_age" value="<?php echo $partner_age; ?>"  size="100" maxlength="100" class="form-text" required>
 		                </div>
 
 						<div class="shosurbari-biodata-field">
 		    		        <label for="edit-name">Skin Tones<span class="form-required" title="This field is required.">*</span></label>
-			  		        <input type="text" id="edit-name" name="partner_skintones"  value="<?php if (isset($_POST['partner_skintones'])) echo $_POST['partner_skintones']; ?>"  size="100" maxlength="100" class="form-text" required>
+			  		        <input type="text" id="edit-name" name="partner_skintones"  value="<?php echo $partner_skintones; ?>" size="100" maxlength="100" class="form-text" required>
 		                </div>
 
 						<div class="shosurbari-biodata-field">
 		                    <label for="edit-name">Height<span class="form-required" title="This field is required.">*</span></label>
-			                <input type="text" id="edit-name" name="partner_height"  value="<?php if (isset($_POST['partner_height'])) echo $_POST['partner_height']; ?>"  size="100" maxlength="100" class="form-text" required>
+			                <input type="text" id="edit-name" name="partner_height"  value="<?php echo $partner_height; ?>"  size="100" maxlength="100" class="form-text" required>
 		                </div>
 
 						<div class="shosurbari-biodata-field">
 		                    <label for="edit-name">Educational Qualification<span class="form-required" title="This field is required.">*</span></label>
-			                <input type="text" id="edit-name" name="partner_education"  value="<?php if (isset($_POST['partner_education'])) echo $_POST['partner_education']; ?>"  size="100" maxlength="100" class="form-text" required>
+			                <input type="text" id="edit-name" name="partner_education"  value="<?php echo $partner_education; ?>"  size="100" maxlength="100" class="form-text" required>
 		                </div>
 
 						<div class="shosurbari-biodata-field">
 		                    <label for="edit-name">Profession<span class="form-required" title="This field is required.">*</span></label>
-			                <input type="text" id="edit-name" name="partner_profession"  value="<?php if (isset($_POST['partner_profession'])) echo $_POST['partner_profession']; ?>"  size="200" maxlength="200" class="form-text" required>
+			                <input type="text" id="edit-name" name="partner_profession"  value="<?php echo $partner_profession; ?>"  size="200" maxlength="200" class="form-text" required>
 		                </div>
 
 						<div class="shosurbari-biodata-field">
 		                    <label for="edit-name">Financial condition<span class="form-required" title="This field is required.">*</span></label>
-			                <input type="text" id="edit-name" name="partner_financial"  value="<?php if (isset($_POST['partner_financial'])) echo $_POST['partner_financial']; ?>"  size="100" maxlength="100" class="form-text" required>
+			                <input type="text" id="edit-name" name="partner_financial"  value="<?php echo $partner_financial; ?>"  size="100" maxlength="100" class="form-text" required>
 		                </div>
 
 						<div class="shosurbari-biodata-field">
 		                    <label for="edit-name">Expected qualities or attributes of your life partner<span class="form-required" title="This field is required.">*</span></label>
-							<textarea rows="8" id="edit-name" name="partner_attributes" value="<?php if (isset($_POST['partner_attributes'])) echo $_POST['partner_attributes']; ?>" placeholder="Write about you" class="form-text-describe" required></textarea>
+							<textarea rows="8" id="edit-name" name="partner_attributes" placeholder="Write about you" class="form-text-describe" required><?php echo $partner_attributes; ?></textarea>
 		                </div>
                     </div>
 		        </div>
