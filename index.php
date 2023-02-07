@@ -10,6 +10,7 @@
 <script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); } </script>
 <link href="css/bootstrap-3.1.1.min.css" rel='stylesheet' type='text/css' />
 <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+<script src="js/optionsearch.js"></script>
 <script src="js/jquery.min.js"></script>
 <script src="js/bootstrap.min.js"></script>
 <!-- Custom Theme files -->
@@ -45,6 +46,17 @@ $(document).ready(function(){
       <a href="register.php" class="hvr-shutter-out-horizontal">Create your Profile</a>
     </div>
   </div>
+  <body onLoad="initClock()">
+
+  <div id="timedate">
+    <a id="mon">January</a>
+    <a id="d">1</a>,
+    <a id="y">0</a><br />
+    <a id="h">12</a> :
+    <a id="m">00</a>:
+    <a id="s">00</a>:
+    <a id="mi">000</a>
+  </div>
 </div> 
 
 
@@ -57,7 +69,7 @@ $(document).ready(function(){
 <form action="#" id="header-search-people" class="form-area" novalidate="novalidate" autocomplete="off">
 
 	<div class="Findpartner">
-		<h1>Find your perfect life partner</h1>
+		<h1>Find your perfect <span>life partner</span></h1>
 </div>
 
   <div class="row">
@@ -72,7 +84,7 @@ $(document).ready(function(){
                       <option value="AL">Groom</option>
                       <option value="AK">Bride</option>
                   </select>
-                  <label>Groom or Bride</label>
+                  <label>I'm Looking</label>
                   <svg class="chevron-down" width="17px" height="10px" viewBox="0 0 17 10" version="1.1" xmlns="http://www.w3.org/2000/svg"
                       xmlns:xlink="http://www.w3.org/1999/xlink">
                       <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
@@ -565,9 +577,7 @@ $(document).ready(function(){
     		</div>
     		<div class="clearfix"> </div>
     		<div class="copy">
-		      <p>Copyright © 2017 Marital . All Rights Reserved  | Brought To You By <a href="http://code-projects.org
-.com/" target="_blank">code-projects.org
-</a> </p>
+		      <p>Copyright © 2012-23 ShosurBari.com | All Rights Reserved  | Developed By - <a href="https://www.facebook.com/NAFIZ.SWE.DIU/" target="_blank">Nafiz Noyon</a></p>
 	        </div>
     	</div>
     </div>
