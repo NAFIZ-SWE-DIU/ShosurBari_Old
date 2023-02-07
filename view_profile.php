@@ -21,7 +21,6 @@ $row=mysqli_fetch_assoc($result);
 
 //end of getting profile detils
 	$pic1="";
-	$pic2="";
 
 
 
@@ -32,9 +31,6 @@ if($result2){
 	$row2=mysqli_fetch_array($result2);
 	if($row2){
 	$pic1=$row2['pic1'];
-	}
-	if($row2){
-	$pic2=$row2['pic2'];
 	}
 }
 }else{
@@ -59,6 +55,7 @@ if($result2){
 <script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); } </script>
 <link href="css/bootstrap-3.1.1.min.css" rel='stylesheet' type='text/css' />
 <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+<script src="js/optionsearch.js"></script>
 <script src="js/jquery.min.js"></script>
 <script src="js/bootstrap.min.js"></script>
 <!-- Custom Theme files -->
@@ -86,12 +83,6 @@ $(document).ready(function(){
 
 
 
-
-
-
-
-
-
 <body>
 <!-- ============================  Navigation Start =========================== -->
  <?php include_once("includes/navigation.php");?>
@@ -113,12 +104,6 @@ $(document).ready(function(){
     <div class="profile">
    	<div class="col-md-8 profile_left">
    	 	    <div class="col_3">
-   	            <div class="col-sm-4 row_2">
-					<ul class="slides">
-							<img src="profile/<?php echo $profileid;?>/<?php echo $pic1;?>" />
-							<img id="demo" src="profile/<?php echo $profileid;?>/<?php echo $pic2;?>" />
-					</ul>
-			    </div>
 
 
 
@@ -218,6 +203,37 @@ $religion=$row['religion'];
 							<h2>Biodata No : <span><?php echo $profileid;?></span></h2>
 			                <?php } ?>
 						</div>
+
+					<div class="col-sm-4 row_22">
+					<ul class="slides2">
+						<img src="profile/<?php echo $profileid;?>/<?php echo $pic1;?>" />
+					</ul>
+
+<div class="background2">
+  <button class="Contactme1">Contact Me</button>
+  <h5>Contact for Married</h5>
+</div>
+<div class="background">
+  <button class="clipboard">Click Me</button>
+  <p>Copy My Profile Link</p>
+</div>
+
+
+<script>
+var $temp = $("<input>");
+var $url = $(location).attr('href');
+$('.clipboard').on('click', function() {
+  $("body").append($temp);
+  $temp.val($url).select();
+  document.execCommand("copy");
+  $temp.remove();
+  $("p").text("Successfully Copied!");
+})
+</script>
+
+
+
+					</div>
 		        	<tbody>
 
 		        		<tr class="opened">
