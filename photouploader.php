@@ -15,9 +15,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST'){ uploadphoto($id); }
 <!DOCTYPE HTML>
 <html>
 <head>
-<title>Find Your Perfect Partner - Makemylove
- | Login :: Make My Love
-</title>
+<title>Upload Photos - ShosurBari</title>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 
@@ -66,10 +64,7 @@ $(document).ready(function(){
 	   <form action="" method="post" enctype="multipart/form-data">
   	    <div class="form-item form-type-textfield form-item-name">
 	      <label for="edit-name">Upload Your Photo(Upto 4 images, Use 300 x 250 dimensions) <span class="form-required" title="This field is required.">*</span></label>
-	      <input type="file" id="edit-name" name="pic1" class="form-file required">
-        <input type="file" id="edit-name" name="pic2" class="form-file required">
-        <input type="file" id="edit-name" name="pic3" class="form-file required">
-        <input type="file" id="edit-name" name="pic4" class="form-file required">
+	      <input type="file" id="edit-name" name="pic1" value="<?php if (isset($_POST['pic1'])) echo $_POST['pic1']; ?>" class="form-file required">
 	    </div>
 	    <div class="form-actions">
 	    	<input type="submit" id="edit-submit" name="op" value="Upload" class="btn_1 submit">
