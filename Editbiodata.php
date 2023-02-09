@@ -4,7 +4,8 @@
 <?php
 $id=$_SESSION['id'];
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
-		processprofile_form($id);
+	processprofile_form($id);
+		//processprofile_form
 }
 ?>
 
@@ -98,7 +99,7 @@ Echo "<a href=\”/login.php\”>Login</a>";
 <!-- -- -- -- -- -- -- -- -- -- -- -- -- ---- -- --
 -- -- -- -- -- -- -- -- --- -- -- -- -- -- -- -- --
 --                S  T  A  R  T                  --
---     SHOSURBARI BIODATA FIELD ALL SECTION      --
+--   SHOSURBARI BIODATA FORM FIELD ALL SECTION   --
 --                                               --
 -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- ---
 -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -->
@@ -113,22 +114,52 @@ Echo "<a href=\”/login.php\”>Login</a>";
 
 
 
+
+
+
+
+
 <?php
 include("includes/dbconn.php");
-$sql = "SELECT * FROM 1bd_personal_physical";
-$query = mysqli_query ($conn, $sql);
 
-$data = mysqli_fetch_array($query);
+//$id=$_GET['user_id'];
+//bd_personal_physical_1($id);
 
-    $biodatagender=$data['biodatagender'];
-	$day=$data['dateofbirth'];
-	$month=$data['dateofbirth'];
-	$year=$data['dateofbirth'];
-	$height=$data['height'];
-	$weight=$data['weight'];
-	$physicalstatus=$data['physicalstatus'];
-	$Skin_tones = $data['Skin_tones'];
-	$bloodgroup=$data['bloodgroup']; 
+
+//getting profile details from db
+$sql="SELECT * FROM 1bd_personal_physical WHERE user_id = $id";
+$result = mysqlexec($sql);
+
+if($result){
+$row=mysqli_fetch_assoc($result);
+if($row){
+    $biodatagender=$row['biodatagender'];
+}
+if($row){
+	$day=$row['dateofbirth'];
+}
+if($row){
+	$month=$row['dateofbirth'];
+}
+if($row){
+	$year=$row['dateofbirth'];
+}
+if($row){
+	$height=$row['height'];
+}
+if($row){
+	$weight=$row['weight'];
+}
+if($row){
+	$physicalstatus=$row['physicalstatus'];
+}
+if($row){
+	$Skin_tones = $row['Skin_tones'];
+}
+if($row){
+	$bloodgroup=$row['bloodgroup']; 
+}
+}
 	//echo $biodatagender.' '.$dob.' '.$height.' '.	$weight.' '.$physicalstatus.' '.$Skin_tones.' '.$bloodgroup;
 ?>
 <!-- -- -- -- -- -- -- -- -- -- -- -- -- ---- -- --
@@ -148,7 +179,7 @@ $data = mysqli_fetch_array($query);
 
 		        <div class="shosurbari-biodata-field">
 		            <label for="edit-name">Biodata Type<span class="form-required" title="This field is required.">*</span></label>
-	                <select name="biodatagender"  required>
+	                <select name="biodatagender" >
 					    <option value=""><?php echo $biodatagender; ?></option>
 	                    <option value="Male">Male's</option>
 	                    <option value="Female">Female's</option> 
@@ -158,7 +189,7 @@ $data = mysqli_fetch_array($query);
 
 	                <div class="shosurbari-biodata-field">
 					<label for="edit-pass">DOB-Date<span class="form-required" title="This field is required.">*</span></label>
-					    <select name="day" required>
+					    <select name="day" >
 		                    <option value=""><?php echo $day; ?></option>
 		                    <option value="1">1</option>
 		                    <option value="2">2</option>
@@ -196,7 +227,7 @@ $data = mysqli_fetch_array($query);
 
 					<div class="shosurbari-biodata-field">
 			            <label for="edit-pass">DOB-Month<span class="form-required" title="This field is required.">*</span></label>
-						<select name="month" required>
+						<select name="month" >
 		                    <option value=""><?php echo $month; ?></option>
 		                    <option value="01">January</option>
 		                    <option value="02">February</option>
@@ -215,7 +246,7 @@ $data = mysqli_fetch_array($query);
 
 	                <div class="shosurbari-biodata-field">
 					<label for="edit-pass">DOB-Year<span class="form-required" title="This field is required.">*</span></label>
-	                    <select name="year" required>
+	                    <select name="year" >
 		                    <option value=""><?php echo $year; ?></option>
 		                    <option value="1980">1980</option>
 		                    <option value="1981">1981</option>
@@ -256,17 +287,17 @@ $data = mysqli_fetch_array($query);
 
 					<div class="shosurbari-biodata-field">
 		                <label for="edit-name">Height<span class="form-required" title="This field is required.">*</span></label>
-			            <input type="text" id="edit-name" name="height" value="<?php echo $height; ?>" size="100" maxlength="100" class="form-text" required>
+			            <input type="text" id="edit-name" name="height" value="<?php echo $height; ?>" size="100" maxlength="100" class="form-text" >
                     </div>
 
 					<div class="shosurbari-biodata-field">
 		                <label for="edit-name">Weight <span class="form-required" title="This field is required.">*</span></label>
-			            <input type="text" id="edit-name" name="weight" value="<?php echo $weight; ?>" size="100" maxlength="100" class="form-text" required>
+			            <input type="text" id="edit-name" name="weight" value="<?php echo $weight; ?>" size="100" maxlength="100" class="form-text" >
 		            </div>
 
 					<div class="shosurbari-biodata-field">
 		                <label for="edit-name">Physical Status<span class="form-required" title="This field is required.">*</span></label>
-	                    <select name="physicalstatus" required>
+	                    <select name="physicalstatus" >
 							<option value=""><?php echo $physicalstatus; ?></option>
 	                        <option value="No Problem">No Problem</option>
 	                        <option value="Blind">Blind</option> 
@@ -276,7 +307,7 @@ $data = mysqli_fetch_array($query);
 
 					<div class="shosurbari-biodata-field">
 					        <label for="edit-name">Skin Tones<span class="form-required" title="This field is required.">*</span></label>
-	                        <select name="Skin_tones" required>
+	                        <select name="Skin_tones" >
 							<option value=""><?php echo $Skin_tones; ?></option>
 	                        <option value="Light">Light</option>
 	                        <option value="Fair">Fair</option> 
@@ -288,7 +319,7 @@ $data = mysqli_fetch_array($query);
 
 					<div class="shosurbari-biodata-field">
 					<label for="edit-name">Blood Group<span class="form-required" title="This field is required.">*</span></label>
-	                        <select name="bloodgroup" required>
+	                        <select name="bloodgroup" >
 							<option value=""><?php echo $bloodgroup; ?></option>
 	                        <option value="A+">A+</option>
 	                        <option value="B+">B+</option> 
@@ -325,17 +356,37 @@ $data = mysqli_fetch_array($query);
 
 <?php
 include("includes/dbconn.php");
-$sql = "SELECT * FROM 2bd_personal_lifestyle";
-$query = mysqli_query ($conn, $sql);
 
-$data = mysqli_fetch_array($query);
+//$id=$_GET['id'];
+//bd_personal_lifestyle_2($id);
 
-$maritalstatus=$data['maritalstatus'];
-$smoke=$data['smoke'];
-$occupation=$data['occupation'];
-$occupation_describe=$data['occupation_describe'];
-$dress_code=$data['dress_code'];
-$aboutme=$data['aboutme'];
+
+
+//getting profile details from db
+$sql="SELECT * FROM 2bd_personal_lifestyle WHERE user_id = $id";
+$result = mysqlexec($sql);
+
+if($result){
+$row=mysqli_fetch_assoc($result);
+if($row){
+$maritalstatus=$row['maritalstatus'];
+}
+if($row){
+$smoke=$row['smoke'];
+}
+if($row){
+$occupation=$row['occupation'];
+}
+if($row){
+$occupation_describe=$row['occupation_describe'];
+}
+if($row){
+$dress_code=$row['dress_code'];
+}
+if($row){
+$aboutme=$row['aboutme'];
+}
+}
 
 //echo $maritalstatus.' '.$smoke.' '.$occupation.' '.$occupation_describe.' '.$dress_code.' '.$aboutme;
 ?>
@@ -356,7 +407,7 @@ $aboutme=$data['aboutme'];
 
 							<div class="shosurbari-biodata-field">
 				                <label for="edit-name">Marital status<span class="form-required" title="This field is required.">*</span></label>
-	                            <select name="maritalstatus" required>
+	                            <select name="maritalstatus" >
 					            <option value="" ><?php echo $maritalstatus; ?></option>
 	                            <option value="Unmarried">Unmarried</option>
 	                            <option value="Divorced">Divorced</option>
@@ -368,7 +419,7 @@ $aboutme=$data['aboutme'];
 
 							<div class="shosurbari-biodata-field">
 		                        <label for="edit-name">Smoke or Drinks<span class="form-required" title="This field is required.">*</span></label>
-	                            <select name="smoke" required>
+	                            <select name="smoke" >
 								    <option  value=""><?php echo $smoke; ?></option>
 	                                <option value="No">No</option>
 	                                <option value="Yes">Yes</option> 
@@ -380,22 +431,22 @@ $aboutme=$data['aboutme'];
 
 		                    <div class="shosurbari-biodata-field">
 		                        <label for="edit-name">Occupation<span class="form-required" title="This field is required.">*</span></label>
-			                    <input type="text" id="edit-name" name="occupation" value="<?php echo $occupation; ?>" size="200" maxlength="200" class="form-text" required>
+			                    <input type="text" id="edit-name" name="occupation" value="<?php echo $occupation; ?>" size="200" maxlength="200" class="form-text" >
 		                    </div>
 
 		                    <div class="shosurbari-biodata-field">
 		                        <label for="edit-name">Occupation Describe<span class="form-required" title="This field is required.">*</span></label>
-								<textarea rows="5" id="edit-name" name="occupation_describe" placeholder="Write about you" class="form-text-describe" required><?php echo $occupation_describe; ?></textarea>
+								<textarea rows="5" id="edit-name" name="occupation_describe" placeholder="Write about you" class="form-text-describe" ><?php echo $occupation_describe; ?></textarea>
 		                    </div>
 
 							<div class="shosurbari-biodata-field">
 		    	               <label for="about me">Your Dress Code at Home or Out Side<span class="form-required" title="This field is required.">*</span></label>
-		    	               <textarea rows="5" name="dress_code" placeholder="Write about you" class="form-text-describe" required><?php echo $dress_code; ?></textarea>
+		    	               <textarea rows="5" name="dress_code" placeholder="Write about you" class="form-text-describe" ><?php echo $dress_code; ?></textarea>
 		                    </div>
 
 							<div class="shosurbari-biodata-field">
 		    	               <label for="about me">Write Something About You<span class="form-required" title="This field is required.">*</span></label>
-		    	               <textarea rows="5" name="aboutme" placeholder="Write about you" class="form-text-describe" required><?php echo $aboutme; ?></textarea>
+		    	               <textarea rows="5" name="aboutme" placeholder="Write about you" class="form-text-describe" ><?php echo $aboutme; ?></textarea>
 		                    </div>
 
                             </div>
@@ -421,17 +472,35 @@ $aboutme=$data['aboutme'];
 
 
 
+
+
 <?php
 include("includes/dbconn.php");
-$sql = "SELECT * FROM 3bd_educational_qualifications";
-$query = mysqli_query ($conn, $sql);
 
-$data = mysqli_fetch_array($query);
+//$id=$_GET['id'];
+//bd_educational_qualifications_3($id);
 
-$education_method=$data['education_method'];
-$sscpassyear=$data['sscpassyear'];
-$current_education=$data['current_education'];
-$maximum_education=$data['maximum_education']; 
+
+
+//getting profile details from db
+$sql="SELECT * FROM 3bd_educational_qualifications WHERE user_id = $id";
+$result = mysqlexec($sql);
+
+if($result){
+$row=mysqli_fetch_assoc($result);
+if($row){
+$education_method=$row['education_method'];
+}
+if($row){
+$sscpassyear=$row['sscpassyear'];
+}
+if($row){
+$current_education=$row['current_education'];
+}
+if($row){
+$maximum_education=$row['maximum_education']; 
+}
+}
 
 	//echo $education_method.' '.$sscpassyear.' '.$current_education.' '.$maximum_education;
 ?>
@@ -452,7 +521,7 @@ $maximum_education=$data['maximum_education'];
 
 						<div class="shosurbari-biodata-field">
 						   <label for="edit-name">Your Education Method<span class="form-required" title="This field is required.">*</span></label>
-	                        <select name="education_method" required>
+	                        <select name="education_method" >
 							   <option value=""><?php echo $education_method; ?></option>
 		                       <option value="Genaral">General</option>
 		                       <option value="Dakhil">Dakhil</option>
@@ -465,7 +534,7 @@ $maximum_education=$data['maximum_education'];
 
 						<div class="shosurbari-biodata-field">
 						<label for="edit-pass">SSC or Equivalent Passing Year<span class="form-required" title="This field is required.">*</span></label>
-						<select name="sscpassyear" required>
+						<select name="sscpassyear" >
 		                    <option value=""><?php echo $sscpassyear; ?></option>
 							<option value="nonyear">None</option>
 		                    <option value="2024">SSC Candidet2024</option>
@@ -510,12 +579,12 @@ $maximum_education=$data['maximum_education'];
 
 					<div class="shosurbari-biodata-field">
 		                    <label for="edit-name">Current Education Position<span class="form-required" title="This field is required.">*</span></label>
-		                    <input type="text" id="edit-name" name="current_education" value="<?php echo $current_education; ?>" size="200" maxlength="200" class="form-text required" required>
+		                    <input type="text" id="edit-name" name="current_education" value="<?php echo $current_education; ?>" size="200" maxlength="200" class="form-text required" >
 		                </div>
 
 						<div class="shosurbari-biodata-field">
 		                    <label for="edit-name">Maximum Education Position<span class="form-required" title="This field is required.">*</span></label>
-		                    <input type="text" id="edit-name" name="maximum_education" value="<?php echo $maximum_education; ?>" size="200" maxlength="200" class="form-text required" required>
+		                    <input type="text" id="edit-name" name="maximum_education" value="<?php echo $maximum_education; ?>" size="200" maxlength="200" class="form-text required" >
 		                </div>
                         </div>
                     </div>
@@ -540,18 +609,34 @@ $maximum_education=$data['maximum_education'];
 
 
 
+
 <?php
 include("includes/dbconn.php");
-$sql = "SELECT * FROM 4bd_address_details";
-$query = mysqli_query ($conn, $sql);
 
-$data = mysqli_fetch_array($query);
+//$id=$_GET['id'];
+//bd_address_details_4($id);
 
-$country=$data['country'];
-$present_address=$data['present_address'];
-$permanent_address=$data['permanent_address'];
-$childhood=$data['childhood'];
 
+
+//getting profile details from db
+$sql="SELECT * FROM 4bd_address_details WHERE user_id = $id";
+$result = mysqlexec($sql);
+
+if($result){
+$row=mysqli_fetch_assoc($result);
+if($row){
+$country=$row['country'];
+}
+if($row){
+$present_address=$row['present_address'];
+}
+if($row){
+$permanent_address=$row['permanent_address'];
+}
+if($row){
+$childhood=$row['childhood'];
+}
+}
 	//echo $country.' '.$present_address.' '.$permanent_address.' '.$childhood;
 ?>
 <!-- -- -- -- -- -- -- -- -- -- -- -- -- ---- -- --
@@ -571,7 +656,7 @@ $childhood=$data['childhood'];
 
                     <div class="shosurbari-biodata-field">
 					    <label for="edit-pass">Nationality<span class="form-required" title="This field is required.">*</span></label>
-	                        <select name="country" required>
+	                        <select name="country" >
 						    <option value=""><?php echo $country; ?></option>
 	                        <option value="Bangladesh">Bangladesh</option>
 	                        <option value="India">India</option> 
@@ -602,7 +687,7 @@ $childhood=$data['childhood'];
 <script src="https://cdnjs.cloudflare.com/ajax/libs/chosen/1.8.7/chosen.jquery.min.js"></script>
 					<div class="shosurbari-biodata-field">
 					    <label for="edit-pass">Division<span class="form-required" title="This field is required.">*</span></label>
-	                        <select name="division" class="selectsearch" required>
+	                        <select name="division" class="selectsearch" >
 						    <option value=""><?php echo $division; ?></option>
 	                        <option value="Barishal	">Barishal</option>
 	                        <option value="Chattogram">Chattogram</option> 
@@ -620,7 +705,7 @@ $childhood=$data['childhood'];
 
 					<div class="shosurbari-biodata-field">
 					    <label for="edit-pass">District<span class="form-required" title="This field is required.">*</span></label>  
-						<select name="Distriict" class="selectsearch2" required>
+						<select name="Distriict" class="selectsearch2" >
 						    <option value=""><?php echo $Distriict; ?></option>
 	                        <option value="Barguna">Barguna</option>
 	                        <option value="Barishal">Barishal</option> 
@@ -704,17 +789,17 @@ $childhood=$data['childhood'];
 
 <div class="shosurbari-biodata-field">
 	<label for="edit-name">Present Address<span class="form-required" title="This field is required.">*</span></label>
-	<input type="text" id="edit-name" name="present_address" value="<?php echo $present_address; ?>" size="100" maxlength="100" class="form-text required" required>
+	<input type="text" id="edit-name" name="present_address" value="<?php echo $present_address; ?>" size="100" maxlength="100" class="form-text required" >
 </div>
 
 <div class="shosurbari-biodata-field">
 	<label for="edit-name">Permanent Address<span class="form-required" title="This field is required.">*</span></label>
-	<input type="text" id="edit-name" name="permanent_address" value="<?php echo $permanent_address; ?>" size="100" maxlength="100" class="form-text required" required>
+	<input type="text" id="edit-name" name="permanent_address" value="<?php echo $permanent_address; ?>" size="100" maxlength="100" class="form-text required" >
 </div>
 
 <div class="shosurbari-biodata-field">
 	<label for="edit-name">Where did you grow up?<span class="form-required" title="This field is required.">*</span></label>
-	<input type="text" id="edit-name" name="childhood" value="<?php echo $childhood; ?>" size="100" maxlength="100" class="form-text required" required>
+	<input type="text" id="edit-name" name="childhood" value="<?php echo $childhood; ?>" size="100" maxlength="100" class="form-text required" >
 </div>
 </div>
 </div>
@@ -739,24 +824,53 @@ $childhood=$data['childhood'];
 
 
 
+
+
 <?php
 include("includes/dbconn.php");
-$sql = "SELECT * FROM 5bd_family_information";
-$query = mysqli_query ($conn, $sql);
 
-$data = mysqli_fetch_array($query);
+//$id=$_GET['id'];
+//bd_family_information_5($id);
 
-$father_alive=$data['father_alive'];
-$fatheroccupation=$data['fatheroccupation'];
-$mother_alive=$data['mother_alive'];
-$motheroccupation=$data['motheroccupation'];
-$brosis_number=$data['brosis_number'];
-$brosis_info=$data['brosis_info'];
-$uncle_profession=$data['uncle_profession'];
-$family_class=$data['family_class'];
-$financial_condition=$data['financial_condition'];
-$family_religious=$data['family_religious'];
 
+
+//getting profile details from db
+$sql="SELECT * FROM 5bd_family_information WHERE user_id = $id";
+$result = mysqlexec($sql);
+
+if($result){
+$row=mysqli_fetch_assoc($result);
+if($row){
+$father_alive=$row['father_alive'];
+}
+if($row){
+$fatheroccupation=$row['fatheroccupation'];
+}
+if($row){
+$mother_alive=$row['mother_alive'];
+}
+if($row){
+$motheroccupation=$row['motheroccupation'];
+}
+if($row){
+$brosis_number=$row['brosis_number'];
+}
+if($row){
+$brosis_info=$row['brosis_info'];
+}
+if($row){
+$uncle_profession=$row['uncle_profession'];
+}
+if($row){
+$family_class=$row['family_class'];
+}
+if($row){
+$financial_condition=$row['financial_condition'];
+}
+if($row){
+$family_religious=$row['family_religious'];
+}
+}
 	//echo $father_alive.' '.$fatheroccupation.' '.$mother_alive.' '.	$motheroccupation.' '.$brosis_number.' '.$brosis_info.' '.$uncle_profession.' '.$family_class.' '.$financial_condition.' '.$family_religious;
 ?>
 <!-- -- -- -- -- -- -- -- -- -- -- -- -- ---- -- --
@@ -776,42 +890,42 @@ $family_religious=$data['family_religious'];
 
 						<div class="shosurbari-biodata-field">
 		                    <label for="edit-name">Is your Father alive?<span class="form-required" title="This field is required.">*</span></label>
-			                <input type="text" id="edit-name" name="father_alive" value="<?php echo $father_alive; ?>" size="100" maxlength="100" class="form-text" required>
+			                <input type="text" id="edit-name" name="father_alive" value="<?php echo $father_alive; ?>" size="100" maxlength="100" class="form-text" >
 		                </div>
 
 						<div class="shosurbari-biodata-field">
 		    		        <label for="edit-name">Fathers Occupation<span class="form-required" title="This field is required.">*</span></label>
-			  		        <input type="text" id="edit-name" name="fatheroccupation" value="<?php echo $fatheroccupation; ?>" size="200" maxlength="200" class="form-text" required>
+			  		        <input type="text" id="edit-name" name="fatheroccupation" value="<?php echo $fatheroccupation; ?>" size="200" maxlength="200" class="form-text" >
 		                </div>
 
 						<div class="shosurbari-biodata-field">
 		                    <label for="edit-name">Is your Mother alive?<span class="form-required" title="This field is required.">*</span></label>
-			                <input type="text" id="edit-name" name="mother_alive"  value="<?php echo $mother_alive; ?>"  size="100" maxlength="100" class="form-text" required>
+			                <input type="text" id="edit-name" name="mother_alive"  value="<?php echo $mother_alive; ?>"  size="100" maxlength="100" class="form-text" >
 		                </div>
 
 						<div class="shosurbari-biodata-field">
 		                    <label for="edit-name">Mothers Occupation<span class="form-required" title="This field is required.">*</span></label>
-			                <input type="text" id="edit-name" name="motheroccupation"  value="<?php echo $motheroccupation; ?>"  size="200" maxlength="200" class="form-text" required>
+			                <input type="text" id="edit-name" name="motheroccupation"  value="<?php echo $motheroccupation; ?>"  size="200" maxlength="200" class="form-text" >
 		                </div>
 
 						<div class="shosurbari-biodata-field">
 		                    <label for="edit-name">How many Sisters & Brothers do you have?<span class="form-required" title="This field is required.">*</span></label>
-			                <input type="text" id="edit-name" name="brosis_number"  value="<?php echo $brosis_number; ?>"  size="100" maxlength="100" class="form-text" required>
+			                <input type="text" id="edit-name" name="brosis_number"  value="<?php echo $brosis_number; ?>"  size="100" maxlength="100" class="form-text" >
 		                </div>
 
 						<div class="shosurbari-biodata-field">
 		                    <label for="edit-name">Sisters & Brothers information<span class="form-required" title="This field is required.">*</span></label>
-							<textarea rows="8" id="edit-name" name="brosis_info"   placeholder="Write about you" class="form-text-describe" required><?php echo $brosis_info; ?></textarea>
+							<textarea rows="8" id="edit-name" name="brosis_info"   placeholder="Write about you" class="form-text-describe" ><?php echo $brosis_info; ?></textarea>
 		                </div>
 
 						<div class="shosurbari-biodata-field">
 		                    <label for="edit-name">Profession of uncles<span class="form-required" title="This field is required.">*</span></label>
-							<textarea rows="8" id="edit-name" name="uncle_profession"  placeholder="Write about you" class="form-text-describe" required><?php echo $uncle_profession; ?></textarea>
+							<textarea rows="8" id="edit-name" name="uncle_profession"  placeholder="Write about you" class="form-text-describe" ><?php echo $uncle_profession; ?></textarea>
 		                </div>
 
 						<div class="shosurbari-biodata-field">
 		                    <label for="edit-name">Family financial status<span class="form-required" title="This field is required.">*</span></label>
-	                        <select name="family_class" required>
+	                        <select name="family_class" >
 							    <option  value="" ><?php echo $family_class; ?></option>
 	                            <option value="Slim">Higher Class</option>
 	                            <option value="Fat">Higher Middle Class</option> 
@@ -823,12 +937,12 @@ $family_religious=$data['family_religious'];
 
 						<div class="shosurbari-biodata-field">
 		                    <label for="edit-name">Description of financial condition<span class="form-required" title="This field is required.">*</span></label>
-							<textarea rows="5" id="edit-name" name="financial_condition" placeholder="Write about you" class="form-text-describe" required><?php echo $financial_condition; ?></textarea>
+							<textarea rows="5" id="edit-name" name="financial_condition" placeholder="Write about you" class="form-text-describe" ><?php echo $financial_condition; ?></textarea>
 		                </div>
 
 						<div class="shosurbari-biodata-field">
 		    	            <label for="about me">How is your family's religious condition?<span class="form-required" title="This field is required.">*</span></label>
-		    	            <textarea rows="5" name="family_religious"  placeholder="Write about you" class="form-text-describe" required><?php echo $family_religious; ?></textarea>
+		    	            <textarea rows="5" name="family_religious"  placeholder="Write about you" class="form-text-describe" ><?php echo $family_religious; ?></textarea>
 		                </div>
                     </div>
 		        </div>
@@ -853,18 +967,37 @@ $family_religious=$data['family_religious'];
 
 
 
+
 <?php
 include("includes/dbconn.php");
-$sql = "SELECT * FROM 6bd_marriage_related_qs_male";
-$query = mysqli_query ($conn, $sql);
 
-$data = mysqli_fetch_array($query);
+//$id=$_GET['id'];
+//bd_marriage_related_qs_male_6($id);
 
-$guardians_agree_male=$data['guardians_agree_male'];
-$allowstudy_aftermarriage=$data['allowstudy_aftermarriage'];
-$allowjob_aftermarriage=$data['allowjob_aftermarriage'];
-$livewife_aftermarriage=$data['livewife_aftermarriage'];
-$profileby_male=$data['profileby_male'];
+
+
+//getting profile details from db
+$sql="SELECT * FROM 6bd_marriage_related_qs_male WHERE user_id = $id";
+$result = mysqlexec($sql);
+
+if($result){
+$row=mysqli_fetch_assoc($result);
+if($row){
+$guardians_agree_male=$row['guardians_agree_male'];
+}
+if($row){
+$allowstudy_aftermarriage=$row['allowstudy_aftermarriage'];
+}
+if($row){
+$allowjob_aftermarriage=$row['allowjob_aftermarriage'];
+}
+if($row){
+$livewife_aftermarriage=$row['livewife_aftermarriage'];
+}
+if($row){
+$profileby_male=$row['profileby_male'];
+}
+}
 
 	//echo $guardians_agree_male.' '.$allowstudy_aftermarriage.' '.$allowjob_aftermarriage.' '.$livewife_aftermarriage.' '.$profileby_male;
 ?>
@@ -885,27 +1018,27 @@ $profileby_male=$data['profileby_male'];
 
 							<div class="shosurbari-biodata-field">
 		                        <label for="edit-name">Do your guardians agree to your marriage?<span class="form-required" title="This field is required.">*</span></label>
-			                    <input type="text" id="edit-name" name="guardians_agree_male"  value="<?php echo $guardians_agree_male; ?>"  size="100" maxlength="100" class="form-text" required>
+			                    <input type="text" id="edit-name" name="guardians_agree_male"  value="<?php echo $guardians_agree_male; ?>"  size="100" maxlength="100" class="form-text" >
 		                    </div>
 
 							<div class="shosurbari-biodata-field">
 		                        <label for="edit-name">Would you like to allow your wife to study after marriage?<span class="form-required" title="This field is required.">*</span></label>
-			                    <input type="text" id="edit-name" name="allowstudy_aftermarriage"  value="<?php echo $allowstudy_aftermarriage; ?>"  size="100" maxlength="100" class="form-text" required>
+			                    <input type="text" id="edit-name" name="allowstudy_aftermarriage"  value="<?php echo $allowstudy_aftermarriage; ?>"  size="100" maxlength="100" class="form-text" >
 		                    </div>
 
 							<div class="shosurbari-biodata-field">
 		                        <label for="edit-name">Would you like to allow your wife to do any job after marriage?<span class="form-required" title="This field is required.">*</span></label>
-			                    <input type="text" id="edit-name" name="allowjob_aftermarriage"  value="<?php echo $allowjob_aftermarriage; ?>"  size="100" maxlength="100" class="form-text" required>
+			                    <input type="text" id="edit-name" name="allowjob_aftermarriage"  value="<?php echo $allowjob_aftermarriage; ?>"  size="100" maxlength="100" class="form-text" >
 		                    </div>
 
 							<div class="shosurbari-biodata-field">
 		                        <label for="edit-name">Where will you live with your wife after marriage?<span class="form-required" title="This field is required.">*</span></label>
-			                    <input type="text" id="edit-name" name="livewife_aftermarriage"  value="<?php echo $livewife_aftermarriage; ?>"  size="100" maxlength="100" class="form-text" required>
+			                    <input type="text" id="edit-name" name="livewife_aftermarriage"  value="<?php echo $livewife_aftermarriage; ?>"  size="100" maxlength="100" class="form-text" >
 		                    </div>
 
 							<div class="shosurbari-biodata-field">
 		                        <label for="edit-name">Profile Created by<span class="form-required" title="This field is required.">*</span></label>
-	                            <select name="profileby_male" required>
+	                            <select name="profileby_male" >
 								<option value="" ><?php echo $profileby_male; ?></option>
 	                            <option value="Self">Self</option>
 								<option value="Father">Father</option>
@@ -942,19 +1075,37 @@ $profileby_male=$data['profileby_male'];
 
 
 
+
 <?php
 include("includes/dbconn.php");
-$sql = "SELECT * FROM 7bd_marriage_related_qs_female";
-$query = mysqli_query ($conn, $sql);
 
-$data = mysqli_fetch_array($query);
+//$id=$_GET['id'];
+//bd_marriage_related_qs_female_7($id);
 
-$guardians_agree_female=$data['guardians_agree_female'];
-$anyjob_aftermarriage=$data['anyjob_aftermarriage'];
-$studies_aftermarriage=$data['studies_aftermarriage'];
-$agree_marriage_student=$data['agree_marriage_student'];
-$profileby_female=$data['profileby_female'];
 
+
+//getting profile details from db
+$sql="SELECT * FROM 7bd_marriage_related_qs_female WHERE user_id = $id";
+$result = mysqlexec($sql);
+
+if($result){
+$row=mysqli_fetch_assoc($result);
+if($row){
+$guardians_agree_female=$row['guardians_agree_female'];
+}
+if($row){
+$anyjob_aftermarriage=$row['anyjob_aftermarriage'];
+}
+if($row){
+$studies_aftermarriage=$row['studies_aftermarriage'];
+}
+if($row){
+$agree_marriage_student=$row['agree_marriage_student'];
+}
+if($row){
+$profileby_female=$row['profileby_female'];
+}
+}
 	//echo $guardians_agree_female.' '.$anyjob_aftermarriage.' '.$studies_aftermarriage.' '.$agree_marriage_student.' '.$profileby_female;
 ?>
 <!-- -- -- -- -- -- -- -- -- -- -- -- -- ---- -- --
@@ -974,27 +1125,27 @@ $profileby_female=$data['profileby_female'];
 
 							<div class="shosurbari-biodata-field">
 		                        <label for="edit-name">Do your guardians agree to your marriage?<span class="form-required" title="This field is required.">*</span></label>
-			                    <input type="text" id="edit-name" name="guardians_agree_female"   value="<?php echo $guardians_agree_female; ?>"  size="100" maxlength="100" class="form-text" required>
+			                    <input type="text" id="edit-name" name="guardians_agree_female"   value="<?php echo $guardians_agree_female; ?>"  size="100" maxlength="100" class="form-text" >
 		                    </div>
 
 							<div class="shosurbari-biodata-field">
 		                        <label for="edit-name">Are you willing to do any job after marriage?<span class="form-required" title="This field is required.">*</span></label>
-			                    <input type="text" id="edit-name" name="anyjob_aftermarriage"   value="<?php echo $anyjob_aftermarriage; ?>"  size="100" maxlength="100" class="form-text" required>
+			                    <input type="text" id="edit-name" name="anyjob_aftermarriage"   value="<?php echo $anyjob_aftermarriage; ?>"  size="100" maxlength="100" class="form-text" >
 		                    </div>
 
 							<div class="shosurbari-biodata-field">
 		                        <label for="edit-name">Would you like to continue your studies after marriage?<span class="form-required" title="This field is required.">*</span></label>
-			                    <input type="text" id="edit-name" name="studies_aftermarriage"   value="<?php echo $studies_aftermarriage; ?>"  size="200" maxlength="200" class="form-text" required>
+			                    <input type="text" id="edit-name" name="studies_aftermarriage"   value="<?php echo $studies_aftermarriage; ?>"  size="200" maxlength="200" class="form-text" >
 		                    </div>
 
 							<div class="shosurbari-biodata-field">
 		                        <label for="edit-name">Are you agree Marriage to student?<span class="form-required" title="This field is required.">*</span></label>
-			                    <input type="text" id="edit-name" name="agree_marriage_student"   value="<?php echo $agree_marriage_student; ?>"size="200" maxlength="200" class="form-text" required>
+			                    <input type="text" id="edit-name" name="agree_marriage_student"   value="<?php echo $agree_marriage_student; ?>"size="200" maxlength="200" class="form-text" >
 		                    </div>
 
 							<div class="shosurbari-biodata-field">
 		                        <label for="edit-name">Profile Created by<span class="form-required" title="This field is required.">*</span></label>
-	                            <select name="profileby_female" required>
+	                            <select name="profileby_female" >
 								<option value="" ><?php echo $profileby_female; ?></option>
 	                            <option value="Self">Self</option>
 								<option value="Father">Father</option>
@@ -1031,16 +1182,29 @@ $profileby_female=$data['profileby_female'];
 
 
 
+
+
 <?php
 include("includes/dbconn.php");
-$sql = "SELECT * FROM 8bd_religion_details";
-$query = mysqli_query ($conn, $sql);
 
-$data = mysqli_fetch_array($query);
+//$id=$_GET['id'];
+//bd_religion_details_8($id);
 
-$religion=$data['religion'];
-$yourreligion_condition=$data['yourreligion_condition'];
 
+
+//getting profile details from db
+$sql="SELECT * FROM 8bd_religion_details WHERE user_id = $id";
+$result = mysqlexec($sql);
+
+if($result){
+$row=mysqli_fetch_assoc($result);
+if($row){
+$religion=$row['religion'];
+}
+if($row){
+$yourreligion_condition=$row['yourreligion_condition'];
+}
+}
 	//echo $religion.' '.$yourreligion_condition;
 ?>
 <!-- -- -- -- -- -- -- -- -- -- -- -- -- ---- -- --
@@ -1061,7 +1225,7 @@ $yourreligion_condition=$data['yourreligion_condition'];
 							
 					        <div class="shosurbari-biodata-field">
 			                    <label for="edit-pass">Religion<span class="form-required" title="This field is required.">*</span><?php echo $religion; ?></label>
-	                            <select name="religion" required>
+	                            <select name="religion" >
 								<option value="" ><?php echo $religion; ?></option>
 						        <option value="Muslim">Muslim</option>
 		                        <option value="Hindu">Hindu</option>
@@ -1073,7 +1237,7 @@ $yourreligion_condition=$data['yourreligion_condition'];
 
 					        <div class="shosurbari-biodata-field">
 		    	               <label for="about me">How is your religious condition?<span class="form-required" title="This field is required.">*</span></label>
-		    	               <textarea rows="5" name="yourreligion_condition" placeholder="Write about you" class="form-text-describe" required><?php echo $yourreligion_condition; ?></textarea>
+		    	               <textarea rows="5" name="yourreligion_condition" placeholder="Write about you" class="form-text-describe" ><?php echo $yourreligion_condition; ?></textarea>
 		                    </div>
                             </div>
                         </div>
@@ -1098,24 +1262,52 @@ $yourreligion_condition=$data['yourreligion_condition'];
 
 
 
+
 <?php
 include("includes/dbconn.php");
-$sql = "SELECT * FROM 9bd_expected_life_partner";
-$query = mysqli_query ($conn, $sql);
 
-$data = mysqli_fetch_array($query);
+//$id=$_GET['id'];
+//bd_expected_life_partner_9($id);
 
-$partner_religius=$data['partner_religius'];
-$partner_district=$data['partner_district'];
-$partner_maritialstatus=$data['partner_maritialstatus'];
-$partner_age=$data['partner_age'];
-$partner_skintones=$data['partner_skintones'];
-$partner_height=$data['partner_height'];
-$partner_education=$data['partner_education'];
-$partner_profession=$data['partner_profession'];
-$partner_financial=$data['partner_financial'];
-$partner_attributes=$data['partner_attributes'];
 
+
+//getting profile details from db
+$sql="SELECT * FROM 9bd_expected_life_partner WHERE user_id = $id";
+$result = mysqlexec($sql);
+
+if($result){
+$row=mysqli_fetch_assoc($result);
+if($row){
+$partner_religius=$row['partner_religius'];
+}
+if($row){
+$partner_district=$row['partner_district'];
+}
+if($row){
+$partner_maritialstatus=$row['partner_maritialstatus'];
+}
+if($row){
+$partner_age=$row['partner_age'];
+}
+if($row){
+$partner_skintones=$row['partner_skintones'];
+}
+if($row){
+$partner_height=$row['partner_height'];
+}
+if($row){
+$partner_education=$row['partner_education'];
+}
+if($row){
+$partner_profession=$row['partner_profession'];
+}
+if($row){
+$partner_financial=$row['partner_financial'];
+}
+if($row){
+$partner_attributes=$row['partner_attributes'];
+}
+}
 //echo $partner_religius.' '.$partner_district.' '.$partner_maritialstatus.' '.$partner_age.' '.$partner_skintones.' '.$partner_height.' '.$partner_education.' '.$partner_profession.' '.$partner_financial.' '.$partner_attributes;
 ?>
 <!-- -- -- -- -- -- -- -- -- -- -- -- -- ---- -- --
@@ -1135,52 +1327,52 @@ $partner_attributes=$data['partner_attributes'];
 
 						<div class="shosurbari-biodata-field">
 		                    <label for="edit-name">Religius Status<span class="form-required" title="This field is required.">*</span></label>
-			                <input type="text" id="edit-name" name="partner_religius"  value="<?php echo $partner_religius; ?>"  size="200" maxlength="200" class="form-text" required>
+			                <input type="text" id="edit-name" name="partner_religius"  value="<?php echo $partner_religius; ?>"  size="200" maxlength="200" class="form-text" >
 		                </div>
 
 						<div class="shosurbari-biodata-field">
 		                    <label for="edit-name">District<span class="form-required" title="This field is required.">*</span></label>
-			                <input type="text" id="edit-name" name="partner_district" value="<?php echo $partner_district; ?>"  size="100" maxlength="100" class="form-text" required>
+			                <input type="text" id="edit-name" name="partner_district" value="<?php echo $partner_district; ?>"  size="100" maxlength="100" class="form-text" >
 		                </div>
 
 						<div class="shosurbari-biodata-field">
 		                    <label for="edit-name">Marital Status<span class="form-required" title="This field is required.">*</span></label>
-			                <input type="text" id="edit-name" name="partner_maritialstatus"  value="<?php echo $partner_maritialstatus; ?>"  size="100" maxlength="100" class="form-text" required>
+			                <input type="text" id="edit-name" name="partner_maritialstatus"  value="<?php echo $partner_maritialstatus; ?>"  size="100" maxlength="100" class="form-text" >
 		                </div>
 
 						<div class="shosurbari-biodata-field">
 		                    <label for="edit-name">Age<span class="form-required" title="This field is required.">*</span></label>
-			                <input type="text" id="edit-name" name="partner_age" value="<?php echo $partner_age; ?>"  size="100" maxlength="100" class="form-text" required>
+			                <input type="text" id="edit-name" name="partner_age" value="<?php echo $partner_age; ?>"  size="100" maxlength="100" class="form-text" >
 		                </div>
 
 						<div class="shosurbari-biodata-field">
 		    		        <label for="edit-name">Skin Tones<span class="form-required" title="This field is required.">*</span></label>
-			  		        <input type="text" id="edit-name" name="partner_skintones"  value="<?php echo $partner_skintones; ?>" size="100" maxlength="100" class="form-text" required>
+			  		        <input type="text" id="edit-name" name="partner_skintones"  value="<?php echo $partner_skintones; ?>" size="100" maxlength="100" class="form-text" >
 		                </div>
 
 						<div class="shosurbari-biodata-field">
 		                    <label for="edit-name">Height<span class="form-required" title="This field is required.">*</span></label>
-			                <input type="text" id="edit-name" name="partner_height"  value="<?php echo $partner_height; ?>"  size="100" maxlength="100" class="form-text" required>
+			                <input type="text" id="edit-name" name="partner_height"  value="<?php echo $partner_height; ?>"  size="100" maxlength="100" class="form-text" >
 		                </div>
 
 						<div class="shosurbari-biodata-field">
 		                    <label for="edit-name">Educational Qualification<span class="form-required" title="This field is required.">*</span></label>
-			                <input type="text" id="edit-name" name="partner_education"  value="<?php echo $partner_education; ?>"  size="100" maxlength="100" class="form-text" required>
+			                <input type="text" id="edit-name" name="partner_education"  value="<?php echo $partner_education; ?>"  size="100" maxlength="100" class="form-text" >
 		                </div>
 
 						<div class="shosurbari-biodata-field">
 		                    <label for="edit-name">Profession<span class="form-required" title="This field is required.">*</span></label>
-			                <input type="text" id="edit-name" name="partner_profession"  value="<?php echo $partner_profession; ?>"  size="200" maxlength="200" class="form-text" required>
+			                <input type="text" id="edit-name" name="partner_profession"  value="<?php echo $partner_profession; ?>"  size="200" maxlength="200" class="form-text" >
 		                </div>
 
 						<div class="shosurbari-biodata-field">
 		                    <label for="edit-name">Financial condition<span class="form-required" title="This field is required.">*</span></label>
-			                <input type="text" id="edit-name" name="partner_financial"  value="<?php echo $partner_financial; ?>"  size="100" maxlength="100" class="form-text" required>
+			                <input type="text" id="edit-name" name="partner_financial"  value="<?php echo $partner_financial; ?>"  size="100" maxlength="100" class="form-text" >
 		                </div>
 
 						<div class="shosurbari-biodata-field">
 		                    <label for="edit-name">Expected qualities or attributes of your life partner<span class="form-required" title="This field is required.">*</span></label>
-							<textarea rows="8" id="edit-name" name="partner_attributes" placeholder="Write about you" class="form-text-describe" required><?php echo $partner_attributes; ?></textarea>
+							<textarea rows="8" id="edit-name" name="partner_attributes" placeholder="Write about you" class="form-text-describe" ><?php echo $partner_attributes; ?></textarea>
 		                </div>
                     </div>
 		        </div>
