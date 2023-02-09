@@ -187,6 +187,10 @@ if($row){
 			    </div>
 
 
+
+
+
+
 	                <div class="shosurbari-biodata-field">
 					<label for="edit-pass">DOB-Date<span class="form-required" title="This field is required.">*</span></label>
 					    <select name="day" >
@@ -284,6 +288,8 @@ if($row){
 		                    <option value="2006">2013</option>
 	                    </select>
 	                </div>
+
+
 
 					<div class="shosurbari-biodata-field">
 		                <label for="edit-name">Height<span class="form-required" title="This field is required.">*</span></label>
@@ -1039,7 +1045,7 @@ $profileby_male=$row['profileby_male'];
 							<div class="shosurbari-biodata-field">
 		                        <label for="edit-name">Profile Created by<span class="form-required" title="This field is required.">*</span></label>
 	                            <select name="profileby_male" >
-								<option value="" ><?php echo $profileby_male; ?></option>
+								<option value="" hidden><?php echo $profileby_male; ?></option>
 	                            <option value="Self">Self</option>
 								<option value="Father">Father</option>
 	                            <option value="Mother">Mother</option>
@@ -1268,8 +1274,6 @@ include("includes/dbconn.php");
 
 //$id=$_GET['id'];
 //bd_expected_life_partner_9($id);
-
-
 
 //getting profile details from db
 $sql="SELECT * FROM 9bd_expected_life_partner WHERE user_id = $id";
