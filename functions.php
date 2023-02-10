@@ -204,23 +204,6 @@ function isloggedin(){
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 /*-- -- -- -- -- -- -- -- -- -- -- -- -- ---- -- --
 -- -- -- -- -- -- -- -- --- -- -- -- -- -- -- -- --
 --                S  T  A  R  T                  --
@@ -320,8 +303,7 @@ $sql = "INSERT
 				1bd_personal_physical
 				   (user_id, biodatagender, dateofbirth, height, weight, physicalstatus, Skin_tones, bloodgroup, profilecreationdate  ) 
 				VALUES
-				   ('$id', '$biodatagender', '$dob', '$height', '$weight', '$physicalstatus', '$Skin_tones', '$bloodgroup', CURDATE())
-			";
+				   ('$id', '$biodatagender', '$dob', '$height', '$weight', '$physicalstatus', '$Skin_tones', '$bloodgroup', CURDATE())";
 $sql = "UPDATE 1bd_personal_physical SET biodatagender = '$biodatagender', dateofbirth = '$dob', height = '$height', weight = '$weight', physicalstatus = '$physicalstatus', Skin_tones = '$Skin_tones', bloodgroup = '$bloodgroup' WHERE user_id = '$id'";
 $result = mysqlexec($sql);
 
