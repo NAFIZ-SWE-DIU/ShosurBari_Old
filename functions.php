@@ -35,7 +35,7 @@ function mysqlexec($sql){
 function searchid(){
 	if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 		$profid=$_POST['profid'];
-		$sql="SELECT * FROM customer WHERE id=$profid";
+		$sql="SELECT * FROM users WHERE id=$profid";
 		$result = mysqlexec($sql);
     	return $result;
 	}
@@ -51,46 +51,57 @@ function searchid(){
 -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- ---
 -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -*/
 function search(){
-  if ($_SERVER['REQUEST_METHOD'] == 'POST') {
+
+ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 	if($row){
-    $agemin=$_POST['agemin'];
+    $biodatagender=$_POST['biodatagender'];
 	}
-	if($row){
-    $agemax=$_POST['agemax'];
-	}
+
+    $sql="SELECT * FROM 1bd_personal_physical WHERE 
+    biodatagender='$biodatagender' 
+   /*AND country = '$country' */
+    ";
+    $result = mysqlexec($sql);
+    return $result;
+ }
+
+
+ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 	if($row){
     $maritalstatus=$_POST['maritalstatus'];
 	}
-	if($row){
-    $country=$_POST['country'];
-	}
-	if($row){
-    $state=$_POST['state'];
-	}
-	if($row){
-    $religion=$_POST['religion'];
-	}
-	if($row){
-    $mothertounge=$_POST['mothertounge'];
-	}
-	if($row){
-    $sex = $_POST['sex'];
-	}
+$sql="SELECT * FROM 2bd_personal_lifestyle WHERE 
+maritalstatus='$maritalstatus' 
+";
+$result = mysqlexec($sql);
+return $result;
+ }
 
-    $sql="SELECT * FROM customer WHERE 
-    sex='$sex' 
-    AND age>='$agemin'
-    AND age<='$agemax'
-    AND maritalstatus = '$maritalstatus'
-    AND country = '$country'
-    AND state = '$state'
-    AND religion = '$religion'
-    AND mothertounge = '$mothertounge'
-    ";
 
+
+
+ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
+	if($row){
+    $district=$_POST['district'];
+	}
+$sql="SELECT * FROM 4bd_address_details WHERE 
+district='$district' 
+";
+$result = mysqlexec($sql);
+    return $result;
+ }
+
+
+
+	if ($_SERVER['REQUEST_METHOD'] == 'POST') {
+		if($row){
+		$religion=$_POST['religion'];
+		}
+$sql="SELECT * FROM 8bd_religion_details WHERE 
+religion='$religion' 
+";
     $result = mysqlexec($sql);
     return $result;
-
   }
 
 }
@@ -206,7 +217,7 @@ function processprofile_form($id){
 	$maximum_education=$_POST['maximum_education'];
 
 	//Biodata 4
-	$country=$_POST['country'];
+	$permanent_division=$_POST['permanent_division'];
 	$present_address=$_POST['present_address'];
 	$permanent_address=$_POST['permanent_address'];
 	$childhood=$_POST['childhood'];
@@ -367,7 +378,7 @@ require_once("includes/dbconn.php");
     $result=mysqlexec($sql);
 
     if(mysqli_num_rows($result)>=1){
-    $sql="UPDATE 4bd_address_details SET country = '$country', present_address = '$present_address',permanent_address = '$permanent_address', childhood = '$childhood' WHERE user_id = '$id'";
+    $sql="UPDATE 4bd_address_details SET permanent_division = '$permanent_division', present_address = '$present_address',permanent_address = '$permanent_address', childhood = '$childhood' WHERE user_id = '$id'";
     $result = mysqlexec($sql);
     //if ($result)
 	//{echo "Successfully Updated Biodata";}
@@ -375,9 +386,9 @@ require_once("includes/dbconn.php");
     }else{
 
     $sql = "INSERT INTO 4bd_address_details
-    (user_id, country, present_address, permanent_address, childhood, profilecreationdate  ) 
+    (user_id, permanent_division, present_address, permanent_address, childhood, profilecreationdate  ) 
     VALUES
-	('$id', '$country', '$present_address', '$permanent_address', '$childhood', CURDATE())";
+	('$id', '$permanent_division', '$present_address', '$permanent_address', '$childhood', CURDATE())";
     if (mysqli_query($conn,$sql))
 	{echo " ";}
 }
