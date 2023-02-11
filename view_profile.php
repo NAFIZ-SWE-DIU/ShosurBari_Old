@@ -2,6 +2,7 @@
 <?php include_once("functions.php"); ?>
 <?php require_once("includes/dbconn.php");?>
 <?php
+error_reporting(0);
  // if(isloggedin()){ 
  //do nothing stay here
 // } else{
@@ -18,11 +19,10 @@ $sql = "SELECT * FROM 1bd_personal_physical  WHERE user_id = $id";
 $result = mysqlexec($sql);
 if($result){
 $row=mysqli_fetch_assoc($result);
-
 //end of getting profile detils
+
+
 	$pic1="";
-
-
 
 //getting image filenames from db
 $sql2="SELECT * FROM photos WHERE user_id = $profileid";
@@ -126,8 +126,15 @@ $(document).ready(function(){
 --   SB Short Biodata / 1bd_personal_physical    --
 -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -->
 <?php
+ 
+ $id=$_GET['id'];
+ $profileid=$id;
+ 
+ //getting profile details from db
 $sql = "SELECT * FROM 1bd_personal_physical  WHERE user_id = $id";
 $result = mysqlexec($sql);
+
+if($result){
 $row=mysqli_fetch_assoc($result);
 
 //Biodata 1
@@ -146,12 +153,17 @@ $height=$row['height'];
 if($row){
 $weight=$row['weight'];	
 }
+}
 ?>
 
 <!-- -- -- -- -- -- -- -- -- -- -- -- -- ---- -- --
 --   SB Short Biodata / 2bd_personal_lifestyle   --
 -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -->
 <?php
+ $id=$_GET['id'];
+ $profileid=$id;
+ 
+//getting profile details from db
 $sql = "SELECT * FROM 2bd_personal_lifestyle  WHERE user_id = $id";
 $result = mysqlexec($sql);
 $row=mysqli_fetch_assoc($result);
@@ -163,22 +175,23 @@ $maritalstatus=$row['maritalstatus'];
 if($row){
 $occupation = $row['occupation'];
 }
-if($row){
-$country=$row['country'];
-}
 ?>
 
 <!-- -- -- -- -- -- -- -- -- -- -- -- -- ---- -- --
 --     SB Short Biodata / 4bd_address_details    --
 -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -->
 <?php
+ $id=$_GET['id'];
+ $profileid=$id;
+ 
+ //getting profile details from db
 $sql = "SELECT * FROM 4bd_address_details  WHERE user_id = $id";
 $result = mysqlexec($sql);
 $row=mysqli_fetch_assoc($result);
 
 //Biodata 4
 if($row){
-$country=$row['country'];
+$permanent_address=$row['permanent_address'];
 }
 ?>
 
@@ -186,6 +199,10 @@ $country=$row['country'];
 --    SB Short Biodata / 8bd_religion_details    --
 -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -->
 <?php
+ $id=$_GET['id'];
+ $profileid=$id;
+ 
+ //getting profile details from db
 $sql = "SELECT * FROM 8bd_religion_details  WHERE user_id = $id";
 $result = mysqlexec($sql);
 $row=mysqli_fetch_assoc($result);
@@ -294,9 +311,9 @@ $('.clipboard').on('click', function() {
 						</tr>
 
 						<tr class="closed">
-							<td class="day_label">Country :</td>
-							<?php if (!empty ($country)) { ?>
-							<td class="day_value closed"><?php echo $country;?></td>
+							<td class="day_label">Permanent Address :</td>
+							<?php if (!empty ($permanent_address)) { ?>
+							<td class="day_value closed"><?php echo $permanent_address;?></td>
 							<?php } ?>
 						</tr>
 
@@ -313,7 +330,6 @@ $('.clipboard').on('click', function() {
 --                                               --
 -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- ---
 -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -->
-
 
 
 
@@ -347,10 +363,15 @@ $('.clipboard').on('click', function() {
 -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- ---
 -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -->	
 <?php
+ $id=$_GET['id'];
+ $profileid=$id;
+ 
+ //getting profile details from db
 $sql = "SELECT * FROM 1bd_personal_physical  WHERE user_id = $id";
 $result = mysqlexec($sql);
-$row= mysqli_fetch_assoc($result);
 
+if($result){
+$row= mysqli_fetch_assoc($result);
 //Biodata 1
 if($row){
 $biodatagender=$row['biodatagender'];
@@ -372,6 +393,7 @@ $Skin_tones = $row['Skin_tones'];
 }
 if($row){
 $bloodgroup=$row['bloodgroup'];
+}
 }
 ?>		
 
@@ -463,10 +485,15 @@ $bloodgroup=$row['bloodgroup'];
 -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- ---
 -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -->
 <?php
+ $id=$_GET['id'];
+ $profileid=$id;
+ 
+ //getting profile details from db
 $sql = "SELECT * FROM 2bd_personal_lifestyle WHERE user_id = $id";
 $result = mysqlexec($sql);
-$row= mysqli_fetch_assoc($result);
 
+if($result){
+$row= mysqli_fetch_assoc($result);
 //Biodata 2 
 if($row){
 $maritalstatus=$row['maritalstatus'];
@@ -485,6 +512,7 @@ $dress_code=$row['dress_code'];
 }
 if($row){
 $aboutme=$row['aboutme'];
+}
 }
 ?>
 
@@ -568,8 +596,14 @@ $aboutme=$row['aboutme'];
 -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- ---
 -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -->
 <?php
+ $id=$_GET['id'];
+ $profileid=$id;
+ 
+ //getting profile details from db
 $sql = "SELECT * FROM 3bd_educational_qualifications WHERE user_id = $id";
 $result = mysqlexec($sql);
+
+if($result){
 $row= mysqli_fetch_assoc($result);
 
 //Biodata 3
@@ -584,6 +618,7 @@ $current_education=$row['current_education'];
 }
 if($row){
 $maximum_education=$row['maximum_education'];
+}
 }
 ?>
 
@@ -654,13 +689,18 @@ $maximum_education=$row['maximum_education'];
 -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- ---
 -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -->
 <?php
+ $id=$_GET['id'];
+ $profileid=$id;
+ 
+ //getting profile details from db
 $sql = "SELECT * FROM 4bd_address_details WHERE user_id = $id";
 $result = mysqlexec($sql);
-$row= mysqli_fetch_assoc($result);
 
+if($result){
+$row= mysqli_fetch_assoc($result);
 //Biodata 4
 if($row){
-$country=$row['country'];
+$permanent_division=$row['permanent_division'];
 }
 if($row){
 $present_address=$row['present_address'];
@@ -671,6 +711,7 @@ $permanent_address=$row['permanent_address'];
 if($row){
 $childhood=$row['childhood'];
 }
+}
 ?>
 
 				    <div class="basic_1">
@@ -680,9 +721,16 @@ $childhood=$row['childhood'];
 				        	<tbody>
 
 				        		<tr class="opened">
-									<td class="day_label">Country :</td>
-									<?php if (!empty ($country)) { ?>
-									<td class="day_value"><?php echo $country; ?></td>
+									<td class="day_label">Permanent Address Division :</td>
+									<?php if (!empty ($permanent_division)) { ?>
+									<td class="day_value"><?php echo $permanent_division; ?></td>
+									<?php } ?>
+								</tr>
+
+								<tr class="opened">
+									<td class="day_label">Permanent Address District:</td>
+									<?php if (!empty ($permanent_address)) { ?>
+									<td class="day_value"><?php echo $permanent_address;?></td>
 									<?php } ?>
 								</tr>
 
@@ -693,12 +741,6 @@ $childhood=$row['childhood'];
 									<?php } ?>
 								</tr>
 
-							    <tr class="opened">
-									<td class="day_label">Permanent Address :</td>
-									<?php if (!empty ($permanent_address)) { ?>
-									<td class="day_value"><?php echo $permanent_address;?></td>
-									<?php } ?>
-								</tr>
 							    
 							    <tr class="opened">
 									<td class="day_label">Childhood :</td>
@@ -739,10 +781,15 @@ $childhood=$row['childhood'];
 -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- ---
 -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -->
 <?php
+ $id=$_GET['id'];
+ $profileid=$id;
+ 
+ //getting profile details from db
 $sql = "SELECT * FROM 6bd_marriage_related_qs_male WHERE user_id = $id";
 $result = mysqlexec($sql);
-$row= mysqli_fetch_assoc($result);
 
+if($result){
+$row= mysqli_fetch_assoc($result);
 //Biodata 6 
 if($row){
 	$guardians_agree_male=$row['guardians_agree_male'];
@@ -759,6 +806,7 @@ if($row){
 	if($row){
 	$profileby_male=$row['profileby_male'];
 	}
+}
 ?>
 
 				    <div class="basic_1">
@@ -798,7 +846,7 @@ if($row){
 							    <tr class="opened">
 									<td class="day_label">Profile By :</td>
 									<?php if (!empty ($profileby_male)) { ?>
-									<td class="day_value closed"><span><?php echo $profileby_male;?></span></td>
+									<td  class="day_value closed"><span><?php echo $profileby_male;?></span></td>
 									<?php } ?>
 								</tr>
 
@@ -836,10 +884,15 @@ if($row){
 -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- ---
 -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -->
 <?php
+ $id=$_GET['id'];
+ $profileid=$id;
+ 
+ //getting profile details from db
 $sql = "SELECT * FROM 7bd_marriage_related_qs_female WHERE user_id = $id";
 $result = mysqlexec($sql);
-$row= mysqli_fetch_assoc($result);
 
+if($result){
+$row= mysqli_fetch_assoc($result);
 //Biodata 7
 if($row){
 	$guardians_agree_female=$row['guardians_agree_female'];
@@ -856,6 +909,7 @@ if($row){
 	if($row){
 	$profileby_female=$row['profileby_female'];
 	}
+}
 ?>
 
                     <div class="basic_1">
@@ -933,10 +987,15 @@ if($row){
 -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- ---
 -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -->
 <?php
+ $id=$_GET['id'];
+ $profileid=$id;
+ 
+ //getting profile details from db
 $sql = "SELECT * FROM 8bd_religion_details WHERE user_id = $id";
 $result = mysqlexec($sql);
-$row= mysqli_fetch_assoc($result);
 
+if($result){
+$row= mysqli_fetch_assoc($result);
 //Biodata 8
 if($row){
 	$religion=$row['religion'];
@@ -944,6 +1003,7 @@ if($row){
 	if($row){
 	$yourreligion_condition=$row['yourreligion_condition'];
 	}
+}
 ?>
 
                     <div class="basic_1">
@@ -1005,10 +1065,15 @@ if($row){
 -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- ---
 -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -->
 <?php
+ $id=$_GET['id'];
+ $profileid=$id;
+ 
+ //getting profile details from db
 $sql = "SELECT * FROM 5bd_family_information WHERE user_id = $id";
 $result = mysqlexec($sql);
-$row= mysqli_fetch_assoc($result);
 
+if($result){
+$row= mysqli_fetch_assoc($result);
 //Biodata 5
 if($row){
 	$father_alive=$row['father_alive'];
@@ -1040,6 +1105,7 @@ if($row){
 	if($row){
 	$family_religious=$row['family_religious'];
 	}
+}
 ?>
 
 
@@ -1160,11 +1226,17 @@ if($row){
 -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- ---
 -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -->
 <?php
+ $id=$_GET['id'];
+ $profileid=$id;
+ 
+ //getting profile details from db
 $sql = "SELECT * FROM 9bd_expected_life_partner WHERE user_id = $id";
 $result = mysqlexec($sql);
-$row= mysqli_fetch_assoc($result);
 
+if($result){
+$row= mysqli_fetch_assoc($result);
 //Biodata 9
+
 if($row){
 	$partner_religius=$row['partner_religius'];
 	}
@@ -1195,6 +1267,7 @@ if($row){
 	if($row){
 	$partner_attributes=$row['partner_attributes'];
 	}
+}
 ?>
 
 				<div role="tabpanel" class="tab-pane fade" id="profile1" aria-labelledby="profile-tab1">
