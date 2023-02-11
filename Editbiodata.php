@@ -2,6 +2,7 @@
 <?php include_once("functions.php"); ?>
 
 <?php
+error_reporting(0);
 $id=$_SESSION['id'];
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 	processprofile_form($id);
@@ -180,21 +181,17 @@ if($row){
 		        <div class="shosurbari-biodata-field">
 		            <label for="edit-name">Biodata Type<span class="form-required" title="This field is required.">*</span></label>
 	                <select name="biodatagender" >
-					    <option value=""><?php echo $biodatagender; ?></option>
-	                    <option value="Male">Male's</option>
-	                    <option value="Female">Female's</option> 
+					    <option><?php echo $biodatagender; ?></option>
+	                    <option value="Male">Male</option>
+	                    <option value="Female">Female</option> 
 	                </select>
 			    </div>
-
-
-
-
 
 
 	                <div class="shosurbari-biodata-field">
 					<label for="edit-pass">DOB-Date<span class="form-required" title="This field is required.">*</span></label>
 					    <select name="day" >
-		                    <option value=""><?php echo $day; ?></option>
+		                    <option><?php echo $day; ?></option>
 		                    <option value="1">1</option>
 		                    <option value="2">2</option>
 		                    <option value="3">3</option>
@@ -232,26 +229,26 @@ if($row){
 					<div class="shosurbari-biodata-field">
 			            <label for="edit-pass">DOB-Month<span class="form-required" title="This field is required.">*</span></label>
 						<select name="month" >
-		                    <option value=""><?php echo $month; ?></option>
-		                    <option value="01">January</option>
-		                    <option value="02">February</option>
-		                    <option value="03">March</option>
-		                    <option value="04">April</option>
-		                    <option value="05">May</option>
-		                    <option value="06">June</option>
-		                    <option value="07">July</option>
-		                    <option value="08">August</option>
-		                    <option value="09">September</option>
-		                    <option value="10">October</option>
-		                    <option value="11">November</option>
-		                    <option value="12">December</option>
+		                    <option><?php echo $month; ?></option>
+		                    <option value="January">January</option>
+		                    <option value="February">February</option>
+		                    <option value="March">March</option>
+		                    <option value="April">April</option>
+		                    <option value="May">May</option>
+		                    <option value="June">June</option>
+		                    <option value="July">July</option>
+		                    <option value="August">August</option>
+		                    <option value="September">September</option>
+		                    <option value="October">October</option>
+		                    <option value="November">November</option>
+		                    <option value="December">December</option>
 	                    </select>
 	                </div>
 
 	                <div class="shosurbari-biodata-field">
 					<label for="edit-pass">DOB-Year<span class="form-required" title="This field is required.">*</span></label>
 	                    <select name="year" >
-		                    <option value=""><?php echo $year; ?></option>
+		                    <option><?php echo $year; ?></option>
 		                    <option value="1980">1980</option>
 		                    <option value="1981">1981</option>
 		                    <option value="1981">1981</option>
@@ -279,16 +276,15 @@ if($row){
 		                    <option value="2004">2004</option>
 		                    <option value="2005">2005</option>
 		                    <option value="2006">2006</option>
-							<option value="2000">2007</option>
-		                    <option value="2001">2008</option>
-		                    <option value="2002">2009</option>
-		                    <option value="2003">2010</option>
-		                    <option value="2004">2011</option>
-		                    <option value="2005">2012</option>
-		                    <option value="2006">2013</option>
+							<option value="2007">2007</option>
+		                    <option value="2008">2008</option>
+		                    <option value="2009">2009</option>
+		                    <option value="2010">2010</option>
+		                    <option value="2011">2011</option>
+		                    <option value="2012">2012</option>
+		                    <option value="2013">2013</option>
 	                    </select>
 	                </div>
-
 
 
 					<div class="shosurbari-biodata-field">
@@ -296,6 +292,7 @@ if($row){
 			            <input type="text" id="edit-name" name="height" value="<?php echo $height; ?>" size="100" maxlength="100" class="form-text" >
                     </div>
 
+					
 					<div class="shosurbari-biodata-field">
 		                <label for="edit-name">Weight <span class="form-required" title="This field is required.">*</span></label>
 			            <input type="text" id="edit-name" name="weight" value="<?php echo $weight; ?>" size="100" maxlength="100" class="form-text" >
@@ -304,7 +301,7 @@ if($row){
 					<div class="shosurbari-biodata-field">
 		                <label for="edit-name">Physical Status<span class="form-required" title="This field is required.">*</span></label>
 	                    <select name="physicalstatus" >
-							<option value=""><?php echo $physicalstatus; ?></option>
+							<option><?php echo $physicalstatus; ?></option>
 	                        <option value="No Problem">No Problem</option>
 	                        <option value="Blind">Blind</option> 
 	               		    <option value="Deaf">Deaf</option> 
@@ -314,19 +311,18 @@ if($row){
 					<div class="shosurbari-biodata-field">
 					        <label for="edit-name">Skin Tones<span class="form-required" title="This field is required.">*</span></label>
 	                        <select name="Skin_tones" >
-							<option value=""><?php echo $Skin_tones; ?></option>
+							<option><?php echo $Skin_tones; ?></option>
 	                        <option value="Light">Light</option>
 	                        <option value="Fair">Fair</option> 
 	               		    <option value="Medium">Medium</option>
 							<option value="Dark">Dark</option>
-							<option value="Normal">Normal</option> 
 	                    </select>
 			        </div>
 
 					<div class="shosurbari-biodata-field">
 					<label for="edit-name">Blood Group<span class="form-required" title="This field is required.">*</span></label>
 	                        <select name="bloodgroup" >
-							<option value=""><?php echo $bloodgroup; ?></option>
+							<option><?php echo $bloodgroup; ?></option>
 	                        <option value="A+">A+</option>
 	                        <option value="B+">B+</option> 
 	               		    <option value="AB+">AB+</option>
@@ -414,7 +410,7 @@ $aboutme=$row['aboutme'];
 							<div class="shosurbari-biodata-field">
 				                <label for="edit-name">Marital status<span class="form-required" title="This field is required.">*</span></label>
 	                            <select name="maritalstatus" >
-					            <option value="" ><?php echo $maritalstatus; ?></option>
+					            <option><?php echo $maritalstatus; ?></option>
 	                            <option value="Unmarried">Unmarried</option>
 	                            <option value="Divorced">Divorced</option>
 	                            <option value="Widow">Widow</option>
@@ -426,7 +422,7 @@ $aboutme=$row['aboutme'];
 							<div class="shosurbari-biodata-field">
 		                        <label for="edit-name">Smoke or Drinks<span class="form-required" title="This field is required.">*</span></label>
 	                            <select name="smoke" >
-								    <option  value=""><?php echo $smoke; ?></option>
+								    <option  ><?php echo $smoke; ?></option>
 	                                <option value="No">No</option>
 	                                <option value="Yes">Yes</option> 
 	               		            <option value="Sometimes">Sometimes</option>
@@ -434,20 +430,110 @@ $aboutme=$row['aboutme'];
 			                </div>
 
 
-
 		                    <div class="shosurbari-biodata-field">
 		                        <label for="edit-name">Occupation<span class="form-required" title="This field is required.">*</span></label>
-			                    <input type="text" id="edit-name" name="occupation" value="<?php echo $occupation; ?>" size="200" maxlength="200" class="form-text" >
-		                    </div>
+								<select name="occupation" class="selectsearch">
+
+								    <optgroup label="Students Sector">
+								    <option  ><?php echo $occupation; ?></option>
+									<option value="Students of Kawmi Madrasa">Students of Kawmi Madrasa</option> 
+									<option value="Students of High School">Students of High School</option>
+									<option value="Students of Doploma">Students of Doploma</option> 
+	               		            <option value="Students of College">Students of College</option>
+	                                <option value="Students of B.Sc. Engineering">Students of B.Sc. Engineering</option> 
+	               		            <option value="Students of Medical Sector">Students of Medical Sector</option>
+	                                <option value="Students of B.Sc.">Students of B.Sc.</option>
+	                                <option value="Students of M.Sc.">Students of M.Sc.</option>
+									<option value="Students of B.A.">Students of B.A.</option> 
+	               		            <option value="Students of M.A.">Students of M.A.</option>
+									<option value="Students of B.Com.">Students of B.Com.</option> 
+	               		            <option value="Students of M.Com.">Students of M.Com.</option>
+                                    </optgroup>
+									
+								     <optgroup label="Medical Sector">
+	                                <option value="MBBS Doctor">MBBS Doctor</option>
+	                                <option value="Internship Doctor">Internship Doctor</option> 
+									<option value="FCPS Doctor">FCPS Doctor</option>
+									<option value="Pharmacist">Pharmacist</option>
+									<option value="Diploma Doctor">Diploma Doctor</option>
+									<option value="Peramedical">Peramedical</option> 
+	               		            <option value="Nursing">Nursing</option>
+									<option value="Midwifary">Midwifary</option>
+                                    </optgroup>
+
+									<optgroup label="Engineers Sector">
+									<option value="Aerospace Engineer">Aerospace Engineer</option>
+									<option value="Agricultural Engineer">Agricultural Engineer</option>
+									<option value="Architectural Engineer">Architectural Engineer</option>
+									<option value="Biomedical Engineer">Biomedical Engineer</option>
+									<option value="Chemical Engineer">Chemical Engineer</option>
+									<option value="Civil Engineer">Civil Engineer</option>
+									<option value="Electrical Engineer">Electrical Engineer</option>
+									<option value="Marine Engineer">Marine Engineer</option> 
+									<option value="Mechanical Engineer">Mechanical Engineer</option>
+									<option value="Network Engineer">Network Engineer</option> 
+									<option value="Robotics Engineer">Robotics Engineer</option>
+	                                <option value="Software Engineer">Software Engineer</option> 
+	               		            <option value="Textile Engineer">Textile Engineer</option>
+                                    </optgroup>
+
+									<optgroup label="Teachers Sector">
+									<option value="Teaches of Kawmi Madrasa">Teaches of Kawmi Madrasa</option> 
+	                                <option value="Teaches of Primary School">Teaches of Primary School</option> 
+	               		            <option value="Teaches of High School">Teaches of High School</option>
+									<option value="Professor of College">Professor of College</option>
+									<option value="Professor of Public University">Professor of Public University</option>
+									<option value="Professor of Private University">Professor of Private University</option>
+									<option value="Professor of National University">Professor of National University</option>
+									<option value="Professor of Degree">Professor of Degree</option>
+                                    </optgroup>
+
+									<optgroup label="Defense Sector">
+	                                <option value="Army">Army</option> 
+	               		            <option value="Air Force">Air Force</option>
+	                                <option value="Navy">Navy</option>
+	                                <option value="Police">Police</option>
+									<option value="Fire Service">Fire Service</option> 
+	               		            <option value="RAB">RAB</option>
+	                                <option value="DB">DB</option>
+                                    </optgroup>
+
+									<optgroup label="Garments Sector">
+	                                <option value="Worker of Garments">Worker of Garments</option> 
+	               		            <option value="Managers of Garments">Managers of Garments</option>
+                                    </optgroup>
+
+									<optgroup label="Driver Sector">
+	                                <option value="Bus Driver">Bus Driver</option> 
+									<option value="Micro Driver">Micro Bus Driver</option> 
+	                                <option value="Car Driver">Car Driver</option> 
+	                                <option value="Truck Driver">Truck Driver</option>
+									<option value="CNG Driver">CNG Driver</option> 
+	                                <option value="Auto Driver">Auto Driver</option>
+                                    </optgroup>
+
+									<optgroup label="Others Sector">
+									<option value="Banker">Banker</option>
+									<option value="Business">Business</option> 
+									<option value="Entrepreneur">Entrepreneur</option> 
+									<option value="Lawyer">Lawyer</option> 
+	                                <option value="Frelancer">Frelancer</option>
+									<option value="Graphics Desigener">Graphics Desigener</option>
+									<option value="Sales & Marketing (SR)">Sales & Marketing (SR)</option>  
+	                                <option value="No Job">No Job</option>
+
+	                            </select>
+							</div>
+
 
 		                    <div class="shosurbari-biodata-field">
 		                        <label for="edit-name">Occupation Describe<span class="form-required" title="This field is required.">*</span></label>
-								<textarea rows="5" id="edit-name" name="occupation_describe" placeholder="Write about you" class="form-text-describe" ><?php echo $occupation_describe; ?></textarea>
+								<textarea rows="5" id="edit-name" name="occupation_describe" placeholder="Describe your Occupation" class="form-text-describe" ><?php echo $occupation_describe; ?></textarea>
 		                    </div>
 
 							<div class="shosurbari-biodata-field">
 		    	               <label for="about me">Your Dress Code at Home or Out Side<span class="form-required" title="This field is required.">*</span></label>
-		    	               <textarea rows="5" name="dress_code" placeholder="Write about you" class="form-text-describe" ><?php echo $dress_code; ?></textarea>
+		    	               <textarea rows="5" name="dress_code" placeholder="Describe your Dress Code" class="form-text-describe" ><?php echo $dress_code; ?></textarea>
 		                    </div>
 
 							<div class="shosurbari-biodata-field">
@@ -528,11 +614,11 @@ $maximum_education=$row['maximum_education'];
 						<div class="shosurbari-biodata-field">
 						   <label for="edit-name">Your Education Method<span class="form-required" title="This field is required.">*</span></label>
 	                        <select name="education_method" >
-							   <option value=""><?php echo $education_method; ?></option>
+							   <option><?php echo $education_method; ?></option>
 		                       <option value="Genaral">General</option>
 		                       <option value="Dakhil">Dakhil</option>
 		                       <option value="Technical">Technical</option>
-		                       <option value="Qawmimadrasa">Qawmi Madrasa</option>
+		                       <option value="Qawmi Madrasa">Qawmi Madrasa</option>
 							   <option value="Other">Other</option>
 							   <option value="None">None</option>
 	                        </select>
@@ -541,7 +627,7 @@ $maximum_education=$row['maximum_education'];
 						<div class="shosurbari-biodata-field">
 						<label for="edit-pass">SSC or Equivalent Passing Year<span class="form-required" title="This field is required.">*</span></label>
 						<select name="sscpassyear" >
-		                    <option value=""><?php echo $sscpassyear; ?></option>
+		                    <option><?php echo $sscpassyear; ?></option>
 							<option value="nonyear">None</option>
 		                    <option value="2024">SSC Candidet2024</option>
 		                    <option value="2023">2023</option>
@@ -631,7 +717,7 @@ $result = mysqlexec($sql);
 if($result){
 $row=mysqli_fetch_assoc($result);
 if($row){
-$country=$row['country'];
+$permanent_division=$row['permanent_division'];
 }
 if($row){
 $present_address=$row['present_address'];
@@ -660,41 +746,12 @@ $childhood=$row['childhood'];
 
 <div class="sb-biodata-option">
 
-                    <div class="shosurbari-biodata-field">
-					    <label for="edit-pass">Nationality<span class="form-required" title="This field is required.">*</span></label>
-	                        <select name="country" >
-						    <option value=""><?php echo $country; ?></option>
-	                        <option value="Bangladesh">Bangladesh</option>
-	                        <option value="India">India</option> 
-	               		    <option value="Pakistan">Pakistan</option>
-							<option value="America">America</option>
-	                        <option value="Australia">Australia</option> 
-	               		    <option value="Canada">Canada</option>
-							<option value="China">China</option>
-	                        <option value="England">England</option> 
-	               		    <option value="France">France</option>
-							<option value="Germany">Germany</option>
-	                        <option value="Hongkong">Hongkong</option>
-							<option value="Italy">Italy</option>  
-	               		    <option value="Iraq">Iraq</option>
-							<option value="Iran">Iran</option>
-							<option value="Japan">Japan</option>
-							<option value="Korea">Korea</option>
-	                        <option value="Mayanmar">Mayanmar</option> 
-	               		    <option value="Qatar">Qatar</option>
-							<option value="Rusia">Rusia</option>
-	                        <option value="Saudi-Arabia">Saudi-Arabia</option> 
-	               		    <option value="Vietnam">Vietnam</option>
-							<option value="other">Other</option>
-	                    </select>
-                    </div>
-
 <script src="https://code.jquery.com/jquery-3.6.3.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/chosen/1.8.7/chosen.jquery.min.js"></script>
 					<div class="shosurbari-biodata-field">
-					    <label for="edit-pass">Division<span class="form-required" title="This field is required.">*</span></label>
-	                        <select name="division" class="selectsearch" >
-						    <option value=""><?php echo $division; ?></option>
+					    <label for="edit-pass">Division of Permanent Address<span class="form-required" title="This field is required.">*</span></label>
+	                    <select name="permanent_division" class="selectsearch" >
+						    <option><?php echo $permanent_division; ?></option>
 	                        <option value="Barishal	">Barishal</option>
 	                        <option value="Chattogram">Chattogram</option> 
 	               		    <option value="Dhaka">Dhaka</option>
@@ -705,21 +762,22 @@ $childhood=$row['childhood'];
 	                        <option value="Sylhet">Sylhet</option> 
 	                    </select>
                     </div>
-					<script>
-						jQuery('.selectsearch').chosen();
-					</script>
 
 					<div class="shosurbari-biodata-field">
-					    <label for="edit-pass">District<span class="form-required" title="This field is required.">*</span></label>  
-						<select name="Distriict" class="selectsearch2" >
-						    <option value=""><?php echo $Distriict; ?></option>
+					    <label for="edit-pass">District of Permanent Address<span class="form-required" title="This field is required.">*</span></label>  
+						<select name="permanent_address" class="selectsearch" >
+
+						<option><?php echo $permanent_address; ?></option>
+							<optgroup label="Barishal Division">
 	                        <option value="Barguna">Barguna</option>
 	                        <option value="Barishal">Barishal</option> 
 	               		    <option value="Bhola">Bhola</option>
 							<option value="Jhalokati">Jhalokati</option>
 	                        <option value="Patuakhali">Patuakhali</option> 
 	               		    <option value="Pirojpur">Pirojpur</option>
+                        </optgroup>
 
+						<optgroup label="Chattagram Division">
 							<option value="Bandarban">Bandarban</option>
 	                        <option value="Brahmanbaria">Brahmanbaria</option> 
 	               		    <option value="Chandpur">Chandpur</option>
@@ -731,7 +789,9 @@ $childhood=$row['childhood'];
 							<option value="Lakshmipur">Lakshmipur</option>
 							<option value="Noakhali">Noakhali</option>
 	                        <option value="Rangamati">Rangamati</option>
+                        </optgroup>
 
+						<optgroup label="Dhaka Division">
 	               		    <option value="Dhaka">Dhaka</option>
 							<option value="Faridpur">Faridpur</option>
 	                        <option value="Gazipur">Gazipur</option> 
@@ -745,7 +805,9 @@ $childhood=$row['childhood'];
 	               		    <option value="Rajbari">Rajbari</option>
 							<option value="Shariatpur">Shariatpur</option>
 	                        <option value="Tangail">Tangail</option>
+                        </optgroup>
 
+						<optgroup label="Khulna Division">
 	               		    <option value="Bagerhat">Bagerhat</option>
 							<option value="Chuadanga">Chuadanga</option>
 	                        <option value="Jashore">Jashore</option>
@@ -756,12 +818,16 @@ $childhood=$row['childhood'];
 							<option value="Meherpur">Meherpur</option>
 	                        <option value="Narail">Narail</option> 
 	               		    <option value="Satkhira">Satkhira</option>
+                        </optgroup>
 
+						<optgroup label="Mymensingh Division">
 							<option value="Jamalpur">Jamalpur</option>
 	                        <option value="Mymensingh">Mymensingh</option> 
 	               		    <option value="Netrokona">Netrokona</option>
 							<option value="Sherpur">Sherpur</option>
+                        </optgroup>
 
+						<optgroup label="Rajshahi Division">
 							<option value="Bogura">Bogura</option>
 							<option value="Chapai Nawabganj">Chapai Nawabganj</option> 
 	                        <option value="Joypurhat">Joypurhat</option> 
@@ -770,7 +836,9 @@ $childhood=$row['childhood'];
 	               		    <option value="Pabna">Pabna</option>
 							<option value="Rajshahi">Rajshahi</option>
 	                        <option value="Sirajganj">Sirajganj</option>
+                        </optgroup>
 
+						<optgroup label="Rangpur Division">
 	               		    <option value="Dinajpur">Dinajpur</option>
 							<option value="Gaibandha">Gaibandha</option>
 	                        <option value="Kurigram">Kurigram</option>
@@ -779,28 +847,25 @@ $childhood=$row['childhood'];
 							<option value="Panchagarh">Panchagarh</option>
 							<option value="Rangpur">Rangpur</option>
 							<option value="Thakurgaon">Thakurgaon</option>
+                        </optgroup>
 
+						<optgroup label="Sylhet Division">
 	                        <option value="Habiganj">Habiganj</option> 
 	               		    <option value="Moulvibazar">Moulvibazar</option>
 							<option value="Sunamganj">Sunamganj</option>
-	                        <option value="Sylhet">Sylhet</option> 
+	                        <option value="Sylhet">Sylhet</option>
+                        </optgroup>
+
 	                    </select>
                     </div>
-                    <script>
-						jQuery('.selectsearch2').chosen();
+					<script>
+						jQuery('.selectsearch').chosen();
 					</script>
-
-
 
 
 <div class="shosurbari-biodata-field">
 	<label for="edit-name">Present Address<span class="form-required" title="This field is required.">*</span></label>
 	<input type="text" id="edit-name" name="present_address" value="<?php echo $present_address; ?>" size="100" maxlength="100" class="form-text required" >
-</div>
-
-<div class="shosurbari-biodata-field">
-	<label for="edit-name">Permanent Address<span class="form-required" title="This field is required.">*</span></label>
-	<input type="text" id="edit-name" name="permanent_address" value="<?php echo $permanent_address; ?>" size="100" maxlength="100" class="form-text required" >
 </div>
 
 <div class="shosurbari-biodata-field">
@@ -921,34 +986,34 @@ $family_religious=$row['family_religious'];
 
 						<div class="shosurbari-biodata-field">
 		                    <label for="edit-name">Sisters & Brothers information<span class="form-required" title="This field is required.">*</span></label>
-							<textarea rows="8" id="edit-name" name="brosis_info"   placeholder="Write about you" class="form-text-describe" ><?php echo $brosis_info; ?></textarea>
+							<textarea rows="8" id="edit-name" name="brosis_info"   placeholder="Discribe Your Sisters & Brothers information" class="form-text-describe" ><?php echo $brosis_info; ?></textarea>
 		                </div>
 
 						<div class="shosurbari-biodata-field">
 		                    <label for="edit-name">Profession of uncles<span class="form-required" title="This field is required.">*</span></label>
-							<textarea rows="8" id="edit-name" name="uncle_profession"  placeholder="Write about you" class="form-text-describe" ><?php echo $uncle_profession; ?></textarea>
+							<textarea rows="8" id="edit-name" name="uncle_profession"  placeholder="Describe Profession of Your Uncles" class="form-text-describe" ><?php echo $uncle_profession; ?></textarea>
 		                </div>
 
 						<div class="shosurbari-biodata-field">
 		                    <label for="edit-name">Family financial status<span class="form-required" title="This field is required.">*</span></label>
 	                        <select name="family_class" >
-							    <option  value="" ><?php echo $family_class; ?></option>
-	                            <option value="Slim">Higher Class</option>
-	                            <option value="Fat">Higher Middle Class</option> 
-	               		        <option value="Average">Middle Class</option>
-								<option value="Average">Lower Middle Class</option>
-								<option value="Average">Lower Class</option>  
+							    <option ><?php echo $family_class; ?></option>
+	                            <option value="Higher Class">Higher Class</option>
+	                            <option value="Higher Middle Class">Higher Middle Class</option> 
+	               		        <option value="Middle Class">Middle Class</option>
+								<option value="Lower Middle Class">Lower Middle Class</option>
+								<option value="Lower Class">Lower Class</option>  
 	                        </select>
 			            </div>
 
 						<div class="shosurbari-biodata-field">
-		                    <label for="edit-name">Description of financial condition<span class="form-required" title="This field is required.">*</span></label>
-							<textarea rows="5" id="edit-name" name="financial_condition" placeholder="Write about you" class="form-text-describe" ><?php echo $financial_condition; ?></textarea>
+		                    <label for="edit-name">Describe of financial condition<span class="form-required" title="This field is required.">*</span></label>
+							<textarea rows="5" id="edit-name" name="financial_condition" placeholder="Describe Your Financial Condition" class="form-text-describe" ><?php echo $financial_condition; ?></textarea>
 		                </div>
 
 						<div class="shosurbari-biodata-field">
 		    	            <label for="about me">How is your family's religious condition?<span class="form-required" title="This field is required.">*</span></label>
-		    	            <textarea rows="5" name="family_religious"  placeholder="Write about you" class="form-text-describe" ><?php echo $family_religious; ?></textarea>
+		    	            <textarea rows="5" name="family_religious"  placeholder="Describe Your Family's Religious Condition" class="form-text-describe" ><?php echo $family_religious; ?></textarea>
 		                </div>
                     </div>
 		        </div>
@@ -1045,7 +1110,7 @@ $profileby_male=$row['profileby_male'];
 							<div class="shosurbari-biodata-field">
 		                        <label for="edit-name">Profile Created by<span class="form-required" title="This field is required.">*</span></label>
 	                            <select name="profileby_male" >
-								<option value="" hidden><?php echo $profileby_male; ?></option>
+								<option><?php echo $profileby_male; ?></option>
 	                            <option value="Self">Self</option>
 								<option value="Father">Father</option>
 	                            <option value="Mother">Mother</option>
@@ -1152,7 +1217,7 @@ $profileby_female=$row['profileby_female'];
 							<div class="shosurbari-biodata-field">
 		                        <label for="edit-name">Profile Created by<span class="form-required" title="This field is required.">*</span></label>
 	                            <select name="profileby_female" >
-								<option value="" ><?php echo $profileby_female; ?></option>
+								<option><?php echo $profileby_female; ?></option>
 	                            <option value="Self">Self</option>
 								<option value="Father">Father</option>
 	                            <option value="Mother">Mother</option>
@@ -1230,20 +1295,20 @@ $yourreligion_condition=$row['yourreligion_condition'];
 
 							
 					        <div class="shosurbari-biodata-field">
-			                    <label for="edit-pass">Religion<span class="form-required" title="This field is required.">*</span><?php echo $religion; ?></label>
+			                    <label for="edit-pass">Religion<span class="form-required" title="This field is required.">*</span></label>
 	                            <select name="religion" >
-								<option value="" ><?php echo $religion; ?></option>
+								<option ><?php echo $religion; ?></option>
 						        <option value="Muslim">Muslim</option>
 		                        <option value="Hindu">Hindu</option>
 		                        <option value="Christian">Christian</option>
-		                        <option value="Jain">Budhism</option>
-		                        <option value="Sikh">Others</option>
+		                        <option value="Budhism">Budhism</option>
+		                        <option value="Others">Others</option>
 	                            </select>
 	                        </div>
 
 					        <div class="shosurbari-biodata-field">
 		    	               <label for="about me">How is your religious condition?<span class="form-required" title="This field is required.">*</span></label>
-		    	               <textarea rows="5" name="yourreligion_condition" placeholder="Write about you" class="form-text-describe" ><?php echo $yourreligion_condition; ?></textarea>
+		    	               <textarea rows="5" name="yourreligion_condition" placeholder="Describe Your Religious Condition" class="form-text-describe" ><?php echo $yourreligion_condition; ?></textarea>
 		                    </div>
                             </div>
                         </div>
@@ -1376,7 +1441,7 @@ $partner_attributes=$row['partner_attributes'];
 
 						<div class="shosurbari-biodata-field">
 		                    <label for="edit-name">Expected qualities or attributes of your life partner<span class="form-required" title="This field is required.">*</span></label>
-							<textarea rows="8" id="edit-name" name="partner_attributes" placeholder="Write about you" class="form-text-describe" ><?php echo $partner_attributes; ?></textarea>
+							<textarea rows="8" id="edit-name" name="partner_attributes" placeholder="Describe Expected Qualities or Attributes of Your Life Partner" class="form-text-describe" ><?php echo $partner_attributes; ?></textarea>
 		                </div>
                     </div>
 		        </div>
