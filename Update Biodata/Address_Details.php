@@ -1,23 +1,4 @@
-<?php include_once("includes/basic_includes.php");?>
-<?php include_once("functions.php"); ?>
 
-<?php
-error_reporting(0);
-$id=$_SESSION['id'];
-if ($_SERVER['REQUEST_METHOD'] == 'POST') {
-	processprofile_form($id);
-		//processprofile_form
-}
-?>
-
-<?php
-// $id=$_GET['id'];
-if(isloggedin()){
- //do nothing stay here
-} else{
-   header("location:login.php");
-}
-?>
 
 
 <!DOCTYPE HTML>
