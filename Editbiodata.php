@@ -191,7 +191,7 @@ if($row){
 	                <div class="shosurbari-biodata-field">
 					<label for="edit-pass">DOB-Date<span class="form-required" title="This field is required.">*</span></label>
 					    <select name="day" required>
-		                    <option><?php echo $day; ?></option>
+		                    <option></option>
 		                    <option value="1">1</option>
 		                    <option value="2">2</option>
 		                    <option value="3">3</option>
@@ -229,7 +229,7 @@ if($row){
 					<div class="shosurbari-biodata-field">
 			            <label for="edit-pass">DOB-Month<span class="form-required" title="This field is required.">*</span></label>
 						<select name="month" required>
-		                    <option><?php echo $month; ?></option>
+		                    <option></option>
 		                    <option value="January">January</option>
 		                    <option value="February">February</option>
 		                    <option value="March">March</option>
@@ -248,7 +248,7 @@ if($row){
 	                <div class="shosurbari-biodata-field">
 					<label for="edit-pass">DOB-Year<span class="form-required" title="This field is required.">*</span></label>
 	                    <select name="year" required>
-		                    <option><?php echo $year; ?></option>
+		                    <option></option>
 		                    <option value="1980">1980</option>
 		                    <option value="1981">1981</option>
 		                    <option value="1981">1981</option>
