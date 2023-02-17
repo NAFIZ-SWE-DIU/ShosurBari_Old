@@ -149,8 +149,10 @@ function register(){
 			   (0, '$fname', '$uname', '$gender', '$pnumber', '$email', '$pass_1', 0)";
 
 	if (mysqli_query($conn,$sql)) {
-	  echo "<a href=\"login.php\">";
-	  echo "</a>";
+	  //echo "<a href=\"login.php\">";
+	  //echo "</a>";
+	  header("location: login.php");
+
 	} else {
 	  echo "Error: " . $sql . "<br>" . $conn->error;
 	}
