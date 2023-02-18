@@ -50,79 +50,101 @@ $(document).ready(function(){
         <li class="current-page">Register</li>
      </ul>
    </div>
+</div>
+</div>
 
 
 
 
 
 
-   <div class="services">
-   	  <div class="col-sm-6 login_left">
-	     <form action="" method="POST">
 
-	  	    <div class="form-group">
+
+
+<!-- -- -- -- -- -- -- -- -- -- -- -- -- ---- -- --
+-- -- -- -- -- -- -- -- --- -- -- -- -- -- -- -- --
+--                S  T  A  R  T                  --
+--   SHOSURBARI BIODATA FORM FIELD ALL SECTION   --
+--                                               --
+-- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- ---
+-- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -->
+<div class="shosurbari-biodata">
+<form action="" method="POST">
+		<div class="flex-container">
+    <div class="sb-biodata">
+
+		<div class="sb-biodata-field">
+		    <h2>Creat New <span>Account</span></h2>
+        </div>
+
+
+
+
+		<div class="form-group">
 		      <label for="edit-name">Full Name<span class="form-required" title="This field is required.">*</span></label>
-		      <input type="text" id="edit-name" name="fname" value="" size="60" maxlength="60" class="form-text required" required>
+		      <input type="text" id="edit-name" placeholder="Enter Your Full Name" name="fname" value="" size="60" maxlength="60" class="form-text required" required>
 		    </div>
 
 			<div class="form-group">
 		      <label for="edit-name">Username<span class="form-required" title="This field is required.">*</span></label>
-		      <input type="text" id="edit-name" name="uname" value="" size="60" maxlength="60" class="form-text required" required>
+		      <input type="text" id="edit-name" placeholder="Enter Valid Username" name="uname" value="" size="60" maxlength="60" class="form-text required" required>
 		    </div>
 
-			<div class="form-group form-group1">
-                <label class="col-sm-7 control-lable" for="sex">Gender<span class="form-required" title="This field is required.">*</span></label>
-                <div class="col-sm-5">
-                    <div class="radios">
-				        <label for="radio-01" class="label_radio">
-				            <input type="radio" name="gender" value="male" required> Male
-				        </label>
-				        <label for="radio-02" class="label_radio">
-				            <input type="radio" name="gender" value="female"> Female
-				        </label>
-	                </div>
-                </div>
-                <div class="clearfix"> </div>
-             </div>
+			    <div class="form-group">
+				<label for="sex">Gender<span class="form-required" title="This field is required.">*</span></label>
+				<select name="gender" required>
+					<option value=""></option>
+		            <option value="Male">Male</option>
+		            <option value="Female">Female</option>
+	            </select>
+	            </div>
 
-			 <div class="form-group">
+
+			<div class="form-group">
 		      <label for="edit-name">Email<span class="form-required" title="This field is required.">*</span></label>
-		      <input type="text" id="edit-name" name="email" value="" size="60" maxlength="60" class="form-text required" required>
+		      <input type="text" id="edit-name" placeholder="Enter Your Email" name="email" value="" size="60" maxlength="60" class="form-text required" required>
 		    </div>
 
 			<div class="form-group">
 		      <label for="edit-name">Phone Number<span class="form-required" title="This field is required.">*</span></label>
-		      <input type="number" id="edit-number" name="pnumber" value="" size="60" maxlength="60" class="form-text required" required>
+		      <input type="number" id="edit-number" placeholder="Enter Your Phone Number" name="pnumber" value="" size="60" maxlength="60" class="form-text required" required>
 		    </div>
 
 		    <div class="form-group">
 		      <label for="edit-pass">Password<span class="form-required" title="This field is required.">*</span></label>
-		      <input type="password" id="edit-pass" name="pass_1" size="60" maxlength="128" class="form-text required" required>
+		      <input type="password" id="edit-pass" placeholder="Enter New Password" name="pass_1" size="60" maxlength="128" class="form-text required" required>
 		    </div>
 
 			<div class="form-group">
 		      <label for="edit-pass">Confirm Password<span class="form-required" title="This field is required.">*</span></label>
-		      <input type="password" id="edit-pass" name="pass_2" size="60" maxlength="128" class="form-text required" required>
+		      <input type="password" id="edit-pass" placeholder="Enter Confirm Password" name="pass_2" size="60" maxlength="128" class="form-text required" required>
 		    </div>
+
+			<div class="form-actions">
+			    <input type="submit" id="edit-submit" name="op" value="Creat Account" class="btn_1 submit">
+			</div>
 			  
-			  <div class="form-actions">
-			    <input type="submit" id="edit-submit" name="op" value="Creat an account" class="btn_1 submit">
-			  </div>
-		 </form>
-	  </div>
-	  <div class="col-sm-6">
-	     <ul class="sharing">
-			<li><a href="#" class="facebook" title="Facebook"><i class="fa fa-boxed fa-fw fa-facebook"></i> Share on Facebook</a></li>
-		  	<li><a href="#" class="twitter" title="Twitter"><i class="fa fa-boxed fa-fw fa-twitter"></i> Tweet</a></li>
-		  	<li><a href="#" class="google" title="Google"><i class="fa fa-boxed fa-fw fa-google-plus"></i> Share on Google+</a></li>
-		  	<li><a href="#" class="linkedin" title="Linkedin"><i class="fa fa-boxed fa-fw fa-linkedin"></i> Share on LinkedIn</a></li>
-		  	<li><a href="#" class="mail" title="Email"><i class="fa fa-boxed fa-fw fa-envelope-o"></i> E-mail</a></li>
-		 </ul>
-	  </div>
-	  <div class="clearfix"> </div>
-   </div>
-  </div>
-</div>
+			<div class="or">
+		    <p><span class="sb-or">OR</span></p>
+        </div>
+
+	  	<div class="form-actions">
+			<p>Do you have an account?</p>
+			<a class="btn_2 submit" href="login.php">Login Your Account</a>
+	    </div>
+    </div>
+<!-- -- -- -- -- -- -- -- -- -- -- -- -- ---- -- --
+-- -- -- -- -- -- -- -- --- -- -- -- -- -- -- -- --
+--                   E   N   D                   --
+--        Religion Details / sb-biodata-8        --
+--                                               --
+-- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- ---
+-- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -->
+
+    </div>
+	</form>
+    </div>
+
 
 
 <?php include_once("footer.php");?>
