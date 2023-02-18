@@ -72,23 +72,38 @@ $(document).ready(function(){
 -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- ---
 -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -->
 <div class="shosurbari-biodata">
+	
     <form action="auth/auth.php?user=1" method="post">
 		<div class="flex-container">
     <div class="sb-biodata">
 
 		  <div class="sb-biodata-field">
-		    <h2>Creat New <span>Account</span></h2>
+		    <h2>Login Your <span>Account</span></h2>
       </div>
 
 			<div class="form-group">
-        <label for="edit-name">Username <span class="form-required" title="This field is required.">*</span></label>
-	      <input type="text" id="edit-name" name="username" value="" size="60" maxlength="60" class="form-text required">
+        <label for="edit-name">Email or Username <span class="form-required" title="This field is required.">*</span></label>
+	      <input type="text" id="edit-name" placeholder="Enter Your Email or Username" name="username" value="" size="60" maxlength="60" class="form-text required">
 	    </div>
 
 			<div class="form-group">
         <label for="edit-pass">Password <span class="form-required" title="This field is required.">*</span></label>
-	      <input type="password" id="edit-pass" name="password" size="60" maxlength="128" class="form-text required">
+	      <input type="password" id="edit-pass" placeholder="Enter Your Password"  name="password" size="60" maxlength="128" class="form-text required">
 	 	  </div>
+
+		  
+		   <div class="form-actions">
+	    	<input type="submit" id="edit-submit" name="op" value="Log in" class="btn_1 submit">
+	    </div>
+
+		<div class="or">
+		    <p><span class="sb-or">OR</span></p>
+        </div>
+
+	  	<div class="form-actions">
+			<p>Don't have an account?</p>
+			<a class="btn_2 submit" href="register.php"><span>+ </span> Create New Account</a>
+	    </div>
 
     </div>
 <!-- -- -- -- -- -- -- -- -- -- -- -- -- ---- -- --
@@ -99,9 +114,6 @@ $(document).ready(function(){
 -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- ---
 -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -->
 
-      <div class="form-actions">
-	    	<input type="submit" id="edit-submit" name="op" value="Log in" class="btn_1 submit">
-	    </div>
     </div>
 	  </form>
   </div>
