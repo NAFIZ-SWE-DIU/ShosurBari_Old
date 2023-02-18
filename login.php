@@ -47,38 +47,66 @@ $(document).ready(function(){
         <li class="current-page">Login</li>
      </ul>
    </div>
-   <div class="services">
-   	  <div class="col-sm-6 login_left">
-	   <form action="auth/auth.php?user=1" method="post">
-		
-  	    <div class="form-item form-type-textfield form-item-name">
-	      <label for="edit-name">Username <span class="form-required" title="This field is required.">*</span></label>
+</div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- -- -- -- -- -- -- -- -- -- -- -- -- ---- -- --
+-- -- -- -- -- -- -- -- --- -- -- -- -- -- -- -- --
+--                S  T  A  R  T                  --
+--   SHOSURBARI BIODATA FORM FIELD ALL SECTION   --
+--                                               --
+-- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- ---
+-- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -->
+<div class="shosurbari-biodata">
+    <form action="auth/auth.php?user=1" method="post">
+		<div class="flex-container">
+    <div class="sb-biodata">
+
+		  <div class="sb-biodata-field">
+		    <h2>Creat New <span>Account</span></h2>
+      </div>
+
+			<div class="form-group">
+        <label for="edit-name">Username <span class="form-required" title="This field is required.">*</span></label>
 	      <input type="text" id="edit-name" name="username" value="" size="60" maxlength="60" class="form-text required">
 	    </div>
 
-	    <div class="form-item form-type-password form-item-pass">
-	      <label for="edit-pass">Password <span class="form-required" title="This field is required.">*</span></label>
+			<div class="form-group">
+        <label for="edit-pass">Password <span class="form-required" title="This field is required.">*</span></label>
 	      <input type="password" id="edit-pass" name="password" size="60" maxlength="128" class="form-text required">
-	    </div>
+	 	  </div>
 
-	    <div class="form-actions">
+    </div>
+<!-- -- -- -- -- -- -- -- -- -- -- -- -- ---- -- --
+-- -- -- -- -- -- -- -- --- -- -- -- -- -- -- -- --
+--                   E   N   D                   --
+--        Religion Details / sb-biodata-8        --
+--                                               --
+-- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- ---
+-- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -->
+
+      <div class="form-actions">
 	    	<input type="submit" id="edit-submit" name="op" value="Log in" class="btn_1 submit">
 	    </div>
-	   </form>
-	  </div>
-	  <div class="col-sm-6">
-	    <ul class="sharing">
-			<li><a href="#" class="facebook" title="Facebook"><i class="fa fa-boxed fa-fw fa-facebook"></i> Share on Facebook</a></li>
-		  	<li><a href="#" class="twitter" title="Twitter"><i class="fa fa-boxed fa-fw fa-twitter"></i> Tweet</a></li>
-		  	<li><a href="#" class="google" title="Google"><i class="fa fa-boxed fa-fw fa-google-plus"></i> Share on Google+</a></li>
-		  	<li><a href="#" class="linkedin" title="Linkedin"><i class="fa fa-boxed fa-fw fa-linkedin"></i> Share on LinkedIn</a></li>
-		  	<li><a href="#" class="mail" title="Email"><i class="fa fa-boxed fa-fw fa-envelope-o"></i> E-mail</a></li>
-		</ul>
-	  </div>
-	  <div class="clearfix"> </div>
-   </div>
+    </div>
+	  </form>
   </div>
-</div>
+
+
 
 
 <?php include_once("footer.php");?>
