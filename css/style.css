@@ -1375,9 +1375,6 @@ opened_1*/
 a#profile-tab, a#home-tab, a#profile-tab1{
     color: #fff;
 } 
-.grid_3{
-	padding:5em 0;
-}
 .tab_box {
     margin-bottom: 2em;
 }
@@ -2516,7 +2513,8 @@ label{
     display: inline-block;
     margin-bottom: 2px;
     font-weight: 700;
-    margin-top: 25px;
+    /* margin-top: 25px; */
+    margin-top: 2px;
 }
 
 .form-text-describe:focus{
@@ -2527,7 +2525,7 @@ label{
 
 .form-text, .form-select, .form-textarea {
     display: block;
-    width: 70%;
+    width: 100%;
     height: 45px;
     padding: 6px 12px;
     font-size: 16px;
@@ -2553,10 +2551,8 @@ label{
 }
 .btn_1{
     background: #ff0080;
-    border-radius: 2px;
-    -webkit-border-radius: 2px;
-    -moz-border-radius: 2px;
-    -o-border-radius: 2px;
+    border-radius: 6px;
+    width: 100%;
     padding: 8px 25px;
     display: inline-block;
     color: #fff;
@@ -2564,10 +2560,65 @@ label{
     outline: none;
     border: none;
     margin: 1em 0 0 0;
-    font-size: 0.85em;
+    font-size: 0.65em;
 }
 .btn_1:hover{
 	background:#02a7e6;
+    color: yellow;
+}
+.form-actions p{
+    font-size: 18px;
+}
+.or{
+    font-size: 22px;
+    text-align: center;
+    margin-top: 2px;
+    margin-bottom: 2px;
+    position: relative;
+    text-align: center;
+    z-index: 1;
+}
+
+
+
+.or::before {
+    position: absolute;
+    content: "";
+    width: 100%;
+    height: 1px;
+    background: #02a7e6;
+    left: 0;
+    right: 0;
+    top: 50%;
+    z-index: -1;
+}
+.sb-or{
+    background: #f1efef;
+    padding-left: 10px;
+    padding-right: 10px;
+}
+
+.or p{
+    margin-top: -25px;
+    margin-bottom: 2px;
+}
+.btn_2:hover{
+	background:#02a7e6;
+    color: yellow;
+}
+.btn_2{
+    background: #00c875;
+    border-radius: 6px;
+    width: 100%;
+    padding: 8px 25px;
+    display: inline-block;
+    color: #fff;
+    text-transform: uppercase;
+    outline: none;
+    border: none;
+    margin-top: 7px;
+    margin-bottom: -50px;
+    font-size: 0.65em;
 }
 .sharing li {
     margin-bottom:1em;
@@ -4754,7 +4805,7 @@ form {
     padding: 5em 0;
     padding-top: 5em;
     padding-right: 0px;
-    padding-bottom: 5em;
+    padding-bottom: 0em;
     padding-left: 0px;
 }
 /*-- -- -- -- -- -- -- -- -- -- -- -- -- ---- -- --
@@ -4911,7 +4962,7 @@ h1{
     text-align: center;
     width: 100%;
     margin-bottom: 0px;
-    margin-top: -90px;
+    margin-top: -20px;
 }
 
 
@@ -4933,7 +4984,10 @@ h1{
 .shosurbari-biodata .sb-biodata-5 .sb-biodata-field,
 .shosurbari-biodata .sb-biodata-6 .sb-biodata-field, */
 .shosurbari-biodata .sb-biodata .sb-biodata-field{
-    padding: 10px;
+    padding-top: 10px;
+    padding-bottom: 20px;
+    padding-left: 0px;
+    padding-right: 0px;
     margin: 0px;
     align-items: center;
     text-align: center;
@@ -4944,7 +4998,7 @@ h1{
 .shosurbari-biodata{
     display: flex;
     flex-wrap: wrap;
-    margin-top:0px;
+    margin-top: -50px;
 }
 
 .flex-container{
