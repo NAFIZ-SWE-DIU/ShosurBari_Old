@@ -2549,26 +2549,23 @@ label{
     outline: 0;
     box-shadow: none !important;
 }
-.btn_1{
-    background: #ff0080;
-    border-radius: 6px;
-    width: 100%;
-    padding: 8px 25px;
-    display: inline-block;
-    color: #fff;
-    text-transform: uppercase;
-    outline: none;
-    border: none;
-    margin: 1em 0 0 0;
-    font-size: 0.65em;
-}
-.btn_1:hover{
-	background:#02a7e6;
-    color: yellow;
-}
-.form-actions p{
-    font-size: 18px;
-}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* FORM SUBMIT BUTTON START */
+/* OR */
 .or{
     font-size: 22px;
     text-align: center;
@@ -2578,8 +2575,6 @@ label{
     text-align: center;
     z-index: 1;
 }
-
-
 
 .or::before {
     position: absolute;
@@ -2602,11 +2597,63 @@ label{
     margin-top: -25px;
     margin-bottom: 2px;
 }
-.btn_2:hover{
+
+
+/* BUTTON 1 */
+.btn_1{
+    background: #ff0080;
+    border-radius: 6px;
+    width: auto;
+    padding: 8px 70px;
+    display: inline-block;
+    color: #fff;
+    text-transform: uppercase;
+    outline: none;
+    border: none;
+    margin: 1em 0 0 0;
+    font-size: 0.65em;
+}
+
+.btn_1:hover, .btn_2:hover, .btn_3:hover, .btn_4:hover, .btn_5:hover{
 	background:#02a7e6;
     color: yellow;
 }
+.form-actions p{
+    font-size: 18px;
+}
+
+
+/*Login Your Account BUTTON 2 */
+.btn_2 span {
+    content: url(../images/login.png);
+    width: 8%;
+    position: relative;
+    left: 0px;
+    top: 5px;
+}
 .btn_2{
+    background: #ff0080;
+    border-radius: 6px;
+    width: 100%;
+    padding: 8px 25px;
+    display: inline-block;
+    color: #fff;
+    text-transform: uppercase;
+    outline: none;
+    border: none;
+    margin: 1em 0 0 0;
+    font-size: 0.65em;
+}
+
+/* Login Your Account BUTTON 3 */
+.btn_3 span {
+    content: url(../images/login.png);
+    width: 8%;
+    position: relative;
+    left: 0px;
+    top: 5px;
+}
+.btn_3{
     background: #00c875;
     border-radius: 6px;
     width: 100%;
@@ -2620,6 +2667,77 @@ label{
     margin-bottom: -50px;
     font-size: 0.65em;
 }
+
+/*Creat Account BUTTON 4 */
+.btn_4 span  {
+    content: url(../images/signup.png);
+    width: 5%;
+    position: relative;
+    left: 0px;
+    top: 3px;
+}
+.btn_4{
+    background: #ff0080;
+    border-radius: 6px;
+    width: 100%;
+    padding: 8px 25px;
+    display: inline-block;
+    color: #fff;
+    text-transform: uppercase;
+    outline: none;
+    border: none;
+    margin: 1em 0 0 0;
+    font-size: 0.65em;
+}
+
+/*Create New Account  BUTTON 5 */
+.btn_5 span {
+    content: url(../images/signup.png);
+    width: 5%;
+    position: relative;
+    left: 0px;
+    top: 3px;
+}
+.btn_5{
+    background: #00c875;
+    border-radius: 6px;
+    width: 100%;
+    padding: 8px 25px;
+    display: inline-block;
+    color: #fff;
+    text-transform: uppercase;
+    outline: none;
+    border: none;
+    margin-top: 7px;
+    margin-bottom: -50px;
+    font-size: 0.65em;
+}
+
+/* FORM SUBMIT BUTTON START */
+
+
+
+.form-group{
+    position: relative;
+  }
+  .form-group input {
+    padding-right: 25px;
+  }
+
+
+  .form-group .show-password {
+    position: absolute;
+    right: 10px;
+    top: 32px;
+    padding: 5px 10px;
+    font-size: 16px;
+    cursor: pointer;
+  }
+
+
+
+
+
 .sharing li {
     margin-bottom:1em;
 }
@@ -4855,6 +4973,8 @@ form {
     margin-bottom: 40px;
     margin-top: 20px;
     background: rgb(241, 239, 239);
+   /* box-shadow: 0px 2px 7px 6px rgb(0 0 0 / 20%); */
+   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
 
 @media (max-width: 765px) {
