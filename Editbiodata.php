@@ -746,11 +746,10 @@ $childhood=$row['childhood'];
 
 <div class="sb-biodata-option">
 
-<script src="https://code.jquery.com/jquery-3.6.3.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/chosen/1.8.7/chosen.jquery.min.js"></script>
+
 					<div class="shosurbari-biodata-field">
 					    <label for="edit-pass">Division of Permanent Address<span class="form-required" title="This field is required.">*</span></label>
-	                    <select name="permanent_division" class="selectsearch" required>
+	                    <select name="permanent_division" required>
 						    <option><?php echo $permanent_division; ?></option>
 	                        <option value="Barishal	">Barishal</option>
 	                        <option value="Chattogram">Chattogram</option> 
@@ -763,6 +762,9 @@ $childhood=$row['childhood'];
 	                    </select>
                     </div>
 
+
+					<script src="https://code.jquery.com/jquery-3.6.3.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/chosen/1.8.7/chosen.jquery.min.js"></script>
 					<div class="shosurbari-biodata-field">
 					    <label for="edit-pass">District of Permanent Address<span class="form-required" title="This field is required.">*</span></label>  
 						<select name="permanent_address" class="selectsearch" required>
