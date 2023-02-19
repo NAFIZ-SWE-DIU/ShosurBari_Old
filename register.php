@@ -13,6 +13,8 @@ error_reporting(0);
 <script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); } </script>
 <link href="css/bootstrap-3.1.1.min.css" rel='stylesheet' type='text/css' />
 <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/all.min.css" integrity="sha256-mmgLkCYLUQbXn0B1SRqzHar6dCnv9oZFPEC1g1cwlkk=" crossorigin="anonymous" /><!-- eye icon password show -->
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css">
 <script src="js/jquery.min.js"></script>
 <script src="js/bootstrap.min.js"></script>
 <!-- Custom Theme files -->
@@ -74,7 +76,7 @@ $(document).ready(function(){
     <div class="sb-biodata">
 
 		<div class="sb-biodata-field">
-		    <h2>Creat New <span>Account</span></h2>
+		    <h2>Create New <span>Account</span></h2>
         </div>
 
 
@@ -113,15 +115,35 @@ $(document).ready(function(){
 		    <div class="form-group">
 		      <label for="edit-pass">Password<span class="form-required" title="This field is required.">*</span></label>
 		      <input type="password" id="edit-pass" placeholder="Enter New Password" name="pass_1" size="60" maxlength="128" class="form-text required" required>
-		    </div>
+			  <span class="show-password"><i class="fa fa-eye"></i></span>
+			</div>
+
 
 			<div class="form-group">
 		      <label for="edit-pass">Confirm Password<span class="form-required" title="This field is required.">*</span></label>
 		      <input type="password" id="edit-pass" placeholder="Enter Confirm Password" name="pass_2" size="60" maxlength="128" class="form-text required" required>
-		    </div>
+			  <span class="show-password"><i class="fa fa-eye"></i></span>
+			</div>
+
+	<script>
+        let showPass = document.querySelectorAll('.show-password');
+        showPass.forEach(function(el) {
+            el.addEventListener('click', function(){
+                let input = this.previousElementSibling;
+                if (input.type === "password") {
+                    input.type = "text";
+                    this.innerHTML = "<i class='fa fa-eye-slash'></i>";
+                } else {
+                    input.type = "password";
+                    this.innerHTML = "<i class='fa fa-eye'></i>";
+                }
+            });
+        });
+    </script>
+
 
 			<div class="form-actions">
-			    <input type="submit" id="edit-submit" name="op" value="Creat Account" class="btn_1 submit">
+			<button  type="submit" id="edit-submit" name="op" class="btn_4 submit"> <span> </span> Create Account</button>
 			</div>
 			  
 			<div class="or">
@@ -130,7 +152,7 @@ $(document).ready(function(){
 
 	  	<div class="form-actions">
 			<p>Do you have an account?</p>
-			<a class="btn_2 submit" href="login.php">Login Your Account</a>
+			<a class="btn_3 submit" href="login.php"> <span> </span> Login Your Account</a>
 	    </div>
     </div>
 <!-- -- -- -- -- -- -- -- -- -- -- -- -- ---- -- --
@@ -144,7 +166,6 @@ $(document).ready(function(){
     </div>
 	</form>
     </div>
-
 
 
 <?php include_once("footer.php");?>
