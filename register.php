@@ -15,6 +15,7 @@ error_reporting(0);
 <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/all.min.css" integrity="sha256-mmgLkCYLUQbXn0B1SRqzHar6dCnv9oZFPEC1g1cwlkk=" crossorigin="anonymous" /><!-- eye icon password show -->
 <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css">
+<script src="js/optionsearch.js"></script>
 <script src="js/jquery.min.js"></script>
 <script src="js/bootstrap.min.js"></script>
 <!-- Custom Theme files -->
@@ -38,6 +39,9 @@ $(document).ready(function(){
     );
 });
 </script>
+
+
+
 </head>
 <body>
 <!-- ============================  Navigation Start =========================== -->
@@ -48,19 +52,12 @@ $(document).ready(function(){
    <div class="breadcrumb1">
      <ul>
         <a href="index.php"><i class="fa fa-home home_1"></i></a>
-        <span class="divider">&nbsp;|&nbsp;</span>
-        <li class="current-page">Register</li>
+        <span class="divider">&nbsp;<|>&nbsp;</span>
+        <li class="current-page"><h4>Register</h4></li>
      </ul>
    </div>
 </div>
 </div>
-
-
-
-
-
-
-
 
 
 <!-- -- -- -- -- -- -- -- -- -- -- -- -- ---- -- --
@@ -71,7 +68,7 @@ $(document).ready(function(){
 -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- ---
 -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -->
 <div class="shosurbari-biodata">
-<form action="" method="POST">
+<form action="" method="POST" name="myForm" onsubmit="return validateForm()">
 		<div class="flex-container">
     <div class="sb-biodata">
 
@@ -79,50 +76,49 @@ $(document).ready(function(){
 		    <h2>Create New <span>Account</span></h2>
         </div>
 
-
-
-
 		<div class="form-group">
 		      <label for="edit-name">Full Name<span class="form-required" title="This field is required.">*</span></label>
-		      <input type="text" id="edit-name" placeholder="Enter Your Full Name" name="fname" value="" size="60" maxlength="60" class="form-text required" required>
-		    </div>
+		      <input type="text" id="fname" placeholder="Enter Your Full Name" name="fname" value="" size="60" maxlength="60" class="form-text required">
+			  <span id="fname_error" style="color:red; font-size:13px;"></span>
+			</div>
 
 			<div class="form-group">
 		      <label for="edit-name">Username<span class="form-required" title="This field is required.">*</span></label>
-		      <input type="text" id="edit-name" placeholder="Enter Valid Username" name="uname" value="" size="60" maxlength="60" class="form-text required" required>
-		    </div>
+		      <input type="text" id="uname" placeholder="Enter Valid Username" name="uname" value="" size="60" maxlength="60" class="form-text required">
+			  <span id="uname_error" style="color:red;  font-size:13px;"></span>
+			</div>
 
 			    <div class="form-group">
 				<label for="sex">Gender<span class="form-required" title="This field is required.">*</span></label>
-				<select name="gender" required>
+				<select name="gender">
 					<option value=""></option>
 		            <option value="Male">Male</option>
 		            <option value="Female">Female</option>
 	            </select>
 	            </div>
 
-
 			<div class="form-group">
-		      <label for="edit-name">Email<span class="form-required" title="This field is required.">*</span></label>
-		      <input type="text" id="edit-name" placeholder="Enter Your Email" name="email" value="" size="60" maxlength="60" class="form-text required" required>
-		    </div>
+		      <label for="edit-name">Emails<span class="form-required" title="This field is required.">*</span></label>
+		      <input type="text" id="email" placeholder="Enter Your Email" name="email" value="" size="60" maxlength="60" class="form-text required">
+			  <span id="email_error" style="color:red; font-size:13px;"></span>
+			</div>
 
 			<div class="form-group">
 		      <label for="edit-name">Phone Number<span class="form-required" title="This field is required.">*</span></label>
-		      <input type="number" id="edit-number" placeholder="Enter Your Phone Number" name="pnumber" value="" size="60" maxlength="60" class="form-text required" required>
-		    </div>
+		      <input type="number" id="pnumber" placeholder="Enter Your Phone Number" name="pnumber" value="" size="60" minlength="10" maxlength="15" class="form-text required">
+			  <span id="pnumber_error" style="color:red; font-size:13px;"></span>
+			</div>
 
 		    <div class="form-group">
 		      <label for="edit-pass">Password<span class="form-required" title="This field is required.">*</span></label>
-		      <input type="password" id="edit-pass" placeholder="Enter New Password" name="pass_1" size="60" maxlength="128" class="form-text required" required>
-			  <span class="show-password"><i class="fa fa-eye"></i></span>
+		      <input type="password" id="pass_1" placeholder="Enter New Password" name="pass_1" size="60" maxlength="128" class="form-text required">
+			  <span  id="pass_1_error" class="show-password" style="color:red; font-size:13px;"><i style="color:black;  font-size:18px;" class="fa fa-eye"></i></span>
 			</div>
-
 
 			<div class="form-group">
 		      <label for="edit-pass">Confirm Password<span class="form-required" title="This field is required.">*</span></label>
-		      <input type="password" id="edit-pass" placeholder="Enter Confirm Password" name="pass_2" size="60" maxlength="128" class="form-text required" required>
-			  <span class="show-password"><i class="fa fa-eye"></i></span>
+		      <input type="password" id="pass_2" placeholder="Enter Confirm Password" name="pass_2" size="60" maxlength="128" class="form-text required">
+			  <span  id="pass_2_error" class="show-password" style="color:red;  font-size:13px;"><i style="color:black;  font-size:18px;" class="fa fa-eye"></i></span>
 			</div>
 
 	<script>
@@ -145,7 +141,7 @@ $(document).ready(function(){
 			<div class="form-actions">
 			<button  type="submit" id="edit-submit" name="op" class="btn_4 submit"> <span> </span> Create Account</button>
 			</div>
-			  
+
 			<div class="or">
 		    <p><span class="sb-or">OR</span></p>
         </div>
