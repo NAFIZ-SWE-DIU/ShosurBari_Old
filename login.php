@@ -43,8 +43,8 @@ $(document).ready(function(){
    <div class="breadcrumb1">
      <ul>
         <a href="index.php"><i class="fa fa-home home_1"></i></a>
-        <span class="divider">&nbsp;|&nbsp;</span>
-        <li class="current-page">Login</li>
+        <span class="divider">&nbsp;<|>&nbsp;</span>
+        <li class="current-page"><h4>Login</h4></li>
      </ul>
    </div>
 </div>
@@ -89,7 +89,7 @@ $(document).ready(function(){
 			<div class="form-group">
         <label for="edit-pass">Password <span class="form-required" title="This field is required.">*</span></label>
 	      <input type="password" id="edit-pass" placeholder="Enter Your Password"  name="password" size="60" maxlength="128" class="form-text required">
-			  <span class="show-password"><i id="show-pass" class="fa fa-eye" aria-hidden="true"></i></span>
+			  <span class="show-password"><i style="color:black;  font-size:18px;" id="show-pass" class="fa fa-eye" aria-hidden="true"></i></span>
       </div>
 
 
