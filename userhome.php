@@ -54,8 +54,8 @@ $(document).ready(function(){
    <div class="breadcrumb1">
      <ul>
         <a href="index.php"><i class="fa fa-home home_1"></i></a>
-        <span class="divider">&nbsp;|&nbsp;</span>
-        <li class="current-page">User Home</li>
+        <span class="divider">&nbsp;<|>&nbsp;</span>
+        <li class="current-page"><h4>User Home</h4></li>
      </ul>
      <?php
 			If(isset($_SESSION['username'])) {
@@ -94,7 +94,7 @@ Echo "<a href=\”/login.php\”>Login</a>";
             <li class="dropdown">
               <a href="#" class="dropdown-toggle" data-toggle="dropdown">Search<span class="caret"></span></a>
               <ul class="dropdown-menu" role="menu">
-                <li><a href="search-id.php">ID Search</a></li>
+                <li><a href="search-id.php">Search Biodata Number</a></li>
               </ul>
             </li>
         </ul>
