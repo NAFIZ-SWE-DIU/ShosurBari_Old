@@ -65,8 +65,8 @@ $(document).ready(function(){
    <div class="breadcrumb1">
      <ul>
         <a href="index.php"><i class="fa fa-home home_1"></i></a>
-        <span class="divider">&nbsp;|&nbsp;</span>
-        <li class="current-page">Edit Your Biodata</li>
+        <span class="divider">&nbsp;<|>&nbsp;</span>
+        <li class="current-page"><h4>Edit Biodata</h4></li>
      </ul>
      <?php
 			If(isset($_SESSION['username'])) {
@@ -181,7 +181,7 @@ if($row){
 		        <div class="shosurbari-biodata-field">
 		            <label for="edit-name">Biodata Type<span class="form-required" title="This field is required.">*</span></label>
 	                <select name="biodatagender" required>
-					    <option><?php echo $biodatagender; ?></option>
+					    <option hidden selected><?php echo $biodatagender; ?></option>
 	                    <option value="Male">Male</option>
 	                    <option value="Female">Female</option> 
 	                </select>
@@ -191,7 +191,7 @@ if($row){
 	                <div class="shosurbari-biodata-field">
 					<label for="edit-pass">DOB-Date<span class="form-required" title="This field is required.">*</span></label>
 					    <select name="day" required>
-		                    <option></option>
+		                    <option hidden selected></option>
 		                    <option value="1">1</option>
 		                    <option value="2">2</option>
 		                    <option value="3">3</option>
@@ -229,7 +229,7 @@ if($row){
 					<div class="shosurbari-biodata-field">
 			            <label for="edit-pass">DOB-Month<span class="form-required" title="This field is required.">*</span></label>
 						<select name="month" required>
-		                    <option></option>
+		                    <option hidden selected></option>
 		                    <option value="January">January</option>
 		                    <option value="February">February</option>
 		                    <option value="March">March</option>
@@ -248,7 +248,7 @@ if($row){
 	                <div class="shosurbari-biodata-field">
 					<label for="edit-pass">DOB-Year<span class="form-required" title="This field is required.">*</span></label>
 	                    <select name="year" required>
-		                    <option></option>
+		                    <option hidden selected></option>
 		                    <option value="1980">1980</option>
 		                    <option value="1981">1981</option>
 		                    <option value="1981">1981</option>
@@ -301,7 +301,7 @@ if($row){
 					<div class="shosurbari-biodata-field">
 		                <label for="edit-name">Physical Status<span class="form-required" title="This field is required.">*</span></label>
 	                    <select name="physicalstatus" required>
-							<option><?php echo $physicalstatus; ?></option>
+							<option hidden selected><?php echo $physicalstatus; ?></option>
 	                        <option value="No Problem">No Problem</option>
 	                        <option value="Blind">Blind</option> 
 	               		    <option value="Deaf">Deaf</option> 
@@ -311,7 +311,7 @@ if($row){
 					<div class="shosurbari-biodata-field">
 					        <label for="edit-name">Skin Tones<span class="form-required" title="This field is required.">*</span></label>
 	                        <select name="Skin_tones" required>
-							<option><?php echo $Skin_tones; ?></option>
+							<option hidden selected><?php echo $Skin_tones; ?></option>
 	                        <option value="Light">Light</option>
 	                        <option value="Fair">Fair</option> 
 	               		    <option value="Medium">Medium</option>
@@ -322,7 +322,7 @@ if($row){
 					<div class="shosurbari-biodata-field">
 					<label for="edit-name">Blood Group<span class="form-required" title="This field is required.">*</span></label>
 	                        <select name="bloodgroup" required>
-							<option><?php echo $bloodgroup; ?></option>
+							<option hidden selected><?php echo $bloodgroup; ?></option>
 	                        <option value="A+">A+</option>
 	                        <option value="B+">B+</option> 
 	               		    <option value="AB+">AB+</option>
@@ -410,7 +410,7 @@ $aboutme=$row['aboutme'];
 							<div class="shosurbari-biodata-field">
 				                <label for="edit-name">Marital status<span class="form-required" title="This field is required.">*</span></label>
 	                            <select name="maritalstatus" required>
-					            <option><?php echo $maritalstatus; ?></option>
+					            <option hidden selected><?php echo $maritalstatus; ?></option>
 	                            <option value="Unmarried">Unmarried</option>
 	                            <option value="Divorced">Divorced</option>
 	                            <option value="Widow">Widow</option>
@@ -422,7 +422,7 @@ $aboutme=$row['aboutme'];
 							<div class="shosurbari-biodata-field">
 		                        <label for="edit-name">Smoke or Drinks<span class="form-required" title="This field is required.">*</span></label>
 	                            <select name="smoke" required>
-								    <option  ><?php echo $smoke; ?></option>
+								    <option hidden selected ><?php echo $smoke; ?></option>
 	                                <option value="No">No</option>
 	                                <option value="Yes">Yes</option> 
 	               		            <option value="Sometimes">Sometimes</option>
@@ -435,7 +435,7 @@ $aboutme=$row['aboutme'];
 								<select name="occupation" class="selectsearch" required>
 
 								    <optgroup label="Students Sector">
-								    <option  ><?php echo $occupation; ?></option>
+								    <option  hidden selected><?php echo $occupation; ?></option>
 									<option value="Students of Kawmi Madrasa">Students of Kawmi Madrasa</option> 
 									<option value="Students of High School">Students of High School</option>
 									<option value="Students of Doploma">Students of Doploma</option> 
@@ -614,7 +614,7 @@ $maximum_education=$row['maximum_education'];
 						<div class="shosurbari-biodata-field">
 						   <label for="edit-name">Your Education Method<span class="form-required" title="This field is required.">*</span></label>
 	                        <select name="education_method" required>
-							   <option><?php echo $education_method; ?></option>
+							   <option hidden selected><?php echo $education_method; ?></option>
 		                       <option value="Genaral">General</option>
 		                       <option value="Dakhil">Dakhil</option>
 		                       <option value="Technical">Technical</option>
@@ -627,7 +627,7 @@ $maximum_education=$row['maximum_education'];
 						<div class="shosurbari-biodata-field">
 						<label for="edit-pass">SSC or Equivalent Passing Year<span class="form-required" title="This field is required.">*</span></label>
 						<select name="sscpassyear" required>
-		                    <option><?php echo $sscpassyear; ?></option>
+		                    <option hidden selected><?php echo $sscpassyear; ?></option>
 							<option value="nonyear">None</option>
 		                    <option value="2024">SSC Candidet2024</option>
 		                    <option value="2023">2023</option>
@@ -750,7 +750,7 @@ $childhood=$row['childhood'];
 					<div class="shosurbari-biodata-field">
 					    <label for="edit-pass">Division of Permanent Address<span class="form-required" title="This field is required.">*</span></label>
 	                    <select name="permanent_division" required>
-						    <option><?php echo $permanent_division; ?></option>
+						    <option hidden selected><?php echo $permanent_division; ?></option>
 	                        <option value="Barishal	">Barishal</option>
 	                        <option value="Chattogram">Chattogram</option> 
 	               		    <option value="Dhaka">Dhaka</option>
@@ -769,7 +769,7 @@ $childhood=$row['childhood'];
 					    <label for="edit-pass">District of Permanent Address<span class="form-required" title="This field is required.">*</span></label>  
 						<select name="permanent_address" class="selectsearch" required>
 
-						<option><?php echo $permanent_address; ?></option>
+						<option hidden selected><?php echo $permanent_address; ?></option>
 							<optgroup label="Barishal Division">
 	                        <option value="Barguna">Barguna</option>
 	                        <option value="Barishal">Barishal</option> 
@@ -999,7 +999,7 @@ $family_religious=$row['family_religious'];
 						<div class="shosurbari-biodata-field">
 		                    <label for="edit-name">Family financial status<span class="form-required" title="This field is required.">*</span></label>
 	                        <select name="family_class" required>
-							    <option ><?php echo $family_class; ?></option>
+							    <option hidden selected><?php echo $family_class; ?></option>
 	                            <option value="Higher Class">Higher Class</option>
 	                            <option value="Higher Middle Class">Higher Middle Class</option> 
 	               		        <option value="Middle Class">Middle Class</option>
@@ -1112,7 +1112,7 @@ $profileby_male=$row['profileby_male'];
 							<div class="shosurbari-biodata-field">
 		                        <label for="edit-name">Profile Created by<span class="form-required" title="This field is required.">*</span></label>
 	                            <select name="profileby_male" required>
-								<option><?php echo $profileby_male; ?></option>
+								<option hidden selected><?php echo $profileby_male; ?></option>
 	                            <option value="Self">Self</option>
 								<option value="Father">Father</option>
 	                            <option value="Mother">Mother</option>
@@ -1219,7 +1219,7 @@ $profileby_female=$row['profileby_female'];
 							<div class="shosurbari-biodata-field">
 		                        <label for="edit-name">Profile Created by<span class="form-required" title="This field is required.">*</span></label>
 	                            <select name="profileby_female" required>
-								<option><?php echo $profileby_female; ?></option>
+								<option hidden selected><?php echo $profileby_female; ?></option>
 	                            <option value="Self">Self</option>
 								<option value="Father">Father</option>
 	                            <option value="Mother">Mother</option>
@@ -1299,7 +1299,7 @@ $yourreligion_condition=$row['yourreligion_condition'];
 					        <div class="shosurbari-biodata-field">
 			                    <label for="edit-pass">Religion<span class="form-required" title="This field is required.">*</span></label>
 	                            <select name="religion" required>
-								<option ><?php echo $religion; ?></option>
+								<option hidden selected><?php echo $religion; ?></option>
 						        <option value="Muslim">Muslim</option>
 		                        <option value="Hindu">Hindu</option>
 		                        <option value="Christian">Christian</option>
