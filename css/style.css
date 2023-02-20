@@ -415,22 +415,58 @@ ul.nav_1 li.last{
     -moz-box-shadow: none;
     -webkit-box-shadow: none;
     box-shadow: none;
-    border: 2px #ccc;
     border-radius: 4px;
     -moz-transition: 0.3s;
     -o-transition: 0.3s;
     -webkit-transition: 0.3s;
     transition: 0.3s;
-    background-color: #02a7e6;
     font-size: 16px;
     padding:5px;
     width: 35%;
-    color: white;
+    color: black;
     outline: none;
     height: 35px;
-    margin-top: 20px;
-    margin-bottom: 10px;
+    margin-top: 7px;
+    margin-bottom: 7px;
+
+    background-color: #fff;
+    background: linear-gradient(#fff 20%,#f6f6f6 50%,#eee 52%,#f4f4f4 100%);
+    background-clip: padding-box;
+    -webkit-box-shadow: 0 0 3px #fff inset, 0 1px 1px rgb(0 0 0 / 10%);
+    box-shadow: 0 0 3px #fff inset, 0 1px 1px rgb(0 0 0 / 10%);
 }
+select option:checked{
+    background: #ff0080;
+    color: yellow;
+}
+.result-selected{
+    background: #ff0080;
+    color: yellow;
+}
+
+
+
+.chosen-container-single .chosen-single {
+    position: relative;
+    display: block;
+    overflow: hidden;
+    padding: 0 0 0 8px;
+    height: 35px;
+    border: 1px solid #aaa;
+    border-radius: 4px;
+    background-color: #fff;
+    background: linear-gradient(#fff 20%,#f6f6f6 50%,#eee 52%,#f4f4f4 100%);
+    background-clip: padding-box;
+    -webkit-box-shadow: 0 0 3px #fff inset, 0 1px 1px rgb(0 0 0 / 10%);
+    box-shadow: 0 0 3px #fff inset, 0 1px 1px rgb(0 0 0 / 10%);
+    color: black;
+    text-decoration: none;
+    white-space: nowrap;
+    line-height: 33.333px;
+    font-size: 16px;
+    text-align: center;
+}
+
 .input-group input[type="text"], select:hover{
     color: black;
 }
@@ -769,7 +805,7 @@ a.button.outline, span.button.outline, input[type=submit].outline {
 	text-shadow: none;
     -webkit-font-smoothing: antialiased;
     font-family: 'fontawesome';
-    speak: none;
+    --speak: none;
     font-weight: normal;
     font-variant: normal;
     line-height: 1;
@@ -792,7 +828,7 @@ a.button.outline, span.button.outline, input[type=submit].outline {
 	 text-shadow: none;
     -webkit-font-smoothing: antialiased;
     font-family: 'fontawesome';
-    speak: none;
+    --speak: none;
     font-weight: normal;
     font-variant: normal;
     line-height: 1;
@@ -1115,8 +1151,9 @@ a.religion_1 {
 /*-- footer --*/
 .footer{
 	background:#02a7e6;
-	padding:5em 0;
+	padding:1em 0;
     box-shadow: 0px 16px 16px 16px;
+    margin-top: 100px;
 }
 
 
@@ -1394,6 +1431,7 @@ a#profile-tab, a#home-tab, a#profile-tab1{
     background: rgb(245, 242, 242);
     border-radius: 4px;
     box-shadow: 0px 2px 7px 6px rgba(0, 0, 0, 0.2);
+    /* margin-bottom: 100px; */
 }
 .basic_1 {
     margin-bottom: 2em;
@@ -2310,7 +2348,7 @@ small.testi-meta1{
     box-shadow: none;
     border: none;
     overflow: hidden;
-    -webkit-transform: translateZ(0);
+    --webkit-transform: translateZ(0);
     -webkit-box-sizing: border-box;
     -moz-box-sizing: border-box;
     box-sizing: border-box;
@@ -2493,7 +2531,7 @@ i.icon_4{
     font-size: 16px;
     line-height: 1.5;
     color: black;
-    background-color: #fff;
+    background-color: #4cafe809;
     background-image: none;
     border: 2px solid #ccc;
     border-radius: 4px;
@@ -2531,7 +2569,7 @@ label{
     font-size: 16px;
     line-height: 1.5;
     color: black;
-    background-color: #fff;
+    background-color: #4cafe809;
     background-image: none;
     border: 2px solid #ccc;
     border-radius: 4px;
@@ -2713,27 +2751,29 @@ label{
     font-size: 0.65em;
 }
 
-/* FORM SUBMIT BUTTON START */
+/* FORM SUBMIT BUTTON END */
 
 
+/* Password Show Eye Start */
 
 .form-group{
     position: relative;
   }
   .form-group input {
     padding-right: 25px;
+    background: #4cafe809;
   }
-
 
   .form-group .show-password {
     position: absolute;
     right: 10px;
-    top: 32px;
-    padding: 5px 10px;
+    top: 37px;
+    padding: 1px;
     font-size: 16px;
     cursor: pointer;
   }
 
+/* Password Show Eye END */
 
 
 
@@ -2936,7 +2976,7 @@ form#contact-form {
     width: 100%;
     border-radius: 0;
     outline: none;
-    -webkit-appearance: none;
+    --webkit-appearance: none;
     padding: 15px;
     margin-bottom:5px;
     font-size: 0.85em;
@@ -3301,7 +3341,7 @@ label.gender_1 {
     padding: 3em 0;
 }
 .footer {
-    padding: 3em 0;
+    padding: 1em 0;
 }
 .copy {
     margin: 1em 0 0 0;
@@ -3927,7 +3967,7 @@ i.icon_4 {
     margin-bottom: 1em;
 }
 .footer {
-    padding: 2em 0;
+    padding: 1em 0;
 }
 .about_bottom {
     padding: 2em 0 0em;
@@ -4956,12 +4996,7 @@ form {
 --                                               --
 -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- ---
 -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -*/
-/*.sb-biodata-1,
-.sb-biodata-2,
-.sb-biodata-3,
-.sb-biodata-4,
-.sb-biodata-5,
-.sb-biodata-6, */
+
 .sb-biodata{
     border: 2px solid #ff0080;
     border-radius: 6px;
@@ -4972,18 +5007,14 @@ form {
     margin-right: auto;
     margin-bottom: 40px;
     margin-top: 20px;
-    background: rgb(241, 239, 239);
-   /* box-shadow: 0px 2px 7px 6px rgb(0 0 0 / 20%); */
+    background: white;
+    /*  background: rgb(241, 239, 239);
+   box-shadow: 0px 2px 7px 6px rgb(0 0 0 / 20%); */
    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
 
 @media (max-width: 765px) {
-/* .sb-biodata-1,
-.sb-biodata-2,
-.sb-biodata-3,
-.sb-biodata-4,
-.sb-biodata-5,
-.sb-biodata-6, */
+
 .sb-biodata{
     border: 2px solid #ff0080;
     border-radius: 6px;
@@ -5002,12 +5033,7 @@ h1{
   }
 
   @media (max-width: 736px) {
-/*.sb-biodata-1,
-.sb-biodata-2,
-.sb-biodata-3,
-.sb-biodata-4,
-.sb-biodata-5,
-.sb-biodata-6, */
+
 .sb-biodata{
     border: 2px solid #ff0080;
     border-radius: 6px;
@@ -5029,12 +5055,7 @@ h1{
   }
 
   @media (max-width: 350px) {
-    /* .sb-biodata-1,
-    .sb-biodata-2,
-    .sb-biodata-3,
-    .sb-biodata-4,
-    .sb-biodata-5,
-    .sb-biodata-6, */
+
     .sb-biodata{
         border: 2px solid #ff0080;
         border-radius: 6px;
@@ -5059,12 +5080,6 @@ h1{
     width: 100%;
 }
 
-/* .shosurbari-biodata .sb-biodata-1 .sb-biodata-field h2,
-.shosurbari-biodata .sb-biodata-2 .sb-biodata-field h2,
-.shosurbari-biodata .sb-biodata-3 .sb-biodata-field h2,
-.shosurbari-biodata .sb-biodata-4 .sb-biodata-field h2,
-.shosurbari-biodata .sb-biodata-5 .sb-biodata-field h2,
-.shosurbari-biodata .sb-biodata-6 .sb-biodata-field h2, */
 .shosurbari-biodata .sb-biodata .sb-biodata-field h2{
     padding: 10px;
     width: 100%;
@@ -5086,23 +5101,11 @@ h1{
 }
 
 
-/* .shosurbari-biodata .sb-biodata-1 .sb-biodata-field h2 span,
-.shosurbari-biodata .sb-biodata-2 .sb-biodata-field h2 span,
-.shosurbari-biodata .sb-biodata-3 .sb-biodata-field h2 span,
-.shosurbari-biodata .sb-biodata-4 .sb-biodata-field h2 span,
-.shosurbari-biodata .sb-biodata-5 .sb-biodata-field h2 span,
-.shosurbari-biodata .sb-biodata-6 .sb-biodata-field h2 span, */
 .shosurbari-biodata .sb-biodata .sb-biodata-field h2 span{
     color: white;
 }
 
 
-/* .shosurbari-biodata .sb-biodata-1 .sb-biodata-field,
-.shosurbari-biodata .sb-biodata-2 .sb-biodata-field,
-.shosurbari-biodata .sb-biodata-3 .sb-biodata-field,
-.shosurbari-biodata .sb-biodata-4 .sb-biodata-field,
-.shosurbari-biodata .sb-biodata-5 .sb-biodata-field,
-.shosurbari-biodata .sb-biodata-6 .sb-biodata-field, */
 .shosurbari-biodata .sb-biodata .sb-biodata-field{
     padding-top: 10px;
     padding-bottom: 20px;
@@ -5133,6 +5136,10 @@ h1{
     margin-top: 10px;
     text-align: center;
     font-size: 30px;
+}
+
+.shosurbari-biodata-field{
+    padding: 10px;
 }
 /*-- -- -- -- -- -- -- -- -- -- -- -- -- ---- -- --
 -- -- -- -- -- -- -- -- --- -- -- -- -- -- -- -- --
@@ -5213,3 +5220,46 @@ h1{
    .selectsearch{
         color: black;
     }
+
+    /* Popup Notification Start */
+    .popup-container {
+        background-color: #F1F1F1;
+        border: 2px solid #2E2E2E;
+        border-radius: 5px;
+        width: 300px;
+        position: fixed;
+        z-index: 10;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        padding: 10px;
+        box-shadow: 0 0 10px 0 #000000;
+        text-align: center;
+        display: none;
+    }
+
+    .popup-container h3 {
+        color: #1E90FF;
+    }
+
+    .popup-container p {
+        margin-bottom: 5px;
+        font-size: 14px;
+    }
+
+    .popup-container input {
+        padding: 5px;
+        margin-bottom: 5px;
+        font-size: 14px;
+        border-radius: 5px;
+        border: none;
+        outline: none;
+        width: 100%;
+    }
+
+    .popup-container input[type=submit] {
+        background-color: #1E90FF;
+        color: #FFFFFF;
+        cursor: pointer;
+    }
+    /* Popup Notification End */
