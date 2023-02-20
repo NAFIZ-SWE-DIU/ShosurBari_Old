@@ -65,6 +65,7 @@ function initClock() {
       //Full Name validation
       if (fname == "") {
         document.getElementById('fname').style.borderColor = "red";
+        document.getElementById('fname').scrollIntoView();
         document.getElementById('fname_error').innerHTML = "Please enter your Full Name";
         return false;
       }else{
@@ -75,6 +76,7 @@ function initClock() {
       //Username validation
       if (uname == "") {
         document.getElementById('uname').style.borderColor = "red";
+        document.getElementById('uname').scrollIntoView();
         document.getElementById('uname_error').innerHTML = "Please enter your Username";
         return false;
       }else if (! /^[A-Za-z0-9]+$/.test(uname)){
@@ -89,6 +91,7 @@ function initClock() {
       //Email validation
       if (email == "") {
         document.getElementById('email').style.borderColor = "red";
+        document.getElementById('email').scrollIntoView();
         document.getElementById('email_error').innerHTML = "Please enter your Email";
         return false;
       }else if(! /^[a-zA-Z0-9._-]+@(gmail|outlook|hotmail|yahoo).com$/.test(email)){
@@ -103,6 +106,7 @@ function initClock() {
       //Phone number validation
       if (pnumber == "") {
         document.getElementById('pnumber').style.borderColor = "red";
+        document.getElementById('pnumber').scrollIntoView();
         document.getElementById('pnumber_error').innerHTML = "Please enter your Phone Number";
         return false;
       }else if(pnumber.length < 10 || pnumber.length > 14){
@@ -117,6 +121,7 @@ function initClock() {
       //Password validation
       if (pass_1 == "") {
         document.getElementById('pass_1').style.borderColor = "red";
+        document.getElementById('pass_1').scrollIntoView();
         document.getElementById('pass_1_error').innerHTML = "Please enter your Password";
         return false;
       }else{
@@ -127,6 +132,7 @@ function initClock() {
       //Confirm Password validation
       if (pass_2 == "") {
         document.getElementById('pass_2').style.borderColor = "red";
+        document.getElementById('pass_2').scrollIntoView();
         document.getElementById('pass_2_error').innerHTML = "Please enter your Confirm Password";
         return false;
       }else if(pass_2 != pass_1){
