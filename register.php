@@ -143,6 +143,39 @@ $(document).ready(function(){
 			<button  type="submit" id="edit-submit" name="op" class="btn_4 submit"> <span> </span> Create Account</button>
 			</div>
 
+					<!-- Popup Notification -->
+		<div class="popup-container">
+			<h3>Success!</h3>
+			<p>Thanks! You have successfully created your account.</p>
+			<p>Please <a href="login.php" class="btn" type="button" value="Login Here" onclick="hidePopup()">login</a> to continue.</p>
+			<input type="button" value="Login Here" onclick="hidePopup()">
+		</div>
+		<script>
+		function showPopup() {
+			document.getElementsByClassName("popup-container")[0].style.display = "block";
+		}
+		function hidePopup() {
+			document.getElementsByClassName("popup-container")[0].style.display = "none";
+		}
+		// Validation
+		document.getElementById('myForm').onsubmit = function(event) {
+			event.preventDefault();
+			let inputs = document.querySelectorAll('#myForm input[required]');
+			let valid = true;
+			for (let i = 0; i < inputs.length; i++) {
+				if (!inputs[i].value) {
+					valid = false;
+					inputs[i].focus();
+					break;
+				}
+			}
+			if (valid){
+				showPopup();
+				document.getElementById('myForm').reset();
+			}
+		}
+		</script>
+
 			<div class="or">
 		    <p><span class="sb-or">OR</span></p>
         </div>
