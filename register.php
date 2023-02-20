@@ -89,12 +89,13 @@ $(document).ready(function(){
 			</div>
 
 			    <div class="form-group">
-				<label for="sex">Gender<span class="form-required" title="This field is required.">*</span></label>
-				<select name="gender">
-					<option value=""></option>
+				<label for="sex">Gender<span class="form-required" title="This field is required." required>*</span></label>
+				<select id="genderfm" name="gender">
+					<option value="" required></option>
 		            <option value="Male">Male</option>
 		            <option value="Female">Female</option>
 	            </select>
+				<span id="genderfm_error" style="color:red; font-size:13px;"></span>
 	            </div>
 
 			<div class="form-group">
