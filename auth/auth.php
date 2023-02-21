@@ -1,37 +1,34 @@
+
+
+
 <?php
-session_start();
-error_reporting(0);
-require_once("../includes/dbconn.php");
-$userlevel=$_GET['user'];
-// username and password sent from form 
-$myusername=$_POST['username']; 
-$mypassword=$_POST['password']; 
+if (isset($_POST['username']) && isset($_POST['password'])) {
+		session_start();
+	error_reporting(0);
+	require_once("../includes/dbconn.php");
+	$userlevel=$_GET['user'];
 
-// To protect MySQL injection (more detail about MySQL injection)
-$myusername = stripslashes($myusername);
-$mypassword = stripslashes($mypassword);
-
-$sql="SELECT * FROM users WHERE username='$myusername' AND password='$mypassword'";
-$result=mysqli_query($conn,$sql);
-
-// Mysql_num_row is counting table row
-$count=mysqli_num_rows($result);
-$row=mysqli_fetch_assoc($result);
-if($row){
-$id=$row['id'];
-}
-// If result matched $myusername and $mypassword, table row must be 1 row
-if($count==1){
-
-// Register $myusername, $mypassword and redirect to file "login_success.php"
-	$_SESSION['username']= $myusername;
-	$_SESSION['id']=$id;
-	if($userlevel=='1')
+	$username = $_POST['username'];
+	$password = $_POST['password'];
+	
+	if ($conn->connect_error) {
+		$error = "Connection failed: " . $conn->connect_error;
+		echo $error;
+	}
+	
+	$sql = "SELECT id FROM users WHERE (username = '$username' OR email = '$username') AND password = '$password'";
+	$result = $conn->query($sql);
+	
+	if ($result->num_rows > 0) {
+		$row = $result->fetch_assoc();
+		$id = $row['id'];
+		session_start();
+		$_SESSION['id'] = $id;
 		header("location:../userhome.php?id={$row['id']}");
-	else
-		header("location:../admin.php");
-}
-else {
-echo "Wrong Username or Password";
+	} 
+	else {
+		echo "Invalid username or password";
+	}
+	$conn->close();
 }
 ?>
