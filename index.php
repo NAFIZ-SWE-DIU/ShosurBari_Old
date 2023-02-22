@@ -212,7 +212,39 @@ $(document).ready(function(){
 
 
 
+<div class="col-md-4 profile_right">
+    <div class="view_profile view_profile2">
+        <h2>View Recent Profiles</h2>
 
+        <?php
+        $sql="SELECT * FROM 1bd_personal_physical  ORDER BY profilecreationdate ASC";
+            $result=mysqlexec($sql);
+            $count=1;
+            while($row=mysqli_fetch_assoc($result)){
+            $profid=$row['user_id'];
+            //getting photo
+            $sql="SELECT * FROM photos WHERE user_id=$profid";
+            $result2=mysqlexec($sql);
+            $photo=mysqli_fetch_assoc($result2);
+            $pic=$photo['pic1'];
+            echo "<ul class=\"profile_item\">";
+                echo"<a href=\"view_profile.php?id={$profid}\">";
+                    echo "<li class=\"profile_item-img\"><img src=\"profile/". $profid."/".$pic ."\"" . "class=\"img-responsive\" alt=\"\"/></li>";
+                    echo "<li class=\"profile_item-desc\">";
+                        echo "<h3>" . "Biodata No : " . $row['user_id'] ."</h3>";
+				        echo "<h5>" . "Biodata Type : " . $row['biodatagender'] . "</h5>";
+                        echo "<h5>" . "Birth : " . $row['dateofbirth']. "  |  Skin : " . $row['Skin_tones'] . "</h5>";
+				        echo "<h5>" . "Height : " . $row['height']. "  |  Weight : " . $row['weight'] . "</h5>";
+                        echo "<h6>" . "View Full Profile" . "</h6>";
+                    echo "</li>";
+                echo "</a>";
+            echo "</ul>";
+           $count++;
+        }
+        ?>
+		
+    </div>
+</div>
 
 
 
@@ -270,6 +302,8 @@ $(document).ready(function(){
 
         ?>
           </ul>
+
+
 	    <script type="text/javascript">
 		 $(window).load(function() {
 			$("#flexiselDemo3").flexisel({
@@ -300,6 +334,21 @@ $(document).ready(function(){
 	   <script type="text/javascript" src="js/jquery.flexisel.js"></script>
     </div>
 </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 <div class="grid_2">
 	<div class="container">
 		<h2>Success Stories</h2>
@@ -312,6 +361,8 @@ $(document).ready(function(){
         <div class="row_1">
 	     <div class="col-md-8 suceess_story">
 	         <ul> 
+
+
 			   <li>
 				  	<div class="suceess_story-date">
 						<span class="entry-1">Dec 20, 2015</span>
@@ -326,6 +377,8 @@ $(document).ready(function(){
 				        </div>
 				    </div>
 				</li>
+
+
 	            <li>
 				  	<div class="suceess_story-date">
 						<span class="entry-1">Dec 20, 2015</span>
@@ -340,80 +393,18 @@ $(document).ready(function(){
 				        </div>
 				    </div>
 				</li>
-	            <li>
-				  	<div class="suceess_story-date">
-						<span class="entry-1">Dec 20, 2015</span>
-					</div>
-					<div class="suceess_story-content-container">
-						<figure class="suceess_story-content-featured-image">
-						   <img width="75" height="75" src="images/9.jpg" class="img-responsive" alt=""/>				            
-					    </figure>
-						<div class="suceess_story-content-info">
-				        	<h4><a href="#">Lorem & Ipsum</a></h4>				        	
-				        	<p>There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form,.<a href="#">More...</a></p>
-				        </div>
-				    </div>
-				</li>
-	            <li>
-				  	<div class="suceess_story-date">
-						<span class="entry-1">Dec 20, 2015</span>
-					</div>
-					<div class="suceess_story-content-container">
-						<figure class="suceess_story-content-featured-image">
-						   <img width="75" height="75" src="images/10.jpg" class="img-responsive" alt=""/>				            
-					    </figure>
-						<div class="suceess_story-content-info">
-				        	<h4><a href="#">Lorem & Ipsum</a></h4>				        	
-				        	<p>There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form,.<a href="#">More...</a></p>
-				        </div>
-				    </div>
-				</li>
-	            <li>
-				  	<div class="suceess_story-date">
-						<span class="entry-1">Dec 20, 2015</span>
-					</div>
-					<div class="suceess_story-content-container">
-						<figure class="suceess_story-content-featured-image">
-						   <img width="75" height="75" src="images/11.jpg" class="img-responsive" alt=""/>				            
-					    </figure>
-						<div class="suceess_story-content-info">
-				        	<h4><a href="#">Lorem & Ipsum</a></h4>				        	
-				        	<p>There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form,.<a href="#">More...</a></p>
-				        </div>
-				    </div>
-				</li>
-	            <li>
-				  	<div class="suceess_story-date">
-						<span class="entry-1">Dec 20, 2015</span>
-					</div>
-					<div class="suceess_story-content-container">
-						<figure class="suceess_story-content-featured-image">
-						   <img width="75" height="75" src="images/12.jpg" class="img-responsive" alt=""/>				            
-					    </figure>
-						<div class="suceess_story-content-info">
-				        	<h4><a href="#">Lorem & Ipsum</a></h4>				        	
-				        	<p>There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form,.<a href="#">More...</a></p>
-				        </div>
-				    </div>
-				</li>
-	            <li>
-				  	<div class="suceess_story-date">
-						<span class="entry-1">Dec 20, 2015</span>
-					</div>
-					<div class="suceess_story-content-container">
-						<figure class="suceess_story-content-featured-image">
-						   <img width="75" height="75" src="images/13.jpg" class="img-responsive" alt=""/>				            
-					    </figure>
-						<div class="suceess_story-content-info">
-				        	<h4><a href="#">Lorem & Ipsum</a></h4>				        	
-				        	<p>There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form,.<a href="#">More...</a></p>
-				        </div>
-				    </div>
-				</li>
+
+
 	        </ul>
 	    </div>
+
+
+
+<!--
+
 	    <div class="col-md-4 row_1-right">
 	      <h3>News & Events</h3>
+
 	        <div class="box_1">
 		      <figure class="thumbnail1"><img width="170" height="155" src="images/14.jpg" class="img-responsive" alt=""/></figure>
 			  <div class="extra-wrap">
@@ -431,6 +422,7 @@ $(document).ready(function(){
 				<a href="#" class="vertical">Read More</a>
 			  </div>
 	        </div>
+
 	        <div class="box_1">
 		      <figure class="thumbnail1"><img width="170" height="155" src="images/15.jpg" class="img-responsive" alt=""/></figure>
 			  <div class="extra-wrap">
@@ -465,6 +457,7 @@ $(document).ready(function(){
 				<a href="#" class="vertical">Read More</a>
 			  </div>
 	        </div>
+
 	        <div class="religion">
                <div class="religion_1-title">Religion :</div>
 			   <a href="#" target="_blank" class="religion_1" title="Hindu Matrimonial" style="padding-left:0px !important;">Hindu</a>
@@ -473,6 +466,7 @@ $(document).ready(function(){
 			 	<span>|</span><a href="#" target="_blank" class="religion_1" title="Sikh Matrimonial">Sikh</a>
 			 	<span>|</span><a href="#" target="_blank" class="religion_1" title="Inter Religion Matrimonial">Inter Religion</a>
 	        </div>
+
 	        <div class="religion">
                <div class="religion_1-title">Country :</div>
 			   <a href="#" target="_blank" class="religion_1" title="Hindu Matrimonial" style="padding-left:0px !important;">India</a>
@@ -483,6 +477,7 @@ $(document).ready(function(){
 			 	<span>|</span><a href="#" target="_blank" class="religion_1" title="Inter Religion Matrimonial">Uk</a>
 			 	<span>|</span><a href="#" target="_blank" class="religion_1" title="Inter Religion Matrimonial">View All</a>
 	        </div>
+
 	        <div class="religion">
                <div class="religion_1-title">Caste :</div>
 			   <a href="#" target="_blank" class="religion_1" title="Hindu Matrimonial" style="padding-left:0px !important;">Brahmin</a>
@@ -492,6 +487,7 @@ $(document).ready(function(){
 			 	<span>|</span><a href="#" target="_blank" class="religion_1" title="Inter Religion Matrimonial">Reddy</a>
 			 	<span>|</span><a href="#" target="_blank" class="religion_1" title="Inter Religion Matrimonial">View All</a>
 	        </div>
+			
 	        <div class="religion">
                <div class="religion_1-title">Regional :</div>
 			   <a href="#" target="_blank" class="religion_1" title="Hindu Matrimonial" style="padding-left:0px !important;">Urdu</a>
@@ -501,11 +497,19 @@ $(document).ready(function(){
 			 	<span>|</span><a href="#" target="_blank" class="religion_1" title="Inter Religion Matrimonial">Oriya</a>
 			 	<span>|</span><a href="#" target="_blank" class="religion_1" title="Inter Religion Matrimonial">View All</a>
 	        </div>
-	     </div>
+
+	    </div>
+
+	-->
+
+
 	     <div class="clearfix"> </div>
 	   </div> 
 	  </div>
     </div>
+
+
+
     <div class="bg">
 		<div class="container"> 
 			<h3>Guest Messages</h3>
