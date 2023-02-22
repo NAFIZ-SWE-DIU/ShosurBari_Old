@@ -135,7 +135,7 @@ body a{
 	text-shadow: none;
     -webkit-font-smoothing: antialiased;
     font-family: 'fontawesome';
-    speak: none;
+    --speak: none;
     font-weight: normal;
     font-variant: normal;
     line-height: 1;
@@ -2626,7 +2626,7 @@ label{
     z-index: -1;
 }
 .sb-or{
-    background: #f1efef;
+    background: white;
     padding-left: 10px;
     padding-right: 10px;
 }
@@ -2658,6 +2658,7 @@ label{
 }
 .form-actions p{
     font-size: 18px;
+    color: black;
 }
 
 
@@ -2767,8 +2768,11 @@ label{
   .form-group .show-password {
     position: absolute;
     right: 10px;
-    top: 37px;
-    padding: 1px;
+   /* top: 37px;
+    padding: 1px; */
+
+    top: 20px;
+    padding: 15px;
     font-size: 16px;
     cursor: pointer;
   }
@@ -4540,7 +4544,7 @@ form {
     -webkit-box-pack: justify;
     -ms-flex-pack: justify;
     justify-content: space-between;
-    padding: 12px 0;
+    padding: 22px 0;
     height: auto;
   }
   
@@ -4629,8 +4633,8 @@ form {
   }
   
   .styled-input.multi > div input {
-    padding-top: 40px;
-    font-size: 25px;    /* abcd biodata number input search button */
+    padding-top: 17px;
+    font-size: 23px;    /* abcd biodata number input search button */
 }
   
   .styled-input input:focus, 
@@ -5024,7 +5028,10 @@ form {
     margin-right: auto;
     margin-bottom: 40px;
     margin-top: 20px;
-    background: rgb(241, 239, 239);
+    background: white;
+    /*  background: rgb(241, 239, 239);
+   box-shadow: 0px 2px 7px 6px rgb(0 0 0 / 20%); */
+   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
 /*
 h1{
@@ -5043,7 +5050,10 @@ h1{
     margin-right: auto;
     margin-bottom: 40px;
     margin-top: 20px;
-    background: rgb(241, 239, 239);
+    background: white;
+    /*  background: rgb(241, 239, 239);
+   box-shadow: 0px 2px 7px 6px rgb(0 0 0 / 20%); */
+   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
 .sb-biodata-field h2{
     font-size: 25px;
@@ -5065,7 +5075,10 @@ h1{
         margin-right: auto;
         margin-bottom: 40px;
         margin-top: 20px;
-        background: rgb(241, 239, 239);
+        background: white;
+        /*  background: rgb(241, 239, 239);
+       box-shadow: 0px 2px 7px 6px rgb(0 0 0 / 20%); */
+       box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
     }
 
 .sb-biodata-field h2{
