@@ -1,9 +1,12 @@
+
  <div class="footer">
     	<div class="container">
     		<div class="col-md-4 col_2">
     			<h4>About Us</h4>
     			<p>"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris."</p>
     		</div>
+
+
 
     		<div class="col-md-2 col_2">
     			<h4>Help & Support</h4>
@@ -33,16 +36,33 @@
 				  <li><a href="#"><i class="fa fa-twitter fa1"> </i></a></li>
 				  <li><a href="#"><i class="fa fa-google-plus fa1"> </i></a></li>
 				  <li><a href="#"><i class="fa fa-youtube fa1"> </i></a></li>
+				  <li><a href="#"><i class="fa fa-boxed fa-fw fa-linkedin"> </i></a></li>
+
 			    </ul>
     		</div>
 
 			
     		<div class="clearfix"> </div>
     		<div class="copy">
-		      <p>Copyright © 2012-23 ShosurBari.com | All Rights Reserved  | Developed By - <a href="https://www.facebook.com/NAFIZ.SWE.DIU/" target="_blank">Nafiz Noyon</a></p>
+		      <p>Copyright © 2022-23 ShosurBari.com | All Rights Reserved  | Developed By - <a href="https://www.facebook.com/NAFIZ.SWE.DIU/" target="_blank">Nafiz Noyon</a></p>
 	        </div>
     	</div>
 </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
