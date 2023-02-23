@@ -210,7 +210,8 @@ body a{
    min-height: 0%;
    margin-bottom:0;
    border: 2px; 
-   box-shadow: 0px 5px 10px 0px #aaa;
+   /* box-shadow: 0px 5px 10px 0px #aaa; */
+   box-shadow: 0 4px 8px 0 rgb(0 0 0 / 20%), 0 6px 20px 0 rgb(0 0 0 / 19%);
 }
 .navbar-nav {
    margin:0;
@@ -1152,7 +1153,7 @@ a.religion_1 {
 .footer{
 	background:#02a7e6;
 	padding:1em 0;
-    box-shadow: 0px 16px 16px 16px;
+    box-shadow: 0 4px 8px 0 rgb(0 0 0 / 20%), 0 6px 20px 0 rgb(0 0 0 / 19%);
     margin-top: 100px;
 }
 
@@ -4633,8 +4634,9 @@ form {
   }
   
   .styled-input.multi > div input {
-    padding-top: 17px;
-    font-size: 23px;    /* abcd biodata number input search button */
+    padding-top: 22px;
+    margin-left: 8px;
+    font-size: 20px;    /* abcd biodata number input search button */
 }
   
   .styled-input input:focus, 
@@ -4655,7 +4657,7 @@ form {
   }
   
   .styled-input select {
-    width: 100%;
+    width: 90%;
     background: transparent;
     border: 0;
     -webkit-appearance: none;
@@ -4663,7 +4665,8 @@ form {
     appearance: none;
     position: relative;
     z-index: 1;
-    left: 11px;
+    left: 9px;
+    margin-top: 15px;
   }
   
   /* Focus Label */
@@ -5167,7 +5170,7 @@ h1{
     --progress: 0;
     height: 6px;
     width: var(--progress);
-    background-color: #1F45FC;
+    background-color: #02a7e6;
   }
   
     button:hover {
