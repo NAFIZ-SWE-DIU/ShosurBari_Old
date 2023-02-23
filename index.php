@@ -587,3 +587,46 @@ $(document).ready(function(){
     </div>
 </body>
 </html>	
+
+	
+	
+<div id="scroll-up-btn" onclick="scrollToTop()">
+    <i class="fa fa-arrow-up"></i>
+</div>
+
+<style>
+	#scroll-up-btn {
+                position: fixed;
+                bottom: 0px;
+                right: 0px;
+                cursor: pointer;
+				padding: 10px;
+				background: #ff008087;
+				color: #fff;
+				border-radius: 3px;
+            }
+			#scroll-up-btn:hover {
+				padding: 10px;
+				background: #ff0080;
+				color: #fff;
+				border-radius: 3px;
+            }
+  </style>
+
+<script>
+    window.onscroll = function() {scrollFunction()};
+
+    function scrollFunction() {
+      if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+        document.getElementById("scroll-up-btn").style.display = "block";
+      } else {
+        document.getElementById("scroll-up-btn").style.display = "none";
+      }
+    }
+
+    function scrollToTop() {
+      document.body.scrollTop = 0;
+      document.documentElement.scrollTop = 0;
+    }
+  </script>
+
