@@ -53,7 +53,7 @@ function initClock() {
 
 
 
-
+		// Form Input field when error the show border red and scroll up start
     function validateForm(){
       var fname = document.forms["myForm"]["fname"].value;
       var uname = document.forms["myForm"]["uname"].value;
@@ -90,7 +90,7 @@ function initClock() {
         return false;
       }else if (! /^[A-Za-z0-9]+$/.test(uname)){
         document.getElementById('uname').style.borderColor = "red";
-        document.getElementById('uname_error').innerHTML = "Please enter only characters and numbers";
+        document.getElementById('uname_error').innerHTML = "Please enter only characters and numbers. Can not used any symbol or space.";
         document.getElementById('uname').scrollIntoView({
           behavior: 'smooth',
           block: 'center',
@@ -127,7 +127,7 @@ function initClock() {
         return false;
       }else if(! /^[a-zA-Z0-9._-]+@(gmail|outlook|hotmail|yahoo).com$/.test(email)){
         document.getElementById('email').style.borderColor = "red";
-        document.getElementById('email_error').innerHTML = "Please enter a valid Email";
+        document.getElementById('email_error').innerHTML = "Please enter a valid Email. Ex: (@gmail / @outlook / @hotmail / @yahoo).com";
         document.getElementById('email').scrollIntoView({
           behavior: 'smooth',
           block: 'center',
@@ -169,7 +169,7 @@ function initClock() {
           behavior: 'smooth',
           block: 'center',
         });
-        document.getElementById('pass_1_error').innerHTML = "Please enter your Password";
+        document.getElementById('pass_1_error').innerHTML = "Please enter your new Password";
         return false;
       }else{
         document.getElementById('pass_1').style.borderColor = "green";
@@ -199,3 +199,7 @@ function initClock() {
         document.getElementById('pass_2_error').innerHTML = "";
       }
     }
+		// Form Input field when error the show border red and scroll up start
+
+
+
