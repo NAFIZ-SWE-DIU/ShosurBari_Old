@@ -42,12 +42,12 @@ $(document).ready(function(){
 <div class="banner">
   <div class="container">
     <div class="banner_info">
-      <h3>Millions of verified Members</h3>
+      <h3>Thousands of verified Members</h3>
       <a href="register.php" class="hvr-shutter-out-horizontal">Create your Profile</a>
     </div>
   </div>
   <body onLoad="initClock()">
-  <div id="timedate">
+  <div class="clock" id="timedate">
     <a id="d">1</a>
 	<a id="mon">January</a>,
     <a id="y">0</a><br />
@@ -97,18 +97,99 @@ $(document).ready(function(){
                   </svg>
               </div>
 
-              <div class="state" id="select-state">
-                  <select name="state">
-                      <option value="All">All</option>
-                      <option value="AL">Rajshahi</option>
-                      <option value="AK">Dhaka</option>
-                      <option value="AZ">Sylhet</option>
-                      <option value="AR">Khulna</option>
-                      <option value="CA">Chittagong</option>
-                      <option value="CO">Rangpur</option>
-					  <option value="CA">Barishal</option>
-                      <option value="CO">Mymenshing</option>
-                  </select>
+
+
+<div class="state" id="select-state">
+			  <select name="permanent_address" class="selectsearch">
+			  <option value="All">All</option>
+	<optgroup label="Barishal Division">
+	<option value="Barguna">Barguna</option>
+	<option value="Barishal">Barishal</option> 
+	   <option value="Bhola">Bhola</option>
+	<option value="Jhalokati">Jhalokati</option>
+	<option value="Patuakhali">Patuakhali</option> 
+	   <option value="Pirojpur">Pirojpur</option>
+</optgroup>
+
+<optgroup label="Chattagram Division">
+	<option value="Bandarban">Bandarban</option>
+	<option value="Brahmanbaria">Brahmanbaria</option> 
+	   <option value="Chandpur">Chandpur</option>
+	<option value="Chattogram">Chattogram</option>
+	<option value="Cumilla">Cumilla</option>
+	<option value="Coxbazar">Cox's Bazar</option>  
+	   <option value="Feni">Feni</option>
+	<option value="Khagrachhari">Khagrachhari</option>
+	<option value="Lakshmipur">Lakshmipur</option>
+	<option value="Noakhali">Noakhali</option>
+	<option value="Rangamati">Rangamati</option>
+</optgroup>
+
+<optgroup label="Dhaka Division">
+	   <option value="Dhaka">Dhaka</option>
+	<option value="Faridpur">Faridpur</option>
+	<option value="Gazipur">Gazipur</option> 
+	   <option value="Gopalganj">Gopalganj</option>
+	<option value="Kishoreganj">Kishoreganj</option>
+	<option value="Madaripur">Madaripur</option>
+	<option value="Manikganj">Manikganj</option> 
+	   <option value="Munshiganj">Munshiganj</option>
+	<option value="Narayanganj">Narayanganj</option>
+	<option value="Narsingdi">Narsingdi</option> 
+	   <option value="Rajbari">Rajbari</option>
+	<option value="Shariatpur">Shariatpur</option>
+	<option value="Tangail">Tangail</option>
+</optgroup>
+
+<optgroup label="Khulna Division">
+	   <option value="Bagerhat">Bagerhat</option>
+	<option value="Chuadanga">Chuadanga</option>
+	<option value="Jashore">Jashore</option>
+	<option value="Jhenaidah">Jhenaidah</option>  
+	   <option value="Khulna">Khulna</option>
+	<option value="Kushtia">Kushtia</option>
+	<option value="Magura">Magura</option>
+	<option value="Meherpur">Meherpur</option>
+	<option value="Narail">Narail</option> 
+	   <option value="Satkhira">Satkhira</option>
+</optgroup>
+
+<optgroup label="Mymensingh Division">
+	<option value="Jamalpur">Jamalpur</option>
+	<option value="Mymensingh">Mymensingh</option> 
+	   <option value="Netrokona">Netrokona</option>
+	<option value="Sherpur">Sherpur</option>
+</optgroup>
+
+<optgroup label="Rajshahi Division">
+	<option value="Bogura">Bogura</option>
+	<option value="Chapai Nawabganj">Chapai Nawabganj</option> 
+	<option value="Joypurhat">Joypurhat</option> 
+	   <option value="Naogaon">Naogaon</option>
+	<option value="Natore">Natore</option>
+	   <option value="Pabna">Pabna</option>
+	<option value="Rajshahi">Rajshahi</option>
+	<option value="Sirajganj">Sirajganj</option>
+</optgroup>
+
+<optgroup label="Rangpur Division">
+	   <option value="Dinajpur">Dinajpur</option>
+	<option value="Gaibandha">Gaibandha</option>
+	<option value="Kurigram">Kurigram</option>
+	<option value="Lalmonirhat">Lalmonirhat</option>  
+	   <option value="Nilphamari">Nilphamari</option>
+	<option value="Panchagarh">Panchagarh</option>
+	<option value="Rangpur">Rangpur</option>
+	<option value="Thakurgaon">Thakurgaon</option>
+</optgroup>
+
+<optgroup label="Sylhet Division">
+	<option value="Habiganj">Habiganj</option> 
+	   <option value="Moulvibazar">Moulvibazar</option>
+	<option value="Sunamganj">Sunamganj</option>
+	<option value="Sylhet">Sylhet</option>
+</optgroup>
+</select>
                   <label>District</label>
                   <svg class="chevron-down" width="17px" height="10px" viewBox="0 0 17 10" version="1.1" xmlns="http://www.w3.org/2000/svg"
                       xmlns:xlink="http://www.w3.org/1999/xlink">
@@ -122,6 +203,123 @@ $(document).ready(function(){
                       </g>
                   </svg>
               </div>
+
+
+
+
+
+			  
+<div class="state" id="select-state">
+                            <select name="occupation" class="selectsearch">
+			                   <option value="All">All</option>
+			                    <optgroup label="Students Sector">
+									<option value="Students of Kawmi Madrasa">Students of Kawmi Madrasa</option> 
+									<option value="Students of High School">Students of High School</option>
+									<option value="Students of Doploma">Students of Doploma</option> 
+	               		            <option value="Students of College">Students of College</option>
+	                                <option value="Students of B.Sc. Engineering">Students of B.Sc. Engineering</option> 
+	               		            <option value="Students of Medical Sector">Students of Medical Sector</option>
+	                                <option value="Students of B.Sc.">Students of B.Sc.</option>
+	                                <option value="Students of M.Sc.">Students of M.Sc.</option>
+									<option value="Students of B.A.">Students of B.A.</option> 
+	               		            <option value="Students of M.A.">Students of M.A.</option>
+									<option value="Students of B.Com.">Students of B.Com.</option> 
+	               		            <option value="Students of M.Com.">Students of M.Com.</option>
+                                    </optgroup>
+									
+								     <optgroup label="Medical Sector">
+	                                <option value="MBBS Doctor">MBBS Doctor</option>
+	                                <option value="Internship Doctor">Internship Doctor</option> 
+									<option value="FCPS Doctor">FCPS Doctor</option>
+									<option value="Pharmacist">Pharmacist</option>
+									<option value="Diploma Doctor">Diploma Doctor</option>
+									<option value="Peramedical">Peramedical</option> 
+	               		            <option value="Nursing">Nursing</option>
+									<option value="Midwifary">Midwifary</option>
+                                    </optgroup>
+
+									<optgroup label="Engineers Sector">
+									<option value="Aerospace Engineer">Aerospace Engineer</option>
+									<option value="Agricultural Engineer">Agricultural Engineer</option>
+									<option value="Architectural Engineer">Architectural Engineer</option>
+									<option value="Biomedical Engineer">Biomedical Engineer</option>
+									<option value="Chemical Engineer">Chemical Engineer</option>
+									<option value="Civil Engineer">Civil Engineer</option>
+									<option value="Electrical Engineer">Electrical Engineer</option>
+									<option value="Marine Engineer">Marine Engineer</option> 
+									<option value="Mechanical Engineer">Mechanical Engineer</option>
+									<option value="Network Engineer">Network Engineer</option> 
+									<option value="Robotics Engineer">Robotics Engineer</option>
+	                                <option value="Software Engineer">Software Engineer</option> 
+	               		            <option value="Textile Engineer">Textile Engineer</option>
+                                    </optgroup>
+
+									<optgroup label="Teachers Sector">
+									<option value="Teaches of Kawmi Madrasa">Teaches of Kawmi Madrasa</option> 
+	                                <option value="Teaches of Primary School">Teaches of Primary School</option> 
+	               		            <option value="Teaches of High School">Teaches of High School</option>
+									<option value="Professor of College">Professor of College</option>
+									<option value="Professor of Public University">Professor of Public University</option>
+									<option value="Professor of Private University">Professor of Private University</option>
+									<option value="Professor of National University">Professor of National University</option>
+									<option value="Professor of Degree">Professor of Degree</option>
+                                    </optgroup>
+
+									<optgroup label="Defense Sector">
+	                                <option value="Army">Army</option> 
+	               		            <option value="Air Force">Air Force</option>
+	                                <option value="Navy">Navy</option>
+	                                <option value="Police">Police</option>
+									<option value="Fire Service">Fire Service</option> 
+	               		            <option value="RAB">RAB</option>
+	                                <option value="DB">DB</option>
+                                    </optgroup>
+
+									<optgroup label="Garments Sector">
+	                                <option value="Worker of Garments">Worker of Garments</option> 
+	               		            <option value="Managers of Garments">Managers of Garments</option>
+                                    </optgroup>
+
+									<optgroup label="Driver Sector">
+	                                <option value="Bus Driver">Bus Driver</option> 
+									<option value="Micro Driver">Micro Bus Driver</option> 
+	                                <option value="Car Driver">Car Driver</option> 
+	                                <option value="Truck Driver">Truck Driver</option>
+									<option value="CNG Driver">CNG Driver</option> 
+	                                <option value="Auto Driver">Auto Driver</option>
+                                    </optgroup>
+
+									<optgroup label="Others Sector">
+									<option value="Banker">Banker</option>
+									<option value="Business">Business</option> 
+									<option value="Entrepreneur">Entrepreneur</option> 
+									<option value="Lawyer">Lawyer</option> 
+	                                <option value="Frelancer">Frelancer</option>
+									<option value="Graphics Desigener">Graphics Desigener</option>
+									<option value="Sales & Marketing (SR)">Sales & Marketing (SR)</option>  
+	                                <option value="No Job">No Job</option>
+								</select>
+                  <label>Occupation</label>
+                  <svg class="chevron-down" width="17px" height="10px" viewBox="0 0 17 10" version="1.1" xmlns="http://www.w3.org/2000/svg"
+                      xmlns:xlink="http://www.w3.org/1999/xlink">
+                      <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+                          <g id="UI-Elements-Forms" transform="translate(-840.000000, -753.000000)" stroke="#4A4A4A" stroke-width="0.9">
+                              <g id="Done-Copy-2" transform="translate(622.000000, 727.000000)">
+                                  <polyline id="Rectangle-16" transform="translate(226.400000, 27.400000) rotate(-45.000000) translate(-226.400000, -27.400000) "
+                                      points="231.8 32.8 221 32.8 221 22"></polyline>
+                              </g>
+                          </g>
+                      </g>
+                  </svg>
+              </div>
+
+
+
+
+
+
+
+
 
               <div class="state" id="select-state">
                   <select name="state">
