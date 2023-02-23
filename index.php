@@ -47,10 +47,9 @@ $(document).ready(function(){
     </div>
   </div>
   <body onLoad="initClock()">
-
   <div id="timedate">
-    <a id="mon">January</a>
-    <a id="d">1</a>,
+    <a id="d">1</a>
+	<a id="mon">January</a>,
     <a id="y">0</a><br />
     <a id="h">12</a> :
     <a id="m">00</a>:
@@ -588,8 +587,8 @@ $(document).ready(function(){
 </body>
 </html>	
 
-	
-	
+
+
 <div id="scroll-up-btn" onclick="scrollToTop()">
     <i class="fa fa-arrow-up"></i>
 </div>
