@@ -2770,7 +2770,7 @@ label{
 
   .form-group .show-password {
     position: absolute;
-    right: 10px;
+    right: 0px;
    /* top: 37px;
     padding: 1px; */
 
@@ -4878,7 +4878,7 @@ form {
     font-size: 2.5em;
     color: #000;
     font-weight: 450;
-    margin-top: -190px;
+    margin-top: -80px;
 }
 
 .form-area .Findpartner h1{
