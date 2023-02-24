@@ -88,15 +88,6 @@ $(document).ready(function(){
 			  <span id="uname_error" style="color:red;  font-size:13px;"></span>
 			</div>
 
-			    <div class="form-group">
-				<label for="sex">Gender<span class="form-required" title="This field is required." required>*</span></label>
-				<select id="genderfm" name="gender">
-					<option value="" required></option>
-		            <option value="Male">Male</option>
-		            <option value="Female">Female</option>
-	            </select>
-				<span id="genderfm_error" style="color:red; font-size:13px;"></span>
-	            </div>
 
 			<div class="form-group">
 		      <label for="edit-name">Emails<span class="form-required" title="This field is required.">*</span></label>
@@ -113,13 +104,15 @@ $(document).ready(function(){
 		    <div class="form-group">
 		      <label for="edit-pass">Password<span class="form-required" title="This field is required.">*</span></label>
 		      <input type="password" id="pass_1" placeholder="Enter New Password" name="pass_1" size="60" maxlength="128" class="form-text required">
-			  <span  id="pass_1_error" class="show-password" style="color:red; font-size:13px;"><i style="color:black;  font-size:18px;" class="fa fa-eye"></i></span>
+			  <span class="show-password" style="color:#02a7e6;  font-size:18px;"><i style="color:black;  font-size:18px;" class="fa fa-eye" aria-hidden="true"></i> Show Password</span> 
+			  <span  id="pass_1_error" style="color:red; font-size:13px;"></span>
 			</div>
 
 			<div class="form-group">
 		      <label for="edit-pass">Confirm Password<span class="form-required" title="This field is required.">*</span></label>
 		      <input type="password" id="pass_2" placeholder="Enter Confirm Password" name="pass_2" size="60" maxlength="128" class="form-text required">
-			  <span  id="pass_2_error" class="show-password" style="color:red;  font-size:13px;"><i style="color:black;  font-size:18px;" class="fa fa-eye"></i></span>
+			  <span class="show-password" style="color:#02a7e6;  font-size:18px;"><i style="color:black;  font-size:18px;" class="fa fa-eye" aria-hidden="true"></i> Show Password</span> 
+			  <span  id="pass_2_error" style="color:red;  font-size:13px;"></span>
 			</div>
 
 	<script>
@@ -137,6 +130,20 @@ $(document).ready(function(){
             });
         });
     </script>
+
+
+            <div class="form-group">
+				<label for="sex">Whos Biodata?<span class="form-required" title="This field is required." required>*</span></label>
+				<select id="genderfm" name="gender">
+					<option hidden selected value="" required></option>
+		            <option value="Male">Male</option>
+		            <option value="Female">Female</option>
+	            </select>
+				<span id="genderfm_error" style="color:red; font-size:13px;"></span>
+				    <div class="gender_notification">
+                        <p style="color:red; font-size:13px;">For whom you are opening this account and for whom you will post the biodata, is he/she a Male or a Female? If you want to post your own biodata, select your gender.</p>
+	                </div>
+	        </div>
 
 
 			<div class="form-actions">
