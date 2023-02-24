@@ -409,40 +409,6 @@ $(document).ready(function(){
 
 
 
-<div class="col-md-4 profile_right">
-    <div class="view_profile view_profile2">
-        <h2>View Recent Profiles</h2>
-
-        <?php
-        $sql="SELECT * FROM 1bd_personal_physical  ORDER BY profilecreationdate ASC";
-            $result=mysqlexec($sql);
-            $count=1;
-            while($row=mysqli_fetch_assoc($result)){
-            $profid=$row['user_id'];
-            //getting photo
-            $sql="SELECT * FROM photos WHERE user_id=$profid";
-            $result2=mysqlexec($sql);
-            $photo=mysqli_fetch_assoc($result2);
-            $pic=$photo['pic1'];
-            echo "<ul class=\"profile_item\">";
-                echo"<a href=\"view_profile.php?id={$profid}\">";
-                    echo "<li class=\"profile_item-img\"><img src=\"profile/". $profid."/".$pic ."\"" . "class=\"img-responsive\" alt=\"\"/></li>";
-                    echo "<li class=\"profile_item-desc\">";
-                        echo "<h3>" . "Biodata No : " . $row['user_id'] ."</h3>";
-				        echo "<h5>" . "Biodata Type : " . $row['biodatagender'] . "</h5>";
-                        echo "<h5>" . "Birth : " . $row['dateofbirth']. "  |  Skin : " . $row['Skin_tones'] . "</h5>";
-				        echo "<h5>" . "Height : " . $row['height']. "  |  Weight : " . $row['weight'] . "</h5>";
-                        echo "<h6>" . "View Full Profile" . "</h6>";
-                    echo "</li>";
-                echo "</a>";
-            echo "</ul>";
-           $count++;
-        }
-        ?>
-		
-    </div>
-</div>
-
 
 
 
@@ -465,19 +431,20 @@ $(document).ready(function(){
 		
         <ul id="flexiselDemo3">
         <?php
-        	$sql="SELECT * FROM customer";
+        	$sql="SELECT * FROM 1bd_personal_physical";
+
         	$result=mysqlexec($sql);
         	if($result){
         		while($row=mysqli_fetch_assoc($result)){
-        			$name=$row['firstname'] . " " . $row['lastname'];
-        			$profileid=$row['cust_id'];
-        			$age=$row['age'];
-        			$place=$row['state'] . "," . $row['district'];
-        			$job=$row['occupation'];
+        			$profid=$row['user_id'] . " " . $row['lastname'];
+        			$biodatagender=$row['biodatagender'];
+        			$dateofbirth=$row['dateofbirth'];
+        			$Skin_tones=$row['Skin_tones'] . "," . $row['weight'];
+        			$height=$row['height'];
 
         				//getting profilepic
         				$pic1='';
-						$sql2="SELECT * FROM photos WHERE cust_id = $profileid";
+						$sql2="SELECT * FROM photos WHERE user_id=$profid";
 						$result2 = mysqlexec($sql2);
 						if($result2){
 							$row2=mysqli_fetch_array($result2);
@@ -486,12 +453,12 @@ $(document).ready(function(){
 						//got profilepic
 						//
 					//Printing the html
-					echo "<li><div class=\"col_1\"><a href=\"view_profile.php?id={$profileid}\">";
-					echo "<img src=\"profile/{$profileid}\/{$pic1}\" alt=\"\" class=\"hover-animation image-zoom-in img-responsive\"/>";
+					echo "<li><div class=\"col_1\"><a href=\"view_profile.php?id={$profid}\">";
+					echo "<img src=\"profile/{$profid}\/{$pic1}\" alt=\"\" class=\"hover-animation image-zoom-in img-responsive\"/>";
 					echo "<div class=\"layer m_1 hidden-link hover-animation delay1 fade-in\">";
 					echo "<div class=\"center-middle\">About {$name}</div>";
 					echo "</div>";
-					echo "<h3><span class=\"m_3\">Profile ID : {$profileid}</span><br>{$age}, {$place}<br>{$job}</h3></a></div>";
+					echo "<h3><span class=\"m_3\">Profile ID : {$profid}</span><br>{$biodatagender}, {$dateofbirth}<br>{$Skin_tones}</h3></a></div>";
 					echo "</li>";
 				
         		}
@@ -505,9 +472,9 @@ $(document).ready(function(){
 		 $(window).load(function() {
 			$("#flexiselDemo3").flexisel({
 				visibleItems: 6,
-				animationSpeed: 1000,
-				autoPlay:false,
-				autoPlaySpeed: 3000,    		
+				animationSpeed: 700,
+				autoPlay:true,
+				autoPlaySpeed: 5000,    		
 				pauseOnHover: true,
 				enableResponsiveBreakpoints: true,
 		    	responsiveBreakpoints: { 
@@ -531,6 +498,22 @@ $(document).ready(function(){
 	   <script type="text/javascript" src="js/jquery.flexisel.js"></script>
     </div>
 </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
