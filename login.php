@@ -7,9 +7,11 @@
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 
 <script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); } </script>
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"><!-- eye icon password show -->
 <link href="css/bootstrap-3.1.1.min.css" rel='stylesheet' type='text/css' />
 <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/all.min.css" integrity="sha256-mmgLkCYLUQbXn0B1SRqzHar6dCnv9oZFPEC1g1cwlkk=" crossorigin="anonymous" /><!-- eye icon password show -->
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css">
+<script src="js/optionsearch.js"></script>
 <script src="js/jquery.min.js"></script>
 <script src="js/bootstrap.min.js"></script>
 <!-- Custom Theme files -->
@@ -82,36 +84,44 @@ $(document).ready(function(){
       </div>
 
 			<div class="form-group">
-        <label for="edit-name">Email or Username <span class="form-required" title="This field is required.">*</span></label>
-	      <input type="text" id="edit-name" placeholder="Enter Your Email or Username" name="username" value="" size="60" maxlength="60" class="form-text required">
-	    </div>
-
-			<div class="form-group">
-        <label for="edit-pass">Password <span class="form-required" title="This field is required.">*</span></label>
-	      <input type="password" id="edit-pass" placeholder="Enter Your Password"  name="password" size="60" maxlength="128" class="form-text required">
-			  <span class="show-password"><i style="color:black;  font-size:18px;" id="show-pass" class="fa fa-eye" aria-hidden="true"></i></span>
+      <!--  <label for="edit-name">Email or Username <span class="form-required" title="This field is required.">*</span></label> -->
+	      <input type="text" id="edit-name" placeholder="Your Email or Username" name="username" value="" size="60" maxlength="60" class="form-text required">
       </div>
 
 
-      <script>
-      let showPass = document.getElementById('show-pass');
-      let editPass = document.getElementById('edit-pass');
-      showPass.addEventListener('click', function(){
-        if (editPass.type === 'password') {
-          editPass.type = 'text';
-          showPass.className = 'fa fa-eye-slash';
-        } else {
-          editPass.type = 'password';
-          showPass.className = 'fa fa-eye';
-        }
-      });
+			<div class="form-group">
+       <!-- <label for="edit-pass">Password <span class="form-required" title="This field is required.">*</span></label> -->
+	      <input type="password" id="edit-pass" placeholder="Your Password"  name="password" size="60" maxlength="128" class="form-text required">
+        <span class="show-password" style="color:#02a7e6;  font-size:18px;"><i style="color:black;  font-size:18px;" class="fa fa-eye" aria-hidden="true"></i> Show Password</span> 
+      </div>
+
+      
+	<script>
+        let showPass = document.querySelectorAll('.show-password');
+        showPass.forEach(function(el) {
+            el.addEventListener('click', function(){
+                let input = this.previousElementSibling;
+                if (input.type === "password") {
+                    input.type = "text";
+                    this.innerHTML = "<i class='fa fa-eye-slash'></i>";
+                } else {
+                    input.type = "password";
+                    this.innerHTML = "<i class='fa fa-eye'></i>";
+                }
+            });
+        });
     </script>
 
 
-		
+
 		   <div class="form-actions">
-      <button  type="submit" id="edit-submit" name="op"  class="btn_2 submit"> <span> </span> Login Your Account</button>
-	    </div>
+      <button  type="submit" id="edit-submit" name="op"  class="btn_2 submit"  > <span> </span> Login Your Account</button>
+    </div>
+
+
+
+
+
 
 		<div class="or">
 		    <p><span class="sb-or">OR</span></p>
