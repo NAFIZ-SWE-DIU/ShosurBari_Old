@@ -432,15 +432,37 @@ $(document).ready(function(){
         <ul id="flexiselDemo3">
         <?php
         	$sql="SELECT * FROM 1bd_personal_physical";
-
         	$result=mysqlexec($sql);
         	if($result){
         		while($row=mysqli_fetch_assoc($result)){
-        			$profid=$row['user_id'] . " " . $row['lastname'];
+        			$profid=$row['user_id'];
         			$biodatagender=$row['biodatagender'];
-        			$dateofbirth=$row['dateofbirth'];
-        			$Skin_tones=$row['Skin_tones'] . "," . $row['weight'];
-        			$height=$row['height'];
+				
+
+
+					$sql3="SELECT * FROM 2bd_personal_lifestyle";		
+					$result3=mysqlexec($sql3);
+					if($result3){
+						while($row3=mysqli_fetch_assoc($result3))
+						$occupation=$row3['occupation'];
+					    }
+						
+
+							$sql4="SELECT * FROM 4bd_address_details";
+							$result4=mysqlexec($sql4);
+							if($result4){
+								while($row4=mysqli_fetch_assoc($result4))
+								$permanent_address=$row4['permanent_address'];
+							    }
+
+								$sql5="SELECT * FROM 8bd_religion_details";
+								$result5=mysqlexec($sql5);
+								if($result5){
+									while($row5=mysqli_fetch_assoc($result5))
+									$religion=$row5['religion'];
+									}
+								
+				
 
         				//getting profilepic
         				$pic1='';
@@ -458,11 +480,12 @@ $(document).ready(function(){
 					echo "<div class=\"layer m_1 hidden-link hover-animation delay1 fade-in\">";
 					echo "<div class=\"center-middle\">About {$name}</div>";
 					echo "</div>";
-					echo "<h3><span class=\"m_3\">Profile ID : {$profid}</span><br>{$biodatagender}, {$dateofbirth}<br>{$Skin_tones}</h3></a></div>";
+					echo "<h3><span class=\"m_3\">Biodata Number : {$profid}</span><br>Gender: {$biodatagender} <br> Occupation: {$occupation} <br> Religion: {$religion} <br> Address: {$permanent_address}</h3></a></div>";
 					echo "</li>";
 				
-        		}
         	}
+		}
+
 
         ?>
           </ul>
@@ -473,7 +496,7 @@ $(document).ready(function(){
 			$("#flexiselDemo3").flexisel({
 				visibleItems: 6,
 				animationSpeed: 700,
-				autoPlay:true,
+				autoPlay:false,
 				autoPlaySpeed: 5000,    		
 				pauseOnHover: true,
 				enableResponsiveBreakpoints: true,
