@@ -77,41 +77,41 @@ $(document).ready(function(){
         </div>
 
 		<div class="form-group">
-		      <label for="edit-name">Full Name<span class="form-required" title="This field is required.">*</span></label>
-		      <input type="text" id="fname" placeholder="Enter Your Full Name" name="fname" value="" size="60" maxlength="60" class="form-text required">
+		    <!--  <label for="edit-name">Full Name<span class="form-required" title="This field is required.">*</span></label> -->
+		      <input type="text" id="fname" placeholder="Full Name" name="fname" value="" size="60" maxlength="60" class="form-text required">
 			  <span id="fname_error" style="color:red; font-size:13px;"></span>
 			</div>
 
 			<div class="form-group">
-		      <label for="edit-name">Username<span class="form-required" title="This field is required.">*</span></label>
-		      <input type="text" id="uname" placeholder="Enter Valid Username" name="uname" value="" size="60" maxlength="60" class="form-text required">
+		      <!-- <label for="edit-name">Username<span class="form-required" title="This field is required.">*</span></label> -->
+		      <input type="text" id="uname" placeholder="Username" name="uname" value="" size="60" maxlength="60" class="form-text required">
 			  <span id="uname_error" style="color:red;  font-size:13px;"></span>
 			</div>
 
 
 			<div class="form-group">
-		      <label for="edit-name">Emails<span class="form-required" title="This field is required.">*</span></label>
-		      <input type="text" id="email" placeholder="Enter Your Email" name="email" value="" size="60" maxlength="60" class="form-text required">
+		      <!-- <label for="edit-name">Emails<span class="form-required" title="This field is required.">*</span></label> -->
+		      <input type="text" id="email" placeholder="Email" name="email" value="" size="60" maxlength="60" class="form-text required">
 			  <span id="email_error" style="color:red; font-size:13px;"></span>
 			</div>
 
 			<div class="form-group">
-		      <label for="edit-name">Phone Number<span class="form-required" title="This field is required.">*</span></label>
-		      <input type="number" id="pnumber" placeholder="Enter Your Phone Number" name="pnumber" value="" size="60" minlength="10" maxlength="15" class="form-text required">
+		     <!--  <label for="edit-name">Phone Number<span class="form-required" title="This field is required.">*</span></label> -->
+		      <input type="number" id="pnumber" placeholder="Phone Number" name="pnumber" value="" size="60" minlength="10" maxlength="15" class="form-text required">
 			  <span id="pnumber_error" style="color:red; font-size:13px;"></span>
 			</div>
 
 		    <div class="form-group">
-		      <label for="edit-pass">Password<span class="form-required" title="This field is required.">*</span></label>
-		      <input type="password" id="pass_1" placeholder="Enter New Password" name="pass_1" size="60" maxlength="128" class="form-text required">
-			  <span class="show-password" style="color:#02a7e6;  font-size:18px;"><i style="color:black;  font-size:18px;" class="fa fa-eye" aria-hidden="true"></i> Show Password</span> 
+		      <!-- <label for="edit-pass">Password<span class="form-required" title="This field is required.">*</span></label> -->
+		      <input type="password" id="pass_1" placeholder="New Password" name="pass_1" size="60" maxlength="128" class="form-text required">
+			  <span class="show-password" style="color:#02a7e6;  font-size:18px;"><i style="color:black;  font-size:18px;" class="fa fa-eye" aria-hidden="true"></i></span> 
 			  <span  id="pass_1_error" style="color:red; font-size:13px;"></span>
 			</div>
 
 			<div class="form-group">
-		      <label for="edit-pass">Confirm Password<span class="form-required" title="This field is required.">*</span></label>
-		      <input type="password" id="pass_2" placeholder="Enter Confirm Password" name="pass_2" size="60" maxlength="128" class="form-text required">
-			  <span class="show-password" style="color:#02a7e6;  font-size:18px;"><i style="color:black;  font-size:18px;" class="fa fa-eye" aria-hidden="true"></i> Show Password</span> 
+		      <!-- <label for="edit-pass">Confirm Password<span class="form-required" title="This field is required.">*</span></label> -->
+		      <input type="password" id="pass_2" placeholder="Confirm Password" name="pass_2" size="60" maxlength="128" class="form-text required">
+			  <span class="show-password" style="color:#02a7e6;  font-size:18px;"><i style="color:black;  font-size:18px;" class="fa fa-eye" aria-hidden="true"></i></span> 
 			  <span  id="pass_2_error" style="color:red;  font-size:13px;"></span>
 			</div>
 
