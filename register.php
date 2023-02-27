@@ -141,7 +141,7 @@ $(document).ready(function(){
 	            </select>
 				<span id="genderfm_error" style="color:red; font-size:13px;"></span>
 				    <div class="gender_notification">
-                        <p style="color:red; font-size:13px;">For whom you are opening this account and for whom you will post the biodata, is he/she a Male or a Female? If you want to post your own biodata, select your gender.</p>
+                        <p style="color:green; font-size:13px;">For whom you are opening this account and for whom you will post the biodata, is he/she a Male or a Female? If you want to post your own biodata, select your gender.</p>
 	                </div>
 	        </div>
 
