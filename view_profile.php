@@ -1391,46 +1391,43 @@ if($row){
 
 
 
-     <div class="col-md-4 profile_right">
-     <!-- 	<div class="newsletter">
-		   <form>
-			  <input type="text" name="ne" size="30" required="" placeholder="Enter Profile ID :">
-			  <input type="submit" value="Go">
-		   </form>
-        </div> -->
-        <div class="view_profile view_profile2">
-        	<h2>View Recent Profiles</h2>
-    <?php
-     $sql="SELECT * FROM 1bd_personal_physical  ORDER BY profilecreationdate ASC";
-      $result=mysqlexec($sql);
-      $count=1;
-      while($row=mysqli_fetch_assoc($result)){
+<div class="col-md-4 profile_right">
+    <div class="view_profile view_profile2">
+        <h2>View Recent Profiles</h2>
+
+        <?php
+        $sql="SELECT * FROM 1bd_personal_physical  ORDER BY profilecreationdate ASC";
+            $result=mysqlexec($sql);
+            $count=1;
+            while($row=mysqli_fetch_assoc($result)){
             $profid=$row['user_id'];
-          //getting photo
-          $sql="SELECT * FROM photos WHERE user_id=$profid";
-          $result2=mysqlexec($sql);
-          $photo=mysqli_fetch_assoc($result2);
-          $pic=$photo['pic1'];
-          echo "<ul class=\"profile_item\">";
-            echo"<a href=\"view_profile.php?id={$profid}\">";
-              echo "<li class=\"profile_item-img\"><img src=\"profile/". $profid."/".$pic ."\"" . "class=\"img-responsive\" alt=\"\"/></li>";
-               echo "<li class=\"profile_item-desc\">";
-                  echo "<h3>" . "Biodata No : " . $row['user_id'] ."</h3>";
-				  echo "<h5>" . "Biodata Type : " . $row['biodatagender'] . "</h5>";
-                  echo "<h5>" . "Birth : " . $row['dateofbirth']. "  |  Skin : " . $row['Skin_tones'] . "</h5>";
-				  echo "<h5>" . "Height : " . $row['height']. "  |  Weight : " . $row['weight'] . "</h5>";
-                  echo "<h6>" . "View Full Profile" . "</h6>";
-               echo "</li>";
-      echo "</a>";
-      echo "</ul>";
-      $count++;
-      }
-     ?>       
+            //getting photo
+            $sql="SELECT * FROM photos WHERE user_id=$profid";
+            $result2=mysqlexec($sql);
+            $photo=mysqli_fetch_assoc($result2);
+            $pic=$photo['pic1'];
+            echo "<ul class=\"profile_item\">";
+                echo"<a href=\"view_profile.php?id={$profid}\">";
+                    echo "<li class=\"profile_item-img\"><img src=\"profile/". $profid."/".$pic ."\"" . "class=\"img-responsive\" alt=\"\"/></li>";
+                    echo "<li class=\"profile_item-desc\">";
+                        echo "<h3>" . "Biodata No : " . $row['user_id'] ."</h3>";
+				        echo "<h5>" . "Biodata Type : " . $row['biodatagender'] . "</h5>";
+                        echo "<h5>" . "Birth : " . $row['dateofbirth']. "  |  Skin : " . $row['Skin_tones'] . "</h5>";
+				        echo "<h5>" . "Height : " . $row['height']. "  |  Weight : " . $row['weight'] . "</h5>";
+                        echo "<h6>" . "View Full Profile" . "</h6>";
+                    echo "</li>";
+                echo "</a>";
+            echo "</ul>";
+           $count++;
+        }
+        ?>
+		
     </div>
-    </div>
-       <div class="clearfix"> </div>
-    </div>
-  </div>
+</div>
+
+<div class="clearfix"> </div>
+</div>
+</div>
 </div>           <!-- here 3/8 <div> -->
 
 
