@@ -57,11 +57,12 @@ function initClock() {
     function validateForm(){
       var fname = document.forms["myForm"]["fname"].value;
       var uname = document.forms["myForm"]["uname"].value;
-      var genderfm = document.forms["myForm"]["genderfm"].value;
       var email = document.forms["myForm"]["email"].value;
       var pnumber = document.forms["myForm"]["pnumber"].value;
       var pass_1 = document.forms["myForm"]["pass_1"].value;
       var pass_2 = document.forms["myForm"]["pass_2"].value;
+      var genderfm = document.forms["myForm"]["genderfm"].value;
+
 
     
       //Full Name validation
@@ -90,7 +91,7 @@ function initClock() {
         return false;
       }else if (! /^[A-Za-z0-9]+$/.test(uname)){
         document.getElementById('uname').style.borderColor = "red";
-        document.getElementById('uname_error').innerHTML = "Please enter only characters and numbers. Can not used any symbol or space.";
+        document.getElementById('uname_error').innerHTML = "Please enter only Letters and Numbers. Can't used any symbol or space.";
         document.getElementById('uname').scrollIntoView({
           behavior: 'smooth',
           block: 'center',
@@ -100,20 +101,6 @@ function initClock() {
         document.getElementById('uname').style.borderColor = "green";
         document.getElementById('uname_error').innerHTML = "";
       }
-
-
-      //Gender validation
-      if (genderfm == "") {
-        document.getElementById('genderfm').scrollIntoView({
-          behavior: 'smooth',
-          block: 'center',
-        }); 
-        document.getElementById('genderfm_error').innerHTML = "Warning: Please Select Gender!";
-        return false;
-    }else{
-      document.getElementById('genderfm').style.borderColor = "green";
-      document.getElementById('genderfm_error').innerHTML = "";
-    }
 
       
       //Email validation
@@ -198,8 +185,19 @@ function initClock() {
         document.getElementById('pass_2').style.borderColor = "green";
         document.getElementById('pass_2_error').innerHTML = "";
       }
+
+
+           //Gender validation
+           if (genderfm == "") {
+            document.getElementById('genderfm').scrollIntoView({
+              behavior: 'smooth',
+              block: 'center',
+            }); 
+            document.getElementById('genderfm_error').innerHTML = "Warning: Please Select Gender!";
+            return false;
+        }else{
+          document.getElementById('genderfm').style.borderColor = "green";
+          document.getElementById('genderfm_error').innerHTML = "";
+        }
     }
 		// Form Input field when error the show border red and scroll up start
-
-
-
