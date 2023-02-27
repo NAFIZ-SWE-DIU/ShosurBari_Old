@@ -60,7 +60,6 @@ $(document).ready(function(){
 
 <?php
 include("includes/dbconn.php");
-
 //getting profile details from db
 $sql="SELECT * FROM users WHERE id = $id";
 $result = mysqlexec($sql);
@@ -85,6 +84,8 @@ $username=$row['username'];
             <li><a href="view_profile.php?id=<?php echo $id;?>">View Profile</a></li>
             <li><a href="editbiodata.php?id=<?php echo $id;?>">Post Biodata</a></li>
             <li><a href="photouploader.php?id=<?php echo $id;?>">Upload Photos</a></li> 
+            <li><a href="updateaccount.php?id=<?php echo $id;?>">Update Account</a></li> 
+
             
             <li class="dropdown">
               <a href="#" class="dropdown-toggle" data-toggle="dropdown">Update Biodata<span class="caret"></span></a>
