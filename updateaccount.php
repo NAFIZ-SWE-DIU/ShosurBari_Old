@@ -62,12 +62,28 @@ $(document).ready(function(){
         <li class="current-page"><h4>User Home</h4></li>
      </ul>
      <?php
-			If(isset($_SESSION['username'])) {
+		/*	If(isset($_SESSION['username'])) {
 Echo "Welcome : " . $_SESSION ['username'];
 } else {
 Echo "<a href=\”/login.php\”>Login</a>";
-}
+} */
 ?>
+
+<?php
+include("includes/dbconn.php");
+
+//getting profile details from db
+$sql="SELECT * FROM users WHERE id = $id";
+$result = mysqlexec($sql);
+
+if($result){
+$row=mysqli_fetch_assoc($result);
+if($row){
+$username=$row['username'];
+  }
+ }
+?>
+<?php echo "Welcome: $username"; ?>
    </div>
   </div>
 </div>
@@ -108,51 +124,31 @@ Echo "<a href=\”/login.php\”>Login</a>";
 
 
 
-<?php
-include("includes/dbconn.php");
-
-//$id=$_GET['id'];
-//bd_religion_details_8($id);
-
-
-
-//getting profile details from db
-$sql="SELECT * FROM users WHERE id = $id";
-$result = mysqlexec($sql);
-
-if($result){
-$row=mysqli_fetch_assoc($result);
-if($row){
-$username=$row['username'];
-}
-if($row){
-$email=$row['email'];
-}
-if($row){
-    $password=$row['password'];
-}
-}
-	//echo $religion.' '.$yourreligion_condition;
-?>
 <form action="" method="post" enctype="multipart/form-data">
 	<h2>Update Account</h2>
 
-	<label>Login Username</label>
+	<div class="form-group">
+	<label>Username</label>
 	<input type="text" id="edit-name" name="username" class="form-text" value="<?php echo $username; ?>" />
-	
+    </div>
+
+	<div class="form-group">
 	<label>Current Password</label>
 	<input type="password" id="edit-pass" name="password" value="<?php echo $password; ?>" class="form-text" />
-    <span class="show-password" style="color:#02a7e6;  font-size:18px;"><i style="color:black;  font-size:18px;" class="fa fa-eye" aria-hidden="true"></i> Show Password</span> 
-
+    <span class="show-password" style="color:#02a7e6;  font-size:18px; top:26px;"><i style="color:black;  font-size:18px;" class="fa fa-eye" aria-hidden="true"></i></span> 
+    </div>
 	
-	<label>New Password</label>
+	<div class="form-group">
+	<label>Change Password</label>
 	<input type="password" name="pass_1" class="form-text" />
-    <span class="show-password" style="color:#02a7e6;  font-size:18px;"><i style="color:black;  font-size:18px;" class="fa fa-eye" aria-hidden="true"></i> Show Password</span> 
+    <span class="show-password" style="color:#02a7e6;  font-size:18px; top:26px;"><i style="color:black;  font-size:18px;" class="fa fa-eye" aria-hidden="true"></i></span> 
+    </div>
 
-	
+    <div class="form-group">
 	<label>Confirm Password</label>
 	<input type="password" name="pass_2" class="form-text" />
-    <span class="show-password" style="color:#02a7e6;  font-size:18px;"><i style="color:black;  font-size:18px;" class="fa fa-eye" aria-hidden="true"></i> Show Password</span> 
+    <span class="show-password" style="color:#02a7e6;  font-size:18px; top:26px;"><i style="color:black;  font-size:18px;" class="fa fa-eye" aria-hidden="true"></i></span> 
+    </div>
 
     <script>
         let showPass = document.querySelectorAll('.show-password');
@@ -245,19 +241,6 @@ if(isset($_POST['update_account'])) {
 	}
 }
 ?>
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
