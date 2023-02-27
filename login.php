@@ -92,7 +92,7 @@ $(document).ready(function(){
 			<div class="form-group">
        <!-- <label for="edit-pass">Password <span class="form-required" title="This field is required.">*</span></label> -->
 	      <input type="password" id="edit-pass" placeholder="Your Password"  name="password" size="60" maxlength="128" class="form-text required">
-        <span class="show-password" style="color:#02a7e6;  font-size:18px;"><i style="color:black;  font-size:18px;" class="fa fa-eye" aria-hidden="true"></i> Show Password</span> 
+        <span class="show-password" style="color:#02a7e6;  font-size:18px;"><i style="color:black;  font-size:18px;" class="fa fa-eye" aria-hidden="true"></i></span> 
       </div>
 
       
