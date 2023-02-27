@@ -3,13 +3,16 @@
     <!--<div class="navbar navbar-inverse-blue navbar-fixed-top">-->
       <div class="navbar-inner navbar-inner_1">
         <div class="container">
-           <div class="navigation">
+
+
+        <!--   <div class="navigation">
              <nav id="colorNav">
 			   <ul>
 				<li class="green">
 				  <a href="#" class="icon-home"></a>
-				  <ul>
+				  <ul> -->
 				  <?php 
+				   /*
 				  if(isloggedin()){
 				  	$id=$_SESSION['id'];
 				  	echo "<li><a href=\"userhome.php?id=$id\">Profile</a></li>";
@@ -22,14 +25,16 @@
 				  	echo "<li><a href=\"login.php\">Login</a></li>";
 				  	echo "<li><a href=\"register.php\">Register</a></li>";
 				  }
-
+*/
 				  ?>
 					
-				  </ul>
+				<!--  </ul>
 				</li>
 			   </ul>
              </nav>
-           </div>
+           </div>-->
+
+
            <a class="brand" href="index.php"><img src="images/logo.png" alt="logo"></a>
            <div class="pull-right">
           	<nav class="navbar nav_bottom" role="navigation">
@@ -66,22 +71,36 @@
 				  	echo "<li><a href=\"userhome.php?id=$id\">Profile</a></li>";
 					
 
-					  If(isset($_SESSION['username'])) {
+					/*  If(isset($_SESSION['username'])) {
 						Echo "User : " . $_SESSION ['username'];
 						} else {
 						Echo "<a href=\”/login.php\”>Login</a>";
-						}
-
+						} */
 
 				  	echo "<li><a href=\"logout.php\">Logout</a></li>";
 				  }
-
 
 				  else{
 				  	echo "<li><a href=\"login.php\">Login</a></li>";
 				  	echo "<li><a href=\"register.php\">Register</a></li>";
 				  }
 			    ?> 
+				<?php
+include("includes/dbconn.php");
+
+//getting profile details from db
+$sql="SELECT * FROM users WHERE id = $id";
+$result = mysqlexec($sql);
+
+if($result){
+$row=mysqli_fetch_assoc($result);
+if($row){
+$username=$row['username'];
+  }
+ }
+?>
+<?php echo  $username; ?>
+
 			</li>
 
 
