@@ -57,13 +57,23 @@ $(document).ready(function(){
         <span class="divider">&nbsp;<|>&nbsp;</span>
         <li class="current-page"><h4>User Home</h4></li>
      </ul>
-     <?php
-			If(isset($_SESSION['username'])) {
-Echo "Welcome : " . $_SESSION ['username'];
-} else {
-Echo "<a href=\”/login.php\”>Login</a>";
-}
+
+<?php
+include("includes/dbconn.php");
+
+//getting profile details from db
+$sql="SELECT * FROM users WHERE id = $id";
+$result = mysqlexec($sql);
+
+if($result){
+$row=mysqli_fetch_assoc($result);
+if($row){
+$username=$row['username'];
+  }
+ }
 ?>
+<?php echo "Welcome: $username"; ?>
+
    </div>
   </div>
 </div>
