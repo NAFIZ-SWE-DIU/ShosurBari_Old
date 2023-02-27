@@ -2642,8 +2642,8 @@ label{
 }
 
 .or p{
-    margin-top: -25px;
-    margin-bottom: 2px;
+    margin-top: 10px;
+    margin-bottom: 0px;
 }
 
 
@@ -2659,7 +2659,7 @@ label{
     outline: none;
     border: none;
     margin: 1em 0 0 0;
-    font-size: 0.65em;
+    font-size: 0.60em;
 }
 
 .btn_1:hover, .btn_2:hover, .btn_3:hover, .btn_4:hover, .btn_5:hover{
@@ -2675,7 +2675,7 @@ label{
 /*Login Your Account BUTTON 2 */
 .btn_2 span {
     content: url(../images/login.png);
-    width: 8%;
+    width: 7%;
     position: relative;
     left: 0px;
     top: 5px;
@@ -2684,20 +2684,20 @@ label{
     background: #ff0080;
     border-radius: 6px;
     width: 100%;
-    padding: 8px 25px;
+    padding: 4px;
     display: inline-block;
     color: #fff;
     text-transform: uppercase;
     outline: none;
     border: none;
-    margin: 1em 0 0 0;
-    font-size: 0.65em;
+    margin: 0px;
+    font-size: 0.60em;
 }
 
 /* Login Your Account BUTTON 3 */
 .btn_3 span {
     content: url(../images/login.png);
-    width: 8%;
+    width: 6%;
     position: relative;
     left: 0px;
     top: 5px;
@@ -2706,7 +2706,7 @@ label{
     background: #00c875;
     border-radius: 6px;
     width: 100%;
-    padding: 8px 25px;
+    padding: 3px;
     display: inline-block;
     color: #fff;
     text-transform: uppercase;
@@ -2714,13 +2714,13 @@ label{
     border: none;
     margin-top: 7px;
     margin-bottom: -50px;
-    font-size: 0.65em;
+    font-size: 0.45em;
 }
 
 /*Creat Account BUTTON 4 */
 .btn_4 span  {
     content: url(../images/signup.png);
-    width: 5%;
+    width: 4%;
     position: relative;
     left: 0px;
     top: 3px;
@@ -2729,20 +2729,20 @@ label{
     background: #ff0080;
     border-radius: 6px;
     width: 100%;
-    padding: 8px 25px;
+    padding: 5.5px;
     display: inline-block;
     color: #fff;
     text-transform: uppercase;
     outline: none;
     border: none;
-    margin: 1em 0 0 0;
-    font-size: 0.65em;
+    margin: 0px;
+    font-size: 0.60em;
 }
 
 /*Create New Account  BUTTON 5 */
 .btn_5 span {
     content: url(../images/signup.png);
-    width: 5%;
+    width: 3.5%;
     position: relative;
     left: 0px;
     top: 3px;
@@ -2751,7 +2751,7 @@ label{
     background: #00c875;
     border-radius: 6px;
     width: 100%;
-    padding: 8px 25px;
+    padding: 3px;
     display: inline-block;
     color: #fff;
     text-transform: uppercase;
@@ -2759,7 +2759,7 @@ label{
     border: none;
     margin-top: 7px;
     margin-bottom: -50px;
-    font-size: 0.65em;
+    font-size: 0.45em;
 }
 
 /* FORM SUBMIT BUTTON END */
@@ -4975,11 +4975,11 @@ form {
 
   }
   .grid_3 {
-    padding: 5em 0;
     padding-top: 5em;
     padding-right: 0px;
     padding-bottom: 0em;
     padding-left: 0px;
+    margin-bottom: 65px;
 }
 /*-- -- -- -- -- -- -- -- -- -- -- -- -- ---- -- --
 -- -- -- -- -- -- -- -- --- -- -- -- -- -- -- -- --
@@ -5156,8 +5156,8 @@ h1{
 
 .shosurbari-biodata .form-actions{
     width: 100%;
-    margin-bottom: 50px;
-    margin-top: 10px;
+    margin-bottom: 0px;
+    margin-top: 0px;
     text-align: center;
     font-size: 30px;
 }
