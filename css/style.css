@@ -2780,13 +2780,19 @@ label{
     right: 0px;
    /* top: 37px;
     padding: 1px; */
-
     top: -3px;
     padding: 15px;
     font-size: 16px;
     cursor: pointer;
   }
 
+  .form-group:hover .fa-eye {
+    color: #02a7e6;
+  }
+
+  .form-group:hover .fa-eye:before {
+    content: 'Show Password';
+  }
 /* Password Show Eye END */
 
 
