@@ -80,7 +80,13 @@ if($result){
 $row=mysqli_fetch_assoc($result);
 if($row){
 $username=$row['username'];
-  }
+}
+if($row){
+$password=$row['password'];
+}
+if($row){
+$email=$row['email'];
+}
  }
 ?>
 <?php echo "Welcome: $username"; ?>
@@ -89,65 +95,141 @@ $username=$row['username'];
 </div>
 
 
-
-
-
-
-
-	<style type="text/css">
-		form {
-			width: 500px;
-			margin: 0 auto;
-			padding: 10px;
-			border: 1px solid #ccc;
-			background: #f0f0f0;
-		}
-		input[type="text"], input[type="password"] {
-			width: 100%;
-			padding: 5px;
-			margin: 5px 0;
-			border: 1px solid #ccc;
-			background: #fff;
-		}
-		input[type="submit"] {
-			width: 100%;
-			padding: 5px;
-			margin: 5px 0;
-			background: #2c3e50;
-			border: 1px solid #ccc;
-			color: #fff;
-			cursor: pointer;
-		}
+<style>
+	.update-image img{
+	height: 160px;
+    width: 160px;
+    padding: 2px;
+    background: #f5f2f2;
+    box-shadow: 0px 2px 7px 6px rgb(0 0 0 / 20%);
+    margin-top: -20px;
+    margin-left: 0px;
+    margin-right: 2px;
+    margin-bottom: 20px;
+    border-radius: 4px;
+	}
+.update-image-button{
+        font-size: 14px;
+        white-space: nowrap;
+		display: flex;
+}
+.deleteimage{
+	padding: 10px;
+	margin-top:-10px; 
+	margin-left: 10px;
+}
 	</style>
 
 
 
 
 
-<form action="" method="post" enctype="multipart/form-data">
-	<h2>Update Account</h2>
+<?php
+ $id=$_GET['id'];
+ $profileid=$id;
+//getting profile details from db
+$sql = "SELECT * FROM photos  WHERE user_id = $id";
+$result = mysqlexec($sql);
+$row=mysqli_fetch_assoc($result);
+if($row){
+    $pic1=$row['pic1'];
+}
+?>
 
-	<div class="form-group">
-	<label>Username</label>
-	<input type="text" id="edit-name" name="username" class="form-text" value="<?php echo $username; ?>" />
-    </div>
 
-	<div class="form-group">
-	<label>Current Password</label>
-	<input type="password" id="edit-pass" name="password" value="<?php echo $password; ?>" class="form-text" />
-    <span class="show-password" style="color:#02a7e6;  font-size:18px; top:26px;"><i style="color:black;  font-size:18px;" class="fa fa-eye" aria-hidden="true"></i></span> 
-    </div>
+<!-- -- -- -- -- -- -- -- -- -- -- -- -- ---- -- --
+-- -- -- -- -- -- -- -- --- -- -- -- -- -- -- -- --
+--                S  T  A  R  T                  --
+--   SHOSURBARI BIODATA FORM FIELD ALL SECTION   --
+--                                               --
+-- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- ---
+-- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -->
+<div class="shosurbari-biodata">
 	
+<form action="" method="POST" enctype="multipart/form-data">
+		<div class="flex-container">
+    <div class="sb-biodata">
+
+	    <div class="sb-biodata-field">
+		    <h2>Update Your <span>Account</span></h2>
+        </div>
+
+		<div class="update-image-button">
+
+	      <div class="update-image">
+		  <img src="profile/<?php echo $profileid;?>/<?php echo $pic1;?>" />
+          </div>
+
+
+		  <div class="deleteimage">
+		  <button style=" margin-top:10px;  margin-bottom:10px; padding: 5px 5%; font-size: 13px; font-weight:bold; background: red;"  type="submit" name="delete_photo" value="Delete" class="btn_1">Delete Photo</button>
+		  <?php
+if(isset($_POST['delete_photo'])){
+  // delete photo from profile folder
+  $user_id = // get the user id from the session
+  $dir = 'profile/'.$user_id.'/';
+  unlink($dir.$pic1);
+  
+  // delete photo from database
+  $sql = "DELETE FROM photos WHERE pic1 = '$pic1'";
+  $result = mysqli_query($conn, $sql);
+
+  if($result){
+    // show green message
+    echo "<div style='color:green;'> Photo deleted successfully! Please Refresh the page.</div>";
+  }
+}
+?>
+
+
+
+
+
+<input style="margin-top:10px;  margin-bottom:10px; width:60%; background:green; color:white; font-weight:bold;" type="file" id="edit-name" name="pic1" value="<?php
+if(isset($_POST['submit'])){
+    $user_id = $_POST['user_id'];
+
+    if(isset($_FILES['pic1'])){
+        //get file details
+        $file_name = $_FILES['pic1']['name'];
+
+        //show file name
+        echo "File Name: ".$file_name;
+    }
+}
+?>" class="form-file required">
+
+
+<input style="margin-top:10px;  margin-bottom:10px; padding: 5px 5%; font-size: 13px; font-weight:bold;" type="submit" id="edit-submit" name="op" value="Photo Upload" class="btn_1 submit">
+</div>
+</div>
+
+
+
+
+
+
+
+
+
+		  <div class="form-group">
+            <label for="edit-name">Current Password</label>
+			  <input type="password" id="edit-pass" name="password" value="<?php echo $password; ?>" class="form-text" />
+			  <span class="show-password" style="color:#02a7e6;  font-size:18px; top:18px;"><i style="color:black;  font-size:18px;" class="fa fa-eye" aria-hidden="true"></i></span> 
+		</div>
+	
+
 	<div class="form-group">
 	<label>Change Password</label>
 	<input type="password" name="pass_1" class="form-text" />
-    <span class="show-password" style="color:#02a7e6;  font-size:18px; top:26px;"><i style="color:black;  font-size:18px;" class="fa fa-eye" aria-hidden="true"></i></span> 
+    <span class="show-password" style="color:#02a7e6;  font-size:18px; top:18px;"><i style="color:black;  font-size:18px;" class="fa fa-eye" aria-hidden="true"></i></span> 
     </div>
+
 
     <div class="form-group">
 	<label>Confirm Password</label>
 	<input type="password" name="pass_2" class="form-text" />
-    <span class="show-password" style="color:#02a7e6;  font-size:18px; top:26px;"><i style="color:black;  font-size:18px;" class="fa fa-eye" aria-hidden="true"></i></span> 
+    <span class="show-password" style="color:#02a7e6;  font-size:18px; top:18px;"><i style="color:black;  font-size:18px;" class="fa fa-eye" aria-hidden="true"></i></span> 
     </div>
 
     <script>
@@ -168,16 +250,28 @@ $username=$row['username'];
 	
 	<label>Email Address</label>
 	<input type="text" name="email" class="form-text" value="<?php echo $email; ?>" />
-	
-	<label>Profile Photo</label>
-	<input type="file" name="profile_photo" value="<?php echo $pic1; ?>" class="form-text" />
-	<input type="submit" name="delete_photo" value="Delete Photo" class="form-text" />
-	
-	<input type="submit" name="update_account" value="Update Account" class="btn_2 submit" />
-</form>
+
+		   <div class="form-actions">
+        <button type="submit" name="update_account" value="Update Account" class="btn_1 submit"  > <span> </span> Update Your Account</button>
+       </div>
 
 
-<?php 
+    </div>
+<!-- -- -- -- -- -- -- -- -- -- -- -- -- ---- -- --
+-- -- -- -- -- -- -- -- --- -- -- -- -- -- -- -- --
+--                   E   N   D                   --
+--        Religion Details / sb-biodata-8        --
+--                                               --
+-- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- ---
+-- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -->
+
+    </div>
+	</form>
+  </div>
+
+
+
+  <?php 
 if(isset($_POST['update_account'])) {
 	//update user account
 	$username = $_POST['username'];
@@ -197,51 +291,9 @@ if(isset($_POST['update_account'])) {
 	if($result) {
 		echo 'Account Updated';
 	}
-	
-	//update profile photo in database
-	if(isset($_FILES['profile_photo'])) {
-		$name = $_FILES['profile_photo']['name'];
-		$size = $_FILES['profile_photo']['size'];
-		$type = $_FILES['profile_photo']['type'];
-		$temp = $_FILES['profile_photo']['tmp_name'];
-		$error = $_FILES['profile_photo']['error'];
-		
-		//check if there is an error
-		if($error > 0) {
-			echo 'Error uploading photo';
-		}
-		//check file type
-		if($type != 'image/jpeg' && $type != 'image/png') {
-			echo 'Invalid file type';
-		}
-		//check file size
-		if($size > 500000) {
-			echo 'File size too large';
-		}
-		
-		//upload photo
-		$location = 'uploads/';
-		move_uploaded_file($temp, $location.$name);
-		
-		//update photo in database
-		$query = "UPDATE photos SET pic1 = '$name' WHERE user_id = '$id'";
-		$result = mysqli_query($conn, $query);
-		if($result) {
-			echo 'Photo Updated';
-		}
-	}
-	
-	//delete profile photo from database
-	if(isset($_POST['delete_photo'])) {
-		$query = "UPDATE photos SET pic1 = '' WHERE user_id = '$id'";
-		$result = mysqli_query($conn, $query);
-		if($result) {
-			echo 'Photo Deleted';
-		}
-	}
+
 }
 ?>
-
 
 
 
