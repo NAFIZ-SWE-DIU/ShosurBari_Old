@@ -40,7 +40,12 @@ $(document).ready(function(){
 });
 </script>
 
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
+<!-- Country Code with Flag for Number input field -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/16.0.8/js/intlTelInput.min.js"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/16.0.8/css/intlTelInput.css" />
 
 </head>
 <body>
@@ -98,9 +103,18 @@ $(document).ready(function(){
 			<div class="form-group">
 		     <!--  <label for="edit-name">Phone Number<span class="form-required" title="This field is required.">*</span></label> -->
 		      <input type="number" id="pnumber" placeholder="Phone Number" name="pnumber" value="" size="60" minlength="10" maxlength="15" class="form-text required">
-			  <span id="pnumber_error" style="color:red; font-size:13px;"></span>
+			  <br><span id="pnumber_error" style="color:red; font-size:13px;"></span>
 			</div>
 
+			<script>
+    $(document).ready(function() {
+      var input = document.querySelector("#pnumber");
+      window.intlTelInput(input, {
+        separateDialCode: true,
+        preferredCountries: ["bd"]
+      });
+    });
+  </script>
 		    <div class="form-group">
 		      <!-- <label for="edit-pass">Password<span class="form-required" title="This field is required.">*</span></label> -->
 		      <input type="password" id="pass_1" placeholder="New Password" name="pass_1" size="60" maxlength="128" class="form-text required">
@@ -132,18 +146,115 @@ $(document).ready(function(){
     </script>
 
 
-            <div class="form-group">
-				<label for="sex">Whos Biodata?<span class="form-required" title="This field is required." required>*</span></label>
-				<select id="genderfm" name="gender">
-					<option hidden selected value="" required></option>
-		            <option value="Male">Male</option>
-		            <option value="Female">Female</option>
-	            </select>
-				<span id="genderfm_error" style="color:red; font-size:13px;"></span>
-				    <div class="gender_notification">
-                        <p style="color:green; font-size:13px;">For whom you are opening this account and for whom you will post the biodata, is he/she a Male or a Female? If you want to post your own biodata, select your gender.</p>
-	                </div>
-	        </div>
+
+
+
+    
+	<style type="text/css">
+    .gender-radio-select{
+        padding: 00px 10px;
+        display: flex;
+		align-items: center;
+		border: 2px solid #ccc;
+        border-radius: 4px;
+        -webkit-border-radius: 4px;    }
+
+    .gender-radio-select .gender-option{
+        margin: 10px;
+    }
+    .gender-radio-select .gender-option input[type="radio"]{
+		display: none;
+    }
+    .gender-radio-select .gender-option label{
+        display: inline-block;
+        padding: 5px;
+        font-size: 14px;
+        transition: all 0.3s;
+		font-weight: 500;
+        cursor: pointer;
+		margin-top: 4px;
+		border: 1px solid gray;
+		border-radius: 3px
+
+    }
+    .gender-radio-select .gender-option label i{
+        font-size: 17px;
+    }
+    .gender-radio-select .gender-option input[type="radio"]:checked + label{
+        background: #02a7e6;
+        border: 1px solid #ccc;
+        color: #fff;
+		border-radius: 3px
+    }
+</style>
+<div class="gender-radio-select">
+<label for="sex">Whos Biodata?<span class="form-required" title="This field is required.">*</span></label>
+        <div class="gender-option">
+            <input type="radio" name="gender" id="male" value="Male" onclick="genderSelected(this);"/>
+            <label for="male"><i class="fa fa-male"></i> Male</label>
+			<p id="error_msg" style="color:red; font-size:13px; marging-bottom:100px;"></p>
+        </div>
+        <div class="gender-option">
+            <input type="radio" name="gender" id="female" value="Female" onclick="genderSelected(this);"/>
+            <label for="female"><i class="fa fa-female"></i> Female</label><br>
+		</div>
+    </div>
+	<div class="gender-error">
+		<span style="display:none;" id="gender-error" class="error"></span>
+    </div>
+	<style>
+		.gender-error{
+	display: block;
+    margin-top: -15px;
+    margin-bottom: 25px;
+		}
+    .error {
+    border: 1px solid red;
+	text-align:center;
+	margin-top: 13px;
+    border-radius: 4px;
+    color: red;
+    font-size: 13px;    }
+    .success {
+      border: 1px solid green;
+    }
+  </style>
+	<script>
+    const form = document.querySelector('form');
+    const maleRadio = document.querySelector('#male');
+    const femaleRadio = document.querySelector('#female');
+    const genderError = document.querySelector('#gender-error');
+
+    form.addEventListener('submit', (e) => {
+      let errors = 0;
+
+      if (!maleRadio.checked && !femaleRadio.checked) {
+        genderError.innerHTML = 'Please select Gender Whos Biodata!';
+        genderError.style.display = 'block';
+        document.querySelectorAll('input[name=gender]').forEach(r => {
+          r.classList.add('error');
+        });
+
+        errors++;
+      }
+
+      if (maleRadio.checked || femaleRadio.checked) {
+        genderError.innerHTML = '';
+        genderError.style.display = 'none';
+        document.querySelectorAll('input[name=gender]').forEach(r => {
+          r.classList.remove('error');
+        });
+      }
+
+      if (errors > 0) {
+        e.preventDefault();
+        window.scrollTo(0, 0);
+      }
+    });
+  </script>
+
+
+
 
 			<div class="form-actions">
 			<button  type="submit" id="edit-submit" name="op" class="btn_4 submit"> <span> </span> Create Account</button>
