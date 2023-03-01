@@ -428,7 +428,7 @@ ul.nav_1 li.last{
     width: 35%;
     color: black;
     outline: none;
-    height: 35px;
+    height: 33px;
     margin-top: 7px;
     margin-bottom: 7px;
 
@@ -865,7 +865,7 @@ ul#flexiselDemo3 h3 a:hover{
    color:#ff0080;
 }
 span.m_3{
-	color:#ff0080;
+	color:#02a7e6;
     font-size: 14px;
 }
 .suceess_story {
@@ -2574,7 +2574,7 @@ label{
 .form-text, .form-select, .form-textarea {
     display: block;
     width: 100%;
-    height: 45px;
+    height: 38px;
     padding: 6px 12px;
     font-size: 16px;
     line-height: 1.5;
@@ -2751,7 +2751,7 @@ label{
     background: #00c875;
     border-radius: 6px;
     width: 100%;
-    padding: 3px;
+    padding: 4px;
     display: inline-block;
     color: #fff;
     text-transform: uppercase;
@@ -2780,7 +2780,7 @@ label{
     right: 0px;
    /* top: 37px;
     padding: 1px; */
-    top: -3px;
+    top: -9px;
     padding: 15px;
     font-size: 16px;
     cursor: pointer;
@@ -3901,6 +3901,20 @@ h6{
 .biodatanumber h2{
     font-size: 18px;
 }
+.update-image-button{
+    font-size: 13px;
+    display: block;
+}
+.deleteimage {
+    padding: 10px;
+    margin-top: -15px;
+    margin-left: -9px;
+    width: 85%;
+}
+.update-image img {
+    height: 100%;
+    width: 100%;
+}
 }
 
 
@@ -4109,6 +4123,20 @@ h6{
 .biodatanumber h2{
     font-size: 16px;
 }
+.update-image-button{
+    font-size: 13px;
+    display: block;
+}
+.deleteimage {
+    padding: 10px;
+    margin-top: -15px;
+    margin-left: -9px;
+    width: 85%;
+}
+.update-image img {
+    height: 100%;
+    width: 100%;
+}
 }
 
 
@@ -4273,6 +4301,20 @@ h6{
 }
 .biodatanumber h2{
     font-size: 12px;
+}
+.update-image-button{
+    font-size: 13px;
+    display: block;
+}
+.deleteimage {
+    padding: 10px;
+    margin-top: -15px;
+    margin-left: -9px;
+    width: 85%;
+}
+.update-image img {
+    height: 100%;
+    width: 100%;
 }
 }
 
@@ -4496,6 +4538,20 @@ h5{
 }
 h6{
     font-size: 10px;
+}
+.update-image-button{
+    font-size: 13px;
+    display: block;
+}
+.deleteimage {
+    padding: 10px;
+    margin-top: -15px;
+    margin-left: -9px;
+    width: 85%;
+}
+.update-image img {
+    height: 100%;
+    width: 100%;
 }
 }
 
