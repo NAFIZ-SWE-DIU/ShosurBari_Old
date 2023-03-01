@@ -32,9 +32,9 @@
     		<div class="col-md-2 col_2">
     			<h4>Social</h4>
     			<ul class="footer_social">
-				  <li><a href="#"><i class="fa fa-facebook fa1"> </i></a></li>
+				  <li><a href="https://www.facebook.com/ShosurBari.Matrimony" target="blank"><i class="fa fa-facebook fa1"> </i></a></li>
 				  <li><a href="#"><i class="fa fa-twitter fa1"> </i></a></li>
-				  <li><a href="#"><i class="fa fa-google-plus fa1"> </i></a></li>
+				  <li><a  href="mailto:shosurbari@gmail.com" target="blank"><i class="fa fa-google-plus fa1"> </i></a></li>
 				  <li><a href="#"><i class="fa fa-youtube fa1"> </i></a></li>
 				  <li><a href="#"><i class="fa fa-boxed fa-fw fa-linkedin"> </i></a></li>
 
