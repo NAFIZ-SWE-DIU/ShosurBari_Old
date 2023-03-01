@@ -310,7 +310,7 @@ if($row){
 function checkInput(input) {
     let value = input.value;
     // Allow only numbers and spaces
-    let regex = /^[A-Za-z0-9 ]+$/;
+    let regex = /^[A-Za-z0-9-. ]+$/;
     if (!regex.test(value)) {
         document.getElementById('height-error-message').innerHTML = "Please enter a valid height. Ex: 5 ft 7 in. Can't used any symble.";
         input.value = '';
