@@ -10,8 +10,8 @@ if(isloggedin()){
 } else{
    header("location:login.php");
 }
-
-
+//calling photo uploader function
+if ($_SERVER['REQUEST_METHOD'] == 'POST'){ uploadphoto($id); }
 ?>
 <!DOCTYPE HTML>
 <html>
@@ -97,8 +97,8 @@ $email=$row['email'];
 
 <style>
 	.update-image img{
-	height: 160px;
-    width: 160px;
+	height: 145px;
+    width: 100%;
     padding: 2px;
     background: #f5f2f2;
     box-shadow: 0px 2px 7px 6px rgb(0 0 0 / 20%);
@@ -108,7 +108,7 @@ $email=$row['email'];
     margin-bottom: 20px;
     border-radius: 4px;
 	}
-.update-image-button{
+    .update-image-button{
         font-size: 14px;
         white-space: nowrap;
 		display: flex;
@@ -162,7 +162,7 @@ if($row){
 
 
 		  <div class="deleteimage">
-		  <button style=" margin-top:10px;  margin-bottom:10px; padding: 5px 5%; font-size: 13px; font-weight:bold; background: red;"  type="submit" name="delete_photo" value="Delete" class="btn_1">Delete Photo</button>
+		  <button style=" margin-top:5px;  margin-bottom:5px; padding: 5px 5%; font-size: 13px; font-weight:bold; background: red;"  type="submit" name="delete_photo" value="Delete" class="btn_1">Delete Photo</button>
 		  <?php
 if(isset($_POST['delete_photo'])){
   // delete photo from profile folder
@@ -185,7 +185,7 @@ if(isset($_POST['delete_photo'])){
 
 
 
-<input style="margin-top:10px;  margin-bottom:10px; width:60%; background:green; color:white; font-weight:bold;" type="file" id="edit-name" name="pic1" value="<?php
+<input style="margin-top:5px;  margin-bottom:5px; width:90%; background:green; color:white; font-weight:bold;" type="file" id="edit-name" name="pic1" value="<?php
 if(isset($_POST['submit'])){
     $user_id = $_POST['user_id'];
 
@@ -200,7 +200,7 @@ if(isset($_POST['submit'])){
 ?>" class="form-file required">
 
 
-<input style="margin-top:10px;  margin-bottom:10px; padding: 5px 5%; font-size: 13px; font-weight:bold;" type="submit" id="edit-submit" name="op" value="Photo Upload" class="btn_1 submit">
+<input style="margin-top:5px;  margin-bottom:5px; padding: 5px 5%; font-size: 13px; font-weight:bold;" type="submit" id="edit-submit" name="op" value="Update Photo" class="btn_1 submit">
 </div>
 </div>
 
@@ -252,7 +252,7 @@ if(isset($_POST['submit'])){
 	<input type="text" name="email" class="form-text" value="<?php echo $email; ?>" />
 
 		   <div class="form-actions">
-        <button type="submit" name="update_account" value="Update Account" class="btn_1 submit"  > <span> </span> Update Your Account</button>
+        <button type="submit" name="update_account" value="Update Account" class="btn_1 submit"  > <span> </span> Update Password</button>
        </div>
 
 
