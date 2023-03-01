@@ -61,8 +61,6 @@ function initClock() {
       var pnumber = document.forms["myForm"]["pnumber"].value;
       var pass_1 = document.forms["myForm"]["pass_1"].value;
       var pass_2 = document.forms["myForm"]["pass_2"].value;
-      var genderfm = document.forms["myForm"]["genderfm"].value;
-
 
     
       //Full Name validation
@@ -186,18 +184,11 @@ function initClock() {
         document.getElementById('pass_2_error').innerHTML = "";
       }
 
-
-           //Gender validation
-           if (genderfm == "") {
-            document.getElementById('genderfm').scrollIntoView({
-              behavior: 'smooth',
-              block: 'center',
-            }); 
-            document.getElementById('genderfm_error').innerHTML = "Warning: Please Select Gender!";
-            return false;
-        }else{
-          document.getElementById('genderfm').style.borderColor = "green";
-          document.getElementById('genderfm_error').innerHTML = "";
-        }
+        //Gender Valid
     }
-		// Form Input field when error the show border red and scroll up start
+		// Form Input field when error the show border red and scroll up end
+
+
+
+
+        
