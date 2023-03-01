@@ -83,24 +83,8 @@ $username=$row['username'];
         <ul class="nav navbar-nav nav_1">
             <li><a href="view_profile.php?id=<?php echo $id;?>">View Profile</a></li>
             <li><a href="editbiodata.php?id=<?php echo $id;?>">Post Biodata</a></li>
-            <li><a href="photouploader.php?id=<?php echo $id;?>">Upload Photos</a></li> 
             <li><a href="updateaccount.php?id=<?php echo $id;?>">Update Account</a></li> 
 
-            
-            <li class="dropdown">
-              <a href="#" class="dropdown-toggle" data-toggle="dropdown">Update Biodata<span class="caret"></span></a>
-              <ul class="dropdown-menu" role="menu">
-                <li><a href="Personal_Physical.php?id=<?php echo $id;?>">1: Personal & Physical</a></li>
-                <li><a href="Personal_LifeStyle.php?id=<?php echo $id;?>">2: Personal & Life Style</a></li>
-                <li><a href="Educational_Qualifications.php?id=<?php echo $id;?>">4: Address Details</a></li>
-                <li><a href="Address_details.php?id=<?php echo $id;?>">3: Educational Qualifications</a></li>
-                <li><a href="Family_Information.php?id=<?php echo $id;?>">5: Family Information</a></li>
-                <li><a href="Marriage_Related_Information_M.php?id=<?php echo $id;?>">6: Marriage related Information</a></li>
-                <li><a href="Marriage_Related_Information_F.php?id=<?php echo $id;?>">6: Marriage related Information</a></li>
-                <li><a href="Religion_Details.php?id=<?php echo $id;?>">7: Religion Details</a></li>
-                <li><a href="Expected_Life_Partner.php?id=<?php echo $id;?>">8: Expected Life Partner</a></li>
-              </ul>
-            </li>
 
             <li class="dropdown">
               <a href="#" class="dropdown-toggle" data-toggle="dropdown">Search<span class="caret"></span></a>
