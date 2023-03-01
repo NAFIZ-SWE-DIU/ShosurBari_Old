@@ -622,14 +622,13 @@ if(move_uploaded_file($_FILES['pic1']['tmp_name'], $target1))
 {
 
 // Tells you if its all ok
-echo "The files has been uploaded, and your information has been added to the directory";
+echo "Thanlks! Successfull Uploaded Your Profile Photo.";
 }
 else {
 
 // Gives and error if its not
-echo "Sorry, there was a problem uploading your file.";
+echo "Sorry, there was a problem uploading your photo.";
 }
-
 
 }
 /*-- -- -- -- -- -- -- -- -- -- -- -- -- ---- -- --
