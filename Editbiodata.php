@@ -294,17 +294,39 @@ if($row){
 	                    </select>
 	                </div>
 
-
+<style>
+#height-error-message {
+    color: red;
+    font-size: 12px;
+}
+	</style>
 					<div class="shosurbari-biodata-field">
 		                <label for="edit-name">Height<span class="form-required" title="This field is required.">*</span></label>
-			            <input type="text" id="edit-name" name="height" value="<?php echo $height; ?>" size="100" maxlength="100" class="form-text" required>
-                    </div>
+			            <input type="text" id="edit-name" name="height" value="<?php echo $height; ?>" size="100" maxlength="100"
+						 class="form-text" placeholder="Please enter your height (5 ft 7 in)" oninput="checkInput(this)" required>
+						 <span style="color: red; font-size: 13px;" class="error-message" id="height-error-message"></span>
+					</div>
+					<script>
+function checkInput(input) {
+    let value = input.value;
+    // Allow only numbers and spaces
+    let regex = /^[A-Za-z0-9 ]+$/;
+    if (!regex.test(value)) {
+        document.getElementById('height-error-message').innerHTML = "Please enter a valid height. Ex: 5 ft 7 in. Can't used any symble.";
+        input.value = '';
+    } else {
+        document.getElementById('height-error-message').innerHTML = '';
+    }
+}
+	</script>
+
+
 
 					
 					<div class="shosurbari-biodata-field">
 		                <label for="edit-name">Weight <span class="form-required" title="This field is required.">*</span></label>
 			            <input type="text" id="edit-name" name="weight" value="<?php echo $weight; ?>" size="100" maxlength="100" class="form-text" required>
-		            </div>
+					</div>
 
 					<div class="shosurbari-biodata-field">
 		                <label for="edit-name">Physical Status<span class="form-required" title="This field is required.">*</span></label>
