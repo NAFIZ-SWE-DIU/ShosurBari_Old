@@ -56,20 +56,20 @@ $(document).ready(function(){
         <dl class="grid_4">
             <dt>Address :</dt>
             <dd>
-                8901 Nulla Pariatur, <br>
+                Bonpara - Natore, Rajshai, Bangladesh <br>
                 Ipsum, D05 87GR.
             </dd>
         </dl>
         <dl class="grid_4">
-            <dt>Telephones :</dt>
+            <dt>Phone Number :</dt>
             <dd>
-                +1 800 245 4578 <br>
-                +1 800 789 5478
+                +880 1737 226 404 <br>
+                +880 1568 879 478
             </dd>
         </dl>
         <dl class="grid_4">
             <dt>E-mail :</dt>
-            <dd><a href="malito:codeprojectsorg@gmail.com">mail(at)Code-projects</a></dd>
+            <dd><a href="mailto:shosurbari@gmail.com" target="blank">Shosurbari@gmail.com</a></dd>
         </dl>
       </address>
     </div>
