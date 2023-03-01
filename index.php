@@ -440,27 +440,26 @@ $(document).ready(function(){
 				
 
 
-					$sql3="SELECT * FROM 2bd_personal_lifestyle";		
+					$sql3="SELECT * FROM 2bd_personal_lifestyle WHERE user_id=$profid";		
 					$result3=mysqlexec($sql3);
-					if($result3){
+					if($result3)
 						while($row3=mysqli_fetch_assoc($result3))
 						$occupation=$row3['occupation'];
-					    }
+				
 						
 
-							$sql4="SELECT * FROM 4bd_address_details";
+							$sql4="SELECT * FROM 4bd_address_details WHERE user_id=$profid";
 							$result4=mysqlexec($sql4);
-							if($result4){
+							if($result4)
 								while($row4=mysqli_fetch_assoc($result4))
 								$permanent_address=$row4['permanent_address'];
-							    }
+							    
 
-								$sql5="SELECT * FROM 8bd_religion_details";
+								$sql5="SELECT * FROM 8bd_religion_details WHERE user_id=$profid";
 								$result5=mysqlexec($sql5);
-								if($result5){
+								if($result5)
 									while($row5=mysqli_fetch_assoc($result5))
 									$religion=$row5['religion'];
-									}
 								
 				
 
@@ -480,7 +479,11 @@ $(document).ready(function(){
 					echo "<div class=\"layer m_1 hidden-link hover-animation delay1 fade-in\">";
 					echo "<div class=\"center-middle\">About {$name}</div>";
 					echo "</div>";
-					echo "<h3><span class=\"m_3\">Biodata Number : {$profid}</span><br>Gender: {$biodatagender} <br> Occupation: {$occupation} <br> Religion: {$religion} <br> Address: {$permanent_address}</h3></a></div>";
+					echo "<h3><span style=\"color:#02a7e6; font-size:14px;\" class=\"m_3\">Biodata Number : {$profid}</span><br>
+					<span style=\"color:black; font-size:13px;\"> Gender :</span> <span style=\"color:#ff0080; font-size:12px;\"> {$biodatagender}</span><br>
+					<span style=\"color:black; font-size:13px;\"> Occupation :</span> <span style=\"color:#ff0080; font-size:12px;\"> {$occupation}</span><br>
+					<span style=\"color:black; font-size:13px;\"> Religion :</span> <span style=\"color:#ff0080; font-size:12px;\"> {$religion}</span> <br>
+					<span style=\"color:black; font-size:13px;\">Address :</span> <span style=\"color:#ff0080; font-size:12px;\"> {$permanent_address}</span></h3></a></div>";
 					echo "</li>";
 				
         	}
@@ -496,7 +499,7 @@ $(document).ready(function(){
 			$("#flexiselDemo3").flexisel({
 				visibleItems: 6,
 				animationSpeed: 700,
-				autoPlay:false,
+				autoPlay:true,
 				autoPlaySpeed: 5000,    		
 				pauseOnHover: true,
 				enableResponsiveBreakpoints: true,
