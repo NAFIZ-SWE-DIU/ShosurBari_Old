@@ -248,8 +248,10 @@ if(isset($_POST['submit'])){
         });
     </script>
 	
+    <div class="form-group">
 	<label>Email Address</label>
 	<input type="text" name="email" class="form-text" value="<?php echo $email; ?>" />
+    </div>
 
 		   <div class="form-actions">
         <button type="submit" name="update_account" value="Update Account" class="btn_1 submit"  > <span> </span> Update Password</button>
