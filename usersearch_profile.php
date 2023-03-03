@@ -40,6 +40,17 @@ $(document).ready(function(){
 <!-- ============================  Navigation Start =========================== -->
 <?php include_once("includes/navigation.php");?>
 <!-- ============================  Navigation End ============================ -->
+<div class="grid_3">
+  <div class="container">
+   <div class="breadcrumb1">
+     <ul>
+        <a href="index.php"><i class="fa fa-home home_1"></i></a>
+        <span class="divider">&nbsp;<|>&nbsp;</span>
+        <li class="current-page"><h4>User Home</h4></li>
+     </ul>
+   </div>
+  </div>
+</div>
 
 
 
@@ -49,8 +60,8 @@ $(document).ready(function(){
 
 
 <div class="flex-container-shosurbaribio">
-<h1>Featured Profiles</h1>
        	<div class="heart-divider">
+            <h1>Find your perfect <span>Partner</span></h1>
 			<span class="grey-line"></span>
 			<i class="fa fa-heart pink-heart"></i>
 			<i class="fa fa-heart grey-heart"></i>
@@ -105,13 +116,13 @@ $(document).ready(function(){
 						//got profilepic
 						//
 					//Printing the html
-					echo "<div style=\" background:;\" class=\"biodatalist\"><a href=\"view_profile.php?id={$profid}\">";
+					echo "<div style=\" background:;\" class=\"biodatalist\">";
 					
 
-                    echo '<div class="sb_bio_header">';
+                    echo "<div class=\"sb_bio_header\"> <a href=\"view_profile.php?id={$profid}\" target=\"_blank\">";
                     echo "<img  class=\"img-responsive\" src=\"profile/{$profid}\/{$pic1}\"/>";
                     echo "<div class=\"sb_bio_number\"><span class=\"sb_biodatanumber\"> {$profid} <br> Biodata Number </span> </div>";
-                    echo '</div>';
+                    echo "</div></a>";
 
                     echo "<div class=\"sb_user\">
 					<span class=\"sb_single_data\"> <span class=\"sb_value\"> Gender </span>          <span class=\"sb_data\"> {$biodatagender}</span></span>
@@ -119,8 +130,8 @@ $(document).ready(function(){
                     <span class=\"sb_single_data\"> <span class=\"sb_value\"> Height </span>  <span class=\"sb_data\">{$height}</span></span>
 					<span class=\"sb_single_data\"> <span class=\"sb_value\"> Occupation </span>      <span class=\"sb_data\"> {$occupation}</span></span>
 					<span class=\"sb_single_data\"> <span class=\"sb_value\"> Birth Year</span>        <span class=\"sb_data\"> {$dateofbirth}</span></span>
-                    <button class=\"view_profile\"> View Full Profile </button>
-                    </div></a></div>";
+                    <button class=\"view_profile\"><a href=\"view_profile.php?id={$profid}\" target=\"_blank\"> View Full Profile </a></button>
+                    </div></div>";
         	}
 		}
 
@@ -155,6 +166,7 @@ $(window).load(function() {
 .flex-container-shosurbaribio {
     display: flex;
     flex-wrap: wrap;
+    margin-top: -50px;
 }
 .sb_biodata_profile{
     display: flex;
@@ -168,7 +180,7 @@ $(window).load(function() {
     }
 
 .biodatalist{
-border: 1px solid #ff0080;
+    border: 1px solid #ff0080;
     border-radius: 6px;
     width: 30%;
     gap: 1.5rem;
@@ -185,6 +197,8 @@ background: #ff0080;
 /* background: #02a7e6; */
 margin: 0px;
 padding-top: 20px;
+border: 1px solid #02a7e6;
+border-radius: 5px 5px 0px 0px;
 }
 
 .biodatalist img{
@@ -202,7 +216,7 @@ padding-top: 20px;
 
 .sb_bio_number{
     text-align: center;
-    border-bottom: 2px solid #02a7e6; ;
+ /*   border-bottom: 2px solid #02a7e6; */
     padding: 10px;
     border-bottom-left-radius: 5px;
     border-bottom-right-radius: 5px;
@@ -210,8 +224,9 @@ padding-top: 20px;
  /*   background: #02a7e6; */
 }
 .sb_biodatanumber{
-    font-size: 22px;
+    font-size: 24px;
     color: yellow;
+    font-weight: 500;
 }
 
 .sb_user{
@@ -273,5 +288,8 @@ padding-top: 20px;
 .view_profile:hover{
   background:#02a7e6;
   color: yellow;
+}
+.view_profile a{
+  color: white;
 }
 </style>	
