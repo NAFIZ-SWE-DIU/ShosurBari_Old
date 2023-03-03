@@ -118,7 +118,7 @@ $(document).ready(function(){
                     <span class=\"sb_single_data\"> <span class=\"sb_value\"> Skin Tones </span>  <span class=\"sb_data\">{$Skin_tones}</span></span>
                     <span class=\"sb_single_data\"> <span class=\"sb_value\"> Height </span>  <span class=\"sb_data\">{$height}</span></span>
 					<span class=\"sb_single_data\"> <span class=\"sb_value\"> Occupation </span>      <span class=\"sb_data\"> {$occupation}</span></span>
-					<span class=\"sb_single_data\"> <span class=\"sb_value\"> Date of Birth </span>        <span class=\"sb_data\"> {$dateofbirth}</span></span>
+					<span class=\"sb_single_data\"> <span class=\"sb_value\"> Birth Year</span>        <span class=\"sb_data\"> {$dateofbirth}</span></span>
                     <button class=\"view_profile\"> View Full Profile </button>
                     </div></a></div>";
         	}
