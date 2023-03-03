@@ -116,13 +116,13 @@ $(document).ready(function(){
 						//got profilepic
 						//
 					//Printing the html
-					echo "<div style=\" background:;\" class=\"biodatalist\">";
+					echo "<div class=\"biodatalist\">";
 					
 
-                    echo "<div class=\"sb_bio_header\"> <a href=\"view_profile.php?id={$profid}\" target=\"_blank\">";
-                    echo "<img  class=\"img-responsive\" src=\"profile/{$profid}\/{$pic1}\"/>";
+                    echo "<div class=\"sb_bio_header\">";
+                    echo "<a href=\"view_profile.php?id={$profid}\" target=\"_blank\"> <img  class=\"img-responsive\" src=\"profile/{$profid}\/{$pic1}\"/></a>";
                     echo "<div class=\"sb_bio_number\"><span class=\"sb_biodatanumber\"> {$profid} <br> Biodata Number </span> </div>";
-                    echo "</div></a>";
+                    echo "</div>";
 
                     echo "<div class=\"sb_user\">
 					<span class=\"sb_single_data\"> <span class=\"sb_value\"> Gender </span>          <span class=\"sb_data\"> {$biodatagender}</span></span>
@@ -192,6 +192,12 @@ $(window).load(function() {
     background: white;
     box-shadow: 0 4px 8px 0 rgb(0 0 0 / 20%), 0 6px 20px 0 rgb(0 0 0 / 19%);
 }
+.biodatalist:hover{
+    background: #02a7e624;
+    box-shadow: 0 4px 8px 0 rgb(0 0 0 / 20%), 0 6px 20px 0 rgb(0 0 0 / 19%);
+}
+
+
 .sb_bio_header{
 background: #ff0080;
 /* background: #02a7e6; */
