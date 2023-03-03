@@ -48,15 +48,15 @@ $(document).ready(function(){
 
 
 
-<div class="sb_profile">
-      <div class="sb_biodata_profile">
-      	<h1>Featured Profiles</h1>
+<div class="flex-container">
+<h1>Featured Profiles</h1>
        	<div class="heart-divider">
 			<span class="grey-line"></span>
 			<i class="fa fa-heart pink-heart"></i>
 			<i class="fa fa-heart grey-heart"></i>
 			<span class="grey-line"></span>
         </div>
+      <div class="sb_biodata_profile">
 		
         <?php
         	$sql="SELECT * FROM 1bd_personal_physical";
@@ -65,7 +65,9 @@ $(document).ready(function(){
         		while($row=mysqli_fetch_assoc($result)){
         			$profid=$row['user_id'];
         			$biodatagender=$row['biodatagender'];
-				
+                    $Skin_tones=$row['Skin_tones'];
+                    $height=$row['height'];
+                    $dateofbirth=$row['dateofbirth'];
 
 
 					$sql3="SELECT * FROM 2bd_personal_lifestyle WHERE user_id=$profid";		
@@ -76,18 +78,19 @@ $(document).ready(function(){
 				
 						
 
-							$sql4="SELECT * FROM 4bd_address_details WHERE user_id=$profid";
+						/*	$sql4="SELECT * FROM 4bd_address_details WHERE user_id=$profid";
 							$result4=mysqlexec($sql4);
 							if($result4)
 								while($row4=mysqli_fetch_assoc($result4))
 								$permanent_address=$row4['permanent_address'];
-							    
+							    */
 
-								$sql5="SELECT * FROM 8bd_religion_details WHERE user_id=$profid";
+						/*		$sql5="SELECT * FROM 8bd_religion_details WHERE user_id=$profid";
 								$result5=mysqlexec($sql5);
 								if($result5)
 									while($row5=mysqli_fetch_assoc($result5))
 									$religion=$row5['religion'];
+                                    */
 								
 				
 
@@ -103,14 +106,15 @@ $(document).ready(function(){
 						//
 					//Printing the html
 					echo "<div class=\"biodatalist\"><a href=\"view_profile.php?id={$profid}\">";
-					echo "<img src=\"profile/{$profid}\/{$pic1}\"/>";
-                    echo "<div class=\"sb_user\"><span class=\"sb_biodatanumber\"> Biodata Number <br> {$profid}</span> </div>";
+					echo "<img  class=\"img-responsive\" src=\"profile/{$profid}\/{$pic1}\"/>";
+                    echo "<div class=\"sb_bio_number\"><span class=\"sb_biodatanumber\"> {$profid} <br> Biodata Number </span> </div>";
 					echo "<div class=\"sb_user\">
-                    <span class=\"sb_single_data\"> <span class=\"sb_value\"> Biodata Number </span>  <span class=\"sb_data\">{$profid}</span></span><br>
-					<span class=\"sb_single_data\"> <span class=\"sb_value\"> Gender </span>          <span class=\"sb_data\"> {$biodatagender}</span></span><br>
-					<span class=\"sb_single_data\"> <span class=\"sb_value\"> Occupation </span>      <span class=\"sb_data\"> {$occupation}</span></span><br>
-					<span class=\"sb_single_data\"> <span class=\"sb_value\"> Religion </span>        <span class=\"sb_data\"> {$religion}</span></span> <br>
-					<span class=\"sb_single_data\"> <span class=\"sb_value\"> Address </span>         <span class=\"sb_data\"> {$permanent_address}</span></span>
+					<span class=\"sb_single_data\"> <span class=\"sb_value\"> Gender </span>          <span class=\"sb_data\"> {$biodatagender}</span></span>
+                    <span class=\"sb_single_data\"> <span class=\"sb_value\"> Skin Tones </span>  <span class=\"sb_data\">{$Skin_tones}</span></span>
+                    <span class=\"sb_single_data\"> <span class=\"sb_value\"> Height </span>  <span class=\"sb_data\">{$height}</span></span>
+					<span class=\"sb_single_data\"> <span class=\"sb_value\"> Occupation </span>      <span class=\"sb_data\"> {$occupation}</span></span>
+					<span class=\"sb_single_data\"> <span class=\"sb_value\"> Date of Birth </span>        <span class=\"sb_data\"> {$dateofbirth}</span></span>
+                    <button class=\"view_profile\"> View Full Profile </button>
                     </div></a></div>";
         	}
 		}
@@ -143,43 +147,63 @@ $(window).load(function() {
 
 
 <style>
-
-.sb_biodatanumber{
-    font-size: 22px;
-    color: #ff0080;
+.flex-container {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
 }
-    .sb_biodata_profile{
+.sb_biodata_profile{
     display: flex;
     flex-wrap: wrap;
-    width: 100%
-    margin: 20px;
+    width: 100%;
+    margin: 0px;
     padding: 20px;
     }
-.biodatalist {
-    width: 33.333%;
-    padding: 10px;
-    margin-top: 5px;
-    margin-bottom: 0px;
-    font-weight: 400;
+
+.biodatalist{
+border: 2px solid #ff0080;
+    border-radius: 6px;
+    width: 30%;
+    gap: 1.5rem;
+    padding: 0px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 20px;
+    margin-top: 20px;
+    background: white;
+    box-shadow: 0 4px 8px 0 rgb(0 0 0 / 20%), 0 6px 20px 0 rgb(0 0 0 / 19%);
 }
 .biodatalist img{
-    
-    width: 170px;
-    height: 170px;
-    padding: 10px;
-    margin-top: 5px;
-    margin-bottom: 0px;
-    margin-left: 100px;
+    width: 120px;
+    height: 120px;
     border-radius: 100px;
-}
-.sb_user{
+    padding: 2px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: auto;
+    margin-top: 20px;
     border: 1px solid #d5d5d5;
-    padding: 5px;
-    width: 100%;
-    margin-top: 0px;
-    margin-bottom: 30px;
-    text-align: center;
 }
+
+.sb_bio_number{
+    text-align: center;
+    border-bottom: 2px solid #02a7e6; ;
+    padding: 10px;
+    border-bottom-left-radius: 5px;
+    border-bottom-right-radius: 5px;
+}
+.sb_biodatanumber{
+    font-size: 20px;
+    color: #ff0080;
+}
+
+.sb_user{
+    text-align: center;
+    padding: 20px 20px 25px;
+    border-bottom-left-radius: 5px;
+    border-bottom-right-radius: 5px;
+}
+
 .sb_single_data{
     display: flex;
     flex-wrap: wrap;
@@ -196,20 +220,35 @@ $(window).load(function() {
 }
 
 .sb_user .sb_value{
-    flex: 0 0 50%;
-    text-align: center;
-    padding: 7px;
-    color: #434343;
-    border: 2px solid #d5d5d5;
+    color: black;
+    padding: 6px;
+    font-size: 15px;
+    font-weight: 400;
+    border: 1px solid #d5d5d5;
+    border-style: groove;
+    width: 35%;
+    position: inherit;
 }
 
 .sb_user .sb_data{
-    flex: 0 0 50%;
-    text-align: center;
-    padding: 7px;
-    color: #434343;
-    border: 2px solid #d5d5d5;
+    color: black;
+    padding: 6px;
+    font-size: 15px;
+    font-weight: 400;
+    border: 1px solid #d5d5d5;
+  /*  border: 1px #02a7e6; */
+    border-style: groove;
+    width: 65%;
+    position: inherit;
 }
 
-
+.view_profile{
+    text-align: center;
+    border: 1px solid #d5d5d5;
+    padding: 10px;
+    margin-top: 30px;
+    margin-bottom: 0px;
+    border-bottom-left-radius: 5px;
+    border-bottom-right-radius: 5px;
+}
 </style>	
