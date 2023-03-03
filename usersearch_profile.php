@@ -3,7 +3,7 @@
 <!DOCTYPE HTML>
 <html>
 <head>
-<title>Home - ShosurBari</title>
+<title>User Search - ShosurBari</title>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 
@@ -48,7 +48,7 @@ $(document).ready(function(){
 
 
 
-<div class="flex-container">
+<div class="flex-container-shosurbaribio">
 <h1>Featured Profiles</h1>
        	<div class="heart-divider">
 			<span class="grey-line"></span>
@@ -105,10 +105,15 @@ $(document).ready(function(){
 						//got profilepic
 						//
 					//Printing the html
-					echo "<div class=\"biodatalist\"><a href=\"view_profile.php?id={$profid}\">";
-					echo "<img  class=\"img-responsive\" src=\"profile/{$profid}\/{$pic1}\"/>";
+					echo "<div style=\" background:;\" class=\"biodatalist\"><a href=\"view_profile.php?id={$profid}\">";
+					
+
+                    echo '<div class="sb_bio_header">';
+                    echo "<img  class=\"img-responsive\" src=\"profile/{$profid}\/{$pic1}\"/>";
                     echo "<div class=\"sb_bio_number\"><span class=\"sb_biodatanumber\"> {$profid} <br> Biodata Number </span> </div>";
-					echo "<div class=\"sb_user\">
+                    echo '</div>';
+
+                    echo "<div class=\"sb_user\">
 					<span class=\"sb_single_data\"> <span class=\"sb_value\"> Gender </span>          <span class=\"sb_data\"> {$biodatagender}</span></span>
                     <span class=\"sb_single_data\"> <span class=\"sb_value\"> Skin Tones </span>  <span class=\"sb_data\">{$Skin_tones}</span></span>
                     <span class=\"sb_single_data\"> <span class=\"sb_value\"> Height </span>  <span class=\"sb_data\">{$height}</span></span>
@@ -147,21 +152,23 @@ $(window).load(function() {
 
 
 <style>
-.flex-container {
+.flex-container-shosurbaribio {
     display: flex;
-    align-items: center;
     flex-wrap: wrap;
 }
 .sb_biodata_profile{
     display: flex;
     flex-wrap: wrap;
     width: 100%;
-    margin: 0px;
+    margin-top: 0px;
+    margin-bottom: 0px;
+    margin-right: 150px;
+    margin-left: 150px;
     padding: 20px;
     }
 
 .biodatalist{
-border: 2px solid #ff0080;
+border: 1px solid #ff0080;
     border-radius: 6px;
     width: 30%;
     gap: 1.5rem;
@@ -173,17 +180,25 @@ border: 2px solid #ff0080;
     background: white;
     box-shadow: 0 4px 8px 0 rgb(0 0 0 / 20%), 0 6px 20px 0 rgb(0 0 0 / 19%);
 }
+.sb_bio_header{
+background: #ff0080;
+/* background: #02a7e6; */
+margin: 0px;
+padding-top: 20px;
+}
+
 .biodatalist img{
-    width: 120px;
-    height: 120px;
-    border-radius: 100px;
+    width: 110px;
+    height: 110px;
+    border-radius: 50%;
     padding: 2px;
     margin-left: auto;
     margin-right: auto;
     margin-bottom: auto;
-    margin-top: 20px;
-    border: 1px solid #d5d5d5;
+    margin-top: 0px;
+    border: 2px solid white;
 }
+
 
 .sb_bio_number{
     text-align: center;
@@ -191,15 +206,17 @@ border: 2px solid #ff0080;
     padding: 10px;
     border-bottom-left-radius: 5px;
     border-bottom-right-radius: 5px;
+    background: #ff0080;
+ /*   background: #02a7e6; */
 }
 .sb_biodatanumber{
-    font-size: 20px;
-    color: #ff0080;
+    font-size: 22px;
+    color: yellow;
 }
 
 .sb_user{
     text-align: center;
-    padding: 20px 20px 25px;
+    padding: 20px 20px 20px;
     border-bottom-left-radius: 5px;
     border-bottom-right-radius: 5px;
 }
@@ -245,10 +262,16 @@ border: 2px solid #ff0080;
 .view_profile{
     text-align: center;
     border: 1px solid #d5d5d5;
-    padding: 10px;
-    margin-top: 30px;
+    padding: 5px;
+    margin-top: 20px;
     margin-bottom: 0px;
-    border-bottom-left-radius: 5px;
-    border-bottom-right-radius: 5px;
+    border-radius: 5px;
+    background: #ff0080;
+    color: white;
+    width:50%;
+}
+.view_profile:hover{
+  background:#02a7e6;
+  color: yellow;
 }
 </style>	
