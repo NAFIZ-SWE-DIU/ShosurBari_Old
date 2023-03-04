@@ -2778,8 +2778,6 @@ label{
   .form-group .show-password {
     position: absolute;
     right: 0px;
-   /* top: 37px;
-    padding: 1px; */
     top: -9px;
     padding: 15px;
     font-size: 16px;
@@ -3054,1507 +3052,6 @@ ul.feature_list.feature_list1 {
 }
 /*--menu--*/
 /* -- responsive deisgn --*/
-@media (max-width:1366px){
-}
-
-
-@media (max-width:1280px){
-#colorNav li ul li a {
-    padding: 5px;
-}
-#colorNav li ul {
-    width: 150px;
-    margin-left: -56px;    
-}
-ul.profile_item{
-	padding:0;
-	margin:0 0 1.5em 0;
-	list-style:none;
-    width: 110%;
-    display: flex;
-    font-size: 13px;
-}
-}
-
-
-
-
-
-
-
-
-
-
-
-@media (max-width:1024px){
-.banner_info h3 {
-    font-size: 3em;
-}	
-.hvr-shutter-out-horizontal {
-    padding: 8px 25px;
-    font-size: 18px;
-}
-.banner_info {
-    margin:7em 0 0 0;
-}
-.profile_search {
-    margin:7em 0 0 0;
-}
-.banner {
-    /* min-height:508px; */
-    min-height:334px;
-}
-.post-meta {
-    margin-right: 6%;
-}
-h4.post-title {
-    font-size: 0.95em;
-}
-ul.nav_1 li {
-    margin-right: 0px;
-}
-.testi_grid .testi_grid_blockquote > div a {
-    font-size: 0.8125em;
-}
-.testi-meta1 {
-    padding: 15px 220px 0 0;
-}
-.post_networks ul li {
-    margin: 3.5em 0 0 0;
-}
-.profile_search1 input[type="text"] {
-    width: 72%;
-    margin-right: 0px;
-}
-.thumb_bottom {
-    margin:0;
-}
-#colorNav li ul {
-   width: 150px;
-   margin-left:-40px;    
-   top: 29px;
-}
-a.order-btn {
-   width: 60%;
-}
-.newsletter input[type="submit"] {
-   padding: 8px 14px;
-}
-ul.profile_item{
-	padding:0;
-	margin:0 0 1.5em 0;
-	list-style:none;
-    width: 98%;
-    display: flex;
-    font-size: 10px;
-}
-h1{
-    font-size: 36px;
-}
-h2{
-    font-size: 30px;
-}
-h3{
-    font-size: 25px;
-}
-h4{
-    font-size: 20px;
-}
-h5{
-    font-size: 17px;
-}
-h6{
-    font-size: 15px;
-}
-.biodatanumber h2{
-    font-size: 30px;
-}
-}
-
-
-
-
-
-
-
-
-
-
-
-@media (max-width:930px){
-.navbar-nav > li > a {
-    padding: 6px 10px;
-}
-ul.nav_1 {
-    margin: 5px 0 0 0;
-}
-.inline-block {
-    padding-right: 1%;
-}
-.grid_1 h1, .grid_2 h2, .bg h3{
-    font-size: 2em;
-}    
-.heart-divider {
-   margin: 1em auto 2em;
-}
-.bg_left {
-    padding: 1em;
-}
-.col-md-4.row_1-right {
-    margin: 3em 0 0 0;
-}
-.religion {
-    margin: 2em 0;
-}
-.grid_2 {
-    margin-bottom: 3em;
-}
-.bg_left h4 {
-    font-size: 1.3em;
-}
-.col_2 {
-    margin-bottom: 2em;
-}
-.col_2 h4 {
-    margin-bottom: 10px;
-}
-.col-md-6.about_right {
-    padding-left: 0;
-    margin: 2em 0 0 0;
-}
-.about_middle h2 {
-    font-size:2em;
-}
-.testi_grid .testi_grid_blockquote > div {
-    padding: 10px 10px;
-}
-.testi_grid .testi_grid_blockquote > div a {
-    font-size: 12px;
-}
-.testi-meta1 {
-    padding: 15px 115px 0 0;
-}
-.about_grid1{
-	width:50%;
-	float:left;
-	margin-bottom:2em;
-}
-.about_bottom {
-    padding: 5em 0 3em;
-}
-.post_networks ul li {
-    margin: 6em 0 0 0;
-}
-.profile_left2 {
-    margin-bottom: 3em;
-}
-.match_right{
-	padding-left:0;
-}
-.col-md-9.profile_left {
-    padding-left: 0;
-    margin: 2em 0 0 0;
-}
-.col-md-9.members_box {
-    padding-left: 0;
-    margin: 2em 0 0 0;
-}
-.search_left {
-    padding-left: 0;
-    margin-bottom: 3em;
-}
-.profile_search1 {
-    margin-bottom: 2em;
-}
-.profile_left1 {
-    margin-bottom: 3em;
-}
-.col-md-9.members_box2 {
-    padding-left: 0;
-    margin: 2em 0 0 0;
-}
-.nav-tabs1 {
-    margin-bottom:1em;
-}
-.pricing-table {
-    width: 50%;
-    float: left;
-}
-.grid_4 {
-    width: 220px;
-}
-.profile_right{
-	padding-left:0;
-	margin:3em 0 0 0;
-}
-ul.profile_item{
-    padding: 0;
-    list-style: none;
-    width: 55%;
-    display: flex;
-    font-size: 18px;
-    margin-top: 20px;
-    margin-bottom: 20px;
-    margin-left: auto;
-    margin-right: auto;
-}
-h1{
-    font-size: 34px;
-}
-h2{
-    font-size: 28px;
-}
-h3{
-    font-size: 23px;
-}
-h4{
-    font-size: 18px;
-}
-h5{
-    font-size: 16px;
-}
-h6{
-    font-size: 14px;
-}
-.biodatanumber h2{
-    font-size: 28px;
-}
-}
-
-
-
-
-
-
-
-
-
-
-
-
-@media (max-width: 768px){
-.banner_info h3 {
-    font-size: 2.5em;
-}	
-.hvr-shutter-out-horizontal {
-    padding: 6px 15px;
-    font-size: 16px;
-}
-.banner_info {
-    margin: 5em 0 0 0;
-}
-.profile_search {
-    margin: 5em 0 0 0;
-}
-.age_box1 {
-    width: 50% !important;
-}
-label.gender_1 {
-    margin-right: 0px;
-}    
-.banner {
-    /* min-height: 429px;  */
-    min-height: 309px; 
-
-}
-.grid_1 {
-    padding: 3em 0;
-}
-.footer {
-    padding: 1em 0;
-}
-.copy {
-    margin: 1em 0 0 0;
-}
-.profile_search {
-   padding: 2em 1em;
-}
-.inline-block {
-    padding-right: 0;
-}
-.wrap_1{
-	width:720px;
-}
-.center-middle {
-    margin: 85px 0 0 0;
-}
-.navbar-nav > li > a {
-    padding: 4px 8px;
-    font-size: 14px;
-}
-ul.nav_1 {
-    margin: 7px 0 0 0;
-}
-#colorNav li ul li a {
-    font-size: 12px;
-}
-#colorNav li ul {
-    width: 110px;
-    margin-left: -20px;
-}
-.grid_3, .about_middle{
-    padding: 3em 0;
-}
-.about_bottom {
-    padding: 3em 0 2em;
-}
-i.icon_4 {
-    font-size: 50px;
-    line-height: 80px;
-}
-.row_2 ul img{
-    height: 160px;
-    width: 150px;
-    padding: 15px;
-    margin-top: 0px;
-    margin-left: 0px;
-    margin-right: 0px;
-    margin-bottom: 31px;
-}
-h1{
-    font-size: 34px;
-}
-h2{
-    font-size: 28px;
-}
-h3{
-    font-size: 23px;
-}
-h4{
-    font-size: 18px;
-}
-h5{
-    font-size: 16px;
-}
-h6{
-    font-size: 14px;
-}
-.biodatanumber h2{
-    font-size: 28px;
-}
-}
-
-
-
-
-
-
-
-
-
-
-@media (max-width: 736px){
-#colorNav li ul {
-    top: 13px;
-}
-.columns {
-    margin: 2em 0 0 0;
-}
-.column_grid {
-    padding: 0;
-}
-.pull-right {
-    float: none!important;
-}
-.navigation {
-   margin-right: 30%;
-}
-.nav_bottom {
-    background:#02a7e6;
-}
-.inline-block {
-    display: inline-block;
-    margin-bottom: 10px;
-}
-.wrap_1 {
-    width:480px;
-}
-.age_box1 {
-    width: 50% !important;
-}
-.search_top {
-    margin-bottom:0;
-}
-.banner_info h3 {
-    font-size: 2em;
-    margin-bottom:20px;
-}
-.banner_info {
-    margin: 3em 0 0 0;
-}
-.profile_search {
-    margin: 3em 0 0 0;
-    padding:10px;
-}
-.banner {
-    /* min-height: 386px; */
-    min-height: 280px; 
-}
-.age_box2 {
-    max-width: 100% !important;
-}
-input#submit-btn {
-    font-size: 0.85em;
-    padding: 4px 10px;
-}
-.hvr-shutter-out-horizontal {
-    padding: 5px 10px;
-    font-size: 14px;
-}
-.banner {
-    min-height: 357px;
-}
-.grid_1 h1, .grid_2 h2, .bg h3 {
-    font-size: 1.5em;
-}
-.bg_left {
-    padding: 10px;
-    margin-bottom: 1em;
-}
-.bg {
-    min-height: 600px;
-    padding: 3em 0 0 0;
-}
-.testi_grid {
-    width:95%;
-}
-.testi_grid:nth-child(2n+1) .testi-meta {
-    padding: 5px 0px 0 0;
-    text-align: right;
-}
-.testi-meta1 {
-    padding: 5px 325px 0 0;
-}
-.testi_grid .testi_grid_blockquote .featured-thumbnail img {
-    width: 75%;
-}
-.about_middle-grid1 {
-    margin-bottom: 1em;
-}
-.navbar-nav {
-    margin: 18px 0 0 0;
-    float:left;
-    width:100%;
-}
-.navbar-header.nav_2 {
-    display:block;
-}
-.navbar-default .navbar-toggle {
-    border-color:#2f374c;
-    background-color:#2f374c;
-    border-radius: 2px;
-}
-.navbar-toggle1 {
-    height: 30px;
-    margin: 0px 15px 0 0px;
-    color: #fff;
-    padding: 4px 0 0 0;
-}
-.dropdown-menu>li>a {
-    color: #fff !important;
-}
-.dropdown-menu>li>a:hover, .dropdown-menu>li>a:focus {
-    background-color:#ff0080;
-}
-.col-sm-3, .col-sm-6{
-	padding-left:0;
-}
-.suceess_story ul li:first-child {
-    padding-top: 1rem;
-}
-.suceess_story ul li {
-    padding-bottom: 1rem;
-}
-.page_header h1 {
-    font-size: 2em;
-}
-i.icon_4 {
-    font-size: 50px;
-    line-height: 60px;
-}
-.col-sm-4.item_content {
-    text-align: center;
-    margin-bottom: 2em;
-}
-.services_top {
-    margin-bottom: 0;
-}
-ul.login_details1 {
-    margin: 1em 0;
-}
-.form_radios {
-    padding-left: 0;
-}
-.col-sm-5.input-group1 {
-    padding-left: 0;
-    margin-bottom: 5px;
-}
-p + .addr, .addr + .addr, .terms + .addr {
-    margin-bottom: 0;
-}
-.grid_4 {
-    width: 160px;
-}
-#contact-form input[type='text'], #contact-form textarea {
-    padding: 10px;
-}    
-#contact-form input[type="submit"] {
-    padding:10px;
-}   
-.login_left {
-    margin-bottom: 2em;
-}
-label {
-    font-size: 13px;
-} 
-.btn_1 {
-    padding: 6px 20px;
-}
-.sharing li {
-    margin-bottom: 10px;
-}
-.col-sm-4.form_box2 {
-    padding: 0;
-    margin: 5px 0;
-}
-.form_box, .form_box1{
-    padding:0;
-}
-ul.login_details1 {
-    margin: 5px 0;
-}
-.col_2 {
-    padding: 0;
-}
-.col-sm-8.row_1 {
-    padding: 15px;
-}
-ul.profile_item{
-    padding: 0;
-    list-style: none;
-    width: 60%;
-    display: flex;
-    font-size: 15px;
-    margin-top: 20px;
-    margin-bottom: 20px;
-    margin-left: auto;
-    margin-right: auto;
-}
-td.day_value {
-    font-size: 14px;
-}
-td.day_label {
-    font-size: 14px;
-}
-h1{
-    font-size: 34px;
-}
-h2{
-    font-size: 28px;
-}
-h3{
-    font-size: 23px;
-}
-h4{
-    font-size: 18px;
-}
-h5{
-    font-size: 16px;
-}
-h6{
-    font-size: 14px;
-}
-.biodatanumber h2{
-    font-size: 27px;
-}
-}
-
-
-
-
-
-
-
-
-
-
-@media (max-width: 600px){
-    ul.profile_item{
-        padding: 0;
-        list-style: none;
-        width: 72%;
-        display: flex;
-        font-size: 13px;
-        margin-top: 20px;
-        margin-bottom: 20px;
-        margin-left: auto;
-        margin-right: auto;
-    }
-    td.day_value {
-        font-size: 13px;
-    }
-    td.day_label {
-        font-size: 13px;
-    }
-    h1{
-        font-size: 33px;
-    }
-    h2{
-        font-size: 27px;
-    }
-    h3{
-        font-size: 22px;
-    }
-    h4{
-        font-size: 17px;
-    }
-    h5{
-        font-size: 15px;
-    }
-    h6{
-        font-size: 13px;
-    }
-    .biodatanumber h2{
-        font-size: 27px;
-    }
-    }
-
-
-
-    @media (max-width: 540px){
-        td.day_value {
-            font-size: 12px;
-        }
-        td.day_label {
-            font-size: 12px;
-        }
-        h1{
-            font-size: 32px;
-        }
-        h2{
-            font-size: 26px;
-        }
-        h3{
-            font-size: 21px;
-        }
-        h4{
-            font-size: 16px;
-        }
-        h5{
-            font-size: 14px;
-        }
-        h6{
-            font-size: 12px;
-        }
-        .biodatanumber h2{
-            font-size: 24px;
-        }
-        }
-
-
-
-
-
-
-
-
-@media (max-width:480px){
-.banner_info h3 {
-    font-size: 1.5em;
-    margin-bottom: 15px;
-}	
-.hvr-shutter-out-horizontal {
-    font-size: 13px;
-}
-.banner_info {
-    margin: 2em 0 0 0;
-}
-.profile_search {
-    margin: 2em 0 0 0;
-    padding: 10px;
-}
-label.gender_1 {
-    font-size: 12px;
-}    
-.input-group input[type="text"], select, input.transparent{
-    font-size: 10px;
-}    
-input#submit-btn {
-    font-size: 0.8125em;
-    padding: 3px 8px;
-}
-.wrap_1 {
-    width: 452px;
-}
-.inline-block {
-    margin-bottom: 5px;
-}
-.banner {
-    /* min-height: 281px; */
-    min-height: 195px;
-}
-.heart-divider {
-    margin: 1em auto 1em;
-}
-.religion_1-title {
-    font-size: 1.2em;
-}
-.grid_2 {
-    margin-bottom: 1em;
-}
-.col-sm-3, .col-sm-6 {
-    padding:0;
-}
-.bg {
-    min-height: 625px;
-}
-.map iframe {
-   height:200px;
-}
-.testi-meta1 {
-    padding: 5px 177px 0 0;
-}
-.testi_grid .testi_grid_blockquote .featured-thumbnail {
-    width: 80px;
-    height: 80px;
-}
-.nav>li>a {
-    padding: 8px 5px;
-    font-size: 13px;
-}
-p.description {
-    font-size: 12px;
-    line-height: 1.5em;
-}
-.tab_box h1 {
-    font-size: 1.1em;
-}
-.jobs-item .top-btns li {
-    margin-left: 4px;
-}
-.menu ul li a {
-   line-height: 2em;
-}
-.jobs-item {
-   margin-bottom: 2em;
-}
-i.icon_1 {
-    font-size: 30px;
-}
-i.icon_2 {
-    font-size: 20px;
-}
-ul.phone li.phone_right p {
-    font-size: 12px;
-}    
-.row {
-    margin-left: 0;
-    margin-right: 0;
-}
-.pricing-table {
-    width: 100%;
-    float: none;
-    margin-bottom:5px;
-}
-.grid_4 {
-    width: 140px;
-    margin: 0;
-}
-.nbs-flexisel-nav-right:after, .nbs-flexisel-nav-left:after  {
-    top:20px;
-}
-ul.profile_item{
-    padding: 0;
-    list-style: none;
-    width: 81%;
-    display: flex;
-    font-size: 12px;
-    margin-top: 20px;
-    margin-bottom: 20px;
-    margin-left: auto;
-    margin-right: auto;
-}
-td.day_value {
-    font-size: 10px;
-}
-td.day_label {
-    font-size: 10px;
-}
-h1{
-    font-size: 32px;
-}
-h2{
-    font-size: 26px;
-}
-h3{
-    font-size: 21px;
-}
-h4{
-    font-size: 16px;
-}
-h5{
-    font-size: 14px;
-}
-h6{
-    font-size: 12px;
-}
-.biodatanumber h2{
-    font-size: 18px;
-}
-.update-image-button{
-    font-size: 13px;
-    display: block;
-}
-.deleteimage {
-    padding: 10px;
-    margin-top: -15px;
-    margin-left: -9px;
-    width: 85%;
-}
-.update-image img {
-    height: 100%;
-    width: 100%;
-}
-}
-
-
-
-
-
-
-
-
-
-@media (max-width:414px){
-.wrap_1 {
-    width: 375px;
-}
-.banner_info h3 {
-    font-size: 1.2em;
-    margin-bottom: 10px;
-}
-.hvr-shutter-out-horizontal {
-    padding: 4px 8px;
-    font-size: 11px;
-}	
-.banner_info {
-    margin: 1em 0 0 0;
-}
-.profile_search {
-    margin: 1em 0 0 0;
-    padding:5px;
-}
-.banner {
-    /* min-height: 254px; */
-    min-height: 180px;
-}
-.navigation {
-    margin-right: 23%;
-    margin-top: 0;
-}
-.bg_left h4 {
-    font-size: 1.1em;
-}
-.bg_left h5 {
-    font-size: 0.85em;
-}
-.bg {
-    min-height: 640px;
-    padding: 2em 0 0 0;
-}
-.col_2 {
-    margin-bottom: 1em;
-}
-.about_middle h2 {
-    font-size: 1.5em;
-}
-.grid_3, .about_middle {
-    padding: 2em 0;
-}
-.about_bottom h3 {
-    font-size: 1.8em;
-}
-.desc h4 {
-    font-size: 1.1em;
-}
-.post_networks ul li {
-    margin: 2.5em 0 0 0;
-}
-.profile_left h2 {
-    font-size: 1em;
-}
-.col_3 {
-    margin-bottom: 2em;
-}
-.page_header h3 {
-    font-size: 1em;
-}
-.page_header h1 {
-    font-size:1.5em;
-    margin-bottom:10px;
-}
-i.icon_4 {
-    font-size: 35px;
-    line-height: 50px;
-}
-.col-sm-4.item_content {
-    margin-bottom: 1em;
-}
-.footer {
-    padding: 1em 0;
-}
-.about_bottom {
-    padding: 2em 0 0em;
-}
-ul.match_box {
-    margin: 0 0 1em 0;
-}
-.members_box h1, .terms h2 {
-    font-size: 1.2em;
-}
-.members_box1 {
-    margin: 1em 0;
-}
-.col-md-9.members_box p{
-    font-size:0.8125em;
-}
-ol.terms_list li {
-    font-size: 0.8125em;
-}    
-.nbs-flexisel-nav-right:after, .nbs-flexisel-nav-left:after  {
-    top:20px;
-}
-.terms h4 {
-   font-size: 1.2em;
-}
-.form_radios {
-   font-size: 12px;
-}
-.paid_people {
-    margin: 2em 0 0 0;
-}
-.paid_people h1 {
-    font-size: 1.3em;
-}    
-.search_left {
-    margin-bottom: 1em;
-}
-.view_profile2 {
-    margin: 3em 0 0 0;
-}
-.headings h1{
-    font-size:25px;
-}
-.headings h2{
-    font-size:22px;
-}
-.headings h3{
-    font-size:19px;
-}
-.headings h4{
-    font-size:16px;
-}
-.headings h5{
-    font-size:14px;
-}
-.headings h6{
-    font-size:12px;
-}
-ul.pagination_1 {
-    margin: 0 0 2em 0;
-}
-.members_box2 p {
-    margin-bottom: 1em;
-}
-.members_box2 h3 {
-    font-size: 1.5em;
-}
-.addr dl dt, .addr dl dd {
-    font-size: 12px;
-}
-.grid_4 {
-    width: 115px;
-}
-form#contact-form {
-    width: 60%;
-}
-#contact-form input[type='text'], #contact-form textarea {
-    padding: 7px;
-}
-#contact-form input[type="submit"] {
-    padding: 8px;
-    font-size: 13px;
-}
-ul.profile_item{
-    padding: 0;
-    list-style: none;
-    width: 84%;
-    display: flex;
-    font-size: 11px;
-    margin-top: 20px;
-    margin-bottom: 20px;
-    margin-left: auto;
-    margin-right: auto;
-}
-td.day_value {
-    font-size: 10px;
-}
-td.day_label {
-    font-size: 10px;
-}
-h1{
-    font-size: 30px;
-}
-h2{
-    font-size: 24px;
-}
-h3{
-    font-size: 19px;
-}
-h4{
-    font-size: 14px;
-}
-h5{
-    font-size: 13px;
-}
-h6{
-    font-size: 11px;
-}
-.biodatanumber h2{
-    font-size: 16px;
-}
-.update-image-button{
-    font-size: 13px;
-    display: block;
-}
-.deleteimage {
-    padding: 10px;
-    margin-top: -15px;
-    margin-left: -9px;
-    width: 85%;
-}
-.update-image img {
-    height: 100%;
-    width: 100%;
-}
-}
-
-
-
-
-
-
-
-
-
-
-
-
-@media (max-width:384px){
-.wrap_1 {
-    width: 350px;
-}	
-.inline-block {
-    margin-bottom:2px;
-}
-a.brand img {
-    width: 150px;
-}
-.navigation {
-    margin-top: -6px;
-}
-.banner {
-    /* min-height: 231px; */
-    min-height: 155px;
-    zoom: .9;
-}
-.grid_1 {
-    padding: 2em 0;
-}
-.grid_1 h1, .grid_2 h2, .bg h3 {
-    font-size: 1.3em;
-}
-.suceess_story-content-info h4 {
-    font-size: 1em;
-}
-.suceess_story-content-container, .suceess_story-date {
-    margin-left: 1.813rem;
-}
-.suceess_story-content-featured-image {
-    margin-right: 10px;
-    margin-bottom: 0;
-}
-.post-meta span.day {
-    font-size: 25px;
-}
-.post-content {
-    font-size: 0.8125em;
-    margin: 5px 0;
-}
-a.religion_1 {
-    font-size: 0.8125em;
-}
-.religion {
-    margin: 1em 0;
-}
-.religion_1-title {
-   margin-bottom: 5px;
-}
-.bg_left p, .col_2 p, .about_right p, .desc p, .table_working_hours tr, .headings p, .column_grid p, .members_box2 p, .page_header p, .item_content p, .suceess_story-content-info p{
-    font-size:12px;
-}
-.profile_left2 {
-    margin-bottom: 2em;
-}
-.menu > li {
-    font-size:0.95em;
-}
-ul.login_details1 li p {
-    line-height: 1.5em;
-    margin: 1em 0;
-    font-size: 12px;
-}
-.phone_1 {
-    margin-right: 0%;
-}
-.span_1_of_3 {
-    width: 32.2%;
-}
-.profile_left1 {
-    margin-bottom: 2em;
-}
-.profile_left1 h1 {
-    margin-bottom: 1em;
-}
-.faq-list_h h4{
-	font-size:0.8125em;
-	color:#000;
-}
-.list_1 {
-    margin: 2em 0 0 0;
-}
-.list_1 h3 {
-    font-size: 1.3em;
-}
-.jobs-item .thumb {
-    margin-right: 10px;
-}
-.jobs-item .top-btns {
-    right: -15px;
-}
-.jobs-item .top-btns li {
-    margin-left: 2px;
-}
-p + .addr, .addr + .addr, .terms + .addr {
-    margin-top: 10px;
-}
-#contact-form input[type='text'], #contact-form textarea {
-    font-size: 12px;
-}
-#contact-form textarea{
-	height:100px;
-}
-input#submit-btn {
-    font-size: 0.8125em;
-    padding: 1px 5px;
-}
-.terms_1 h3, .terms_1 h5{
-    font-size: 1em;
-}
-.testi_grid .testi_grid_blockquote > div {
-    line-height: 16px;
-}
-ul.profile_item{
-    padding: 0;
-    list-style: none;
-    width: 100%;
-    display: flex;
-    font-size: 10px;
-    margin-top: 20px;
-    margin-bottom: 20px;
-    margin-left: auto;
-    margin-right: auto;
-}
-td.day_value {
-    font-size: 8px;
-}
-td.day_label {
-    font-size: 8px;
-}
-h1{
-    font-size: 28px;
-}
-h2{
-    font-size: 22px;
-}
-h3{
-    font-size: 17px;
-}
-h4{
-    font-size: 12px;
-}
-h5{
-    font-size: 11px;
-}
-h6{
-    font-size: 10px;
-}
-.biodatanumber h2{
-    font-size: 12px;
-}
-.update-image-button{
-    font-size: 13px;
-    display: block;
-}
-.deleteimage {
-    padding: 10px;
-    margin-top: -15px;
-    margin-left: -9px;
-    width: 85%;
-}
-.update-image img {
-    height: 100%;
-    width: 100%;
-}
-}
-
-
-
-
-
-
-
-
-
-
-@media (max-width:320px){
-.wrap_1 {
-    width: 330px;
-}	
-#colorNav li ul li a {
-    font-size: 11px;
-}
-a.brand img {
-    width: 135px;
-}
-.navigation {
-    margin-right: 20%;
-}
-.heart-divider {
-    margin: 10px auto 15px;
-}
-.row_1-right h3 {
-    margin-bottom: 1em;
-    font-size: 1.3em;
-}
-h4.post-title {
-    font-size: 0.85em;
-}
-.nbs-flexisel-nav-right:after, .nbs-flexisel-nav-left:after {
-    top: -15px;
-}
-a.religion_1 {
-    font-size: 12px;
-}
-.suceess_story,.col-md-4.row_1-right{
-   padding: 0;
-}
-.suceess_story:before, .suceess_story:after {
-    left: -8px;
-}
-.team-socials li {
-    padding: 0 5px;
-}
-.bg {
-    min-height: 660px;
-}
-.bg_left {
-    margin-bottom: 5px;
-}
-.col_2 h4 {
-    font-size: 1.1em;
-}    
-.copy p {
-    font-size: 0.8125em;
-}
-.jb-accordion-title {
-    padding: 5px 10px 7px;
-    font-size: 15px;
-}
-.about_grid1{
-	padding:0 5px;
-}
-.nav>li>a {
-    padding: 3px 5px;
-}
-.nav>li>a {
-    font-size: 12px;
-}
-.tab_box h1 {
-    font-size: 0.95em;
-}
-.tab_box p {
-   font-size: 0.8125em;
-}
-.basic_1 h3 {
-   font-size: 1em;
-}
-.basic_1, .tab_box{
-    margin-bottom: 1em;
-}
-.profile_right {
-    margin: 2em 0 0 0;
-}
-.newsletter input[type="text"] {
-    padding: 8px 2%;
-    max-width: 74%;
-}
-.newsletter input[type="submit"] {
-    padding: 6px 14px;
-}
-.newsletter {
-    margin-bottom: 2em;
-}
-.view_profile h3 {
-    font-size: 1.1em;
-}    
-.view_profile1 {
-    margin: 2em 0 0 0;
-}
-ul.profile_item li.profile_item-desc h4, ul.profile_item li.profile_item-desc h5, ul.profile_item li.profile_item-desc p, ul.footer_links li {
-   font-size: 12px;
-}
-.col-md-6.about_right {
-    margin: 1em 0 0 0;
-}
-.profile_top h2 {
-    font-size: 0.85em;
-}  
-.breadcrumb1 {
-    margin-bottom: 1em;
-}  
-.pagination>li >a {
-    padding: 4px 10px;
-    font-size: 12px;
-}
-.jobs-item .thumb img {
-    width: 70px;
-}
-h6.title {
-    font-size: 0.85em;
-}
-.jobs-item .top-btns li a {
-    font-size: 12px;
-}
-ul.login_details1 li {
-    font-size: 12px;
-}
-.breadcrumb1 li {
-    margin-right: 0;
-    padding-right: 0;
-    font-size: 0.85em;
-}
-ul.match_box li {
-    font-size: 12px;
-}
-.terms h4 {
-    font-size: 1em;
-}
-ol.terms_list {
-    margin-bottom: 1em;
-}
-.terms p {
-    margin-bottom: 1em;
-}
-p.m_4{
-	font-size:0.8125em;
-}
-.list_1 h3 {
-    font-size: 1.1em;
-}
-a.photo_view {
-    padding: 5px 8px;
-}    
-.pricing-table-grid ul li span {
-    padding:7px;
-    font-size: 13px;
-}
-.pricing-table-grid h3 {
-    padding: 10px 0 10px;
-    font-size: 1.2em;
-}
-span.month1 {
-    font-size: 12px;
-    line-height: 2em;
-}
-.pricing-table-grid ul li a, .pricing-table-grid ul li span {
-    padding: 8px 0;
-    font-size: 0.8125em;
-}
-a.order-btn {
-    width: 50%;
-    padding: 6px 10px;
-}
-.page_header {
-    margin-bottom: 1em;
-}
-.grid_5 p, .terms_1 p, .feature_list li{
-    font-size: 0.8125em;
-}
-ul.feature_list.feature_list1 {
-    margin-bottom: 1em;
-}
-ul.profile_item{
-    padding: 0;
-    list-style: none;
-    width: 110%;
-    display: flex;
-    font-size: 10px;
-    margin-top: 20px;
-    margin-bottom: 20px;
-    margin-left: auto;
-    margin-right: auto;
-}
-td.day_value {
-    font-size: 8px;
-}
-td.day_label {
-    font-size: 8px;
-}
-h1{
-    font-size: 28px;
-}
-h2{
-    font-size: 22px;
-}
-h3{
-    font-size: 17px;
-}
-h4{
-    font-size: 12px;
-}
-h5{
-    font-size: 11px;
-}
-h6{
-    font-size: 10px;
-}
-.update-image-button{
-    font-size: 13px;
-    display: block;
-}
-.deleteimage {
-    padding: 10px;
-    margin-top: -15px;
-    margin-left: -9px;
-    width: 85%;
-}
-.update-image img {
-    height: 100%;
-    width: 100%;
-}
-}
-
 
 
 
@@ -5084,76 +3581,6 @@ form {
    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
 
-@media (max-width: 765px) {
-
-.sb-biodata{
-    border: 2px solid #ff0080;
-    border-radius: 6px;
-    width: 80%;
-    padding: 20px;
-    margin-left: auto;
-    margin-right: auto;
-    margin-bottom: 40px;
-    margin-top: 20px;
-    background: white;
-    /*  background: rgb(241, 239, 239);
-   box-shadow: 0px 2px 7px 6px rgb(0 0 0 / 20%); */
-   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-}
-/*
-h1{
-    font-size: 30px;
-*/
-  }
-
-  @media (max-width: 736px) {
-
-.sb-biodata{
-    border: 2px solid #ff0080;
-    border-radius: 6px;
-    width: 80%;
-    padding: 20px;
-    margin-left: auto;
-    margin-right: auto;
-    margin-bottom: 40px;
-    margin-top: 20px;
-    background: white;
-    /*  background: rgb(241, 239, 239);
-   box-shadow: 0px 2px 7px 6px rgb(0 0 0 / 20%); */
-   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-}
-.sb-biodata-field h2{
-    font-size: 25px;
-}
-/*
-h1{
-    font-size: 28px;
-} */
-  }
-
-  @media (max-width: 350px) {
-
-    .sb-biodata{
-        border: 2px solid #ff0080;
-        border-radius: 6px;
-        width: 70%;
-        padding: 20px;
-        margin-left: auto;
-        margin-right: auto;
-        margin-bottom: 40px;
-        margin-top: 20px;
-        background: white;
-        /*  background: rgb(241, 239, 239);
-       box-shadow: 0px 2px 7px 6px rgb(0 0 0 / 20%); */
-       box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-    }
-
-.sb-biodata-field h2{
-    font-size: 20px;
-}
-}
-
-
 .sb-biodata-field h2{
     padding: 10px;
     margin: 10px;
@@ -5347,3 +3774,2191 @@ h1{
     margin-top: 100px;
     font-size: 18px;
 }
+
+
+
+
+
+/*-- -- -- -- -- -- -- -- -- -- -- -- -- ---- -- --
+-- -- -- -- -- -- -- -- --- -- -- -- -- -- -- -- --
+--                S  T  A  R  T                  --
+--   After Search User Page / User List Page     --
+--                                               --
+-- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- ---
+-- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -*/
+/* background: #02a7e6;
+   background: #ff0080;
+*/
+.flex-container-shosurbaribio {
+    display: flex;
+    flex-wrap: wrap;
+    margin-top: -50px;
+}
+
+.sb_biodata_profile{
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+    margin-top: 0px;
+    margin-bottom: 0px;
+    margin-right: 150px;
+    margin-left: 150px;
+    padding: 20px;
+    }
+
+.biodatalist{
+    border: 1px solid #ff0080;
+    border-radius: 6px;
+    width: 30%;
+    gap: 1.5rem;
+    padding: 0px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 20px;
+    margin-top: 20px;
+    background: white;
+    box-shadow: 0 4px 8px 0 rgb(0 0 0 / 20%), 0 6px 20px 0 rgb(0 0 0 / 19%);
+}
+
+.biodatalist:hover{
+    background: #02a7e624;
+    box-shadow: 0 4px 8px 0 rgb(0 0 0 / 20%), 0 6px 20px 0 rgb(0 0 0 / 19%);
+}
+
+.sb_bio_header{
+background: #ff0080;
+margin: 0px;
+padding-top: 10px;
+border: 1px solid #02a7e6;
+border-radius: 5px 5px 0px 0px;
+}
+
+.biodatalist img{
+    width: 110px;
+    height: 110px;
+    border-radius: 50%;
+    padding: 2px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: auto;
+    margin-top: 0px;
+    border: 2px solid white;
+}
+
+.sb_bio_number{
+    text-align: center;
+    padding: 10px;
+    border-bottom-left-radius: 5px;
+    border-bottom-right-radius: 5px;
+    background: #ff0080;
+
+}
+.sb_biodatanumber{
+    font-size: 24px;
+    color: yellow;
+    font-weight: 500;
+}
+
+.sb_user{
+    text-align: center;
+    padding: 20px 20px 20px;
+    border-bottom-left-radius: 5px;
+    border-bottom-right-radius: 5px;
+}
+
+.sb_single_data{
+    display: flex;
+    flex-wrap: wrap;
+    padding-top: 0px;
+    padding-bottom: 0px;
+    margin-top: 0px;
+    margin-bottom: 0px;
+}
+
+.sb_user .sb_single_data{
+    display: flex;
+    flex-wrap: wrap;
+    padding-top: 0px;
+    padding-bottom: 0px;
+}
+
+.sb_user .sb_value{
+    color: black;
+    padding: 6px;
+    font-size: 15px;
+    font-weight: 400;
+    border: 1px solid #d5d5d5;
+    border-style: groove;
+    width: 35%;
+    position: inherit;
+}
+
+.sb_user .sb_data{
+    color: black;
+    padding: 6px;
+    font-size: 15px;
+    font-weight: 400;
+    border: 1px solid #d5d5d5;
+    border-style: groove;
+    width: 65%;
+    position: inherit;
+}
+
+.view_sb_profile{
+    text-align: center;
+    border: 1px solid #d5d5d5;
+    padding: 5px;
+    margin-top: 20px;
+    margin-bottom: 0px;
+    border-radius: 5px;
+    background: #ff0080;
+    color: white;
+    width:100%;
+}
+
+.view_sb_profile:hover{
+  background:#02a7e6;
+  color: yellow;
+}
+
+.view_sb_profile a{
+  color: white;
+}
+/*-- -- -- -- -- -- -- -- -- -- -- -- -- ---- -- --
+-- -- -- -- -- -- -- -- --- -- -- -- -- -- -- -- --
+--                 E    N    D                   --
+--   After Search User Page / User List Page     --
+--                                               --
+-- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- ---
+-- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -*/
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*-- -- -- -- -- -- -- -- -- -- -- -- -- ---- -- --
+-- -- -- -- -- -- -- -- --- -- -- -- -- -- -- -- --
+--               S  T  A  R  T                   --
+--      Media Responsive / Phone Responsive      --
+--                                               --
+-- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- ---
+-- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -*/
+
+@media (max-width:1366px){
+    .sb_biodata_profile{
+        display: flex;
+        flex-wrap: wrap;
+        width: 100%;
+        margin-top: 0px;
+        margin-bottom: 0px;
+        margin-right: 150px;
+        margin-left: 150px;
+        padding: 20px;
+        }
+        .sb_user .sb_value{
+            font-size: 15px;
+            font-weight: 400;
+            width: 35%;
+        }
+        .sb_user .sb_data{
+            font-size: 15px;
+            font-weight: 400;
+            width: 65%;
+        }
+}
+
+
+
+/*-- -- -- -- -- -- -- -- -- -- -- -- -- ---- -- --
+--          max-width:1280px / S T A R T         --
+--      Media Responsive / Phone Responsive      --
+-- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -*/
+@media (max-width:1280px){
+#colorNav li ul li a {
+    padding: 5px;
+}
+#colorNav li ul {
+    width: 150px;
+    margin-left: -56px;    
+}
+ul.profile_item{
+	padding:0;
+	margin:0 0 1.5em 0;
+	list-style:none;
+    width: 110%;
+    display: flex;
+    font-size: 13px;
+}
+.sb_biodata_profile{
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+    margin-top: 0px;
+    margin-bottom: 0px;
+    margin-right: 15px;
+    margin-left: 15px;
+    padding: 20px;
+    }
+    .sb_user .sb_value{
+        font-size: 14px;
+        font-weight: 400;
+        width: 35%;
+    }
+    .sb_user .sb_data{
+        font-size: 14px;
+        font-weight: 400;
+        width: 65%;
+    }
+}
+/*-- -- -- -- -- -- -- -- -- -- -- -- -- ---- -- --
+--           max-width:1280px / E  N  D          --
+--      Media Responsive / Phone Responsive      --
+-- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -*/
+
+
+
+
+
+
+
+
+
+/*-- -- -- -- -- -- -- -- -- -- -- -- -- ---- -- --
+--          max-width:1024px / S T A R T         --
+--      Media Responsive / Phone Responsive      --
+-- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -*/
+@media (max-width:1024px){
+.banner_info h3 {
+    font-size: 3em;
+}	
+.hvr-shutter-out-horizontal {
+    padding: 8px 25px;
+    font-size: 18px;
+}
+.banner_info {
+    margin:7em 0 0 0;
+}
+.profile_search {
+    margin:7em 0 0 0;
+}
+.banner {
+    /* min-height:508px; */
+    min-height:334px;
+}
+.post-meta {
+    margin-right: 6%;
+}
+h4.post-title {
+    font-size: 0.95em;
+}
+ul.nav_1 li {
+    margin-right: 0px;
+}
+.testi_grid .testi_grid_blockquote > div a {
+    font-size: 0.8125em;
+}
+.testi-meta1 {
+    padding: 15px 220px 0 0;
+}
+.post_networks ul li {
+    margin: 3.5em 0 0 0;
+}
+.profile_search1 input[type="text"] {
+    width: 72%;
+    margin-right: 0px;
+}
+.thumb_bottom {
+    margin:0;
+}
+#colorNav li ul {
+   width: 150px;
+   margin-left:-40px;    
+   top: 29px;
+}
+a.order-btn {
+   width: 60%;
+}
+.newsletter input[type="submit"] {
+   padding: 8px 14px;
+}
+ul.profile_item{
+	padding:0;
+	margin:0 0 1.5em 0;
+	list-style:none;
+    width: 98%;
+    display: flex;
+    font-size: 10px;
+}
+h1{
+    font-size: 36px;
+}
+h2{
+    font-size: 30px;
+}
+h3{
+    font-size: 25px;
+}
+h4{
+    font-size: 20px;
+}
+h5{
+    font-size: 17px;
+}
+h6{
+    font-size: 15px;
+}
+.biodatanumber h2{
+    font-size: 30px;
+}
+.sb_biodata_profile{
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+    margin-top: 0px;
+    margin-bottom: 0px;
+    margin-right: 15px;
+    margin-left: 15px;
+    padding: 20px;
+    }
+    .sb_user .sb_value{
+        font-size: 13px;
+        width: 38%;
+    }
+    .sb_user .sb_data{
+        font-size: 13px;
+        width: 62%;
+    }
+    .sb_biodatanumber{
+        font-size: 20px;
+    }
+}
+/*-- -- -- -- -- -- -- -- -- -- -- -- -- ---- -- --
+--           max-width:1024px / E  N  D          --
+--      Media Responsive / Phone Responsive      --
+-- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -*/
+
+
+
+
+
+
+
+
+
+/*-- -- -- -- -- -- -- -- -- -- -- -- -- ---- -- --
+--          max-width:930px / S T A R T         --
+--      Media Responsive / Phone Responsive      --
+-- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -*/
+@media (max-width:930px){
+.navbar-nav > li > a {
+    padding: 6px 10px;
+}
+ul.nav_1 {
+    margin: 5px 0 0 0;
+}
+.inline-block {
+    padding-right: 1%;
+}
+.grid_1 h1, .grid_2 h2, .bg h3{
+    font-size: 2em;
+}    
+.heart-divider {
+   margin: 1em auto 2em;
+}
+.bg_left {
+    padding: 1em;
+}
+.col-md-4.row_1-right {
+    margin: 3em 0 0 0;
+}
+.religion {
+    margin: 2em 0;
+}
+.grid_2 {
+    margin-bottom: 3em;
+}
+.bg_left h4 {
+    font-size: 1.3em;
+}
+.col_2 {
+    margin-bottom: 2em;
+}
+.col_2 h4 {
+    margin-bottom: 10px;
+}
+.col-md-6.about_right {
+    padding-left: 0;
+    margin: 2em 0 0 0;
+}
+.about_middle h2 {
+    font-size:2em;
+}
+.testi_grid .testi_grid_blockquote > div {
+    padding: 10px 10px;
+}
+.testi_grid .testi_grid_blockquote > div a {
+    font-size: 12px;
+}
+.testi-meta1 {
+    padding: 15px 115px 0 0;
+}
+.about_grid1{
+	width:50%;
+	float:left;
+	margin-bottom:2em;
+}
+.about_bottom {
+    padding: 5em 0 3em;
+}
+.post_networks ul li {
+    margin: 6em 0 0 0;
+}
+.profile_left2 {
+    margin-bottom: 3em;
+}
+.match_right{
+	padding-left:0;
+}
+.col-md-9.profile_left {
+    padding-left: 0;
+    margin: 2em 0 0 0;
+}
+.col-md-9.members_box {
+    padding-left: 0;
+    margin: 2em 0 0 0;
+}
+.search_left {
+    padding-left: 0;
+    margin-bottom: 3em;
+}
+.profile_search1 {
+    margin-bottom: 2em;
+}
+.profile_left1 {
+    margin-bottom: 3em;
+}
+.col-md-9.members_box2 {
+    padding-left: 0;
+    margin: 2em 0 0 0;
+}
+.nav-tabs1 {
+    margin-bottom:1em;
+}
+.pricing-table {
+    width: 50%;
+    float: left;
+}
+.grid_4 {
+    width: 220px;
+}
+.profile_right{
+	padding-left:0;
+	margin:3em 0 0 0;
+}
+ul.profile_item{
+    padding: 0;
+    list-style: none;
+    width: 55%;
+    display: flex;
+    font-size: 18px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    margin-left: auto;
+    margin-right: auto;
+}
+h1{
+    font-size: 34px;
+}
+h2{
+    font-size: 28px;
+}
+h3{
+    font-size: 23px;
+}
+h4{
+    font-size: 18px;
+}
+h5{
+    font-size: 16px;
+}
+h6{
+    font-size: 14px;
+}
+.biodatanumber h2{
+    font-size: 28px;
+}
+.sb_biodata_profile{
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+    margin-top: 0px;
+    margin-bottom: 0px;
+    margin-right: 15px;
+    margin-left: 15px;
+    padding: 20px;
+    }
+    .sb_user .sb_value{
+        font-size: 14px;
+        width: 38%;
+    }
+    .sb_user .sb_data{
+        font-size: 14px;
+        width: 62%;
+    }
+    .sb_biodatanumber{
+        font-size: 22px;
+    }
+    .biodatalist{
+        width: 45%;
+    }
+}
+/*-- -- -- -- -- -- -- -- -- -- -- -- -- ---- -- --
+--          max-width:930px / E  N  D         --
+--      Media Responsive / Phone Responsive      --
+-- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -*/
+
+
+
+
+
+
+
+
+
+
+/*-- -- -- -- -- -- -- -- -- -- -- -- -- ---- -- --
+--          max-width:768px / S T A R T          --
+--      Media Responsive / Phone Responsive      --
+-- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -*/
+@media (max-width: 768px){
+.banner_info h3 {
+    font-size: 2.5em;
+}	
+.hvr-shutter-out-horizontal {
+    padding: 6px 15px;
+    font-size: 16px;
+}
+.banner_info {
+    margin: 5em 0 0 0;
+}
+.profile_search {
+    margin: 5em 0 0 0;
+}
+.age_box1 {
+    width: 50% !important;
+}
+label.gender_1 {
+    margin-right: 0px;
+}    
+.banner {
+    /* min-height: 429px;  */
+    min-height: 309px; 
+
+}
+.grid_1 {
+    padding: 3em 0;
+}
+.footer {
+    padding: 1em 0;
+}
+.copy {
+    margin: 1em 0 0 0;
+}
+.profile_search {
+   padding: 2em 1em;
+}
+.inline-block {
+    padding-right: 0;
+}
+.wrap_1{
+	width:720px;
+}
+.center-middle {
+    margin: 85px 0 0 0;
+}
+.navbar-nav > li > a {
+    padding: 4px 8px;
+    font-size: 14px;
+}
+ul.nav_1 {
+    margin: 7px 0 0 0;
+}
+#colorNav li ul li a {
+    font-size: 12px;
+}
+#colorNav li ul {
+    width: 110px;
+    margin-left: -20px;
+}
+.grid_3, .about_middle{
+    padding: 3em 0;
+}
+.about_bottom {
+    padding: 3em 0 2em;
+}
+i.icon_4 {
+    font-size: 50px;
+    line-height: 80px;
+}
+.row_2 ul img{
+    height: 160px;
+    width: 150px;
+    padding: 15px;
+    margin-top: 0px;
+    margin-left: 0px;
+    margin-right: 0px;
+    margin-bottom: 31px;
+}
+h1{
+    font-size: 34px;
+}
+h2{
+    font-size: 28px;
+}
+h3{
+    font-size: 23px;
+}
+h4{
+    font-size: 18px;
+}
+h5{
+    font-size: 16px;
+}
+h6{
+    font-size: 14px;
+}
+.biodatanumber h2{
+    font-size: 28px;
+}
+}
+/*-- -- -- -- -- -- -- -- -- -- -- -- -- ---- -- --
+--           max-width:768px / E  N  D           --
+--      Media Responsive / Phone Responsive      --
+-- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -*/
+
+
+
+
+
+
+
+
+/*-- -- -- -- -- -- -- -- -- -- -- -- -- ---- -- --
+--          max-width:765px / S T A R T          --
+--      Media Responsive / Phone Responsive      --
+-- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -*/
+@media (max-width: 765px) {
+
+    .sb-biodata{
+        border: 2px solid #ff0080;
+        border-radius: 6px;
+        width: 80%;
+        padding: 20px;
+        margin-left: auto;
+        margin-right: auto;
+        margin-bottom: 40px;
+        margin-top: 20px;
+        background: white;
+       box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    }
+    .sb_biodata_profile{
+        display: flex;
+        flex-wrap: wrap;
+        width: 100%;
+        margin-top: 0px;
+        margin-bottom: 0px;
+        margin-right: 15px;
+        margin-left: 15px;
+        padding: 20px;
+        }
+        .sb_user .sb_value{
+            font-size: 14px;
+            width: 38%;
+        }
+        .sb_user .sb_data{
+            font-size: 14px;
+            width: 62%;
+        }
+        .sb_biodatanumber{
+            font-size: 22px;
+        }
+        .biodatalist{
+            width: 45%;
+        }
+      }
+/*-- -- -- -- -- -- -- -- -- -- -- -- -- ---- -- --
+--           max-width:765px / E  N  D           --
+--      Media Responsive / Phone Responsive      --
+-- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -*/
+
+
+
+
+
+
+
+
+/*-- -- -- -- -- -- -- -- -- -- -- -- -- ---- -- --
+--          max-width:736px / S T A R T          --
+--      Media Responsive / Phone Responsive      --
+-- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -*/
+@media (max-width: 736px){
+#colorNav li ul {
+    top: 13px;
+}
+.columns {
+    margin: 2em 0 0 0;
+}
+.column_grid {
+    padding: 0;
+}
+.pull-right {
+    float: none!important;
+}
+.navigation {
+   margin-right: 30%;
+}
+.nav_bottom {
+    background:#02a7e6;
+}
+.inline-block {
+    display: inline-block;
+    margin-bottom: 10px;
+}
+.wrap_1 {
+    width:480px;
+}
+.age_box1 {
+    width: 50% !important;
+}
+.search_top {
+    margin-bottom:0;
+}
+.banner_info h3 {
+    font-size: 2em;
+    margin-bottom:20px;
+}
+.banner_info {
+    margin: 3em 0 0 0;
+}
+.profile_search {
+    margin: 3em 0 0 0;
+    padding:10px;
+}
+.banner {
+    /* min-height: 386px; */
+    min-height: 280px; 
+}
+.age_box2 {
+    max-width: 100% !important;
+}
+input#submit-btn {
+    font-size: 0.85em;
+    padding: 4px 10px;
+}
+.hvr-shutter-out-horizontal {
+    padding: 5px 10px;
+    font-size: 14px;
+}
+.banner {
+    min-height: 357px;
+}
+.grid_1 h1, .grid_2 h2, .bg h3 {
+    font-size: 1.5em;
+}
+.bg_left {
+    padding: 10px;
+    margin-bottom: 1em;
+}
+.bg {
+    min-height: 600px;
+    padding: 3em 0 0 0;
+}
+.testi_grid {
+    width:95%;
+}
+.testi_grid:nth-child(2n+1) .testi-meta {
+    padding: 5px 0px 0 0;
+    text-align: right;
+}
+.testi-meta1 {
+    padding: 5px 325px 0 0;
+}
+.testi_grid .testi_grid_blockquote .featured-thumbnail img {
+    width: 75%;
+}
+.about_middle-grid1 {
+    margin-bottom: 1em;
+}
+.navbar-nav {
+    margin: 18px 0 0 0;
+    float:left;
+    width:100%;
+}
+.navbar-header.nav_2 {
+    display:block;
+}
+.navbar-default .navbar-toggle {
+    border-color:#2f374c;
+    background-color:#2f374c;
+    border-radius: 2px;
+}
+.navbar-toggle1 {
+    height: 30px;
+    margin: 0px 15px 0 0px;
+    color: #fff;
+    padding: 4px 0 0 0;
+}
+.dropdown-menu>li>a {
+    color: #fff !important;
+}
+.dropdown-menu>li>a:hover, .dropdown-menu>li>a:focus {
+    background-color:#ff0080;
+}
+.col-sm-3, .col-sm-6{
+	padding-left:0;
+}
+.suceess_story ul li:first-child {
+    padding-top: 1rem;
+}
+.suceess_story ul li {
+    padding-bottom: 1rem;
+}
+.page_header h1 {
+    font-size: 2em;
+}
+i.icon_4 {
+    font-size: 50px;
+    line-height: 60px;
+}
+.col-sm-4.item_content {
+    text-align: center;
+    margin-bottom: 2em;
+}
+.services_top {
+    margin-bottom: 0;
+}
+ul.login_details1 {
+    margin: 1em 0;
+}
+.form_radios {
+    padding-left: 0;
+}
+.col-sm-5.input-group1 {
+    padding-left: 0;
+    margin-bottom: 5px;
+}
+p + .addr, .addr + .addr, .terms + .addr {
+    margin-bottom: 0;
+}
+.grid_4 {
+    width: 160px;
+}
+#contact-form input[type='text'], #contact-form textarea {
+    padding: 10px;
+}    
+#contact-form input[type="submit"] {
+    padding:10px;
+}   
+.login_left {
+    margin-bottom: 2em;
+}
+label {
+    font-size: 13px;
+} 
+.btn_1 {
+    padding: 6px 20px;
+}
+.sharing li {
+    margin-bottom: 10px;
+}
+.col-sm-4.form_box2 {
+    padding: 0;
+    margin: 5px 0;
+}
+.form_box, .form_box1{
+    padding:0;
+}
+ul.login_details1 {
+    margin: 5px 0;
+}
+.col_2 {
+    padding: 0;
+}
+.col-sm-8.row_1 {
+    padding: 15px;
+}
+ul.profile_item{
+    padding: 0;
+    list-style: none;
+    width: 60%;
+    display: flex;
+    font-size: 15px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    margin-left: auto;
+    margin-right: auto;
+}
+td.day_value {
+    font-size: 14px;
+}
+td.day_label {
+    font-size: 14px;
+}
+h1{
+    font-size: 34px;
+}
+h2{
+    font-size: 28px;
+}
+h3{
+    font-size: 23px;
+}
+h4{
+    font-size: 18px;
+}
+h5{
+    font-size: 16px;
+}
+h6{
+    font-size: 14px;
+}
+.biodatanumber h2{
+    font-size: 27px;
+}
+
+.sb-biodata{
+    border: 2px solid #ff0080;
+    border-radius: 6px;
+    width: 80%;
+    padding: 20px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 40px;
+    margin-top: 20px;
+    background: white;
+   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+.sb-biodata-field h2{
+    font-size: 25px;
+}
+
+.sb_biodata_profile{
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+    margin-top: 0px;
+    margin-bottom: 0px;
+    margin-right: 0px;
+    margin-left: 0px;
+    padding: 20px;
+    }
+    .sb_user .sb_value{
+        font-size: 13px;
+        width: 38%;
+    }
+    .sb_user .sb_data{
+        font-size: 13px;
+        width: 62%;
+    }
+    .sb_biodatanumber{
+        font-size: 20px;
+    }
+    .biodatalist{
+        width: 48%;
+        margin-left: 5px;
+        margin-right: 5px;
+        margin-top: 10px;
+        margin-bottom: 10px;
+    }
+}
+/*-- -- -- -- -- -- -- -- -- -- -- -- -- ---- -- --
+--           max-width:736px / E  N  D           --
+--      Media Responsive / Phone Responsive      --
+-- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -*/
+
+
+
+
+
+
+
+
+
+/*-- -- -- -- -- -- -- -- -- -- -- -- -- ---- -- --
+--          max-width:600px / S T A R T          --
+--      Media Responsive / Phone Responsive      --
+-- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -*/
+@media (max-width: 600px){
+    ul.profile_item{
+        padding: 0;
+        list-style: none;
+        width: 72%;
+        display: flex;
+        font-size: 13px;
+        margin-top: 20px;
+        margin-bottom: 20px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+    td.day_value {
+        font-size: 13px;
+    }
+    td.day_label {
+        font-size: 13px;
+    }
+    h1{
+        font-size: 33px;
+    }
+    h2{
+        font-size: 27px;
+    }
+    h3{
+        font-size: 22px;
+    }
+    h4{
+        font-size: 17px;
+    }
+    h5{
+        font-size: 15px;
+    }
+    h6{
+        font-size: 13px;
+    }
+    .biodatanumber h2{
+        font-size: 27px;
+    }
+    .sb_biodata_profile{
+        display: flex;
+        flex-wrap: wrap;
+        width: 100%;
+        margin-top: 0px;
+        margin-bottom: 0px;
+        margin-right: 0px;
+        margin-left: 0px;
+        padding: 20px;
+        }
+        .sb_user .sb_value{
+            font-size: 12px;
+            width: 40%;
+        }
+        .sb_user .sb_data{
+            font-size: 12px;
+            width: 60%;
+        }
+        .sb_biodatanumber{
+            font-size: 20px;
+        }
+        .biodatalist{
+            width: 48%;
+            margin-left: 5px;
+            margin-right: 5px;
+            margin-top: 10px;
+            margin-bottom: 10px;
+        }
+    }
+/*-- -- -- -- -- -- -- -- -- -- -- -- -- ---- -- --
+--            max-width:600px / E  N  D          --
+--      Media Responsive / Phone Responsive      --
+-- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -*/
+
+
+
+
+
+
+
+/*-- -- -- -- -- -- -- -- -- -- -- -- -- ---- -- --
+--          max-width:540px / S T A R T          --
+--      Media Responsive / Phone Responsive      --
+-- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -*/
+    @media (max-width: 540px){
+        td.day_value {
+            font-size: 12px;
+        }
+        td.day_label {
+            font-size: 12px;
+        }
+        h1{
+            font-size: 32px;
+        }
+        h2{
+            font-size: 26px;
+        }
+        h3{
+            font-size: 21px;
+        }
+        h4{
+            font-size: 16px;
+        }
+        h5{
+            font-size: 14px;
+        }
+        h6{
+            font-size: 12px;
+        }
+        .biodatanumber h2{
+            font-size: 24px;
+        }
+        .sb_biodata_profile{
+            display: flex;
+            flex-wrap: wrap;
+            width: 100%;
+            margin-top: 0px;
+            margin-bottom: 0px;
+            margin-right: 0px;
+            margin-left: 0px;
+            padding: 20px;
+            }
+            .sb_user .sb_value{
+                font-size: 14px;
+                width: 40%;
+            }
+            .sb_user .sb_data{
+                font-size: 14px;
+                width: 60%;
+            }
+            .sb_biodatanumber{
+                font-size: 22px;
+            }
+            .biodatalist{
+                width: 75%;
+                margin-left: auto;
+                margin-right: auto;
+                margin-top: 20px;
+                margin-bottom: 20px;
+            }
+        }
+/*-- -- -- -- -- -- -- -- -- -- -- -- -- ---- -- --
+--           max-width:540px / E  N  D           --
+--      Media Responsive / Phone Responsive      --
+-- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -*/
+
+
+
+
+
+
+
+
+
+/*-- -- -- -- -- -- -- -- -- -- -- -- -- ---- -- --
+--          max-width:480px / S T A R T          --
+--      Media Responsive / Phone Responsive      --
+-- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -*/
+@media (max-width:480px){
+.banner_info h3 {
+    font-size: 1.5em;
+    margin-bottom: 15px;
+}	
+.hvr-shutter-out-horizontal {
+    font-size: 13px;
+}
+.banner_info {
+    margin: 2em 0 0 0;
+}
+.profile_search {
+    margin: 2em 0 0 0;
+    padding: 10px;
+}
+label.gender_1 {
+    font-size: 12px;
+}    
+.input-group input[type="text"], select, input.transparent{
+    font-size: 10px;
+}    
+input#submit-btn {
+    font-size: 0.8125em;
+    padding: 3px 8px;
+}
+.wrap_1 {
+    width: 452px;
+}
+.inline-block {
+    margin-bottom: 5px;
+}
+.banner {
+    /* min-height: 281px; */
+    min-height: 195px;
+}
+.heart-divider {
+    margin: 1em auto 1em;
+}
+.religion_1-title {
+    font-size: 1.2em;
+}
+.grid_2 {
+    margin-bottom: 1em;
+}
+.col-sm-3, .col-sm-6 {
+    padding:0;
+}
+.bg {
+    min-height: 625px;
+}
+.map iframe {
+   height:200px;
+}
+.testi-meta1 {
+    padding: 5px 177px 0 0;
+}
+.testi_grid .testi_grid_blockquote .featured-thumbnail {
+    width: 80px;
+    height: 80px;
+}
+.nav>li>a {
+    padding: 8px 5px;
+    font-size: 13px;
+}
+p.description {
+    font-size: 12px;
+    line-height: 1.5em;
+}
+.tab_box h1 {
+    font-size: 1.1em;
+}
+.jobs-item .top-btns li {
+    margin-left: 4px;
+}
+.menu ul li a {
+   line-height: 2em;
+}
+.jobs-item {
+   margin-bottom: 2em;
+}
+i.icon_1 {
+    font-size: 30px;
+}
+i.icon_2 {
+    font-size: 20px;
+}
+ul.phone li.phone_right p {
+    font-size: 12px;
+}    
+.row {
+    margin-left: 0;
+    margin-right: 0;
+}
+.pricing-table {
+    width: 100%;
+    float: none;
+    margin-bottom:5px;
+}
+.grid_4 {
+    width: 140px;
+    margin: 0;
+}
+.nbs-flexisel-nav-right:after, .nbs-flexisel-nav-left:after  {
+    top:20px;
+}
+ul.profile_item{
+    padding: 0;
+    list-style: none;
+    width: 81%;
+    display: flex;
+    font-size: 12px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    margin-left: auto;
+    margin-right: auto;
+}
+td.day_value {
+    font-size: 10px;
+}
+td.day_label {
+    font-size: 10px;
+}
+h1{
+    font-size: 32px;
+}
+h2{
+    font-size: 26px;
+}
+h3{
+    font-size: 21px;
+}
+h4{
+    font-size: 16px;
+}
+h5{
+    font-size: 14px;
+}
+h6{
+    font-size: 12px;
+}
+.biodatanumber h2{
+    font-size: 18px;
+}
+.update-image-button{
+    font-size: 13px;
+    display: block;
+}
+.deleteimage {
+    padding: 10px;
+    margin-top: -15px;
+    margin-left: -9px;
+    width: 85%;
+}
+.update-image img {
+    height: 100%;
+    width: 100%;
+}
+
+.sb_biodata_profile{
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+    margin-top: 0px;
+    margin-bottom: 0px;
+    margin-right: 0px;
+    margin-left: 0px;
+    padding: 20px;
+    }
+    .sb_user .sb_value{
+        font-size: 14px;
+        width: 40%;
+    }
+    .sb_user .sb_data{
+        font-size: 14px;
+        width: 60%;
+    }
+    .sb_biodatanumber{
+        font-size: 22px;
+    }
+    .biodatalist{
+        width: 80%;
+        margin-left: auto;
+        margin-right: auto;
+        margin-top: 20px;
+        margin-bottom: 20px;
+    }
+}
+/*-- -- -- -- -- -- -- -- -- -- -- -- -- ---- -- --
+--           max-width:480px / E  N  D           --
+--      Media Responsive / Phone Responsive      --
+-- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -*/
+
+
+
+
+
+
+
+
+
+
+
+/*-- -- -- -- -- -- -- -- -- -- -- -- -- ---- -- --
+--          max-width:414px / S T A R T          --
+--      Media Responsive / Phone Responsive      --
+-- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -*/
+@media (max-width:414px){
+.wrap_1 {
+    width: 375px;
+}
+.banner_info h3 {
+    font-size: 1.2em;
+    margin-bottom: 10px;
+}
+.hvr-shutter-out-horizontal {
+    padding: 4px 8px;
+    font-size: 11px;
+}	
+.banner_info {
+    margin: 1em 0 0 0;
+}
+.profile_search {
+    margin: 1em 0 0 0;
+    padding:5px;
+}
+.banner {
+    /* min-height: 254px; */
+    min-height: 180px;
+}
+.navigation {
+    margin-right: 23%;
+    margin-top: 0;
+}
+.bg_left h4 {
+    font-size: 1.1em;
+}
+.bg_left h5 {
+    font-size: 0.85em;
+}
+.bg {
+    min-height: 640px;
+    padding: 2em 0 0 0;
+}
+.col_2 {
+    margin-bottom: 1em;
+}
+.about_middle h2 {
+    font-size: 1.5em;
+}
+.grid_3, .about_middle {
+    padding: 2em 0;
+}
+.about_bottom h3 {
+    font-size: 1.8em;
+}
+.desc h4 {
+    font-size: 1.1em;
+}
+.post_networks ul li {
+    margin: 2.5em 0 0 0;
+}
+.profile_left h2 {
+    font-size: 1em;
+}
+.col_3 {
+    margin-bottom: 2em;
+}
+.page_header h3 {
+    font-size: 1em;
+}
+.page_header h1 {
+    font-size:1.5em;
+    margin-bottom:10px;
+}
+i.icon_4 {
+    font-size: 35px;
+    line-height: 50px;
+}
+.col-sm-4.item_content {
+    margin-bottom: 1em;
+}
+.footer {
+    padding: 1em 0;
+}
+.about_bottom {
+    padding: 2em 0 0em;
+}
+ul.match_box {
+    margin: 0 0 1em 0;
+}
+.members_box h1, .terms h2 {
+    font-size: 1.2em;
+}
+.members_box1 {
+    margin: 1em 0;
+}
+.col-md-9.members_box p{
+    font-size:0.8125em;
+}
+ol.terms_list li {
+    font-size: 0.8125em;
+}    
+.nbs-flexisel-nav-right:after, .nbs-flexisel-nav-left:after  {
+    top:20px;
+}
+.terms h4 {
+   font-size: 1.2em;
+}
+.form_radios {
+   font-size: 12px;
+}
+.paid_people {
+    margin: 2em 0 0 0;
+}
+.paid_people h1 {
+    font-size: 1.3em;
+}    
+.search_left {
+    margin-bottom: 1em;
+}
+.view_profile2 {
+    margin: 3em 0 0 0;
+}
+.headings h1{
+    font-size:25px;
+}
+.headings h2{
+    font-size:22px;
+}
+.headings h3{
+    font-size:19px;
+}
+.headings h4{
+    font-size:16px;
+}
+.headings h5{
+    font-size:14px;
+}
+.headings h6{
+    font-size:12px;
+}
+ul.pagination_1 {
+    margin: 0 0 2em 0;
+}
+.members_box2 p {
+    margin-bottom: 1em;
+}
+.members_box2 h3 {
+    font-size: 1.5em;
+}
+.addr dl dt, .addr dl dd {
+    font-size: 12px;
+}
+.grid_4 {
+    width: 115px;
+}
+form#contact-form {
+    width: 60%;
+}
+#contact-form input[type='text'], #contact-form textarea {
+    padding: 7px;
+}
+#contact-form input[type="submit"] {
+    padding: 8px;
+    font-size: 13px;
+}
+ul.profile_item{
+    padding: 0;
+    list-style: none;
+    width: 84%;
+    display: flex;
+    font-size: 11px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    margin-left: auto;
+    margin-right: auto;
+}
+td.day_value {
+    font-size: 10px;
+}
+td.day_label {
+    font-size: 10px;
+}
+h1{
+    font-size: 30px;
+}
+h2{
+    font-size: 24px;
+}
+h3{
+    font-size: 19px;
+}
+h4{
+    font-size: 14px;
+}
+h5{
+    font-size: 13px;
+}
+h6{
+    font-size: 11px;
+}
+.biodatanumber h2{
+    font-size: 16px;
+}
+.update-image-button{
+    font-size: 13px;
+    display: block;
+}
+.deleteimage {
+    padding: 10px;
+    margin-top: -15px;
+    margin-left: -9px;
+    width: 85%;
+}
+.update-image img {
+    height: 100%;
+    width: 100%;
+}
+.sb_biodata_profile{
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+    margin-top: 0px;
+    margin-bottom: 0px;
+    margin-right: 0px;
+    margin-left: 0px;
+    padding: 20px;
+    }
+    .sb_user .sb_value{
+        font-size: 13px;
+        width: 40%;
+    }
+    .sb_user .sb_data{
+        font-size: 13px;
+        width: 60%;
+    }
+    .sb_biodatanumber{
+        font-size: 22px;
+    }
+    .biodatalist{
+        width: 85%;
+        margin-left: auto;
+        margin-right: auto;
+        margin-top: 20px;
+        margin-bottom: 20px;
+    }
+}
+/*-- -- -- -- -- -- -- -- -- -- -- -- -- ---- -- --
+--            max-width:414px / E  N  D          --
+--      Media Responsive / Phone Responsive      --
+-- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -*/
+
+
+
+
+
+
+
+
+
+
+/*-- -- -- -- -- -- -- -- -- -- -- -- -- ---- -- --
+--          max-width: 384px / S T A R T          --
+--      Media Responsive / Phone Responsive      --
+-- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -*/
+@media (max-width:384px){
+.wrap_1 {
+    width: 350px;
+}	
+.inline-block {
+    margin-bottom:2px;
+}
+a.brand img {
+    width: 150px;
+}
+.navigation {
+    margin-top: -6px;
+}
+.banner {
+    /* min-height: 231px; */
+    min-height: 155px;
+    zoom: .9;
+}
+.grid_1 {
+    padding: 2em 0;
+}
+.grid_1 h1, .grid_2 h2, .bg h3 {
+    font-size: 1.3em;
+}
+.suceess_story-content-info h4 {
+    font-size: 1em;
+}
+.suceess_story-content-container, .suceess_story-date {
+    margin-left: 1.813rem;
+}
+.suceess_story-content-featured-image {
+    margin-right: 10px;
+    margin-bottom: 0;
+}
+.post-meta span.day {
+    font-size: 25px;
+}
+.post-content {
+    font-size: 0.8125em;
+    margin: 5px 0;
+}
+a.religion_1 {
+    font-size: 0.8125em;
+}
+.religion {
+    margin: 1em 0;
+}
+.religion_1-title {
+   margin-bottom: 5px;
+}
+.bg_left p, .col_2 p, .about_right p, .desc p, .table_working_hours tr, .headings p, .column_grid p, .members_box2 p, .page_header p, .item_content p, .suceess_story-content-info p{
+    font-size:12px;
+}
+.profile_left2 {
+    margin-bottom: 2em;
+}
+.menu > li {
+    font-size:0.95em;
+}
+ul.login_details1 li p {
+    line-height: 1.5em;
+    margin: 1em 0;
+    font-size: 12px;
+}
+.phone_1 {
+    margin-right: 0%;
+}
+.span_1_of_3 {
+    width: 32.2%;
+}
+.profile_left1 {
+    margin-bottom: 2em;
+}
+.profile_left1 h1 {
+    margin-bottom: 1em;
+}
+.faq-list_h h4{
+	font-size:0.8125em;
+	color:#000;
+}
+.list_1 {
+    margin: 2em 0 0 0;
+}
+.list_1 h3 {
+    font-size: 1.3em;
+}
+.jobs-item .thumb {
+    margin-right: 10px;
+}
+.jobs-item .top-btns {
+    right: -15px;
+}
+.jobs-item .top-btns li {
+    margin-left: 2px;
+}
+p + .addr, .addr + .addr, .terms + .addr {
+    margin-top: 10px;
+}
+#contact-form input[type='text'], #contact-form textarea {
+    font-size: 12px;
+}
+#contact-form textarea{
+	height:100px;
+}
+input#submit-btn {
+    font-size: 0.8125em;
+    padding: 1px 5px;
+}
+.terms_1 h3, .terms_1 h5{
+    font-size: 1em;
+}
+.testi_grid .testi_grid_blockquote > div {
+    line-height: 16px;
+}
+ul.profile_item{
+    padding: 0;
+    list-style: none;
+    width: 100%;
+    display: flex;
+    font-size: 10px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    margin-left: auto;
+    margin-right: auto;
+}
+td.day_value {
+    font-size: 8px;
+}
+td.day_label {
+    font-size: 8px;
+}
+h1{
+    font-size: 28px;
+}
+h2{
+    font-size: 22px;
+}
+h3{
+    font-size: 17px;
+}
+h4{
+    font-size: 12px;
+}
+h5{
+    font-size: 11px;
+}
+h6{
+    font-size: 10px;
+}
+.biodatanumber h2{
+    font-size: 12px;
+}
+.update-image-button{
+    font-size: 13px;
+    display: block;
+}
+.deleteimage {
+    padding: 10px;
+    margin-top: -15px;
+    margin-left: -9px;
+    width: 85%;
+}
+.update-image img {
+    height: 100%;
+    width: 100%;
+}
+
+.sb_biodata_profile{
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+    margin-top: 0px;
+    margin-bottom: 0px;
+    margin-right: 0px;
+    margin-left: 0px;
+    padding: 20px;
+    }
+    .sb_user .sb_value{
+        font-size: 13px;
+        width: 40%;
+    }
+    .sb_user .sb_data{
+        font-size: 13px;
+        width: 60%;
+    }
+    .sb_biodatanumber{
+        font-size: 20px;
+    }
+    .biodatalist{
+        width: 80%;
+        margin-left: auto;
+        margin-right: auto;
+        margin-top: 20px;
+        margin-bottom: 20px;
+    }
+}
+/*-- -- -- -- -- -- -- -- -- -- -- -- -- ---- -- --
+--            max-width:384px / E  N  D          --
+--      Media Responsive / Phone Responsive      --
+-- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -*/
+
+
+
+
+
+
+/*-- -- -- -- -- -- -- -- -- -- -- -- -- ---- -- --
+--       max-width:350px / S  T  A  R  T         --
+--      Media Responsive / Phone Responsive      --
+-- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -*/
+@media (max-width: 350px) {
+    
+    .sb-biodata{
+        border: 2px solid #ff0080;
+        border-radius: 6px;
+        width: 70%;
+        padding: 20px;
+        margin-left: auto;
+        margin-right: auto;
+        margin-bottom: 40px;
+        margin-top: 20px;
+        background: white;
+       box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    }
+
+.sb-biodata-field h2{
+    font-size: 20px;
+}
+.sb_biodata_profile{
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+    margin-top: 0px;
+    margin-bottom: 0px;
+    margin-right: 0px;
+    margin-left: 0px;
+    padding: 20px;
+    }
+    .sb_user .sb_value{
+        font-size: 12px;
+        width: 40%;
+    }
+    .sb_user .sb_data{
+        font-size: 12px;
+        width: 60%;
+    }
+    .sb_biodatanumber{
+        font-size: 20px;
+    }
+    .biodatalist{
+        width: 90%;
+        margin-left: auto;
+        margin-right: auto;
+        margin-top: 20px;
+        margin-bottom: 20px;
+    }
+}
+/*-- -- -- -- -- -- -- -- -- -- -- -- -- ---- -- --
+--            max-width:350px / E  N  D          --
+--      Media Responsive / Phone Responsive      --
+-- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -*/
+
+
+
+
+
+
+
+
+/*-- -- -- -- -- -- -- -- -- -- -- -- -- ---- -- --
+--          max-width:320px / S T A R T          --
+--      Media Responsive / Phone Responsive      --
+-- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -*/
+@media (max-width:320px){
+.wrap_1 {
+    width: 330px;
+}	
+#colorNav li ul li a {
+    font-size: 11px;
+}
+a.brand img {
+    width: 135px;
+}
+.navigation {
+    margin-right: 20%;
+}
+.heart-divider {
+    margin: 10px auto 15px;
+}
+.row_1-right h3 {
+    margin-bottom: 1em;
+    font-size: 1.3em;
+}
+h4.post-title {
+    font-size: 0.85em;
+}
+.nbs-flexisel-nav-right:after, .nbs-flexisel-nav-left:after {
+    top: -15px;
+}
+a.religion_1 {
+    font-size: 12px;
+}
+.suceess_story,.col-md-4.row_1-right{
+   padding: 0;
+}
+.suceess_story:before, .suceess_story:after {
+    left: -8px;
+}
+.team-socials li {
+    padding: 0 5px;
+}
+.bg {
+    min-height: 660px;
+}
+.bg_left {
+    margin-bottom: 5px;
+}
+.col_2 h4 {
+    font-size: 1.1em;
+}    
+.copy p {
+    font-size: 0.8125em;
+}
+.jb-accordion-title {
+    padding: 5px 10px 7px;
+    font-size: 15px;
+}
+.about_grid1{
+	padding:0 5px;
+}
+.nav>li>a {
+    padding: 3px 5px;
+}
+.nav>li>a {
+    font-size: 12px;
+}
+.tab_box h1 {
+    font-size: 0.95em;
+}
+.tab_box p {
+   font-size: 0.8125em;
+}
+.basic_1 h3 {
+   font-size: 1em;
+}
+.basic_1, .tab_box{
+    margin-bottom: 1em;
+}
+.profile_right {
+    margin: 2em 0 0 0;
+}
+.newsletter input[type="text"] {
+    padding: 8px 2%;
+    max-width: 74%;
+}
+.newsletter input[type="submit"] {
+    padding: 6px 14px;
+}
+.newsletter {
+    margin-bottom: 2em;
+}
+.view_profile h3 {
+    font-size: 1.1em;
+}    
+.view_profile1 {
+    margin: 2em 0 0 0;
+}
+ul.profile_item li.profile_item-desc h4, ul.profile_item li.profile_item-desc h5, ul.profile_item li.profile_item-desc p, ul.footer_links li {
+   font-size: 12px;
+}
+.col-md-6.about_right {
+    margin: 1em 0 0 0;
+}
+.profile_top h2 {
+    font-size: 0.85em;
+}  
+.breadcrumb1 {
+    margin-bottom: 1em;
+}  
+.pagination>li >a {
+    padding: 4px 10px;
+    font-size: 12px;
+}
+.jobs-item .thumb img {
+    width: 70px;
+}
+h6.title {
+    font-size: 0.85em;
+}
+.jobs-item .top-btns li a {
+    font-size: 12px;
+}
+ul.login_details1 li {
+    font-size: 12px;
+}
+.breadcrumb1 li {
+    margin-right: 0;
+    padding-right: 0;
+    font-size: 0.85em;
+}
+ul.match_box li {
+    font-size: 12px;
+}
+.terms h4 {
+    font-size: 1em;
+}
+ol.terms_list {
+    margin-bottom: 1em;
+}
+.terms p {
+    margin-bottom: 1em;
+}
+p.m_4{
+	font-size:0.8125em;
+}
+.list_1 h3 {
+    font-size: 1.1em;
+}
+a.photo_view {
+    padding: 5px 8px;
+}    
+.pricing-table-grid ul li span {
+    padding:7px;
+    font-size: 13px;
+}
+.pricing-table-grid h3 {
+    padding: 10px 0 10px;
+    font-size: 1.2em;
+}
+span.month1 {
+    font-size: 12px;
+    line-height: 2em;
+}
+.pricing-table-grid ul li a, .pricing-table-grid ul li span {
+    padding: 8px 0;
+    font-size: 0.8125em;
+}
+a.order-btn {
+    width: 50%;
+    padding: 6px 10px;
+}
+.page_header {
+    margin-bottom: 1em;
+}
+.grid_5 p, .terms_1 p, .feature_list li{
+    font-size: 0.8125em;
+}
+ul.feature_list.feature_list1 {
+    margin-bottom: 1em;
+}
+ul.profile_item{
+    padding: 0;
+    list-style: none;
+    width: 110%;
+    display: flex;
+    font-size: 10px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    margin-left: auto;
+    margin-right: auto;
+}
+td.day_value {
+    font-size: 8px;
+}
+td.day_label {
+    font-size: 8px;
+}
+h1{
+    font-size: 28px;
+}
+h2{
+    font-size: 22px;
+}
+h3{
+    font-size: 17px;
+}
+h4{
+    font-size: 12px;
+}
+h5{
+    font-size: 11px;
+}
+h6{
+    font-size: 10px;
+}
+.update-image-button{
+    font-size: 13px;
+    display: block;
+}
+.deleteimage {
+    padding: 10px;
+    margin-top: -15px;
+    margin-left: -9px;
+    width: 85%;
+}
+.update-image img {
+    height: 100%;
+    width: 100%;
+}
+
+.sb_biodata_profile{
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+    margin-top: 0px;
+    margin-bottom: 0px;
+    margin-right: 0px;
+    margin-left: 0px;
+    padding: 20px;
+    }
+    .sb_user .sb_value{
+        font-size: 12px;
+        width: 43%;
+    }
+    .sb_user .sb_data{
+        font-size: 12px;
+        width: 57%;
+    }
+    .sb_biodatanumber{
+        font-size: 20px;
+    }
+    .biodatalist{
+        width: 90%;
+        margin-left: auto;
+        margin-right: auto;
+        margin-top: 20px;
+        margin-bottom: 20px;
+    }
+}
+/*-- -- -- -- -- -- -- -- -- -- -- -- -- ---- -- --
+--           max-width:320px / E  N  D           --
+--      Media Responsive / Phone Responsive      --
+-- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -*/
+
+
+/*-- -- -- -- -- -- -- -- -- -- -- -- -- ---- -- --
+-- -- -- -- -- -- -- -- --- -- -- -- -- -- -- -- --
+--                 E    N    D                   --
+--      Media Responsive / Phone Responsive      --
+--                                               --
+-- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- ---
+-- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -*/
+
