@@ -130,7 +130,7 @@ $(document).ready(function(){
                     <span class=\"sb_single_data\"> <span class=\"sb_value\"> Height </span>  <span class=\"sb_data\">{$height}</span></span>
 					<span class=\"sb_single_data\"> <span class=\"sb_value\"> Occupation </span>      <span class=\"sb_data\"> {$occupation}</span></span>
 					<span class=\"sb_single_data\"> <span class=\"sb_value\"> Birth Year</span>        <span class=\"sb_data\"> {$dateofbirth}</span></span>
-                    <button class=\"view_profile\"><a href=\"view_profile.php?id={$profid}\" target=\"_blank\"> View Full Profile </a></button>
+                    <button class=\"view_sb_profile\"><a href=\"view_profile.php?id={$profid}\" target=\"_blank\"> View Full Profile </a></button>
                     </div></div>";
         	}
 		}
@@ -162,140 +162,7 @@ $(window).load(function() {
 
 
 
+
 <style>
-.flex-container-shosurbaribio {
-    display: flex;
-    flex-wrap: wrap;
-    margin-top: -50px;
-}
-.sb_biodata_profile{
-    display: flex;
-    flex-wrap: wrap;
-    width: 100%;
-    margin-top: 0px;
-    margin-bottom: 0px;
-    margin-right: 150px;
-    margin-left: 150px;
-    padding: 20px;
-    }
 
-.biodatalist{
-    border: 1px solid #ff0080;
-    border-radius: 6px;
-    width: 30%;
-    gap: 1.5rem;
-    padding: 0px;
-    margin-left: auto;
-    margin-right: auto;
-    margin-bottom: 20px;
-    margin-top: 20px;
-    background: white;
-    box-shadow: 0 4px 8px 0 rgb(0 0 0 / 20%), 0 6px 20px 0 rgb(0 0 0 / 19%);
-}
-.biodatalist:hover{
-    background: #02a7e624;
-    box-shadow: 0 4px 8px 0 rgb(0 0 0 / 20%), 0 6px 20px 0 rgb(0 0 0 / 19%);
-}
-
-
-.sb_bio_header{
-background: #ff0080;
-/* background: #02a7e6; */
-margin: 0px;
-padding-top: 20px;
-border: 1px solid #02a7e6;
-border-radius: 5px 5px 0px 0px;
-}
-
-.biodatalist img{
-    width: 110px;
-    height: 110px;
-    border-radius: 50%;
-    padding: 2px;
-    margin-left: auto;
-    margin-right: auto;
-    margin-bottom: auto;
-    margin-top: 0px;
-    border: 2px solid white;
-}
-
-
-.sb_bio_number{
-    text-align: center;
- /*   border-bottom: 2px solid #02a7e6; */
-    padding: 10px;
-    border-bottom-left-radius: 5px;
-    border-bottom-right-radius: 5px;
-    background: #ff0080;
- /*   background: #02a7e6; */
-}
-.sb_biodatanumber{
-    font-size: 24px;
-    color: yellow;
-    font-weight: 500;
-}
-
-.sb_user{
-    text-align: center;
-    padding: 20px 20px 20px;
-    border-bottom-left-radius: 5px;
-    border-bottom-right-radius: 5px;
-}
-
-.sb_single_data{
-    display: flex;
-    flex-wrap: wrap;
-    padding-top: 0px;
-    padding-bottom: 0px;
-    margin-top: 0px;
-    margin-bottom: 0px;
-}
-.sb_user .sb_single_data{
-    display: flex;
-    flex-wrap: wrap;
-    padding-top: 0px;
-    padding-bottom: 0px;
-}
-
-.sb_user .sb_value{
-    color: black;
-    padding: 6px;
-    font-size: 15px;
-    font-weight: 400;
-    border: 1px solid #d5d5d5;
-    border-style: groove;
-    width: 35%;
-    position: inherit;
-}
-
-.sb_user .sb_data{
-    color: black;
-    padding: 6px;
-    font-size: 15px;
-    font-weight: 400;
-    border: 1px solid #d5d5d5;
-  /*  border: 1px #02a7e6; */
-    border-style: groove;
-    width: 65%;
-    position: inherit;
-}
-
-.view_profile{
-    text-align: center;
-    border: 1px solid #d5d5d5;
-    padding: 5px;
-    margin-top: 20px;
-    margin-bottom: 0px;
-    border-radius: 5px;
-    background: #ff0080;
-    color: white;
-    width:50%;
-}
-.view_profile:hover{
-  background:#02a7e6;
-  color: yellow;
-}
-.view_profile a{
-  color: white;
-}
-</style>	
+</style>
