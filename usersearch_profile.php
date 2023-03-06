@@ -160,9 +160,3 @@ $(window).load(function() {
 </body>
 </html>	
 
-
-
-
-<style>
-
-</style>
