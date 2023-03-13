@@ -48,6 +48,12 @@ $(document).ready(function(){
     );
 });
 </script>
+
+<!-- Country Code with Flag for Number input field -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/16.0.8/js/intlTelInput.min.js"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/16.0.8/css/intlTelInput.css" />
+
 </head>
 <body>
 <!-- ============================  Navigation Start =========================== -->
@@ -87,6 +93,9 @@ $password=$row['password'];
 if($row){
 $email=$row['email'];
 }
+if($row){
+    $pnumber=$row['pnumber'];
+    }
  }
 ?>
 <?php echo "Welcome: $username"; ?>
@@ -183,8 +192,6 @@ if(isset($_POST['delete_photo'])){
 
 
 
-
-
 <input style="margin-top:5px;  margin-bottom:5px; width:90%; background:green; color:white; font-weight:bold;" type="file" id="edit-name" name="pic1" value="<?php
 if(isset($_POST['submit'])){
     $user_id = $_POST['user_id'];
@@ -203,10 +210,6 @@ if(isset($_POST['submit'])){
 <input style="margin-top:5px;  margin-bottom:5px; padding: 5px 5%; font-size: 13px; font-weight:bold;" type="submit" id="edit-submit" name="op" value="Update Photo" class="btn_1 submit">
 </div>
 </div>
-
-
-
-
 
 
 
@@ -248,25 +251,25 @@ if(isset($_POST['submit'])){
         });
     </script>
 	
+
     <div class="form-group">
-	<label>Email Address</label>
-	<input type="text" name="email" class="form-text" value="<?php echo $email; ?>" />
+	    <label>Email Address</label>
+	    <input type="text" name="email" class="form-text" value="<?php echo $email; ?>" />
     </div>
+    
 
-		   <div class="form-actions">
-        <button type="submit" name="update_account" value="Update Account" class="btn_1 submit"  > <span> </span> Update Password</button>
-       </div>
+    <div class="form-group">
+		<label>Phone Number</label><br>
+		<input type="number" id="pnumber" name="pnumber" value="<?php echo $pnumber; ?>" size="60" minlength="10" maxlength="15" class="form-text required">
+	</div>
+
+
+		<div class="form-actions">
+           <button type="submit" name="update_account" value="Update Account" class="btn_1 submit"  > <span> </span> Update Password</button>
+        </div>
 
 
     </div>
-<!-- -- -- -- -- -- -- -- -- -- -- -- -- ---- -- --
--- -- -- -- -- -- -- -- --- -- -- -- -- -- -- -- --
---                   E   N   D                   --
---        Religion Details / sb-biodata-8        --
---                                               --
--- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- ---
--- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -->
-
     </div>
 	</form>
   </div>
@@ -281,6 +284,8 @@ if(isset($_POST['update_account'])) {
 	$pass_1 = $_POST['pass_1'];
 	$pass_2 = $_POST['pass_2'];
 	$email = $_POST['email'];
+    $email = $_POST['pnumber'];
+
 	
 	//check if passwords match
 	if($new_password != $confirm_password) {
@@ -288,12 +293,11 @@ if(isset($_POST['update_account'])) {
 	}
 	
 	//update user details in database
-	$query = "UPDATE users SET username = '$username', password = '$pass_1', email = '$email' WHERE username = '$username' AND password = '$password'";
+	$query = "UPDATE users SET username = '$username', password = '$pass_1', email = '$email', pnumber = '$pnumber' WHERE username = '$username' AND password = '$password'";
 	$result = mysqli_query($conn, $query);
 	if($result) {
 		echo 'Account Updated';
 	}
-
 }
 ?>
 
