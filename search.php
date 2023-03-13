@@ -45,19 +45,6 @@ $(document).ready(function(){
  <?php include_once("includes/navigation.php");?>
 <!-- ============================  Navigation End ============================ -->
 
-<div class="grid_3">
-  <div class="container">
-    <div class="breadcrumb1">
-      <ul>
-        <a href="index.php"><i class="fa fa-home home_1"></i></a>
-        <span class="divider">&nbsp;<|>&nbsp;</span>
-        <li class="current-page"><h4>Found Biodata</h4></li>
-      </ul>
-    </div>
-  </div>
-</div>
-
-
 
 
 
@@ -69,33 +56,111 @@ $(document).ready(function(){
 
 
 
-<div class="sbbiodata-search">
+<style>
+  .sbbiodata-search form{
+    width: 100%;
+    padding: 10px;
+    margin-left: 0px;
+    background: #fdfcfc;
+    border-radius: 6px;
+    border: 1px solid #ccc;
+    font-size: 15px;
+  }
+  .sbbiodata-search{
+    width: 18%;
+    position: fixed;
+    margin-top: 100px;
+    margin-left: 25px;
+    z-index: 1;
+  }
+
+  .form_radios {
+    color: #000;
+    font-size: 13px;
+    padding: 0px;
+}
+
+.select-block1 select {
+    box-shadow: none;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    outline: 0;
+    background: #ffffff;
+    height: 30px;
+    line-height: 14px;
+    padding: 5px 15px;
+    width: 100%;
+    color: black;
+    font-size: 13px;
+}
+
+.control-lable1 {
+    padding: 0;
+    font-size: 13px;
+    color: #000;
+    margin-top: 4px;
+}
+
+.form_but1 {
+    margin-bottom: 2px;
+}
+
+input[type=submit] {
+    -webkit-appearance: button;
+    cursor: pointer;
+    width: 100%;
+}
+.sb_biodata_profile{
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+    margin-top: 0px;
+    margin-bottom: 0px;
+    margin-right: 0px;
+    margin-left: 280px;
+    padding: 20px;
+    }
+
+    .heart-divider {
+    height: 100%;
+    width: 100%;
+    margin: 100px;
+    text-align: center;
+}
+  </style>
+
+       	<div class="heart-divider">
+            <h1>Find your perfect <span>Partner</span></h1>
+			<span class="grey-line"></span>
+			<i class="fa fa-heart pink-heart"></i>
+			<i class="fa fa-heart grey-heart"></i>
+			<span class="grey-line"></span>
+        </div>
+
+
+        <div class="sbbiodata-search">
 <form action="" method="post">	
 
 
   <div class="form_but1">
   <label class="col-sm-5 control-lable1" for="Looking">Looking : </label>
 	<div class="col-sm-7 form_radios">
-		<input type="radio" class="radio_1" name="biodatagender" value="Male" /> Groom &nbsp;&nbsp;
+		<input type="radio" class="radio_1" name="biodatagender" value="Male" /> Groom &nbsp;&nbsp; <br>
 		<input type="radio" class="radio_1" name="biodatagender" value="Female"/> Bride
   </div>
-  <div class="clearfix"> </div>
   </div>
-
 
   <div class="form_but1">
 	<label class="col-sm-5 control-lable1" for="Marital Status">Marital Status : </label>
 	<div class="col-sm-7 form_radios">
-		<input type="checkbox" class="radio_1" name="maritalstatus" value="Unmarried" /> Unmarried &nbsp;&nbsp;
-		<input type="checkbox" class="radio_1" name="maritalstatus" value="Divorced" /> Divorced &nbsp;&nbsp;
-		<input type="checkbox" class="radio_1" name="maritalstatus" value="Widow" /> Widow &nbsp;&nbsp;
-		<input type="checkbox" class="radio_1" name="maritalstatus" value="Widower"/> Widower &nbsp;&nbsp;
-    <input type="checkbox" class="radio_1" name="maritalstatus" value="Married"/> Married &nbsp;&nbsp;
+		<input type="checkbox" class="radio_1" name="maritalstatus" value="Unmarried" /> Unmarried &nbsp;&nbsp;  <br>
+		<input type="checkbox" class="radio_1" name="maritalstatus" value="Divorced" /> Divorced &nbsp;&nbsp;  <br>
+		<input type="checkbox" class="radio_1" name="maritalstatus" value="Widow" /> Widow &nbsp;&nbsp;  <br>
+		<input type="checkbox" class="radio_1" name="maritalstatus" value="Widower"/> Widower &nbsp;&nbsp;  <br>
+    <input type="checkbox" class="radio_1" name="maritalstatus" value="Married"/> Married &nbsp;&nbsp;  <br>
 		<input type="checkbox" class="radio_1" name="maritalstatus" value="any" /> Any
 	</div>
-  <div class="clearfix"> </div>
   </div>
-
 
 
   <div class="form_but1">
@@ -196,7 +261,6 @@ $(document).ready(function(){
           </select>
       </div>
     </div>
-    <div class="clearfix"> </div>
   </div>
 
 
@@ -297,7 +361,6 @@ $(document).ready(function(){
           </select>
       </div>
     </div>
-    <div class="clearfix"> </div>
   </div>
 
 
@@ -315,7 +378,6 @@ $(document).ready(function(){
 	                            </select>
       </div>
     </div>
-    <div class="clearfix"> </div>
   </div>
 
 
@@ -333,7 +395,6 @@ $(document).ready(function(){
 	                        </select>
       </div>
     </div>
-    <div class="clearfix"> </div>
   </div>
   
 
@@ -352,7 +413,6 @@ $(document).ready(function(){
 	                        </select>
       </div>
     </div>
-    <div class="clearfix"> </div>
   </div>
 
 
@@ -369,7 +429,6 @@ $(document).ready(function(){
 	                    </select>
       </div>
     </div>
-    <div class="clearfix"> </div>
   </div>
 
 
@@ -387,42 +446,7 @@ $(document).ready(function(){
 
 
 
-
-
-
-
-
-
-
-       	<div class="heart-divider">
-            <h1>Find your perfect <span>Partner</span></h1>
-			<span class="grey-line"></span>
-			<i class="fa fa-heart pink-heart"></i>
-			<i class="fa fa-heart grey-heart"></i>
-			<span class="grey-line"></span>
-        </div>
       <div class="sb_biodata_profile">
-		
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 <!-- main profile -->
         <?php
 if(isset($_POST['search'])){
@@ -480,8 +504,7 @@ if(isset($_POST['search'])){
             $religion=$row5['religion'];
 
 
-    if ($c_count == '1')
-            {
+ 
             echo "<div class=\"biodatalist\">";
                     echo "<div class=\"sb_bio_header\">";
                     echo "<a href=\"view_profile.php?id={$profid}\" target=\"_blank\"> <img  class=\"img-responsive\" src=\"profile/{$profid}\/{$pic1}\"/></a>";
@@ -496,24 +519,6 @@ if(isset($_POST['search'])){
 					<span class=\"sb_single_data\"> <span class=\"sb_value\"> Birth Year</span>        <span class=\"sb_data\"> {$dateofbirth}</span></span>
                     <button class=\"view_sb_profile\"><a href=\"view_profile.php?id={$profid}\" target=\"_blank\"> View Full Profile </a></button>
                     </div></div>";
-          $c_count++;
-          } else {
-            echo "<div class=\"biodatalist\">";
-            echo "<div class=\"sb_bio_header\">";
-            echo "<a href=\"view_profile.php?id={$profid}\" target=\"_blank\"> <img  class=\"img-responsive\" src=\"profile/{$profid}\/{$pic1}\"/></a>";
-            echo "<div class=\"sb_bio_number\"><span class=\"sb_biodatanumber\"> {$profid} <br> Biodata Number </span> </div>";
-            echo "</div>";
-
-            echo "<div class=\"sb_user\">
-  <span class=\"sb_single_data\"> <span class=\"sb_value\"> Gender </span>          <span class=\"sb_data\"> {$biodatagender}</span></span>
-            <span class=\"sb_single_data\"> <span class=\"sb_value\"> Skin Tones </span>  <span class=\"sb_data\">{$Skin_tones}</span></span>
-            <span class=\"sb_single_data\"> <span class=\"sb_value\"> Height </span>  <span class=\"sb_data\">{$height}</span></span>
-  <span class=\"sb_single_data\"> <span class=\"sb_value\"> Occupation </span>      <span class=\"sb_data\"> {$occupation}</span></span>
-  <span class=\"sb_single_data\"> <span class=\"sb_value\"> Birth Year</span>        <span class=\"sb_data\"> {$dateofbirth}</span></span>
-            <button class=\"view_sb_profile\"><a href=\"view_profile.php?id={$profid}\" target=\"_blank\"> View Full Profile </a></button>
-            </div></div>";
-  $c_count='1';
-          }
 
         	}
 		}
