@@ -335,6 +335,25 @@ $(document).ready(function(){
     </div>
     <div class="clearfix"> </div>
   </div>
+  
+
+  <div class="form_but1">
+    <label class="col-sm-5 control-lable1" for="Education Method">Education Method : </label>
+    <div class="col-sm-7 form_radios">
+      <div class="select-block1">
+	                        <select name="education_method" required>
+							   <option hidden selected> Select Education Method </option>
+		                       <option value="Genaral">General</option>
+		                       <option value="Dakhil">Dakhil</option>
+		                       <option value="Technical">Technical</option>
+		                       <option value="Qawmi Madrasa">Qawmi Madrasa</option>
+							   <option value="Other">Other</option>
+							   <option value="None">None</option>
+	                        </select>
+      </div>
+    </div>
+    <div class="clearfix"> </div>
+  </div>
 
 
   <div class="form_but1">
@@ -415,20 +434,51 @@ if(isset($_POST['search'])){
       $Skin_tones=$row['Skin_tones'];
       $height=$row['height'];
       $dateofbirth=$row['dateofbirth'];
+      $religion=$row5['religion'];
 
 
       $sql2="SELECT * FROM photos WHERE user_id=$profid";
       $result2 = mysqlexec($sql2);
-      if($result2){
+      if($result2)
         $row2=mysqli_fetch_array($result2);
         $pic1=$row2['pic1'];
-      }
+      
 
       $sql3="SELECT * FROM 2bd_personal_lifestyle WHERE user_id=$profid";		
       $result3=mysqlexec($sql3);
       if($result3)
         while($row3=mysqli_fetch_assoc($result3))
         $occupation=$row3['occupation'];
+
+                      
+        $sql7="SELECT * FROM 3bd_educational_qualifications WHERE user_id=$profid";		
+        $result7=mysqlexec($sql7);
+        if($result7)
+          while($row7=mysqli_fetch_assoc($result7))
+          $education_method=$row5['education_method'];
+
+
+        $sql4="SELECT * FROM 4bd_address_details WHERE user_id=$profid";		
+        $result4=mysqlexec($sql4);
+        if($result4)
+          while($row4=mysqli_fetch_assoc($result4))
+          $permanent_address=$row4['permanent_address'];
+
+
+          $sql6="SELECT * FROM 5bd_family_information WHERE user_id=$profid";		
+          $result6=mysqlexec($sql6);
+          if($result6)
+            while($row6=mysqli_fetch_assoc($result6))
+            $family_class=$row6['family_class'];
+          
+
+
+          $sql5="SELECT * FROM 8bd_religion_details WHERE user_id=$profid";		
+          $result5=mysqlexec($sql5);
+          if($result5)
+            while($row5=mysqli_fetch_assoc($result5))
+            $religion=$row5['religion'];
+
 
     if ($c_count == '1')
             {
