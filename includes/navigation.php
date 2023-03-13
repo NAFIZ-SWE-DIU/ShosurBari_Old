@@ -85,21 +85,6 @@
 				  	echo "<li><a href=\"register.php\">Register</a></li>";
 				  }
 			    ?> 
-<?php
-include("includes/dbconn.php");
-//getting profile details from db
-$sql="SELECT * FROM users WHERE id = $id";
-$result = mysqlexec($sql);
-
-if($result){
-$row=mysqli_fetch_assoc($result);
-if($row){
-$username=$row['username'];
-  }
- }
-?>
-<?php echo  $username; ?>
-
 			</li>
 
 
