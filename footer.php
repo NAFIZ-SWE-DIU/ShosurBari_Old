@@ -36,8 +36,6 @@
 				  <li><a href="#"><i class="fa fa-twitter fa1"> </i></a></li>
 				  <li><a  href="mailto:shosurbari@gmail.com" target="blank"><i class="fa fa-google-plus fa1"> </i></a></li>
 				  <li><a href="#"><i class="fa fa-youtube fa1"> </i></a></li>
-				  <li><a href="#"><i class="fa fa-boxed fa-fw fa-linkedin"> </i></a></li>
-
 			    </ul>
     		</div>
 
@@ -54,20 +52,6 @@
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 <div id="scroll-up-btn" onclick="scrollToTop()">
     <i class="fa fa-arrow-up"></i>
 </div>
@@ -75,8 +59,8 @@
 <style>
 	#scroll-up-btn {
                 position: fixed;
-                bottom: 0px;
-                right: 0px;
+                bottom: 20px;
+                right: 30px;
                 cursor: pointer;
 				padding: 10px;
 				background: #ff008087;
