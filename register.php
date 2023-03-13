@@ -40,12 +40,7 @@ $(document).ready(function(){
 });
 </script>
 
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
-<!-- Country Code with Flag for Number input field -->
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/16.0.8/js/intlTelInput.min.js"></script>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/16.0.8/css/intlTelInput.css" />
 
 </head>
 <body>
@@ -103,18 +98,9 @@ $(document).ready(function(){
 			<div class="form-group">
 		     <!--  <label for="edit-name">Phone Number<span class="form-required" title="This field is required.">*</span></label> -->
 		      <input type="number" id="pnumber" placeholder="Phone Number" name="pnumber" value="" size="60" minlength="10" maxlength="15" class="form-text required">
-			  <br><span id="pnumber_error" style="color:red; font-size:13px;"></span>
+			  <span id="pnumber_error" style="color:red; font-size:13px;"></span>
 			</div>
 
-			<script>
-    $(document).ready(function() {
-      var input = document.querySelector("#pnumber");
-      window.intlTelInput(input, {
-        separateDialCode: true,
-        preferredCountries: ["bd"]
-      });
-    });
-  </script>
 		    <div class="form-group">
 		      <!-- <label for="edit-pass">Password<span class="form-required" title="This field is required.">*</span></label> -->
 		      <input type="password" id="pass_1" placeholder="New Password" name="pass_1" size="60" maxlength="128" class="form-text required">
@@ -149,8 +135,7 @@ $(document).ready(function(){
 
 
 
-    
-	<style type="text/css">
+<style type="text/css">
     .gender-radio-select{
         padding: 00px 10px;
         display: flex;
@@ -256,9 +241,23 @@ $(document).ready(function(){
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
 			<div class="form-actions">
 			<button  type="submit" id="edit-submit" name="op" class="btn_4 submit"> <span> </span> Create Account</button>
 			</div>
+
 
 
 			<div class="or">
@@ -287,3 +286,143 @@ $(document).ready(function(){
 
 </body>
 </html>	
+
+
+
+<script>
+  		// Form Input field when error the show border red and scroll up start
+      function validateForm(){
+      var fname = document.forms["myForm"]["fname"].value;
+      var uname = document.forms["myForm"]["uname"].value;
+      var email = document.forms["myForm"]["email"].value;
+      var pnumber = document.forms["myForm"]["pnumber"].value;
+      var pass_1 = document.forms["myForm"]["pass_1"].value;
+      var pass_2 = document.forms["myForm"]["pass_2"].value;
+
+
+    
+      //Full Name validation
+      if (fname == "") {
+        document.getElementById('fname').style.borderColor = "red";
+        document.getElementById('fname').scrollIntoView({
+          behavior: 'smooth',
+          block: 'center',
+        });
+        document.getElementById('fname_error').innerHTML = "Please enter your Full Name";
+        return false;
+      }else{
+        document.getElementById('fname').style.borderColor = "green";
+        document.getElementById('fname_error').innerHTML = "";
+      }
+      
+
+      //Username validation
+      if (uname == "") {
+        document.getElementById('uname').style.borderColor = "red";
+        document.getElementById('uname').scrollIntoView({
+          behavior: 'smooth',
+          block: 'center',
+        });
+        document.getElementById('uname_error').innerHTML = "Please enter your Username";
+        return false;
+      }else if (! /^[A-Za-z0-9]+$/.test(uname)){
+        document.getElementById('uname').style.borderColor = "red";
+        document.getElementById('uname_error').innerHTML = "Please enter only Letters and Numbers. Can't used any symbol or space.";
+        document.getElementById('uname').scrollIntoView({
+          behavior: 'smooth',
+          block: 'center',
+        });
+        return false;
+      }else{
+        document.getElementById('uname').style.borderColor = "green";
+        document.getElementById('uname_error').innerHTML = "";
+      }
+
+    
+      //Email validation
+      if (email == "") {
+        document.getElementById('email').style.borderColor = "red";
+        document.getElementById('email').scrollIntoView({
+          behavior: 'smooth',
+          block: 'center',
+        });
+        document.getElementById('email_error').innerHTML = "Please enter your Email";
+        return false;
+      }else if(! /^[a-zA-Z0-9._-]+@(gmail|outlook|hotmail|yahoo).com$/.test(email)){
+        document.getElementById('email').style.borderColor = "red";
+        document.getElementById('email_error').innerHTML = "Please enter a valid Email. Ex: (@gmail / @outlook / @hotmail / @yahoo).com";
+        document.getElementById('email').scrollIntoView({
+          behavior: 'smooth',
+          block: 'center',
+        });
+        return false;
+      }else{
+        document.getElementById('email').style.borderColor = "green";
+        document.getElementById('email_error').innerHTML = "";
+      }
+      
+
+      //Phone number validation
+      if (pnumber == "") {
+        document.getElementById('pnumber').style.borderColor = "red";
+        document.getElementById('pnumber').scrollIntoView({
+          behavior: 'smooth',
+          block: 'center',
+        });
+        document.getElementById('pnumber_error').innerHTML = "Please enter your Phone Number";
+        return false;
+      }else if(pnumber.length < 10 || pnumber.length > 14){
+        document.getElementById('pnumber').style.borderColor = "red";
+        document.getElementById('pnumber_error').innerHTML = "Phone number must be between 10 and 14 characters";
+        document.getElementById('pnumber').scrollIntoView({
+          behavior: 'smooth',
+          block: 'center',
+        });
+        return false;
+      }else{
+        document.getElementById('pnumber').style.borderColor = "green";
+        document.getElementById('pnumber_error').innerHTML = "";
+      }
+
+      
+      //Password validation
+      if (pass_1 == "") {
+        document.getElementById('pass_1').style.borderColor = "red";
+        document.getElementById('pass_1').scrollIntoView({
+          behavior: 'smooth',
+          block: 'center',
+        });
+        document.getElementById('pass_1_error').innerHTML = "Please enter your new Password";
+        return false;
+      }else{
+        document.getElementById('pass_1').style.borderColor = "green";
+        document.getElementById('pass_1_error').innerHTML = "";
+      }
+
+      
+      //Confirm Password validation
+      if (pass_2 == "") {
+        document.getElementById('pass_2').style.borderColor = "red";
+        document.getElementById('pass_2').scrollIntoView({
+          behavior: 'smooth',
+          block: 'center',
+        });
+        document.getElementById('pass_2_error').innerHTML = "Please enter your Confirm Password";
+        return false;
+      }else if(pass_2 != pass_1){
+        document.getElementById('pass_2').style.borderColor = "red";
+        document.getElementById('pass_2_error').innerHTML = "Password do not match";
+        document.getElementById('pass_2').scrollIntoView({
+          behavior: 'smooth',
+          block: 'center',
+        });
+        return false;
+      }else{
+        document.getElementById('pass_2').style.borderColor = "green";
+        document.getElementById('pass_2_error').innerHTML = "";
+      }
+
+    }
+		// Form Input field when error the show border red and scroll up start
+
+  </script>
