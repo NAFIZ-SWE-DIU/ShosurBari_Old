@@ -52,18 +52,17 @@ function searchid(){
 -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -*/
 function search(){
 
- if ($_SERVER['REQUEST_METHOD'] == 'POST') {
-    $biodatagender=$_POST['biodatagender'];
-	$Skin_tones=$_POST['Skin_tones'];
-
-    $sql="SELECT * FROM 1bd_personal_physical WHERE  
-	 biodatagender='$biodatagender'  
-	AND Skin_tones='$Skin_tones'  
-	";
-    $result = mysqlexec($sql);
-    return $result;
- }
-}
+	if ($_SERVER['REQUEST_METHOD'] == 'POST') {
+	   $biodatagender=$_POST['biodatagender'];
+	   $Skin_tones=$_POST['Skin_tones'];
+	   $sql="SELECT * FROM 1bd_personal_physical WHERE  
+		biodatagender='$biodatagender'  
+	   OR Skin_tones='$Skin_tones'  
+	   ";
+	   $result = mysqlexec($sql);
+	   return $result;
+	}
+   }
 /*-- -- -- -- -- -- -- -- -- -- -- -- -- ---- -- --
 -- -- -- -- -- -- -- -- --- -- -- -- -- -- -- -- --
 --                   E   N   D                   --
@@ -519,6 +518,7 @@ require_once("includes/dbconn.php");
 	    echo "<a href=\"view_profile.php?id={$id}\">";
     }
 }
+
 
 
 }
