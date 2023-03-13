@@ -53,57 +53,16 @@ function searchid(){
 function search(){
 
  if ($_SERVER['REQUEST_METHOD'] == 'POST') {
-	if($row){
     $biodatagender=$_POST['biodatagender'];
-	}
+	$Skin_tones=$_POST['Skin_tones'];
 
-    $sql="SELECT * FROM 1bd_personal_physical WHERE 
-    biodatagender='$biodatagender' 
-   /*AND country = '$country' */
-    ";
+    $sql="SELECT * FROM 1bd_personal_physical WHERE  
+	 biodatagender='$biodatagender'  
+	AND Skin_tones='$Skin_tones'  
+	";
     $result = mysqlexec($sql);
     return $result;
  }
-
-
- if ($_SERVER['REQUEST_METHOD'] == 'POST') {
-	if($row){
-    $maritalstatus=$_POST['maritalstatus'];
-	}
-$sql="SELECT * FROM 2bd_personal_lifestyle WHERE 
-maritalstatus='$maritalstatus' 
-";
-$result = mysqlexec($sql);
-return $result;
- }
-
-
-
-
- if ($_SERVER['REQUEST_METHOD'] == 'POST') {
-	if($row){
-    $district=$_POST['district'];
-	}
-$sql="SELECT * FROM 4bd_address_details WHERE 
-district='$district' 
-";
-$result = mysqlexec($sql);
-    return $result;
- }
-
-
-
-	if ($_SERVER['REQUEST_METHOD'] == 'POST') {
-		if($row){
-		$religion=$_POST['religion'];
-		}
-$sql="SELECT * FROM 8bd_religion_details WHERE 
-religion='$religion' 
-";
-    $result = mysqlexec($sql);
-    return $result;
-  }
-
 }
 /*-- -- -- -- -- -- -- -- -- -- -- -- -- ---- -- --
 -- -- -- -- -- -- -- -- --- -- -- -- -- -- -- -- --
