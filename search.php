@@ -1,13 +1,6 @@
 <?php include_once("includes/basic_includes.php");?>
 <?php include_once("functions.php"); ?>
-<?php 
-if(isloggedin()){
- //do nothing stay here
-} else{
-   header("location:login.php");
-}
 
-?>
 <?php
 $result=search();
 ?>
@@ -51,241 +44,438 @@ $(document).ready(function(){
 <!-- ============================  Navigation Start =========================== -->
  <?php include_once("includes/navigation.php");?>
 <!-- ============================  Navigation End ============================ -->
+
 <div class="grid_3">
   <div class="container">
-   <div class="breadcrumb1">
-     <ul>
+    <div class="breadcrumb1">
+      <ul>
         <a href="index.php"><i class="fa fa-home home_1"></i></a>
-        <span class="divider">&nbsp;|&nbsp;</span>
-        <li class="current-page">Regular Search</li>
-     </ul>
-   </div>
-   <!--<script type="text/javascript">
-    $(function () {
-     $('#btnRadio').click(function () {
-          var checkedradio = $('[name="gr"]:radio:checked').val();
-          $("#sel").php("Selected Value: " + checkedradio);
-      });
-    });
-   </script>-->
-<div class="col-md-9 search_left">
-  <form action="" method="post">	
-   <div class="form_but1">
-	<label class="col-sm-5 control-lable1" for="sex">Gender : </label>
-	<div class="col-sm-7 form_radios">
-		<input type="radio" class="radio_1" name="sex" value="male" <?php echo "checked";?>/> Groom &nbsp;&nbsp;
-		<input type="radio" class="radio_1" name="sex" value="female"/> Bride
-		
-		<!--<hr />
-		<p id="sel"></p><br />
-		<input id="btnRadio" type="button" value="Get Selected Value" />-->
-	</div>
-	<div class="clearfix"> </div>
+        <span class="divider">&nbsp;<|>&nbsp;</span>
+        <li class="current-page"><h4>Found Biodata</h4></li>
+      </ul>
+    </div>
   </div>
+</div>
+
+
+
+
+
+
+
+<div class="flex-container-shosurbaribio">
+
+
+
+
+
+<div class="sbbiodata-search">
+<form action="" method="post">	
+
+
+  <div class="form_but1">
+  <label class="col-sm-5 control-lable1" for="Looking">Looking : </label>
+	<div class="col-sm-7 form_radios">
+		<input type="radio" class="radio_1" name="biodatagender" value="Male" /> Groom &nbsp;&nbsp;
+		<input type="radio" class="radio_1" name="biodatagender" value="Female"/> Bride
+  </div>
+  <div class="clearfix"> </div>
+  </div>
+
+
   <div class="form_but1">
 	<label class="col-sm-5 control-lable1" for="Marital Status">Marital Status : </label>
 	<div class="col-sm-7 form_radios">
-		<input type="checkbox" class="radio_1" name="maritalstatus" value="Single" <?php echo "checked" ?>/> Single &nbsp;&nbsp;
-		<input type="checkbox" class="radio_1" name="maritalstatus" value="divorced" /> Divorced &nbsp;&nbsp;
-		<input type="checkbox" class="radio_1" name="maritalstatus" value="widowed" /> Widowed &nbsp;&nbsp;
-		<input type="checkbox" class="radio_1" name="maritalstatus" value="seperated"/> Separated &nbsp;&nbsp;
+		<input type="checkbox" class="radio_1" name="maritalstatus" value="Unmarried" /> Unmarried &nbsp;&nbsp;
+		<input type="checkbox" class="radio_1" name="maritalstatus" value="Divorced" /> Divorced &nbsp;&nbsp;
+		<input type="checkbox" class="radio_1" name="maritalstatus" value="Widow" /> Widow &nbsp;&nbsp;
+		<input type="checkbox" class="radio_1" name="maritalstatus" value="Widower"/> Widower &nbsp;&nbsp;
+    <input type="checkbox" class="radio_1" name="maritalstatus" value="Married"/> Married &nbsp;&nbsp;
 		<input type="checkbox" class="radio_1" name="maritalstatus" value="any" /> Any
 	</div>
-	<div class="clearfix"> </div>
+  <div class="clearfix"> </div>
   </div>
+
+
+
   <div class="form_but1">
-    <label class="col-sm-5 control-lable1" for="country">Country : </label>
+    <label class="col-sm-5 control-lable1" for="permanent_address">Permanent Address : </label>
     <div class="col-sm-7 form_radios">
       <div class="select-block1">
-        <select name="country">
-            <option value="">Country</option>
-            <option value="Japan">Japan</option>
-            <option value="Kenya">Kenya</option>
-            <option value="Dubai">Dubai</option>
-            <option value="Italy">Italy</option>
-            <option value="Greece">Greece</option> 
-            <option value="Iceland">Iceland</option> 
-            <option value="China">China</option> 
-            <option value="India">India</option> 
-            <option value="Irland">Irland</option> 
-            <option value="Srilanka">Srilanka</option> 
-            <option value="Russia">Russia</option> 
-            <option value="Hong Kong">Hong Kong</option> 
-            <option value="Germany">Germany</option>
+      <select name="permanent_address">
+
+<option>Select District</option>
+  <optgroup label="Barishal Division">
+              <option value="Barguna">Barguna</option>
+              <option value="Barishal">Barishal</option> 
+             <option value="Bhola">Bhola</option>
+  <option value="Jhalokati">Jhalokati</option>
+              <option value="Patuakhali">Patuakhali</option> 
+             <option value="Pirojpur">Pirojpur</option>
+            </optgroup>
+
+<optgroup label="Chattagram Division">
+  <option value="Bandarban">Bandarban</option>
+              <option value="Brahmanbaria">Brahmanbaria</option> 
+             <option value="Chandpur">Chandpur</option>
+  <option value="Chattogram">Chattogram</option>
+              <option value="Cumilla">Cumilla</option>
+  <option value="Coxbazar">Cox's Bazar</option>  
+             <option value="Feni">Feni</option>
+  <option value="Khagrachhari">Khagrachhari</option>
+  <option value="Lakshmipur">Lakshmipur</option>
+  <option value="Noakhali">Noakhali</option>
+              <option value="Rangamati">Rangamati</option>
+            </optgroup>
+
+<optgroup label="Dhaka Division">
+             <option value="Dhaka">Dhaka</option>
+  <option value="Faridpur">Faridpur</option>
+              <option value="Gazipur">Gazipur</option> 
+             <option value="Gopalganj">Gopalganj</option>
+  <option value="Kishoreganj">Kishoreganj</option>
+  <option value="Madaripur">Madaripur</option>
+              <option value="Manikganj">Manikganj</option> 
+             <option value="Munshiganj">Munshiganj</option>
+  <option value="Narayanganj">Narayanganj</option>
+              <option value="Narsingdi">Narsingdi</option> 
+             <option value="Rajbari">Rajbari</option>
+  <option value="Shariatpur">Shariatpur</option>
+              <option value="Tangail">Tangail</option>
+            </optgroup>
+
+<optgroup label="Khulna Division">
+             <option value="Bagerhat">Bagerhat</option>
+  <option value="Chuadanga">Chuadanga</option>
+              <option value="Jashore">Jashore</option>
+  <option value="Jhenaidah">Jhenaidah</option>  
+             <option value="Khulna">Khulna</option>
+  <option value="Kushtia">Kushtia</option>
+  <option value="Magura">Magura</option>
+  <option value="Meherpur">Meherpur</option>
+              <option value="Narail">Narail</option> 
+             <option value="Satkhira">Satkhira</option>
+            </optgroup>
+
+<optgroup label="Mymensingh Division">
+  <option value="Jamalpur">Jamalpur</option>
+              <option value="Mymensingh">Mymensingh</option> 
+             <option value="Netrokona">Netrokona</option>
+  <option value="Sherpur">Sherpur</option>
+            </optgroup>
+
+<optgroup label="Rajshahi Division">
+  <option value="Bogura">Bogura</option>
+  <option value="Chapai Nawabganj">Chapai Nawabganj</option> 
+              <option value="Joypurhat">Joypurhat</option> 
+             <option value="Naogaon">Naogaon</option>
+  <option value="Natore">Natore</option>
+             <option value="Pabna">Pabna</option>
+  <option value="Rajshahi">Rajshahi</option>
+              <option value="Sirajganj">Sirajganj</option>
+            </optgroup>
+
+<optgroup label="Rangpur Division">
+             <option value="Dinajpur">Dinajpur</option>
+  <option value="Gaibandha">Gaibandha</option>
+              <option value="Kurigram">Kurigram</option>
+  <option value="Lalmonirhat">Lalmonirhat</option>  
+             <option value="Nilphamari">Nilphamari</option>
+  <option value="Panchagarh">Panchagarh</option>
+  <option value="Rangpur">Rangpur</option>
+  <option value="Thakurgaon">Thakurgaon</option>
+            </optgroup>
+
+<optgroup label="Sylhet Division">
+              <option value="Habiganj">Habiganj</option> 
+             <option value="Moulvibazar">Moulvibazar</option>
+  <option value="Sunamganj">Sunamganj</option>
+              <option value="Sylhet">Sylhet</option>
+            </optgroup>
+
           </select>
       </div>
     </div>
     <div class="clearfix"> </div>
   </div>
+
+
   <div class="form_but1">
-    <label class="col-sm-5 control-lable1" for="District / City">District / City : </label>
+    <label class="col-sm-5 control-lable1" for="Occupation">Occupation : </label>
     <div class="col-sm-7 form_radios">
       <div class="select-block1">
-        <select name="district">
-            <option value="">District / City</option>
-            <option value="Wayanad">Wayanad</option>
-            <option value="Calicut">Calicut</option>
-            <option value="Malappuram">Malappuram</option> 
-            <option value="Trivandrum">Trivandrum</option> 
-            <option value="Kannur">Kannur</option> 
-            <option value="Kasargode">Kasargode</option>
-        </select>
+      <select name="occupation">
+
+<optgroup label="Students Sector">
+<option  hidden selected>Select Occupation</option>
+<option value="Students of Kawmi Madrasa">Students of Kawmi Madrasa</option> 
+<option value="Students of High School">Students of High School</option>
+<option value="Students of Doploma">Students of Doploma</option> 
+             <option value="Students of College">Students of College</option>
+              <option value="Students of B.Sc. Engineering">Students of B.Sc. Engineering</option> 
+             <option value="Students of Medical Sector">Students of Medical Sector</option>
+              <option value="Students of B.Sc.">Students of B.Sc.</option>
+              <option value="Students of M.Sc.">Students of M.Sc.</option>
+<option value="Students of B.A.">Students of B.A.</option> 
+             <option value="Students of M.A.">Students of M.A.</option>
+<option value="Students of B.Com.">Students of B.Com.</option> 
+             <option value="Students of M.Com.">Students of M.Com.</option>
+                </optgroup>
+
+ <optgroup label="Medical & Health Sector">
+              <option value="MBBS Doctor">MBBS Doctor</option>
+              <option value="Internship Doctor">Internship Doctor</option> 
+<option value="FCPS Doctor">FCPS Doctor</option>
+<option value="Pharmacist">Pharmacist</option>
+<option value="Diploma Doctor">Diploma Doctor</option>
+<option value="Peramedical">Peramedical</option> 
+             <option value="Nursing">Nursing</option>
+<option value="Midwifary">Midwifary</option>
+                </optgroup>
+
+<optgroup label="Engineers Sector">
+<option value="Aerospace Engineer">Aerospace Engineer</option>
+<option value="Agricultural Engineer">Agricultural Engineer</option>
+<option value="Architectural Engineer">Architectural Engineer</option>
+<option value="Biomedical Engineer">Biomedical Engineer</option>
+<option value="Chemical Engineer">Chemical Engineer</option>
+<option value="Civil Engineer">Civil Engineer</option>
+<option value="Electrical Engineer">Electrical Engineer</option>
+<option value="Marine Engineer">Marine Engineer</option> 
+<option value="Mechanical Engineer">Mechanical Engineer</option>
+<option value="Network Engineer">Network Engineer</option> 
+<option value="Robotics Engineer">Robotics Engineer</option>
+              <option value="Software Engineer">Software Engineer</option> 
+             <option value="Textile Engineer">Textile Engineer</option>
+                </optgroup>
+
+<optgroup label="Teachers Sector">
+<option value="Teaches of Kawmi Madrasa">Teaches of Kawmi Madrasa</option> 
+              <option value="Teaches of Primary School">Teaches of Primary School</option> 
+             <option value="Teaches of High School">Teaches of High School</option>
+<option value="Professor of College">Professor of College</option>
+<option value="Professor of Public University">Professor of Public University</option>
+<option value="Professor of Private University">Professor of Private University</option>
+<option value="Professor of National University">Professor of National University</option>
+<option value="Professor of Degree">Professor of Degree</option>
+                </optgroup>
+
+<optgroup label="Defense Sector">
+              <option value="Army">Army</option> 
+             <option value="Air Force">Air Force</option>
+              <option value="Navy">Navy</option>
+              <option value="Police">Police</option>
+<option value="Fire Service">Fire Service</option> 
+             <option value="RAB">RAB</option>
+              <option value="DB">DB</option>
+                </optgroup>
+
+<optgroup label="Garments Sector">
+              <option value="Worker of Garments">Worker of Garments</option> 
+             <option value="Managers of Garments">Managers of Garments</option>
+                </optgroup>
+
+<optgroup label="Driver Sector">
+              <option value="Bus Driver">Bus Driver</option> 
+<option value="Micro Driver">Micro Bus Driver</option> 
+              <option value="Car Driver">Car Driver</option> 
+              <option value="Truck Driver">Truck Driver</option>
+<option value="CNG Driver">CNG Driver</option> 
+              <option value="Auto Driver">Auto Driver</option>
+                </optgroup>
+
+<optgroup label="Others Sector">
+<option value="Banker">Banker</option>
+<option value="Business">Business</option> 
+<option value="Entrepreneur">Entrepreneur</option> 
+<option value="Lawyer">Lawyer</option> 
+              <option value="Frelancer">Frelancer</option>
+<option value="Graphics Desigener">Graphics Desigener</option>
+<option value="Sales & Marketing (SR)">Sales & Marketing (SR)</option>  
+              <option value="No Job">No Job</option>
+
+          </select>
       </div>
     </div>
     <div class="clearfix"> </div>
   </div>
-  <div class="form_but1">
-    <label class="col-sm-5 control-lable1" for="State">State : </label>
-    <div class="col-sm-7 form_radios">
-      <div class="select-block1">
-        <select name="state">
-            <option value="">State</option>
-            <option value="Kerala">Kerala</option>
-            <option value="Tamilnadu">Tamilnadu</option>
-            <option value="Karnataka">Karnataka</option>
-            <option value="Madhyapradesh">Madhyapradesh</option>
-        </select>
-      </div>
-    </div>
-    <div class="clearfix"> </div>
-  </div>
+
+
   <div class="form_but1">
     <label class="col-sm-5 control-lable1" for="Religion">Religion : </label>
     <div class="col-sm-7 form_radios">
       <div class="select-block1">
-        <select name="religion">
-            <option value="">Religion</option>
-            <option value="Hindu">Hindu</option>
-            <option value="Sikh">Sikh</option>
-            <option value="Jain-All">Jain-All</option>
-            <option value="Jain-Digambar">Jain-Digambar</option>
-            <option value="Jain-Others">Jain-Others</option>
-            <option value="Muslim-All">Muslim-All</option> 
-            <option value="Muslim-Shia">Muslim-Shia</option> 
-            <option value="Muslim-Sunni">Muslim-Sunni</option> 
-            <option value="Muslim-Others">Muslim-Others</option> 
-            <option value="Christian-All">Christian-All</option> 
-            <option value="Christian-Catholic">Christian-Catholic</option> 
-            <option value="Jewish">Jewish</option> 
-            <option value="Inter-Religion">Inter-Religion</option> 
-        </select>
+      <select name="religion">
+								<option hidden selected>Select Religion</option>
+						        <option value="Muslim">Muslim</option>
+		                        <option value="Hindu">Hindu</option>
+		                        <option value="Christian">Christian</option>
+		                        <option value="Budhism">Budhism</option>
+		                        <option value="Others">Others</option>
+	                            </select>
       </div>
     </div>
     <div class="clearfix"> </div>
   </div>
+
+
   <div class="form_but1">
-    <label class="col-sm-5 control-lable1" for="Mother Tongue">Mother Tongue : </label>
+    <label class="col-sm-5 control-lable1" for="Family Class">Family Class : </label>
     <div class="col-sm-7 form_radios">
       <div class="select-block1">
-        <select name="mothertounge">
-            <option value="Malayalam">Malayalam</option>
-            <option value="English">English</option>
-            <option value="French">French</option>
-            <option value="Telugu">Telugu</option>
-            <option value="Bengali">Bengali</option>
-            <option value="Bihari">Bihari</option>
-            <option value="Hindi">Hindi</option>
-            <option value="Tamil">Tamil</option> 
-            <option value="Urdu">Urdu</option> 
-            <option value="Manipuri">Manipuri</option> 
-        </select>
+      <select name="family_class">
+							    <option hidden selected>Select Family Condition</option>
+	                            <option value="Higher Class">Higher Class</option>
+	                            <option value="Higher Middle Class">Higher Middle Class</option> 
+	               		        <option value="Middle Class">Middle Class</option>
+								<option value="Lower Middle Class">Lower Middle Class</option>
+								<option value="Lower Class">Lower Class</option>  
+	                        </select>
       </div>
     </div>
     <div class="clearfix"> </div>
   </div>
+
+
   <div class="form_but1">
-	<label class="col-sm-5 control-lable1" for="Age">Age : </label>
-	<div class="col-sm-7 form_radios">
-	  <div class="col-sm-5 input-group1">
-        <input class="form-control has-dark-background" name="agemin" id="slider-name" placeholder="18" type="text" required=""/>
+    <label class="col-sm-5 control-lable1" for="Skin Tones">Skin Tones : </label>
+    <div class="col-sm-7 form_radios">
+      <div class="select-block1">
+      <select name="Skin_tones">
+							<option hidden selected>Select Skin Tones</option>
+	                        <option value="Light">Light</option>
+	                        <option value="Fair">Fair</option> 
+	               		    <option value="Medium">Medium</option>
+							<option value="Dark">Dark</option>
+	                    </select>
       </div>
-      
-      <div class="col-sm-5 input-group1">
-        <input class="form-control has-dark-background" name="agemax" id="slider-name" placeholder="40" type="text" required=""/>
-      </div>
-      <div class="clearfix"> </div>
-	</div>
-	<div class="clearfix"> </div>
-  <input type="submit" name="search" value="Search"/>
+    </div>
+    <div class="clearfix"> </div>
   </div>
+
+
+  <div class="form_but1">
+	  <div class="clearfix"> </div>
+    <input type="submit" name="search" value="Search"/>
+  </div>
+
  </form>
- <div class="paid_people">
-   <h1>Profiles</h1>
-<?php
-//only start display profiles if and only if search is triggered
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+       	<div class="heart-divider">
+            <h1>Find your perfect <span>Partner</span></h1>
+			<span class="grey-line"></span>
+			<i class="fa fa-heart pink-heart"></i>
+			<i class="fa fa-heart grey-heart"></i>
+			<span class="grey-line"></span>
+        </div>
+      <div class="sb_biodata_profile">
+		
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- main profile -->
+        <?php
 if(isset($_POST['search'])){
-
-//code to print matching profiles
-
-// couloumn count
-
-$c_count = '1';
-
-while ($row = mysqli_fetch_assoc($result))
-  {
-    
-    $profid=$row['cust_id'];
-    //getting photo for display
-    $sql="SELECT * FROM photos WHERE cust_id=$profid";
-    $result2=mysqlexec($sql);
-    $photo=mysqli_fetch_assoc($result2);
-    $pic=$photo['pic1'];
-  // printing left side profile
-  echo "<div class=\"row_1\">"; //starting row  
-  if ($c_count == '1')
+  $c_count = '1';
+  while ($row = mysqli_fetch_assoc($result))
     {
-    
-    echo "<div class=\"col-sm-6 paid_people-left\">"; //left statrted
-    echo "<ul class=\"profile_item\">";
-    echo "<a href=\"view_profile.php?id=$profid\">";
-    echo "<li class=\"profile_item-img\"><img src=\"profile/". $profid."/".$pic ."\"" . "class=\"img-responsive\" alt=\"\"/></li>";
-    echo "<li class=\"profile_item-desc\">";
-    echo "<h4>" . $row['firstname'] . " " . $row['lastname'] . "</h4>";
-    echo "<p>" . $row['age']. "Yrs," . $row['religion'] . "</p>";
-    echo "<h5>" . "View Full Profile" . "</h5>";
-    echo "</li>";
-    echo "</a>";
-    echo "</ul>";
-    echo "</div>"; //left end
-    $c_count++;
-    }
-    else
-    {
-    echo "<div class=\"col-sm-6\">"; //right statrted
-    echo "<ul class=\"profile_item\">";
-    echo "<a href=\"view_profile.php?id=$profid\">";
-    echo "<li class=\"profile_item-img\"><img src=\"profile/". $profid."/".$pic ."\"" . "class=\"img-responsive\"" ;
-    echo "alt=\"\"/></li>";
-    echo "<li class=\"profile_item-desc\">";
-    echo "<h4>" . $row['firstname'] . " " . $row['lastname'] . "</h4>";
-    echo "<p>" . $row['age']. "Yrs," . $row['religion'] . "</p>";
-    echo "<h5>" . "View Full Profile" . "</h5>";
-    echo "</li>";
-    echo "</a>";
-    echo "</ul>";
-    echo "</div class=\"test\">"; //right end
+      $profid=$row['user_id'];
+      $biodatagender=$row['biodatagender'];
+      $Skin_tones=$row['Skin_tones'];
+      $height=$row['height'];
+      $dateofbirth=$row['dateofbirth'];
 
-    // end of right side
 
-    
-    $c_count = '1';
-    }
-    echo "</div>"; //row end
-  } //loop end
+      $sql2="SELECT * FROM photos WHERE user_id=$profid";
+      $result2 = mysqlexec($sql2);
+      if($result2){
+        $row2=mysqli_fetch_array($result2);
+        $pic1=$row2['pic1'];
+      }
+
+      $sql3="SELECT * FROM 2bd_personal_lifestyle WHERE user_id=$profid";		
+      $result3=mysqlexec($sql3);
+      if($result3)
+        while($row3=mysqli_fetch_assoc($result3))
+        $occupation=$row3['occupation'];
+
+    if ($c_count == '1')
+            {
+            echo "<div class=\"biodatalist\">";
+                    echo "<div class=\"sb_bio_header\">";
+                    echo "<a href=\"view_profile.php?id={$profid}\" target=\"_blank\"> <img  class=\"img-responsive\" src=\"profile/{$profid}\/{$pic1}\"/></a>";
+                    echo "<div class=\"sb_bio_number\"><span class=\"sb_biodatanumber\"> {$profid} <br> Biodata Number </span> </div>";
+                    echo "</div>";
+
+                    echo "<div class=\"sb_user\">
+					<span class=\"sb_single_data\"> <span class=\"sb_value\"> Gender </span>          <span class=\"sb_data\"> {$biodatagender}</span></span>
+                    <span class=\"sb_single_data\"> <span class=\"sb_value\"> Skin Tones </span>  <span class=\"sb_data\">{$Skin_tones}</span></span>
+                    <span class=\"sb_single_data\"> <span class=\"sb_value\"> Height </span>  <span class=\"sb_data\">{$height}</span></span>
+					<span class=\"sb_single_data\"> <span class=\"sb_value\"> Occupation </span>      <span class=\"sb_data\"> {$occupation}</span></span>
+					<span class=\"sb_single_data\"> <span class=\"sb_value\"> Birth Year</span>        <span class=\"sb_data\"> {$dateofbirth}</span></span>
+                    <button class=\"view_sb_profile\"><a href=\"view_profile.php?id={$profid}\" target=\"_blank\"> View Full Profile </a></button>
+                    </div></div>";
+          $c_count++;
+          } else {
+            echo "<div class=\"biodatalist\">";
+            echo "<div class=\"sb_bio_header\">";
+            echo "<a href=\"view_profile.php?id={$profid}\" target=\"_blank\"> <img  class=\"img-responsive\" src=\"profile/{$profid}\/{$pic1}\"/></a>";
+            echo "<div class=\"sb_bio_number\"><span class=\"sb_biodatanumber\"> {$profid} <br> Biodata Number </span> </div>";
+            echo "</div>";
+
+            echo "<div class=\"sb_user\">
+  <span class=\"sb_single_data\"> <span class=\"sb_value\"> Gender </span>          <span class=\"sb_data\"> {$biodatagender}</span></span>
+            <span class=\"sb_single_data\"> <span class=\"sb_value\"> Skin Tones </span>  <span class=\"sb_data\">{$Skin_tones}</span></span>
+            <span class=\"sb_single_data\"> <span class=\"sb_value\"> Height </span>  <span class=\"sb_data\">{$height}</span></span>
+  <span class=\"sb_single_data\"> <span class=\"sb_value\"> Occupation </span>      <span class=\"sb_data\"> {$occupation}</span></span>
+  <span class=\"sb_single_data\"> <span class=\"sb_value\"> Birth Year</span>        <span class=\"sb_data\"> {$dateofbirth}</span></span>
+            <button class=\"view_sb_profile\"><a href=\"view_profile.php?id={$profid}\" target=\"_blank\"> View Full Profile </a></button>
+            </div></div>";
+  $c_count='1';
+          }
+
+        	}
+		}
   
-}//end of if
-?>
-   
-  </div>
+
+        ?>
+    </div>
 </div>
-<!-- Match Right Starts -->
-<div class="col-md-3 match_right">
-  <?php include_once("matchright.php");?>
-</div>
-<!-- Match Right ends -->
-     <div class="clearfix"> </div>
-  </div>
-</div>
+
+
+
+
 
 
 <?php include_once("footer.php");?>
