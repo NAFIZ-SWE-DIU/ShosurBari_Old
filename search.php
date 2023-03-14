@@ -78,8 +78,8 @@ $(document).ready(function(){
     color: #000;
     font-size: 13px;
     padding: 0px;
-    margin-top: 4px;
-    margin-bottom: 4px;
+    margin-top: 15px;
+    margin-bottom: 15px;
 }
 
 .select-block1 select {
@@ -101,7 +101,8 @@ $(document).ready(function(){
     padding: 0;
     font-size: 13px;
     color: #000;
-    margin-top: 4px;
+    margin-top: 15px;
+    margin-bottom: 15px;
 }
 
 .form_but1 {
@@ -174,6 +175,11 @@ label {
     padding: 5px 10px;
     max-height: 140px;
     overflow: auto;
+  }
+
+  .wrapper{
+    margin-top: 10px;
+    margin-bottom: 10px;
   }
   </style>
 
