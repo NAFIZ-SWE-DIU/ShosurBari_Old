@@ -78,6 +78,8 @@ $(document).ready(function(){
     color: #000;
     font-size: 13px;
     padding: 0px;
+    margin-top: 4px;
+    margin-bottom: 4px;
 }
 
 .select-block1 select {
@@ -89,9 +91,10 @@ $(document).ready(function(){
     height: 30px;
     line-height: 14px;
     padding: 5px 15px;
-    width: 100%;
+    width: 150%;
     color: black;
     font-size: 13px;
+    margin-left: 15px
 }
 
 .control-lable1 {
@@ -102,13 +105,14 @@ $(document).ready(function(){
 }
 
 .form_but1 {
-    margin-bottom: 2px;
+    margin-bottom: 10px;
 }
 
 input[type=submit] {
     -webkit-appearance: button;
     cursor: pointer;
     width: 100%;
+    margin-top: 10px;
 }
 .sb_biodata_profile{
     display: flex;
@@ -127,262 +131,974 @@ input[type=submit] {
     margin: 100px;
     text-align: center;
 }
+.total_biodata{
+  margin-top: 10px;
+}
+
+
+.toggle-next{
+  border-radius: 0;
+}
+  
+label {
+  cursor: pointer;
+}
+  
+.ellipsis {
+  text-overflow: ellipsis;
+  width: 100%;
+  white-space: nowrap;
+  overflow: hidden;
+}
+
+.apply-selection{
+  display: none;
+  width: 100%;
+  margin: 0;
+  padding: 5px 10px;
+  border-bottom: 1px solid #ccc;
+}
+  
+  .ajax-link {
+    display: none;
+  }
+    
+.checkboxes{
+  margin: 0;
+  display: none;
+  border: 1px solid #ccc;
+  border-top: 0;
+}
+
+  .inner-wrap{
+    padding: 5px 10px;
+    max-height: 140px;
+    overflow: auto;
+  }
   </style>
 
+
+<script>
+window.onload = countBiodata;
+function countBiodata() {
+    var sb_biodatanumber = document.getElementsByClassName("sb_biodatanumber");
+    var total = document.getElementsByClassName("total")[0];
+    total.innerHTML = sb_biodatanumber.length;
+}
+
+</script>
+
+
        	<div class="heart-divider">
-            <h1>Find your perfect <span>Partner</span></h1>
+        <h1>Find your perfect <span>Partner</span></h1>
 			<span class="grey-line"></span>
 			<i class="fa fa-heart pink-heart"></i>
 			<i class="fa fa-heart grey-heart"></i>
 			<span class="grey-line"></span>
-        </div>
 
 
-        <div class="sbbiodata-search">
+  <div class="total_biodata">
+  <h4>Total Profile Found: 
+  <span class="total"></span> </h4>
+</div>
+
+</div>
+
+
+
+
+
+
+<div class="sbbiodata-search">
 <form action="" method="post">	
 
 
   <div class="form_but1">
   <label class="col-sm-5 control-lable1" for="Looking">Looking : </label>
 	<div class="col-sm-7 form_radios">
-		<input type="radio" class="radio_1" name="biodatagender" value="Male" /> Groom &nbsp;&nbsp; <br>
+		<input type="radio" class="radio_1" name="biodatagender" value="Male" /> Groom &nbsp;&nbsp;
 		<input type="radio" class="radio_1" name="biodatagender" value="Female"/> Bride
   </div>
   </div>
 
-  <div class="form_but1">
-	<label class="col-sm-5 control-lable1" for="Marital Status">Marital Status : </label>
-	<div class="col-sm-7 form_radios">
-		<input type="checkbox" class="radio_1" name="maritalstatus" value="Unmarried" /> Unmarried &nbsp;&nbsp;  <br>
-		<input type="checkbox" class="radio_1" name="maritalstatus" value="Divorced" /> Divorced &nbsp;&nbsp;  <br>
-		<input type="checkbox" class="radio_1" name="maritalstatus" value="Widow" /> Widow &nbsp;&nbsp;  <br>
-		<input type="checkbox" class="radio_1" name="maritalstatus" value="Widower"/> Widower &nbsp;&nbsp;  <br>
-    <input type="checkbox" class="radio_1" name="maritalstatus" value="Married"/> Married &nbsp;&nbsp;  <br>
-		<input type="checkbox" class="radio_1" name="maritalstatus" value="any" /> Any
-	</div>
-  </div>
+  <div class="wrapper">
+  <label class="form-control toggle-next ellipsis">All Marital Status</label>
+      <div class="checkboxes" id="Lorems">
+        
+        <div class="inner-wrap">
+          
+          <label>
+            <input type="checkbox" name="maritalstatus" value="Any Marital Status" class="SelectBox all" checked />
+            <span>Any Marital Status</span>
+          </label><br>
 
+          <label>
+            <input type="checkbox" name="maritalstatus" value="Unmarried" class="SelectBox val" />
+            <span>Unmarried </span>
+          </label><br>
 
-  <div class="form_but1">
-    <label class="col-sm-5 control-lable1" for="permanent_address">Permanent Address : </label>
-    <div class="col-sm-7 form_radios">
-      <div class="select-block1">
-      <select name="permanent_address">
+          <label>
+            <input type="checkbox" name="maritalstatus" value="Divorced" class="SelectBox val" />
+            <span>Divorced</span>
+          </label><br>
 
-<option>Select District</option>
-  <optgroup label="Barishal Division">
-              <option value="Barguna">Barguna</option>
-              <option value="Barishal">Barishal</option> 
-             <option value="Bhola">Bhola</option>
-  <option value="Jhalokati">Jhalokati</option>
-              <option value="Patuakhali">Patuakhali</option> 
-             <option value="Pirojpur">Pirojpur</option>
-            </optgroup>
+          <label>
+            <input type="checkbox" name="maritalstatus" value="Widow" class="SelectBox val" />
+            <span>Widow</span>
+          </label><br>
 
-<optgroup label="Chattagram Division">
-  <option value="Bandarban">Bandarban</option>
-              <option value="Brahmanbaria">Brahmanbaria</option> 
-             <option value="Chandpur">Chandpur</option>
-  <option value="Chattogram">Chattogram</option>
-              <option value="Cumilla">Cumilla</option>
-  <option value="Coxbazar">Cox's Bazar</option>  
-             <option value="Feni">Feni</option>
-  <option value="Khagrachhari">Khagrachhari</option>
-  <option value="Lakshmipur">Lakshmipur</option>
-  <option value="Noakhali">Noakhali</option>
-              <option value="Rangamati">Rangamati</option>
-            </optgroup>
-
-<optgroup label="Dhaka Division">
-             <option value="Dhaka">Dhaka</option>
-  <option value="Faridpur">Faridpur</option>
-              <option value="Gazipur">Gazipur</option> 
-             <option value="Gopalganj">Gopalganj</option>
-  <option value="Kishoreganj">Kishoreganj</option>
-  <option value="Madaripur">Madaripur</option>
-              <option value="Manikganj">Manikganj</option> 
-             <option value="Munshiganj">Munshiganj</option>
-  <option value="Narayanganj">Narayanganj</option>
-              <option value="Narsingdi">Narsingdi</option> 
-             <option value="Rajbari">Rajbari</option>
-  <option value="Shariatpur">Shariatpur</option>
-              <option value="Tangail">Tangail</option>
-            </optgroup>
-
-<optgroup label="Khulna Division">
-             <option value="Bagerhat">Bagerhat</option>
-  <option value="Chuadanga">Chuadanga</option>
-              <option value="Jashore">Jashore</option>
-  <option value="Jhenaidah">Jhenaidah</option>  
-             <option value="Khulna">Khulna</option>
-  <option value="Kushtia">Kushtia</option>
-  <option value="Magura">Magura</option>
-  <option value="Meherpur">Meherpur</option>
-              <option value="Narail">Narail</option> 
-             <option value="Satkhira">Satkhira</option>
-            </optgroup>
-
-<optgroup label="Mymensingh Division">
-  <option value="Jamalpur">Jamalpur</option>
-              <option value="Mymensingh">Mymensingh</option> 
-             <option value="Netrokona">Netrokona</option>
-  <option value="Sherpur">Sherpur</option>
-            </optgroup>
-
-<optgroup label="Rajshahi Division">
-  <option value="Bogura">Bogura</option>
-  <option value="Chapai Nawabganj">Chapai Nawabganj</option> 
-              <option value="Joypurhat">Joypurhat</option> 
-             <option value="Naogaon">Naogaon</option>
-  <option value="Natore">Natore</option>
-             <option value="Pabna">Pabna</option>
-  <option value="Rajshahi">Rajshahi</option>
-              <option value="Sirajganj">Sirajganj</option>
-            </optgroup>
-
-<optgroup label="Rangpur Division">
-             <option value="Dinajpur">Dinajpur</option>
-  <option value="Gaibandha">Gaibandha</option>
-              <option value="Kurigram">Kurigram</option>
-  <option value="Lalmonirhat">Lalmonirhat</option>  
-             <option value="Nilphamari">Nilphamari</option>
-  <option value="Panchagarh">Panchagarh</option>
-  <option value="Rangpur">Rangpur</option>
-  <option value="Thakurgaon">Thakurgaon</option>
-            </optgroup>
-
-<optgroup label="Sylhet Division">
-              <option value="Habiganj">Habiganj</option> 
-             <option value="Moulvibazar">Moulvibazar</option>
-  <option value="Sunamganj">Sunamganj</option>
-              <option value="Sylhet">Sylhet</option>
-            </optgroup>
-
-          </select>
+          <label>
+            <input type="checkbox" name="maritalstatus" value="Married" class="SelectBox val" />
+            <span>Married</span>
+          </label>
+          
+        </div>
       </div>
     </div>
-  </div>
 
 
-  <div class="form_but1">
-    <label class="col-sm-5 control-lable1" for="Occupation">Occupation : </label>
-    <div class="col-sm-7 form_radios">
-      <div class="select-block1">
-      <select name="occupation">
+  <script>
+  $(function() {
+  
+  setCheckboxSelectLabels();
+  
+  $('.toggle-next').click(function() {
+    $(this).next('.checkboxes').slideToggle(400);
+  });
+  
+  $('.SelectBox').change(function() {
+    toggleCheckedAll(this);
+    setCheckboxSelectLabels(); 
+  });
+  
+});
+  
+function setCheckboxSelectLabels(elem) {
+  var wrappers = $('.wrapper'); 
+  $.each( wrappers, function( key, wrapper ) {
+    var checkboxes = $(wrapper).find('.SelectBox');
+    var label = $(wrapper).find('.checkboxes').attr('id');
+    var prevText = '';
+    $.each( checkboxes, function( i, checkbox ) {
+      var button = $(wrapper).find('button');
+      if( $(checkbox).prop('checked') == true) {
+        var text = $(checkbox).next().html();
+        var btnText = prevText + text;
+        var numberOfChecked = $(wrapper).find('input.val:checkbox:checked').length;
+        if(numberOfChecked >= 4) {
+           btnText = numberOfChecked +' '+ label + ' selected';
+        }
+        $(button).text(btnText); 
+        prevText = btnText + ', ';
+      }
+    });
+  });
+}
 
-<optgroup label="Students Sector">
-<option  hidden selected>Select Occupation</option>
-<option value="Students of Kawmi Madrasa">Students of Kawmi Madrasa</option> 
-<option value="Students of High School">Students of High School</option>
-<option value="Students of Doploma">Students of Doploma</option> 
-             <option value="Students of College">Students of College</option>
-              <option value="Students of B.Sc. Engineering">Students of B.Sc. Engineering</option> 
-             <option value="Students of Medical Sector">Students of Medical Sector</option>
-              <option value="Students of B.Sc.">Students of B.Sc.</option>
-              <option value="Students of M.Sc.">Students of M.Sc.</option>
-<option value="Students of B.A.">Students of B.A.</option> 
-             <option value="Students of M.A.">Students of M.A.</option>
-<option value="Students of B.Com.">Students of B.Com.</option> 
-             <option value="Students of M.Com.">Students of M.Com.</option>
-                </optgroup>
+function toggleCheckedAll(checkbox) {
+  var apply = $(checkbox).closest('.wrapper').find('.apply-selection');
+  apply.fadeIn('slow'); 
+  
+  var val = $(checkbox).closest('.checkboxes').find('.val');
+  var all = $(checkbox).closest('.checkboxes').find('.all');
+  var SelectBox = $(checkbox).closest('.checkboxes').find('.SelectBox');
 
- <optgroup label="Medical & Health Sector">
-              <option value="MBBS Doctor">MBBS Doctor</option>
-              <option value="Internship Doctor">Internship Doctor</option> 
-<option value="FCPS Doctor">FCPS Doctor</option>
-<option value="Pharmacist">Pharmacist</option>
-<option value="Diploma Doctor">Diploma Doctor</option>
-<option value="Peramedical">Peramedical</option> 
-             <option value="Nursing">Nursing</option>
-<option value="Midwifary">Midwifary</option>
-                </optgroup>
+  if(!$(SelectBox).is(':checked')) {
+    $(all).prop('checked', true);
+    return;
+  }
 
-<optgroup label="Engineers Sector">
-<option value="Aerospace Engineer">Aerospace Engineer</option>
-<option value="Agricultural Engineer">Agricultural Engineer</option>
-<option value="Architectural Engineer">Architectural Engineer</option>
-<option value="Biomedical Engineer">Biomedical Engineer</option>
-<option value="Chemical Engineer">Chemical Engineer</option>
-<option value="Civil Engineer">Civil Engineer</option>
-<option value="Electrical Engineer">Electrical Engineer</option>
-<option value="Marine Engineer">Marine Engineer</option> 
-<option value="Mechanical Engineer">Mechanical Engineer</option>
-<option value="Network Engineer">Network Engineer</option> 
-<option value="Robotics Engineer">Robotics Engineer</option>
-              <option value="Software Engineer">Software Engineer</option> 
-             <option value="Textile Engineer">Textile Engineer</option>
-                </optgroup>
+  if( $(checkbox).hasClass('all') ) {
+    $(val).prop('checked', false);
+  } else {
+    $(all).prop('checked', false);
+  }
+}
+</script>
 
-<optgroup label="Teachers Sector">
-<option value="Teaches of Kawmi Madrasa">Teaches of Kawmi Madrasa</option> 
-              <option value="Teaches of Primary School">Teaches of Primary School</option> 
-             <option value="Teaches of High School">Teaches of High School</option>
-<option value="Professor of College">Professor of College</option>
-<option value="Professor of Public University">Professor of Public University</option>
-<option value="Professor of Private University">Professor of Private University</option>
-<option value="Professor of National University">Professor of National University</option>
-<option value="Professor of Degree">Professor of Degree</option>
-                </optgroup>
+<div class="wrapper">
+  <label class="form-control toggle-next ellipsis">All Skin Tones</label>
+      <div class="checkboxes" id="Lorems">
+        
+        <div class="inner-wrap">
+          
+          <label>
+            <input type="checkbox" name="Skin_tones" value="Any Skin Tones" class="SelectBox all" checked />
+            <span>Any Skin Tones</span>
+          </label><br>
 
-<optgroup label="Defense Sector">
-              <option value="Army">Army</option> 
-             <option value="Air Force">Air Force</option>
-              <option value="Navy">Navy</option>
-              <option value="Police">Police</option>
-<option value="Fire Service">Fire Service</option> 
-             <option value="RAB">RAB</option>
-              <option value="DB">DB</option>
-                </optgroup>
+          <label>
+            <input type="checkbox" name="Skin_tones" value="Light" class="SelectBox val" />
+            <span>Light</span>
+          </label><br>
 
-<optgroup label="Garments Sector">
-              <option value="Worker of Garments">Worker of Garments</option> 
-             <option value="Managers of Garments">Managers of Garments</option>
-                </optgroup>
+          <label>
+            <input type="checkbox" name="Skin_tones" value="Fair" class="SelectBox val" />
+            <span>Fair</span>
+          </label><br>
 
-<optgroup label="Driver Sector">
-              <option value="Bus Driver">Bus Driver</option> 
-<option value="Micro Driver">Micro Bus Driver</option> 
-              <option value="Car Driver">Car Driver</option> 
-              <option value="Truck Driver">Truck Driver</option>
-<option value="CNG Driver">CNG Driver</option> 
-              <option value="Auto Driver">Auto Driver</option>
-                </optgroup>
+          <label>
+            <input type="checkbox" name="Skin_tones" value="Medium" class="SelectBox val" />
+            <span>Medium</span>
+          </label><br>
 
-<optgroup label="Others Sector">
-<option value="Banker">Banker</option>
-<option value="Business">Business</option> 
-<option value="Entrepreneur">Entrepreneur</option> 
-<option value="Lawyer">Lawyer</option> 
-              <option value="Frelancer">Frelancer</option>
-<option value="Graphics Desigener">Graphics Desigener</option>
-<option value="Sales & Marketing (SR)">Sales & Marketing (SR)</option>  
-              <option value="No Job">No Job</option>
-
-          </select>
+          <label>
+            <input type="checkbox" name="Skin_tones" value="Dark" class="SelectBox val" />
+            <span>Dark</span>
+          </label>
+          
+        </div>
       </div>
     </div>
-  </div>
 
 
-  <div class="form_but1">
-    <label class="col-sm-5 control-lable1" for="Religion">Religion : </label>
-    <div class="col-sm-7 form_radios">
-      <div class="select-block1">
-      <select name="religion">
-								<option hidden selected>Select Religion</option>
-						        <option value="Muslim">Muslim</option>
-		                        <option value="Hindu">Hindu</option>
-		                        <option value="Christian">Christian</option>
-		                        <option value="Budhism">Budhism</option>
-		                        <option value="Others">Others</option>
-	                            </select>
+
+    <div class="wrapper">
+  <label class="form-control toggle-next ellipsis">All District</label>
+      <div class="checkboxes" id="Lorems">
+        
+        <div class="inner-wrap">
+          
+          <label>
+            <input type="checkbox" name="permanent_address" value="Any District" class="SelectBox all" checked />
+            <span>Any District</span>
+          </label><br>
+
+             <!-- B A R I S H A L-->
+             <label> Barishal Division</label> <br>
+          <label>
+            <input type="checkbox" name="permanent_address" value="Barguna" class="SelectBox val" />
+            <span>Barguna</span>
+          </label><br>
+
+          <label>
+            <input type="checkbox" name="permanent_address" value="Barishal" class="SelectBox val" />
+            <span>Barishal</span>
+          </label><br>
+
+          <label>
+            <input type="checkbox" name="permanent_address" value="Bhola" class="SelectBox val" />
+            <span>Bhola</span>
+          </label><br>
+
+          <label>
+            <input type="checkbox" name="permanent_address" value="Jhalokati" class="SelectBox val" />
+            <span>Jhalokati</span>
+          </label><br>
+
+          <label>
+            <input type="checkbox" name="permanent_address" value="Patuakhali" class="SelectBox val" />
+            <span>Patuakhali</span>
+          </label><br>
+
+          <label>
+            <input type="checkbox" name="permanent_address" value="Pirojpur" class="SelectBox val" />
+            <span>Pirojpur</span>
+          </label><br>
+
+
+                       <!-- C H A T T O G R A M-->
+                       <label> Chattagram Division</label> <br>
+          <label>
+            <input type="checkbox" name="permanent_address" value="Bandarban" class="SelectBox val" />
+            <span>Bandarban</span>
+          </label><br>
+
+          <label>
+            <input type="checkbox" name="permanent_address" value="Brahmanbaria" class="SelectBox val" />
+            <span>Brahmanbaria</span>
+          </label><br>
+
+          <label>
+            <input type="checkbox" name="permanent_address" value="Chandpur" class="SelectBox val" />
+            <span>Chandpur</span>
+          </label><br>
+
+          <label>
+            <input type="checkbox" name="permanent_address" value="Chattogram" class="SelectBox val" />
+            <span>Chattogram</span>
+          </label><br>
+
+          <label>
+            <input type="checkbox" name="permanent_address" value="Cumilla" class="SelectBox val" />
+            <span>Cumilla</span>
+          </label><br>
+
+          <label>
+            <input type="checkbox" name="permanent_address" value="Coxbazar" class="SelectBox val" />
+            <span>Cox's Bazar</span>
+          </label><br>
+
+          <label>
+            <input type="checkbox" name="permanent_address" value="Feni" class="SelectBox val" />
+            <span>Feni</span>
+          </label><br>
+
+          <label>
+            <input type="checkbox" name="permanent_address" value="Khagrachhari" class="SelectBox val" />
+            <span>Khagrachhari</span>
+          </label><br>
+
+          <label>
+            <input type="checkbox" name="permanent_address" value="Lakshmipur" class="SelectBox val" />
+            <span>Lakshmipur</span>
+          </label><br>
+
+          <label>
+            <input type="checkbox" name="permanent_address" value="Noakhali" class="SelectBox val" />
+            <span>Noakhali</span>
+          </label><br>
+
+          <label>
+            <input type="checkbox" name="permanent_address" value="Rangamati" class="SelectBox val" />
+            <span>Rangamati</span>
+          </label><br>
+
+
+
+             <!--  D H A K A-->
+             <label> Dhaka Division</label> <br>
+          <label>
+            <input type="checkbox" name="permanent_address" value="Dhaka" class="SelectBox val" />
+            <span>Dhaka</span>
+          </label><br>
+
+          <label>
+            <input type="checkbox" name="permanent_address" value="Faridpur" class="SelectBox val" />
+            <span>Faridpur</span>
+          </label><br>
+
+          <label>
+            <input type="checkbox" name="permanent_address" value="Gazipur" class="SelectBox val" />
+            <span>Gazipur</span>
+          </label><br>
+
+          <label>
+            <input type="checkbox" name="permanent_address" value="Gopalganj" class="SelectBox val" />
+            <span>Gopalganj</span>
+          </label><br>
+
+          <label>
+            <input type="checkbox" name="permanent_address" value="Kishoreganj" class="SelectBox val" />
+            <span>Kishoreganj</span>
+          </label><br>
+
+          <label>
+            <input type="checkbox" name="permanent_address" value="Madaripur" class="SelectBox val" />
+            <span>Madaripur</span>
+          </label><br>
+
+          <label>
+            <input type="checkbox" name="permanent_address" value="Manikganj" class="SelectBox val" />
+            <span>Manikganj</span>
+          </label><br>
+
+          <label>
+            <input type="checkbox" name="permanent_address" value="Munshiganj" class="SelectBox val" />
+            <span>Munshiganj</span>
+          </label><br>
+
+          <label>
+            <input type="checkbox" name="permanent_address" value="Narayanganj" class="SelectBox val" />
+            <span>Narayanganj</span>
+          </label><br>
+
+          <label>
+            <input type="checkbox" name="permanent_address" value="Narsingdi" class="SelectBox val" />
+            <span>Narsingdi</span>
+          </label><br>
+
+          <label>
+            <input type="checkbox" name="permanent_address" value="Rajbari" class="SelectBox val" />
+            <span>Rajbari</span>
+          </label><br>
+
+          <label>
+            <input type="checkbox" name="permanent_address" value="Shariatpur" class="SelectBox val" />
+            <span>Shariatpur</span>
+          </label><br>
+
+          <label>
+            <input type="checkbox" name="permanent_address" value="Tangail" class="SelectBox val" />
+            <span>Tangail</span>
+          </label><br>
+
+
+
+                       <!-- K H U L N A-->
+                       <label> Khulna Division</label> <br>
+          <label>
+            <input type="checkbox" name="permanent_address" value="Bagerhat" class="SelectBox val" />
+            <span>Bagerhat</span>
+          </label><br>
+
+          <label>
+            <input type="checkbox" name="permanent_address" value="Chuadanga" class="SelectBox val" />
+            <span>Chuadanga</span>
+          </label><br>
+
+          <label>
+            <input type="checkbox" name="permanent_address" value="Jashore" class="SelectBox val" />
+            <span>Jashore</span>
+          </label><br>
+
+          <label>
+            <input type="checkbox" name="permanent_address" value="Jhenaidah" class="SelectBox val" />
+            <span>Jhenaidah</span>
+          </label><br>
+
+          <label>
+            <input type="checkbox" name="permanent_address" value="Khulna" class="SelectBox val" />
+            <span>Khulna</span>
+          </label><br>
+
+          <label>
+            <input type="checkbox" name="permanent_address" value="Kushtia" class="SelectBox val" />
+            <span>Kushtia</span>
+          </label><br>
+
+          <label>
+            <input type="checkbox" name="permanent_address" value="Magura" class="SelectBox val" />
+            <span>Magura</span>
+          </label><br>
+
+          <label>
+            <input type="checkbox" name="permanent_address" value="Meherpur" class="SelectBox val" />
+            <span>Meherpur</span>
+          </label><br>
+
+          <label>
+            <input type="checkbox" name="permanent_address" value="Narail" class="SelectBox val" />
+            <span>Narail</span>
+          </label><br>
+
+          <label>
+            <input type="checkbox" name="permanent_address" value="Satkhira" class="SelectBox val" />
+            <span>Satkhira</span>
+          </label><br>
+
+
+
+          <!-- M Y M E N S I N G H-->
+          <label> Mymensingh Division</label> <br>
+          <label>
+            <input type="checkbox" name="permanent_address" value="Jamalpur" class="SelectBox val" />
+            <span>Jamalpur</span>
+          </label><br>
+
+          <label>
+            <input type="checkbox" name="permanent_address" value="Mymensingh" class="SelectBox val" />
+            <span>Mymensingh</span>
+          </label><br>
+
+          <label>
+            <input type="checkbox" name="permanent_address" value="Netrokona" class="SelectBox val" />
+            <span>Netrokona</span>
+          </label><br>
+
+          <label>
+            <input type="checkbox" name="permanent_address" value="Sherpur" class="SelectBox val" />
+            <span>Sherpur</span>
+          </label><br>
+
+
+                    <!--  R A J S H A H I-->
+                    <label> Rajshahi Division</label> <br>
+          <label>
+            <input type="checkbox" name="permanent_address" value="Bogura" class="SelectBox val" />
+            <span>Bogura</span>
+          </label><br>
+
+          <label>
+            <input type="checkbox" name="permanent_address" value="ChapaiNawabganj" class="SelectBox val" />
+            <span>Chapai Nawabganj</span>
+          </label><br>
+
+          <label>
+            <input type="checkbox" name="permanent_address" value="Joypurhat" class="SelectBox val" />
+            <span>Joypurhat</span>
+          </label><br>
+
+          <label>
+            <input type="checkbox" name="permanent_address" value="Naogaon" class="SelectBox val" />
+            <span>Naogaon</span>
+          </label><br>
+
+          <label>
+          <input type="checkbox" name="permanent_address" value="Natore" class="SelectBox val" />
+            <span>Natore</span>
+          </label><br>
+
+          <label>
+            <input type="checkbox" name="permanent_address" value="Pabna" class="SelectBox val" />
+            <span>Pabna</span>
+          </label><br>
+
+          <label>
+            <input type="checkbox" name="permanent_address" value="Rajshahi" class="SelectBox val" />
+            <span>Rajshahi</span>
+          </label><br>
+
+          <label>
+            <input type="checkbox" name="permanent_address" value="Sirajganj" class="SelectBox val" />
+            <span>Sirajganj</span>
+          </label><br>
+
+
+          <!--  R A N G P U R-->
+          <label> Rangpur Division</label> <br>
+          <label>
+            <input type="checkbox" name="permanent_address" value="Dinajpur" class="SelectBox val" />
+            <span>Dinajpur</span>
+          </label><br>
+
+          <label>
+            <input type="checkbox" name="permanent_address" value="Gaibandha" class="SelectBox val" />
+            <span>Gaibandha</span>
+          </label><br>
+
+          <label>
+            <input type="checkbox" name="permanent_address" value="Kurigram" class="SelectBox val" />
+            <span>Kurigram</span>
+          </label><br>
+
+          <label>
+            <input type="checkbox" name="permanent_address" value="Lalmonirhat" class="SelectBox val" />
+            <span>Lalmonirhat</span>
+          </label><br>
+
+          <label>
+            <input type="checkbox" name="permanent_address" value="Nilphamari" class="SelectBox val" />
+            <span>Nilphamari</span>
+          </label><br>
+
+          <label>
+            <input type="checkbox" name="permanent_address" value="Panchagarh" class="SelectBox val" />
+            <span>Panchagarh</span>
+          </label><br>
+
+          <label>
+            <input type="checkbox" name="permanent_address" value="Rangpur" class="SelectBox val" />
+            <span>Rangpur</span>
+          </label><br>
+
+          <label>
+            <input type="checkbox" name="permanent_address" value="Thakurgaon" class="SelectBox val" />
+            <span>Thakurgaon</span>
+          </label><br>
+
+
+                    <!-- S Y L H E T-->
+                    <label> Sylhet Division</label> <br>
+          <label>
+            <input type="checkbox" name="permanent_address" value="Habiganj" class="SelectBox val" />
+            <span>Habiganj</span>
+          </label><br>
+
+          <label>
+            <input type="checkbox" name="permanent_address" value="Moulvibazar" class="SelectBox val" />
+            <span>Moulvibazar</span>
+          </label><br>
+
+          <label>
+            <input type="checkbox" name="permanent_address" value="Sunamganj" class="SelectBox val" />
+            <span>Sunamganj</span>
+          </label><br>
+
+          <label>
+            <input type="checkbox" name="permanent_address" value="Sylhet" class="SelectBox val" />
+            <span>Sylhet</span>
+          </label>
+          
+        </div>
       </div>
     </div>
-  </div>
+
+  
+
+
+
+    <div class="wrapper">
+  <label class="form-control toggle-next ellipsis">All Occupation</label>
+      <div class="checkboxes" id="Lorems">
+        
+        <div class="inner-wrap">
+          
+          <label>
+            <input type="checkbox" name="occupation" value="Any District" class="SelectBox all" checked />
+            <span>Any Occupation</span>
+          </label><br>
+
+             <!-- Students Sector-->
+             <label> Students Sector</label> <br>
+          <label>
+            <input type="checkbox" name="occupation" value="Students of Kawmi Madrasa" class="SelectBox val" />
+            <span>Kawmi Madrasa</span>
+          </label><br>
+
+          <label>
+            <input type="checkbox" name="occupation" value="Students of High School" class="SelectBox val" />
+            <span>High School</span>
+          </label><br>
+
+          <label>
+            <input type="checkbox" name="occupation" value="Students of Doploma" class="SelectBox val" />
+            <span>Doploma</span>
+          </label><br>
+
+          <label>
+            <input type="checkbox" name="occupation" value="Students of College" class="SelectBox val" />
+            <span>College</span>
+          </label><br>
+
+          <label>
+            <input type="checkbox" name="occupation" value="Students of B.Sc. Engineering" class="SelectBox val" />
+            <span>B.Sc. Engineering</span>
+          </label><br>
+
+          <label>
+            <input type="checkbox" name="occupation" value="Students of Medical Sector" class="SelectBox val" />
+            <span>Medical</span>
+          </label><br>
+
+          
+          <label>
+            <input type="checkbox" name="occupation" value="Students of B.Sc." class="SelectBox val" />
+            <span>B.Sc.</span>
+          </label><br>
+
+          <label>
+            <input type="checkbox" name="occupation" value="Students of M.Sc." class="SelectBox val" />
+            <span>M.Sc.</span>
+          </label><br>
+
+          <label>
+            <input type="checkbox" name="occupation" value="Students of B.A." class="SelectBox val" />
+            <span>B.A.</span>
+          </label><br>
+
+          <label>
+            <input type="checkbox" name="occupation" value="Students of M.A." class="SelectBox val" />
+            <span>M.A.</span>
+          </label><br>
+
+          <label>
+            <input type="checkbox" name="occupation" value="Students of B.Com." class="SelectBox val" />
+            <span>B.Com.</span>
+          </label><br>
+
+          <label>
+            <input type="checkbox" name="occupation" value="Students of M.Com." class="SelectBox val" />
+            <span>M.Com.</span>
+          </label><br>
+
+
+
+                       <!-- Medical & Health Sector -->
+                       <label> Medical & Health</label> <br>
+          <label>
+            <input type="checkbox" name="occupation" value="MBBS Doctor" class="SelectBox val" />
+            <span>MBBS Doctor</span>
+          </label><br>
+
+          <label>
+            <input type="checkbox" name="occupation" value="Internship Doctor" class="SelectBox val" />
+            <span>Internship Doctor</span>
+          </label><br>
+
+          <label>
+            <input type="checkbox" name="occupation" value="Specialist Doctor" class="SelectBox val" />
+            <span>Specialist Doctor</span>
+          </label><br>
+
+          <label>
+            <input type="checkbox" name="occupation" value="Pharmacist" class="SelectBox val" />
+            <span>Pharmacist</span>
+          </label><br>
+
+          <label>
+            <input type="checkbox" name="occupation" value="Diploma Doctor" class="SelectBox val" />
+            <span>Diploma Doctor</span>
+          </label><br>
+
+          <label>
+            <input type="checkbox" name="occupation" value="Peramedical" class="SelectBox val" />
+            <span>Peramedical</span>
+          </label><br>
+
+          <label>
+            <input type="checkbox" name="occupation" value="Midwifary" class="SelectBox val" />
+            <span>Midwifary</span>
+          </label><br>
+
+          <label>
+            <input type="checkbox" name="occupation" value="Nursing" class="SelectBox val" />
+            <span>Nursing</span>
+          </label><br>
+
+
+
+             <!--  Engineers Sector-->
+             <label> Engineers Sector</label> <br>
+          <label>
+            <input type="checkbox" name="occupation" value="Aerospace Engineer" class="SelectBox val" />
+            <span>Aerospace Engineer</span>
+          </label><br>
+
+          <label>
+            <input type="checkbox" name="occupation" value="Agricultural Engineer" class="SelectBox val" />
+            <span>Agricultural Engineer</span>
+          </label><br>
+
+          <label>
+            <input type="checkbox" name="occupation" value="Architectural Engineer" class="SelectBox val" />
+            <span>Architectural Engineer</span>
+          </label><br>
+
+          <label>
+            <input type="checkbox" name="occupation" value="Biomedical Engineer" class="SelectBox val" />
+            <span>Biomedical Engineer</span>
+          </label><br>
+
+          <label>
+            <input type="checkbox" name="occupation" value="Chemical Engineer" class="SelectBox val" />
+            <span>Chemical Engineer</span>
+          </label><br>
+
+          <label>
+            <input type="checkbox" name="occupation" value="Civil Engineer" class="SelectBox val" />
+            <span>Civil Engineer</span>
+          </label><br>
+
+          <label>
+            <input type="checkbox" name="occupation" value="Electrical Engineer" class="SelectBox val" />
+            <span>Electrical Engineer</span>
+          </label><br>
+
+          <label>
+            <input type="checkbox" name="occupation" value="Marine Engineer" class="SelectBox val" />
+            <span>Marine Engineer</span>
+          </label><br>
+
+          <label>
+            <input type="checkbox" name="occupation" value="Mechanical Engineer" class="SelectBox val" />
+            <span>Mechanical Engineer</span>
+          </label><br>
+
+          <label>
+            <input type="checkbox" name="occupation" value="Network Engineer" class="SelectBox val" />
+            <span>Network Engineer</span>
+          </label><br>
+
+          <label>
+            <input type="checkbox" name="occupation" value="Robotics Engineer" class="SelectBox val" />
+            <span>Robotics Engineer</span>
+          </label><br>
+
+          <label>
+            <input type="checkbox" name="occupation" value="Software Engineer" class="SelectBox val" />
+            <span>Software Engineer</span>
+          </label><br>
+
+          <label>
+            <input type="checkbox" name="occupation" value="Textile Engineer" class="SelectBox val" />
+            <span>Textile Engineer</span>
+          </label><br>
+
+
+
+                       <!-- Teachers Sector -->
+                       <label>Teachers Sector</label> <br>
+          <label>
+            <input type="checkbox" name="occupation" value="Teaches of Kawmi Madrasa" class="SelectBox val" />
+            <span>Teaches Kawmi Madrasa</span>
+          </label><br>
+
+          <label>
+            <input type="checkbox" name="occupation" value="Teaches of Primary School" class="SelectBox val" />
+            <span>Teaches Primary School</span>
+          </label><br>
+
+          <label>
+            <input type="checkbox" name="occupation" value="Teaches of High School" class="SelectBox val" />
+            <span>Teaches High School</span>
+          </label><br>
+
+          <label>
+            <input type="checkbox" name="occupation" value="Professor of College" class="SelectBox val" />
+            <span>Professor College</span>
+          </label><br>
+
+          <label>
+            <input type="checkbox" name="occupation" value="Professor of Public University" class="SelectBox val" />
+            <span>Professor Public University</span>
+          </label><br>
+
+          <label>
+            <input type="checkbox" name="occupation" value="Professor of Private University" class="SelectBox val" />
+            <span>Professor Private University</span>
+          </label><br>
+
+          <label>
+            <input type="checkbox" name="occupation" value="Professor of National University" class="SelectBox val" />
+            <span>Professor National University</span>
+          </label><br>
+
+          <label>
+            <input type="checkbox" name="occupation" value="Professor of Degree" class="SelectBox val" />
+            <span>Professor Degree</span>
+          </label><br>
+
+
+
+          <!-- Garments Sector-->
+          <label> Garments Sector </label> <br>
+          <label>
+            <input type="checkbox" name="occupation" value="Worker of Garments" class="SelectBox val" />
+            <span>Worker Garments</span>
+          </label><br>
+
+          <label>
+            <input type="checkbox" name="occupation" value="Managers of Garments" class="SelectBox val" />
+            <span>Managers Garments</span>
+          </label><br>
+
+
+            <!--  Driver Sector -->
+            <label> Driver Sector </label> <br>
+          <label>
+            <input type="checkbox" name="occupation" value="Bus Driver" class="SelectBox val" />
+            <span>Bus Driver</span>
+          </label><br>
+
+          <label>
+            <input type="checkbox" name="occupation" value="Micro Driver" class="SelectBox val" />
+            <span>Micro Driver</span>
+          </label><br>
+
+          <label>
+            <input type="checkbox" name="occupation" value="Car Driver" class="SelectBox val" />
+            <span>Car Driver</span>
+          </label><br>
+
+          <label>
+            <input type="checkbox" name="occupation" value="Truck Driver" class="SelectBox val" />
+            <span>Truck Driver</span>
+          </label><br>
+
+          <label>
+          <input type="checkbox" name="occupation" value="CNG Driver" class="SelectBox val" />
+            <span>CNG Driver</span>
+          </label><br>
+
+          <label>
+            <input type="checkbox" name="occupation" value="Auto Driver" class="SelectBox val" />
+            <span>Auto Driver</span>
+          </label><br>
+
+          <label>
+            <input type="checkbox" name="occupation" value="UbarPathao Rider" class="SelectBox val" />
+            <span>Ubar/Pathao Rider</span>
+          </label><br>
+
+
+
+          <!-- Others Sector-->
+          <label>Others Sector</label> <br>
+          <label>
+            <input type="checkbox" name="occupation" value="Banker" class="SelectBox val" />
+            <span>Banker</span>
+          </label><br>
+
+          <label>
+            <input type="checkbox" name="occupation" value="Business" class="SelectBox val" />
+            <span>Business</span>
+          </label><br>
+
+          <label>
+            <input type="checkbox" name="occupation" value="Entrepreneur" class="SelectBox val" />
+            <span>Entrepreneur</span>
+          </label><br>
+
+          <label>
+            <input type="checkbox" name="occupation" value="Lawyer" class="SelectBox val" />
+            <span>Lawyer</span>
+          </label><br>
+
+          <label>
+            <input type="checkbox" name="occupation" value="Frelancer" class="SelectBox val" />
+            <span>Frelancer</span>
+          </label><br>
+
+          <label>
+            <input type="checkbox" name="occupation" value="Graphics Desigener" class="SelectBox val" />
+            <span>Graphics Desigener</span>
+          </label><br>
+
+          <label>
+            <input type="checkbox" name="occupation" value="Sales & Marketing (SR)" class="SelectBox val" />
+            <span>Sales & Marketing (SR)</span>
+          </label><br>
+
+          <label>
+            <input type="checkbox" name="occupation" value="No Occupation" class="SelectBox val" />
+            <span>No Occupation</span>
+          </label>
+          
+        </div>
+      </div>
+    </div>
+
+
+
+
+
+
+    <div class="wrapper">
+  <label class="form-control toggle-next ellipsis">All Religion</label>
+      <div class="checkboxes" id="Lorems">
+        
+        <div class="inner-wrap">
+          
+          <label>
+            <input type="checkbox" name="religion" value="Any Religion" class="SelectBox all" checked />
+            <span>Any Religion</span>
+          </label><br>
+
+          <label>
+            <input type="checkbox" name="religion" value="Muslim" class="SelectBox val" />
+            <span>Muslim</span>
+          </label><br>
+
+          <label>
+            <input type="checkbox" name="religion" value="Hindu" class="SelectBox val" />
+            <span>Hindu</span>
+          </label><br>
+
+          <label>
+            <input type="checkbox" name="religion" value="Christian" class="SelectBox val" />
+            <span>Christian</span>
+          </label><br>
+
+          <label>
+            <input type="checkbox" name="religion" value="Budhism" class="SelectBox val" />
+            <span>Budhism</span>
+          </label> 
+          
+          <label>
+            <input type="checkbox" name="religion" value="Others" class="SelectBox val" />
+            <span>Others</span>
+          </label>
+          
+        </div>
+      </div>
+    </div>
+
+
 
 
   <div class="form_but1">
-    <label class="col-sm-5 control-lable1" for="Family Class">Family Class : </label>
+    <!-- <label class="col-sm-5 control-lable1" for="Family Class">Family Class : </label> -->
     <div class="col-sm-7 form_radios">
       <div class="select-block1">
       <select name="family_class">
@@ -399,7 +1115,7 @@ input[type=submit] {
   
 
   <div class="form_but1">
-    <label class="col-sm-5 control-lable1" for="Education Method">Education Method : </label>
+    <!-- <label class="col-sm-5 control-lable1" for="Education Method">Education Method : </label>  -->
     <div class="col-sm-7 form_radios">
       <div class="select-block1">
 	                        <select name="education_method" required>
@@ -411,22 +1127,6 @@ input[type=submit] {
 							   <option value="Other">Other</option>
 							   <option value="None">None</option>
 	                        </select>
-      </div>
-    </div>
-  </div>
-
-
-  <div class="form_but1">
-    <label class="col-sm-5 control-lable1" for="Skin Tones">Skin Tones : </label>
-    <div class="col-sm-7 form_radios">
-      <div class="select-block1">
-      <select name="Skin_tones">
-							<option hidden selected>Select Skin Tones</option>
-	                        <option value="Light">Light</option>
-	                        <option value="Fair">Fair</option> 
-	               		    <option value="Medium">Medium</option>
-							<option value="Dark">Dark</option>
-	                    </select>
       </div>
     </div>
   </div>
