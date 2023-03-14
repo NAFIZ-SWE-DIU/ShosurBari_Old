@@ -1083,7 +1083,7 @@ function toggleCheckedAll(checkbox) {
           <label>
             <input type="checkbox" name="religion" value="Budhism" class="SelectBox val" />
             <span>Budhism</span>
-          </label> 
+          </label><br> 
           
           <label>
             <input type="checkbox" name="religion" value="Others" class="SelectBox val" />
@@ -1097,39 +1097,92 @@ function toggleCheckedAll(checkbox) {
 
 
 
-  <div class="form_but1">
-    <!-- <label class="col-sm-5 control-lable1" for="Family Class">Family Class : </label> -->
-    <div class="col-sm-7 form_radios">
-      <div class="select-block1">
-      <select name="family_class">
-							    <option hidden selected>Select Family Condition</option>
-	                            <option value="Higher Class">Higher Class</option>
-	                            <option value="Higher Middle Class">Higher Middle Class</option> 
-	               		        <option value="Middle Class">Middle Class</option>
-								<option value="Lower Middle Class">Lower Middle Class</option>
-								<option value="Lower Class">Lower Class</option>  
-	                        </select>
-      </div>
-    </div>
-  </div>
-  
+    <div class="wrapper">
+  <label class="form-control toggle-next ellipsis">All Family Condition</label>
+      <div class="checkboxes" id="Lorems">
+        
+        <div class="inner-wrap">
+          
+          <label>
+            <input type="checkbox" name="family_class" value="Any Family Condition" class="SelectBox all" checked />
+            <span>Any Family Condition</span>
+          </label><br>
 
-  <div class="form_but1">
-    <!-- <label class="col-sm-5 control-lable1" for="Education Method">Education Method : </label>  -->
-    <div class="col-sm-7 form_radios">
-      <div class="select-block1">
-	                        <select name="education_method" required>
-							   <option hidden selected> Select Education Method </option>
-		                       <option value="Genaral">General</option>
-		                       <option value="Dakhil">Dakhil</option>
-		                       <option value="Technical">Technical</option>
-		                       <option value="Qawmi Madrasa">Qawmi Madrasa</option>
-							   <option value="Other">Other</option>
-							   <option value="None">None</option>
-	                        </select>
+          <label>
+            <input type="checkbox" name="family_class" value="Higher Class" class="SelectBox val" />
+            <span>Higher Class</span>
+          </label><br>
+
+          <label>
+            <input type="checkbox" name="family_class" value="Higher Middle Class" class="SelectBox val" />
+            <span>Higher Middle Class</span>
+          </label><br>
+
+          <label>
+            <input type="checkbox" name="family_class" value="Middle Class" class="SelectBox val" />
+            <span>Middle Class</span>
+          </label><br>
+
+          <label>
+            <input type="checkbox" name="family_class" value="Lower Middle Class" class="SelectBox val" />
+            <span>Lower Middle Class</span>
+          </label><br> 
+          
+          <label>
+            <input type="checkbox" name="family_class" value="Lower Class" class="SelectBox val" />
+            <span>Lower Class</span>
+          </label>
+          
+        </div>
       </div>
     </div>
-  </div>
+
+
+
+    <div class="wrapper">
+  <label class="form-control toggle-next ellipsis">All Education Method</label>
+      <div class="checkboxes" id="Lorems">
+        
+        <div class="inner-wrap">
+          
+          <label>
+            <input type="checkbox" name="education_method" value="Any Education Method" class="SelectBox all" checked />
+            <span>Any Education Method</span>
+          </label><br>
+
+          <label>
+            <input type="checkbox" name="education_method" value="Genaral" class="SelectBox val" />
+            <span>Genaral</span>
+          </label><br>
+
+          <label>
+            <input type="checkbox" name="education_method" value="Dakhil" class="SelectBox val" />
+            <span>Dakhil</span>
+          </label><br>
+
+          <label>
+            <input type="checkbox" name="education_method" value="Technical" class="SelectBox val" />
+            <span>Technical</span>
+          </label><br>
+
+          <label>
+            <input type="checkbox" name="education_method" value="Qawmi Madrasa" class="SelectBox val" />
+            <span>Qawmi Madrasa</span>
+          </label><br>
+          
+          <label>
+            <input type="checkbox" name="education_method" value="Other" class="SelectBox val" />
+            <span>Other</span>
+          </label><br> 
+          
+          <label>
+            <input type="checkbox" name="education_method" value="None" class="SelectBox val" />
+            <span>None</span>
+          </label>
+          
+        </div>
+      </div>
+    </div>
 
 
   <div class="form_but1">
