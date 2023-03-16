@@ -1160,7 +1160,7 @@ a.religion_1 {
 }
 /*-- footer --*/
 .footer{
-	background:#02a7e6;
+	background:#193f4c;
 	padding:1em 0;
     box-shadow: 0 4px 8px 0 rgb(0 0 0 / 20%), 0 6px 20px 0 rgb(0 0 0 / 19%);
     margin-top: 100px;
@@ -1199,7 +1199,7 @@ ul.footer_links li a{
     color: white;
 }
 ul.footer_links li a:hover{
-    color: black;
+    color: yellow;
 }
 ul.footer_social {
     padding: 0;
@@ -1230,7 +1230,7 @@ i.fa1:hover {
 	text-align:center;
 }
 .copy p{
-	color:#00008B;
+	color:#fff;
 	font-size:0.85em;
     font-size: 15px;
 }
@@ -3799,10 +3799,10 @@ form {
     display: flex;
     flex-wrap: wrap;
     width: 100%;
-    margin-top: 0px;
+    margin-top: -100px;
     margin-bottom: 0px;
-    margin-right: 150px;
-    margin-left: 150px;
+    margin-right: 0px;
+    margin-left: 250px;
     padding: 20px;
     }
 
@@ -3957,7 +3957,7 @@ border-radius: 5px 5px 0px 0px;
         display: flex;
         flex-wrap: wrap;
         width: 100%;
-        margin-top: 0px;
+        margin-top: -100px;
         margin-bottom: 0px;
         margin-right: 150px;
         margin-left: 150px;
@@ -4001,7 +4001,7 @@ ul.profile_item{
     display: flex;
     flex-wrap: wrap;
     width: 100%;
-    margin-top: 0px;
+    margin-top: -100px;
     margin-bottom: 0px;
     margin-right: 15px;
     margin-left: 15px;
@@ -4122,7 +4122,7 @@ h6{
     display: flex;
     flex-wrap: wrap;
     width: 100%;
-    margin-top: 0px;
+    margin-top: -100px;
     margin-bottom: 0px;
     margin-right: 15px;
     margin-left: 15px;
@@ -4299,7 +4299,7 @@ h6{
     display: flex;
     flex-wrap: wrap;
     width: 100%;
-    margin-top: 0px;
+    margin-top: -100px;
     margin-bottom: 0px;
     margin-right: 15px;
     margin-left: 15px;
@@ -4318,6 +4318,35 @@ h6{
     }
     .biodatalist{
         width: 45%;
+    }
+
+
+
+    .control-lable1 {
+        font-size: 13px;
+    }
+
+.gender-radio-select .gender-option {
+    margin-left: 0px;
+    margin-right: 0px;
+}
+
+.gender-radio-select .gender-option label {
+    font-size: 12px;
+}
+.gender-radio-select .gender-option label i {
+    font-size: 13px;
+}
+    .sbbiodata-search {
+        width: 27%;
+    }
+
+    .ellipsis {
+        font-size: 13px;
+    }
+    
+      .fa-chevron-down:before {
+        font-size: 12px;
     }
 }
 /*-- -- -- -- -- -- -- -- -- -- -- -- -- ---- -- --
@@ -4438,6 +4467,69 @@ h6{
 .biodatanumber h2{
     font-size: 28px;
 }
+.sbbiodata-search{
+    display: none;
+  }
+
+    /* Mobile Search Start*/
+    .sbbiodata-search-mobile form{
+        width: 100%;
+        padding: 10px;
+        margin: auto;
+        background: #fdfcfc;
+        border-radius: 6px;
+        border: 1px solid #ccc;
+        font-size: 15px;
+        display: block;
+      }
+      .sbbiodata-search-mobile{
+        width: 100%;
+        position: inherit;
+        margin-top: 110px;
+        margin-left: 0px;
+        z-index: 1;
+      }
+    
+      #search-bar {
+            width: 100%;
+            position: relative;
+            margin-top: 100px;
+            margin-bottom: -70px;
+    
+          }
+          #search-bar #search-button{
+            background: #0090FF;
+            color: #FFF;
+            padding: 10px;
+            border-radius: 5px;
+            font-size: 16px;
+            cursor: pointer;
+            width: 100%;
+            margin: auto;
+          }
+          #search-bar #search-button:hover{
+            background: #090CFF;
+          }
+          #search-bar #filters{
+            display: none;
+          }
+          #close-button {
+            background: #0090FF;
+            color: #FFF;
+            padding: 10px;
+            border-radius: 5px;
+            font-size: 16px;
+            cursor: pointer;
+            position: absolute;
+            left: 0;
+            top: 0;
+            display: none;
+            width: 15%;
+          }
+          #close-button:hover {
+            background: #090CFF;
+          }
+  /* Mobile Search End*/
 }
 /*-- -- -- -- -- -- -- -- -- -- -- -- -- ---- -- --
 --           max-width:768px / E  N  D           --
@@ -4446,6 +4538,14 @@ h6{
 
 
 
+
+  /* Mobile Search Start*/  
+  @media only screen and (min-width: 768px) {
+    .sbbiodata-search-mobile form{
+      display: none;
+    }
+  }
+ /* Mobile Search End*/
 
 
 
@@ -4473,7 +4573,7 @@ h6{
         display: flex;
         flex-wrap: wrap;
         width: 100%;
-        margin-top: 0px;
+        margin-top: -100px;
         margin-bottom: 0px;
         margin-right: 15px;
         margin-left: 15px;
@@ -4755,7 +4855,7 @@ h6{
     display: flex;
     flex-wrap: wrap;
     width: 100%;
-    margin-top: 0px;
+    margin-top: -100px;
     margin-bottom: 0px;
     margin-right: 0px;
     margin-left: 0px;
@@ -4840,7 +4940,7 @@ h6{
         display: flex;
         flex-wrap: wrap;
         width: 100%;
-        margin-top: 0px;
+        margin-top: -100px;
         margin-bottom: 0px;
         margin-right: 0px;
         margin-left: 0px;
@@ -5961,4 +6061,3 @@ h6{
 --                                               --
 -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- ---
 -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -*/
-
