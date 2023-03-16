@@ -1,5 +1,4 @@
 // START CLOCK SCRIPT
-
 Number.prototype.pad = function(n) {
   for (var r = this.toString(); r.length < n; r = 0 + r);
   return r;
@@ -28,27 +27,31 @@ function initClock() {
 // END CLOCK SCRIPT
 
 
-/*
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"><!-- eye icon password show -->
-<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css">
 
-		      <input type="password" id="edit-pass" placeholder="Enter Confirm Password" name="pass_2" size="60" maxlength="128" class="form-text required" required>
-			  <span class="show-password"><i id="show-pass" class="fa fa-eye" aria-hidden="true"></i></span>
 
-        
-		<script>
-      let showPass = document.getElementById('show-pass');
-      let editPass = document.getElementById('edit-pass');
-      showPass.addEventListener('click', function(){
-        if (editPass.type === 'password') {
-          editPass.type = 'text';
-          showPass.className = 'fa fa-eye-slash';
-        } else {
-          editPass.type = 'password';
-          showPass.className = 'fa fa-eye';
+// Mobile Response Gender Start
+    let male = document.getElementById('male_mob');
+    let female = document.getElementById('female_mob');
+    
+    male.addEventListener('click', function() {
+        if (male.checked) {
+            female.checked = false;
         }
-      });
-    </script>
- */
+    });
+    
+    female.addEventListener('click', function() {
+        if (female.checked) {
+            male.checked = false;
+        }
+    });
+// Mobile Response Gender End
+
+
+
+
+
+
+
+
 
 
