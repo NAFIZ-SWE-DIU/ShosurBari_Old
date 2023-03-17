@@ -69,10 +69,10 @@ $(document).ready(function(){
   }
 
   .sbbiodata-search{
-    width: 18%;
+    width: 25%;
     position: inherit;
     margin-top: -50px;
-    margin-left: 5px;
+    margin-left: 0px;
     z-index: 1;
   }
 
@@ -265,8 +265,8 @@ label{
 
     .wrapper .toggle-next .fa {
 position: absolute; 
-right: 20px;
-top: 20px;
+right: 10px;
+top: 19px;
 }
 
 .toggle-next span i {
