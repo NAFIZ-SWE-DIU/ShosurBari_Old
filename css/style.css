@@ -3979,13 +3979,6 @@ border-radius: 5px 5px 0px 0px;
 
 
 
-
-
-
-
-
-
-
 /*-- -- -- -- -- -- -- -- -- -- -- -- -- ---- -- --
 -- -- -- -- -- -- -- -- --- -- -- -- -- -- -- -- --
 --               S  T  A  R  T                   --
@@ -4612,6 +4605,13 @@ h6{
             border-radius: 3px;
             margin-left: 25px;
             margin-right: -15px;
+        }
+        .gender-radio-select .gender-option {
+            margin-top: 0px;
+            margin-bottom: 0px;
+            margin-left: -22px;
+            margin-right: 0px;
+            width: 142%;
         }
         .ellipsis {
             font-size: 14px;
@@ -5329,6 +5329,7 @@ h6{
         margin-top: 30px;
         margin-bottom: auto;
     }
+    
 }
 /*-- -- -- -- -- -- -- -- -- -- -- -- -- ---- -- --
 --           max-width:480px / E  N  D           --
@@ -5591,6 +5592,27 @@ h6{
     }
     .ellipsis {
         font-size: 14px;
+    }
+    .gender-radio-select .gender-option label {
+        display: inline-block;
+        padding: 2px;
+        font-size: 12px;
+        transition: all 0.3s;
+        font-weight: 500;
+        cursor: pointer;
+        margin-top: 4px;
+        margin-bottom: 4px;
+        border: 1px solid #ccc;
+        border-radius: 3px;
+        margin-left: 25px;
+        margin-right: -15px;
+    }
+    .gender-radio-select .gender-option {
+        margin-top: 0px;
+        margin-bottom: 0px;
+        margin-left: -22px;
+        margin-right: 0px;
+        width: 142%;
     }
 }
 /*-- -- -- -- -- -- -- -- -- -- -- -- -- ---- -- --
