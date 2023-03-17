@@ -69,7 +69,7 @@ $(document).ready(function(){
   }
 
   .sbbiodata-search{
-    width: 30%;
+    width: 18%;
     position: inherit;
     margin-top: -50px;
     margin-left: 5px;
@@ -101,11 +101,10 @@ $(document).ready(function(){
 
 .control-lable1 {
     padding: 0;
-    font-size: 13px;
+    font-size: 14px;
     color: #ff0080;
     margin-top: 4px;
     margin-bottom: 4px;
-    font-size: 14px;
     margin-right: -15px;
 }
 
@@ -227,6 +226,7 @@ label{
 		    border: 1px solid #ccc;
         border-radius: 4px;
         -webkit-border-radius: 4px;
+        background: #fff;
    }
 
     .gender-radio-select .gender-option{
@@ -1434,9 +1434,9 @@ function countBiodata() {
 <h4> Find your perfect Partner </h4>
 </div>
   
-
+<div class="wrapper">
 <div class="gender-radio-select">
-<label class="col-sm-5 control-lable1" for="Looking">Looking : </label>
+<label class="ellipsis" for="Looking">Looking :</label>
         <div class="gender-option">
             <input type="radio" name="biodatagender" id="male" value="Male"/>
             <label for="male"><i class="fa fa-male"></i> Groom</label>
@@ -1447,6 +1447,7 @@ function countBiodata() {
             <label for="female"><i class="fa fa-female"></i> Bride</label><br>
 		</div>
     </div>
+</div>
 
 
 <div class="wrapper">
