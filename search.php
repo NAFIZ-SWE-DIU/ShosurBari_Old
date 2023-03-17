@@ -228,29 +228,31 @@ label{
         -webkit-border-radius: 4px;
         background: #fff;
    }
+   .gender-radio-select .gender-option {
+    margin-top: 0px;
+    margin-bottom: 0px;
+    margin-left: 28px;
+    margin-right: -16px;
+    width: 65%;
+}
 
-    .gender-radio-select .gender-option{
-        margin-top: 0px;
-        margin-bottom: 0px;
-        margin-left: 3px;
-        margin-right: 3px;
-
-    }
     .gender-radio-select .gender-option input[type="radio"]{
 		display: none;
     }
     .gender-radio-select .gender-option label{
         display: inline-block;
         padding: 2px;
-        font-size: 13px;
         transition: all 0.3s;
 		font-weight: 500;
+    font-size: 11px;
     cursor: pointer;
 		margin-top: 4px;
     margin-bottom: 4px;
 		border: 1px solid #ccc;
-		border-radius: 3px
-
+		border-radius: 3px;
+    text-align: center;
+    margin-left: -27px;
+    margin-right: 19px;
     }
     .gender-radio-select .gender-option label i{
         font-size: 17px;
@@ -345,8 +347,9 @@ function countBiodata() {
 </div>
 
 
+<div class="wrapper">
 <div class="gender-radio-select">
-<label class="col-sm-5 control-lable1" for="Looking">Looking : </label>
+<label class="ellipsis" for="Looking">Looking :</label>
   <div class="gender-option">
       <input type="radio" name="biodatagender" id="male_mob" value="Male" />
       <label for="male_mob"><i class="fa fa-male"></i> Groom</label>
@@ -355,6 +358,7 @@ function countBiodata() {
   <div class="gender-option">
       <input type="radio" name="biodatagender" id="female_mob" value="Female"/>
       <label for="female_mob"><i class="fa fa-female"></i> Bride</label><br>
+</div>
 </div>
 </div>
 
@@ -1388,6 +1392,46 @@ function countBiodata() {
 
 </div>
 </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
