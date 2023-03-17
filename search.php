@@ -59,7 +59,7 @@ $(document).ready(function(){
 
 <style>
   .sbbiodata-search form{
-    width: 100%;
+    width: 90%;
     padding: 10px;
     margin-left: 0px;
     background: #fdfcfc;
@@ -69,7 +69,7 @@ $(document).ready(function(){
   }
 
   .sbbiodata-search{
-    width: 18%;
+    width: auto;
     position: inherit;
     margin-top: -200px;
     margin-left: 25px;
@@ -103,8 +103,8 @@ $(document).ready(function(){
     padding: 0;
     font-size: 13px;
     color: #ff0080;
-    margin-top: 15px;
-    margin-bottom: 15px;
+    margin-top: 4px;
+    margin-bottom: 4px;
     font-size: 14px;
     margin-right: -15px;
 }
@@ -119,18 +119,6 @@ input[type=submit] {
     width: 100%;
     margin-top: 10px;
 }
-
-
-.sb_biodata_profile{
-    display: flex;
-    flex-wrap: wrap;
-    width: 100%;
-    margin-top: -400px;
-    margin-bottom: 0px;
-    margin-right: 0px;
-    margin-left: 280px;
-    padding: 20px;
-    }
 
     .heart-divider {
     height: 100%;
@@ -182,13 +170,24 @@ label {
 
   .inner-wrap{
     padding: 5px 10px;
-    max-height: 140px;
+    max-height: 160px;
     overflow: auto;
   }
 
   .wrapper{
-    margin-top: 10px;
-    margin-bottom: 10px;
+   /* margin-top: 10px;
+    margin-bottom: 10px; */
+    position: relative;
+
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  height: auto;
+  margin: 10px auto;
+  padding: 7px;
+  background-color: #f1f1f1;
+  box-shadow: 1px 1px 4px #888;
+  border-radius: 4px;
   }
 
   label span {
@@ -213,11 +212,17 @@ label{
   font-weight: 600;
 }
 
+.fa-female:before {
+    font-size: 15px;
+}
+.fa-male:before {
+    font-size: 15px;
+}
   .gender-radio-select{
         padding-top: 0px;
         padding-bottom: 0px;
         padding-left: 11px;
-        padding-right: 3px;
+        padding-right: 0px;
         display: flex;
 		    align-items: center;
 		    border: 1px solid #ccc;
@@ -228,8 +233,8 @@ label{
     .gender-radio-select .gender-option{
         margin-top: 0px;
         margin-bottom: 0px;
-        margin-left: 5px;
-        margin-right: 5px;
+        margin-left: 3px;
+        margin-right: 3px;
 
     }
     .gender-radio-select .gender-option input[type="radio"]{
@@ -237,12 +242,13 @@ label{
     }
     .gender-radio-select .gender-option label{
         display: inline-block;
-        padding: 3px;
+        padding: 2px;
         font-size: 13px;
         transition: all 0.3s;
 		font-weight: 500;
-        cursor: pointer;
+    cursor: pointer;
 		margin-top: 4px;
+    margin-bottom: 4px;
 		border: 1px solid #ccc;
 		border-radius: 3px
 
@@ -256,7 +262,39 @@ label{
         color: #fff;
 		border-radius: 3px
     }
+
+
+    .wrapper .toggle-next .fa {
+position: absolute; 
+right: 20px;
+top: 20px;
+}
+
+.toggle-next span i {
+    transition: all 0.2s ease;
+}
+.toggle-next:hover span i {
+    transform: rotate(180deg);
+
+}
+
   </style>
+
+<script>
+let label = document.querySelector('.toggle-next');
+let checkbox = document.querySelector('#Lorems');
+
+label.addEventListener('click', () => {
+  if (checkbox.style.display === 'none') {
+    checkbox.style.display = 'block';
+  } else {
+    checkbox.style.display = 'none';
+  }
+});
+
+  </script>
+
+
 
 
 <script>
@@ -327,7 +365,7 @@ function countBiodata() {
 
 
 <div class="wrapper">
-<label class="form-control toggle-next ellipsis">Religion  <span style=" margin-left:62%; color:#ff0080;">   <i class="fa fa-chevron-down"></i></span></label>
+<label class="form-control toggle-next ellipsis">Religion  <span style=" color:#ff0080;">   <i class="fa fa-chevron-down"></i></span></label>
 <div class="checkboxes" id="Lorems">
   
   <div class="inner-wrap">
@@ -369,7 +407,7 @@ function countBiodata() {
 
 
 <div class="wrapper">
-<label class="form-control toggle-next ellipsis">Marital Status <span style=" margin-left:42%; color:#ff0080;">   <i class="fa fa-chevron-down"></i></span></label>
+<label class="form-control toggle-next ellipsis">Marital Status <span style=" color:#ff0080;">   <i class="fa fa-chevron-down"></i></span></label>
 <div class="checkboxes" id="Lorems">
   
   <div class="inner-wrap">
@@ -412,7 +450,7 @@ function countBiodata() {
 
 
 <div class="wrapper">
-<label class="form-control toggle-next ellipsis">Skin Tones <span style=" margin-left:54%; color:#ff0080;">   <i class="fa fa-chevron-down"></i></span></label>
+<label class="form-control toggle-next ellipsis">Skin Tones <span style=" color:#ff0080;">   <i class="fa fa-chevron-down"></i></span></label>
 <div class="checkboxes" id="Lorems">
   
   <div class="inner-wrap">
@@ -448,7 +486,7 @@ function countBiodata() {
 
 
 <div class="wrapper">
-<label class="form-control toggle-next ellipsis">Rasidencial Country <span style=" margin-left:24%; color:#ff0080;">   <i class="fa fa-chevron-down"></i></span></label>
+<label class="form-control toggle-next ellipsis">Rasidencial Country <span style=" color:#ff0080;">   <i class="fa fa-chevron-down"></i></span></label>
 <div class="checkboxes" id="Lorems">
   
   <div class="inner-wrap">
@@ -505,7 +543,7 @@ function countBiodata() {
 
 
 <div class="wrapper">
-<label class="form-control toggle-next ellipsis">District <span style=" margin-left:64%; color:#ff0080;">   <i class="fa fa-chevron-down"></i></span></label>
+<label class="form-control toggle-next ellipsis">District <span style=" color:#ff0080;">   <i class="fa fa-chevron-down"></i></span></label>
 <div class="checkboxes" id="Lorems">
   
   <div class="inner-wrap">
@@ -870,7 +908,7 @@ function countBiodata() {
 
 
 <div class="wrapper">
-<label class="form-control toggle-next ellipsis">Family Condition <span style=" margin-left:34%; color:#ff0080;">   <i class="fa fa-chevron-down"></i></span></label>
+<label class="form-control toggle-next ellipsis">Family Condition <span style=" color:#ff0080;">   <i class="fa fa-chevron-down"></i></span></label>
 <div class="checkboxes" id="Lorems">
   
   <div class="inner-wrap">
@@ -916,7 +954,7 @@ function countBiodata() {
 
 
 <div class="wrapper">
-<label class="form-control toggle-next ellipsis">Occupation <span style=" margin-left:51.5%; color:#ff0080;">   <i class="fa fa-chevron-down"></i></span></label>
+<label class="form-control toggle-next ellipsis">Occupation <span style=" color:#ff0080;">   <i class="fa fa-chevron-down"></i></span></label>
 <div class="checkboxes" id="Lorems">
   
   <div class="inner-wrap">
@@ -1294,7 +1332,7 @@ function countBiodata() {
 
 
 <div class="wrapper">
-<label class="form-control toggle-next ellipsis">Education Method <span style=" margin-left:29%; color:#ff0080;">   <i class="fa fa-chevron-down"></i></span></label>
+<label class="form-control toggle-next ellipsis">Education Method <span style=" color:#ff0080;">   <i class="fa fa-chevron-down"></i></span></label>
 <div class="checkboxes" id="Lorems">
   
   <div class="inner-wrap">
@@ -1413,7 +1451,7 @@ function countBiodata() {
 
 
 <div class="wrapper">
-  <label class="form-control toggle-next ellipsis">Religion  <span style=" margin-left:62%; color:#ff0080;">   <i class="fa fa-chevron-down"></i></span></label>
+  <label class="form-control toggle-next ellipsis">Religion  <span style=" color:#ff0080;">   <i class="fa fa-chevron-down"></i></span></label>
       <div class="checkboxes" id="Lorems">
         
         <div class="inner-wrap">
@@ -1455,7 +1493,7 @@ function countBiodata() {
 
 
   <div class="wrapper">
-  <label class="form-control toggle-next ellipsis">Marital Status <span style=" margin-left:42%; color:#ff0080;">   <i class="fa fa-chevron-down"></i></span></label>
+  <label class="form-control toggle-next ellipsis">Marital Status <span style=" color:#ff0080;">   <i class="fa fa-chevron-down"></i></span></label>
       <div class="checkboxes" id="Lorems">
         
         <div class="inner-wrap">
@@ -1555,7 +1593,7 @@ function toggleCheckedAll(checkbox) {
 </script>
 
 <div class="wrapper">
-  <label class="form-control toggle-next ellipsis">Skin Tones <span style=" margin-left:54%; color:#ff0080;">   <i class="fa fa-chevron-down"></i></span></label>
+  <label class="form-control toggle-next ellipsis">Skin Tones <span style="color:#ff0080;">   <i class="fa fa-chevron-down"></i></span></label>
       <div class="checkboxes" id="Lorems">
         
         <div class="inner-wrap">
@@ -1591,7 +1629,7 @@ function toggleCheckedAll(checkbox) {
 
 
     <div class="wrapper">
-  <label class="form-control toggle-next ellipsis">Rasidencial Country <span style=" margin-left:24%; color:#ff0080;">   <i class="fa fa-chevron-down"></i></span></label>
+  <label class="form-control toggle-next ellipsis">Rasidencial Country <span style=" color:#ff0080;">   <i class="fa fa-chevron-down"></i></span></label>
       <div class="checkboxes" id="Lorems">
         
         <div class="inner-wrap">
@@ -1648,7 +1686,7 @@ function toggleCheckedAll(checkbox) {
 
 
     <div class="wrapper">
-  <label class="form-control toggle-next ellipsis">District <span style=" margin-left:64%; color:#ff0080;">   <i class="fa fa-chevron-down"></i></span></label>
+  <label class="form-control toggle-next ellipsis">District <span style="color:#ff0080;">   <i class="fa fa-chevron-down"></i></span></label>
       <div class="checkboxes" id="Lorems">
         
         <div class="inner-wrap">
@@ -2013,7 +2051,7 @@ function toggleCheckedAll(checkbox) {
 
 
     <div class="wrapper">
-  <label class="form-control toggle-next ellipsis">Family Condition <span style=" margin-left:34%; color:#ff0080;">   <i class="fa fa-chevron-down"></i></span></label>
+  <label class="form-control toggle-next ellipsis">Family Condition <span style=" color:#ff0080;">   <i class="fa fa-chevron-down"></i></span></label>
       <div class="checkboxes" id="Lorems">
         
         <div class="inner-wrap">
@@ -2059,7 +2097,7 @@ function toggleCheckedAll(checkbox) {
 
 
     <div class="wrapper">
-  <label class="form-control toggle-next ellipsis">Occupation <span style=" margin-left:51.5%; color:#ff0080;">   <i class="fa fa-chevron-down"></i></span></label>
+  <label class="form-control toggle-next ellipsis">Occupation <span style=" color:#ff0080;">   <i class="fa fa-chevron-down"></i></span></label>
       <div class="checkboxes" id="Lorems">
         
         <div class="inner-wrap">
@@ -2437,7 +2475,7 @@ function toggleCheckedAll(checkbox) {
 
 
     <div class="wrapper">
-  <label class="form-control toggle-next ellipsis">Education Method <span style=" margin-left:29%; color:#ff0080;">   <i class="fa fa-chevron-down"></i></span></label>
+  <label class="form-control toggle-next ellipsis">Education Method <span style=" color:#ff0080;">   <i class="fa fa-chevron-down"></i></span></label>
       <div class="checkboxes" id="Lorems">
         
         <div class="inner-wrap">
