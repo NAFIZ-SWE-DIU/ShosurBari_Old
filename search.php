@@ -61,7 +61,7 @@ $(document).ready(function(){
   .sbbiodata-search form{
     width: 90%;
     padding: 10px;
-    margin-left: 0px;
+    margin-left: auto;
     background: #fdfcfc;
     border-radius: 6px;
     border: 1px solid #ccc;
@@ -69,10 +69,10 @@ $(document).ready(function(){
   }
 
   .sbbiodata-search{
-    width: auto;
+    width: 30%;
     position: inherit;
-    margin-top: -200px;
-    margin-left: 25px;
+    margin-top: -50px;
+    margin-left: 5px;
     z-index: 1;
   }
 
@@ -145,7 +145,6 @@ label {
   white-space: nowrap;
   overflow: hidden;
   color: #ff0080;
-  font-size: 14px;
   border-radius: 4px;
 }
 
