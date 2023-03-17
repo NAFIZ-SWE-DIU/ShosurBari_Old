@@ -3837,7 +3837,7 @@ form {
 .sb_biodata_profile{
     display: flex;
     flex-wrap: wrap;
-    width: 75%;
+    width: 80%;
     margin-top: -100px;
     margin-bottom: 0px;
     margin-right: auto;
@@ -3848,7 +3848,7 @@ form {
 .biodatalist{
     border: 1px solid #ff0080;
     border-radius: 6px;
-    width: 30%;
+    width: 31%;
     gap: 1.5rem;
     padding: 0px;
     margin-left: auto;
@@ -3996,14 +3996,14 @@ border-radius: 5px 5px 0px 0px;
 
 @media (max-width:1366px){
     .biodatalist{
-        width: 30%;
+        width: 31%;
         margin-left: auto;
         margin-right: auto;
     }
     .sb_biodata_profile{
         display: flex;
         flex-wrap: wrap;
-        width: 73%;
+        width: 80%;
         margin-top: -100px;
         margin-bottom: 0px;
         margin-right: auto;
@@ -4019,6 +4019,9 @@ border-radius: 5px 5px 0px 0px;
             font-size: 15px;
             font-weight: 400;
             width: 65%;
+        }
+        .ellipsis {
+            font-size: 13px;
         }
 }
 
