@@ -4537,7 +4537,7 @@ h6{
 
     /* Mobile Search Start*/
     .sbbiodata-search-mobile form{
-        width: 60%;
+        width: 70%;
         margin-left: auto;
         margin-right: auto;
         margin-top: -70px;
@@ -5590,7 +5590,7 @@ h6{
         margin-bottom: auto;
     }
     .ellipsis {
-        font-size: 13px;
+        font-size: 14px;
     }
 }
 /*-- -- -- -- -- -- -- -- -- -- -- -- -- ---- -- --
@@ -5807,7 +5807,7 @@ h6{
         margin-bottom: auto;
     }
     .ellipsis {
-        font-size: 12px;
+        font-size: 14px;
     }
 }
 /*-- -- -- -- -- -- -- -- -- -- -- -- -- ---- -- --
@@ -5869,6 +5869,9 @@ h6{
         margin-right: auto;
         margin-top: 30px;
         margin-bottom: auto;
+    }
+    .ellipsis {
+        font-size: 12.5px;
     }
 }
 /*-- -- -- -- -- -- -- -- -- -- -- -- -- ---- -- --
@@ -6141,6 +6144,9 @@ h6{
         margin-right: auto;
         margin-top: 30px;
         margin-bottom: auto;
+    }
+    .ellipsis {
+        font-size: 12px;
     }
 }
 /*-- -- -- -- -- -- -- -- -- -- -- -- -- ---- -- --
