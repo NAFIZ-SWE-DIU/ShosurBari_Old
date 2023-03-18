@@ -95,7 +95,6 @@ $(document).ready(function(){
         <span class="show-password" style="color:#02a7e6;  font-size:18px;"><i style="color:black;  font-size:18px;" class="fa fa-eye" aria-hidden="true"></i></span> 
       </div>
 
-      
 	<script>
         let showPass = document.querySelectorAll('.show-password');
         showPass.forEach(function(el) {
