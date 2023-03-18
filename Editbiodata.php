@@ -466,32 +466,44 @@ $aboutme=$row['aboutme'];
 
 								    <optgroup label="Students Sector">
 								    <option  hidden selected><?php echo $occupation; ?></option>
-									<option value="Students of Kawmi Madrasa">Students of Kawmi Madrasa</option> 
-									<option value="Students of High School">Students of High School</option>
-									<option value="Students of Doploma">Students of Doploma</option> 
-	               		            <option value="Students of College">Students of College</option>
-	                                <option value="Students of B.Sc. Engineering">Students of B.Sc. Engineering</option> 
-	               		            <option value="Students of Medical Sector">Students of Medical Sector</option>
-	                                <option value="Students of B.Sc.">Students of B.Sc.</option>
-	                                <option value="Students of M.Sc.">Students of M.Sc.</option>
-									<option value="Students of B.A.">Students of B.A.</option> 
-	               		            <option value="Students of M.A.">Students of M.A.</option>
-									<option value="Students of B.Com.">Students of B.Com.</option> 
-	               		            <option value="Students of M.Com.">Students of M.Com.</option>
+									<option value="Kawmi Madrasa Student">Kawmi Madrasa Student</option>
+									<option value="Dakhil Student">Dakhil Student</option> 
+									<option value="High School Student">High School Student</option>
+
+									<option value="College Student">College Student</option>
+									<option value="Alim Student">Alim Student</option> 
+									<option value="Politechnical Student">Politechnical Student</option>
+									<option value="Nursing Student">Nursing Student</option>
+									<option value="Midwifary Student">Midwifary Student</option>
+									<option value="Politechnical Student">Peramedical Student</option>
+
+	               		            <option value="Medical Student">Medical Student</option>
+	                                <option value="Pharmacy Student">Pharmacy Student</option> 
+	               		            <option value="B.Sc. Engineering Student">B.Sc. Engineering Student</option>
+
+	                                <option value="B.Sc. Student.">B.Sc. Student</option>
+	                                <option value="B.A. Student">B.A. Student</option>
+									<option value="B.Com. Student">B.Com. Student</option> 
+									<option value="Fazil Student">Fazil Student</option> 
+
+	               		            <option value="Students of M.A.">M.Sc. Student</option>
+									<option value="Students of B.Com.">M.A. Student</option> 
+	               		            <option value="Students of M.Com.">M.Com. Student</option>
+									   <option value="Kamil Student">Kamil Student</option> 
                                     </optgroup>
 									
-								     <optgroup label="Medical Sector">
+								     <optgroup label="Medical & Health Profession">
 	                                <option value="MBBS Doctor">MBBS Doctor</option>
 	                                <option value="Internship Doctor">Internship Doctor</option> 
-									<option value="FCPS Doctor">FCPS Doctor</option>
+									<option value="Specialist Doctor">Specialist Doctor</option>
 									<option value="Pharmacist">Pharmacist</option>
 									<option value="Diploma Doctor">Diploma Doctor</option>
-									<option value="Peramedical">Peramedical</option> 
-	               		            <option value="Nursing">Nursing</option>
-									<option value="Midwifary">Midwifary</option>
+	               		            <option value="Nurse">Nurse</option>
+									<option value="Midwife">Midwife</option>
+									<option value="Village Doctor">Village Doctor</option>
                                     </optgroup>
 
-									<optgroup label="Engineers Sector">
+									<optgroup label="Engineer Profession">
 									<option value="Aerospace Engineer">Aerospace Engineer</option>
 									<option value="Agricultural Engineer">Agricultural Engineer</option>
 									<option value="Architectural Engineer">Architectural Engineer</option>
@@ -507,33 +519,44 @@ $aboutme=$row['aboutme'];
 	               		            <option value="Textile Engineer">Textile Engineer</option>
                                     </optgroup>
 
-									<optgroup label="Teachers Sector">
-									<option value="Teaches of Kawmi Madrasa">Teaches of Kawmi Madrasa</option> 
-	                                <option value="Teaches of Primary School">Teaches of Primary School</option> 
-	               		            <option value="Teaches of High School">Teaches of High School</option>
-									<option value="Professor of College">Professor of College</option>
-									<option value="Professor of Public University">Professor of Public University</option>
-									<option value="Professor of Private University">Professor of Private University</option>
-									<option value="Professor of National University">Professor of National University</option>
-									<option value="Professor of Degree">Professor of Degree</option>
+									<optgroup label="Teacher Profession">
+									<option value="Kawmi Madrasa Teacher">Kawmi Madrasa Teacher</option>
+									<option value="Aliya Madrasa Teacher">Aliya Madrasa Teacher</option>  
+	                                <option value="Primary School Teacher">Primary School Teacher</option> 
+	               		            <option value="High School Teacher">High School Teacher</option>
+									<option value="College Professor">College Professor</option>
+									<option value="Public University Professor">Public University Professor</option>
+									<option value="Private University Professor">Private University Professor</option>
+									<option value="National University Professor">National University Professor</option>
+									<option value="Degree Professor">Degree Professor</option>
                                     </optgroup>
 
-									<optgroup label="Defense Sector">
+									<optgroup label="Defense Profession">
 	                                <option value="Army">Army</option> 
 	               		            <option value="Air Force">Air Force</option>
 	                                <option value="Navy">Navy</option>
 	                                <option value="Police">Police</option>
+									<option value="Ansar">Ansar</option>
 									<option value="Fire Service">Fire Service</option> 
 	               		            <option value="RAB">RAB</option>
 	                                <option value="DB">DB</option>
                                     </optgroup>
 
-									<optgroup label="Garments Sector">
-	                                <option value="Worker of Garments">Worker of Garments</option> 
-	               		            <option value="Managers of Garments">Managers of Garments</option>
+									<optgroup label="Foreign Work/ Job /Business">
+	                                <option value="Middleast Work/ Job /Business">Middleast Work/ Job /Business</option> 
+	               		            <option value="Europ Work/ Job /Business">Europ Work/ Job /Business</option>
+	                                <option value="America Work/ Job /Business">America Work/ Job /Business</option>
+	                                <option value="Asia Work/ Job /Business">Asia Work/ Job /Business</option>
+									<option value="Africa Work/ Job /Business">Africa Work/ Job /Business</option>
+	               		            <option value="Oceania Work/ Job /Business">Oceania Work/ Job /Business</option>
                                     </optgroup>
 
-									<optgroup label="Driver Sector">
+									<optgroup label="Garments Sector">
+	                                <option value="Garments Worker">Garments Worker</option> 
+	               		            <option value="Managers of Garments">Garments Manager</option>
+                                    </optgroup>
+
+									<optgroup label="Driver Profession">
 	                                <option value="Bus Driver">Bus Driver</option> 
 									<option value="Micro Driver">Micro Bus Driver</option> 
 	                                <option value="Car Driver">Car Driver</option> 
@@ -542,19 +565,17 @@ $aboutme=$row['aboutme'];
 	                                <option value="Auto Driver">Auto Driver</option>
                                     </optgroup>
 
-									<optgroup label="Others Sector">
+									<optgroup label="Common Profession">
 									<option value="Banker">Banker</option>
+									<option value="Lawyer">Lawyer</option> 
 									<option value="Business">Business</option> 
 									<option value="Entrepreneur">Entrepreneur</option> 
-									<option value="Lawyer">Lawyer</option> 
 	                                <option value="Frelancer">Frelancer</option>
 									<option value="Graphics Desigener">Graphics Desigener</option>
 									<option value="Sales & Marketing (SR)">Sales & Marketing (SR)</option>  
-	                                <option value="No Job">No Job</option>
-
+	                                <option value="No Profession">No Profession</option>
 	                            </select>
 							</div>
-
 
 		                    <div class="shosurbari-biodata-field">
 		                        <label for="edit-name">Occupation Describe<span class="form-required" title="This field is required.">*</span></label>
