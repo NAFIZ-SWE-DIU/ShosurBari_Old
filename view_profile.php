@@ -52,6 +52,8 @@ if($result2){
 
 
 
+
+
 <!DOCTYPE HTML>
 <html>
 <head>
@@ -234,7 +236,7 @@ $religion=$row['religion'];
 					</ul>
 
 <div class="background2">
-  <button class="Contactme1">Contact Me</button>
+<a href="contactbiodata.php" target="_blank"><button class="Contactme1">Contact Me</button></a>
   <h5>Contact for Married</h5>
 </div>
 <div class="background">
