@@ -1,8 +1,6 @@
 /*  color: #ff0080; pink
-  color: #00bbff
-; sky blue
-    color: #00bbff
-; blue
+  color: #00bbff; sky blue
+    color: #00bbff; blue
     color: #00008B; dark blue
 */
 
@@ -31,8 +29,7 @@ html, body{
 
 element{
     --main-web-color:  #ff0080;
-    --main-bg-color: #00bbff
-;
+    --main-bg-color: #00bbff;
     --name-text-color: #ffff00;
     --body-text-color: #00008B;
     --border-color: #ccc;
@@ -53,8 +50,7 @@ body a{
 
 ::selection {
     color: yellow;
-    background: #00bbff
-;
+    background: #00bbff;
 }
 /*----------------------------
 	The Navigation Menu
@@ -325,8 +321,7 @@ ul.nav_1 li{
     background: #ff0080;
 }
 .dropdown-menu li a:hover{
-    background: #00bbff
-;
+    background: #00bbff;
     color: white;
 }
 
@@ -392,8 +387,7 @@ ul.nav_1 li.last{
   bottom: 0;
   left: 0;
   right: 0;
-  background:#00bbff
- ;
+  background:#00bbff;
   
   -webkit-transform: scaleX(0);
   transform: scaleX(0);
@@ -869,8 +863,7 @@ ul#flexiselDemo3 h3 a:hover{
    color:#ff0080;
 }
 span.m_3{
-	color:#00bbff
-;
+	color:#00bbff;
     font-size: 14px;
 }
 .suceess_story {
@@ -994,8 +987,7 @@ figure.thumbnail1{
     padding-bottom: 5px;
     padding-left: 0px;
     padding-right: 0px;
-    background: #00bbff
-;
+    background: #00bbff;
     border-radius: 4px;
     width: 100%;
     margin: 0px;
@@ -1283,8 +1275,7 @@ span.divider {
 }
 .col-md-8.profile_left {
     padding-left: 0;
-    background: url(https://bestanimations.com/media/many-hearts/260842010many-little-heart-make-big-heart-gif.gif); /* #00bbff
-; */
+    background: url(https://bestanimations.com/media/many-hearts/260842010many-little-heart-make-big-heart-gif.gif); /* #00bbff; */
 }
 .col-sm-4.row_2 {
     padding-left: 0;
@@ -1341,8 +1332,7 @@ table.table_working_hours {
     border-top: 0px;
     border-left: 1px;
     border-right: 1px;
-    border-color: #00bbff
-;
+    border-color: #00bbff;
     border-style: groove;
 }
 .biodatanumber h2 span{
@@ -1355,8 +1345,7 @@ td.day_label {
     padding: 8px;
     font-size: 16px;
     font-weight: 450;
-    border: 2px #00bbff
-;
+    border: 2px #00bbff;
     border-style: groove;
     width: 50%;
     position: inherit;
@@ -1366,8 +1355,7 @@ td.day_value {
     padding: 8px;
     font-size: 15px;
     font-weight: 400;
-    border: 2px #00bbff
-;
+    border: 2px #00bbff;
     border-style: groove;
 }
 
@@ -1393,8 +1381,7 @@ opened_1*/
     display: inline-block;
     border-bottom: none;
     font-weight: 500;
-    background-color:#00bbff
-;
+    background-color:#00bbff;
     width: 100%;
     padding: 0;
     margin-bottom: 2em;
@@ -1405,8 +1392,7 @@ opened_1*/
     border-radius: 4px;
     font-size: 1.2em;
     font-weight: 500;
-    background-color:#00bbff
-;
+    background-color:#00bbff;
     width: auto;
     padding: 5px;
     margin-bottom: 2em;
@@ -1472,8 +1458,7 @@ a#profile-tab, a#home-tab, a#profile-tab1{
     border-top: 2px;
     border-left: 2px;
     border-right: 2px;
-    border-color:  #00bbff
-;
+    border-color:  #00bbff;
     border-style: groove;
 }
 .basic_2{
@@ -1513,8 +1498,7 @@ a#profile-tab, a#home-tab, a#profile-tab1{
     -o-box-shadow: 0 5px 5px rgba(0,0,0,0.14);
 }
 .newsletter input[type="submit"]:hover{
-	background:#00bbff
-;
+	background:#00bbff;
 }
 ul.profile_item{
 	padding:0;
@@ -1526,8 +1510,7 @@ ul.profile_item{
 .profile_item{
     border-style: groove;
     border-radius: 4px;
-    border-color: #00bbff
-;
+    border-color: #00bbff;
 }
 .profile_item-desc{
     padding-top: 15px;
@@ -1713,8 +1696,7 @@ ul.login_details li a{
     -o-box-shadow: 0 5px 5px rgba(0,0,0,0.14);
 }
 .profile_search1 input[type="submit"]:hover{
-	background:#00bbff
-;
+	background:#00bbff;
 }
 .view_profile2{
 	margin:4em 0 0 0;
@@ -1786,8 +1768,7 @@ a:hover, a:focus {
     text-decoration:none;
 }
 .input-group1 input[type="submit"] {
-    background:#00bbff
-;
+    background:#00bbff;
     color: #FFF;
     font-size: 12px;
     padding: 8px 30px;
@@ -1879,10 +1860,8 @@ ul.pagination {
 .pagination>.active>a, .pagination>.active>span, .pagination>.active>a:hover, .pagination>.active>span:hover, .pagination>.active>a:focus, .pagination>.active>span:focus {
     z-index: 2;
     color: #fff;
-    background-color:#00bbff
-;
-    border-color:#00bbff
-;
+    background-color:#00bbff;
+    border-color:#00bbff;
     cursor: default;
 }
 .pagination>li >a {
@@ -2116,8 +2095,7 @@ ul.phone li.phone_right p{
 	color:#FFF;
 }
 .pricing-table-grid ul li span{
-    background:#00bbff
-;
+    background:#00bbff;
     padding: 10px;
     transition: 0.5s all;
     -webkit-transition: 0.5s all;
@@ -2143,8 +2121,7 @@ a.order-btn{
     outline: none;
 }
 .pricing-table-grid:hover a.order-btn{
-	background:#00bbff
-;
+	background:#00bbff;
 }
 span.month1 {
     font-size: 13px;
@@ -2584,8 +2561,7 @@ label{
 }
 
 .form-text-describe:focus{
-    border-color: #00bbff
-;;
+    border-color: #00bbff;
     outline: 0;
     box-shadow: none !important;
 }
@@ -2609,8 +2585,7 @@ label{
 }
 
 .form-control:focus, .form-text:focus, .form-textarea:focus, .form-select:focus{
-    border-color: #00bbff
-;;
+    border-color: #00bbff;
     outline: 0;
     box-shadow: none !important;
 }
@@ -2646,8 +2621,7 @@ label{
     content: "";
     width: 100%;
     height: 1px;
-    background: #00bbff
-;
+    background: #00bbff;
     left: 0;
     right: 0;
     top: 50%;
@@ -2799,8 +2773,7 @@ label{
   }
 
   .form-group:hover .fa-eye {
-    color: #00bbff
-;
+    color: #00bbff;
   }
 
   .form-group:hover .fa-eye:before {
@@ -2952,8 +2925,7 @@ p.m_5{
     position: relative;
     text-align: right;
     padding: 0 20px;
-    background: #00bbff
-;
+    background: #00bbff;
     border-radius: 4px 0 0 4px;
     -webkit-box-shadow: none;
     box-shadow: none;
@@ -3037,8 +3009,7 @@ form#contact-form {
     font-weight: 500;
 }
 #contact-form input[type="submit"]:hover{
-	background:#00bbff
-;
+	background:#00bbff;
 }
 /* -- terms and conditions --*/
 ul.feature_list.feature_list1 {
@@ -3093,8 +3064,7 @@ form {
     margin-bottom: auto;
     margin-top: 0px;
     padding-top: 20px;
-    background: url(https://bestanimations.com/media/many-hearts/260842010many-little-heart-make-big-heart-gif.gif); /* #00bbff
-; */
+    background: url(https://bestanimations.com/media/many-hearts/260842010many-little-heart-make-big-heart-gif.gif); /* #00bbff; */
     border-radius: 1px 16px 1px 16px ;
   }
   
@@ -3103,10 +3073,8 @@ form {
   .styled-input {
     float: left;
     background: #fff;
-    border: 2px solid #00bbff
-;
-    box-shadow: 0px 5px 10px 0px #00bbff
-;
+    border: 2px solid #00bbff;
+    box-shadow: 0px 5px 10px 0px #00bbff;
     border-radius: 3px;
     -webkit-box-shadow: inset 0 -1px 4px 0 rgba(0,0,0,0.20);
     /* box-shadow: inset 0 -1px 4px 0 rgba(0,0,0,0.20); */
@@ -3413,7 +3381,7 @@ form {
   }
   
   .form-area button.serach-btn:hover {
-      background: #00bbff;;
+      background: #00bbff;
       -webkit-box-shadow: -2px -2px 4px -4px rgba(0, 0, 0, 0.02), 0 3px 9px 0 rgba(0, 0, 0, 0.1), 0 2px 4px 0 rgba(0, 0, 0, 0.14);
       box-shadow: -2px -2px 4px -4px rgba(0, 0, 0, 0.02), 0 3px 9px 0 rgba(0, 0, 0, 0.1), 0 2px 4px 0 rgba(0, 0, 0, 0.14);
   }
@@ -3686,8 +3654,7 @@ form {
     --progress: 0;
     height: 6px;
     width: var(--progress);
-    background-color: #00bbff
-;
+    background-color: #00bbff;
   }
   
     button:hover {
@@ -3812,8 +3779,7 @@ form {
 --                                               --
 -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- ---
 -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -*/
-/* background: #00bbff
-;
+/* background: #00bbff;
    background: #ff0080;
 */
 .flex-container-shosurbaribio {
@@ -3834,7 +3800,7 @@ form {
     }
 
 .biodatalist{
-    border: 1px solid #ff0080;
+    border: 1px solid #ccc;
     border-radius: 6px;
     width: 31%;
     gap: 1.5rem;
@@ -3848,8 +3814,7 @@ form {
 }
 
 .biodatalist:hover{
-    background: #00bbff
-24;
+    background: #00bbff27;
     box-shadow: 0 4px 8px 0 rgb(0 0 0 / 20%), 0 6px 20px 0 rgb(0 0 0 / 19%);
 }
 
@@ -3857,8 +3822,7 @@ form {
 background: #ff0080;
 margin: 0px;
 padding-top: 10px;
-border: 1px solid #00bbff
-;
+border: 1px solid #00bbff;
 border-radius: 5px 5px 0px 0px;
 }
 
@@ -3946,8 +3910,7 @@ border-radius: 5px 5px 0px 0px;
 }
 
 .view_sb_profile:hover{
-  background:#00bbff
-;
+  background:#00bbff;
   color: yellow;
 }
 
