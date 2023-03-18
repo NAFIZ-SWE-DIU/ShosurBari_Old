@@ -41,10 +41,6 @@ function searchid(){
 	}
 }
 
-
-
-
-
 /*-- -- -- -- -- -- -- -- -- -- -- -- -- ---- -- --
 -- -- -- -- -- -- -- -- --- -- -- -- -- -- -- -- --
 --            Multiple Option Search             --
@@ -55,14 +51,15 @@ function search(){
 	if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 	   $biodatagender=$_POST['biodatagender'];
 	   $Skin_tones=$_POST['Skin_tones'];
-	   $sql="SELECT * FROM 1bd_personal_physical WHERE  
-		biodatagender='$biodatagender'  
-	   OR Skin_tones='$Skin_tones'  
+
+	   $sql="SELECT * FROM 1bd_personal_physical  WHERE  
+		biodatagender LIKE '$biodatagender'  
+	   AND Skin_tones LIKE '$Skin_tones'  
 	   ";
 	   $result = mysqlexec($sql);
 	   return $result;
 	}
-   }
+}
 /*-- -- -- -- -- -- -- -- -- -- -- -- -- ---- -- --
 -- -- -- -- -- -- -- -- --- -- -- -- -- -- -- -- --
 --                   E   N   D                   --
