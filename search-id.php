@@ -1,15 +1,6 @@
 <?php include_once("includes/basic_includes.php");?>
 <?php include_once("functions.php"); ?>
-<?php if(isloggedin()){
- //do nothing stay here
-} else{
-   header("location:login.php");
-}
- ?>
-<?php
-$id=$_SESSION['id'];
-$result=search();
-?>
+
 <!DOCTYPE HTML>
 <html>
 <head>
@@ -55,8 +46,8 @@ $(document).ready(function(){
    <div class="breadcrumb1">
      <ul>
         <a href="index.php"><i class="fa fa-home home_1"></i></a>
-        <span class="divider">&nbsp;|&nbsp;</span>
-        <li class="current-page">Search By Profile ID</li>
+        <span class="divider">&nbsp;<|>&nbsp;</span>
+        <li class="current-page"><h4>Search Biodata Number</h4></li>
      </ul>
    </div>
    <div class="col-md-9 profile_left">
