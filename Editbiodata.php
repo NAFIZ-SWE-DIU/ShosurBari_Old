@@ -310,9 +310,9 @@ if($row){
 function checkInput(input) {
     let value = input.value;
     // Allow only numbers and spaces
-    let regex = /^[A-Za-z0-9-. ]+$/;
+    let regex = /^[A-Za-z0-9-.'" ]+$/;
     if (!regex.test(value)) {
-        document.getElementById('height-error-message').innerHTML = "Please enter a valid height. Ex: 5 ft 7 in. Can't used any symble.";
+        document.getElementById('height-error-message').innerHTML = "Please follow the instruction. Ex: 5 ft 7 in.";
         input.value = '';
     } else {
         document.getElementById('height-error-message').innerHTML = '';
@@ -796,7 +796,7 @@ $childhood=$row['childhood'];
 					<script src="https://code.jquery.com/jquery-3.6.3.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/chosen/1.8.7/chosen.jquery.min.js"></script>
 					<div class="shosurbari-biodata-field">
-					    <label for="edit-pass">District of Permanent Address<span class="form-required" title="This field is required.">*</span></label>  
+					    <label for="permanent_address">District of Permanent Address<span class="form-required" title="This field is required.">*</span></label>  
 						<select name="permanent_address" class="selectsearch" required>
 
 						<option hidden selected><?php echo $permanent_address; ?></option>
