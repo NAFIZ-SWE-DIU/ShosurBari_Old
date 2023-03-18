@@ -979,90 +979,105 @@ function countBiodata() {
 
        <!-- Students Sector-->
        <label> Students Sector</label> <br>
+
+
+<!-- SSC -->
+<label>School</label> <br>
     <label>
-      <input type="checkbox" name="occupation" value="Students of Kawmi Madrasa" class="SelectBox val" />
+      <input type="checkbox" name="occupation" value="Kawmi Madrasa Student" class="SelectBox val" />
       <span>Kawmi Madrasa Student</span>
     </label><br>
-
     <label>
-      <input type="checkbox" name="occupation" value="Students of High School" class="SelectBox val" />
+      <input type="checkbox" name="occupation" value="Dakhil Student" class="SelectBox val" />
+      <span>Dakhil Student</span>
+    </label><br>
+    <label>
+      <input type="checkbox" name="occupation" value="High School Student" class="SelectBox val" />
       <span>High School Student</span>
     </label><br>
 
+
+<!-- HSC -->
+<label>College</label> <br>
     <label>
-      <input type="checkbox" name="occupation" value="Students of College" class="SelectBox val" />
+      <input type="checkbox" name="occupation" value="College Student" class="SelectBox val" />
       <span>College Student</span>
     </label><br>
-
     <label>
-      <input type="checkbox" name="occupation" value="Students of Peramedical" class="SelectBox val" />
+      <input type="checkbox" name="occupation" value="Alim Student" class="SelectBox val" />
+      <span>Alim Student</span>
+    </label><br>
+    <label>
+      <input type="checkbox" name="occupation" value="Politechnical Student" class="SelectBox val" />
+      <span>Politechnical Student</span>
+    </label><br>
+    <label>
+      <input type="checkbox" name="occupation" value="Nursing Student" class="SelectBox val" />
+      <span>Nursing Student</span>
+    </label><br>
+    <label>
+      <input type="checkbox" name="occupation" value="Midwifary Student" class="SelectBox val" />
+      <span>Midwifary Student</span>
+    </label><br>
+    <label>
+      <input type="checkbox" name="occupation" value="Peramedical Student" class="SelectBox val" />
       <span>Peramedical Student</span>
     </label><br>
 
-    <label>
-      <input type="checkbox" name="occupation" value="Students of Nursing" class="SelectBox val" />
-      <span>Nursing Student</span>
-    </label><br>
 
+<!-- Honours -->
+<label>University Undergraduate</label> <br>
     <label>
-      <input type="checkbox" name="occupation" value="Students of Midwifary" class="SelectBox val" />
-      <span>Midwifary Student</span>
+      <input type="checkbox" name="occupation" value="Medical Student" class="SelectBox val" />
+      <span>Medical Student</span>
     </label><br>
-
     <label>
-      <input type="checkbox" name="occupation" value="Students of Politechnical" class="SelectBox val" />
-      <span>Politechnical Student</span>
+      <input type="checkbox" name="occupation" value="Pharmacy Student" class="SelectBox val" />
+      <span>Pharmacy Student</span>
     </label><br>
-
     <label>
-      <input type="checkbox" name="occupation" value="Students of B.Sc. Engineering" class="SelectBox val" />
+      <input type="checkbox" name="occupation" value="B.Sc. Engineering Student" class="SelectBox val" />
       <span>B.Sc. Engineering Student</span>
     </label><br>
 
     <label>
-      <input type="checkbox" name="occupation" value="Students of Medical" class="SelectBox val" />
-      <span>Medical Student</span>
-    </label><br>
-
-    <label>
-      <input type="checkbox" name="occupation" value="Students of Pharmacy" class="SelectBox val" />
-      <span>Pharmacy Student</span>
-    </label><br>
-
-    <label>
-      <input type="checkbox" name="occupation" value="Students of B.Sc." class="SelectBox val" />
+      <input type="checkbox" name="occupation" value="B.Sc. Student" class="SelectBox val" />
       <span>B.Sc. Student</span>
     </label><br>
-
     <label>
-      <input type="checkbox" name="occupation" value="Students of B.A." class="SelectBox val" />
+      <input type="checkbox" name="occupation" value="B.A. Student" class="SelectBox val" />
       <span>B.A. Student</span>
     </label><br>
-
     <label>
-      <input type="checkbox" name="occupation" value="Students of B.Com." class="SelectBox val" />
+      <input type="checkbox" name="occupation" value="B.Com. Student" class="SelectBox val" />
       <span>B.Com. Student</span>
     </label><br>
-
     <label>
-      <input type="checkbox" name="occupation" value="Students of M.Sc." class="SelectBox val" />
+      <input type="checkbox" name="occupation" value="Fazil Student" class="SelectBox val" />
+      <span>Fazil Student</span>
+    </label><br>
+
+    <label>University Postgraduate</label> <br>
+    <label>
+      <input type="checkbox" name="occupation" value="M.Sc. Student" class="SelectBox val" />
       <span>M.Sc. Student</span>
     </label><br>
-
     <label>
-      <input type="checkbox" name="occupation" value="Students of M.A." class="SelectBox val" />
+      <input type="checkbox" name="occupation" value="M.A. Student" class="SelectBox val" />
       <span>M.A. Student</span>
     </label><br>
-
     <label>
-      <input type="checkbox" name="occupation" value="Students of M.Com." class="SelectBox val" />
+      <input type="checkbox" name="occupation" value="M.Com. Student" class="SelectBox val" />
       <span>M.Com. Student</span>
+    </label><br>
+    <label>
+      <input type="checkbox" name="occupation" value="Kamil Student" class="SelectBox val" />
+      <span>Kamil Student</span>
     </label><br>
 
 
-
-                 <!-- Medical & Health Sector -->
-                 <label> Medical & Health</label> <br>
+<!-- Medical & Health Sector -->
+    <label> Medical & Health Profession</label> <br>
     <label>
       <input type="checkbox" name="occupation" value="MBBS Doctor" class="SelectBox val" />
       <span>MBBS Doctor</span>
@@ -1084,24 +1099,29 @@ function countBiodata() {
     </label><br>
 
     <label>
-      <input type="checkbox" name="occupation" value="Peramedical" class="SelectBox val" />
-      <span>Peramedical</span>
+      <input type="checkbox" name="occupation" value="Diploma Doctor" class="SelectBox val" />
+      <span>Diploma Doctor</span>
     </label><br>
 
     <label>
-      <input type="checkbox" name="occupation" value="Midwifary" class="SelectBox val" />
-      <span>Midwifary</span>
+      <input type="checkbox" name="occupation" value="Nurse" class="SelectBox val" />
+      <span>Nurse</span>
     </label><br>
 
     <label>
-      <input type="checkbox" name="occupation" value="Nursing" class="SelectBox val" />
-      <span>Nursing</span>
+      <input type="checkbox" name="occupation" value="Midwife" class="SelectBox val" />
+      <span>Midwife</span>
+    </label><br>
+
+    <label>
+      <input type="checkbox" name="occupation" value="Village Doctor" class="SelectBox val" />
+      <span>Village Doctor</span>
     </label><br>
 
 
 
-       <!--  Engineers Sector-->
-       <label> Engineers Sector</label> <br>
+<!--  Engineers Sector-->
+    <label> Engineer Profession</label> <br>
     <label>
       <input type="checkbox" name="occupation" value="Aerospace Engineer" class="SelectBox val" />
       <span>Aerospace Engineer</span>
@@ -1169,139 +1189,147 @@ function countBiodata() {
 
 
 
-                 <!-- Teachers Sector -->
-                 <label>Teachers Sector</label> <br>
+ <!-- Teachers Profession -->
+    <label>Teacher Profession</label> <br>
     <label>
-      <input type="checkbox" name="occupation" value="Teaches of Kawmi Madrasa" class="SelectBox val" />
-      <span>Teaches Kawmi Madrasa</span>
+      <input type="checkbox" name="occupation" value="Kawmi Madrasa Teacher" class="SelectBox val" />
+      <span>Kawmi Madrasa Teacher</span>
     </label><br>
 
     <label>
-      <input type="checkbox" name="occupation" value="Teaches of Primary School" class="SelectBox val" />
-      <span>Teaches Primary School</span>
+      <input type="checkbox" name="occupation" value="Aliya Madrasa Teacher" class="SelectBox val" />
+      <span>Aliya Madrasa Teacher</span>
     </label><br>
 
     <label>
-      <input type="checkbox" name="occupation" value="Teaches of High School" class="SelectBox val" />
-      <span>Teaches High School</span>
+      <input type="checkbox" name="occupation" value="Primary School Teacher" class="SelectBox val" />
+      <span>Primary School Teacher</span>
     </label><br>
 
     <label>
-      <input type="checkbox" name="occupation" value="Professor of College" class="SelectBox val" />
-      <span>Professor College</span>
+      <input type="checkbox" name="occupation" value="High School Teacher" class="SelectBox val" />
+      <span>High School Teacher</span>
     </label><br>
 
     <label>
-      <input type="checkbox" name="occupation" value="Professor of Public University" class="SelectBox val" />
-      <span>Professor Public University</span>
+      <input type="checkbox" name="occupation" value="College Professor" class="SelectBox val" />
+      <span>College Professor</span>
     </label><br>
 
     <label>
-      <input type="checkbox" name="occupation" value="Professor of Private University" class="SelectBox val" />
-      <span>Professor Private University</span>
+      <input type="checkbox" name="occupation" value="Public University Professor" class="SelectBox val" />
+      <span>Public University Professor</span>
     </label><br>
 
     <label>
-      <input type="checkbox" name="occupation" value="Professor of National University" class="SelectBox val" />
-      <span>Professor National University</span>
+      <input type="checkbox" name="occupation" value="Private University Professor" class="SelectBox val" />
+      <span>Private University Professor</span>
     </label><br>
 
     <label>
-      <input type="checkbox" name="occupation" value="Professor of Degree" class="SelectBox val" />
-      <span>Professor Degree</span>
-    </label><br>
-
-
-              <!-- Common Sector-->
-              <label>Common Sector</label> <br>
-    <label>
-      <input type="checkbox" name="occupation" value="Banker" class="SelectBox val" />
-      <span>Banker</span>
+      <input type="checkbox" name="occupation" value="National University Professor" class="SelectBox val" />
+      <span>National University Professor</span>
     </label><br>
 
     <label>
-      <input type="checkbox" name="occupation" value="Business" class="SelectBox val" />
-      <span>Business</span>
+      <input type="checkbox" name="occupation" value="Degree Professor" class="SelectBox val" />
+      <span>Degree Professor</span>
+    </label><br>
+
+
+
+    <!-- Defense Profession-->
+    <label>Defense Profession</label> <br>
+    <label>
+      <input type="checkbox" name="occupation" value="Army" class="SelectBox val" />
+      <span>Army</span>
     </label><br>
 
     <label>
-      <input type="checkbox" name="occupation" value="Entrepreneur" class="SelectBox val" />
-      <span>Entrepreneur</span>
+      <input type="checkbox" name="occupation" value="Air Force" class="SelectBox val" />
+      <span>Air Force</span>
     </label><br>
 
     <label>
-      <input type="checkbox" name="occupation" value="Lawyer" class="SelectBox val" />
-      <span>Lawyer</span>
+      <input type="checkbox" name="occupation" value="Navy" class="SelectBox val" />
+      <span>Navy</span>
     </label><br>
 
     <label>
-      <input type="checkbox" name="occupation" value="Frelancer" class="SelectBox val" />
-      <span>Frelancer</span>
+      <input type="checkbox" name="occupation" value="Police" class="SelectBox val" />
+      <span>Police</span>
     </label><br>
 
     <label>
-      <input type="checkbox" name="occupation" value="Graphics Desigener" class="SelectBox val" />
-      <span>Graphics Desigener</span>
+      <input type="checkbox" name="occupation" value="Ansar" class="SelectBox val" />
+      <span>Ansar</span>
     </label><br>
 
     <label>
-      <input type="checkbox" name="occupation" value="Sales & Marketing (SR)" class="SelectBox val" />
-      <span>Sales & Marketing (SR)</span>
+      <input type="checkbox" name="occupation" value="Fire Service" class="SelectBox val" />
+      <span>Fire Service</span>
     </label><br>
 
     <label>
-      <input type="checkbox" name="occupation" value="No Occupation" class="SelectBox val" />
-      <span>No Occupation</span>
-    </label>
-
-              <!-- Working Forign Sector-->
-              <label> Working Forign Sector </label> <br>
-    <label>
-      <input type="checkbox" name="working_forign" value="Working Middleast" class="SelectBox val" />
-      <span>Work / Business Middleast</span>
+      <input type="checkbox" name="occupation" value="RAB" class="SelectBox val" />
+      <span>RAB</span>
     </label><br>
 
     <label>
-      <input type="checkbox" name="occupation" value="Working Europ" class="SelectBox val" />
-      <span>Work / Business Europ</span>
+      <input type="checkbox" name="occupation" value="DB" class="SelectBox val" />
+      <span>DB</span>
+    </label> <br>
+
+
+
+ <!-- Working Forign Sector-->
+    <label>Foreign Work/ Job /Business </label> <br>
+    <label>
+      <input type="checkbox" name="working_forign" value="Middleast Work/ Job /Business" class="SelectBox val" />
+      <span>Middleast Work/ Job /Business</span>
     </label><br>
 
     <label>
-      <input type="checkbox" name="occupation" value="Working America" class="SelectBox val" />
-      <span>Work / Business America</span>
+      <input type="checkbox" name="occupation" value="Europ Work/ Job /Business" class="SelectBox val" />
+      <span>Europ Work/ Job /Business</span>
     </label><br>
 
     <label>
-      <input type="checkbox" name="occupation" value="Working Asia" class="SelectBox val" />
-      <span>Work / Business Asia</span>
+      <input type="checkbox" name="occupation" value="America Work/ Job /Business" class="SelectBox val" />
+      <span>America Work/ Job /Business</span>
     </label><br>
 
     <label>
-      <input type="checkbox" name="occupation" value="Working Africa" class="SelectBox val" />
-      <span>Work / Business Africa</span>
+      <input type="checkbox" name="occupation" value="Asia Work/ Job /Business" class="SelectBox val" />
+      <span>Asia Work/ Job /Business</span>
     </label><br>
 
     <label>
-      <input type="checkbox" name="occupation" value="Working Osania" class="SelectBox val" />
-      <span>Work / Business Osania</span>
+      <input type="checkbox" name="occupation" value="Africa Work/ Job /Business" class="SelectBox val" />
+      <span>Africa Work/ Job /Business</span>
+    </label><br>
+
+    <label>
+      <input type="checkbox" name="occupation" value="Oceania Work/ Job /Business" class="SelectBox val" />
+      <span>Oceania Work/ Job /Business</span>
     </label><br>
 
 
     <!-- Garments Sector-->
     <label> Garments Sector </label> <br>
     <label>
-      <input type="checkbox" name="occupation" value="Worker of Garments" class="SelectBox val" />
-      <span>Worker Garments</span>
+      <input type="checkbox" name="occupation" value="Garments Worker" class="SelectBox val" />
+      <span>Garments Worker</span>
     </label><br>
 
     <label>
-      <input type="checkbox" name="occupation" value="Managers of Garments" class="SelectBox val" />
-      <span>Managers Garments</span>
+      <input type="checkbox" name="occupation" value="Garments Manager" class="SelectBox val" />
+      <span>Garments Manager</span>
     </label><br>
 
 
-      <!--  Driver Sector -->
-      <label> Driver Sector </label> <br>
+<!--  Driver Profession -->
+      <label> Driver Profession </label> <br>
     <label>
       <input type="checkbox" name="occupation" value="Bus Driver" class="SelectBox val" />
       <span>Bus Driver</span>
@@ -1336,6 +1364,50 @@ function countBiodata() {
       <input type="checkbox" name="occupation" value="UbarPathao Rider" class="SelectBox val" />
       <span>Ubar/Pathao Rider</span>
     </label><br>
+
+
+    
+<!-- Common Profession-->
+<label>Common Profession</label> <br>
+    <label>
+      <input type="checkbox" name="occupation" value="Banker" class="SelectBox val" />
+      <span>Banker</span>
+    </label><br>
+
+    <label>
+      <input type="checkbox" name="occupation" value="Lawyer" class="SelectBox val" />
+      <span>Lawyer</span>
+    </label><br>
+
+    <label>
+      <input type="checkbox" name="occupation" value="Business" class="SelectBox val" />
+      <span>Business</span>
+    </label><br>
+
+    <label>
+      <input type="checkbox" name="occupation" value="Entrepreneur" class="SelectBox val" />
+      <span>Entrepreneur</span>
+    </label><br>
+
+    <label>
+      <input type="checkbox" name="occupation" value="Frelancer" class="SelectBox val" />
+      <span>Frelancer</span>
+    </label><br>
+
+    <label>
+      <input type="checkbox" name="occupation" value="Graphics Desigener" class="SelectBox val" />
+      <span>Graphics Desigener</span>
+    </label><br>
+
+    <label>
+      <input type="checkbox" name="occupation" value="Sales & Marketing (SR)" class="SelectBox val" />
+      <span>Sales & Marketing (SR)</span>
+    </label><br>
+
+    <label>
+      <input type="checkbox" name="occupation" value="No Profession" class="SelectBox val" />
+      <span>No Profession</span>
+    </label> <br>
     
   </div>
 </div>
@@ -2151,379 +2223,451 @@ function toggleCheckedAll(checkbox) {
 
 
     <div class="wrapper">
-  <label class="form-control toggle-next ellipsis">Occupation <span style=" color:#ff0080;">   <i class="fa fa-chevron-down"></i></span></label>
-      <div class="checkboxes" id="Lorems">
-        
-        <div class="inner-wrap">
-          
-          <label>
-            <input type="checkbox" name="occupation" value="Any District" class="SelectBox all" checked />
-            <span>Any Occupation</span>
-          </label><br>
-
-             <!-- Students Sector-->
-             <label> Students Sector</label> <br>
-          <label>
-            <input type="checkbox" name="occupation" value="Students of Kawmi Madrasa" class="SelectBox val" />
-            <span>Kawmi Madrasa Student</span>
-          </label><br>
-
-          <label>
-            <input type="checkbox" name="occupation" value="Students of High School" class="SelectBox val" />
-            <span>High School Student</span>
-          </label><br>
-
-          <label>
-            <input type="checkbox" name="occupation" value="Students of College" class="SelectBox val" />
-            <span>College Student</span>
-          </label><br>
-
-          <label>
-            <input type="checkbox" name="occupation" value="Students of Peramedical" class="SelectBox val" />
-            <span>Peramedical Student</span>
-          </label><br>
-
-          <label>
-            <input type="checkbox" name="occupation" value="Students of Nursing" class="SelectBox val" />
-            <span>Nursing Student</span>
-          </label><br>
-
-          <label>
-            <input type="checkbox" name="occupation" value="Students of Midwifary" class="SelectBox val" />
-            <span>Midwifary Student</span>
-          </label><br>
-
-          <label>
-            <input type="checkbox" name="occupation" value="Students of Politechnical" class="SelectBox val" />
-            <span>Politechnical Student</span>
-          </label><br>
-
-          <label>
-            <input type="checkbox" name="occupation" value="Students of B.Sc. Engineering" class="SelectBox val" />
-            <span>B.Sc. Engineering Student</span>
-          </label><br>
-
-          <label>
-            <input type="checkbox" name="occupation" value="Students of Medical" class="SelectBox val" />
-            <span>Medical Student</span>
-          </label><br>
-
-          <label>
-            <input type="checkbox" name="occupation" value="Students of Pharmacy" class="SelectBox val" />
-            <span>Pharmacy Student</span>
-          </label><br>
-
-          <label>
-            <input type="checkbox" name="occupation" value="Students of B.Sc." class="SelectBox val" />
-            <span>B.Sc. Student</span>
-          </label><br>
-
-          <label>
-            <input type="checkbox" name="occupation" value="Students of B.A." class="SelectBox val" />
-            <span>B.A. Student</span>
-          </label><br>
-
-          <label>
-            <input type="checkbox" name="occupation" value="Students of B.Com." class="SelectBox val" />
-            <span>B.Com. Student</span>
-          </label><br>
-
-          <label>
-            <input type="checkbox" name="occupation" value="Students of M.Sc." class="SelectBox val" />
-            <span>M.Sc. Student</span>
-          </label><br>
-
-          <label>
-            <input type="checkbox" name="occupation" value="Students of M.A." class="SelectBox val" />
-            <span>M.A. Student</span>
-          </label><br>
-
-          <label>
-            <input type="checkbox" name="occupation" value="Students of M.Com." class="SelectBox val" />
-            <span>M.Com. Student</span>
-          </label><br>
-
-
-
-                       <!-- Medical & Health Sector -->
-                       <label> Medical & Health</label> <br>
-          <label>
-            <input type="checkbox" name="occupation" value="MBBS Doctor" class="SelectBox val" />
-            <span>MBBS Doctor</span>
-          </label><br>
-
-          <label>
-            <input type="checkbox" name="occupation" value="Internship Doctor" class="SelectBox val" />
-            <span>Internship Doctor</span>
-          </label><br>
-
-          <label>
-            <input type="checkbox" name="occupation" value="Specialist Doctor" class="SelectBox val" />
-            <span>Specialist Doctor</span>
-          </label><br>
-
-          <label>
-            <input type="checkbox" name="occupation" value="Pharmacist" class="SelectBox val" />
-            <span>Pharmacist</span>
-          </label><br>
-
-          <label>
-            <input type="checkbox" name="occupation" value="Peramedical" class="SelectBox val" />
-            <span>Peramedical</span>
-          </label><br>
-
-          <label>
-            <input type="checkbox" name="occupation" value="Midwifary" class="SelectBox val" />
-            <span>Midwifary</span>
-          </label><br>
-
-          <label>
-            <input type="checkbox" name="occupation" value="Nursing" class="SelectBox val" />
-            <span>Nursing</span>
-          </label><br>
-
-
-
-             <!--  Engineers Sector-->
-             <label> Engineers Sector</label> <br>
-          <label>
-            <input type="checkbox" name="occupation" value="Aerospace Engineer" class="SelectBox val" />
-            <span>Aerospace Engineer</span>
-          </label><br>
-
-          <label>
-            <input type="checkbox" name="occupation" value="Agricultural Engineer" class="SelectBox val" />
-            <span>Agricultural Engineer</span>
-          </label><br>
-
-          <label>
-            <input type="checkbox" name="occupation" value="Architectural Engineer" class="SelectBox val" />
-            <span>Architectural Engineer</span>
-          </label><br>
-
-          <label>
-            <input type="checkbox" name="occupation" value="Biomedical Engineer" class="SelectBox val" />
-            <span>Biomedical Engineer</span>
-          </label><br>
-
-          <label>
-            <input type="checkbox" name="occupation" value="Chemical Engineer" class="SelectBox val" />
-            <span>Chemical Engineer</span>
-          </label><br>
-
-          <label>
-            <input type="checkbox" name="occupation" value="Civil Engineer" class="SelectBox val" />
-            <span>Civil Engineer</span>
-          </label><br>
-
-          <label>
-            <input type="checkbox" name="occupation" value="Electrical Engineer" class="SelectBox val" />
-            <span>Electrical Engineer</span>
-          </label><br>
-
-          <label>
-            <input type="checkbox" name="occupation" value="Marine Engineer" class="SelectBox val" />
-            <span>Marine Engineer</span>
-          </label><br>
-
-          <label>
-            <input type="checkbox" name="occupation" value="Mechanical Engineer" class="SelectBox val" />
-            <span>Mechanical Engineer</span>
-          </label><br>
-
-          <label>
-            <input type="checkbox" name="occupation" value="Network Engineer" class="SelectBox val" />
-            <span>Network Engineer</span>
-          </label><br>
-
-          <label>
-            <input type="checkbox" name="occupation" value="Robotics Engineer" class="SelectBox val" />
-            <span>Robotics Engineer</span>
-          </label><br>
-
-          <label>
-            <input type="checkbox" name="occupation" value="Software Engineer" class="SelectBox val" />
-            <span>Software Engineer</span>
-          </label><br>
-
-          <label>
-            <input type="checkbox" name="occupation" value="Textile Engineer" class="SelectBox val" />
-            <span>Textile Engineer</span>
-          </label><br>
-
-
-
-                       <!-- Teachers Sector -->
-                       <label>Teachers Sector</label> <br>
-          <label>
-            <input type="checkbox" name="occupation" value="Teaches of Kawmi Madrasa" class="SelectBox val" />
-            <span>Teaches Kawmi Madrasa</span>
-          </label><br>
-
-          <label>
-            <input type="checkbox" name="occupation" value="Teaches of Primary School" class="SelectBox val" />
-            <span>Teaches Primary School</span>
-          </label><br>
-
-          <label>
-            <input type="checkbox" name="occupation" value="Teaches of High School" class="SelectBox val" />
-            <span>Teaches High School</span>
-          </label><br>
-
-          <label>
-            <input type="checkbox" name="occupation" value="Professor of College" class="SelectBox val" />
-            <span>Professor College</span>
-          </label><br>
-
-          <label>
-            <input type="checkbox" name="occupation" value="Professor of Public University" class="SelectBox val" />
-            <span>Professor Public University</span>
-          </label><br>
-
-          <label>
-            <input type="checkbox" name="occupation" value="Professor of Private University" class="SelectBox val" />
-            <span>Professor Private University</span>
-          </label><br>
-
-          <label>
-            <input type="checkbox" name="occupation" value="Professor of National University" class="SelectBox val" />
-            <span>Professor National University</span>
-          </label><br>
-
-          <label>
-            <input type="checkbox" name="occupation" value="Professor of Degree" class="SelectBox val" />
-            <span>Professor Degree</span>
-          </label><br>
-
-
-                    <!-- Common Sector-->
-                    <label>Common Sector</label> <br>
-          <label>
-            <input type="checkbox" name="occupation" value="Banker" class="SelectBox val" />
-            <span>Banker</span>
-          </label><br>
-
-          <label>
-            <input type="checkbox" name="occupation" value="Business" class="SelectBox val" />
-            <span>Business</span>
-          </label><br>
-
-          <label>
-            <input type="checkbox" name="occupation" value="Entrepreneur" class="SelectBox val" />
-            <span>Entrepreneur</span>
-          </label><br>
-
-          <label>
-            <input type="checkbox" name="occupation" value="Lawyer" class="SelectBox val" />
-            <span>Lawyer</span>
-          </label><br>
-
-          <label>
-            <input type="checkbox" name="occupation" value="Frelancer" class="SelectBox val" />
-            <span>Frelancer</span>
-          </label><br>
-
-          <label>
-            <input type="checkbox" name="occupation" value="Graphics Desigener" class="SelectBox val" />
-            <span>Graphics Desigener</span>
-          </label><br>
-
-          <label>
-            <input type="checkbox" name="occupation" value="Sales & Marketing (SR)" class="SelectBox val" />
-            <span>Sales & Marketing (SR)</span>
-          </label><br>
-
-          <label>
-            <input type="checkbox" name="occupation" value="No Occupation" class="SelectBox val" />
-            <span>No Occupation</span>
-          </label>
-
-                    <!-- Working Forign Sector-->
-                    <label> Working Forign Sector </label> <br>
-          <label>
-            <input type="checkbox" name="working_forign" value="Working Middleast" class="SelectBox val" />
-            <span>Work / Business Middleast</span>
-          </label><br>
-
-          <label>
-            <input type="checkbox" name="occupation" value="Working Europ" class="SelectBox val" />
-            <span>Work / Business Europ</span>
-          </label><br>
-
-          <label>
-            <input type="checkbox" name="occupation" value="Working America" class="SelectBox val" />
-            <span>Work / Business America</span>
-          </label><br>
-
-          <label>
-            <input type="checkbox" name="occupation" value="Working Asia" class="SelectBox val" />
-            <span>Work / Business Asia</span>
-          </label><br>
-
-          <label>
-            <input type="checkbox" name="occupation" value="Working Africa" class="SelectBox val" />
-            <span>Work / Business Africa</span>
-          </label><br>
-
-          <label>
-            <input type="checkbox" name="occupation" value="Working Osania" class="SelectBox val" />
-            <span>Work / Business Osania</span>
-          </label><br>
-
-
-          <!-- Garments Sector-->
-          <label> Garments Sector </label> <br>
-          <label>
-            <input type="checkbox" name="occupation" value="Worker of Garments" class="SelectBox val" />
-            <span>Worker Garments</span>
-          </label><br>
-
-          <label>
-            <input type="checkbox" name="occupation" value="Managers of Garments" class="SelectBox val" />
-            <span>Managers Garments</span>
-          </label><br>
-
-
-            <!--  Driver Sector -->
-            <label> Driver Sector </label> <br>
-          <label>
-            <input type="checkbox" name="occupation" value="Bus Driver" class="SelectBox val" />
-            <span>Bus Driver</span>
-          </label><br>
-
-          <label>
-            <input type="checkbox" name="occupation" value="Micro Driver" class="SelectBox val" />
-            <span>Micro Driver</span>
-          </label><br>
-
-          <label>
-            <input type="checkbox" name="occupation" value="Car Driver" class="SelectBox val" />
-            <span>Car Driver</span>
-          </label><br>
-
-          <label>
-            <input type="checkbox" name="occupation" value="Truck Driver" class="SelectBox val" />
-            <span>Truck Driver</span>
-          </label><br>
-
-          <label>
-          <input type="checkbox" name="occupation" value="CNG Driver" class="SelectBox val" />
-            <span>CNG Driver</span>
-          </label><br>
-
-          <label>
-            <input type="checkbox" name="occupation" value="Auto Driver" class="SelectBox val" />
-            <span>Auto Driver</span>
-          </label><br>
-
-          <label>
-            <input type="checkbox" name="occupation" value="UbarPathao Rider" class="SelectBox val" />
-            <span>Ubar/Pathao Rider</span>
-          </label><br>
-          
-        </div>
-      </div>
-    </div>
+<label class="form-control toggle-next ellipsis">Occupation <span style=" color:#ff0080;">   <i class="fa fa-chevron-down"></i></span></label>
+<div class="checkboxes" id="Lorems">
+  
+  <div class="inner-wrap">
+    
+    <label>
+      <input type="checkbox" name="occupation" value="Any District" class="SelectBox all" checked />
+      <span>Any Occupation</span>
+    </label><br>
+
+       <!-- Students Sector-->
+       <label> Students Sector</label> <br>
+
+
+<!-- SSC -->
+<label>School</label> <br>
+    <label>
+      <input type="checkbox" name="occupation" value="Kawmi Madrasa Student" class="SelectBox val" />
+      <span>Kawmi Madrasa Student</span>
+    </label><br>
+    <label>
+      <input type="checkbox" name="occupation" value="Dakhil Student" class="SelectBox val" />
+      <span>Dakhil Student</span>
+    </label><br>
+    <label>
+      <input type="checkbox" name="occupation" value="High School Student" class="SelectBox val" />
+      <span>High School Student</span>
+    </label><br>
+
+
+<!-- HSC -->
+<label>College</label> <br>
+    <label>
+      <input type="checkbox" name="occupation" value="College Student" class="SelectBox val" />
+      <span>College Student</span>
+    </label><br>
+    <label>
+      <input type="checkbox" name="occupation" value="Alim Student" class="SelectBox val" />
+      <span>Alim Student</span>
+    </label><br>
+    <label>
+      <input type="checkbox" name="occupation" value="Politechnical Student" class="SelectBox val" />
+      <span>Politechnical Student</span>
+    </label><br>
+    <label>
+      <input type="checkbox" name="occupation" value="Nursing Student" class="SelectBox val" />
+      <span>Nursing Student</span>
+    </label><br>
+    <label>
+      <input type="checkbox" name="occupation" value="Midwifary Student" class="SelectBox val" />
+      <span>Midwifary Student</span>
+    </label><br>
+    <label>
+      <input type="checkbox" name="occupation" value="Peramedical Student" class="SelectBox val" />
+      <span>Peramedical Student</span>
+    </label><br>
+
+
+<!-- Honours -->
+<label>University Undergraduate</label> <br>
+    <label>
+      <input type="checkbox" name="occupation" value="Medical Student" class="SelectBox val" />
+      <span>Medical Student</span>
+    </label><br>
+    <label>
+      <input type="checkbox" name="occupation" value="Pharmacy Student" class="SelectBox val" />
+      <span>Pharmacy Student</span>
+    </label><br>
+    <label>
+      <input type="checkbox" name="occupation" value="B.Sc. Engineering Student" class="SelectBox val" />
+      <span>B.Sc. Engineering Student</span>
+    </label><br>
+
+    <label>
+      <input type="checkbox" name="occupation" value="B.Sc. Student" class="SelectBox val" />
+      <span>B.Sc. Student</span>
+    </label><br>
+    <label>
+      <input type="checkbox" name="occupation" value="B.A. Student" class="SelectBox val" />
+      <span>B.A. Student</span>
+    </label><br>
+    <label>
+      <input type="checkbox" name="occupation" value="B.Com. Student" class="SelectBox val" />
+      <span>B.Com. Student</span>
+    </label><br>
+    <label>
+      <input type="checkbox" name="occupation" value="Fazil Student" class="SelectBox val" />
+      <span>Fazil Student</span>
+    </label><br>
+
+    <label>University Postgraduate</label> <br>
+    <label>
+      <input type="checkbox" name="occupation" value="M.Sc. Student" class="SelectBox val" />
+      <span>M.Sc. Student</span>
+    </label><br>
+    <label>
+      <input type="checkbox" name="occupation" value="M.A. Student" class="SelectBox val" />
+      <span>M.A. Student</span>
+    </label><br>
+    <label>
+      <input type="checkbox" name="occupation" value="M.Com. Student" class="SelectBox val" />
+      <span>M.Com. Student</span>
+    </label><br>
+    <label>
+      <input type="checkbox" name="occupation" value="Kamil Student" class="SelectBox val" />
+      <span>Kamil Student</span>
+    </label><br>
+
+
+<!-- Medical & Health Sector -->
+    <label> Medical & Health Profession</label> <br>
+    <label>
+      <input type="checkbox" name="occupation" value="MBBS Doctor" class="SelectBox val" />
+      <span>MBBS Doctor</span>
+    </label><br>
+
+    <label>
+      <input type="checkbox" name="occupation" value="Internship Doctor" class="SelectBox val" />
+      <span>Internship Doctor</span>
+    </label><br>
+
+    <label>
+      <input type="checkbox" name="occupation" value="Specialist Doctor" class="SelectBox val" />
+      <span>Specialist Doctor</span>
+    </label><br>
+
+    <label>
+      <input type="checkbox" name="occupation" value="Pharmacist" class="SelectBox val" />
+      <span>Pharmacist</span>
+    </label><br>
+
+    <label>
+      <input type="checkbox" name="occupation" value="Diploma Doctor" class="SelectBox val" />
+      <span>Diploma Doctor</span>
+    </label><br>
+
+    <label>
+      <input type="checkbox" name="occupation" value="Nurse" class="SelectBox val" />
+      <span>Nurse</span>
+    </label><br>
+
+    <label>
+      <input type="checkbox" name="occupation" value="Midwife" class="SelectBox val" />
+      <span>Midwife</span>
+    </label><br>
+
+    <label>
+      <input type="checkbox" name="occupation" value="Village Doctor" class="SelectBox val" />
+      <span>Village Doctor</span>
+    </label><br>
+
+
+
+<!--  Engineers Sector-->
+    <label> Engineer Profession</label> <br>
+    <label>
+      <input type="checkbox" name="occupation" value="Aerospace Engineer" class="SelectBox val" />
+      <span>Aerospace Engineer</span>
+    </label><br>
+
+    <label>
+      <input type="checkbox" name="occupation" value="Agricultural Engineer" class="SelectBox val" />
+      <span>Agricultural Engineer</span>
+    </label><br>
+
+    <label>
+      <input type="checkbox" name="occupation" value="Architectural Engineer" class="SelectBox val" />
+      <span>Architectural Engineer</span>
+    </label><br>
+
+    <label>
+      <input type="checkbox" name="occupation" value="Biomedical Engineer" class="SelectBox val" />
+      <span>Biomedical Engineer</span>
+    </label><br>
+
+    <label>
+      <input type="checkbox" name="occupation" value="Chemical Engineer" class="SelectBox val" />
+      <span>Chemical Engineer</span>
+    </label><br>
+
+    <label>
+      <input type="checkbox" name="occupation" value="Civil Engineer" class="SelectBox val" />
+      <span>Civil Engineer</span>
+    </label><br>
+
+    <label>
+      <input type="checkbox" name="occupation" value="Electrical Engineer" class="SelectBox val" />
+      <span>Electrical Engineer</span>
+    </label><br>
+
+    <label>
+      <input type="checkbox" name="occupation" value="Marine Engineer" class="SelectBox val" />
+      <span>Marine Engineer</span>
+    </label><br>
+
+    <label>
+      <input type="checkbox" name="occupation" value="Mechanical Engineer" class="SelectBox val" />
+      <span>Mechanical Engineer</span>
+    </label><br>
+
+    <label>
+      <input type="checkbox" name="occupation" value="Network Engineer" class="SelectBox val" />
+      <span>Network Engineer</span>
+    </label><br>
+
+    <label>
+      <input type="checkbox" name="occupation" value="Robotics Engineer" class="SelectBox val" />
+      <span>Robotics Engineer</span>
+    </label><br>
+
+    <label>
+      <input type="checkbox" name="occupation" value="Software Engineer" class="SelectBox val" />
+      <span>Software Engineer</span>
+    </label><br>
+
+    <label>
+      <input type="checkbox" name="occupation" value="Textile Engineer" class="SelectBox val" />
+      <span>Textile Engineer</span>
+    </label><br>
+
+
+
+ <!-- Teachers Profession -->
+    <label>Teacher Profession</label> <br>
+    <label>
+      <input type="checkbox" name="occupation" value="Kawmi Madrasa Teacher" class="SelectBox val" />
+      <span>Kawmi Madrasa Teacher</span>
+    </label><br>
+
+    <label>
+      <input type="checkbox" name="occupation" value="Aliya Madrasa Teacher" class="SelectBox val" />
+      <span>Aliya Madrasa Teacher</span>
+    </label><br>
+
+    <label>
+      <input type="checkbox" name="occupation" value="Primary School Teacher" class="SelectBox val" />
+      <span>Primary School Teacher</span>
+    </label><br>
+
+    <label>
+      <input type="checkbox" name="occupation" value="High School Teacher" class="SelectBox val" />
+      <span>High School Teacher</span>
+    </label><br>
+
+    <label>
+      <input type="checkbox" name="occupation" value="College Professor" class="SelectBox val" />
+      <span>College Professor</span>
+    </label><br>
+
+    <label>
+      <input type="checkbox" name="occupation" value="Public University Professor" class="SelectBox val" />
+      <span>Public University Professor</span>
+    </label><br>
+
+    <label>
+      <input type="checkbox" name="occupation" value="Private University Professor" class="SelectBox val" />
+      <span>Private University Professor</span>
+    </label><br>
+
+    <label>
+      <input type="checkbox" name="occupation" value="National University Professor" class="SelectBox val" />
+      <span>National University Professor</span>
+    </label><br>
+
+    <label>
+      <input type="checkbox" name="occupation" value="Degree Professor" class="SelectBox val" />
+      <span>Degree Professor</span>
+    </label><br>
+
+
+
+    <!-- Defense Profession-->
+    <label>Defense Profession</label> <br>
+    <label>
+      <input type="checkbox" name="occupation" value="Army" class="SelectBox val" />
+      <span>Army</span>
+    </label><br>
+
+    <label>
+      <input type="checkbox" name="occupation" value="Air Force" class="SelectBox val" />
+      <span>Air Force</span>
+    </label><br>
+
+    <label>
+      <input type="checkbox" name="occupation" value="Navy" class="SelectBox val" />
+      <span>Navy</span>
+    </label><br>
+
+    <label>
+      <input type="checkbox" name="occupation" value="Police" class="SelectBox val" />
+      <span>Police</span>
+    </label><br>
+
+    <label>
+      <input type="checkbox" name="occupation" value="Ansar" class="SelectBox val" />
+      <span>Ansar</span>
+    </label><br>
+
+    <label>
+      <input type="checkbox" name="occupation" value="Fire Service" class="SelectBox val" />
+      <span>Fire Service</span>
+    </label><br>
+
+    <label>
+      <input type="checkbox" name="occupation" value="RAB" class="SelectBox val" />
+      <span>RAB</span>
+    </label><br>
+
+    <label>
+      <input type="checkbox" name="occupation" value="DB" class="SelectBox val" />
+      <span>DB</span>
+    </label> <br>
+
+
+
+ <!-- Working Forign Sector-->
+    <label>Foreign Work/ Job /Business </label> <br>
+    <label>
+      <input type="checkbox" name="working_forign" value="Middleast Work/ Job /Business" class="SelectBox val" />
+      <span>Middleast Work/ Job /Business</span>
+    </label><br>
+
+    <label>
+      <input type="checkbox" name="occupation" value="Europ Work/ Job /Business" class="SelectBox val" />
+      <span>Europ Work/ Job /Business</span>
+    </label><br>
+
+    <label>
+      <input type="checkbox" name="occupation" value="America Work/ Job /Business" class="SelectBox val" />
+      <span>America Work/ Job /Business</span>
+    </label><br>
+
+    <label>
+      <input type="checkbox" name="occupation" value="Asia Work/ Job /Business" class="SelectBox val" />
+      <span>Asia Work/ Job /Business</span>
+    </label><br>
+
+    <label>
+      <input type="checkbox" name="occupation" value="Africa Work/ Job /Business" class="SelectBox val" />
+      <span>Africa Work/ Job /Business</span>
+    </label><br>
+
+    <label>
+      <input type="checkbox" name="occupation" value="Oceania Work/ Job /Business" class="SelectBox val" />
+      <span>Oceania Work/ Job /Business</span>
+    </label><br>
+
+
+    <!-- Garments Sector-->
+    <label> Garments Sector </label> <br>
+    <label>
+      <input type="checkbox" name="occupation" value="Garments Worker" class="SelectBox val" />
+      <span>Garments Worker</span>
+    </label><br>
+
+    <label>
+      <input type="checkbox" name="occupation" value="Garments Manager" class="SelectBox val" />
+      <span>Garments Manager</span>
+    </label><br>
+
+
+<!--  Driver Profession -->
+      <label> Driver Profession </label> <br>
+    <label>
+      <input type="checkbox" name="occupation" value="Bus Driver" class="SelectBox val" />
+      <span>Bus Driver</span>
+    </label><br>
+
+    <label>
+      <input type="checkbox" name="occupation" value="Micro Driver" class="SelectBox val" />
+      <span>Micro Driver</span>
+    </label><br>
+
+    <label>
+      <input type="checkbox" name="occupation" value="Car Driver" class="SelectBox val" />
+      <span>Car Driver</span>
+    </label><br>
+
+    <label>
+      <input type="checkbox" name="occupation" value="Truck Driver" class="SelectBox val" />
+      <span>Truck Driver</span>
+    </label><br>
+
+    <label>
+    <input type="checkbox" name="occupation" value="CNG Driver" class="SelectBox val" />
+      <span>CNG Driver</span>
+    </label><br>
+
+    <label>
+      <input type="checkbox" name="occupation" value="Auto Driver" class="SelectBox val" />
+      <span>Auto Driver</span>
+    </label><br>
+
+    <label>
+      <input type="checkbox" name="occupation" value="UbarPathao Rider" class="SelectBox val" />
+      <span>Ubar/Pathao Rider</span>
+    </label><br>
+
+
+    
+<!-- Common Profession-->
+<label>Common Profession</label> <br>
+    <label>
+      <input type="checkbox" name="occupation" value="Banker" class="SelectBox val" />
+      <span>Banker</span>
+    </label><br>
+
+    <label>
+      <input type="checkbox" name="occupation" value="Lawyer" class="SelectBox val" />
+      <span>Lawyer</span>
+    </label><br>
+
+    <label>
+      <input type="checkbox" name="occupation" value="Business" class="SelectBox val" />
+      <span>Business</span>
+    </label><br>
+
+    <label>
+      <input type="checkbox" name="occupation" value="Entrepreneur" class="SelectBox val" />
+      <span>Entrepreneur</span>
+    </label><br>
+
+    <label>
+      <input type="checkbox" name="occupation" value="Frelancer" class="SelectBox val" />
+      <span>Frelancer</span>
+    </label><br>
+
+    <label>
+      <input type="checkbox" name="occupation" value="Graphics Desigener" class="SelectBox val" />
+      <span>Graphics Desigener</span>
+    </label><br>
+
+    <label>
+      <input type="checkbox" name="occupation" value="Sales & Marketing (SR)" class="SelectBox val" />
+      <span>Sales & Marketing (SR)</span>
+    </label><br>
+
+    <label>
+      <input type="checkbox" name="occupation" value="No Profession" class="SelectBox val" />
+      <span>No Profession</span>
+    </label> <br>
+    
+  </div>
+</div>
+</div>
 
 
 
