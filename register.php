@@ -59,7 +59,6 @@ $(document).ready(function(){
 </div>
 </div>
 
-
 <!-- -- -- -- -- -- -- -- -- -- -- -- -- ---- -- --
 -- -- -- -- -- -- -- -- --- -- -- -- -- -- -- -- --
 --                S  T  A  R  T                  --
@@ -69,7 +68,7 @@ $(document).ready(function(){
 -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -->
 <div class="shosurbari-biodata">
 <form action="" method="POST" name="myForm" onsubmit="return validateForm()">
-		<div class="flex-container">
+<div class="flex-container">
     <div class="sb-biodata">
 
 		<div class="sb-biodata-field">
@@ -104,14 +103,14 @@ $(document).ready(function(){
 		    <div class="form-group">
 		      <!-- <label for="edit-pass">Password<span class="form-required" title="This field is required.">*</span></label> -->
 		      <input type="password" id="pass_1" placeholder="New Password" name="pass_1" size="60" maxlength="128" class="form-text required">
-			  <span class="show-password" style="color:#02a7e6;  font-size:18px;"><i style="color:black;  font-size:18px;" class="fa fa-eye" aria-hidden="true"></i></span> 
+			  <span class="show-password" style="color:#00bbff;  font-size:18px;"><i style="color:black;  font-size:18px;" class="fa fa-eye" aria-hidden="true"></i></span> 
 			  <span  id="pass_1_error" style="color:red; font-size:13px;"></span>
 			</div>
 
 			<div class="form-group">
 		      <!-- <label for="edit-pass">Confirm Password<span class="form-required" title="This field is required.">*</span></label> -->
 		      <input type="password" id="pass_2" placeholder="Confirm Password" name="pass_2" size="60" maxlength="128" class="form-text required">
-			  <span class="show-password" style="color:#02a7e6;  font-size:18px;"><i style="color:black;  font-size:18px;" class="fa fa-eye" aria-hidden="true"></i></span> 
+			  <span class="show-password" style="color:#00bbff;  font-size:18px;"><i style="color:black;  font-size:18px;" class="fa fa-eye" aria-hidden="true"></i></span> 
 			  <span  id="pass_2_error" style="color:red;  font-size:13px;"></span>
 			</div>
 
@@ -139,10 +138,12 @@ $(document).ready(function(){
     .gender-radio-select{
         padding: 00px 10px;
         display: flex;
-		align-items: center;
-		border: 2px solid #ccc;
+	    	align-items: center;
+		    border: 1px solid #ccc;
         border-radius: 4px;
-        -webkit-border-radius: 4px;    }
+        -webkit-border-radius: 4px;
+        background: #4cafe809;
+          }
 
     .gender-radio-select .gender-option{
         margin: 10px;
@@ -155,18 +156,18 @@ $(document).ready(function(){
         padding: 5px;
         font-size: 14px;
         transition: all 0.3s;
-		font-weight: 500;
+		    font-weight: 500;
         cursor: pointer;
-		margin-top: 4px;
-		border: 1px solid gray;
-		border-radius: 3px
-
+		    margin-top: 4px;
+		    border: 1px solid gray;
+		    border-radius: 3px;
+        background: white;
     }
     .gender-radio-select .gender-option label i{
         font-size: 17px;
     }
     .gender-radio-select .gender-option input[type="radio"]:checked + label{
-        background: #02a7e6;
+        background: #00bbff;
         border: 1px solid #ccc;
         color: #fff;
 		border-radius: 3px
