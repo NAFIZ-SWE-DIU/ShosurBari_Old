@@ -117,7 +117,16 @@ input[type=submit] {
     cursor: pointer;
     width: 100%;
     margin-top: 10px;
+    background: #ff0080;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    color: #fff;
+    box-shadow: 1px 1px 4px #888;
 }
+input[type=submit]:hover {
+    background: #0090FF;
+}
+
 
     .heart-divider {
     height: 100%;
@@ -208,6 +217,7 @@ label{
 .search-title h4{
   font-size: 17px;
   font-weight: 600;
+  text-align: center;
 }
 
 .fa-female:before {
