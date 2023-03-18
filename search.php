@@ -124,7 +124,7 @@ input[type=submit] {
     box-shadow: 1px 1px 4px #888;
 }
 input[type=submit]:hover {
-    background: #0090FF;
+    background: #00bbff;
 }
 
 
@@ -204,7 +204,7 @@ label {
 }
 
 label{
-  color: #02a7e6;
+  color: #00bbff;
   font-size: 14px;
 }
 
@@ -268,7 +268,7 @@ label{
         font-size: 17px;
     }
     .gender-radio-select .gender-option input[type="radio"]:checked + label{
-        background: #02a7e6;
+        background: #00bbff;
         border: 1px solid #ccc;
         color: #fff;
 		border-radius: 3px
