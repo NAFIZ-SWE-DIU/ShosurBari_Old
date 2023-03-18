@@ -340,10 +340,8 @@ ul.nav_1 li.last{
 	margin-right:0;
 }
 .nav .open>a, .nav .open>a:hover, .nav .open>a:focus, .nav>li>a:hover, .nav>li>a:focus{
-    background-color:#00bbff
- !important;
-    border-color:#00bbff
-;
+    background-color:#00bbff !important;
+    border-color:#00bbff;
     color:#fff !important;
     border-radius: 16px 1px 16px 1px;
 }
@@ -2634,7 +2632,7 @@ label{
 /* FORM SUBMIT BUTTON START */
 /* OR */
 .or{
-    font-size: 22px;
+    font-size: 16px;
     text-align: center;
     margin-top: 2px;
     margin-bottom: 2px;
@@ -2683,19 +2681,17 @@ label{
 }
 
 .btn_1:hover, .btn_2:hover, .btn_3:hover, .btn_4:hover, .btn_5:hover{
-	background:#00bbff
-;
+	background:#00bbff;
     color: yellow;
 }
 .form-actions p{
-    font-size: 18px;
+    font-size: 15px;
     color: black;
 }
 
 
 /*Login Your Account BUTTON 2 */
 .btn_2 span {
-    content: url(../images/login.png);
     width: 7%;
     position: relative;
     left: 0px;
@@ -2717,14 +2713,13 @@ label{
 
 /* Login Your Account BUTTON 3 */
 .btn_3 span {
-    content: url(../images/login.png);
     width: 6%;
     position: relative;
     left: 0px;
     top: 5px;
 }
 .btn_3{
-    background: #00c875;
+    background: #04aa6d;
     border-radius: 6px;
     width: 100%;
     padding: 3px;
@@ -2740,7 +2735,6 @@ label{
 
 /*Creat Account BUTTON 4 */
 .btn_4 span  {
-    content: url(../images/signup.png);
     width: 4%;
     position: relative;
     left: 0px;
@@ -2762,14 +2756,13 @@ label{
 
 /*Create New Account  BUTTON 5 */
 .btn_5 span {
-    content: url(../images/signup.png);
     width: 3.5%;
     position: relative;
     left: 0px;
     top: 3px;
 }
 .btn_5{
-    background: #00c875;
+    background: #04aa6d;
     border-radius: 6px;
     width: 100%;
     padding: 4px;
@@ -4701,8 +4694,7 @@ h6{
    margin-right: 30%;
 }
 .nav_bottom {
-    background:#00bbff
-;
+    background:#00bbff;
 }
 .inline-block {
     display: inline-block;
