@@ -1,7 +1,7 @@
 /*  color: #ff0080; pink
-  color: #0090FF
+  color: #00bbff
 ; sky blue
-    color: #0090FF
+    color: #00bbff
 ; blue
     color: #00008B; dark blue
 */
@@ -31,7 +31,7 @@ html, body{
 
 element{
     --main-web-color:  #ff0080;
-    --main-bg-color: #0090FF
+    --main-bg-color: #00bbff
 ;
     --name-text-color: #ffff00;
     --body-text-color: #00008B;
@@ -53,7 +53,7 @@ body a{
 
 ::selection {
     color: yellow;
-    background: #0090FF
+    background: #00bbff
 ;
 }
 /*----------------------------
@@ -325,7 +325,7 @@ ul.nav_1 li{
     background: #ff0080;
 }
 .dropdown-menu li a:hover{
-    background: #0090FF
+    background: #00bbff
 ;
     color: white;
 }
@@ -340,9 +340,9 @@ ul.nav_1 li.last{
 	margin-right:0;
 }
 .nav .open>a, .nav .open>a:hover, .nav .open>a:focus, .nav>li>a:hover, .nav>li>a:focus{
-    background-color:#0090FF
+    background-color:#00bbff
  !important;
-    border-color:#0090FF
+    border-color:#00bbff
 ;
     color:#fff !important;
     border-radius: 16px 1px 16px 1px;
@@ -394,7 +394,7 @@ ul.nav_1 li.last{
   bottom: 0;
   left: 0;
   right: 0;
-  background:#0090FF
+  background:#00bbff
  ;
   
   -webkit-transform: scaleX(0);
@@ -871,7 +871,7 @@ ul#flexiselDemo3 h3 a:hover{
    color:#ff0080;
 }
 span.m_3{
-	color:#0090FF
+	color:#00bbff
 ;
     font-size: 14px;
 }
@@ -996,7 +996,7 @@ figure.thumbnail1{
     padding-bottom: 5px;
     padding-left: 0px;
     padding-right: 0px;
-    background: #0090FF
+    background: #00bbff
 ;
     border-radius: 4px;
     width: 100%;
@@ -1285,7 +1285,7 @@ span.divider {
 }
 .col-md-8.profile_left {
     padding-left: 0;
-    background: url(https://bestanimations.com/media/many-hearts/260842010many-little-heart-make-big-heart-gif.gif); /* #0090FF
+    background: url(https://bestanimations.com/media/many-hearts/260842010many-little-heart-make-big-heart-gif.gif); /* #00bbff
 ; */
 }
 .col-sm-4.row_2 {
@@ -1343,7 +1343,7 @@ table.table_working_hours {
     border-top: 0px;
     border-left: 1px;
     border-right: 1px;
-    border-color: #0090FF
+    border-color: #00bbff
 ;
     border-style: groove;
 }
@@ -1357,7 +1357,7 @@ td.day_label {
     padding: 8px;
     font-size: 16px;
     font-weight: 450;
-    border: 2px #0090FF
+    border: 2px #00bbff
 ;
     border-style: groove;
     width: 50%;
@@ -1368,7 +1368,7 @@ td.day_value {
     padding: 8px;
     font-size: 15px;
     font-weight: 400;
-    border: 2px #0090FF
+    border: 2px #00bbff
 ;
     border-style: groove;
 }
@@ -1395,7 +1395,7 @@ opened_1*/
     display: inline-block;
     border-bottom: none;
     font-weight: 500;
-    background-color:#0090FF
+    background-color:#00bbff
 ;
     width: 100%;
     padding: 0;
@@ -1407,7 +1407,7 @@ opened_1*/
     border-radius: 4px;
     font-size: 1.2em;
     font-weight: 500;
-    background-color:#0090FF
+    background-color:#00bbff
 ;
     width: auto;
     padding: 5px;
@@ -1474,7 +1474,7 @@ a#profile-tab, a#home-tab, a#profile-tab1{
     border-top: 2px;
     border-left: 2px;
     border-right: 2px;
-    border-color:  #0090FF
+    border-color:  #00bbff
 ;
     border-style: groove;
 }
@@ -1515,7 +1515,7 @@ a#profile-tab, a#home-tab, a#profile-tab1{
     -o-box-shadow: 0 5px 5px rgba(0,0,0,0.14);
 }
 .newsletter input[type="submit"]:hover{
-	background:#0090FF
+	background:#00bbff
 ;
 }
 ul.profile_item{
@@ -1528,7 +1528,7 @@ ul.profile_item{
 .profile_item{
     border-style: groove;
     border-radius: 4px;
-    border-color: #0090FF
+    border-color: #00bbff
 ;
 }
 .profile_item-desc{
@@ -1715,7 +1715,7 @@ ul.login_details li a{
     -o-box-shadow: 0 5px 5px rgba(0,0,0,0.14);
 }
 .profile_search1 input[type="submit"]:hover{
-	background:#0090FF
+	background:#00bbff
 ;
 }
 .view_profile2{
@@ -1788,7 +1788,7 @@ a:hover, a:focus {
     text-decoration:none;
 }
 .input-group1 input[type="submit"] {
-    background:#0090FF
+    background:#00bbff
 ;
     color: #FFF;
     font-size: 12px;
@@ -1881,9 +1881,9 @@ ul.pagination {
 .pagination>.active>a, .pagination>.active>span, .pagination>.active>a:hover, .pagination>.active>span:hover, .pagination>.active>a:focus, .pagination>.active>span:focus {
     z-index: 2;
     color: #fff;
-    background-color:#0090FF
+    background-color:#00bbff
 ;
-    border-color:#0090FF
+    border-color:#00bbff
 ;
     cursor: default;
 }
@@ -2118,7 +2118,7 @@ ul.phone li.phone_right p{
 	color:#FFF;
 }
 .pricing-table-grid ul li span{
-    background:#0090FF
+    background:#00bbff
 ;
     padding: 10px;
     transition: 0.5s all;
@@ -2145,7 +2145,7 @@ a.order-btn{
     outline: none;
 }
 .pricing-table-grid:hover a.order-btn{
-	background:#0090FF
+	background:#00bbff
 ;
 }
 span.month1 {
@@ -2586,7 +2586,7 @@ label{
 }
 
 .form-text-describe:focus{
-    border-color: #0090FF
+    border-color: #00bbff
 ;;
     outline: 0;
     box-shadow: none !important;
@@ -2611,7 +2611,7 @@ label{
 }
 
 .form-control:focus, .form-text:focus, .form-textarea:focus, .form-select:focus{
-    border-color: #0090FF
+    border-color: #00bbff
 ;;
     outline: 0;
     box-shadow: none !important;
@@ -2648,7 +2648,7 @@ label{
     content: "";
     width: 100%;
     height: 1px;
-    background: #0090FF
+    background: #00bbff
 ;
     left: 0;
     right: 0;
@@ -2683,7 +2683,7 @@ label{
 }
 
 .btn_1:hover, .btn_2:hover, .btn_3:hover, .btn_4:hover, .btn_5:hover{
-	background:#0090FF
+	background:#00bbff
 ;
     color: yellow;
 }
@@ -2806,7 +2806,7 @@ label{
   }
 
   .form-group:hover .fa-eye {
-    color: #0090FF
+    color: #00bbff
 ;
   }
 
@@ -2959,7 +2959,7 @@ p.m_5{
     position: relative;
     text-align: right;
     padding: 0 20px;
-    background: #0090FF
+    background: #00bbff
 ;
     border-radius: 4px 0 0 4px;
     -webkit-box-shadow: none;
@@ -3044,7 +3044,7 @@ form#contact-form {
     font-weight: 500;
 }
 #contact-form input[type="submit"]:hover{
-	background:#0090FF
+	background:#00bbff
 ;
 }
 /* -- terms and conditions --*/
@@ -3100,7 +3100,7 @@ form {
     margin-bottom: auto;
     margin-top: 0px;
     padding-top: 20px;
-    background: url(https://bestanimations.com/media/many-hearts/260842010many-little-heart-make-big-heart-gif.gif); /* #0090FF
+    background: url(https://bestanimations.com/media/many-hearts/260842010many-little-heart-make-big-heart-gif.gif); /* #00bbff
 ; */
     border-radius: 1px 16px 1px 16px ;
   }
@@ -3110,9 +3110,9 @@ form {
   .styled-input {
     float: left;
     background: #fff;
-    border: 2px solid #0090FF
+    border: 2px solid #00bbff
 ;
-    box-shadow: 0px 5px 10px 0px #0090FF
+    box-shadow: 0px 5px 10px 0px #00bbff
 ;
     border-radius: 3px;
     -webkit-box-shadow: inset 0 -1px 4px 0 rgba(0,0,0,0.20);
@@ -3403,8 +3403,7 @@ form {
   
   .form-area button.serach-btn {
     border-radius: 3px;
-    border: 2px solid #0090FF
-;
+    border: 2px solid #00bbff;
     font-size: 22px;
     background: #ff0080;;
     text-align: center;
@@ -3421,8 +3420,7 @@ form {
   }
   
   .form-area button.serach-btn:hover {
-      background: #0090FF
-;
+      background: #00bbff;;
       -webkit-box-shadow: -2px -2px 4px -4px rgba(0, 0, 0, 0.02), 0 3px 9px 0 rgba(0, 0, 0, 0.1), 0 2px 4px 0 rgba(0, 0, 0, 0.14);
       box-shadow: -2px -2px 4px -4px rgba(0, 0, 0, 0.02), 0 3px 9px 0 rgba(0, 0, 0, 0.1), 0 2px 4px 0 rgba(0, 0, 0, 0.14);
   }
@@ -3609,25 +3607,14 @@ form {
    box-shadow: 0px 2px 7px 6px rgb(0 0 0 / 20%); */
    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
-
+/*
 .sb-biodata-field h2{
     padding: 10px;
     margin: 10px;
     width: 100%;
 }
+*/
 
-.shosurbari-biodata .sb-biodata .sb-biodata-field h2{
-    padding: 10px;
-    width: 100%;
-    color: yellow;
-    background: #ff0080;
-    border-bottom: 2px gray;
-    border-radius: 0px 0px 6px 6px;
-    margin-top: auto;
-    margin-bottom: 30px;
-    margin-left: auto;
-    margin-right: auto;
-}
 
 .shosurbari-biodata .shosurbari-biodata-edit{
     text-align: center;
@@ -3636,12 +3623,27 @@ form {
     margin-top: -20px;
 }
 
+.sb-biodata-field{
+    padding: 7px;
+    width: 100%;
+    margin-bottom: 30px;
+    margin-top: 0px;
+    background: #ff0080;
+    border-radius: 4px;
+}
 
-.shosurbari-biodata .sb-biodata .sb-biodata-field h2 span{
+.sb-biodata-field h2{
+    text-align: center;
+    color: yellow;
+    margin: auto;
+}
+
+.sb-biodata-field h2 span{
     color: white;
 }
 
 
+/*
 .shosurbari-biodata .sb-biodata .sb-biodata-field{
     padding-top: 10px;
     padding-bottom: 20px;
@@ -3654,6 +3656,7 @@ form {
     margin-bottom: -20px;
     margin-top: -30px;
 }
+*/
 .shosurbari-biodata{
     display: flex;
     flex-wrap: wrap;
@@ -3690,7 +3693,7 @@ form {
     --progress: 0;
     height: 6px;
     width: var(--progress);
-    background-color: #0090FF
+    background-color: #00bbff
 ;
   }
   
@@ -3816,7 +3819,7 @@ form {
 --                                               --
 -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- ---
 -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -*/
-/* background: #0090FF
+/* background: #00bbff
 ;
    background: #ff0080;
 */
@@ -3852,7 +3855,7 @@ form {
 }
 
 .biodatalist:hover{
-    background: #0090FF
+    background: #00bbff
 24;
     box-shadow: 0 4px 8px 0 rgb(0 0 0 / 20%), 0 6px 20px 0 rgb(0 0 0 / 19%);
 }
@@ -3861,7 +3864,7 @@ form {
 background: #ff0080;
 margin: 0px;
 padding-top: 10px;
-border: 1px solid #0090FF
+border: 1px solid #00bbff
 ;
 border-radius: 5px 5px 0px 0px;
 }
@@ -3950,7 +3953,7 @@ border-radius: 5px 5px 0px 0px;
 }
 
 .view_sb_profile:hover{
-  background:#0090FF
+  background:#00bbff
 ;
   color: yellow;
 }
@@ -4549,7 +4552,7 @@ h6{
     
           }
           #search-bar #search-button{
-            background: #0090FF;
+            background: #00bbff;
             color: #FFF;
             padding: 10px;
             border-radius: 5px;
@@ -4581,7 +4584,7 @@ h6{
             margin-left: 20px;
           }
           #close-button:hover {
-            background: #0090FF;
+            background: #00bbff;
           }
 
           .gender-radio-select .gender-option label {
@@ -4698,7 +4701,7 @@ h6{
    margin-right: 30%;
 }
 .nav_bottom {
-    background:#0090FF
+    background:#00bbff
 ;
 }
 .inline-block {
@@ -4910,9 +4913,10 @@ h6{
 .sb-biodata{
     width: 80%;
 }
+/*
 .sb-biodata-field h2{
     font-size: 25px;
-}
+}*/
 
 .sb_biodata_profile{
     display: flex;
@@ -5825,10 +5829,10 @@ h6{
     .sb-biodata{
         width: 70%;
     }
-
+/*
 .sb-biodata-field h2{
     font-size: 20px;
-}
+}*/
 .sb_biodata_profile{
     display: flex;
     flex-wrap: wrap;
