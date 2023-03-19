@@ -1387,13 +1387,9 @@ if($row){
 
 
 
-
-
-
-
-<div class="col-md-4 profile_right">
-    <div class="view_profile view_profile2">
-        <h2>View Recent Profiles</h2>
+<div class="flex-container-shosurbaribio-recentview">
+<div class="sbbiodata_profile_recentview">
+        <h3>Profiles Recent View</h3>
 
         <?php
         $sql="SELECT * FROM 1bd_personal_physical  ORDER BY profilecreationdate ASC";
@@ -1401,24 +1397,46 @@ if($row){
             $count=1;
             while($row=mysqli_fetch_assoc($result)){
             $profid=$row['user_id'];
+			$Skin_tones=$row['Skin_tones'];
+			$height=$row['height'];
+			$dateofbirth=$row['dateofbirth'];
+
+			$sql3="SELECT * FROM 2bd_personal_lifestyle WHERE user_id=$profid";		
+			$result3=mysqlexec($sql3);
+			if($result3)
+			  while($row3=mysqli_fetch_assoc($result3))
+			  $occupation=$row3['occupation'];
+
+			  $sql4="SELECT * FROM 4bd_address_details WHERE user_id=$profid";		
+			  $result4=mysqlexec($sql4);
+			  if($result4)
+				while($row4=mysqli_fetch_assoc($result4))
+				$permanent_address=$row4['permanent_address'];
+	  
+
+
             //getting photo
             $sql="SELECT * FROM photos WHERE user_id=$profid";
             $result2=mysqlexec($sql);
             $photo=mysqli_fetch_assoc($result2);
             $pic=$photo['pic1'];
-            echo "<ul class=\"profile_item\">";
-                echo"<a href=\"view_profile.php?id={$profid}\">";
-                    echo "<li class=\"profile_item-img\"><img src=\"profile/". $profid."/".$pic ."\"" . "class=\"img-responsive\" alt=\"\"/></li>";
-                    echo "<li class=\"profile_item-desc\">";
-                        echo "<h3>" . "Biodata No : " . $row['user_id'] ."</h3>";
-				        echo "<h5>" . "Biodata Type : " . $row['biodatagender'] . "</h5>";
-                        echo "<h5>" . "Birth : " . $row['dateofbirth']. "  |  Skin : " . $row['Skin_tones'] . "</h5>";
-				        echo "<h5>" . "Height : " . $row['height']. "  |  Weight : " . $row['weight'] . "</h5>";
-                        echo "<h6>" . "View Full Profile" . "</h6>";
-                    echo "</li>";
-                echo "</a>";
-            echo "</ul>";
+
+		   echo "<div class=\"biodatarecent_viewlist\">";
+		   echo "<div class=\"sbbio_header_recent_view\">";
+		   echo "<a href=\"view_profile.php?id={$profid}\" target=\"_blank\"> <img  class=\"img-responsive\" src=\"profile/{$profid}\/{$pic1}\"/></a>";
+		   echo "<div class=\"sbbio_number_recentview\"><span class=\"sb_biodatanumber_recentview\"> {$profid} <br> Biodata Number </span> </div>";
+		   echo "</div>";
+
+		   echo "<div class=\"sb_user_recentview\">
+		   <span class=\"sb_single_data_recentview\"> <span class=\"sb_value_recentview\"> Skin Tones </span>  <span class=\"sb_data_recentview\">{$Skin_tones}</span></span>
+		   <span class=\"sb_single_data_recentview\"> <span class=\"sb_value_recentview\"> Height </span>  <span class=\"sb_data_recentview\">{$height}</span></span>
+		   <span class=\"sb_single_data_recentview\"> <span class=\"sb_value_recentview\"> Occupation </span>      <span class=\"sb_data_recentview\"> {$occupation}</span></span>
+		   <span class=\"sb_single_data_recentview\"> <span class=\"sb_value_recentview\"> Address </span>      <span class=\"sb_data_recentview\"> {$permanent_address}</span></span>
+		   <span class=\"sb_single_data_recentview\"> <span class=\"sb_value_recentview\"> Birth Year</span>        <span class=\"sb_data_recentview\"> {$dateofbirth}</span></span>
+		   <button class=\"view_sb_profile_recentview\"><a href=\"view_profile.php?id={$profid}\" target=\"_blank\"> View Full Profile </a></button>
+		   </div></div>";
            $count++;
+		
         }
         ?>
 		
