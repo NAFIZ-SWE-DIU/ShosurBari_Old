@@ -72,8 +72,8 @@ $(document).ready(function(){
 
 <!-- -- -- -- -- -- -- -- -- -- -- -- -- ---- -- --
 -- -- -- -- -- -- -- -- --- -- -- -- -- -- -- -- --
---                S  T  A  R  T                  --
---   SHOSURBARI BIODATA FORM FIELD ALL SECTION   --
+--                  S  T  A  R  T                --
+--                Contact Biopdata               --
 --                                               --
 -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- ---
 -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -->
@@ -82,7 +82,7 @@ $(document).ready(function(){
 	<div class="flex-container">
        <div class="sb-biodata">
 
-		<div class="sb-biodata-field">
+		<div class="sb-biodata-field" style="background: #00bbff !important;">
 		    <h2>Contact <span>Biodata</span></h2>
         </div>
 
@@ -119,12 +119,12 @@ $(document).ready(function(){
 		                </div>
 
 			<div class="form-actions">
-			    <button  type="submit" id="edit-submit" name="op" class="btn_4 submit"> <span> </span> Create Account</button>
+			    <button  type="submit" id="edit-submit" name="op" class="btn_4 submit">Submit</button>
 			</div>
 <!-- -- -- -- -- -- -- -- -- -- -- -- -- ---- -- --
 -- -- -- -- -- -- -- -- --- -- -- -- -- -- -- -- --
---                   E   N   D                   --
---        Religion Details / sb-biodata-8        --
+--                    E   N   D                  --
+--                Contact Biopdata               --
 --                                               --
 -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- ---
 -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -->
