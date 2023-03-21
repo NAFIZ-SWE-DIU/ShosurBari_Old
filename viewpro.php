@@ -132,10 +132,24 @@ $(document).ready(function(){
 		<?php } ?>
 
 
+        <?php
+ $id=$_GET['id'];
+ $profileid=$id;
+ 
+ //getting profile details from db
+$sql = "SELECT * FROM 4bd_address_details  WHERE user_id = $id";
+$result = mysqlexec($sql);
+$row=mysqli_fetch_assoc($result);
 
+//Biodata 4
+if($row){
+$present_address=$row['present_address'];
+}
+?>
       <div class="address">
-        <p id="state" class="state">New York,</p>
-        <span id="country" class="country">USA.</span>
+      <?php if (!empty ($present_address)) { ?>
+		<td class="day_value closed"> Present Address : <?php echo $present_address;?> </td>
+		<?php } ?>
       </div>
     </div>
 
