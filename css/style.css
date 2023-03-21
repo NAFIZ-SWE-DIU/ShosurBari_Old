@@ -1325,7 +1325,7 @@ table.table_working_hours {
     font-size: 2em;
     text-align: center;
     background: #ff0080;
-    width: 100%;
+    width: 50%;
     color: white;
 
     box-shadow: 0px 2px 5px 4px rgba(0, 0, 0, 0.2);
@@ -3665,7 +3665,7 @@ form {
 
 
 
-/* Contact me & Profile Link Copy Start */
+/* Contact me & Profile Link Copy Start 
     .Contactme1 {
         border: 0;
         padding: 6px;
@@ -3717,7 +3717,8 @@ form {
         transition: all .2s ease;
         white-space: nowrap;
     }
-    /* Contact me & Profile Link Copy End */
+   Contact me & Profile Link Copy End */
+   
    .selectsearch{
         color: black;
     }
@@ -3946,18 +3947,15 @@ border-radius: 5px 5px 0px 0px;
     display: flex;
     flex-wrap: wrap;
     margin-top: 80px;
-}
-
-.sbbiodata_profile_recentview{
-    display: flex;
-    flex-wrap: wrap;
-    width: 100%;
+    width: 20%;
     margin-top: -68px;
     margin-bottom: 0px;
-    margin-right: -50px;
-    margin-left: 50px;
+    margin-right: -10px;
+    margin-left: 10px;
     padding: 0px;
-    }
+}
+
+
 .biodatarecent_viewlist{
     border: 1px solid #ccc;
     border-radius: 6px;
@@ -4430,8 +4428,19 @@ ul.nav_1 {
     margin: 2em 0 0 0;
 }
 .nav-tabs1 {
-    margin-bottom:1em;
+        display: inline-block;
+        border-bottom: none;
+        border-radius: 4px;
+        font-size: 15px;
+        font-weight: 500;
+        background-color:#00bbff;
+        width: auto;
+        padding: 0px;
+        margin-bottom: 2em;
+        margin-left: 10%;
+        white-space: nowrap;
 }
+
 .pricing-table {
     width: 50%;
     float: left;
@@ -4509,6 +4518,7 @@ h6{
     .fa-chevron-down:before {
         font-size: 10px;
     }
+    
 }
 /*-- -- -- -- -- -- -- -- -- -- -- -- -- ---- -- --
 --          max-width:930px / E  N  D         --
