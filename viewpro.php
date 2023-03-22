@@ -121,12 +121,11 @@ $(document).ready(function(){
   <div class="profile-header">  <!-- a profile-header div -->
 
         <div class="profile-img">
-			<img src="profile/<?php echo $profileid;?>/<?php echo $pic1;?>" />
-		</div>
+			    <img src="profile/<?php echo $profileid;?>/<?php echo $pic1;?>" />
+		    </div>
 
 
     <div class="profile-nav-info">
-
 		<?php if (!empty($profileid)) { ?>
 			<h3>Biodata No : <span><?php echo $profileid;?></span></h3>
 		<?php } ?>
@@ -152,6 +151,20 @@ $present_address=$row['present_address'];
 		<?php } ?>
       </div>
     </div>
+
+
+
+		<div class="see_sb_biodata">
+		    <div class="bs-example bs-example-tabs" role="tabpanel" data-example-id="togglable-tabs">
+
+			    <ul id="myTab" class="nav nav-tabs nav-tabs1" role="tablist">
+				    <li role="presentation" class="active"><a href="#home" id="home-tab" role="tab" data-toggle="tab" aria-controls="home" aria-expanded="true">About Myself</a></li>
+				    <li role="presentation"><a href="#profile" role="tab" id="profile-tab" data-toggle="tab" aria-controls="profile">Family Details</a></li>
+				    <li role="presentation"><a href="#profile1" role="tab" id="profile-tab1" data-toggle="tab" aria-controls="profile1">Extpected Partner</a></li>
+			    </ul>
+      </div>
+      </div>
+
 
 
   </div> <!-- a profile-header div -->
@@ -372,7 +385,6 @@ $('.clipboard').on('click', function() {
 })
 </script>
 
-
 </div>
 </div>
 
@@ -393,45 +405,1019 @@ $('.clipboard').on('click', function() {
     <div class="right-side"> <!-- 3 right-side div -->
 
 
+    <div class="separate_biodata_sector">
+		    <div class="bs-example bs-example-tabs" role="tabpanel" data-example-id="togglable-tabs">
 
-      <div class="nav">
-        <ul>
-          <li onclick="tabs(0)" class="user-post active">Posts</li>
-          <li onclick="tabs(1)" class="user-review">Reviews</li>
-          <li onclick="tabs(2)" class="user-setting"> Settings</li>
-        </ul>
+
+               <!-- no close 2 up 3<div> -->
+               <div id="myTabContent" class="tab-content">
+
+<!-- -- -- -- -- -- -- -- -- -- -- -- -- ---- -- --
+-- -- -- -- -- -- -- -- --- -- -- -- -- -- -- -- --
+--                S  T  A  R  T                  --
+--      Personal & Physical  / sb-biodata-1      --
+--                                               --
+-- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- ---
+-- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -->	
+<?php
+ $id=$_GET['id'];
+ $profileid=$id;
+ 
+ //getting profile details from db
+$sql = "SELECT * FROM 1bd_personal_physical  WHERE user_id = $id";
+$result = mysqlexec($sql);
+
+if($result){
+$row= mysqli_fetch_assoc($result);
+//Biodata 1
+if($row){
+$biodatagender=$row['biodatagender'];
+}
+if($row){
+$dob=$row['dateofbirth'];
+}
+if($row){
+$height=$row['height'];
+}
+if($row){
+$weight=$row['weight'];	
+}
+if($row){
+$physicalstatus=$row['physicalstatus'];
+}
+if($row){
+$Skin_tones = $row['Skin_tones'];
+}
+if($row){
+$bloodgroup=$row['bloodgroup'];
+}
+}
+?>		
+
+		<div role="tabpanel" class="tab-pane fade in active" id="home" aria-labelledby="home-tab">
+			<div class="shosurbari_user_biodata">
+				<div class="biodatavalue_list">
+				  <table class="biodata_value_data">
+							<h3>Personal & Physical</h3>
+
+				        	<tbody>
+				        		<tr class="opened">
+									<td class="day_label">Biodata Type :</td>
+									<?php if (!empty ($biodatagender)) { ?>
+									<td class="day_value"><?php echo $biodatagender; ?></td>
+									<?php } ?>
+								</tr>
+
+							    <tr class="opened">
+									<td class="day_label">DOB :</td>
+									<?php if (!empty ($dob)) { ?>
+									<td class="day_value"><?php echo $dob;?></td>
+									<?php } ?>
+								</tr>
+
+							    <tr class="opened">
+									<td class="day_label">Height :</td>
+									<?php if (!empty ($height)) { ?>
+									<td class="day_value"><?php echo $height;?></td>
+									<?php } ?>
+								</tr>
+							    
+							    <tr class="opened">
+									<td class="day_label">Weight :</td>
+									<?php if (!empty ($weight)) { ?>
+									<td class="day_value"><?php echo $weight;?></td>
+									<?php } ?>
+								</tr>
+
+							    <tr class="opened">
+									<td class="day_label">Physical Status :</td>
+									<?php if (!empty ($physicalstatus)) { ?>
+									<td class="day_value closed"><span><?php echo $physicalstatus;?></span></td>
+									<?php } ?>
+								</tr>
+
+							    <tr class="opened">
+									<td class="day_label">Skin Tones :</td>
+									<?php if (!empty ($Skin_tones)) { ?>
+									<td class="day_value closed"><span><?php echo $Skin_tones;?></span></td>
+									<?php } ?>
+								</tr>
+
+								<tr class="opened">
+									<td class="day_label">Blood Group :</td>
+									<?php if (!empty ($bloodgroup)) { ?>
+									<td class="day_value closed"><span><?php echo $bloodgroup;?></span></td>
+									<?php } ?>
+								</tr>
+
+						    </tbody>
+				  </table>
+				</div>
+				<div class="clearfix"> </div>
+			</div>
+<!-- -- -- -- -- -- -- -- -- -- -- -- -- ---- -- --
+-- -- -- -- -- -- -- -- --- -- -- -- -- -- -- -- --
+--                   E   N   D                   --
+--       Personal & Physical  / sb-biodata-1     --
+--                                               --
+-- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- ---
+-- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- -- -- -- -- -- -- -- -- -- -- -- -- ---- -- --
+-- -- -- -- -- -- -- -- --- -- -- -- -- -- -- -- --
+--                S  T  A  R  T                  --
+--     Personal & Life Style  / sb-biodata-2     --
+--                                               --
+-- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- ---
+-- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -->
+<?php
+ $id=$_GET['id'];
+ $profileid=$id;
+
+ //getting profile details from db
+$sql = "SELECT * FROM 2bd_personal_lifestyle WHERE user_id = $id";
+$result = mysqlexec($sql);
+
+if($result){
+$row= mysqli_fetch_assoc($result);
+//Biodata 2 
+if($row){
+$maritalstatus=$row['maritalstatus'];
+}
+if($row){
+$smoke=$row['smoke'];
+}
+if($row){
+$occupation=$row['occupation'];
+}
+if($row){
+$occupation_describe=$row['occupation_describe'];
+}
+if($row){
+$dress_code=$row['dress_code'];
+}
+if($row){
+$aboutme=$row['aboutme'];
+}
+}
+?>
+
+				    <div class="shosurbari_user_biodata">
+				    	<div class="biodatavalue_list">
+				    	    <table class="biodata_value_data">
+							<h3>Personal & Life Style</h3>
+				        	<tbody>
+
+				        		<tr class="opened">
+									<td class="day_label">Marital Status :</td>
+									<?php if (!empty ($maritalstatus)) { ?>
+									<td class="day_value"><?php echo $maritalstatus;?></td>
+									<?php } ?>
+								</tr>
+
+							    <tr class="opened">
+									<td class="day_label">Smoke or Drinks :</td>
+									<?php if (!empty ($smoke)) { ?>
+									<td class="day_value"><?php echo $smoke;?></td>
+									<?php } ?>
+								</tr>
+
+							    <tr class="opened">
+									<td class="day_label">Occupation :</td>
+									<?php if (!empty ($occupation)) { ?>
+									<td class="day_value"><?php echo $occupation;?></td>
+									<?php } ?>
+								</tr>
+							    
+							    <tr class="opened">
+									<td class="day_label">Occupation Describe :</td>
+									<?php if (!empty ($occupation_describe)) { ?>
+									<td class="day_value"><?php echo $occupation_describe;?></td>
+									<?php } ?>
+								</tr>
+
+							    <tr class="opened">
+									<td class="day_label">Dress Code :</td>
+									<?php if (!empty ($dress_code)) { ?>
+									<td class="day_value closed"><span><?php echo $dress_code;?></span></td>
+									<?php } ?>
+								</tr>
+
+							    <tr class="opened">
+									<td class="day_label">About Me :</td>
+									<?php if (!empty ($aboutme)) { ?>
+									<td class="day_value closed"><span><?php echo $aboutme;?></span></td>
+									<?php } ?>
+								</tr>
+
+						    </tbody>
+				            </table>
+				        </div>
+				        <div class="clearfix"> </div>
+				    </div>
+<!-- -- -- -- -- -- -- -- -- -- -- -- -- ---- -- --
+-- -- -- -- -- -- -- -- --- -- -- -- -- -- -- -- --
+--                   E   N   D                   --
+--     Personal & Life Style  / sb-biodata-2     --
+--                                               --
+-- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- ---
+-- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -->
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- -- -- -- -- -- -- -- -- -- -- -- -- ---- -- --
+-- -- -- -- -- -- -- -- --- -- -- -- -- -- -- -- --
+--                S  T  A  R  T                  --
+--  Educational Qualifications  / sb-biodata-3   --
+--                                               --
+-- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- ---
+-- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -->
+<?php
+ $id=$_GET['id'];
+ $profileid=$id;
+ 
+ //getting profile details from db
+$sql = "SELECT * FROM 3bd_educational_qualifications WHERE user_id = $id";
+$result = mysqlexec($sql);
+
+if($result){
+$row= mysqli_fetch_assoc($result);
+
+//Biodata 3
+if($row){
+$education_method=$row['education_method'];
+}
+if($row){
+$sscpassyear=$row['sscpassyear'];
+}
+if($row){
+$current_education=$row['current_education'];
+}
+if($row){
+$maximum_education=$row['maximum_education'];
+}
+}
+?>
+
+				    	<div class="biodatavalue_list">
+				    	    <table class="biodata_value_data">
+							<h3>Educational Qualifications</h3>
+				        	<tbody>
+
+				        		<tr class="opened">
+									<td class="day_label">Education Method :</td>
+									<?php if (!empty ($education_method)) { ?>
+									<td class="day_value"><?php echo $education_method; ?></td>
+									<?php } ?>
+								</tr>
+
+							    <tr class="opened">
+									<td class="day_label">SSC Passing Year :</td>
+									<?php if (!empty ($sscpassyear)) { ?>
+									<td class="day_value"><?php echo $sscpassyear;?></td>
+									<?php } ?>
+								</tr>
+
+							    <tr class="opened">
+									<td class="day_label">Current Education :</td>
+									<?php if (!empty ($current_education)) { ?>
+									<td class="day_value"><?php echo $current_education;?></td>
+									<?php } ?>
+								</tr>
+							    
+							    <tr class="opened">
+									<td class="day_label">Maximum Education :</td>
+									<?php if (!empty ($maximum_education)) { ?>
+									<td class="day_value"><?php echo $maximum_education; ?></td>
+									<?php } ?>
+								</tr>
+
+						    </tbody>
+				      </table>
+				    </div>
+				        <div class="clearfix"> </div>
+<!-- -- -- -- -- -- -- -- -- -- -- -- -- ---- -- --
+-- -- -- -- -- -- -- -- --- -- -- -- -- -- -- -- --
+--                   E   N   D                   --
+--  Educational Qualifications  / sb-biodata-3   --
+--                                               --
+-- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- ---
+-- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- -- -- -- -- -- -- -- -- -- -- -- -- ---- -- --
+-- -- -- -- -- -- -- -- --- -- -- -- -- -- -- -- --
+--                S  T  A  R  T                  --
+--       Address Details  /  sb-biodata-4        --
+--                                               --
+-- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- ---
+-- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -->
+<?php
+ $id=$_GET['id'];
+ $profileid=$id;
+ 
+ //getting profile details from db
+$sql = "SELECT * FROM 4bd_address_details WHERE user_id = $id";
+$result = mysqlexec($sql);
+
+if($result){
+$row= mysqli_fetch_assoc($result);
+//Biodata 4
+if($row){
+$permanent_division=$row['permanent_division'];
+}
+if($row){
+$present_address=$row['present_address'];
+}
+if($row){
+$permanent_address=$row['permanent_address'];
+}
+if($row){
+$childhood=$row['childhood'];
+}
+}
+?>
+
+				    <div class="shosurbari_user_biodata">
+				    	<div class="biodatavalue_list">
+				    	    <table class="biodata_value_data">
+							<h3>Address Details</h3>
+				        	<tbody>
+
+				        		<tr class="opened">
+									<td class="day_label">Permanent Address Division :</td>
+									<?php if (!empty ($permanent_division)) { ?>
+									<td class="day_value"><?php echo $permanent_division; ?></td>
+									<?php } ?>
+								</tr>
+
+								<tr class="opened">
+									<td class="day_label">Permanent Address District:</td>
+									<?php if (!empty ($permanent_address)) { ?>
+									<td class="day_value"><?php echo $permanent_address;?></td>
+									<?php } ?>
+								</tr>
+
+							    <tr class="opened">
+									<td class="day_label">Present Address :</td>
+									<?php if (!empty ($present_address)) { ?>
+									<td class="day_value"><?php echo $present_address;?></td>
+									<?php } ?>
+								</tr>
+
+							    
+							    <tr class="opened">
+									<td class="day_label">Childhood :</td>
+									<?php if (!empty ($childhood)) { ?>
+									<td class="day_value"><?php echo $childhood; ?></td>
+									<?php } ?>
+								</tr>
+
+						    </tbody>
+				            </table>
+				        </div>
+				        <div class="clearfix"> </div>
+				    </div>
+<!-- -- -- -- -- -- -- -- -- -- -- -- -- ---- -- --
+-- -- -- -- -- -- -- -- --- -- -- -- -- -- -- -- --
+--                   E   N   D                   --
+--       Address Details  /  sb-biodata-4        --
+--                                               --
+-- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- ---
+-- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -->
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- -- -- -- -- -- -- -- -- -- -- -- -- ---- -- --
+-- -- -- -- -- -- -- -- --- -- -- -- -- -- -- -- --
+--                S  T  A  R  T                  --
+--   Male Marriage related Info / sb-biodata-6   --
+--                                               --
+-- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- ---
+-- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -->
+<?php
+ $id=$_GET['id'];
+ $profileid=$id;
+ 
+ //getting profile details from db
+$sql = "SELECT * FROM 6bd_marriage_related_qs_male WHERE user_id = $id";
+$result = mysqlexec($sql);
+
+if($result){
+$row= mysqli_fetch_assoc($result);
+//Biodata 6 
+if($row){
+	$guardians_agree_male=$row['guardians_agree_male'];
+	}
+	if($row){
+	$allowstudy_aftermarriage=$row['allowstudy_aftermarriage'];
+	}
+	if($row){
+	$allowjob_aftermarriage=$row['allowjob_aftermarriage'];
+	}
+	if($row){
+	$livewife_aftermarriage=$row['livewife_aftermarriage'];
+	}
+	if($row){
+	$profileby_male=$row['profileby_male'];
+	}
+}
+?>
+
+				    <div class="shosurbari_user_biodata">
+				    	<div class="biodatavalue_list">
+				    	    <table class="biodata_value_data">
+							<h3>Marriage related Information - M</h3>
+				        	<tbody>
+
+				        		<tr class="opened">
+									<td class="day_label">Guardians Agree :</td>
+									<?php if (!empty ($guardians_agree_male)) { ?>
+									<td class="day_value"><?php echo $guardians_agree_male; ?></td>
+									<?php } ?>
+								</tr>
+
+							    <tr class="opened">
+									<td class="day_label">Allow Study After Marriage :</td>
+									<?php if (!empty ($allowstudy_aftermarriage)) { ?>
+									<td class="day_value"><?php echo $allowstudy_aftermarriage;?></td>
+									<?php } ?>
+								</tr>
+
+							    <tr class="opened">
+									<td class="day_label">Allow Job After Marriage :</td>
+									<?php if (!empty ($allowjob_aftermarriage)) { ?>
+									<td class="day_value"><?php echo $allowjob_aftermarriage;?></td>
+									<?php } ?>
+								</tr>
+							    
+							    <tr class="opened">
+									<td class="day_label">Live Wife After Marriage :</td>
+									<?php if (!empty ($livewife_aftermarriage)) { ?>
+									<td class="day_value"><?php echo $livewife_aftermarriage; ?></td>
+									<?php } ?>
+								</tr>
+
+							    <tr class="opened">
+									<td class="day_label">Profile By :</td>
+									<?php if (!empty ($profileby_male)) { ?>
+									<td  class="day_value closed"><span><?php echo $profileby_male;?></span></td>
+									<?php } ?>
+								</tr>
+
+						    </tbody>
+				            </table>
+				        </div>
+				        <div class="clearfix"> </div>
+				    </div>
+<!-- -- -- -- -- -- -- -- -- -- -- -- -- ---- -- --
+-- -- -- -- -- -- -- -- --- -- -- -- -- -- -- -- --
+--                   E   N   D                   --
+--   Male Marriage related Info / sb-biodata-6   --
+--                                               --
+-- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- ---
+-- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- -- -- -- -- -- -- -- -- -- -- -- -- ---- -- --
+-- -- -- -- -- -- -- -- --- -- -- -- -- -- -- -- --
+--                S  T  A  R  T                  --
+--  Female Marriage related Info / sb-biodata-7  --
+--                                               --
+-- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- ---
+-- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -->
+<?php
+ $id=$_GET['id'];
+ $profileid=$id;
+ 
+ //getting profile details from db
+$sql = "SELECT * FROM 7bd_marriage_related_qs_female WHERE user_id = $id";
+$result = mysqlexec($sql);
+
+if($result){
+$row= mysqli_fetch_assoc($result);
+//Biodata 7
+if($row){
+	$guardians_agree_female=$row['guardians_agree_female'];
+	}
+	if($row){
+	$anyjob_aftermarriage=$row['anyjob_aftermarriage'];
+	}
+	if($row){
+	$studies_aftermarriage=$row['studies_aftermarriage'];
+	}
+	if($row){
+	$agree_marriage_student=$row['agree_marriage_student'];
+	}
+	if($row){
+	$profileby_female=$row['profileby_female'];
+	}
+}
+?>
+
+                    <div class="shosurbari_user_biodata">
+				    	<div class="biodatavalue_list">
+				    	    <table class="biodata_value_data">
+							<h3>Marriage related Information - F</h3>
+				        	<tbody>
+
+				        		<tr class="opened">
+									<td class="day_label">Guardians Agree :</td>
+									<?php if (!empty ($guardians_agree_female)) { ?>
+									<td class="day_value"><?php echo $guardians_agree_female; ?></td>
+									<?php } ?>
+								</tr>
+
+							    <tr class="opened">
+									<td class="day_label">Any Job After Marriage :</td>
+									<?php if (!empty ($anyjob_aftermarriage)) { ?>
+									<td class="day_value"><?php echo $anyjob_aftermarriage;?></td>
+									<?php } ?>
+								</tr>
+
+							    <tr class="opened">
+									<td class="day_label">Studies After Marriage :</td>
+									<?php if (!empty ($studies_aftermarriage)) { ?>
+									<td class="day_value"><?php echo $studies_aftermarriage;?></td>
+									<?php } ?>
+								</tr>
+							    
+							    <tr class="opened">
+									<td class="day_label">Agree Marriage Student :</td>
+									<?php if (!empty ($agree_marriage_student)) { ?>
+									<td class="day_value"><?php echo $agree_marriage_student; ?></td>
+									<?php } ?>
+								</tr>
+
+							    <tr class="opened">
+									<td class="day_label">Profile By :</td>
+									<?php if (!empty ($profileby_female)) { ?>
+									<td class="day_value closed"><span><?php echo $profileby_female;?></span></td>
+									<?php } ?>
+								</tr>
+
+						    </tbody>
+				            </table>
+				        </div>
+				        <div class="clearfix"> </div>
+				    </div>
+<!-- -- -- -- -- -- -- -- -- -- -- -- -- ---- -- --
+-- -- -- -- -- -- -- -- --- -- -- -- -- -- -- -- --
+--                   E   N   D                   --
+--  Female Marriage related Info / sb-biodata-7  --
+--                                               --
+-- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- ---
+-- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- -- -- -- -- -- -- -- -- -- -- -- -- ---- -- --
+-- -- -- -- -- -- -- -- --- -- -- -- -- -- -- -- --
+--                S  T  A  R  T                  --
+--        Religion Details / sb-biodata-8        --
+--                                               --
+-- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- ---
+-- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -->
+<?php
+ $id=$_GET['id'];
+ $profileid=$id;
+ 
+ //getting profile details from db
+$sql = "SELECT * FROM 8bd_religion_details WHERE user_id = $id";
+$result = mysqlexec($sql);
+
+if($result){
+$row= mysqli_fetch_assoc($result);
+//Biodata 8
+if($row){
+	$religion=$row['religion'];
+	}
+	if($row){
+	$yourreligion_condition=$row['yourreligion_condition'];
+	}
+}
+?>
+
+            <div class="shosurbari_user_biodata">
+				<div class="biodatavalue_list">
+				    <table class="biodata_value_data">
+					        <h3>Religion Details</h3>
+				        	<tbody>
+
+				        		<tr class="opened">
+									<td class="day_label">Religion :</td>
+									<?php if (!empty ($religion)) { ?>
+									<td class="day_value"><?php echo $religion; ?></td>
+									<?php } ?>
+								</tr>
+
+							    <tr class="opened">
+									<td class="day_label">Your Religion Condition :</td>
+									<?php if (!empty ($yourreligion_condition)) { ?>
+									<td class="day_value"><?php echo $yourreligion_condition;?></td>
+									<?php } ?>
+								</tr>
+
+						    </tbody>
+				    </table>
+				</div>
+				<div class="clearfix"> </div>
+			</div>
+		</div>
+<!-- -- -- -- -- -- -- -- -- -- -- -- -- ---- -- --
+-- -- -- -- -- -- -- -- --- -- -- -- -- -- -- -- --
+--                   E   N   D                   --
+--        Religion Details / sb-biodata-8        --
+--                                               --
+-- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- ---
+-- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- -- -- -- -- -- -- -- -- -- -- -- -- ---- -- --
+-- -- -- -- -- -- -- -- --- -- -- -- -- -- -- -- --
+--                S  T  A  R  T                  --
+--        Family Details  / sb-biodata-5         --
+--                                               --
+-- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- ---
+-- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -->
+<?php
+ $id=$_GET['id'];
+ $profileid=$id;
+ 
+ //getting profile details from db
+$sql = "SELECT * FROM 5bd_family_information WHERE user_id = $id";
+$result = mysqlexec($sql);
+
+if($result){
+$row= mysqli_fetch_assoc($result);
+//Biodata 5
+if($row){
+	$father_alive=$row['father_alive'];
+	}
+	if($row){
+	$fatheroccupation=$row['fatheroccupation'];
+	}
+	if($row){
+	$mother_alive=$row['mother_alive'];
+	}
+	if($row){
+	$motheroccupation=$row['motheroccupation'];
+	}
+	if($row){
+	$brosis_number=$row['brosis_number'];
+	}
+	if($row){
+	$brosis_info=$row['brosis_info'];
+	}
+	if($row){
+	$uncle_profession=$row['uncle_profession'];
+	}
+	if($row){
+	$family_class=$row['family_class'];
+	}
+	if($row){
+	$financial_condition=$row['financial_condition'];
+	}
+	if($row){
+	$family_religious=$row['family_religious'];
+	}
+}
+?>
+
+
+			<div role="tabpanel" class="tab-pane fade" id="profile" aria-labelledby="profile-tab">
+				<div class="shosurbari_user_biodata">
+				    <div class="biodatavalue_list">
+				    	<table class="biodata_value_data">
+							<h3>Family Details</h3>
+
+				        	<tbody>
+				        		<tr class="opened">
+									<td class="day_label">Father Alive :</td>
+									<?php if (!empty ($father_alive)) { ?>
+									<td class="day_value"><?php echo $father_alive;?></td>
+									<?php } ?>
+								</tr>
+
+				        		<tr class="opened">
+									<td class="day_label">Father Occupation :</td>
+									<?php if (!empty ($fatheroccupation)) { ?>
+									<td class="day_value"><?php echo $fatheroccupation;?></td>
+									<?php } ?>
+								</tr>
+
+							    <tr class="opened">
+									<td class="day_label">Mother Alive :</td>
+									<?php if (!empty ($mother_alive)) { ?>
+									<td class="day_value closed"><span><?php echo $mother_alive;?></span></td>
+									<?php } ?>
+								</tr>
+
+							    <tr class="opened">
+									<td class="day_label">Mother Occupation :</td>
+									<?php if (!empty ($motheroccupation)) { ?>
+									<td class="day_value closed"><span><?php echo $motheroccupation;?></span></td>
+									<?php } ?>
+								</tr>
+
+								<tr class="opened">
+									<td class="day_label">Bro Sis Number :</td>
+									<?php if (!empty ($brosis_number)) { ?>
+									<td class="day_value closed"><span><?php echo $brosis_number;?></span></td>
+									<?php } ?>
+								</tr>
+
+							    <tr class="opened">
+									<td class="day_label">Bro Sis Info :</td>
+									<?php if (!empty ($brosis_info)) { ?>
+									<td class="day_value closed"><span><?php echo $brosis_info;?></span></td>
+									<?php } ?>
+								</tr>
+
+								
+								<tr class="opened">
+									<td class="day_label">Uncle Profession :</td>
+									<?php if (!empty ($uncle_profession)) { ?>
+									<td class="day_value closed"><span><?php echo $uncle_profession;?></span></td>
+									<?php } ?>
+								</tr>
+
+							    <tr class="opened">
+									<td class="day_label">Family Class :</td>
+									<?php if (!empty ($family_class)) { ?>
+									<td class="day_value closed"><span><?php echo $family_class;?></span></td>
+									<?php } ?>
+								</tr>
+
+								<tr class="opened">
+									<td class="day_label">Financial Condition :</td>
+									<?php if (!empty ($financial_condition)) { ?>
+									<td class="day_value closed"><span><?php echo $financial_condition;?></span></td>
+									<?php } ?>
+								</tr>
+
+							    <tr class="opened">
+									<td class="day_label">Family Religious :</td>
+									<?php if (!empty ($family_religious)) { ?>
+									<td class="day_value closed"><span><?php echo $family_religious;?></span></td>
+									<?php } ?>
+								</tr>
+
+							</tbody>
+				            </table>
+				        </div>
+				    </div>
+				</div>
+<!-- -- -- -- -- -- -- -- -- -- -- -- -- ---- -- --
+-- -- -- -- -- -- -- -- --- -- -- -- -- -- -- -- --
+--                   E   N   D                   --
+--        Family Details  / sb-biodata-5         --
+--                                               --
+-- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- ---
+-- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- -- -- -- -- -- -- -- -- -- -- -- -- ---- -- --
+-- -- -- -- -- -- -- -- --- -- -- -- -- -- -- -- --
+--                S  T  A  R  T                  --
+--     Expected Life Partner / sb-biodata-9      --
+--                                               --
+-- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- ---
+-- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -->
+<?php
+ $id=$_GET['id'];
+ $profileid=$id;
+ 
+ //getting profile details from db
+$sql = "SELECT * FROM 9bd_expected_life_partner WHERE user_id = $id";
+$result = mysqlexec($sql);
+
+if($result){
+$row= mysqli_fetch_assoc($result);
+//Biodata 9
+
+if($row){
+	$partner_religius=$row['partner_religius'];
+	}
+	if($row){
+	$partner_district=$row['partner_district'];
+	}
+	if($row){
+	$partner_maritialstatus=$row['partner_maritialstatus'];
+	}
+	if($row){
+	$partner_age=$row['partner_age'];
+	}
+	if($row){
+	$partner_skintones=$row['partner_skintones'];
+	}
+	if($row){
+	$partner_height=$row['partner_height'];
+	}
+	if($row){
+	$partner_education=$row['partner_education'];
+	}
+	if($row){
+	$partner_profession=$row['partner_profession'];
+	}
+	if($row){
+	$partner_financial=$row['partner_financial'];
+	}
+	if($row){
+	$partner_attributes=$row['partner_attributes'];
+	}
+}
+?>	
+
+			<div role="tabpanel" class="tab-pane fade" id="profile1" aria-labelledby="profile-tab1">
+				<div class="shosurbari_user_biodata">
+                    <div class="biodatavalue_list">
+				    	<table class="biodata_value_data">
+							<h3>Expected Partner</h3>
+
+
+				        	<tbody>
+				        		<tr class="opened">
+									<td class="day_label">Partner Religius   :</td>
+									<?php if (!empty ($partner_religius)) { ?>
+									<td class="day_value"><?php echo $partner_religius;?></td>
+									<?php } ?>
+								</tr>
+
+				        		<tr class="opened">
+									<td class="day_label">Partner District :</td>
+									<?php if (!empty ($partner_district)) { ?>
+									<td class="day_value"><?php echo $partner_district;?></td>
+									<?php } ?>
+								</tr>
+
+							    <tr class="opened">
+									<td class="day_label">Partner Maritial Status :</td>
+									<?php if (!empty ($partner_maritialstatus)) { ?>
+									<td class="day_value closed"><span><?php echo $partner_maritialstatus;?></span></td>
+									<?php } ?>
+								</tr>
+
+							    <tr class="opened">
+									<td class="day_label">Partner Age :</td>
+									<?php if (!empty ($partner_age)) { ?>
+									<td class="day_value closed"><span><?php echo $partner_age;?></span></td>
+									<?php } ?>
+								</tr>
+
+								<tr class="opened">
+									<td class="day_label">Partner Skin Tones:</td>
+									<?php if (!empty ($partner_skintones)) { ?>
+									<td class="day_value closed"><span><?php echo $partner_skintones;?></span></td>
+									<?php } ?>
+								</tr>
+
+								<tr class="opened">
+									<td class="day_label">Partner Height :</td>
+									<?php if (!empty ($partner_height)) { ?>
+									<td class="day_value closed"><span><?php echo $partner_height;?></span></td>
+									<?php } ?>
+								</tr>
+
+								<tr class="opened">
+									<td class="day_label">Partner Education :</td>
+									<?php if (!empty ($partner_education)) { ?>
+									<td class="day_value closed"><span><?php echo $partner_education;?></span></td>
+									<?php } ?>
+								</tr>
+
+								<tr class="opened">
+									<td class="day_label">Partner Profession :</td>
+									<?php if (!empty ($partner_profession)) { ?>
+									<td class="day_value closed"><span><?php echo $partner_profession;?></span></td>
+									<?php } ?>
+								</tr>
+
+								<tr class="opened">
+									<td class="day_label">Partner Financial :</td>
+									<?php if (!empty ($partner_financial)) { ?>
+									<td class="day_value closed"><span><?php echo $partner_financial;?></span></td>
+									<?php } ?>
+								</tr>
+
+								<tr class="opened">
+									<td class="day_label">Partner Attributes :</td>
+									<?php if (!empty ($partner_attributes)) { ?>
+									<td class="day_value closed"><span><?php echo $partner_attributes;?></span></td>
+									<?php } ?>
+								</tr>
+								
+							</tbody>
+				            </table>
+				        </div>
+				    </div>
+				</div>
+
+          
+        </div>
+      </div>
       </div>
 
 
-      <div class="profile-body"> <!-- 4 profile-body div -->
 
-        <div class="profile-posts tab">
-          <h1>Your Post</h1>
-          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ipsa quia sunt itaque ut libero cupiditate ullam qui velit laborum placeat doloribus, non tempore nisi ratione error rem minima ducimus. Accusamus adipisci quasi at itaque repellat sed
-            magni eius magnam repellendus. Quidem inventore repudiandae sunt odit. Aliquid facilis fugiat earum ex officia eveniet, nisi, similique ad ullam repudiandae molestias aspernatur qui autem, nam? Cupiditate ut quasi iste, eos perspiciatis maiores
-            molestiae.</p>
-        </div>
 
-        <div class="profile-reviews tab">
-          <h1>User reviews</h1>
-          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquam pariatur officia, aperiam quidem quasi, tenetur molestiae. Architecto mollitia laborum possimus iste esse. Perferendis tempora consectetur, quae qui nihil voluptas. Maiores debitis
-            repellendus excepturi quisquam temporibus quam nobis voluptatem, reiciendis distinctio deserunt vitae! Maxime provident, distinctio animi commodi nemo, eveniet fugit porro quos nesciunt quidem a, corporis nisi dolorum minus sit eaque error
-            sequi ullam. Quidem ut fugiat, praesentium velit aliquam!</p>
-        </div>
 
-        <div class="profile-settings tab">
-          <div class="account-setting">
-            <h1>Acount Setting</h1>
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Reprehenderit omnis eaque, expedita nostrum, facere libero provident laudantium. Quis, hic doloribus! Laboriosam nemo tempora praesentium. Culpa quo velit omnis, debitis maxime, sequi
-              animi dolores commodi odio placeat, magnam, cupiditate facilis impedit veniam? Soluta aliquam excepturi illum natus adipisci ipsum quo, voluptatem, nemo, commodi, molestiae doloribus magni et. Cum, saepe enim quam voluptatum vel debitis
-              nihil, recusandae, omnis officiis tenetur, ullam rerum.</p>
-          </div>
-        </div>
-
-      </div> <!-- 4 profile-body div -->
     </div> <!-- 3 right-side div -->
-
-
   </div> <!-- 2 main-bd div -->
 </div> <!-- 1 UserProfile div -->
 
@@ -450,23 +1436,30 @@ $('.clipboard').on('click', function() {
 
 .UserProfile{
     width: 100%;
-    padding-left: 5px;
-    padding-right: 5px;
+    margin-left: 0px;
+    margin-right: 0px;
 }
 
 .profile-header {
   background: #fff;
   width: 100%;
   display: flex;
-  height: 190px;
+  height: 140px;
   position: relative;
   box-shadow: 0px 3px 4px rgba(0, 0, 0, 0.2);
   margin-top: -25px;
 }
 
+
+
+
+
+
+
+
 .profile-img {
   float: left;
-  width: 340px;
+  width: 26%;
   height: 200px;
 }
 
@@ -477,8 +1470,8 @@ $('.clipboard').on('click', function() {
   border: 5px solid #fff;
   box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.2);
   position: absolute;
-  left: 70px;
-  top: 15px;
+  left: 120px;
+  top: 35px;
   z-index: 5;
   background: #fff;
 }
@@ -488,7 +1481,29 @@ $('.clipboard').on('click', function() {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  padding-top: 60px;
+  padding-top: 0px;
+  width: 30%;
+}
+.see_sb_biodata{
+  float: left;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding-top: 0px;
+  width: 35%;
+}
+
+.nav-tabs1 {
+        display: inline-block;
+        border-bottom: none;
+        border-radius: 4px;
+        font-size: 15px;
+        font-weight: 500;
+        background-color:#00bbff;
+        width: auto;
+        padding: 0px;
+        margin: auto;
+        white-space: nowrap;
 }
 
 .profile-nav-info h3 {
@@ -507,6 +1522,33 @@ $('.clipboard').on('click', function() {
 .profile-nav-info .address p {
   margin-right: 5px;
 }
+
+.left-side{
+  width: 30%;
+}
+
+.right-side{
+  width: 65%;
+}
+
+.separate_biodata_sector{
+  float: left;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding-top: 0px;
+  width: 100%;
+}
+
+.biodatavalue_list{
+  width: 100%;
+}
+.biodata_value_data{
+  width: 100%;
+}
+
+
+
 
 .profile-option {
   width: 40px;
@@ -564,16 +1606,15 @@ $('.clipboard').on('click', function() {
 .main-bd {
   width: 100%;
   display: flex;
-  padding-right: 15px;
 }
 
 .profile-side {
   width: 300px;
   background: #fff;
   box-shadow: 0px 3px 5px rgba(0, 0, 0, 0.2);
-  padding: 40px 10px 10px;
+  padding: 90px 10px 10px;
   font-family: "Bree Serif", serif;
-  margin-left: 0px;
+  margin: auto;
   z-index: 99;
 }
 
@@ -818,6 +1859,7 @@ button.createbtn i {
   margin: 20px auto;
 }
 </style>
+
 
 
 
