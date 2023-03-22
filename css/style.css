@@ -1387,7 +1387,7 @@ opened_1*/
     width: 100%;
     padding: 0;
     margin-bottom: 2em;
-} */
+} 
 .nav-tabs1 {
     display: inline-block;
     border-bottom: none;
@@ -1400,7 +1400,7 @@ opened_1*/
     margin-bottom: 2em;
     margin-left: 23%;
     white-space: nowrap;
-}
+}*/
 .nav-tabs1>li.active>a, .nav-tabs1>li.active>a:focus, .nav-tabs1>li.active>a:hover {
     color: #fff;
     background-color:#ff0080;
@@ -3943,23 +3943,27 @@ border-radius: 5px 5px 0px 0px;
 /* background: #00bbff;
    background: #ff0080;
 */
-.flex-container-shosurbaribio-recentview {
+
+.sbbiodata_profile_recentview {
     display: flex;
     flex-wrap: wrap;
+    width: 100%;
     margin-top: 80px;
-    width: 20%;
-    margin-top: -68px;
     margin-bottom: 0px;
-    margin-right: -10px;
-    margin-left: 10px;
+    margin-right: auto;
+    margin-left: auto;
     padding: 0px;
 }
 
+.sbbiodata_profile_recentview h3{
+    text-align: center;
+    width: 100%;
+}
 
 .biodatarecent_viewlist{
     border: 1px solid #ccc;
     border-radius: 6px;
-    width: 100%;
+    width: 60%;
     gap: 1.5rem;
     padding: 0px;
     margin-left: auto;
@@ -3968,6 +3972,11 @@ border-radius: 5px 5px 0px 0px;
     margin-top: 30px;
     background: white;
     transition: transform .2s;
+}
+
+.biodatarecent_viewlist h3{
+    margin-bottom: auto;
+    margin-top: 30px;
 }
 
 .biodatarecent_viewlist:hover{
