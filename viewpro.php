@@ -519,7 +519,6 @@ $bloodgroup=$row['bloodgroup'];
 ?>		
 
 		<div role="tabpanel" class="tab-pane fade in active" id="home" aria-labelledby="home-tab">
-			<div class="shosurbari_user_biodata">
 				<div class="biodatavalue_list">
 				  <table class="biodata_value_data">
 							<h3>Personal & Physical</h3>
@@ -578,7 +577,6 @@ $bloodgroup=$row['bloodgroup'];
 				  </table>
 				</div>
 				<div class="clearfix"> </div>
-			</div>
 <!-- -- -- -- -- -- -- -- -- -- -- -- -- ---- -- --
 -- -- -- -- -- -- -- -- --- -- -- -- -- -- -- -- --
 --                   E   N   D                   --
@@ -639,7 +637,6 @@ $aboutme=$row['aboutme'];
 }
 ?>
 
-				    <div class="shosurbari_user_biodata">
 				    	<div class="biodatavalue_list">
 				    	    <table class="biodata_value_data">
 							<h3>Personal & Life Style</h3>
@@ -691,7 +688,6 @@ $aboutme=$row['aboutme'];
 				            </table>
 				        </div>
 				        <div class="clearfix"> </div>
-				    </div>
 <!-- -- -- -- -- -- -- -- -- -- -- -- -- ---- -- --
 -- -- -- -- -- -- -- -- --- -- -- -- -- -- -- -- --
 --                   E   N   D                   --
@@ -781,7 +777,7 @@ $maximum_education=$row['maximum_education'];
 						    </tbody>
 				      </table>
 				    </div>
-				        <div class="clearfix"> </div>
+				  <div class="clearfix"> </div>
 <!-- -- -- -- -- -- -- -- -- -- -- -- -- ---- -- --
 -- -- -- -- -- -- -- -- --- -- -- -- -- -- -- -- --
 --                   E   N   D                   --
@@ -835,7 +831,6 @@ $childhood=$row['childhood'];
 }
 ?>
 
-				    <div class="shosurbari_user_biodata">
 				    	<div class="biodatavalue_list">
 				    	    <table class="biodata_value_data">
 							<h3>Address Details</h3>
@@ -874,7 +869,6 @@ $childhood=$row['childhood'];
 				            </table>
 				        </div>
 				        <div class="clearfix"> </div>
-				    </div>
 <!-- -- -- -- -- -- -- -- -- -- -- -- -- ---- -- --
 -- -- -- -- -- -- -- -- --- -- -- -- -- -- -- -- --
 --                   E   N   D                   --
@@ -930,7 +924,6 @@ if($row){
 }
 ?>
 
-				    <div class="shosurbari_user_biodata">
 				    	<div class="biodatavalue_list">
 				    	    <table class="biodata_value_data">
 							<h3>Marriage related Information - M</h3>
@@ -975,7 +968,6 @@ if($row){
 				            </table>
 				        </div>
 				        <div class="clearfix"> </div>
-				    </div>
 <!-- -- -- -- -- -- -- -- -- -- -- -- -- ---- -- --
 -- -- -- -- -- -- -- -- --- -- -- -- -- -- -- -- --
 --                   E   N   D                   --
@@ -1033,7 +1025,7 @@ if($row){
 }
 ?>
 
-                    <div class="shosurbari_user_biodata">
+                   <!-- <div class="shosurbari_user_biodata"> -->
 				    	<div class="biodatavalue_list">
 				    	    <table class="biodata_value_data">
 							<h3>Marriage related Information - F</h3>
@@ -1078,7 +1070,6 @@ if($row){
 				            </table>
 				        </div>
 				        <div class="clearfix"> </div>
-				    </div>
 <!-- -- -- -- -- -- -- -- -- -- -- -- -- ---- -- --
 -- -- -- -- -- -- -- -- --- -- -- -- -- -- -- -- --
 --                   E   N   D                   --
@@ -1127,7 +1118,6 @@ if($row){
 }
 ?>
 
-            <div class="shosurbari_user_biodata">
 				<div class="biodatavalue_list">
 				    <table class="biodata_value_data">
 					        <h3>Religion Details</h3>
@@ -1151,7 +1141,6 @@ if($row){
 				    </table>
 				</div>
 				<div class="clearfix"> </div>
-			</div>
 		</div>
 <!-- -- -- -- -- -- -- -- -- -- -- -- -- ---- -- --
 -- -- -- -- -- -- -- -- --- -- -- -- -- -- -- -- --
@@ -1230,7 +1219,6 @@ if($row){
 
 
 			<div role="tabpanel" class="tab-pane fade" id="profile" aria-labelledby="profile-tab">
-				<div class="shosurbari_user_biodata">
 				    <div class="biodatavalue_list">
 				    	<table class="biodata_value_data">
 							<h3>Family Details</h3>
@@ -1310,7 +1298,6 @@ if($row){
 							</tbody>
 				            </table>
 				        </div>
-				    </div>
 				</div>
 <!-- -- -- -- -- -- -- -- -- -- -- -- -- ---- -- --
 -- -- -- -- -- -- -- -- --- -- -- -- -- -- -- -- --
@@ -1389,7 +1376,6 @@ if($row){
 ?>	
 
 			<div role="tabpanel" class="tab-pane fade" id="profile1" aria-labelledby="profile-tab1">
-				<div class="shosurbari_user_biodata">
                     <div class="biodatavalue_list">
 				    	<table class="biodata_value_data">
 							<h3>Expected Partner</h3>
@@ -1470,7 +1456,6 @@ if($row){
 				            </table>
 				        </div>
 				    </div>
-				</div>
 
           
         </div>
