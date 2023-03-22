@@ -1514,16 +1514,18 @@ if($row){
 }
 
 .profile-img img {
-  border-radius: 4%;
   height: 175px;
   width: 175px;
   border: 5px solid #fff;
-  box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.2);
   position: absolute;
   left: 120px;
   top: 35px;
   z-index: 5;
-  background: #fff;
+
+
+  background: rgb(245, 242, 242);
+    border-radius: 50%;
+    box-shadow: 0px 2px 7px 6px rgba(0, 0, 0, 0.2);
 }
 
 .profile-nav-info {
@@ -1540,7 +1542,7 @@ if($row){
   flex-direction: column;
   justify-content: center;
   padding-top: 0px;
-  width: 35%;
+  width: auto;
 }
 
 .nav-tabs1 {
@@ -1579,6 +1581,7 @@ if($row){
 
 .right-side{
   width: 65%;
+  margin-top: 50px;
 }
 
 .separate_biodata_sector{
@@ -1592,11 +1595,29 @@ if($row){
 
 .biodatavalue_list{
   width: 100%;
+  margin-top: 25px;
+
 }
 .biodata_value_data{
   width: 100%;
 }
 
+
+.biodatavalue_list h3{
+  color: white;
+    font-size: 1.5em;
+    text-align: center;
+    background: #ff0080;
+    margin-bottom: 0px;
+    padding: 10px;
+    border-radius: 4px 4px 0px 0px;
+    border-bottom: 0px;
+    border-top: 2px;
+    border-left: 2px;
+    border-right: 2px;
+    border-color: #00bbff;
+    border-style: groove;
+}
 
 
 
@@ -1660,12 +1681,13 @@ if($row){
 
 .profile-side {
   width: 300px;
-  background: #fff;
-  box-shadow: 0px 3px 5px rgba(0, 0, 0, 0.2);
   padding: 90px 10px 10px;
   font-family: "Bree Serif", serif;
   margin: auto;
   z-index: 99;
+    background: rgb(245, 242, 242);
+    border-radius: 4px;
+    box-shadow: 0px 2px 7px 6px rgba(0, 0, 0, 0.2);
 }
 
 .profile-side p {
