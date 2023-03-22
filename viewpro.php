@@ -386,7 +386,71 @@ $('.clipboard').on('click', function() {
 </script>
 
 </div>
+
+
+
+
+
+<div class="sbbiodata_profile_recentview">
+        <h3>Profiles Recent View</h3>
+
+        <?php
+        $sql="SELECT * FROM 1bd_personal_physical  ORDER BY profilecreationdate ASC";
+            $result=mysqlexec($sql);
+            $count=1;
+            while($row=mysqli_fetch_assoc($result)){
+            $profid=$row['user_id'];
+			$Skin_tones=$row['Skin_tones'];
+			$height=$row['height'];
+			$dateofbirth=$row['dateofbirth'];
+
+			$sql3="SELECT * FROM 2bd_personal_lifestyle WHERE user_id=$profid";		
+			$result3=mysqlexec($sql3);
+			if($result3)
+			  while($row3=mysqli_fetch_assoc($result3))
+			  $occupation=$row3['occupation'];
+
+			  $sql4="SELECT * FROM 4bd_address_details WHERE user_id=$profid";		
+			  $result4=mysqlexec($sql4);
+			  if($result4)
+				while($row4=mysqli_fetch_assoc($result4))
+				$permanent_address=$row4['permanent_address'];
+	  
+
+
+            //getting photo
+            $sql="SELECT * FROM photos WHERE user_id=$profid";
+            $result2=mysqlexec($sql);
+            $photo=mysqli_fetch_assoc($result2);
+            $pic=$photo['pic1'];
+
+		   echo "<div class=\"biodatarecent_viewlist\">";
+		   echo "<div class=\"sbbio_header_recent_view\">";
+		   echo "<a href=\"view_profile.php?id={$profid}\" target=\"_blank\"> <img  class=\"img-responsive\" src=\"profile/{$profid}\/{$pic1}\"/></a>";
+		   echo "<div class=\"sbbio_number_recentview\"><span class=\"sb_biodatanumber_recentview\"> {$profid} <br> Biodata Number </span> </div>";
+		   echo "</div>";
+
+		   echo "<div class=\"sb_user_recentview\">
+		   <span class=\"sb_single_data_recentview\"> <span class=\"sb_value_recentview\"> Skin Tones </span>  <span class=\"sb_data_recentview\">{$Skin_tones}</span></span>
+		   <span class=\"sb_single_data_recentview\"> <span class=\"sb_value_recentview\"> Height </span>  <span class=\"sb_data_recentview\">{$height}</span></span>
+		   <span class=\"sb_single_data_recentview\"> <span class=\"sb_value_recentview\"> Occupation </span>      <span class=\"sb_data_recentview\"> {$occupation}</span></span>
+		   <span class=\"sb_single_data_recentview\"> <span class=\"sb_value_recentview\"> Address </span>      <span class=\"sb_data_recentview\"> {$permanent_address}</span></span>
+		   <span class=\"sb_single_data_recentview\"> <span class=\"sb_value_recentview\"> Birth Year</span>        <span class=\"sb_data_recentview\"> {$dateofbirth}</span></span>
+		   <a href=\"view_profile.php?id={$profid}\" target=\"_blank\"><button class=\"view_sb_profile_recentview\"> View Full Profile</button> </a>
+		   </div></div>";
+           $count++;
+		
+        }
+        ?>
+		
+    </div>
+
+
 </div>
+
+
+
+
 
 
 
@@ -1448,6 +1512,7 @@ if($row){
   position: relative;
   box-shadow: 0px 3px 4px rgba(0, 0, 0, 0.2);
   margin-top: -25px;
+  border: 1px solid #ccc;
 }
 
 
@@ -1858,6 +1923,7 @@ button.createbtn i {
   justify-content: center;
   margin: 20px auto;
 }
+
 </style>
 
 
