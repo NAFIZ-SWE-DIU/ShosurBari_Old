@@ -1757,7 +1757,7 @@ table {
   display: flex;
   white-space: nowrap;
   width: 60%;
-  margin-left: 0px;
+  margin: auto;
 }
 
 
