@@ -176,6 +176,7 @@ $present_address=$row['present_address'];
 
     <div class="left-side">
       <div class="profile-side">
+		
 
 
 
@@ -1491,13 +1492,15 @@ if($row){
 
 .profile-header {
   background: #fff;
-  width: 100%;
+  width: 95%;
   display: flex;
   height: 140px;
   position: relative;
   box-shadow: 0px 3px 4px rgba(0, 0, 0, 0.2);
   margin-top: -25px;
   border: 1px solid #ccc;
+  margin-left: auto;
+    margin-right: auto;
 }
 
 
@@ -1509,8 +1512,10 @@ if($row){
 
 .profile-img {
   float: left;
-  width: 26%;
+  width: 30%;
   height: 200px;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .profile-img img {
@@ -1521,13 +1526,10 @@ if($row){
   left: 120px;
   top: 35px;
   z-index: 5;
-
-
   background: rgb(245, 242, 242);
     border-radius: 50%;
     box-shadow: 0px 2px 7px 6px rgba(0, 0, 0, 0.2);
 }
-
 .profile-nav-info {
   float: left;
   display: flex;
@@ -1535,6 +1537,8 @@ if($row){
   justify-content: center;
   padding-top: 0px;
   width: 30%;
+  margin-left: auto;
+  margin-right: auto;
 }
 .see_sb_biodata{
   float: left;
@@ -1543,6 +1547,8 @@ if($row){
   justify-content: center;
   padding-top: 0px;
   width: auto;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .nav-tabs1 {
@@ -1582,6 +1588,8 @@ if($row){
 .right-side{
   width: 65%;
   margin-top: 50px;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .separate_biodata_sector{
@@ -1593,11 +1601,16 @@ if($row){
   width: 100%;
 }
 
-.biodatavalue_list{
-  width: 100%;
-  margin-top: 25px;
 
+  .biodatavalue_list {
+    width: 100%;
+    margin-top: 25px;
+    background: rgb(245, 242, 242);
+    border-radius: 4px;
+    box-shadow: 0px 2px 7px 6px rgba(0, 0, 0, 0.2);
+    padding: 15px;
 }
+
 .biodata_value_data{
   width: 100%;
 }
@@ -1677,17 +1690,30 @@ if($row){
 .main-bd {
   width: 100%;
   display: flex;
+  margin-left: auto;
+  margin-right: auto;
+}
+table {
+    max-width: 100%;
+    background-color: transparent;
+    margin: auto;
+}
+.biodatanumber_head{
+	width: 100%;
+	margin-left: auto;
+    margin-right: auto;
 }
 
 .profile-side {
-  width: 300px;
+  width: 83%;
   padding: 90px 10px 10px;
   font-family: "Bree Serif", serif;
-  margin: auto;
   z-index: 99;
     background: rgb(245, 242, 242);
-    border-radius: 4px;
+    border-radius: 0px 0px 4px 4px;
     box-shadow: 0px 2px 7px 6px rgba(0, 0, 0, 0.2);
+	margin-left: auto;
+  margin-right: auto;
 }
 
 .profile-side p {
