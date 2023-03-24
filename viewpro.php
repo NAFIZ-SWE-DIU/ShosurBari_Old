@@ -1760,7 +1760,6 @@ table {
   margin: auto;
 }
 
-
 button.chatbtn,
 button.createbtn {
   border: 0;
