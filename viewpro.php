@@ -1756,7 +1756,7 @@ table {
 .profile-btn {
   display: flex;
   white-space: nowrap;
-  width: 100%;
+  width: 60%;
   margin-left: 0px;
 }
 
