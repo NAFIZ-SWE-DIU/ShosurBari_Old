@@ -143,11 +143,14 @@ $row=mysqli_fetch_assoc($result);
 //Biodata 4
 if($row){
 $present_address=$row['present_address'];
+$profilecreationdate=$row['profilecreationdate'];
+
 }
 ?>
       <div class="address">
       <?php if (!empty ($present_address)) { ?>
-		<td class="day_value closed"> Present Address : <?php echo $present_address;?> </td>
+		<td class="day_value closed"> Present Address : <?php echo $present_address;?> </td> <br>
+		<td class="day_value closed"> Profile Create : <?php echo $profilecreationdate;?> </td>
 		<?php } ?>
       </div>
     </div>
@@ -419,11 +422,29 @@ $('.clipboard').on('click', function() {
 	  
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+				
+
             //getting photo
-            $sql="SELECT * FROM photos WHERE user_id=$profid";
-            $result2=mysqlexec($sql);
-            $photo=mysqli_fetch_assoc($result2);
-            $pic=$photo['pic1'];
+            $sql2="SELECT * FROM photos WHERE user_id=$profid";
+            $result2=mysqlexec($sql2);
+            $row2=mysqli_fetch_assoc($result2);
+			$pic1=$row2['pic1'];
 
 		   echo "<div class=\"biodatarecent_viewlist\">";
 		   echo "<div class=\"sbbio_header_recent_view\">";
@@ -443,7 +464,6 @@ $('.clipboard').on('click', function() {
 		
         }
         ?>
-		
     </div>
 
 
