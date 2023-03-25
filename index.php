@@ -474,12 +474,12 @@ $(document).ready(function(){
 						//got profilepic
 						//
 					//Printing the html
-					echo "<li><div class=\"col_1\"><a href=\"view_profile.php?id={$profid}\">";
+					echo "<li><div class=\"col_1\"><a href=\"viewpro.php?id={$profid}\">";
 					echo "<img src=\"profile/{$profid}\/{$pic1}\" alt=\"\" class=\"hover-animation image-zoom-in img-responsive\"/>";
 					echo "<div class=\"layer m_1 hidden-link hover-animation delay1 fade-in\">";
 					echo "<div class=\"center-middle\" style=\"color:#fff;\">About {$name}</div>";
 					echo "</div>";
-					echo "<h3><span style=\"color:#02a7e6; font-size:13px;\" class=\"m_3\">Biodata Number : {$profid}</span><br>
+					echo "<h3><span style=\"color:#00bbff; font-size:13px;\" class=\"m_3\">Biodata Number : {$profid}</span><br>
 					<span style=\"color:black; font-size:13px;\"> Gender :</span> <span style=\"color:#ff0080; font-size:12px;\"> {$biodatagender}</span><br>
 					<span style=\"color:black; font-size:13px;\"> Occupation :</span> <span style=\"color:#ff0080; font-size:12px;\"> {$occupation}</span><br>
 					<span style=\"color:black; font-size:13px;\"> Religion :</span> <span style=\"color:#ff0080; font-size:12px;\"> {$religion}</span> <br>
