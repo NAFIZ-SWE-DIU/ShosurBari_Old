@@ -419,25 +419,6 @@ $('.clipboard').on('click', function() {
 			  if($result4)
 				while($row4=mysqli_fetch_assoc($result4))
 				$permanent_address=$row4['permanent_address'];
-	  
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 				
 
             //getting photo
@@ -458,10 +439,9 @@ $('.clipboard').on('click', function() {
 		   <span class=\"sb_single_data_recentview\"> <span class=\"sb_value_recentview\"> Occupation </span>      <span class=\"sb_data_recentview\"> {$occupation}</span></span>
 		   <span class=\"sb_single_data_recentview\"> <span class=\"sb_value_recentview\"> Address </span>      <span class=\"sb_data_recentview\"> {$permanent_address}</span></span>
 		   <span class=\"sb_single_data_recentview\"> <span class=\"sb_value_recentview\"> Birth Year</span>        <span class=\"sb_data_recentview\"> {$dateofbirth}</span></span>
-		   <a href=\"view_profile.php?id={$profid}\" target=\"_blank\"><button class=\"view_sb_profile_recentview\"> View Full Profile</button> </a>
+		   <a href=\"viewpro.php?id={$profid}\" target=\"_blank\"><button class=\"view_sb_profile_recentview\"> View Full Profile</button> </a>
 		   </div></div>";
            $count++;
-		
         }
         ?>
     </div>
