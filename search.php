@@ -53,10 +53,6 @@ $(document).ready(function(){
 
 <div class="flex-container-shosurbaribio">
 
-
-
-
-
 <style>
   .sbbiodata-search form{
     width: 90%;
@@ -1469,9 +1465,6 @@ function countBiodata() {
 
 </form>
 </div>
-
-
-
 </div>
 </div>
 
@@ -1534,19 +1527,17 @@ function countBiodata() {
 
 
 
-       	<div class="heart-divider">
-        <h1>Find your perfect <span>Partner</span></h1>
+<div class="heart-divider">
+      <h1>Find your perfect <span>Partner</span></h1>
 			<span class="grey-line"></span>
 			<i class="fa fa-heart pink-heart"></i>
 			<i class="fa fa-heart grey-heart"></i>
 			<span class="grey-line"></span>
 
 
-  <div class="total_biodata">
-  <h4>Total Profile Found: 
-  <span class="total"></span> </h4>
-</div>
-
+    <div class="total_biodata">
+      <h4>Total Profile Found: <span class="total"></span> </h4>
+    </div>
 </div>
 
 
@@ -2803,7 +2794,7 @@ if(isset($_POST['search'])){
                     <span class=\"sb_single_data\"> <span class=\"sb_value\"> Height </span>  <span class=\"sb_data\">{$height}</span></span>
 					<span class=\"sb_single_data\"> <span class=\"sb_value\"> Occupation </span>      <span class=\"sb_data\"> {$occupation}</span></span>
 					<span class=\"sb_single_data\"> <span class=\"sb_value\"> Birth Year</span>        <span class=\"sb_data\"> {$dateofbirth}</span></span>
-                    <button class=\"view_sb_profile\"><a href=\"view_profile.php?id={$profid}\" target=\"_blank\"> View Full Profile </a></button>
+          <a href=\"viewpro.php?id={$profid}\" target=\"_blank\"> <button class=\"view_sb_profile\"> View Full Profile</button></a>
                     </div></div>";
 
         	}
