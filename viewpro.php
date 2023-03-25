@@ -120,7 +120,7 @@ $(document).ready(function(){
 
   <div class="profile-header">  <!-- a profile-header div -->
 
-        <div class="profile-img">
+            <div class="profile-img">
 			    <img src="profile/<?php echo $profileid;?>/<?php echo $pic1;?>" />
 		    </div>
 
@@ -1512,7 +1512,7 @@ if($row){
 
 .profile-img {
   float: left;
-  width: 30%;
+  width: 24.666%;
   height: 200px;
   margin-left: auto;
   margin-right: auto;
@@ -1523,7 +1523,7 @@ if($row){
   width: 175px;
   border: 5px solid #fff;
   position: absolute;
-  left: 120px;
+  left: auto;
   top: 35px;
   z-index: 5;
   background: rgb(245, 242, 242);
@@ -1536,7 +1536,7 @@ if($row){
   flex-direction: column;
   justify-content: center;
   padding-top: 0px;
-  width: 30%;
+  width: 31.66%;
   margin-left: auto;
   margin-right: auto;
 }
@@ -1849,13 +1849,28 @@ button.createbtn i {
     width: 250px;
     padding: 90px 15px 20px;
   }
+  .profile-img {
+    width: 25%;
+}
 
   .profile-img img {
-    height: 200px;
-    width: 200px;
-    left: 50px;
-    top: 50px;
+    height: 170px;
+    width: 170px;
+    left: 40px;
+    top: 30px;
   }
+  .profile-nav-info {
+    width: 24%;
+}
+  .profile-nav-info h3 {
+    font-size: 22px;
+}
+.profile-nav-info .address {
+    font-size: 12px;
+}
+.nav-tabs1 {
+    font-size: 14px;
+}
 }
 
 @media (max-width: 900px) {
