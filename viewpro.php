@@ -1458,6 +1458,10 @@ if($row){
 				        </div>
 				    </div>
 
+
+			    <div class="profile-btn2">
+                <a href="contactbiodata.php" target="_blank"> <button class="chatbtn" id="chatBtn"><i class="fa fa-phone"></i> Contact</button></a>
+                 </div>
           
         </div>
       </div>
@@ -1477,12 +1481,61 @@ if($row){
 
 
 
+<div class="sbbiodata_profile_recentview-mobile">
+        <h3>Profiles Recent View</h3>
+
+        <?php
+        $sql="SELECT * FROM 1bd_personal_physical  ORDER BY profilecreationdate ASC";
+            $result=mysqlexec($sql);
+            $count=1;
+            while($row=mysqli_fetch_assoc($result)){
+            $profid=$row['user_id'];
+			$Skin_tones=$row['Skin_tones'];
+			$height=$row['height'];
+			$dateofbirth=$row['dateofbirth'];
+
+			$sql3="SELECT * FROM 2bd_personal_lifestyle WHERE user_id=$profid";		
+			$result3=mysqlexec($sql3);
+			if($result3)
+			  while($row3=mysqli_fetch_assoc($result3))
+			  $occupation=$row3['occupation'];
+
+			  $sql4="SELECT * FROM 4bd_address_details WHERE user_id=$profid";		
+			  $result4=mysqlexec($sql4);
+			  if($result4)
+				while($row4=mysqli_fetch_assoc($result4))
+				$permanent_address=$row4['permanent_address'];
+				
+
+            //getting photo
+            $sql2="SELECT * FROM photos WHERE user_id=$profid";
+            $result2=mysqlexec($sql2);
+            $row2=mysqli_fetch_assoc($result2);
+			$pic1=$row2['pic1'];
+
+		   echo "<div class=\"biodatarecent_viewlist\">";
+		   echo "<div class=\"sbbio_header_recent_view\">";
+		   echo "<a href=\"view_profile.php?id={$profid}\" target=\"_blank\"> <img  class=\"img-responsive\" src=\"profile/{$profid}\/{$pic1}\"/></a>";
+		   echo "<div class=\"sbbio_number_recentview\"><span class=\"sb_biodatanumber_recentview\"> {$profid} <br> Biodata Number </span> </div>";
+		   echo "</div>";
+
+		   echo "<div class=\"sb_user_recentview\">
+		   <span class=\"sb_single_data_recentview\"> <span class=\"sb_value_recentview\"> Skin Tones </span>  <span class=\"sb_data_recentview\">{$Skin_tones}</span></span>
+		   <span class=\"sb_single_data_recentview\"> <span class=\"sb_value_recentview\"> Height </span>  <span class=\"sb_data_recentview\">{$height}</span></span>
+		   <span class=\"sb_single_data_recentview\"> <span class=\"sb_value_recentview\"> Occupation </span>      <span class=\"sb_data_recentview\"> {$occupation}</span></span>
+		   <span class=\"sb_single_data_recentview\"> <span class=\"sb_value_recentview\"> Address </span>      <span class=\"sb_data_recentview\"> {$permanent_address}</span></span>
+		   <span class=\"sb_single_data_recentview\"> <span class=\"sb_value_recentview\"> Birth Year</span>        <span class=\"sb_data_recentview\"> {$dateofbirth}</span></span>
+		   <a href=\"viewpro.php?id={$profid}\" target=\"_blank\"><button class=\"view_sb_profile_recentview\"> View Full Profile</button> </a>
+		   </div></div>";
+           $count++;
+        }
+        ?>
+    </div>
+
 
 
 
 <style>
-@import url("https://fonts.googleapis.com/css?family=Poppins&display=swap");
-@import url("https://fonts.googleapis.com/css?family=Bree+Serif&display=swap");
 
 .UserProfile{
     width: 100%;
@@ -1502,10 +1555,6 @@ if($row){
   margin-left: auto;
     margin-right: auto;
 }
-
-
-
-
 
 
 
@@ -1633,59 +1682,6 @@ if($row){
 }
 
 
-
-.profile-option {
-  width: 40px;
-  height: 40px;
-  position: absolute;
-  right: 50px;
-  top: 50%;
-  transform: translateY(-50%);
-  border-radius: 50%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  cursor: pointer;
-  transition: all 0.5s ease-in-out;
-  outline: none;
-  background: #e40046;
-}
-
-.profile-option:hover {
-  background: #fff;
-  border: 1px solid #e40046;
-}
-.profile-option:hover .notification i {
-  color: #e40046;
-}
-
-.profile-option:hover span {
-  background: #e40046;
-}
-
-.profile-option .notification i {
-  color: #fff;
-  font-size: 1.2rem;
-  transition: all 0.5s ease-in-out;
-}
-
-.profile-option .notification .alert-message {
-  position: absolute;
-  top: -5px;
-  right: -5px;
-  background: #fff;
-  color: #e40046;
-  border: 1px solid #e40046;
-  padding: 5px;
-  border-radius: 50%;
-  height: 20px;
-  width: 20px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  font-size: 0.8rem;
-  font-weight: bold;
-}
 
 .main-bd {
   width: 100%;
@@ -1844,6 +1840,60 @@ button.createbtn i {
   text-align: center;
 }
 
+
+@media (max-width:1320px){
+	.biodatarecent_viewlist {
+    width: 75%;
+	margin-left: auto;
+}
+.sb_user_recentview .sb_value_recentview {
+    font-size: 14px;
+}
+.sb_user_recentview .sb_data_recentview {
+    font-size: 14px;
+}
+}
+
+
+
+@media (max-width:1280px){
+	.profile-side {
+    width: 250px;
+    padding: 90px 15px 20px;
+}
+
+  .profile-img {
+    width: 25%;
+}
+
+  .profile-img img {
+    height: 170px;
+    width: 170px;
+    left: 40px;
+    top: 30px;
+}
+
+  .profile-nav-info {
+    width: 24%;
+	margin: auto;
+}
+
+  .profile-nav-info h3 {
+    font-size: 25px;
+}
+
+  .profile-nav-info .address {
+    font-size: 15px;
+}
+
+  .nav-tabs1 {
+    font-size: 14px;
+}
+}
+
+
+
+
 @media (max-width: 1100px) {
   .profile-side {
     width: 250px;
@@ -1860,20 +1910,32 @@ button.createbtn i {
     top: 30px;
   }
   .profile-nav-info {
-    width: 24%;
+    width: 22%;
+	margin: auto;
 }
   .profile-nav-info h3 {
-    font-size: 22px;
+    font-size: 24px;
 }
 .profile-nav-info .address {
-    font-size: 12px;
+    font-size: 14px;
 }
 .nav-tabs1 {
     font-size: 14px;
 }
+
+.biodatarecent_viewlist {
+    width: 78%;
+}
+.sb_user_recentview .sb_value_recentview {
+    font-size: 13px;
+}
+.sb_user_recentview .sb_data_recentview {
+    font-size: 13px;
+}
 }
 
-@media (max-width: 900px) {
+
+@media (max-width: 930px) {
 
   .profile-header {
     display: flex;
@@ -1898,24 +1960,37 @@ button.createbtn i {
 
   .profile-nav-info {
     text-align: center;
+	width: 90%;
+    margin: auto;
+    margin-top: 60px;
+    margin-bottom: 30px;
   }
 
-  .profile-option {
-    right: 20px;
-    top: 75%;
-    transform: translateY(50%);
-  }
 
   .main-bd {
     flex-direction: column;
     padding-right: 0;
   }
 
+  .left-side {
+    width: 50%;
+	margin-top: 30px;
+	margin-left: auto;
+    margin-right: auto;
+}
+
+.right-side {
+    width: 80%;
+    margin-top: 50px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
   .profile-side {
     width: 100%;
     text-align: center;
     padding: 20px;
-    margin: 5px 0;
+    margin: auto;
   }
 
   .profile-nav-info .address {
@@ -1925,109 +2000,129 @@ button.createbtn i {
   .user-rating {
     justify-content: center;
   }
+  
+  .sbbiodata_profile_recentview{
+	display: none;
+  }
+  .sbbiodata_profile_recentview-mobile h3{
+    text-align: center;
+    width: 100%;
 }
 
-@media (max-width: 400px) {
-
-  .profile-header h3 {
-  }
-
-  .profile-option {
-    width: 30px;
-    height: 30px;
-    position: absolute;
-    right: 15px;
-    top: 83%;
-  }
-
-  .profile-option .notification .alert-message {
-    top: -3px;
-    right: -4px;
-    padding: 4px;
-    height: 15px;
-    width: 15px;
-    font-size: 0.7rem;
-  }
-
-  .profile-nav-info h3 {
-    font-size: 1.9rem;
-  }
-
-  .profile-nav-info .address p,
-  .profile-nav-info .address span {
-    font-size: 0.7rem;
-  }
-}
-#see-more-bio,
-#see-less-bio {
-  color: blue;
-  cursor: pointer;
-  text-transform: lowercase;
-}
-.tab h1 {
-  font-family: "Bree Serif", sans-serif;
-  display: flex;
-  justify-content: center;
-  margin: 20px auto;
+.sbbiodata_profile_recentview-mobile{
+    width: auto;
+	display: flex;
+    flex-wrap: wrap;
+    margin-top: 80px;
+    margin-bottom: 0px;
+    margin-right: 10px;
+    margin-left: 10px;
+    padding: 0px;
 }
 
+.biodatarecent_viewlist {
+    width: 30%;
+}
+.sb_user_recentview .sb_value_recentview {
+    font-size: 14px;
+}
+.sb_user_recentview .sb_data_recentview {
+    font-size: 14px;
+}
+}
+
+@media only screen and (min-width: 930px) {
+    .sbbiodata_profile_recentview-mobile{
+      display: none;
+    }
+  }
+
+  @media (max-width:768px){
+	.left-side {
+    width: 60%;
+}
+
+.biodatarecent_viewlist {
+    width: 31%;
+}
+.sb_user_recentview .sb_value_recentview {
+    font-size: 12px;
+}
+.sb_user_recentview .sb_data_recentview {
+    font-size: 12px;
+}
+}
+
+@media (max-width:600px){
+	.left-side {
+    width: 60%;
+}
+
+.biodatarecent_viewlist {
+    width: 46%;
+}
+.sb_user_recentview .sb_value_recentview {
+    font-size: 13px;
+}
+.sb_user_recentview .sb_data_recentview {
+    font-size: 13px;
+}
+}
+
+@media (max-width:480px){
+	.left-side {
+    width: 60%;
+}
+
+.biodatarecent_viewlist {
+    width: 48%;
+}
+.sb_user_recentview .sb_value_recentview {
+    font-size: 12px;
+	width: 42%;
+}
+.sb_user_recentview .sb_data_recentview {
+    font-size: 12px;
+	width: 58%;
+}
+}
+
+@media (max-width:384px){
+	.left-side {
+    width: 72%;
+}
+
+.biodatarecent_viewlist {
+    width: 70%;
+}
+.sb_user_recentview .sb_value_recentview {
+    font-size: 14px;
+	width: 40%;
+}
+.sb_user_recentview .sb_data_recentview {
+    font-size: 14px;
+	width: 60%;
+}
+}
+
+@media (max-width:320px){
+	.left-side {
+    width: 85%;
+}
+
+.biodatarecent_viewlist {
+    width: 70%;
+}
+.sb_user_recentview .sb_value_recentview {
+    font-size: 12px;
+	width: 40%;
+}
+.sb_user_recentview .sb_data_recentview {
+    font-size: 12px;
+	width: 60%;
+}
+}
 </style>
-
-
-
-
-
-
-
-
-
-<script>
-    $(".nav ul li").click(function() {
-  $(this)
-    .addClass("active")
-    .siblings()
-    .removeClass("active");
-});
-
-const tabBtn = document.querySelectorAll(".nav ul li");
-const tab = document.querySelectorAll(".tab");
-
-function tabs(panelIndex) {
-  tab.forEach(function(node) {
-    node.style.display = "none";
-  });
-  tab[panelIndex].style.display = "block";
-}
-tabs(0);
-
-let bio = document.querySelector(".bio");
-const bioMore = document.querySelector("#see-more-bio");
-const bioLength = bio.innerText.length;
-
-function bioText() {
-  bio.oldText = bio.innerText;
-
-  bio.innerText = bio.innerText.substring(0, 100) + "...";
-  bio.innerHTML += `<span onclick='addLength()' id='see-more-bio'>See More</span>`;
-}
-//        console.log(bio.innerText)
-
-bioText();
-
-function addLength() {
-  bio.innerText = bio.oldText;
-  bio.innerHTML +=
-    "&nbsp;" + `<span onclick='bioText()' id='see-less-bio'>See Less</span>`;
-  document.getElementById("see-less-bio").addEventListener("click", () => {
-    document.getElementById("see-less-bio").style.display = "none";
-  });
-}
-if (document.querySelector(".alert-message").innerText > 9) {
-  document.querySelector(".alert-message").style.fontSize = ".7rem";
-}
-
-    </script>
-
 
 
 
