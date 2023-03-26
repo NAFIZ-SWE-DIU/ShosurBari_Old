@@ -3940,9 +3940,6 @@ border-radius: 5px 5px 0px 0px;
 --                                               --
 -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- ---
 -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -*/
-/* background: #00bbff;
-   background: #ff0080;
-*/
 
 .sbbiodata_profile_recentview {
     display: flex;
@@ -3951,7 +3948,7 @@ border-radius: 5px 5px 0px 0px;
     margin-top: 80px;
     margin-bottom: 0px;
     margin-right: auto;
-    margin-left: auto;
+    margin-left: 17px;
     padding: 0px;
 }
 
@@ -3963,7 +3960,7 @@ border-radius: 5px 5px 0px 0px;
 .biodatarecent_viewlist{
     border: 1px solid #ccc;
     border-radius: 6px;
-    width: 60%;
+    width: 47%;
     gap: 1.5rem;
     padding: 0px;
     margin-left: auto;
@@ -4047,22 +4044,22 @@ border-radius: 5px 5px 0px 0px;
 .sb_user_recentview .sb_value_recentview{
     color: black;
     padding: 3px;
-    font-size: 12px;
+    font-size: 13px;
     font-weight: 400;
     border: 1px solid #d5d5d5;
     border-style: groove;
-    width: 40%;
+    width: 42%;
     position: inherit;
 }
 
 .sb_user_recentview .sb_data_recentview{
     color: black;
     padding: 3px;
-    font-size: 12px;
+    font-size: 13px;
     font-weight: 400;
     border: 1px solid #d5d5d5;
     border-style: groove;
-    width: 60%;
+    width: 58%;
     position: inherit;
 }
 
@@ -4090,6 +4087,38 @@ border-radius: 5px 5px 0px 0px;
 -- -- -- -- -- -- -- -- --- -- -- -- -- -- -- -- --
 --                 E    N    D                   --
 -- User Profile View Page / Recent View Profile  --
+--                                               --
+-- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- ---
+-- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -*/
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*-- -- -- -- -- -- -- -- -- -- -- -- -- ---- -- --
+-- -- -- -- -- -- -- -- --- -- -- -- -- -- -- -- --
+--                S  T  A  R  T                  --
+-- User Profile View / Single User Profile View  --
+--                                               --
+-- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- ---
+-- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -*/
+
+
+
+/*-- -- -- -- -- -- -- -- -- -- -- -- -- ---- -- --
+-- -- -- -- -- -- -- -- --- -- -- -- -- -- -- -- --
+--                 E    N    D                   --
+-- User Profile View / Single User Profile View  --
 --                                               --
 -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- ---
 -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -*/
