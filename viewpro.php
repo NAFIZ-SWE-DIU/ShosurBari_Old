@@ -1631,7 +1631,7 @@ if($row){
 }
 
 .left-side{
-  width: 30%;
+  width: 33%;
 }
 
 .right-side{
@@ -1709,7 +1709,7 @@ table {
     border-radius: 0px 0px 4px 4px;
     box-shadow: 0px 2px 7px 6px rgba(0, 0, 0, 0.2);
 	margin-left: auto;
-  margin-right: auto;
+    margin-right: auto;
 }
 
 .profile-side p {
@@ -1857,24 +1857,49 @@ button.createbtn i {
 
 
 @media (max-width:1320px){
-	.biodatarecent_viewlist {
-    width: 75%;
-	margin-left: auto;
+.left-side{
+  width: 30%;
 }
+
 .sb_user_recentview .sb_value_recentview {
     font-size: 14px;
 }
 .sb_user_recentview .sb_data_recentview {
     font-size: 14px;
 }
+
+
+.sbbiodata_profile_recentview {
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+    margin-top: 80px;
+    margin-bottom: 0px;
+    margin-right: auto;
+    margin-left: auto;
+    padding: 0px;
+}
+
+.biodatarecent_viewlist{
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    width: 47%;
+    gap: 1.5rem;
+    padding: 0px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: auto;
+    margin-top: 30px;
+    background: white;
+    transition: transform .2s;
+}
 }
 
 
 
 @media (max-width:1280px){
-	.profile-side {
-    width: 250px;
-    padding: 90px 15px 20px;
+	.biodatarecent_viewlist{
+    width: 90%;
 }
 
   .profile-img {
@@ -1910,10 +1935,7 @@ button.createbtn i {
 
 
 @media (max-width: 1100px) {
-  .profile-side {
-    width: 270px;
-    padding: 90px 15px 20px;
-  }
+
   .profile-img {
     width: 25%;
 }
@@ -1938,21 +1960,6 @@ button.createbtn i {
     font-size: 14px;
 }
 
-.biodatarecent_viewlist {
-    width: 78%;
-}
-.sb_user_recentview .sb_value_recentview {
-    font-size: 13px;
-}
-.sb_user_recentview .sb_data_recentview {
-    font-size: 13px;
-}
-.biodatavalue_list {
-    width: 97%;
-}
-.left-side {
-    width: 34%;
-}
 }
 
 
@@ -2143,6 +2150,142 @@ button.createbtn i {
 	width: 60%;
 }
 }
+
+
+
+
+
+
+
+/*-- -- -- -- -- -- -- -- -- -- -- -- -- ---- -- --
+-- -- -- -- -- -- -- -- --- -- -- -- -- -- -- -- --
+--                S  T  A  R  T                  --
+-- User Profile View Page / Recent View Profile  --
+--                                               --
+-- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- ---
+-- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -*/
+
+
+.biodatarecent_viewlist h3{
+    margin-bottom: auto;
+    margin-top: 30px;
+}
+
+.biodatarecent_viewlist:hover{
+    background: #00bbff27;
+    box-shadow: 0 4px 8px 0 rgb(0 0 0 / 20%), 0 6px 20px 0 rgb(0 0 0 / 19%);
+    transform: scale(1.03); 
+}
+
+.sbbio_header_recent_view{
+background: #ff0080;
+margin: 0px;
+padding-top: 10px;
+border: 1px solid #00bbff;
+border-radius: 5px 5px 0px 0px;
+}
+
+.biodatarecent_viewlist img{
+    width: 75px;
+    height: 70px;
+    border-radius: 50%;
+    padding: 2px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: auto;
+    margin-top: 0px;
+    border: 1px solid #ccc;
+}
+
+.sbbio_number_recentview{
+    text-align: center;
+    padding: 2px;
+    border-bottom-left-radius: 5px;
+    border-bottom-right-radius: 5px;
+    background: #ff0080;
+    line-height: 1.1;
+    margin-bottom: 2px;
+    margin-top: 2px;
+}
+.sb_biodatanumber_recentview{
+    font-size: 15px;
+    color: yellow;
+    font-weight: 500;
+}
+
+.sb_user_recentview{
+    text-align: center;
+    padding: 3px 3px 3px;
+    border-bottom-left-radius: 5px;
+    border-bottom-right-radius: 5px;
+}
+
+.sb_single_data_recentview{
+    display: flex;
+    flex-wrap: wrap;
+    padding-top: 0px;
+    padding-bottom: 0px;
+    margin-top: 0px;
+    margin-bottom: 0px;
+}
+
+.sb_user_recentview .sb_single_data_recentview{
+    display: flex;
+    flex-wrap: wrap;
+    padding-top: 0px;
+    padding-bottom: 0px;
+}
+
+.sb_user_recentview .sb_value_recentview{
+    color: black;
+    padding: 3px;
+    font-size: 13px;
+    font-weight: 400;
+    border: 1px solid #d5d5d5;
+    border-style: groove;
+    width: 42%;
+    position: inherit;
+}
+
+.sb_user_recentview .sb_data_recentview{
+    color: black;
+    padding: 3px;
+    font-size: 13px;
+    font-weight: 400;
+    border: 1px solid #d5d5d5;
+    border-style: groove;
+    width: 58%;
+    position: inherit;
+}
+
+.view_sb_profile_recentview{
+    text-align: center;
+    border: 1px solid #d5d5d5;
+    padding: 2px;
+    margin-top: 7px;
+    margin-bottom: 5px;
+    border-radius: 5px;
+    background: #ff0080;
+    color: white;
+    width:100%;
+    font-size: 15px;
+}
+
+.view_sb_profile_recentview:hover{
+  background:#00bbff;
+}
+
+.view_sb_profile_recentview a{
+  color: white;
+}
+/*-- -- -- -- -- -- -- -- -- -- -- -- -- ---- -- --
+-- -- -- -- -- -- -- -- --- -- -- -- -- -- -- -- --
+--                 E    N    D                   --
+-- User Profile View Page / Recent View Profile  --
+--                                               --
+-- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- ---
+-- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -*/
+
 </style>
 
 
@@ -2161,6 +2304,9 @@ $(window).load(function() {
   });
 });
 </script> 
+
+
+
 
 
 </body>
