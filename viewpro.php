@@ -1545,7 +1545,7 @@ if($row){
 
 .profile-header {
   background: #fff;
-  width: 95%;
+  width: 100%;
   display: flex;
   height: 140px;
   position: relative;
@@ -1638,7 +1638,7 @@ if($row){
   width: 65%;
   margin-top: 50px;
   margin-left: auto;
-  margin-right: auto;
+  margin-right: 0;
 }
 
 .separate_biodata_sector{
@@ -1701,7 +1701,7 @@ table {
 }
 
 .profile-side {
-  width: 83%;
+  width: 100%;
   padding: 90px 10px 10px;
   font-family: "Bree Serif", serif;
   z-index: 99;
@@ -1841,6 +1841,21 @@ button.createbtn i {
 }
 
 
+@media (min-width:1600px){
+.UserProfile {
+    width: 90%;
+	margin: auto;
+}
+}
+
+@media (max-width:1600px){
+.UserProfile {
+    width: 90%;
+	margin: auto;
+}
+}
+
+
 @media (max-width:1320px){
 	.biodatarecent_viewlist {
     width: 75%;
@@ -1896,7 +1911,7 @@ button.createbtn i {
 
 @media (max-width: 1100px) {
   .profile-side {
-    width: 250px;
+    width: 270px;
     padding: 90px 15px 20px;
   }
   .profile-img {
@@ -1931,6 +1946,12 @@ button.createbtn i {
 }
 .sb_user_recentview .sb_data_recentview {
     font-size: 13px;
+}
+.biodatavalue_list {
+    width: 97%;
+}
+.left-side {
+    width: 34%;
 }
 }
 
