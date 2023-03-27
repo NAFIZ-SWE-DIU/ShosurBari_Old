@@ -1885,7 +1885,7 @@ button.createbtn i {
 }
 
   .profile-nav-info {
-    width: 24%;
+    width: 26%;
 	margin: auto;
 }
 
@@ -1918,14 +1918,14 @@ button.createbtn i {
     top: 30px;
   }
   .profile-nav-info {
-    width: 22%;
+    width: 24%;
 	margin: auto;
 }
   .profile-nav-info h3 {
-    font-size: 24px;
+    font-size: 23px;
 }
 .profile-nav-info .address {
-    font-size: 14px;
+    font-size: 12px;
 }
 .nav-tabs1 {
     font-size: 14px;
