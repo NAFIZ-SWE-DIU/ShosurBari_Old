@@ -1631,7 +1631,7 @@ if($row){
 }
 
 .left-side{
-  width: 33%;
+  width: 32%;
 }
 
 .right-side{
@@ -1856,9 +1856,14 @@ button.createbtn i {
 }
 
 
-@media (max-width:1320px){
-.left-side{
-  width: 30%;
+
+.biodatarecent_viewlist{
+    width: 47%;
+}
+
+@media (max-width:1280px){
+	.biodatarecent_viewlist{
+    width: 85%;
 }
 
 .sb_user_recentview .sb_value_recentview {
@@ -1866,40 +1871,6 @@ button.createbtn i {
 }
 .sb_user_recentview .sb_data_recentview {
     font-size: 14px;
-}
-
-
-.sbbiodata_profile_recentview {
-    display: flex;
-    flex-wrap: wrap;
-    width: 100%;
-    margin-top: 80px;
-    margin-bottom: 0px;
-    margin-right: auto;
-    margin-left: auto;
-    padding: 0px;
-}
-
-.biodatarecent_viewlist{
-    border: 1px solid #ccc;
-    border-radius: 6px;
-    width: 47%;
-    gap: 1.5rem;
-    padding: 0px;
-    margin-left: auto;
-    margin-right: auto;
-    margin-bottom: auto;
-    margin-top: 30px;
-    background: white;
-    transition: transform .2s;
-}
-}
-
-
-
-@media (max-width:1280px){
-	.biodatarecent_viewlist{
-    width: 90%;
 }
 
   .profile-img {
@@ -2068,16 +2039,17 @@ button.createbtn i {
   @media (max-width:768px){
 	.left-side {
     width: 60%;
+	
 }
 
 .biodatarecent_viewlist {
-    width: 31%;
+    width: 45%;
 }
 .sb_user_recentview .sb_value_recentview {
-    font-size: 12px;
+    font-size: 14px;
 }
 .sb_user_recentview .sb_data_recentview {
-    font-size: 12px;
+    font-size: 14px;
 }
 }
 
@@ -2131,6 +2103,14 @@ button.createbtn i {
     font-size: 14px;
 	width: 60%;
 }
+
+a#profile-tab, a#home-tab, a#profile-tab1 {
+    font-size: 12px;
+	padding: 3px;
+}
+.nav-tabs1>li.active>a, .nav-tabs1>li.active>a:focus, .nav-tabs1>li.active>a:hover {
+    margin: 3px;
+}
 }
 
 @media (max-width:320px){
@@ -2149,6 +2129,24 @@ button.createbtn i {
     font-size: 12px;
 	width: 60%;
 }
+
+a#profile-tab, a#home-tab, a#profile-tab1 {
+    font-size: 14px;
+	padding: 5px;
+}
+.nav-tabs1>li.active>a, .nav-tabs1>li.active>a:focus, .nav-tabs1>li.active>a:hover {
+    margin: 5px;
+}
+
+.nav-tabs1 {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 0px;
+    margin: 0px;
+    white-space: normal;
+  }
 }
 
 
@@ -2243,7 +2241,7 @@ border-radius: 5px 5px 0px 0px;
     font-weight: 400;
     border: 1px solid #d5d5d5;
     border-style: groove;
-    width: 42%;
+    width: 45%;
     position: inherit;
 }
 
@@ -2254,7 +2252,7 @@ border-radius: 5px 5px 0px 0px;
     font-weight: 400;
     border: 1px solid #d5d5d5;
     border-style: groove;
-    width: 58%;
+    width: 55%;
     position: inherit;
 }
 
