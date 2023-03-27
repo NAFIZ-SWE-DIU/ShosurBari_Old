@@ -3948,7 +3948,7 @@ border-radius: 5px 5px 0px 0px;
     margin-top: 80px;
     margin-bottom: 0px;
     margin-right: auto;
-    margin-left: 17px;
+    margin-left: auto;
     padding: 0px;
 }
 
@@ -5215,10 +5215,10 @@ h6{
 -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -*/
     @media (max-width: 540px){
         td.day_value {
-            font-size: 12px;
+            font-size: 13px;
         }
         td.day_label {
-            font-size: 12px;
+            font-size: 13px;
         }
         h1{
             font-size: 32px;
@@ -5404,10 +5404,10 @@ ul.profile_item{
     margin-right: auto;
 }
 td.day_value {
-    font-size: 10px;
+    font-size: 12px;
 }
 td.day_label {
-    font-size: 10px;
+    font-size: 12px;
 }
 h1{
     font-size: 32px;
@@ -5903,10 +5903,10 @@ ul.profile_item{
     margin-right: auto;
 }
 td.day_value {
-    font-size: 8px;
+    font-size: 10px;
 }
 td.day_label {
-    font-size: 8px;
+    font-size: 10px;
 }
 h1{
     font-size: 28px;
@@ -6236,10 +6236,10 @@ ul.profile_item{
     margin-right: auto;
 }
 td.day_value {
-    font-size: 8px;
+    font-size: 11px;
 }
 td.day_label {
-    font-size: 8px;
+    font-size: 11px;
 }
 h1{
     font-size: 28px;
