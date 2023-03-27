@@ -1917,6 +1917,10 @@ button.createbtn i {
     left: 40px;
     top: 30px;
   }
+
+  .nav-tabs1>li.active>a, .nav-tabs1>li.active>a:focus, .nav-tabs1>li.active>a:hover {
+    padding: 8px;
+}
   .profile-nav-info {
     width: 24%;
 	margin: auto;
