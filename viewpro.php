@@ -121,7 +121,7 @@ $(document).ready(function(){
   <div class="profile-header">  <!-- a profile-header div -->
 
             <div class="profile-img">
-			    <img src="profile/<?php echo $profileid;?>/<?php echo $pic1;?>" />
+			    <img  src="profile/<?php echo $profileid;?>/<?php echo $pic1;?>" />
 		    </div>
 
 
@@ -1557,37 +1557,37 @@ if($row){
 }
 
 
-
-
 .profile-img {
   float: left;
-  width: 24.666%;
+  min-width: 32%;
   height: 200px;
-  margin-left: auto;
-  margin-right: auto;
+  margin-left: 0;
+  margin-right: 0;
 }
 
 .profile-img img {
   height: 175px;
   width: 175px;
   border: 5px solid #fff;
-  position: absolute;
-  left: auto;
+  position: relative;
   top: 35px;
   z-index: 5;
   background: rgb(245, 242, 242);
-    border-radius: 50%;
-    box-shadow: 0px 2px 7px 6px rgba(0, 0, 0, 0.2);
+  border-radius: 50%;
+  box-shadow: 0px 2px 7px 6px rgba(0, 0, 0, 0.2);
+  margin: 0 auto;
+  display: block;
 }
+
 .profile-nav-info {
   float: left;
   display: flex;
   flex-direction: column;
   justify-content: center;
   padding-top: 0px;
-  width: 31.66%;
-  margin-left: auto;
-  margin-right: auto;
+  width: 24.66%;
+  margin-left: 0;
+  margin-right: 0;
 }
 .see_sb_biodata{
   float: left;
@@ -1880,14 +1880,10 @@ button.createbtn i {
   .profile-img img {
     height: 170px;
     width: 170px;
-    left: 40px;
     top: 30px;
 }
 
-  .profile-nav-info {
-    width: 26%;
-	margin: auto;
-}
+
 
   .profile-nav-info h3 {
     font-size: 25px;
@@ -1914,22 +1910,26 @@ button.createbtn i {
   .profile-img img {
     height: 170px;
     width: 170px;
-    left: 40px;
     top: 30px;
   }
 
+  .nav>li>a {
+    position: relative;
+    display: block;
+    padding: 10px 10px;
+}
+
   .nav-tabs1>li.active>a, .nav-tabs1>li.active>a:focus, .nav-tabs1>li.active>a:hover {
-    padding: 8px;
+    padding: 6px;
 }
   .profile-nav-info {
-    width: 24%;
-	margin: auto;
+    width: 21%;
 }
   .profile-nav-info h3 {
     font-size: 23px;
 }
 .profile-nav-info .address {
-    font-size: 12px;
+    font-size: 13px;
 }
 .nav-tabs1 {
     font-size: 14px;
@@ -1958,7 +1958,6 @@ button.createbtn i {
     position: relative;
     height: 200px;
     width: 200px;
-    left: 0px;
   }
 
   .profile-nav-info {
