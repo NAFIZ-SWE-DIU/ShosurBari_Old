@@ -1549,7 +1549,8 @@ if($row){
   display: flex;
   height: 140px;
   position: relative;
-  box-shadow: 0px 3px 4px rgba(0, 0, 0, 0.2);
+  /* box-shadow: 0px 3px 4px rgba(0, 0, 0, 0.2); */
+  box-shadow: 0px 2px 7px 6px rgba(0, 0, 0, 0.2);
   margin-top: -25px;
   border: 1px solid #ccc;
   margin-left: auto;
@@ -1708,6 +1709,8 @@ table {
     background: rgb(245, 242, 242);
     border-radius: 0px 0px 4px 4px;
     box-shadow: 0px 2px 7px 6px rgba(0, 0, 0, 0.2);
+
+    border: 1px solid #ccc;
 	margin-left: auto;
     margin-right: auto;
 }
