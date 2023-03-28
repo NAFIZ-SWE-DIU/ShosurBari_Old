@@ -1983,7 +1983,7 @@ button.createbtn i {
 }
 
 .right-side {
-    width: 80%;
+    width: 90%;
     margin-top: 50px;
     margin-left: auto;
     margin-right: auto;
