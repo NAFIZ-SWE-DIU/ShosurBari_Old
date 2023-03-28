@@ -1596,8 +1596,8 @@ if($row){
   justify-content: center;
   padding-top: 0px;
   width: auto;
-  margin-left: auto;
-  margin-right: auto;
+  margin-left: 0;
+  margin-right: 0;
 }
 
 .nav-tabs1 {
@@ -1923,7 +1923,7 @@ button.createbtn i {
     padding: 6px;
 }
   .profile-nav-info {
-    width: 21%;
+    width: 24%;
 }
   .profile-nav-info h3 {
     font-size: 23px;
@@ -1935,7 +1935,21 @@ button.createbtn i {
     font-size: 14px;
 }
 
+.see_sb_biodata {
+    margin-left: auto;
+    margin-right: auto;
 }
+
+}
+
+
+
+
+
+
+
+
+
 
 
 @media (max-width: 930px) {
