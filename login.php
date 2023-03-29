@@ -95,6 +95,32 @@ $(document).ready(function(){
         <span class="show-password" style="color:#02a7e6;  font-size:18px;"><i style="color:black;  font-size:18px;" class="fa fa-eye" aria-hidden="true"></i></span> 
       </div>
 
+			<div class="remember-forgot">
+        <label>
+          <input type="checkbox" name="remember" value="1"> Remember me
+        </label>
+        <a href="forgot_password.php">Forgot password?</a>
+</div>
+
+      <style>
+.remember-forgot{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.remember-forgot label {
+  margin-right: 10px;
+  white-space: nowrap;
+}
+
+.remember-forgot a {
+  font-size: 14px;
+  white-space: nowrap;
+}
+  </style>
+
 	<script>
         let showPass = document.querySelectorAll('.show-password');
         showPass.forEach(function(el) {
@@ -128,7 +154,7 @@ $(document).ready(function(){
 
 	  	<div class="form-actions">
 			<p>Don't have an account?</p>
-			<a class="btn_5 submit" href="register.php"><span>+ </span> Create New Account</a>
+			<a class="btn_5 submit" href="register.php">Create New Account</a>
 	    </div>
 
     </div>
