@@ -537,182 +537,244 @@ $(document).ready(function(){
 
 
 
+	
+<main>
+  <ul class="cards-container">
+    <li class="cyan-feature-card">
+      <h2>Supervisor</h2>
+      <p>
+        Monitors activity to identify project roadblocks
+      </p>
+      <img src="https://alfonsosuarezg.github.io/four-card-feature-section/images/icon-supervisor.svg" 
+           alt="supervisor feature icon" />
+    </li>
+
+    
+    
+    <li class="red-feature-card">
+      <h2>Team Builder</h2>
+      <p>
+        Scans our talent network to create the optimal team for your project
+      </p>
+      <img src="https://alfonsosuarezg.github.io/four-card-feature-section/images/icon-team-builder.svg"
+           alt="team builder feature icon" />
+    </li>
+
+    
+    
+    <li class="orange-feature-card">
+      <h2>Karma</h2>
+      <p>
+        Regularly evaluates our talent to ensure quality
+      </p>
+      <img src="https://alfonsosuarezg.github.io/four-card-feature-section/images/icon-karma.svg"
+           alt="karma feature icon" />
+    </li>
+
+    
+    
+    <li class="blue-feature-card">
+      <h2>Calculator</h2>
+      <p>
+        Uses data from past projects to provide better delivery estimates
+      </p>
+      <img src="https://alfonsosuarezg.github.io/four-card-feature-section/images/icon-calculator.svg" 
+           alt="calculator feature icon" />
+    </li>
+  </ul>
+</main>
+	
+
+<style>
+	
+h1, h2 {
+  font-weight: 600;
+  color: hsl(234, 12%, 34%);
+}
+
+p { color: hsl(229, 6%, 66%); }
+
+.cards-container {
+  /* List Styling Clean-Up */
+  list-style: none;
+  padding: 0; margin: 0;
+
+  /* Alignment */
+  margin: auto;
+}
+
+/*
+ * ### Responsive Layout Rules
+ */
+
+/* When viewport width is equal or greater than 788 pixels,
+ * the cards container will fix its width and will append the
+ * clear fix pseudo-class to avoid float property issues.
+ *
+ * The width will depend from the current viewport width.
+ * If is greater than 1166 pixels, will be 1106 pixels.
+ * Else, then will be 728 pixels.
+ */
+
+@media (min-width: 788px) {
+  .cards-container { 
+    width: 728px;
+  }
+  /* Clear Fix */
+  .cards-container::after {
+    content: "";
+    clear: both;
+    display: table;
+  }
+}
+
+@media (min-width: 1166px) {
+  .cards-container {
+    width: 1106px;
+  }
+}
+
+/*
+ * ## Feature Card Class
+ */
+
+[class$='feature-card'] {
+  /* Positioning and Sizing */
+  position: relative;
+  box-sizing: border-box;
+  width: 350px; height: 250px;
+
+  /* Alignment */
+  margin: 0;
+  padding: 32px;
+
+  /* Box Details */
+  border-radius: 10px;
+  border-top: solid 5px black;
+  box-shadow: 2px 5px 20px rgb(0,0,0,0.1);
+}
+ 
+/*
+ * ### Inner Elements
+ */
+
+[class$='feature-card'] h2, [class$='feature-card'] p { margin: 0; }
+
+[class$='feature-card'] img {
+  position: absolute;
+  bottom: 32px; right: 32px;
+}
+
+/*
+ * ### Top Border Colors Rules
+ */
+
+[class$='feature-card'][class*='cyan'] {
+  border-color: hsl(180, 62%, 55%);
+}
+
+[class$='feature-card'][class*='red'] {
+  border-color: hsl(0, 78%, 62%);
+}
+
+[class$='feature-card'][class*='orange'] {
+  border-color: hsl(34, 97%, 64%);
+}
+
+[class$='feature-card'][class*='blue'] {
+  border-color: hsl(212, 86%, 64%);
+}
+
+/*
+ * ### Responsive Layout Rules
+ */
+
+/* When the viewport width is less than 788 pixels, the container
+ * will not be fixed and every card will arrange normally one over
+ * other. This layout is comfortable for mobile devices.
+ *
+ * But if is equal or greather, every card will set the float
+ * property to the left.
+ *
+ * They will sort smartly on a grid of two columns and two rows if
+ * the current viewport width is less than 1166 pixels, that is,
+ * for notebooks and tablets screens.
+ *
+ * Else, then they will sort like the final challenge for desktop
+ * larger screens (with a viewport width greather than 1166 pixels.)
+ *
+ * I had to hard coded every effect because I only use float
+ * properties. And I didn't went to use auxiliar HTML elements,
+ * trying to keep separation of concerns.
+ */
+
+@media (min-width: 788px) {
+  [class$='feature-card'] {
+    float: left;
+  }
+
+  @media (min-width: 1166px) {
+    
+    [class$='feature-card']:first-child {
+      margin: 140px 0;
+    }
+   
+    [class$='feature-card']:nth-child(2),
+    [class$='feature-card']:nth-child(3) {
+      margin: 0 22px;
+    }
+
+    [class$='feature-card']:last-child {
+      margin-top: -110px;
+    }
+
+    [class$='feature-card']:nth-child(3) {
+      margin-top: 30px;
+    }
+  }
+
+  @media (max-width: 1165px) {
+
+    [class$='feature-card']:nth-child(3),
+    [class$='feature-card']:nth-child(4) {
+      margin-top: 30px;
+    }
+
+    [class$='feature-card']:nth-child(2),
+    [class$='feature-card']:nth-child(4) {
+      margin-left: 28px;
+    }
+  }
+}
+
+@media (max-width: 787px) {
+
+  [class$='feature-card'] {
+    width: 300px; height: 220px;
+    margin: auto;
+  }
+
+  [class$='feature-card']:not(:first-child) {
+    margin-top: 22px;
+  }
+}
+
+/*
+ * ## Main Footer
+ */
+
+footer { margin-top: 80px }
+
+/*
+ * ## Attribution Watermark
+ */
+
+.attribution { font-size: 11px; text-align: center; }
+.attribution a { color: hsl(228, 45%, 44%); }
+
+	</style>
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-<div class="grid_2">
-	<div class="container">
-		<h2>Success Stories</h2>
-       	<div class="heart-divider">
-			<span class="grey-line"></span>
-			<i class="fa fa-heart pink-heart"></i>
-			<i class="fa fa-heart grey-heart"></i>
-			<span class="grey-line"></span>
-        </div>
-        <div class="row_1">
-	     <div class="col-md-8 suceess_story">
-	         <ul> 
-
-
-			   <li>
-				  	<div class="suceess_story-date">
-						<span class="entry-1">Dec 20, 2015</span>
-					</div>
-					<div class="suceess_story-content-container">
-						<figure class="suceess_story-content-featured-image">
-						   <img width="75" height="75" src="images/7.jpg" class="img-responsive" alt=""/>				            
-					    </figure>
-						<div class="suceess_story-content-info">
-				        	<h4><a href="#">Lorem & Ipsum</a></h4>				        	
-				        	<p>There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form,.<a href="#">More...</a></p>
-				        </div>
-				    </div>
-				</li>
-
-
-	            <li>
-				  	<div class="suceess_story-date">
-						<span class="entry-1">Dec 20, 2015</span>
-					</div>
-					<div class="suceess_story-content-container">
-						<figure class="suceess_story-content-featured-image">
-						   <img width="75" height="75" src="images/8.jpg" class="img-responsive" alt=""/>				            
-					    </figure>
-						<div class="suceess_story-content-info">
-				        	<h4><a href="#">Lorem & Ipsum</a></h4>				        	
-				        	<p>There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form,.<a href="#">More...</a></p>
-				        </div>
-				    </div>
-				</li>
-
-
-	        </ul>
-	    </div>
-
-
-
-<!--
-
-	    <div class="col-md-4 row_1-right">
-	      <h3>News & Events</h3>
-
-	        <div class="box_1">
-		      <figure class="thumbnail1"><img width="170" height="155" src="images/14.jpg" class="img-responsive" alt=""/></figure>
-			  <div class="extra-wrap">
-				<div class="post-meta">
-					<span class="day">
-					<time datetime="2014-05-25T10:15:43+00:00">25</time>
-					</span>
-					<span class="month">
-					<time datetime="2014-05-25T10:11:51+00:00">May</time>
-					</span>
-				</div>
-				<h4 class="post-title"><a href="#">There are many variations of passages</a></h4>
-				<div class="clearfix"> </div>
-				<div class="post-content">The standard chunk of Lorem Ipsum used since the 1500s..</div>
-				<a href="#" class="vertical">Read More</a>
-			  </div>
-	        </div>
-
-	        <div class="box_1">
-		      <figure class="thumbnail1"><img width="170" height="155" src="images/15.jpg" class="img-responsive" alt=""/></figure>
-			  <div class="extra-wrap">
-				<div class="post-meta">
-					<span class="day">
-					<time datetime="2014-05-25T10:15:43+00:00">25</time>
-					</span>
-					<span class="month">
-					<time datetime="2014-05-25T10:11:51+00:00">May</time>
-					</span>
-				</div>
-				<h4 class="post-title"><a href="#">There are many variations of passages</a></h4>
-				<div class="clearfix"> </div>
-				<div class="post-content">The standard chunk of Lorem Ipsum used since the 1500s..</div>
-				<a href="#" class="vertical">Read More</a>
-			  </div>
-	        </div>
-	        <div class="box_2">
-		      <figure class="thumbnail1"><img width="170" height="155" src="images/1.jpg" class="img-responsive" alt=""/></figure>
-			  <div class="extra-wrap">
-				<div class="post-meta">
-					<span class="day">
-					<time datetime="2014-05-25T10:15:43+00:00">25</time>
-					</span>
-					<span class="month">
-					<time datetime="2014-05-25T10:11:51+00:00">May</time>
-					</span>
-				</div>
-				<h4 class="post-title"><a href="#">There are many variations of passages</a></h4>
-				<div class="clearfix"> </div>
-				<div class="post-content">The standard chunk of Lorem Ipsum used since the 1500s..</div>
-				<a href="#" class="vertical">Read More</a>
-			  </div>
-	        </div>
-
-	        <div class="religion">
-               <div class="religion_1-title">Religion :</div>
-			   <a href="#" target="_blank" class="religion_1" title="Hindu Matrimonial" style="padding-left:0px !important;">Hindu</a>
-			    <span>|</span><a href="#" target="_blank" class="religion_1" title="Muslim Matrimonial">Muslim</a>
-			 	<span>|</span><a href="#" target="_blank" class="religion_1" title="Christian Matrimonial">Christian</a>
-			 	<span>|</span><a href="#" target="_blank" class="religion_1" title="Sikh Matrimonial">Sikh</a>
-			 	<span>|</span><a href="#" target="_blank" class="religion_1" title="Inter Religion Matrimonial">Inter Religion</a>
-	        </div>
-
-	        <div class="religion">
-               <div class="religion_1-title">Country :</div>
-			   <a href="#" target="_blank" class="religion_1" title="Hindu Matrimonial" style="padding-left:0px !important;">India</a>
-			    <span>|</span><a href="#" target="_blank" class="religion_1" title="Muslim Matrimonial">Australia</a>
-			 	<span>|</span><a href="#" target="_blank" class="religion_1" title="Christian Matrimonial">Russia</a>
-			 	<span>|</span><a href="#" target="_blank" class="religion_1" title="Sikh Matrimonial">India</a>
-			 	<span>|</span><a href="#" target="_blank" class="religion_1" title="Inter Religion Matrimonial">Kuwait</a>
-			 	<span>|</span><a href="#" target="_blank" class="religion_1" title="Inter Religion Matrimonial">Uk</a>
-			 	<span>|</span><a href="#" target="_blank" class="religion_1" title="Inter Religion Matrimonial">View All</a>
-	        </div>
-
-	        <div class="religion">
-               <div class="religion_1-title">Caste :</div>
-			   <a href="#" target="_blank" class="religion_1" title="Hindu Matrimonial" style="padding-left:0px !important;">Brahmin</a>
-			    <span>|</span><a href="#" target="_blank" class="religion_1" title="Muslim Matrimonial">Kapu</a>
-			 	<span>|</span><a href="#" target="_blank" class="religion_1" title="Christian Matrimonial">Kamma</a>
-			 	<span>|</span><a href="#" target="_blank" class="religion_1" title="Sikh Matrimonial">Padmasali</a>
-			 	<span>|</span><a href="#" target="_blank" class="religion_1" title="Inter Religion Matrimonial">Reddy</a>
-			 	<span>|</span><a href="#" target="_blank" class="religion_1" title="Inter Religion Matrimonial">View All</a>
-	        </div>
-			
-	        <div class="religion">
-               <div class="religion_1-title">Regional :</div>
-			   <a href="#" target="_blank" class="religion_1" title="Hindu Matrimonial" style="padding-left:0px !important;">Urdu</a>
-			    <span>|</span><a href="#" target="_blank" class="religion_1" title="Muslim Matrimonial">Hindi</a>
-			 	<span>|</span><a href="#" target="_blank" class="religion_1" title="Christian Matrimonial">Telugu</a>
-			 	<span>|</span><a href="#" target="_blank" class="religion_1" title="Sikh Matrimonial">Marwadi</a>
-			 	<span>|</span><a href="#" target="_blank" class="religion_1" title="Inter Religion Matrimonial">Oriya</a>
-			 	<span>|</span><a href="#" target="_blank" class="religion_1" title="Inter Religion Matrimonial">View All</a>
-	        </div>
-
-	    </div>
-
-	-->
-
-
-	     <div class="clearfix"> </div>
-	   </div> 
-	  </div>
-    </div>
 
 
 
