@@ -86,10 +86,58 @@ $(document).ready(function(){
 
 
 
+<?php
+// Include database configuration file
+include('includes/dbconn.php');
+
+// Check if form is submitted
+if($_SERVER['REQUEST_METHOD'] == "POST"){
+    
+    // Get user's email from form input
+    $email = $_POST['email'];
+    
+    // Prepare SQL statement to fetch user's password
+    $sql = "SELECT password FROM users WHERE email = '$email'";
+    
+    // Execute SQL statement
+    $result = mysqli_query($conn, $sql);
+    
+    // Check if user exists in database
+    if(mysqli_num_rows($result) > 0){
+        
+        // Fetch user's password from database
+        $row = mysqli_fetch_assoc($result);
+        $password = $row['password'];
+        
+        // Send password to user's email address
+        $to = $email;
+        $subject = "Your password for Shosurbari.com";
+        $message = "Your password is: $password";
+        $headers = "From: support@shosurbari.com";
+        
+        if(mail($to, $subject, $message, $headers)){
+            // Password sent successfully
+            echo "Your password has been sent to your email address.";
+        } else {
+            // Error sending email
+            echo "There was an error sending your password. Please try again later.";
+        }
+        
+    } else {
+        // User not found in database
+        echo "We couldn't find a user with that email address.";
+    }
+}
+?>
+
+
+
+
 
 
 
 <?php
+/*
 // Include database configuration file
 require_once 'includes/dbconn.php';
 
@@ -139,4 +187,6 @@ if (isset($_POST['submit'])) {
         echo "Email address not found.";
     }
 }
+*/
 ?>
+
