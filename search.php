@@ -109,7 +109,6 @@ $(document).ready(function(){
 }
 
 input[type=submit] {
-    -webkit-appearance: button;
     cursor: pointer;
     width: 100%;
     height: 35px;
