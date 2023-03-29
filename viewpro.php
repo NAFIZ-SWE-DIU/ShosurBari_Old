@@ -1743,7 +1743,7 @@ table {
 .copy-sbbio-link {
   padding: 0px;
   width: 50%;
-  border-radius: 3px;
+  border-radius: 4px;
   background: #00bbff;
   color: #fff;
   font-family: "Bree Serif";
@@ -1755,6 +1755,13 @@ table {
   margin-bottom: 10px;
   transition:  0.3s ease-in-out;
   box-shadow: 0px 5px 7px 0px rgba(0, 0, 0, 0.3);
+}
+
+.profile-btn2{
+	margin-top: 50px;
+	width: 50%;
+	margin-left: auto;
+	margin-right: auto;
 }
 
 .profile-btn {
@@ -1770,7 +1777,7 @@ width: 100%;
 color: #fff;
         border: 1px solid #ccc;
         padding: 6px;
-        border-radius: 2px;
+        border-radius: 4px;
         background: #00bbff;
         cursor: pointer;
         position: relative;
@@ -2219,7 +2226,7 @@ a#profile-tab, a#home-tab, a#profile-tab1 {
 }
 
 .biodatarecent_viewlist:hover{
-    background: #00bbff27;
+    background: #00bbff11;
     box-shadow: 0 4px 8px 0 rgb(0 0 0 / 20%), 0 6px 20px 0 rgb(0 0 0 / 19%);
     transform: scale(1.03); 
 }
@@ -2311,7 +2318,7 @@ border-radius: 5px 5px 0px 0px;
     padding: 2px;
     margin-top: 7px;
     margin-bottom: 5px;
-    border-radius: 5px;
+    border-radius: 4px;
     background: #ff0080;
     color: white;
     width:100%;
@@ -2320,6 +2327,7 @@ border-radius: 5px 5px 0px 0px;
 
 .view_sb_profile_recentview:hover{
   background:#00bbff;
+  color: #fff;
 }
 
 .view_sb_profile_recentview a{
