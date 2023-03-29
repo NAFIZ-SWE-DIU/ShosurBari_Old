@@ -1883,8 +1883,8 @@ button.createbtn i {
 }
 
   .profile-img img {
-    height: 170px;
-    width: 170px;
+    height: 175px;
+    width: 175px;
     top: 30px;
 }
 
@@ -1975,15 +1975,15 @@ button.createbtn i {
 
   .profile-img img {
     position: relative;
-    height: 200px;
-    width: 200px;
+    height: 170px;
+    width: 170px;
   }
 
   .profile-nav-info {
     text-align: center;
 	width: 90%;
     margin: auto;
-    margin-top: 60px;
+    margin-top: 25px;
     margin-bottom: 30px;
   }
 
@@ -2189,6 +2189,12 @@ a#profile-tab, a#home-tab, a#profile-tab1 {
     padding: 0px;
     margin: 0px;
     white-space: normal;
+  }
+
+  .profile-img img {
+    position: relative;
+    height: 160px;
+    width: 160px;
   }
 }
 
