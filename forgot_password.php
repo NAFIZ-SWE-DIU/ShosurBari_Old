@@ -85,7 +85,6 @@ $(document).ready(function(){
 </html>	
 
 
-
 <?php
 // Include database configuration file
 include('includes/dbconn.php');
@@ -189,4 +188,3 @@ if (isset($_POST['submit'])) {
 }
 */
 ?>
-
