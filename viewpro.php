@@ -402,7 +402,7 @@ $('.clipboard').on('click', function() {
         <h3>Profiles Recent View</h3>
 
         <?php
-        $sql="SELECT * FROM 1bd_personal_physical  ORDER BY profilecreationdate ASC";
+        $sql="SELECT * FROM 1bd_personal_physical  ORDER BY profilecreationdate DESC LIMIT 12";
             $result=mysqlexec($sql);
             $count=1;
             while($row=mysqli_fetch_assoc($result)){
@@ -1488,7 +1488,7 @@ if($row){
         <h3>Profiles Recent View</h3>
 
         <?php
-        $sql="SELECT * FROM 1bd_personal_physical  ORDER BY profilecreationdate ASC";
+        $sql="SELECT * FROM 1bd_personal_physical  ORDER BY profilecreationdate DESC LIMIT 12";
             $result=mysqlexec($sql);
             $count=1;
             while($row=mysqli_fetch_assoc($result)){
