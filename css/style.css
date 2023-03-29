@@ -5996,7 +5996,7 @@ h6{
 @media (max-width: 350px) {
     
     .sb-biodata{
-        width: 70%;
+        width: 80%;
     }
 /*
 .sb-biodata-field h2{
@@ -6308,6 +6308,9 @@ h6{
     .ellipsis {
         font-size: 12px;
     }
+    .remember-forgot{
+        display: block;
+      }
 }
 /*-- -- -- -- -- -- -- -- -- -- -- -- -- ---- -- --
 --           max-width:320px / E  N  D           --
