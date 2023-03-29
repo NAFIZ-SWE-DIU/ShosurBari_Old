@@ -371,10 +371,13 @@ $religion=$row['religion'];
 
 
 
-
         <div class="profile-btn">
+			<div class="contact-bio">
                 <a href="contactbiodata.php" target="_blank"> <button class="chatbtn" id="chatBtn"><i class="fa fa-phone"></i> Contact</button></a>
+			</div>
+			<div class="copy-sbbio-link">
                 <button class="createbtn clipboard" id="Create-post"><i class="fa fa-copy"></i>Copy Link</button>
+			</div>
         </div>
 
 <script>
@@ -1710,7 +1713,7 @@ table {
     border-radius: 0px 0px 4px 4px;
     box-shadow: 0px 2px 7px 6px rgba(0, 0, 0, 0.2);
 
-    border: 1px solid #ccc;
+    border-left: 1px solid #ccc;
 	margin-left: auto;
     margin-right: auto;
 }
@@ -1736,36 +1739,12 @@ table {
 
 
 
-    .clipboard {
-        border: 0;
-        padding: 6px;
-        border-radius: 2px;
-        background: white;
-        cursor: pointer;
-        color: #ff0080;
-        font-size: 13px;
-        position: relative;
-        top: 0px;
-        left: 0px;
-        transition: all .2s ease;
-        white-space: nowrap;
-    }
-
-
-.profile-btn {
-  display: flex;
-  white-space: nowrap;
-  width: 60%;
-  margin: auto;
-}
-
-button.chatbtn,
-button.createbtn {
-  border: 0;
-  padding: 10px;
-  width: auto;
+.contact-bio,
+.copy-sbbio-link {
+  padding: 0px;
+  width: 50%;
   border-radius: 3px;
-  background: #e40046;
+  background: #00bbff;
   color: #fff;
   font-family: "Bree Serif";
   font-size: 1rem;
@@ -1778,9 +1757,32 @@ button.createbtn {
   box-shadow: 0px 5px 7px 0px rgba(0, 0, 0, 0.3);
 }
 
+.profile-btn {
+  display: flex;
+  white-space: nowrap;
+  width: 100%;
+  margin: auto;
+}
+
+button.chatbtn,
+button.createbtn {
+width: 100%;
+color: #fff;
+        border: 1px solid #ccc;
+        padding: 6px;
+        border-radius: 2px;
+        background: #00bbff;
+        cursor: pointer;
+        position: relative;
+        transition: all .2s ease;
+        white-space: nowrap;
+}
+
+
 button.chatbtn:hover,
 button.createbtn:hover {
-  background: rgba(288, 0, 70, 0.9);
+  background: #ff0080;
+  color: #fff;
 }
 
 button.chatbtn i,
@@ -2087,6 +2089,21 @@ button.createbtn i {
 .sb_user_recentview .sb_data_recentview {
     font-size: 13px;
 }
+
+.contact-bio,
+.copy-sbbio-link {
+  width: 50%;
+  margin-top: 20px;
+  margin-bottom: 0px;
+  margin-left: 5px;
+  margin-right: 5px;
+}
+
+button.chatbtn,
+button.createbtn {
+width: 100%;
+padding: 3px;
+}
 }
 
 @media (max-width:480px){
@@ -2104,6 +2121,11 @@ button.createbtn i {
 .sb_user_recentview .sb_data_recentview {
     font-size: 12px;
 	width: 58%;
+}
+
+.contact-bio,
+.copy-sbbio-link {
+  font-size: 13px;
 }
 }
 
@@ -2131,6 +2153,7 @@ a#profile-tab, a#home-tab, a#profile-tab1 {
 .nav-tabs1>li.active>a, .nav-tabs1>li.active>a:focus, .nav-tabs1>li.active>a:hover {
     margin: 3px;
 }
+
 }
 
 @media (max-width:320px){
