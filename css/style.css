@@ -3521,7 +3521,7 @@ form {
     padding-right: 0px;
     padding-bottom: 0em;
     padding-left: 0px;
-    margin-bottom: 65px;
+    margin-bottom: 0px;
 }
 /*-- -- -- -- -- -- -- -- -- -- -- -- -- ---- -- --
 -- -- -- -- -- -- -- -- --- -- -- -- -- -- -- -- --
@@ -3817,7 +3817,7 @@ form {
 }
 
 .biodatalist:hover{
-    background: #00bbff27;
+    background: #00bbff11;
     box-shadow: 0 4px 8px 0 rgb(0 0 0 / 20%), 0 6px 20px 0 rgb(0 0 0 / 19%);
     transform: scale(1.03); 
 }
@@ -3907,15 +3907,16 @@ border-radius: 5px 5px 0px 0px;
     padding: 5px;
     margin-top: 20px;
     margin-bottom: 0px;
-    border-radius: 5px;
+    border-radius: 4px;
     background: #ff0080;
     color: white;
     width:100%;
+    height: 35px;
 }
 
 .view_sb_profile:hover{
   background:#00bbff;
-  color: yellow;
+  color: #fff;
 }
 
 .view_sb_profile a{
@@ -4638,6 +4639,7 @@ ul.nav_1 {
 }
 .grid_3, .about_middle{
     padding: 3em 0;
+    margin-bottom: 0px;
 }
 .about_bottom {
     padding: 3em 0 2em;
@@ -5539,6 +5541,7 @@ h6{
 }
 .grid_3, .about_middle {
     padding: 2em 0;
+    margin-bottom: 0px;
 }
 .about_bottom h3 {
     font-size: 1.8em;
