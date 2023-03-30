@@ -12,7 +12,7 @@ html, body{
 	font-family: 'Ubuntu', sans-serif;
 	font-size: 100%;
     background:#fff;
-    padding-top: 45px;
+    padding-top: 20px;
 }
 
 #timedate {
@@ -3521,7 +3521,7 @@ form {
     padding-right: 0px;
     padding-bottom: 0em;
     padding-left: 0px;
-    margin-bottom: 0px;
+    margin-bottom: 10px;
 }
 /*-- -- -- -- -- -- -- -- -- -- -- -- -- ---- -- --
 -- -- -- -- -- -- -- -- --- -- -- -- -- -- -- -- --
@@ -4640,6 +4640,7 @@ ul.nav_1 {
 .grid_3, .about_middle{
     padding: 3em 0;
     margin-bottom: 0px;
+    margin-top: 45px;
 }
 .about_bottom {
     padding: 3em 0 2em;
@@ -5113,6 +5114,10 @@ h6{
         margin-right: 5px;
         margin-top: 30px;
         margin-bottom: auto;
+    }
+
+    .profile-header {
+        margin-top: 72px;
     }
 }
 /*-- -- -- -- -- -- -- -- -- -- -- -- -- ---- -- --
