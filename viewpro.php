@@ -98,20 +98,6 @@ $(document).ready(function(){
 
 
 
-<div class="grid_3">
-    <div class="container">
-        <div class="breadcrumb1">
-            <ul>
-                <a href="index.php"><i class="fa fa-home home_1"></i></a>
-                <span class="divider">&nbsp;<|>&nbsp;</span>
-                <li class="current-page"><h4>View Profile</h4></li>
-            </ul>
-        </div>
-    </div>
-</div>
-
-
-
 
 
 
@@ -402,7 +388,7 @@ $('.clipboard').on('click', function() {
         <h3>Profiles Recent View</h3>
 
         <?php
-        $sql="SELECT * FROM 1bd_personal_physical  ORDER BY profilecreationdate DESC LIMIT 12";
+        $sql="SELECT * FROM 1bd_personal_physical  ORDER BY profilecreationdate DESC LIMIT 10";
             $result=mysqlexec($sql);
             $count=1;
             while($row=mysqli_fetch_assoc($result)){
@@ -529,49 +515,49 @@ $bloodgroup=$row['bloodgroup'];
 
 				        	<tbody>
 				        		<tr class="opened">
-									<td class="day_label">Biodata Type :</td>
+									<td class="day_label">Biodata Type</td>
 									<?php if (!empty ($biodatagender)) { ?>
 									<td class="day_value"><?php echo $biodatagender; ?></td>
 									<?php } ?>
 								</tr>
 
 							    <tr class="opened">
-									<td class="day_label">DOB :</td>
+									<td class="day_label">DOB</td>
 									<?php if (!empty ($dob)) { ?>
 									<td class="day_value"><?php echo $dob;?></td>
 									<?php } ?>
 								</tr>
 
 							    <tr class="opened">
-									<td class="day_label">Height :</td>
+									<td class="day_label">Height</td>
 									<?php if (!empty ($height)) { ?>
 									<td class="day_value"><?php echo $height;?></td>
 									<?php } ?>
 								</tr>
 							    
 							    <tr class="opened">
-									<td class="day_label">Weight :</td>
+									<td class="day_label">Weight</td>
 									<?php if (!empty ($weight)) { ?>
 									<td class="day_value"><?php echo $weight;?></td>
 									<?php } ?>
 								</tr>
 
 							    <tr class="opened">
-									<td class="day_label">Physical Status :</td>
+									<td class="day_label">Physical Status</td>
 									<?php if (!empty ($physicalstatus)) { ?>
 									<td class="day_value closed"><span><?php echo $physicalstatus;?></span></td>
 									<?php } ?>
 								</tr>
 
 							    <tr class="opened">
-									<td class="day_label">Skin Tones :</td>
+									<td class="day_label">Skin Tones</td>
 									<?php if (!empty ($Skin_tones)) { ?>
 									<td class="day_value closed"><span><?php echo $Skin_tones;?></span></td>
 									<?php } ?>
 								</tr>
 
 								<tr class="opened">
-									<td class="day_label">Blood Group :</td>
+									<td class="day_label">Blood Group</td>
 									<?php if (!empty ($bloodgroup)) { ?>
 									<td class="day_value closed"><span><?php echo $bloodgroup;?></span></td>
 									<?php } ?>
@@ -647,42 +633,42 @@ $aboutme=$row['aboutme'];
 				        	<tbody>
 
 				        		<tr class="opened">
-									<td class="day_label">Marital Status :</td>
+									<td class="day_label">Marital Status</td>
 									<?php if (!empty ($maritalstatus)) { ?>
 									<td class="day_value"><?php echo $maritalstatus;?></td>
 									<?php } ?>
 								</tr>
 
 							    <tr class="opened">
-									<td class="day_label">Smoke or Drinks :</td>
+									<td class="day_label">Smoke or Drinks</td>
 									<?php if (!empty ($smoke)) { ?>
 									<td class="day_value"><?php echo $smoke;?></td>
 									<?php } ?>
 								</tr>
 
 							    <tr class="opened">
-									<td class="day_label">Occupation :</td>
+									<td class="day_label">Occupation</td>
 									<?php if (!empty ($occupation)) { ?>
 									<td class="day_value"><?php echo $occupation;?></td>
 									<?php } ?>
 								</tr>
 							    
 							    <tr class="opened">
-									<td class="day_label">Occupation Describe :</td>
+									<td class="day_label">Occupation Describe</td>
 									<?php if (!empty ($occupation_describe)) { ?>
 									<td class="day_value"><?php echo $occupation_describe;?></td>
 									<?php } ?>
 								</tr>
 
 							    <tr class="opened">
-									<td class="day_label">Dress Code :</td>
+									<td class="day_label">Dress Code</td>
 									<?php if (!empty ($dress_code)) { ?>
 									<td class="day_value closed"><span><?php echo $dress_code;?></span></td>
 									<?php } ?>
 								</tr>
 
 							    <tr class="opened">
-									<td class="day_label">About Me :</td>
+									<td class="day_label">About Me</td>
 									<?php if (!empty ($aboutme)) { ?>
 									<td class="day_value closed"><span><?php echo $aboutme;?></span></td>
 									<?php } ?>
@@ -751,28 +737,28 @@ $maximum_education=$row['maximum_education'];
 				        	<tbody>
 
 				        		<tr class="opened">
-									<td class="day_label">Education Method :</td>
+									<td class="day_label">Education Method</td>
 									<?php if (!empty ($education_method)) { ?>
 									<td class="day_value"><?php echo $education_method; ?></td>
 									<?php } ?>
 								</tr>
 
 							    <tr class="opened">
-									<td class="day_label">SSC Passing Year :</td>
+									<td class="day_label">SSC Passing Year</td>
 									<?php if (!empty ($sscpassyear)) { ?>
 									<td class="day_value"><?php echo $sscpassyear;?></td>
 									<?php } ?>
 								</tr>
 
 							    <tr class="opened">
-									<td class="day_label">Current Education :</td>
+									<td class="day_label">Current Education</td>
 									<?php if (!empty ($current_education)) { ?>
 									<td class="day_value"><?php echo $current_education;?></td>
 									<?php } ?>
 								</tr>
 							    
 							    <tr class="opened">
-									<td class="day_label">Maximum Education :</td>
+									<td class="day_label">Maximum Education</td>
 									<?php if (!empty ($maximum_education)) { ?>
 									<td class="day_value"><?php echo $maximum_education; ?></td>
 									<?php } ?>
@@ -841,21 +827,21 @@ $childhood=$row['childhood'];
 				        	<tbody>
 
 				        		<tr class="opened">
-									<td class="day_label">Permanent Address Division :</td>
+									<td class="day_label">Permanent Address Division</td>
 									<?php if (!empty ($permanent_division)) { ?>
 									<td class="day_value"><?php echo $permanent_division; ?></td>
 									<?php } ?>
 								</tr>
 
 								<tr class="opened">
-									<td class="day_label">Permanent Address District:</td>
+									<td class="day_label">Permanent Address District</td>
 									<?php if (!empty ($permanent_address)) { ?>
 									<td class="day_value"><?php echo $permanent_address;?></td>
 									<?php } ?>
 								</tr>
 
 							    <tr class="opened">
-									<td class="day_label">Present Address :</td>
+									<td class="day_label">Present Address</td>
 									<?php if (!empty ($present_address)) { ?>
 									<td class="day_value"><?php echo $present_address;?></td>
 									<?php } ?>
@@ -863,7 +849,7 @@ $childhood=$row['childhood'];
 
 							    
 							    <tr class="opened">
-									<td class="day_label">Childhood :</td>
+									<td class="day_label">Childhood</td>
 									<?php if (!empty ($childhood)) { ?>
 									<td class="day_value"><?php echo $childhood; ?></td>
 									<?php } ?>
@@ -934,35 +920,35 @@ if($row){
 				        	<tbody>
 
 				        		<tr class="opened">
-									<td class="day_label">Guardians Agree :</td>
+									<td class="day_label">Guardians Agree</td>
 									<?php if (!empty ($guardians_agree_male)) { ?>
 									<td class="day_value"><?php echo $guardians_agree_male; ?></td>
 									<?php } ?>
 								</tr>
 
 							    <tr class="opened">
-									<td class="day_label">Allow Study After Marriage :</td>
+									<td class="day_label">Allow Study After Marriage</td>
 									<?php if (!empty ($allowstudy_aftermarriage)) { ?>
 									<td class="day_value"><?php echo $allowstudy_aftermarriage;?></td>
 									<?php } ?>
 								</tr>
 
 							    <tr class="opened">
-									<td class="day_label">Allow Job After Marriage :</td>
+									<td class="day_label">Allow Job After Marriage</td>
 									<?php if (!empty ($allowjob_aftermarriage)) { ?>
 									<td class="day_value"><?php echo $allowjob_aftermarriage;?></td>
 									<?php } ?>
 								</tr>
 							    
 							    <tr class="opened">
-									<td class="day_label">Live Wife After Marriage :</td>
+									<td class="day_label">Live Wife After Marriage</td>
 									<?php if (!empty ($livewife_aftermarriage)) { ?>
 									<td class="day_value"><?php echo $livewife_aftermarriage; ?></td>
 									<?php } ?>
 								</tr>
 
 							    <tr class="opened">
-									<td class="day_label">Profile By :</td>
+									<td class="day_label">Profile By</td>
 									<?php if (!empty ($profileby_male)) { ?>
 									<td  class="day_value closed"><span><?php echo $profileby_male;?></span></td>
 									<?php } ?>
@@ -1036,35 +1022,35 @@ if($row){
 				        	<tbody>
 
 				        		<tr class="opened">
-									<td class="day_label">Guardians Agree :</td>
+									<td class="day_label">Guardians Agree</td>
 									<?php if (!empty ($guardians_agree_female)) { ?>
 									<td class="day_value"><?php echo $guardians_agree_female; ?></td>
 									<?php } ?>
 								</tr>
 
 							    <tr class="opened">
-									<td class="day_label">Any Job After Marriage :</td>
+									<td class="day_label">Any Job After Marriage</td>
 									<?php if (!empty ($anyjob_aftermarriage)) { ?>
 									<td class="day_value"><?php echo $anyjob_aftermarriage;?></td>
 									<?php } ?>
 								</tr>
 
 							    <tr class="opened">
-									<td class="day_label">Studies After Marriage :</td>
+									<td class="day_label">Studies After Marriage</td>
 									<?php if (!empty ($studies_aftermarriage)) { ?>
 									<td class="day_value"><?php echo $studies_aftermarriage;?></td>
 									<?php } ?>
 								</tr>
 							    
 							    <tr class="opened">
-									<td class="day_label">Agree Marriage Student :</td>
+									<td class="day_label">Agree Marriage Student</td>
 									<?php if (!empty ($agree_marriage_student)) { ?>
 									<td class="day_value"><?php echo $agree_marriage_student; ?></td>
 									<?php } ?>
 								</tr>
 
 							    <tr class="opened">
-									<td class="day_label">Profile By :</td>
+									<td class="day_label">Profile By</td>
 									<?php if (!empty ($profileby_female)) { ?>
 									<td class="day_value closed"><span><?php echo $profileby_female;?></span></td>
 									<?php } ?>
@@ -1128,14 +1114,14 @@ if($row){
 				        	<tbody>
 
 				        		<tr class="opened">
-									<td class="day_label">Religion :</td>
+									<td class="day_label">Religion</td>
 									<?php if (!empty ($religion)) { ?>
 									<td class="day_value"><?php echo $religion; ?></td>
 									<?php } ?>
 								</tr>
 
 							    <tr class="opened">
-									<td class="day_label">Your Religion Condition :</td>
+									<td class="day_label">Your Religion Condition</td>
 									<?php if (!empty ($yourreligion_condition)) { ?>
 									<td class="day_value"><?php echo $yourreligion_condition;?></td>
 									<?php } ?>
@@ -1229,42 +1215,42 @@ if($row){
 
 				        	<tbody>
 				        		<tr class="opened">
-									<td class="day_label">Father Alive :</td>
+									<td class="day_label">Father Alive</td>
 									<?php if (!empty ($father_alive)) { ?>
 									<td class="day_value"><?php echo $father_alive;?></td>
 									<?php } ?>
 								</tr>
 
 				        		<tr class="opened">
-									<td class="day_label">Father Occupation :</td>
+									<td class="day_label">Father Occupation</td>
 									<?php if (!empty ($fatheroccupation)) { ?>
 									<td class="day_value"><?php echo $fatheroccupation;?></td>
 									<?php } ?>
 								</tr>
 
 							    <tr class="opened">
-									<td class="day_label">Mother Alive :</td>
+									<td class="day_label">Mother Alive</td>
 									<?php if (!empty ($mother_alive)) { ?>
 									<td class="day_value closed"><span><?php echo $mother_alive;?></span></td>
 									<?php } ?>
 								</tr>
 
 							    <tr class="opened">
-									<td class="day_label">Mother Occupation :</td>
+									<td class="day_label">Mother Occupation</td>
 									<?php if (!empty ($motheroccupation)) { ?>
 									<td class="day_value closed"><span><?php echo $motheroccupation;?></span></td>
 									<?php } ?>
 								</tr>
 
 								<tr class="opened">
-									<td class="day_label">Bro Sis Number :</td>
+									<td class="day_label">Bro Sis Number</td>
 									<?php if (!empty ($brosis_number)) { ?>
 									<td class="day_value closed"><span><?php echo $brosis_number;?></span></td>
 									<?php } ?>
 								</tr>
 
 							    <tr class="opened">
-									<td class="day_label">Bro Sis Info :</td>
+									<td class="day_label">Bro Sis Info</td>
 									<?php if (!empty ($brosis_info)) { ?>
 									<td class="day_value closed"><span><?php echo $brosis_info;?></span></td>
 									<?php } ?>
@@ -1272,28 +1258,28 @@ if($row){
 
 								
 								<tr class="opened">
-									<td class="day_label">Uncle Profession :</td>
+									<td class="day_label">Uncle Profession</td>
 									<?php if (!empty ($uncle_profession)) { ?>
 									<td class="day_value closed"><span><?php echo $uncle_profession;?></span></td>
 									<?php } ?>
 								</tr>
 
 							    <tr class="opened">
-									<td class="day_label">Family Class :</td>
+									<td class="day_label">Family Class</td>
 									<?php if (!empty ($family_class)) { ?>
 									<td class="day_value closed"><span><?php echo $family_class;?></span></td>
 									<?php } ?>
 								</tr>
 
 								<tr class="opened">
-									<td class="day_label">Financial Condition :</td>
+									<td class="day_label">Financial Condition</td>
 									<?php if (!empty ($financial_condition)) { ?>
 									<td class="day_value closed"><span><?php echo $financial_condition;?></span></td>
 									<?php } ?>
 								</tr>
 
 							    <tr class="opened">
-									<td class="day_label">Family Religious :</td>
+									<td class="day_label">Family Religious</td>
 									<?php if (!empty ($family_religious)) { ?>
 									<td class="day_value closed"><span><?php echo $family_religious;?></span></td>
 									<?php } ?>
@@ -1387,70 +1373,70 @@ if($row){
 
 				        	<tbody>
 				        		<tr class="opened">
-									<td class="day_label">Partner Religius   :</td>
+									<td class="day_label">Partner Religius</td>
 									<?php if (!empty ($partner_religius)) { ?>
 									<td class="day_value"><?php echo $partner_religius;?></td>
 									<?php } ?>
 								</tr>
 
 				        		<tr class="opened">
-									<td class="day_label">Partner District :</td>
+									<td class="day_label">Partner District</td>
 									<?php if (!empty ($partner_district)) { ?>
 									<td class="day_value"><?php echo $partner_district;?></td>
 									<?php } ?>
 								</tr>
 
 							    <tr class="opened">
-									<td class="day_label">Partner Maritial Status :</td>
+									<td class="day_label">Partner Maritial Status</td>
 									<?php if (!empty ($partner_maritialstatus)) { ?>
 									<td class="day_value closed"><span><?php echo $partner_maritialstatus;?></span></td>
 									<?php } ?>
 								</tr>
 
 							    <tr class="opened">
-									<td class="day_label">Partner Age :</td>
+									<td class="day_label">Partner Age</td>
 									<?php if (!empty ($partner_age)) { ?>
 									<td class="day_value closed"><span><?php echo $partner_age;?></span></td>
 									<?php } ?>
 								</tr>
 
 								<tr class="opened">
-									<td class="day_label">Partner Skin Tones:</td>
+									<td class="day_label">Partner Skin Tones</td>
 									<?php if (!empty ($partner_skintones)) { ?>
 									<td class="day_value closed"><span><?php echo $partner_skintones;?></span></td>
 									<?php } ?>
 								</tr>
 
 								<tr class="opened">
-									<td class="day_label">Partner Height :</td>
+									<td class="day_label">Partner Height</td>
 									<?php if (!empty ($partner_height)) { ?>
 									<td class="day_value closed"><span><?php echo $partner_height;?></span></td>
 									<?php } ?>
 								</tr>
 
 								<tr class="opened">
-									<td class="day_label">Partner Education :</td>
+									<td class="day_label">Partner Education</td>
 									<?php if (!empty ($partner_education)) { ?>
 									<td class="day_value closed"><span><?php echo $partner_education;?></span></td>
 									<?php } ?>
 								</tr>
 
 								<tr class="opened">
-									<td class="day_label">Partner Profession :</td>
+									<td class="day_label">Partner Profession</td>
 									<?php if (!empty ($partner_profession)) { ?>
 									<td class="day_value closed"><span><?php echo $partner_profession;?></span></td>
 									<?php } ?>
 								</tr>
 
 								<tr class="opened">
-									<td class="day_label">Partner Financial :</td>
+									<td class="day_label">Partner Financial</td>
 									<?php if (!empty ($partner_financial)) { ?>
 									<td class="day_value closed"><span><?php echo $partner_financial;?></span></td>
 									<?php } ?>
 								</tr>
 
 								<tr class="opened">
-									<td class="day_label">Partner Attributes :</td>
+									<td class="day_label">Partner Attributes</td>
 									<?php if (!empty ($partner_attributes)) { ?>
 									<td class="day_value closed"><span><?php echo $partner_attributes;?></span></td>
 									<?php } ?>
@@ -1488,7 +1474,7 @@ if($row){
         <h3>Profiles Recent View</h3>
 
         <?php
-        $sql="SELECT * FROM 1bd_personal_physical  ORDER BY profilecreationdate DESC LIMIT 12";
+        $sql="SELECT * FROM 1bd_personal_physical  ORDER BY profilecreationdate DESC LIMIT 10";
             $result=mysqlexec($sql);
             $count=1;
             while($row=mysqli_fetch_assoc($result)){
@@ -1554,7 +1540,7 @@ if($row){
   position: relative;
   /* box-shadow: 0px 3px 4px rgba(0, 0, 0, 0.2); */
   box-shadow: 0px 2px 7px 6px rgba(0, 0, 0, 0.2);
-  margin-top: -25px;
+  margin-top: 36px;
   border: 1px solid #ccc;
   margin-left: auto;
     margin-right: auto;
@@ -1972,6 +1958,7 @@ button.createbtn i {
     flex-direction: column;
     text-align: center;
     padding-bottom: 20px;
+	margin-top: 36px;
   }
 
   .profile-img {
