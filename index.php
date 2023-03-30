@@ -544,46 +544,42 @@ $(document).ready(function(){
   </div>
 
   <ul class="cards-container">
-    <li class="cyan-feature-card">
+    <li class="total-grmbrd-feature-card">
+  <div class="total-grmbrd">
+    <img src="images/shosurbari-male.jpg" alt="team builder feature icon" />
+  </div>
       <h3>Total Groom and Bride's Biodatas</h3>
-      <p>
-      Total Groom and Bride's Biodatas
-      </p>
-      <img src="" 
-           alt="supervisor feature icon" />
+      <p>Total Groom and Bride's Biodatas</p>
     </li>
 
     
     
-    <li class="red-feature-card">
+    <li class="total-groom-feature-card">
+    <div class="total-groom">
+    <img src="images/shosurbari-male.jpg" alt="team builder feature icon" />
+    </div>
       <h3>Total Groom's Biodatas</h3>
-      <p>
-        Scans our talent network to create the optimal team for your project
-      </p>
-      <img src=""
-           alt="team builder feature icon" />
+      <p>Scans our talent network to create the optimal team for your project</p>
     </li>
 
     
     
-    <li class="orange-feature-card">
+    <li class="total-bride-feature-card">
+    <div class="total-bride">
+    <img src="images/ShosurBari-female.png" alt="karma feature icon" />
+    </div>
       <h3>Total Bride's Biodatas</h3>
-      <p>
-        Regularly evaluates our talent to ensure quality
-      </p>
-      <img src=""
-           alt="karma feature icon" />
+      <p> Regularly evaluates our talent to ensure quality</p>
     </li>
 
     
     
-    <li class="blue-feature-card">
+    <li class="total-success-feature-card">
+    <div class="total-success">
+    <img src="images/ShosurBari-female.png" alt="karma feature icon" />
+    </div>
       <h3>Total Successful Marriages</h3>
-      <p>
-        Uses data from past projects to provide better delivery estimates
-      </p>
-      <img src="" 
-           alt="calculator feature icon" />
+      <p>Uses data from past projects to provide better delivery estimates</p>
     </li>
   </ul>
 </main>
@@ -610,6 +606,77 @@ p { color: hsl(229, 6%, 66%); }
   padding: 0; margin: 0;
   margin: auto;
   margin-bottom: 50px;
+}
+.total-grmbrd{
+  margin-top:  -10px;
+}
+.total-grmbrd-feature-card img{
+    height: 80px;
+    width: 80px;
+    border: 5px solid #fff;
+    position: relative;
+    z-index: 5;
+    background: rgb(245, 242, 242);
+    border-radius: 50%;
+    box-shadow: 0px 2px 7px 6px rgba(0, 0, 0, 0.2);
+    margin-left:  auto;
+    margin-right:  auto;
+    margin-top:  0px;
+    margin-bottom:  20px;
+    display: block;
+}
+.total-groom{
+  margin-top:  -10px;
+}
+.total-groom-feature-card img{
+  height: 80px;
+    width: 80px;
+    border: 5px solid #fff;
+    position: relative;
+    z-index: 5;
+    background: rgb(245, 242, 242);
+    border-radius: 50%;
+    box-shadow: 0px 2px 7px 6px rgba(0, 0, 0, 0.2);
+    margin-left:  auto;
+    margin-right:  auto;
+    margin-top:  0px;
+    margin-bottom:  20px;
+    display: block;
+}.total-bride{
+  margin-top:  -10px;
+}
+.total-bride-feature-card img{
+  height: 80px;
+    width: 80px;
+    border: 5px solid #fff;
+    position: relative;
+    z-index: 5;
+    background: rgb(245, 242, 242);
+    border-radius: 50%;
+    box-shadow: 0px 2px 7px 6px rgba(0, 0, 0, 0.2);
+    margin-left:  auto;
+    margin-right:  auto;
+    margin-top:  0px;
+    margin-bottom:  20px;
+    display: block;
+}
+.total-success{
+  margin-top:  -10px;
+}
+.total-success-feature-card img{
+  height: 80px;
+    width: 80px;
+    border: 5px solid #fff;
+    position: relative;
+    z-index: 5;
+    background: rgb(245, 242, 242);
+    border-radius: 50%;
+    box-shadow: 0px 2px 7px 6px rgba(0, 0, 0, 0.2);
+    margin-left:  auto;
+    margin-right:  auto;
+    margin-top:  0px;
+    margin-bottom:  20px;
+    display: block;
 }
 
 @media (min-width: 788px) {
@@ -653,19 +720,16 @@ p { color: hsl(229, 6%, 66%); }
  * ### Top Border Colors Rules
  */
 
-[class$='feature-card'][class*='cyan'] {
+.total-grmbrd-feature-card{
   border-color: #193f4c;
 }
-
-[class$='feature-card'][class*='red'] {
+.total-groom-feature-card{
   border-color: #00bbff;
 }
-
-[class$='feature-card'][class*='orange'] {
+.total-bride-feature-card{
   border-color: #ff0080;
 }
-
-[class$='feature-card'][class*='blue'] {
+.total-success-feature-card{
   border-color: #15ab15;
 }
 
@@ -726,12 +790,12 @@ p { color: hsl(229, 6%, 66%); }
 	
 <main>
   <div class="shosurbari-user-statistic">
-<h1>Total Groom and Bride's Biodatas</h1>
+<h1>How ShosurBari Works</h1>
   </div>
 
   <ul class="cards-container">
-    <li class="cyan-feature-card">
-      <h3>Total Groom and Bride's Biodatas</h3>
+    <li class="total-grmbrd-feature-card">
+      <h3>How to Post Biodata</h3>
       <p>
       Total Groom and Bride's Biodatas
       </p>
@@ -741,8 +805,8 @@ p { color: hsl(229, 6%, 66%); }
 
     
     
-    <li class="red-feature-card">
-      <h3>Total Groom's Biodatas</h3>
+    <li class="total-groom-feature-card">
+      <h3>Search Biodata</h3>
       <p>
         Scans our talent network to create the optimal team for your project
       </p>
@@ -752,8 +816,8 @@ p { color: hsl(229, 6%, 66%); }
 
     
     
-    <li class="orange-feature-card">
-      <h3>Total Bride's Biodatas</h3>
+    <li class="total-bride-feature-card">
+      <h3>Contact with gurdians</h3>
       <p>
         Regularly evaluates our talent to ensure quality
       </p>
@@ -763,8 +827,8 @@ p { color: hsl(229, 6%, 66%); }
 
     
     
-    <li class="blue-feature-card">
-      <h3>Total Successful Marriages</h3>
+    <li class="total-success-feature-card">
+      <h3>Get married</h3>
       <p>
         Uses data from past projects to provide better delivery estimates
       </p>
