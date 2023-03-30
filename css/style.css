@@ -600,268 +600,33 @@ input#submit-btn {
     margin-bottom: 0;
     font-weight: 500;
 }
-/* -- photo item  -- */
-.col_1 {
-	position:relative;
-	overflow:hidden;
-}
-.col_1.frame-border {
-	background-color:#FFF; 
-	border:18px solid #FFF;
-}
-.col_1 img {
-    width: 150px;
-    height: 140px;
-    margin: auto;
-}
-.col_1 .layer {
-	position: absolute; 
-	margin: auto;
-	top: 0; 
-	right: 0; 
-	bottom: 0;
-	left: 0;
-	width:100%;
-	height:100%;
-}
-.col_1 .layer.second-image{
-	opacity: 0; 
-}
-.col_1 .layer.opacity-black-overlay{
-	background-color: rgba(0, 0, 0, 0.4);
-	opacity: 0.3; 
-}
-.col_1 .layer.hidden-black-overlay{
-    opacity: 0; 
-}
-.col_1 .layer.photo-caption{
-	opacity: 1; 
-}
-.col_1 .layer.hidden-photo-caption{
-	opacity: 0; 
-}
-.col_1 .layer.border-photo-caption{
-	opacity: 1;
-	border:1px solid #FFF; 
-}
-.col_1 .layer.hidden-border-photo-caption{
-	opacity: 0;
-	border:1px solid #FFF; 
-}
-.col_1 .layer.link{
-	opacity: 1;
-}
-.col_1 .layer.hidden-link{
-	opacity: 0;
-}
-.col_1:hover .layer.hover-animation.fade-in{
-	opacity: 1; 
-}
-.col_1:hover .layer.hover-animation.half-fade-in{
-	opacity: 0.3; 
-}
-.col_1:hover .layer.hover-animation.fade-out{
-	opacity: 0; 
-}
-.col_1 a:hover{
-	color:#000;
-	font-weight:bold;
-}
-/* on Hover Animation */
-/* ----------------------------------------------*/
-.col_1 img.hover-animation, .col_1:hover img.hover-animation{
-	-webkit-transition: all 0.5s; 
-		-ms-transition: all 0.5s;
-		 -o-transition: all 0.5s;
-			transition: all 0.5s;
-}
-.col_1 .layer.hover-animation, .col_1:hover .layer.hover-animation {
-	-webkit-transition: all 0.5s; 
-		-ms-transition: all 0.5s;
-		 -o-transition: all 0.5s;
-			transition: all 0.5s;
-}
-.col_1:hover .layer.hover-animation.duration1,
-.col_1:hover img.hover-animation.duration1{
-	transition-duration:0.5s;
-}
-.col_1:hover .layer.hover-animation.duration2,
-.col_1:hover img.hover-animation.duration12{
-	transition-duration:1s;
-}
-.col_1:hover .layer.hover-animation.duration3,
-.col_1:hover img.hover-animation.duration3{
-	transition-duration:1.5s;
-}
-.col_1:hover .layer.hover-animation.duration4,
-.col_1:hover img.hover-animation.duration4{
-	transition-duration:2s;
-}
-.col_1:hover .layer.hover-animation.duration5,
-.col_1:hover img.hover-animation.duration5{
-	transition-duration:2.5s;
-}
-.col_1:hover .layer.hover-animation.delay1,
-.col_1:hover img.hover-animation.delay1{
-	transition-delay:0.5s;
-}
-.col_1:hover .layer.hover-animation.delay2,
-.col_1:hover img.hover-animation.delay2{
-	transition-delay:1s;
-}
-.col_1:hover .layer.hover-animation.delay3,
-.col_1:hover img.hover-animation.delay3{
-	transition-delay:1.5s;
-}
-.col_1:hover .layer.hover-animation.delay4,
-.col_1:hover img.hover-animation.delay4{
-	transition-delay:2s;
-}
-.col_1:hover .layer.hover-animation.delay5,
-.col_1:hover img.hover-animation.delay5{
-	transition-delay:2.5s;
-}
-/* 09.3.3 on Hover Zoom In					 	 */
-/* ----------------------------------------------*/
-.col_1:hover img.hover-animation.image-zoom-in {
-	-webkit-transform: scale(1.1); 
-		-ms-transform: scale(1.1);
-		 -o-transform: scale(1.1);  
-			transform: scale(1.1);		
-}
 
-/* 09.3.4 on Hover Zoom In and Rotate	 	 	*/
-/* ----------------------------------------------*/
-.col_1:hover img.hover-animation.image-zoom-rotate {
-	-webkit-transform: rotate(7deg) scale(1.1);
-		-ms-transform: rotate(7deg) scale(1.1);
-		 -o-transform: rotate(7deg) scale(1.1);  
-			transform: rotate(7deg) scale(1.1);			
-}
-.hover_alignment{
-    position: absolute;
-    display: table;
-    height: 100%;
-    width: 100%;
-}
-.center-middle {
-    vertical-align: middle;
-    text-align: center;
-    margin: 70px 0 0 0;
-}
-/* 09.3.5 on Hover Fade Out				 		 */
-/* ----------------------------------------------*/
-.col_1:hover img.hover-animation.image-fade-out {
-	opacity:0;
-}
-a.button.outline, span.button.outline, input[type=submit].outline {
-    background-color: transparent;
-    border: solid 1px #FFF;
-    color: #FFF;
-    padding: 4px 7px;
-    font-size: 11px;
-}
-.nbs-flexisel-container {
-	position: relative;
-	max-width: 100%;
-}
-.nbs-flexisel-ul {
-	position: relative;
-	width: 9999px;
-	margin: 0px;
-	padding: 0px;
-	list-style-type: none;
-	text-align: center;
-}
-.nbs-flexisel-inner {
-	overflow: hidden;
-	margin: 0 auto;
-	width:90%;
-}
-.nbs-flexisel-item {
-	float: left;
-    padding: 5px;
-    position: relative;
-    line-height: 0px;
-    margin:-5px;
-    min-height: 220px;
-    min-width:171px;
-}
-.nbs-flexisel-item:first-child{
-	margin-left:0;
-}
-.nbs-flexisel-item > img {
-	cursor: pointer;
-	position: relative;
-    height: 170px;
-    width: 160px;
-}
-/*** Navigation ***/
-.nbs-flexisel-nav-left, .nbs-flexisel-nav-right {
-    position: absolute;
-	cursor: pointer;
-	z-index: 100;
-	margin-top:0px;
-}
-.nbs-flexisel-nav-left{
-	left: 0px;
-}
-.nbs-flexisel-nav-left:after{
-	text-shadow: none;
-    -webkit-font-smoothing: antialiased;
-    font-family: 'fontawesome';
-    --speak: none;
-    font-weight: normal;
-    font-variant: normal;
-    line-height: 1;
-    text-transform: none;
-    -moz-transition: 0.4s;
-    -o-transition: 0.4s;
-    -webkit-transition: 0.4s;
-    transition: 0.4s;
-    color:#ff0080;
-    content: "\f104";
-    display: inline-block;
-    font-size: 50px;
-    position: relative;
-    top:-40px;
-}
-.nbs-flexisel-nav-right {
-	right: 0px;
-}
-.nbs-flexisel-nav-right:after{
-	 text-shadow: none;
-    -webkit-font-smoothing: antialiased;
-    font-family: 'fontawesome';
-    --speak: none;
-    font-weight: normal;
-    font-variant: normal;
-    line-height: 1;
-    text-transform: none;
-    -moz-transition: 0.4s;
-    -o-transition: 0.4s;
-    -webkit-transition: 0.4s;
-    transition: 0.4s;
-    color:#ff0080;
-    content: "\f105";
-    display: inline-block;
-    font-size: 50px;
-    position: relative;
-    top:-40px;
-}
-ul#flexiselDemo3 h3{
-   font-size:12px;
-   line-height:1.8em;
-   margin: 10px;
-   border-style: double;
-   padding: 5px;
-}
-ul#flexiselDemo3 h3 a{
-	color:#000;
-}
-ul#flexiselDemo3 h3 a:hover{
-   color:#ff0080;
-}
+
+
+
+
+
+
+
+
+
+
+
+/* -- photo item  / featured profile -- */
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 span.m_3{
 	color:#00bbff;
     font-size: 14px;
@@ -4222,6 +3987,7 @@ ul.profile_item{
     .sbbiodata-search{
         width: 21%;
       }
+      
 }
 /*-- -- -- -- -- -- -- -- -- -- -- -- -- ---- -- --
 --           max-width:1280px / E  N  D          --
@@ -4717,7 +4483,7 @@ h6{
       #search-bar {
             width: 100%;
             position: relative;
-            margin-top: 100px;
+            margin-top: 150px;
             margin-bottom: -70px;
     
           }
