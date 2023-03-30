@@ -539,46 +539,50 @@ $(document).ready(function(){
 
 	
 <main>
+  <div class="shosurbari-user-statistic">
+<h1>Total Groom and Bride's Biodatas</h1>
+  </div>
+
   <ul class="cards-container">
     <li class="cyan-feature-card">
-      <h2>Supervisor</h2>
+      <h3>Total Groom and Bride's Biodatas</h3>
       <p>
-        Monitors activity to identify project roadblocks
+      Total Groom and Bride's Biodatas
       </p>
-      <img src="https://alfonsosuarezg.github.io/four-card-feature-section/images/icon-supervisor.svg" 
+      <img src="" 
            alt="supervisor feature icon" />
     </li>
 
     
     
     <li class="red-feature-card">
-      <h2>Team Builder</h2>
+      <h3>Total Groom's Biodatas</h3>
       <p>
         Scans our talent network to create the optimal team for your project
       </p>
-      <img src="https://alfonsosuarezg.github.io/four-card-feature-section/images/icon-team-builder.svg"
+      <img src=""
            alt="team builder feature icon" />
     </li>
 
     
     
     <li class="orange-feature-card">
-      <h2>Karma</h2>
+      <h3>Total Bride's Biodatas</h3>
       <p>
         Regularly evaluates our talent to ensure quality
       </p>
-      <img src="https://alfonsosuarezg.github.io/four-card-feature-section/images/icon-karma.svg"
+      <img src=""
            alt="karma feature icon" />
     </li>
 
     
     
     <li class="blue-feature-card">
-      <h2>Calculator</h2>
+      <h3>Total Successful Marriages</h3>
       <p>
         Uses data from past projects to provide better delivery estimates
       </p>
-      <img src="https://alfonsosuarezg.github.io/four-card-feature-section/images/icon-calculator.svg" 
+      <img src="" 
            alt="calculator feature icon" />
     </li>
   </ul>
@@ -586,10 +590,16 @@ $(document).ready(function(){
 	
 
 <style>
+  .shosurbari-user-statistic{
+    margin-top: 100px;
+    margin-bottom: 50px;
+    text-align: center;
+  }
 	
-h1, h2 {
+h1, h2, h3 {
   font-weight: 600;
   color: hsl(234, 12%, 34%);
+  text-align: center;
 }
 
 p { color: hsl(229, 6%, 66%); }
@@ -598,23 +608,9 @@ p { color: hsl(229, 6%, 66%); }
   /* List Styling Clean-Up */
   list-style: none;
   padding: 0; margin: 0;
-
-  /* Alignment */
   margin: auto;
+  margin-bottom: 50px;
 }
-
-/*
- * ### Responsive Layout Rules
- */
-
-/* When viewport width is equal or greater than 788 pixels,
- * the cards container will fix its width and will append the
- * clear fix pseudo-class to avoid float property issues.
- *
- * The width will depend from the current viewport width.
- * If is greater than 1166 pixels, will be 1106 pixels.
- * Else, then will be 728 pixels.
- */
 
 @media (min-width: 788px) {
   .cards-container { 
@@ -634,17 +630,12 @@ p { color: hsl(229, 6%, 66%); }
   }
 }
 
-/*
- * ## Feature Card Class
- */
 
 [class$='feature-card'] {
   /* Positioning and Sizing */
   position: relative;
   box-sizing: border-box;
   width: 350px; height: 250px;
-
-  /* Alignment */
   margin: 0;
   padding: 32px;
 
@@ -653,60 +644,30 @@ p { color: hsl(229, 6%, 66%); }
   border-top: solid 5px black;
   box-shadow: 2px 5px 20px rgb(0,0,0,0.1);
 }
- 
-/*
- * ### Inner Elements
- */
+
 
 [class$='feature-card'] h2, [class$='feature-card'] p { margin: 0; }
 
-[class$='feature-card'] img {
-  position: absolute;
-  bottom: 32px; right: 32px;
-}
 
 /*
  * ### Top Border Colors Rules
  */
 
 [class$='feature-card'][class*='cyan'] {
-  border-color: hsl(180, 62%, 55%);
+  border-color: #193f4c;
 }
 
 [class$='feature-card'][class*='red'] {
-  border-color: hsl(0, 78%, 62%);
+  border-color: #00bbff;
 }
 
 [class$='feature-card'][class*='orange'] {
-  border-color: hsl(34, 97%, 64%);
+  border-color: #ff0080;
 }
 
 [class$='feature-card'][class*='blue'] {
-  border-color: hsl(212, 86%, 64%);
+  border-color: #15ab15;
 }
-
-/*
- * ### Responsive Layout Rules
- */
-
-/* When the viewport width is less than 788 pixels, the container
- * will not be fixed and every card will arrange normally one over
- * other. This layout is comfortable for mobile devices.
- *
- * But if is equal or greather, every card will set the float
- * property to the left.
- *
- * They will sort smartly on a grid of two columns and two rows if
- * the current viewport width is less than 1166 pixels, that is,
- * for notebooks and tablets screens.
- *
- * Else, then they will sort like the final challenge for desktop
- * larger screens (with a viewport width greather than 1166 pixels.)
- *
- * I had to hard coded every effect because I only use float
- * properties. And I didn't went to use auxiliar HTML elements,
- * trying to keep separation of concerns.
- */
 
 @media (min-width: 788px) {
   [class$='feature-card'] {
@@ -758,63 +719,66 @@ p { color: hsl(229, 6%, 66%); }
     margin-top: 22px;
   }
 }
-
-/*
- * ## Main Footer
- */
-
-footer { margin-top: 80px }
-
-/*
- * ## Attribution Watermark
- */
-
-.attribution { font-size: 11px; text-align: center; }
-.attribution a { color: hsl(228, 45%, 44%); }
-
 	</style>
 
 
 
-
-
-    <div class="bg">
-		<div class="container"> 
-			<h3>Guest Messages</h3>
-			<div class="heart-divider">
-				<span class="grey-line"></span>
-				<i class="fa fa-heart pink-heart"></i>
-				<i class="fa fa-heart grey-heart"></i>
-				<span class="grey-line"></span>
-            </div>
-            <div class="col-sm-6">
-            	<div class="bg_left">
-            		<h4>But I must explain</h4>
-            		<h5>Friend of Bride</h5>
-            		<p>"Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo.</p>
-            	   <ul class="team-socials">
-                    <li><a href="#"><span class="icon-social "><i class="fa fa-facebook"></i></span></a></li>
-                    <li><a href="#"><span class="icon-social "><i class="fa fa-twitter"></i></span></a></li>
-                    <li><a href="#"><span class="icon-social"><i class="fa fa-google-plus"></i></span></a></li>
-                   </ul>
-            	</div>
-            </div>
-            <div class="col-sm-6">
-            	<div class="bg_left">
-            		<h4>But I must explain</h4>
-            		<h5>Friend of Groom</h5>
-            		<p>"Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo.</p>
-            	   <ul class="team-socials">
-                    <li><a href="#"><span class="icon-social "><i class="fa fa-facebook"></i></span></a></li>
-                    <li><a href="#"><span class="icon-social "><i class="fa fa-twitter"></i></span></a></li>
-                    <li><a href="#"><span class="icon-social"><i class="fa fa-google-plus"></i></span></a></li>
-                   </ul>
-            	</div>
-            </div>
-            <div class="clearfix"> </div>
-		</div>
-	</div>
 	
+<main>
+  <div class="shosurbari-user-statistic">
+<h1>Total Groom and Bride's Biodatas</h1>
+  </div>
+
+  <ul class="cards-container">
+    <li class="cyan-feature-card">
+      <h3>Total Groom and Bride's Biodatas</h3>
+      <p>
+      Total Groom and Bride's Biodatas
+      </p>
+      <img src="" 
+           alt="supervisor feature icon" />
+    </li>
+
+    
+    
+    <li class="red-feature-card">
+      <h3>Total Groom's Biodatas</h3>
+      <p>
+        Scans our talent network to create the optimal team for your project
+      </p>
+      <img src=""
+           alt="team builder feature icon" />
+    </li>
+
+    
+    
+    <li class="orange-feature-card">
+      <h3>Total Bride's Biodatas</h3>
+      <p>
+        Regularly evaluates our talent to ensure quality
+      </p>
+      <img src=""
+           alt="karma feature icon" />
+    </li>
+
+    
+    
+    <li class="blue-feature-card">
+      <h3>Total Successful Marriages</h3>
+      <p>
+        Uses data from past projects to provide better delivery estimates
+      </p>
+      <img src="" 
+           alt="calculator feature icon" />
+    </li>
+  </ul>
+</main>
+
+
+
+	
+
+
     <div class="footer">
     	<div class="container">
     		<div class="col-md-4 col_2">
@@ -884,16 +848,21 @@ footer { margin-top: 80px }
 <script>
     window.onscroll = function() {scrollFunction()};
 
-    function scrollFunction() {
-      if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
-        document.getElementById("scroll-up-btn").style.display = "block";
-      } else {
-        document.getElementById("scroll-up-btn").style.display = "none";
-      }
-    }
-    function scrollToTop() {
-      document.body.scrollTop = 0;
-      document.documentElement.scrollTop = 0;
-    }
-  </script>
+function scrollFunction() {
+	var scrollBtn = document.getElementById("scroll-up-btn");
+	if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+		scrollBtn.style.display = "block";
+	} else {
+		scrollBtn.style.display = "none";
+	}
+}
 
+function scrollToTop() {
+	var scrollOptions = {
+		top: 0,
+		left: 0,
+		behavior: 'smooth'
+	};
+	document.documentElement.scrollTo(scrollOptions);
+}
+  </script>
