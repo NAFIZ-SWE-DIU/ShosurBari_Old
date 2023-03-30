@@ -78,17 +78,22 @@
 <script>
     window.onscroll = function() {scrollFunction()};
 
-    function scrollFunction() {
-      if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
-        document.getElementById("scroll-up-btn").style.display = "block";
-      } else {
-        document.getElementById("scroll-up-btn").style.display = "none";
-      }
-    }
+function scrollFunction() {
+	var scrollBtn = document.getElementById("scroll-up-btn");
+	if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+		scrollBtn.style.display = "block";
+	} else {
+		scrollBtn.style.display = "none";
+	}
+}
 
-    function scrollToTop() {
-      document.body.scrollTop = 0;
-      document.documentElement.scrollTop = 0;
-    }
+function scrollToTop() {
+	var scrollOptions = {
+		top: 0,
+		left: 0,
+		behavior: 'smooth'
+	};
+	document.documentElement.scrollTo(scrollOptions);
+}
   </script>
 
