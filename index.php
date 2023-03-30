@@ -418,17 +418,19 @@ $(document).ready(function(){
 
 
 
-
 <div class="grid_1">
-      <div class="container">
+      <div class="sbnew-account">
       	<h1>Featured Profiles</h1>
+        
        	<div class="heart-divider">
 			<span class="grey-line"></span>
 			<i class="fa fa-heart pink-heart"></i>
 			<i class="fa fa-heart grey-heart"></i>
 			<span class="grey-line"></span>
         </div>
-		
+
+
+
         <ul id="flexiselDemo3">
         <?php
         	$sql="SELECT * FROM 1bd_personal_physical";
@@ -437,6 +439,12 @@ $(document).ready(function(){
         		while($row=mysqli_fetch_assoc($result)){
         			$profid=$row['user_id'];
         			$biodatagender=$row['biodatagender'];
+              $Skin_tones=$row['Skin_tones'];
+              $height=$row['height'];
+              $dateofbirth=$row['dateofbirth'];
+
+
+
 				
 
 
@@ -474,32 +482,38 @@ $(document).ready(function(){
 						//got profilepic
 						//
 					//Printing the html
-					echo "<li><div class=\"col_1\"><a href=\"viewpro.php?id={$profid}\">";
-					echo "<img src=\"profile/{$profid}\/{$pic1}\" alt=\"\" class=\"hover-animation image-zoom-in img-responsive\"/>";
-					echo "<div class=\"layer m_1 hidden-link hover-animation delay1 fade-in\">";
-					echo "<div class=\"center-middle\" style=\"color:#fff;\">About {$name}</div>";
-					echo "</div>";
-					echo "<h3><span style=\"color:#00bbff; font-size:13px;\" class=\"m_3\">Biodata Number : {$profid}</span><br>
-					<span style=\"color:black; font-size:13px;\"> Gender :</span> <span style=\"color:#ff0080; font-size:12px;\"> {$biodatagender}</span><br>
-					<span style=\"color:black; font-size:13px;\"> Occupation :</span> <span style=\"color:#ff0080; font-size:12px;\"> {$occupation}</span><br>
-					<span style=\"color:black; font-size:13px;\"> Religion :</span> <span style=\"color:#ff0080; font-size:12px;\"> {$religion}</span> <br>
-					<span style=\"color:black; font-size:13px;\">Address :</span> <span style=\"color:#ff0080; font-size:12px;\"> {$permanent_address}</span></h3></a></div>";
-					echo "</li>";
-				
+					echo "<li>";
+          echo "<div class=\"biodatarecent_viewlist\">";
+          echo "<div class=\"sbbio_header_recent_view\">";
+          echo "<a href=\"view_profile.php?id={$profid}\" target=\"_blank\"> <img  class=\"img-responsive\" src=\"profile/{$profid}\/{$pic1}\"/></a>";
+          echo "<div class=\"sbbio_number_recentview\"><span class=\"sb_biodatanumber_recentview\"> {$profid} <br> Biodata Number </span> </div>";
+          echo "</div>";
+   
+          echo "<div class=\"sb_user_recentview\">
+          <span class=\"sb_single_data_recentview\"> <span class=\"sb_value_recentview\"> Gender </span>  <span class=\"sb_data_recentview\">{$biodatagender}</span></span>
+          <span class=\"sb_single_data_recentview\"> <span class=\"sb_value_recentview\"> Religion </span>  <span class=\"sb_data_recentview\">{$religion}</span></span>
+          <span class=\"sb_single_data_recentview\"> <span class=\"sb_value_recentview\"> Skin Tones </span>  <span class=\"sb_data_recentview\">{$Skin_tones}</span></span>
+          <span class=\"sb_single_data_recentview\"> <span class=\"sb_value_recentview\"> Occupation </span>      <span class=\"sb_data_recentview\"> {$occupation}</span></span>
+          <span class=\"sb_single_data_recentview\"> <span class=\"sb_value_recentview\"> Address </span>      <span class=\"sb_data_recentview\"> {$permanent_address}</span></span>
+          <span class=\"sb_single_data_recentview\"> <span class=\"sb_value_recentview\"> Birth Year</span>        <span class=\"sb_data_recentview\"> {$dateofbirth}</span></span>
+          <a href=\"viewpro.php?id={$profid}\" target=\"_blank\"><button class=\"view_sb_profile_recentview\"> View Full Profile</button> </a>
+          </div></div>";
+
+          echo "</li>";
+
+      
         	}
 		}
-
-
-        ?>
-          </ul>
+    ?>
+  </ul>
 
 
 	    <script type="text/javascript">
 		 $(window).load(function() {
 			$("#flexiselDemo3").flexisel({
-				visibleItems: 6,
+				visibleItems: 5,
 				animationSpeed: 700,
-				autoPlay:true,
+				autoPlay:false,
 				autoPlaySpeed: 5000,    		
 				pauseOnHover: true,
 				enableResponsiveBreakpoints: true,
@@ -531,14 +545,7 @@ $(document).ready(function(){
 
 
 
-
-
-
-
-
-
 	
-<main>
   <div class="shosurbari-user-statistic">
 <h1>Total Groom and Bride's Biodatas</h1>
   </div>
@@ -582,10 +589,332 @@ $(document).ready(function(){
       <p>Uses data from past projects to provide better delivery estimates</p>
     </li>
   </ul>
-</main>
 	
 
 <style>
+.sbnew-account{
+  width: 80%;
+  margin: auto;
+}
+.biodatarecent_viewlist {
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    width: 90%;
+    gap: 1.5rem;
+    padding: 0px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: auto;
+    margin-top: 30px;
+    background: white;
+    transition: transform .2s;
+}
+
+
+
+.col_1 {
+	position:relative;
+	overflow:hidden;
+}
+.col_1.frame-border {
+	background-color:#FFF; 
+	border:18px solid #FFF;
+}
+.col_1 img {
+    width: 150px;
+    height: 140px;
+    margin: auto;
+}
+.col_1 .layer {
+	position: absolute; 
+	margin: auto;
+	top: 0; 
+	right: 0; 
+	bottom: 0;
+	left: 0;
+	width:100%;
+	height:100%;
+}
+.col_1 .layer.second-image{
+	opacity: 0; 
+}
+.col_1 .layer.opacity-black-overlay{
+	background-color: rgba(0, 0, 0, 0.4);
+	opacity: 0.3; 
+}
+.col_1 .layer.hidden-black-overlay{
+    opacity: 0; 
+}
+.col_1 .layer.photo-caption{
+	opacity: 1; 
+}
+.col_1 .layer.hidden-photo-caption{
+	opacity: 0; 
+}
+.col_1 .layer.border-photo-caption{
+	opacity: 1;
+	border:1px solid #FFF; 
+}
+.col_1 .layer.hidden-border-photo-caption{
+	opacity: 0;
+	border:1px solid #FFF; 
+}
+.col_1 .layer.link{
+	opacity: 1;
+}
+.col_1 .layer.hidden-link{
+	opacity: 0;
+}
+.col_1:hover .layer.hover-animation.fade-in{
+	opacity: 1; 
+}
+.col_1:hover .layer.hover-animation.half-fade-in{
+	opacity: 0.3; 
+}
+.col_1:hover .layer.hover-animation.fade-out{
+	opacity: 0; 
+}
+.col_1 a:hover{
+	color:#000;
+	font-weight:bold;
+}
+/* on Hover Animation */
+/* ----------------------------------------------*/
+.col_1 img.hover-animation, .col_1:hover img.hover-animation{
+	-webkit-transition: all 0.5s; 
+		-ms-transition: all 0.5s;
+		 -o-transition: all 0.5s;
+			transition: all 0.5s;
+}
+.col_1 .layer.hover-animation, .col_1:hover .layer.hover-animation {
+	-webkit-transition: all 0.5s; 
+		-ms-transition: all 0.5s;
+		 -o-transition: all 0.5s;
+			transition: all 0.5s;
+}
+.col_1:hover .layer.hover-animation.duration1,
+.col_1:hover img.hover-animation.duration1{
+	transition-duration:0.5s;
+}
+.col_1:hover .layer.hover-animation.duration2,
+.col_1:hover img.hover-animation.duration12{
+	transition-duration:1s;
+}
+.col_1:hover .layer.hover-animation.duration3,
+.col_1:hover img.hover-animation.duration3{
+	transition-duration:1.5s;
+}
+.col_1:hover .layer.hover-animation.duration4,
+.col_1:hover img.hover-animation.duration4{
+	transition-duration:2s;
+}
+.col_1:hover .layer.hover-animation.duration5,
+.col_1:hover img.hover-animation.duration5{
+	transition-duration:2.5s;
+}
+.col_1:hover .layer.hover-animation.delay1,
+.col_1:hover img.hover-animation.delay1{
+	transition-delay:0.5s;
+}
+.col_1:hover .layer.hover-animation.delay2,
+.col_1:hover img.hover-animation.delay2{
+	transition-delay:1s;
+}
+.col_1:hover .layer.hover-animation.delay3,
+.col_1:hover img.hover-animation.delay3{
+	transition-delay:1.5s;
+}
+.col_1:hover .layer.hover-animation.delay4,
+.col_1:hover img.hover-animation.delay4{
+	transition-delay:2s;
+}
+.col_1:hover .layer.hover-animation.delay5,
+.col_1:hover img.hover-animation.delay5{
+	transition-delay:2.5s;
+}
+/* 09.3.3 on Hover Zoom In					 	 */
+/* ----------------------------------------------*/
+.col_1:hover img.hover-animation.image-zoom-in {
+	-webkit-transform: scale(1.1); 
+		-ms-transform: scale(1.1);
+		 -o-transform: scale(1.1);  
+			transform: scale(1.1);		
+}
+
+/* 09.3.4 on Hover Zoom In and Rotate	 	 	*/
+/* ----------------------------------------------*/
+.col_1:hover img.hover-animation.image-zoom-rotate {
+	-webkit-transform: rotate(7deg) scale(1.1);
+		-ms-transform: rotate(7deg) scale(1.1);
+		 -o-transform: rotate(7deg) scale(1.1);  
+			transform: rotate(7deg) scale(1.1);			
+}
+.hover_alignment{
+    position: absolute;
+    display: table;
+    height: 100%;
+    width: 100%;
+}
+.center-middle {
+    vertical-align: middle;
+    text-align: center;
+    margin: 70px 0 0 0;
+}
+/* 09.3.5 on Hover Fade Out				 		 */
+/* ----------------------------------------------*/
+.col_1:hover img.hover-animation.image-fade-out {
+	opacity:0;
+}
+a.button.outline, span.button.outline, input[type=submit].outline {
+    background-color: transparent;
+    border: solid 1px #FFF;
+    color: #FFF;
+    padding: 4px 7px;
+    font-size: 11px;
+}
+.nbs-flexisel-container {
+	position: relative;
+	max-width: 100%;
+}
+.nbs-flexisel-ul {
+	position: relative;
+	width: 9999px;
+	margin: 0px;
+	padding: 0px;
+	list-style-type: none;
+	text-align: center;
+}
+.nbs-flexisel-inner {
+	overflow: hidden;
+	margin: 0 auto;
+	width:100%;
+}
+.nbs-flexisel-item {
+	float: left;
+    position: relative;
+    margin:-7px;
+    margin-bottom:-6px;
+    padding: 6px;
+    line-height: 17px;
+    min-height: 220px;
+    min-width: 248px;
+  }
+  
+.nbs-flexisel-item:first-child{
+	margin-left:0;
+}
+.nbs-flexisel-item > img {
+	cursor: pointer;
+	position: relative;
+    height: 170px;
+    width: 160px;
+}
+/*** Navigation ***/
+.nbs-flexisel-nav-left, .nbs-flexisel-nav-right {
+    position: absolute;
+	cursor: pointer;
+	z-index: 100;
+	margin-top:0px;
+}
+.nbs-flexisel-nav-left{
+	left: -10px;
+}
+.nbs-flexisel-nav-left:after{
+	text-shadow: none;
+    -webkit-font-smoothing: antialiased;
+    font-family: 'fontawesome';
+    --speak: none;
+    font-weight: normal;
+    font-variant: normal;
+    line-height: 1;
+    text-transform: none;
+    -moz-transition: 0.4s;
+    -o-transition: 0.4s;
+    -webkit-transition: 0.4s;
+    transition: 0.4s;
+    color:#ff0080;
+    content: "\f104";
+    display: inline-block;
+    font-size: 50px;
+    top:-40px;
+}
+.nbs-flexisel-nav-right {
+	right: -10px;
+}
+.nbs-flexisel-nav-right:after{
+	 text-shadow: none;
+    -webkit-font-smoothing: antialiased;
+    font-family: 'fontawesome';
+    --speak: none;
+    font-weight: normal;
+    font-variant: normal;
+    line-height: 1;
+    text-transform: none;
+    -moz-transition: 0.4s;
+    -o-transition: 0.4s;
+    -webkit-transition: 0.4s;
+    transition: 0.4s;
+    color:#ff0080;
+    content: "\f105";
+    display: inline-block;
+    font-size: 50px;
+    top:-40px;
+}
+ul#flexiselDemo3 h3{
+   font-size:12px;
+   line-height:1.8em;
+   margin: 10px;
+   border-style: double;
+   padding: 5px;
+}
+ul#flexiselDemo3 h3 a{
+	color:#000;
+}
+ul#flexiselDemo3 h3 a:hover{
+   color:#ff0080;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
   .shosurbari-user-statistic{
     margin-top: 100px;
     margin-bottom: 50px;
@@ -785,58 +1114,51 @@ p { color: hsl(229, 6%, 66%); }
 }
 	</style>
 
-
-
-	
-<main>
-  <div class="shosurbari-user-statistic">
+<div class="shosurbari-user-statistic">
 <h1>How ShosurBari Works</h1>
   </div>
 
   <ul class="cards-container">
     <li class="total-grmbrd-feature-card">
+  <div class="total-grmbrd">
+    <img src="images/shosurbari-male.jpg" alt="team builder feature icon" />
+  </div>
       <h3>How to Post Biodata</h3>
-      <p>
-      Total Groom and Bride's Biodatas
-      </p>
-      <img src="" 
-           alt="supervisor feature icon" />
+      <p>Total Groom and Bride's Biodatas</p>
     </li>
 
     
     
     <li class="total-groom-feature-card">
+    <div class="total-groom">
+    <img src="images/shosurbari-male.jpg" alt="team builder feature icon" />
+    </div>
       <h3>Search Biodata</h3>
-      <p>
-        Scans our talent network to create the optimal team for your project
-      </p>
-      <img src=""
-           alt="team builder feature icon" />
+      <p>Scans our talent network to create the optimal team for your project</p>
     </li>
 
     
     
     <li class="total-bride-feature-card">
+    <div class="total-bride">
+    <img src="images/ShosurBari-female.png" alt="karma feature icon" />
+    </div>
       <h3>Contact with gurdians</h3>
-      <p>
-        Regularly evaluates our talent to ensure quality
-      </p>
-      <img src=""
-           alt="karma feature icon" />
+      <p> Regularly evaluates our talent to ensure quality</p>
     </li>
 
     
     
     <li class="total-success-feature-card">
+    <div class="total-success">
+    <img src="images/ShosurBari-female.png" alt="karma feature icon" />
+    </div>
       <h3>Get married</h3>
-      <p>
-        Uses data from past projects to provide better delivery estimates
-      </p>
-      <img src="" 
-           alt="calculator feature icon" />
+      <p>Uses data from past projects to provide better delivery estimates</p>
     </li>
   </ul>
-</main>
+
+
 
 
 
