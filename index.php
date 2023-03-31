@@ -482,7 +482,7 @@ $(document).ready(function(){
 						//got profilepic
 						//
 					//Printing the html
-					echo "<li>";
+					echo "<li class=\"sb_newbiodata\">";
           echo "<div class=\"biodatarecent_viewlist\">";
           echo "<div class=\"sbbio_header_recent_view\">";
           echo "<a href=\"view_profile.php?id={$profid}\" target=\"_blank\"> <img  class=\"img-responsive\" src=\"profile/{$profid}\/{$pic1}\"/></a>";
@@ -513,7 +513,7 @@ $(document).ready(function(){
 			$("#flexiselDemo3").flexisel({
 				visibleItems: 5,
 				animationSpeed: 700,
-				autoPlay:false,
+				autoPlay:true,
 				autoPlaySpeed: 5000,    		
 				pauseOnHover: true,
 				enableResponsiveBreakpoints: true,
@@ -592,6 +592,16 @@ $(document).ready(function(){
 	
 
 <style>
+  .sb_newbiodata{
+    width: 80%;
+  }
+  #flexiselDemo3{
+    left: 0px;
+
+  }
+  .nbs-flexisel-ul{
+    width: 80%;
+  }
 .sbnew-account{
   width: 80%;
   margin: auto;
@@ -793,13 +803,53 @@ a.button.outline, span.button.outline, input[type=submit].outline {
 	float: left;
     position: relative;
     margin:-7px;
-    margin-bottom:-6px;
+    margin-bottom:6px;
     padding: 6px;
     line-height: 17px;
     min-height: 220px;
-    min-width: 248px;
+    min-width: 204px;
+    max-width: 312px;
+
   }
-  
+  .sb_newbiodata li{
+    width: 33%;
+} 
+
+  @media (max-width: 1280px) {
+    .nbs-flexisel-item {
+      width: 312px;
+    }
+    .sb_newbiodata li{
+    width: 33%;
+  }
+  .sb_newbiodata .nbs-flexisel-item li{
+    width: 33%;
+}
+.nbs-flexisel-item li{
+    width: 33%;
+}
+  }
+  @media (min-width: 1280px) {
+    .nbs-flexisel-item {
+      width: 204px;
+    }
+
+    .sb_newbiodata .nbs-flexisel-item li{
+    width: 33%;
+}
+.sb_newbiodata li{
+    width: 33%;
+} 
+.nbs-flexisel-item li{
+    width: 33%;
+}
+  }
+
+
+
+
+
+
 .nbs-flexisel-item:first-child{
 	margin-left:0;
 }
@@ -817,7 +867,7 @@ a.button.outline, span.button.outline, input[type=submit].outline {
 	margin-top:0px;
 }
 .nbs-flexisel-nav-left{
-	left: -10px;
+	left: -20px;
 }
 .nbs-flexisel-nav-left:after{
 	text-shadow: none;
@@ -839,7 +889,7 @@ a.button.outline, span.button.outline, input[type=submit].outline {
     top:-40px;
 }
 .nbs-flexisel-nav-right {
-	right: -10px;
+	right: -20px;
 }
 .nbs-flexisel-nav-right:after{
 	 text-shadow: none;
