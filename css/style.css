@@ -932,7 +932,8 @@ a.religion_1 {
 
 
 .col_2{
-    margin-left: 40px;
+    margin-left: auto;
+    margin-right: auto;
     margin-top: 20px;
     }
 
@@ -3987,7 +3988,6 @@ ul.profile_item{
     .sbbiodata-search{
         width: 21%;
       }
-      
 }
 /*-- -- -- -- -- -- -- -- -- -- -- -- -- ---- -- --
 --           max-width:1280px / E  N  D          --
@@ -4323,7 +4323,6 @@ h6{
     .fa-chevron-down:before {
         font-size: 10px;
     }
-    
 }
 /*-- -- -- -- -- -- -- -- -- -- -- -- -- ---- -- --
 --          max-width:930px / E  N  D         --
@@ -5246,7 +5245,6 @@ h6{
         margin-top: 30px;
         margin-bottom: auto;
     }
-    
 }
 /*-- -- -- -- -- -- -- -- -- -- -- -- -- ---- -- --
 --           max-width:480px / E  N  D           --
