@@ -22,6 +22,15 @@ error_reporting(0);
 <link href="css/style.css" rel='stylesheet' type='text/css' />
 <link href='//fonts.googleapis.com/css?family=Oswald:300,400,700' rel='stylesheet' type='text/css'>
 <link href='//fonts.googleapis.com/css?family=Ubuntu:300,400,500,700' rel='stylesheet' type='text/css'>
+
+
+<!-- Country Code with Flag for Number input field -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/16.0.8/js/intlTelInput.min.js"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/16.0.8/css/intlTelInput.css" />
+
+
+
 <!--font-Awesome-->
 <link href="css/font-awesome.css" rel="stylesheet"> 
 <!--font-Awesome-->
@@ -69,7 +78,7 @@ $(document).ready(function(){
 <div class="shosurbari-biodata">
 <form action="" method="POST" name="myForm" onsubmit="return validateForm()">
 <div class="flex-container">
-    <div class="sb-biodata">
+    <div class="sb-register-login">
 
 		<div class="sb-biodata-field">
 		    <h2>Create New <span>Account</span></h2>
@@ -77,39 +86,49 @@ $(document).ready(function(){
 
 		<div class="form-group">
 		    <!--  <label for="edit-name">Full Name<span class="form-required" title="This field is required.">*</span></label> -->
-		      <input type="text" id="fname" placeholder="Full Name" name="fname" value="" size="60" maxlength="60" class="form-text required">
+		      <input type="text" id="fname" placeholder="Full Name*" name="fname" value="" size="60" maxlength="60" class="form-text required">
 			  <span id="fname_error" style="color:red; font-size:13px;"></span>
 			</div>
 
 			<div class="form-group">
 		      <!-- <label for="edit-name">Username<span class="form-required" title="This field is required.">*</span></label> -->
-		      <input type="text" id="uname" placeholder="Username" name="uname" value="" size="60" maxlength="60" class="form-text required">
+		      <input type="text" id="uname" placeholder="Username*" name="uname" value="" size="60" maxlength="60" class="form-text required">
 			  <span id="uname_error" style="color:red;  font-size:13px;"></span>
 			</div>
 
 
 			<div class="form-group">
 		      <!-- <label for="edit-name">Emails<span class="form-required" title="This field is required.">*</span></label> -->
-		      <input type="text" id="email" placeholder="Email" name="email" value="" size="60" maxlength="60" class="form-text required">
+		      <input type="text" id="email" placeholder="Email*" name="email" value="" size="60" maxlength="60" class="form-text required">
 			  <span id="email_error" style="color:red; font-size:13px;"></span>
 			</div>
 
 			<div class="form-group">
 		     <!--  <label for="edit-name">Phone Number<span class="form-required" title="This field is required.">*</span></label> -->
-		      <input type="number" id="pnumber" placeholder="Phone Number" name="pnumber" value="" size="60" minlength="10" maxlength="15" class="form-text required">
+		      <input type="pnumber" id="pnumber" placeholder="Phone Number*" name="pnumber" value="" size="60" minlength="10" maxlength="15" class="form-text required">
 			  <span id="pnumber_error" style="color:red; font-size:13px;"></span>
 			</div>
 
+      <script>
+      $(document).ready(function() {
+      var input = document.querySelector("#pnumber");
+      window.intlTelInput(input, {
+        separateDialCode: true,
+        preferredCountries: ["bd"]
+      });
+      });
+      </script>
+
 		    <div class="form-group">
 		      <!-- <label for="edit-pass">Password<span class="form-required" title="This field is required.">*</span></label> -->
-		      <input type="password" id="pass_1" placeholder="New Password" name="pass_1" size="60" maxlength="128" class="form-text required">
+		      <input type="password" id="pass_1" placeholder="New Password*" name="pass_1" size="60" maxlength="128" class="form-text required">
 			  <span class="show-password" style="color:#00bbff;  font-size:18px;"><i style="color:black;  font-size:18px;" class="fa fa-eye" aria-hidden="true"></i></span> 
 			  <span  id="pass_1_error" style="color:red; font-size:13px;"></span>
 			</div>
 
 			<div class="form-group">
 		      <!-- <label for="edit-pass">Confirm Password<span class="form-required" title="This field is required.">*</span></label> -->
-		      <input type="password" id="pass_2" placeholder="Confirm Password" name="pass_2" size="60" maxlength="128" class="form-text required">
+		      <input type="password" id="pass_2" placeholder="Confirm Password*" name="pass_2" size="60" maxlength="128" class="form-text required">
 			  <span class="show-password" style="color:#00bbff;  font-size:18px;"><i style="color:black;  font-size:18px;" class="fa fa-eye" aria-hidden="true"></i></span> 
 			  <span  id="pass_2_error" style="color:red;  font-size:13px;"></span>
 			</div>
@@ -135,7 +154,15 @@ $(document).ready(function(){
 
 
 <style type="text/css">
-    .gender-radio-select{
+  .sb-profile-gender{
+    text-overflow: ellipsis;
+    width: 100%;
+    white-space: nowrap;
+    overflow: hidden;
+    color: #ff0080;
+    border-radius: 4px;
+  }
+    .gender-select-reg{
         padding: 00px 10px;
         display: flex;
 	    	align-items: center;
@@ -143,38 +170,47 @@ $(document).ready(function(){
         border-radius: 4px;
         -webkit-border-radius: 4px;
         background: #4cafe809;
-          }
-
-    .gender-radio-select .gender-option{
-        margin: 10px;
     }
-    .gender-radio-select .gender-option input[type="radio"]{
+
+    .gender-select-reg .gender-option{
+        margin-top: 0px;
+    margin-bottom: 0px;
+    margin-left: 20px;
+    margin-right: -50px;
+    width: 78%;
+}
+
+    .gender-select-reg .gender-option input[type="radio"]{
 		display: none;
     }
-    .gender-radio-select .gender-option label{
+
+    .gender-select-reg .gender-option label{
         display: inline-block;
-        padding: 5px;
-        font-size: 14px;
+        padding: 3px;
         transition: all 0.3s;
 		    font-weight: 500;
         cursor: pointer;
-		    margin-top: 4px;
-		    border: 1px solid gray;
+        margin-top: 4px;
+        margin-bottom: 4px;
+        margin-left: -27px;
+        margin-right: 19px;
+		    border: 1px solid #ccc;
 		    border-radius: 3px;
         background: white;
     }
-    .gender-radio-select .gender-option label i{
+    
+    .gender-select-reg .gender-option label i{
         font-size: 17px;
     }
-    .gender-radio-select .gender-option input[type="radio"]:checked + label{
+    .gender-select-reg .gender-option input[type="radio"]:checked + label{
         background: #00bbff;
         border: 1px solid #ccc;
         color: #fff;
 		border-radius: 3px
     }
 </style>
-<div class="gender-radio-select">
-<label for="sex">Whos Biodata?<span class="form-required" title="This field is required.">*</span></label>
+<div class="gender-select-reg">
+<label class="sb-profile-gender" for="sex">Whos Biodata?<span class="form-required" title="This field is required.">*</span></label>
         <div class="gender-option">
             <input type="radio" name="gender" id="male" value="Male" onclick="genderSelected(this);"/>
             <label for="male"><i class="fa fa-male"></i> Male</label>
