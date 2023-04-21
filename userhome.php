@@ -45,9 +45,6 @@ $(document).ready(function(){
 });
 </script>
 </head>
-
-
-
 <body>
 <!-- ============================  Navigation Start =========================== -->
  <?php include_once("includes/navigation.php");?>
@@ -84,15 +81,14 @@ $username=$row['username'];
    	
      <div class="collapse_userprofile navbar-collapseprofile" id="bs-megadropdown-tabs">
         <ul class="nav navbar-nav nav_1">
-            <li><a href="view_profile.php?id=<?php echo $id;?>">View Profile</a></li>
+            <li><a href="viewpro.php?id=<?php echo $id;?>">View Profile</a></li>
             <li><a href="editbiodata.php?id=<?php echo $id;?>">Post Biodata</a></li>
             <li><a href="updateaccount.php?id=<?php echo $id;?>">Update Account</a></li> 
-
 
             <li class="dropdown">
               <a href="#" class="dropdown-toggle" data-toggle="dropdown">Search<span class="caret"></span></a>
               <ul class="dropdown-menu" role="menu">
-                <li><a href="search-id.php">Search Biodata Number</a></li>
+                <li><a href="search.php">Search Biodata</a></li>
               </ul>
             </li>
         </ul>
