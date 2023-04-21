@@ -7,9 +7,7 @@ $result=search();
 <!DOCTYPE HTML>
 <html>
 <head>
-<title>Find Your Perfect Partner - Makemylove
- | Search :: Make My Love
-</title>
+<title>Search - ShosurBari</title>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 
@@ -53,239 +51,6 @@ $(document).ready(function(){
 
 <div class="flex-container-shosurbaribio">
 
-<style>
-  .sbbiodata-search form{
-    width: 90%;
-    padding: 10px;
-    margin-left: auto;
-    background: #fdfcfc;
-    border-radius: 6px;
-    border: 1px solid #ccc;
-    font-size: 15px;
-  }
-
-  .sbbiodata-search{
-    width: 25%;
-    position: inherit;
-    margin-top: -50px;
-    margin-left: 0px;
-    z-index: 1;
-  }
-
-  .form_radios {
-    color: #000;
-    font-size: 13px;
-    padding: 0px;
-    margin-top: 15px;
-    margin-bottom: 15px;
-}
-
-.select-block1 select {
-    box-shadow: none;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-    outline: 0;
-    background: #ffffff;
-    height: 30px;
-    line-height: 14px;
-    padding: 5px 15px;
-    width: 150%;
-    color: black;
-    font-size: 13px;
-    margin-left: 15px
-}
-
-.control-lable1 {
-    padding: 0;
-    font-size: 14px;
-    color: #ff0080;
-    margin-top: 4px;
-    margin-bottom: 4px;
-    margin-right: -15px;
-}
-
-.form_but1 {
-    margin-bottom: 10px;
-}
-
-input[type=submit] {
-    cursor: pointer;
-    width: 100%;
-    height: 35px;
-    margin-top: 10px;
-    background: #ff0080;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-    color: #fff;
-    box-shadow: 1px 1px 4px #888;
-}
-input[type=submit]:hover {
-    background: #00bbff;
-}
-
-
-    .heart-divider {
-    height: 100%;
-    width: 100%;
-    margin: 100px;
-    text-align: center;
-}
-.total_biodata{
-  margin-top: 10px;
-}
-
-
-.toggle-next{
-  border-radius: 0;
-}
-  
-label {
-  cursor: pointer;
-}
-  
-.ellipsis {
-  text-overflow: ellipsis;
-  width: 100%;
-  white-space: nowrap;
-  overflow: hidden;
-  color: #ff0080;
-  border-radius: 4px;
-}
-
-.apply-selection{
-  display: none;
-  width: 100%;
-  margin: 0;
-  padding: 5px 10px;
-  border-bottom: 1px solid #ccc;
-}
-  
-  .ajax-link {
-    display: none;
-  }
-    
-.checkboxes{
-  margin: 0;
-  display: none;
-  border: 1px solid #ccc;
-  border-top: 0;
-}
-
-  .inner-wrap{
-    padding: 5px 10px;
-    max-height: 160px;
-    overflow: auto;
-  }
-
-  .wrapper{
-   /* margin-top: 10px;
-    margin-bottom: 10px; */
-    position: relative;
-
-  display: flex;
-  flex-direction: column;
-  width: 100%;
-  height: auto;
-  margin: 10px auto;
-  padding: 7px;
-  background-color: #f1f1f1;
-  box-shadow: 1px 1px 4px #888;
-  border-radius: 4px;
-  }
-
-  label span {
-    color: black;
-    font-size: 13px;
-    font-weight: 500;
-}
-
-label{
-  color: #00bbff;
-  font-size: 14px;
-}
-
-.search-title{
-  margin: auto;
-  padding: 10px;
-  color: black;
-}
-
-.search-title h4{
-  font-size: 17px;
-  font-weight: 600;
-  text-align: center;
-}
-
-.fa-female:before {
-    font-size: 15px;
-}
-.fa-male:before {
-    font-size: 15px;
-}
-  .gender-radio-select{
-        padding-top: 0px;
-        padding-bottom: 0px;
-        padding-left: 11px;
-        padding-right: 0px;
-        display: flex;
-		    align-items: center;
-		    border: 1px solid #ccc;
-        border-radius: 4px;
-        -webkit-border-radius: 4px;
-        background: #fff;
-   }
-   .gender-radio-select .gender-option {
-    margin-top: 0px;
-    margin-bottom: 0px;
-    margin-left: 28px;
-    margin-right: -16px;
-    width: 65%;
-}
-
-    .gender-radio-select .gender-option input[type="radio"]{
-		display: none;
-    }
-    .gender-radio-select .gender-option label{
-        display: inline-block;
-        padding: 2px;
-        transition: all 0.3s;
-		font-weight: 500;
-    font-size: 11px;
-    cursor: pointer;
-		margin-top: 4px;
-    margin-bottom: 4px;
-		border: 1px solid #ccc;
-		border-radius: 3px;
-    text-align: center;
-    margin-left: -27px;
-    margin-right: 19px;
-    }
-    .gender-radio-select .gender-option label i{
-        font-size: 17px;
-    }
-    .gender-radio-select .gender-option input[type="radio"]:checked + label{
-        background: #00bbff;
-        border: 1px solid #ccc;
-        color: #fff;
-		border-radius: 3px
-    }
-
-
-    .wrapper .toggle-next .fa {
-position: absolute; 
-right: 10px;
-top: 19px;
-}
-
-.toggle-next span i {
-    transition: all 0.2s ease;
-}
-.toggle-next:hover span i {
-    transform: rotate(180deg);
-
-}
-
-  </style>
 
 <script>
 let label = document.querySelector('.toggle-next');
@@ -298,12 +63,11 @@ label.addEventListener('click', () => {
     checkbox.style.display = 'none';
   }
 });
-
   </script>
 
 
 
-
+<!-- Biodata Profile count -->
 <script>
 window.onload = countBiodata;
 function countBiodata() {
@@ -335,21 +99,40 @@ function countBiodata() {
 
 
 <div id="search-bar">
+                                  <div class="sb_mobilesearch">
+
+<div class="sb_singlebio_mobilesearch">
+<div class="search-title">
+<h4> Find Single Profile </h4>
+</div>
+
+<input type="text"  id="profid" name="profid" placeholder="Enter Biodata Number" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = '';}" required>
+<button type="submit" onclick="viewprofile();"  value="search">Search Biodata</button>
+          <script type="text/javascript">
+            function viewprofile(){
+              var profid=document.getElementById("profid").value;
+              window.location.href="viewpro.php?id="+profid;
+            }
+          </script>
+</div>
 
 <div id="search-button">
-  Search
+  Search Filter
 </div>
+
+                                         </div>
+
+<div id="filters">
+<div class="sbbiodata-search-mobile">
+
+<form action="" method="post">
 
 <div id="close-button">
   Close
 </div>
 
-<div id="filters">
-
-<div class="sbbiodata-search-mobile">
-<form action="" method="post">
 <div class="search-title">
-<h4> Find your perfect Partner </h4>
+<h4> Find Multiple Profile</h4>
 </div>
 
 
@@ -1460,7 +1243,7 @@ function countBiodata() {
 
 <div class="form_but1">
 <div class="clearfix"> </div>
-<input type="submit" name="search" value="Search"/>
+<input type="submit" name="search" value="Search Biodatas"/>
 </div>
 
 </form>
@@ -1534,7 +1317,6 @@ function countBiodata() {
 			<i class="fa fa-heart grey-heart"></i>
 			<span class="grey-line"></span>
 
-
     <div class="total_biodata">
       <h4>Total Profile Found: <span class="total"></span> </h4>
     </div>
@@ -1542,15 +1324,28 @@ function countBiodata() {
 
 
 
-
-
-
 <div class="sbbiodata-search">
+
+<div class="sb_singlebio_search">
+<div class="search-title">
+<h4> Find Single Profile</h4>
+</div>
+
+<input type="text"  id="sbprofid" name="sbprofid" placeholder="Enter Biodata Number" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = '';}" required>
+<button type="submit" onclick="viewprofile2();"  value="search">Search Biodata</button>
+          <script type="text/javascript">
+            function viewprofile2(){
+              var sbprofid=document.getElementById("sbprofid").value;
+              window.location.href="viewpro.php?id="+sbprofid;
+            }
+          </script>
+</div>
+
 <form action="" method="post">
 <div class="search-title">
-<h4> Find your perfect Partner </h4>
+<h4>Find Multiple Profile</h4>
 </div>
-  
+
 <div class="wrapper">
 <div class="gender-radio-select">
 <label class="ellipsis" for="Looking">Looking :</label>
@@ -1558,14 +1353,13 @@ function countBiodata() {
             <input type="radio" name="biodatagender" id="male" value="Male"/>
             <label for="male"><i class="fa fa-male"></i> Groom</label>
         </div>
-        
+
         <div class="gender-option">
             <input type="radio" name="biodatagender" id="female" value="Female"/>
             <label for="female"><i class="fa fa-female"></i> Bride</label><br>
 		</div>
     </div>
 </div>
-
 
 <div class="wrapper">
   <label class="form-control toggle-next ellipsis">Religion  <span style=" color:#ff0080;">   <i class="fa fa-chevron-down"></i></span></label>
@@ -2711,7 +2505,7 @@ function toggleCheckedAll(checkbox) {
 
   <div class="form_but1">
 	  <div class="clearfix"> </div>
-    <input type="submit" name="search" value="Search"/>
+    <input type="submit" name="search" value="Search Biodatas"/>
   </div>
 
  </form>
