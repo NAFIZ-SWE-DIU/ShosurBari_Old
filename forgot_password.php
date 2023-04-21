@@ -55,9 +55,6 @@ $(document).ready(function(){
 
 
 
-
-
-
 <div class="shosurbari-biodata">
     <form action="forgot_password.php" method="post">
 	<div class="flex-container">
@@ -112,7 +109,7 @@ if($_SERVER['REQUEST_METHOD'] == "POST"){
         $to = $email;
         $subject = "Your password for Shosurbari.com";
         $message = "Your password is: $password";
-        $headers = "From: support@shosurbari.com";
+        $headers = "From: info@shosurbari.com";
         
         if(mail($to, $subject, $message, $headers)){
             // Password sent successfully
