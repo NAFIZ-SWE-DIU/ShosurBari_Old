@@ -4,8 +4,7 @@
 <!DOCTYPE HTML>
 <html>
 <head>
-<title>Find Your Perfect Partner - Makemylove | About :: Make My Love
-</title>
+<title>About Us - ShosurBari</title>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 
@@ -38,7 +37,7 @@ $(document).ready(function(){
 </head>
 <body>
 <!-- ============================  Navigation Start =========================== -->
- <?php include_once("includes/navigation.php");?>
+<?php include_once("includes/navigation.php");?>
 <!-- ============================  Navigation End ============================ -->
 <div class="grid_3">
   <div class="container">
@@ -46,179 +45,68 @@ $(document).ready(function(){
      <ul>
         <a href="index.php"><i class="fa fa-home home_1"></i></a>
         <span class="divider">&nbsp;<|>&nbsp;</span>
-        <li class="current-page"><h4>About</h4></li>
+        <li class="current-page"><h4>About Us</h4></li>
      </ul>
    </div>
-   <div class="about">
-   	  <div class="col-md-6 about_left">
-   	  	<img src="images/a3.jpg" class="img-responsive" alt=""/>
-   	  </div>
-   	  <div class="col-md-6 about_right">
-   	  	<h1>About us</h1>
-   	  	<p>It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout.</p>
-   	  	<div class="accordation">
-		   <div class="jb-accordion-wrapper">
-				<div class="jb-accordion-title">Accordion 1 <button type="button" class="jb-accordion-button" data-toggle="collapse" data-target="#accordion-1-"><i class="fa fa-angle-down"> </i></button></div>
-				<p><!-- /.accordion-title -->
-				</p><div id="accordion-1-" class="jb-accordion-content collapse in" style="height: auto;">
-				<p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae...</p>
-				</div>
-				<p><!-- /.collapse --></p>
-			</div>
-			<div class="jb-accordion-wrapper">
-				<div class="jb-accordion-title">Accordion2 <button type="button" class="jb-accordion-button" data-toggle="collapse" data-target="#accordion2-"><i class="fa fa-angle-down"> </i></button></div>
-				<p><!-- /.accordion-title -->
-				</p><div id="accordion2-" class="jb-accordion-content collapse ">
-				<p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt </p>
-				</div>
-				<p><!-- /.collapse --></p>
-			</div>
-			<div class="jb-accordion-wrapper">
-				<div class="jb-accordion-title">Accordion3<button type="button" class="jb-accordion-button" data-toggle="collapse" data-target="#accordion3"><i class="fa fa-angle-down"> </i></button></div>
-				<p><!-- /.accordion-title -->
-				</p><div id="accordion3" class="jb-accordion-content collapse ">
-				<p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt </p>
-				</div>
-				<p><!-- /.collapse --></p>
-			</div>
-		</div>
-   	  </div>
-   	  <div class="clearfix"> </div>
-   </div>
+   <dl class="faq-list">
+	<dt class="faq-list_h">
+	<h4 class="marker">Q?</h4>
+	<h4>Odio gravida atcursus neluctus a lorem. Maecenas tristiqu sters port rsen mate haslelu milsie quqn smetsre?</h4>
+	</dt>
+	<dd>
+	<h4 class="marker1">A.</h4>
+	<p class="m_4">Vestibulum ante ipsum primis in faucibus orci luctus et trices posuere cubilia Suspendisse sollicitudin velit sed leo. Ut pharetra augue nec augue. Nam elit magnandrerit sit amet tincidunt ac viverra sed nulla. Donec porta diam eu massa. Quisque diam lorem interdum vapibus ac scelerisque vitae pede. Donec eget tellus non erat lacinia fermentum. Donec in velit vel ipsum auctorulvinar. Proin ullamcorper urna et tibulum iaculis lacinia est. Proin dictum elementum velit. Fusce euismod consequat ante. Lorem ipsum dolor sit amet consectetuer adipiscing elit. Pellentese sed dolor. Aliquam congue fermentum nisl. Mauris accumsan nullael diam. Sed in lacus ut enim adipiscing aliquet.</p>
+	</dd>
+	<dt class="faq-list_h">
+	<h4 class="marker">Q?</h4>
+	<h4>Fusce feugiat malesuada odio. Morbi nunc odio gravida atcursus neluctus a lorem. Maecenas tristiqu?</h4>
+	</dt>
+	<dd>
+	<h4 class="marker">A.</h4>
+	<p class="m_4">Aenean auctor wisi et urna. Aliquarat volutpat. Duis ac turpis. Integer rutrum ante eu lacusVestibulum libero nisl porta vel scelerisque eget malesuada at neque. Vivamus eget nibh. Etiamcursus leo vel metus. Nulla facilisi. Aenean nec eros.</p>
+	</dd>
+	<dt class="faq-list_h">
+	<h4 class="marker">Q?</h4>
+	<h4>Maecenas tristique orci ac sem. Duis ultricihre tra magnauae ab illo inventoa ster port rsen maet jhaslelu misleui portau?</h4>
+	</dt>
+	<dd>
+	<h4 class="marker">A.</h4>
+	<p class="m_4">Nulla dui. Fusce feugiat malesuada odio. Morbi nunc odio gravida atcursus nec luctus a lorem. Maecenas tristique orci ac sem. Duis ultricies pharetra magna. Donec accumsan malesuada orci. Donec sit amet eros. Lorem ipsum dolor sit amet consectetuer adipiscing elit. Mauris fermentum dictum magna. Sed laoreet aliquam leo. Ut tellus dolor dapibus eget elementum vel cursus eleifend elit.</p>
+	</dd>
+	<dt class="faq-list_h">
+	<h4 class="marker">Q?</h4>
+	<h4>Duis ultricies pharetra magna. Donec accumsan malesuada orcinec sit amet eros. Lorem ipsum dolo?</h4>
+	</dt>
+	<dd>
+	<h4 class="marker">A.</h4>
+	<p class="m_4">Donec eget tellus non erat lacinia fermentum. Donec in velit vel ipsum auctorulvinar. Proin ullamcorper urna et tibulum iaculis lacinia est. Proin dictum elementum velit. Fusce euismod consequat ante. Lorem ipsum dolor sit amet consectetuer adipiscing elit. Pellentese sed dolor. Aliquam congue fermentum nisl. Mauris accumsan nullael diam. Sed in lacus ut enim adipiscing aliquet. Donec eget tellus non erat lacinia fermentum. Donec in velit vel ipsum auctorulvinar. Proin ullamcorper urna et tibulum iaculis lacinia est.</p>
+	</dd>
+	<dt class="faq-list_h">
+	<h4 class="marker">Q?</h4>
+	<h4>Odio gravida atcursus neluctus a lorem. Maecenas tristiqu sters port rsen mate haslelu milsie quqn smetsre?</h4>
+	</dt>
+	<dd>
+	<h4 class="marker">A.</h4>
+	<p class="m_4">Vestibulum ante ipsum primis in faucibus orci luctus et trices posuere cubilia Suspendisse sollicitudin velit sed leo. Ut pharetra augue nec augue. Nam elit magnandrerit sit amet tincidunt ac viverra sed nulla. Donec porta diam eu massa. Quisque diam lorem interdum vapibus ac scelerisque vitae pede. Donec eget tellus non erat lacinia fermentum. Donec in velit vel ipsum auctorulvinar. Proin ullamcorper urna et tibulum iaculis lacinia est. Proin dictum elementum velit. Fusce euismod consequat ante. Lorem ipsum dolor sit amet consectetuer adipiscing elit. Pellentese sed dolor. Aliquam congue fermentum nisl. Mauris accumsan nullael diam. Sed in lacus ut enim adipiscing aliquet.</p>
+	</dd>
+	<dt class="faq-list_h">
+	<h4 class="marker">Q?</h4>
+	<h4>Fusce feugiat malesuada odio. Morbi nunc odio gravida atcursus neluctus a lorem. Maecenas tristiqu?</h4>
+	</dt>
+	<dd>
+	<h4 class="marker">A.</h4>
+	<p class="m_4">Aenean auctor wisi et urna. Aliquarat volutpat. Duis ac turpis. Integer rutrum ante eu lacusVestibulum libero nisl porta vel scelerisque eget malesuada at neque. Vivamus eget nibh. Etiamcursus leo vel metus. Nulla facilisi. Aenean nec eros.</p>
+	</dd>
+	<dt class="faq-list_h">
+	<h4 class="marker">Q?</h4>
+	<h4>Maecenas tristique orci ac sem. Duis ultricihre tra magnauae ab illo inventoa ster port rsen maet jhaslelu misleui portau?</h4>
+	</dt>
+	<dd>
+	<h4 class="marker">A.</h4>
+	<p class="m_4 m_5">Nulla dui. Fusce feugiat malesuada odio. Morbi nunc odio gravida atcursus nec luctus a lorem. Maecenas tristique orci ac sem. Duis ultricies pharetra magna. Donec accumsan malesuada orci. Donec sit amet eros. Lorem ipsum dolor sit amet consectetuer adipiscing elit. Mauris fermentum dictum magna. Sed laoreet aliquam leo. Ut tellus dolor dapibus eget elementum vel cursus eleifend elit.</p>
+	</dd>
+   </dl>
   </div>
-</div>
-<div class="about_middle">
-	<div class="container">
-	  <h2>Happy Clients</h2>
-	  <div class="about_middle-grid1">
-		<div class="col-sm-6 testi_grid list-item-0">
-			<blockquote class="testi_grid_blockquote">
-				<figure class="featured-thumbnail">
-					<img src="images/a1.jpg" class="img-responsive" alt=""/>
-				</figure>
-				<div><a href="#">Aenean nonummy hendrerit mau phasellu porta. Fusce suscipit varius mi sed. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Nulla dui.…</a>
-				<div class="clearfix"></div>
-				</div>
-			</blockquote>
-		    <small class="testi-meta"><span class="user">Eiusmod tempor incididunt</span></small>
-		</div>
-		<div class="col-sm-6 testi_grid list-item-1">
-			<blockquote class="testi_grid_blockquote">
-				<figure class="featured-thumbnail">
-					<img src="images/a2.jpg" class="img-responsive" alt=""/>
-				</figure>
-				<div><a href="#">Aenean nonummy hendrerit mau phasellu porta. Fusce suscipit varius mi sed. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Nulla dui.…</a>
-				<div class="clearfix"></div>
-				</div>
-			</blockquote>
-			<small class="testi-meta1"><span class="user">Sint occaecat </span></small>
-		</div>
-		<div class="clearfix"> </div>
-	  </div>
-	  <div class="about_middle-grid2">
-		<div class="col-sm-6 testi_grid list-item-0">
-			<blockquote class="testi_grid_blockquote">
-				<figure class="featured-thumbnail">
-					<img src="images/a1.jpg" class="img-responsive" alt=""/>
-				</figure>
-				<div><a href="#">Aenean nonummy hendrerit mau phasellu porta. Fusce suscipit varius mi sed. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Nulla dui.…</a>
-				<div class="clearfix"></div>
-				</div>
-			</blockquote>
-		    <small class="testi-meta"><span class="user">Eiusmod tempor incididunt</span></small>
-		</div>
-		<div class="col-sm-6 testi_grid list-item-1">
-			<blockquote class="testi_grid_blockquote">
-				<figure class="featured-thumbnail">
-					<img src="images/a2.jpg" class="img-responsive" alt=""/>
-				</figure>
-				<div><a href="#">Aenean nonummy hendrerit mau phasellu porta. Fusce suscipit varius mi sed. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Nulla dui.…</a>
-				<div class="clearfix"></div>
-				</div>
-			</blockquote>
-			<small class="testi-meta1"><span class="user">Sint occaecat </span></small>
-		</div>
-		<div class="clearfix"> </div>
-	  </div>
-	</div>
-</div>
-<div class="about_bottom">
-	<div class="container">
-		<h3>Team</h3>
-	   <div class="col-md-3 about_grid1">
-		  <ul class="posts-grid our-team">
-			<li class="list-item-1">
-				<figure class="thumbnail_1 thumbnail">
-					<a href="#"><img src="images/a4.jpg"  class="img-responsive" alt=""/></a>
-					<div class="post_networks">
-						<ul>
-							<li class="network_0"><a href="#" title=""><i class="fa fa-facebook"></i></a></li>
-						</ul>
-					</div>
-			    </figure>
-			    <div class="desc">
-			    	<h4><a href="#">Perspiciatis</a></h4>
-			    	<p>Lorem ipsum dolor sit amet,</p>
-			    </div>
-			 </li>
-	       </ul>
-	   </div>
-	   <div class="col-md-3 about_grid1">
-		  <ul class="posts-grid our-team">
-			<li class="list-item-1">
-				<figure class="thumbnail_1 thumbnail">
-					<a href="#"><img src="images/a5.jpg"  class="img-responsive" alt=""/></a>
-					<div class="post_networks">
-						<ul>
-							<li class="network_0"><a href="#" title=""><i class="fa fa-facebook"></i></a></li>
-						</ul>
-					</div>
-			    </figure>
-			    <div class="desc">
-			    	<h4><a href="#">Aspernatur </a></h4>
-			    	<p>Lorem ipsum dolor sit amet,</p>
-			    </div>
-			 </li>
-	       </ul>
-	   </div>
-	   <div class="col-md-3 about_grid1">
-		  <ul class="posts-grid our-team">
-			<li class="list-item-1">
-				<figure class="thumbnail_1 thumbnail">
-					<a href="#"><img src="images/a6.jpg"  class="img-responsive" alt=""/></a>
-					<div class="post_networks">
-						<ul>
-							<li class="network_0"><a href="#" title=""><i class="fa fa-facebook"></i></a></li>
-						</ul>
-					</div>
-			    </figure>
-			    <div class="desc">
-			    	<h4><a href="#">Temporibus</a></h4>
-			    	<p>Lorem ipsum dolor sit amet,</p>
-			    </div>
-			 </li>
-	       </ul>
-	   </div>
-	   <div class="col-md-3 about_grid1">
-		  <ul class="posts-grid our-team">
-			<li class="list-item-1">
-				<figure class="thumbnail_1 thumbnail">
-					<a href="#"><img src="images/a7.jpg"  class="img-responsive" alt=""/></a>
-					<div class="post_networks">
-						<ul>
-							<li class="network_0"><a href="#" title=""><i class="fa fa-facebook"></i></a></li>
-						</ul>
-					</div>
-			    </figure>
-			    <div class="desc">
-			    	<h4><a href="#">Serferendis</a></h4>
-			    	<p>Lorem ipsum dolor sit amet,</p>
-			    </div>
-			 </li>
-	       </ul>
-	   </div>
-	   <div class="clearfix"> </div>
-	</div>
 </div>
 
 
