@@ -72,8 +72,8 @@ $(document).ready(function(){
 
 <!-- -- -- -- -- -- -- -- -- -- -- -- -- ---- -- --
 -- -- -- -- -- -- -- -- --- -- -- -- -- -- -- -- --
---                  S  T  A  R  T                --
---                Contact Biopdata               --
+--                S  T  A  R  T                  --
+--   SHOSURBARI BIODATA FORM FIELD ALL SECTION   --
 --                                               --
 -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- ---
 -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -->
@@ -94,8 +94,8 @@ $(document).ready(function(){
 		      <input type="text" id="cust_email" placeholder="Your Email" name="cust_email" value="" size="60" maxlength="60" class="form-text required">
 			</div>
 
-            <div class="shosurbari-biodata-field">
-		      <input type="cust_number" id="pnumber" placeholder="Your Phone Number" name="cust_number" value="" size="60" minlength="10" maxlength="15" class="form-text required">
+      <div class="shosurbari-biodata-field">
+		    <input type="cust_number" id="pnumber" placeholder="Your Phone Number" name="cust_number" value="" size="60" minlength="10" maxlength="15" class="form-text required">
 			</div>
 
 			<script>
@@ -123,8 +123,8 @@ $(document).ready(function(){
 			</div>
 <!-- -- -- -- -- -- -- -- -- -- -- -- -- ---- -- --
 -- -- -- -- -- -- -- -- --- -- -- -- -- -- -- -- --
---                    E   N   D                  --
---                Contact Biopdata               --
+--                   E   N   D                   --
+--        Religion Details / sb-biodata-8        --
 --                                               --
 -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- ---
 -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -->
