@@ -1523,6 +1523,8 @@ if($row){
 
 
 
+	
+
 
 <style>
 
@@ -2057,7 +2059,6 @@ button.createbtn i {
     width: 60%;
 	
 }
-
 .biodatarecent_viewlist {
     width: 45%;
 }
@@ -2067,6 +2068,12 @@ button.createbtn i {
 .sb_user_recentview .sb_data_recentview {
     font-size: 14px;
 }
+}
+
+@media (max-width:736px){
+	.profile-header {
+	margin-top: 72px;
+  }
 }
 
 @media (max-width:600px){
@@ -2256,7 +2263,7 @@ border-radius: 5px 5px 0px 0px;
 
 .sb_user_recentview{
     text-align: center;
-    padding: 3px 3px 3px;
+    padding: 7px 7px 7px;
     border-bottom-left-radius: 5px;
     border-bottom-right-radius: 5px;
 }
