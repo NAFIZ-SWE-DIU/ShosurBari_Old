@@ -41,6 +41,7 @@ function searchid(){
 	}
 }
 
+
 /*-- -- -- -- -- -- -- -- -- -- -- -- -- ---- -- --
 -- -- -- -- -- -- -- -- --- -- -- -- -- -- -- -- --
 --            Multiple Option Search             --
@@ -129,6 +130,55 @@ function isloggedin(){
 --                                               --
 -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- ---
 -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -*/
+
+
+
+
+
+
+
+
+
+/*-- -- -- -- -- -- -- -- -- -- -- -- -- ---- -- --
+-- -- -- -- -- -- -- -- --- -- -- -- -- -- -- -- --
+--                S  T  A  R  T                  --
+--           New User Register Function          --
+--                                               --
+-- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- ---
+-- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -*/
+function contact_us(){
+	if ($_SERVER['REQUEST_METHOD'] == 'POST') {
+	$name_contactus=$_POST['name_contactus'];
+	$number_contactus=$_POST['number_contactus'];
+	$email_contactus=$_POST['email_contactus'];
+	$message_contactus=$_POST['message_contactus'];
+	require_once("includes/dbconn.php");
+
+
+	$sql = "INSERT 
+			INTO
+			contact_us
+			   ( user_id, name_contactus, number_contactus, email_contactus, message_contactus, message_sendingdate) 
+			VALUES
+			   ('$id', '$name_contactus', '$number_contactus', '$email_contactus', '$message_contactus', CURDATE())";
+
+	if (mysqli_query($conn,$sql)) {
+
+	  header("location: index.php");
+
+	} else {
+	  echo "Error";
+	}
+}
+}
+/*-- -- -- -- -- -- -- -- -- -- -- -- -- ---- -- --
+-- -- -- -- -- -- -- -- --- -- -- -- -- -- -- -- --
+--                   E   N   D                   --
+--           New User Register Function          --
+--                                               --
+-- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- ---
+-- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -*/
+
 
 
 
