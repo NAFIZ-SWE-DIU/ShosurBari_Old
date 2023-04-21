@@ -77,7 +77,7 @@ $(document).ready(function(){
 	
     <form action="auth/auth.php?user=1" method="post">
 		<div class="flex-container">
-    <div class="sb-biodata">
+    <div class="sb-register-login">
 
 		  <div class="sb-biodata-field">
 		    <h2>Login Your <span>Account</span></h2>
@@ -113,11 +113,13 @@ $(document).ready(function(){
 .remember-forgot label {
   margin-right: 10px;
   white-space: nowrap;
+  font-weight: 500;
 }
 
 .remember-forgot a {
   font-size: 14px;
   white-space: nowrap;
+  color: #00bbff;
 }
   </style>
 
