@@ -80,7 +80,7 @@ $(document).ready(function(){
 <div class="shosurbari-biodata">
 <form action="" method="POST" name="myForm" onsubmit="return validateForm()">
 	<div class="flex-container">
-       <div class="sb-biodata">
+       <div class="sb-register-login">
 
 		<div class="sb-biodata-field" style="background: #00bbff !important;">
 		    <h2>Contact <span>Biodata</span></h2>
