@@ -329,7 +329,7 @@ text-align: center;
 
     <form action="" method="POST">
 	  <div class="flex-container">
-    <div class="sb-biodata">
+    <div class="sb-register-login">
 
 		  <div class="sb-biodata-field" style="background: #00bbff !important;">
 		    <h2>Contact <span>Form</span></h2>
