@@ -199,9 +199,9 @@ $(document).ready(function(){
 	    <script type="text/javascript">
 		 $(window).load(function() {
 			$("#flexiselDemo3").flexisel({
-				visibleItems: 5,
+				visibleItems: 4,
 				animationSpeed: 700,
-				autoPlay:true,
+				autoPlay:false,
 				autoPlaySpeed: 5000,    		
 				pauseOnHover: true,
 				enableResponsiveBreakpoints: true,
@@ -291,7 +291,7 @@ $(document).ready(function(){
     width: 80%;
   }
 .sbnew-account{
-  width: 80%;
+  width: 100%;
   margin: auto;
 }
 .biodatarecent_viewlist {
@@ -463,6 +463,7 @@ $(document).ready(function(){
 .col_1:hover img.hover-animation.image-fade-out {
 	opacity:0;
 }
+
 a.button.outline, span.button.outline, input[type=submit].outline {
     background-color: transparent;
     border: solid 1px #FFF;
@@ -470,10 +471,14 @@ a.button.outline, span.button.outline, input[type=submit].outline {
     padding: 4px 7px;
     font-size: 11px;
 }
+
 .nbs-flexisel-container {
 	position: relative;
-	max-width: 100%;
+	max-width: 80%;
+  margin-left: auto;
+  margin-right: auto;
 }
+
 .nbs-flexisel-ul {
 	position: relative;
 	width: 9999px;
@@ -482,45 +487,56 @@ a.button.outline, span.button.outline, input[type=submit].outline {
 	list-style-type: none;
 	text-align: center;
 }
+
 .nbs-flexisel-inner {
 	overflow: hidden;
 	margin: 0 auto;
 	width:100%;
 }
+
+
+
+.sb_newbiodata li{
+    width: 33%;
+}
+
+
+
+  @media (max-width: 1280px) {
+    .sb_newbiodata li{
+    width: 33%;
+  }
+
+  .sb_newbiodata .nbs-flexisel-item li{
+    width: 33%;
+}
+
+.nbs-flexisel-item li{
+    width: 33%;
+}
+
 .nbs-flexisel-item {
-	float: left;
+	  float: left;
     position: relative;
     margin:-7px;
     margin-bottom:6px;
     padding: 6px;
     line-height: 17px;
     min-height: 220px;
-    min-width: 204px;
-    max-width: 312px;
+  }
+  }
 
-  }
-  .sb_newbiodata li{
-    width: 33%;
-} 
 
-  @media (max-width: 1280px) {
-    .nbs-flexisel-item {
-      width: 312px;
-    }
-    .sb_newbiodata li{
-    width: 33%;
-  }
-  .sb_newbiodata .nbs-flexisel-item li{
-    width: 33%;
-}
-.nbs-flexisel-item li{
-    width: 33%;
-}
-  }
   @media (min-width: 1280px) {
-    .nbs-flexisel-item {
-      width: 204px;
-    }
+  .nbs-flexisel-item {
+	  float: left;
+    position: relative;
+    margin:-7px;
+    margin-bottom:6px;
+    padding: 6px;
+    line-height: 17px;
+    min-height: 220px;
+  }
 
     .sb_newbiodata .nbs-flexisel-item li{
     width: 33%;
