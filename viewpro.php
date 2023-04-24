@@ -1741,10 +1741,11 @@ table {
   left: 50%;
   transform: translate(-50%, -50%);
   padding: 10px;
-  background-color: #00bbff;
-  color: #fff;
-  font-size: 1rem;
+  background: #c5ffc5;
+  border: 1px solid green;
   border-radius: 4px;
+  color: green;
+  font-size: 1rem;
   opacity: 0;
   display: none;
   transition: opacity 0.3s ease-in-out;
