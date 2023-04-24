@@ -295,7 +295,7 @@ $('form[name="myForm"]').submit(function(e) {
   if (validateForm()) {
     // Submit the form data using AJAX
     $.ajax({
-      url: 'contact.php', // Replace this with the URL of your server-side script
+      url: 'contactbiodata.php', // Replace this with the URL of your server-side script
       type: 'POST',
       data: $(this).serialize(),
       success: function(response) {
