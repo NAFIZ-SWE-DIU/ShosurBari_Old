@@ -60,9 +60,12 @@
 	#scroll-up-btn {
                 position: fixed;
                 bottom: 20px;
-                right: 30px;
+                right: 20px;
                 cursor: pointer;
-				padding: 10px;
+				padding-top: 5px;
+    			padding-bottom: 5px;
+				padding-left: 10px;
+    			padding-right: 10px;
 				background: #ff008087;
 				color: #fff;
 				border-radius: 3px;
