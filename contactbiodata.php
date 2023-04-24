@@ -315,7 +315,7 @@ $('form[name="myForm"]').submit(function(e) {
   left: 50%;
   transform: translate(-50%, -50%);
   background-color: #c5ffc5;
-  border: 2px solid #00bbff;
+  border: 2px solid green;
   border-radius: 4px;
   padding: 20px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
