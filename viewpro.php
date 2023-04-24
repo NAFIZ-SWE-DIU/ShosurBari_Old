@@ -362,11 +362,17 @@ $religion=$row['religion'];
                 <a href="contactbiodata.php" target="_blank"> <button class="chatbtn" id="chatBtn"><i class="fa fa-phone"></i> Contact</button></a>
 			</div>
 			<div class="copy-sbbio-link">
-                <button class="createbtn clipboard" id="Create-post"><i class="fa fa-copy"></i>Copy Link</button>
+                <button class="copylink clipboard" id="Create-post"><i class="fa fa-copy"></i>Copy Link</button>
 			</div>
+			<div id="copy-message">Link Successfully Copied!</div>
         </div>
 
 <script>
+
+
+
+
+
 var $temp = $("<input>");
 var $url = $(location).attr('href');
 $('.clipboard').on('click', function() {
@@ -374,9 +380,15 @@ $('.clipboard').on('click', function() {
   $temp.val($url).select();
   document.execCommand("copy");
   $temp.remove();
-  $("p").text("Successfully Copied!");
+  $("#copy-message").addClass("show");
+  setTimeout(function() {
+    $("#copy-message").removeClass("show");
+  }, 2000);
 })
+
 </script>
+
+
 
 </div>
 
@@ -1723,7 +1735,25 @@ table {
 }
 
 
-
+#copy-message {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  padding: 10px;
+  background-color: #00bbff;
+  color: #fff;
+  font-size: 1rem;
+  border-radius: 4px;
+  opacity: 0;
+  display: none;
+  transition: opacity 0.3s ease-in-out;
+  pointer-events: none;
+}
+#copy-message.show {
+  opacity: 1;
+  pointer-events: auto;
+}
 
 
 
@@ -1759,8 +1789,7 @@ table {
   margin: auto;
 }
 
-button.chatbtn,
-button.createbtn {
+button.chatbtn{
 width: 100%;
 color: #fff;
         border: 1px solid #ccc;
@@ -1773,15 +1802,31 @@ color: #fff;
         white-space: nowrap;
 }
 
+button.copylink {
+width: 100%;
+color: #fff;
+        border: 1px solid #ccc;
+        padding: 6px;
+        border-radius: 4px;
+        background: #ff0080;
+        cursor: pointer;
+        position: relative;
+        transition: all .2s ease;
+        white-space: nowrap;
+}
 
-button.chatbtn:hover,
-button.createbtn:hover {
+button.copylink:hover {
+  background: #00bbff;
+  color: #fff;
+}
+
+button.chatbtn:hover {
   background: #ff0080;
   color: #fff;
 }
 
 button.chatbtn i,
-button.createbtn i {
+button.copylink i {
   margin-right: 5px;
 }
 
@@ -2101,7 +2146,7 @@ button.createbtn i {
 }
 
 button.chatbtn,
-button.createbtn {
+button.copylink {
 width: 100%;
 padding: 3px;
 }
