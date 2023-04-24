@@ -238,12 +238,6 @@ $(document).ready(function(){
       }
 
   // Validate biodata
-  if (biodata === "") {
-    biodataError.innerHTML = "Please enter your biodata";
-    valid = false;
-  } else {
-    biodataError.innerHTML = "";
-  }
 
   if (biodata == "") {
         document.getElementById('contact_biodatas_number').style.borderColor = "red";
@@ -262,6 +256,11 @@ $(document).ready(function(){
 }
   </script>
 
+
+
+
+
+
 <script> 
 function showSuccessMessage() {
   // Show the overlay
@@ -274,6 +273,7 @@ function showSuccessMessage() {
   // Set the message text
   popup.querySelector('h3').innerHTML = 'Thank you!';
   popup.querySelector('p').innerHTML = 'আপনার তথ্য সফলভাবে জমা হয়েছে। আপনার তথ্য যাচাই করার পর- ৪৮ ঘন্টার মধ্যে যোগাযোগের কাঙ্ক্ষিত তথ্য পাঠানো হবে। অনুগ্রহ করে আপনার ফোনের SMS বক্স বা Email বক্স ফলো করুন।';
+
 
   // Add a close button to the popup message
   var closeButton = document.createElement('button');
@@ -293,17 +293,25 @@ $('form[name="myForm"]').submit(function(e) {
   e.preventDefault(); // Prevent the default form submission
 
   if (validateForm()) {
-    // Show the success message
-    showSuccessMessage();
+    // Submit the form data using AJAX
+    $.ajax({
+      url: 'contact.php', // Replace this with the URL of your server-side script
+      type: 'POST',
+      data: $(this).serialize(),
+      success: function(response) {
+        // Show the success message
+        showSuccessMessage();
 
-    // Clear the form
-    this.reset();
+        // Clear the form
+        $('form[name="myForm"]')[0].reset();
+      },
+      error: function(jqXHR, textStatus, errorThrown) {
+        // Handle errors here
+      }
+    });
   }
 });
-
-  </script>
-
-
+</script>
 
 
     
