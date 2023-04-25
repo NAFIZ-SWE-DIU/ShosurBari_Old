@@ -410,7 +410,36 @@ $(document).ready(function(){
 
 
 
-        // 1 bkash
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        
+  if (bkash.checked) {
+    // Show bkash fields and hide others
+    bkashnumber.parentElement.style.display = "block";
+    bkash.parentElement.style.display = "block";
+    nagadnumber.parentElement.style.display = "none";
+    nagad.parentElement.style.display = "none";
+    roketnumber.parentElement.style.display = "none";
+    roket.parentElement.style.display = "none";
+
+
+        
+// Check if bkash fields are filled in
+  // 1 bkash
   if (bkashnumber == "") {
         document.getElementById('bkash_number').style.borderColor = "red";
         document.getElementById('bkash_number').scrollIntoView({
@@ -424,9 +453,8 @@ $(document).ready(function(){
         document.getElementById('bkashnumber-error').innerHTML = "";
       }
 
-
-        // 2 bkash trxid
-      if (bkash == "") {
+  // 2 bkash trxid
+    if (bkash == "") {
         document.getElementById('bkash_trxid').style.borderColor = "red";
         document.getElementById('bkash_trxid').scrollIntoView({
           behavior: 'smooth',
@@ -438,10 +466,22 @@ $(document).ready(function(){
         document.getElementById('bkash_trxid').style.borderColor = "green";
         document.getElementById('bkash-error').innerHTML = "";
       }
+  }
+  
+  
+  
+  else if (nagad.checked) {
+    // Show nagad fields and hide others
+    nagadnumber.parentElement.style.display = "block";
+    nagad.parentElement.style.display = "block";
+    bkashnumber.parentElement.style.display = "none";
+    bkash.parentElement.style.display = "none";
+    roketnumber.parentElement.style.display = "none";
+    roket.parentElement.style.display = "none";
 
-
+    // Check if nagad fields are filled in
               // 1 nagad
-  if (nagadnumber == "") {
+              if (nagadnumber == "") {
         document.getElementById('nagad_number').style.borderColor = "red";
         document.getElementById('nagad_number').scrollIntoView({
           behavior: 'smooth',
@@ -467,8 +507,20 @@ $(document).ready(function(){
         document.getElementById('nagad_trxid').style.borderColor = "green";
         document.getElementById('nagad-error').innerHTML = "";
       }
+  }
 
-              // 3 roket
+
+  else if (roket.checked) {
+    // Show roket fields and hide others
+    roketnumber.parentElement.style.display = "block";
+    roket.parentElement.style.display = "block";
+    nagadnumber.parentElement.style.display = "none";
+    nagad.parentElement.style.display = "none";
+    bkashnumber.parentElement.style.display = "none";
+    bkash.parentElement.style.display = "none";
+
+    // Check if roket fields are filled in
+    // 3 roket
   if (roketnumber == "") {
         document.getElementById('roket_number').style.borderColor = "red";
         document.getElementById('roket_number').scrollIntoView({
@@ -495,6 +547,7 @@ $(document).ready(function(){
         document.getElementById('roket_trxid').style.borderColor = "green";
         document.getElementById('roket-error').innerHTML = "";
       }
+  }
 
   return valid;
 }
