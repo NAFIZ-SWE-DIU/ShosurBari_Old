@@ -122,7 +122,7 @@ $(document).ready(function(){
         </div>
 
         
-        <button type="button" class="next-btn">Next</button>
+        <button type="button" class="next-btn">Make Payment</button>
 
       </div>
 
@@ -142,6 +142,9 @@ $(document).ready(function(){
 
 
 <div class="payment-form" style="display: none;">
+<div class="sb-biodata-field" style="background: #00bbff !important;">
+          <h2>Payment <span>Getway</span></h2>
+        </div>
 <div class="shosurbari-biodata-field">
             <label for="edit-name">How many Biodatas do you want to contact?</label> <br>
                 <select name="biodata_options" id="biodata_options" required>
