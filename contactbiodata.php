@@ -121,27 +121,168 @@ $(document).ready(function(){
           <span id="biodata-error" style="color:red; font-size:13px;"></span>
         </div>
 
-        <div class="form-actions">
-          <button type="submit" id="edit-submit" name="op" class="btn_4 submit">Submit</button>
-        </div>
+        
+        <button type="button" class="next-btn">Next</button>
 
-        <!-- Add this code after the form element in your existing code -->
+      </div>
+
+
+
+<script>
+  $('.next-btn').click(function(){
+    $('.payment-form').css('display', 'block');
+    $('html, body').animate({
+        scrollTop: $(".payment-form").offset().top - ($(window).height()/3)
+    }, 500);
+});
+  </script>
+
+
+
+
+
+<div class="payment-form" style="display: none;">
+<div class="shosurbari-biodata-field">
+            <label for="edit-name">How many Biodatas do you want to contact?</label> <br>
+                <select name="biodata_options" id="biodata_options" required>
+                <option value="" disabled selected>Biodata Quantities</option>
+                    <option value="1">1 Biodata</option>
+                    <option value="2">2 Biodata</option>
+                    <option value="3">3 Biodata</option>
+                    <option value="4">4 Biodata</option>
+                    <option value="5">5 Biodata</option>
+                </select>
+            </div>
+            
+            <div id="payment-message" class="form-group" style="display: none;">Please pay <span id="payment-amount">70</span> tk to continue.</div>
+           
+            <div class="shosurbari-biodata-field">
+                <label for="edit-name">Choose your preferred payment method.</label>  <br>
+                <select name="payment_method" id="payment_method" required>
+                <option value=""  disabled selected>Payment Method</option>
+                    <option value="bkash">Bkash</option>
+                    <option value="nagad">Nagad</option>
+                    <option value="rocket">Rocket</option>
+                </select>
+            </div>
+
+            
+            <div class="payment-method bkash">
+        <p> please send money to personal Bkash number 01737-226404</p>
+                <div class="form-group">
+                    <label>Enter your Bkash Number</label>
+                    <input type="text" id="bkash_number" name="bkash_number" />
+                    <span id="bkashnumber-error" style="color:red; font-size:13px;"></span>
+                </div>
+                <div class="form-group">
+                    <label>Enter your Bkash Transaction ID</label>
+                    <input type="text" id="bkash_trxid" name="bkash_transaction_id" />
+                    <span id="bkash-error" style="color:red; font-size:13px;"></span>
+                </div>
+            </div>
+            
+            
+            <div class="payment-method nagad">
+        <p> please send money to personal Nagad number 01737-226404</p>
+
+                <div class="form-group">
+                    <label>Enter your Nagad Number</label>
+                    <input type="text" id="nagad_number" name="nagad_number" />
+                    <span id="nagadnumber-error" style="color:red; font-size:13px;"></span>
+                </div>
+                <div class="form-group">
+                    <label>Enter your Nagad Transaction ID</label>
+                    <input type="text" id="nagad_trxid" name="nagad_transaction_id" />
+                    <span id="nagad-error" style="color:red; font-size:13px;"></span>
+                </div>
+            </div>
+            
+            
+            <div class="payment-method rocket">
+              <p> please send money to personal Roket number 01737-2264044</p>
+
+                <div class="form-group">
+                    <label>Enter your Rocket Number</label>
+                    <input type="text" id="roket_number" name="rocket_number" />
+                    <span id="roketnumber-error" style="color:red; font-size:13px;"></span>
+                </div>
+
+                <div class="form-group">
+                    <label>Enter your Rocket Transaction ID</label>
+                    <input type="text" id="roket_trxid" name="rocket_transaction_id" />
+                    <span id="roket-error" style="color:red; font-size:13px;"></span>
+                </div>
+            </div>
+
+
+
+<div class="form-actions">
+  <button type="submit" id="edit-submit" name="op" class="btn_4 submit">Submit</button>
+</div>
 
 <!-- Popup message -->
 <div class="popup-message">
-  <h3></h3>
-  <p></p>
+<h3></h3>
+<p></p>
 </div>
-
 <!-- Overlay -->
 <div class="overlay"></div>
 
 
-
-      </div>
-    </div>
-  </form>
 </div>
+</div>
+
+        </form>
+    </div>
+
+    
+<script>
+  
+  </script>
+
+
+
+
+
+
+
+
+
+    <script>
+        let paymentOptions = {
+            '1': 70,
+            '2': 130,
+            '3': 190,
+            '4': 250,
+            '5': 310
+        }
+        let paymentMethodElements = document.querySelectorAll('.payment-method');
+        let paymentMessageElement = document.querySelector('#payment-message');
+        let paymentAmountElement = document.querySelector('#payment-amount');
+        let biodataOptionsElement = document.querySelector('#biodata_options');
+        let paymentMethodElement = document.querySelector('#payment_method');
+
+        biodataOptionsElement.addEventListener('change', function() {
+            let paymentAmount = paymentOptions[this.value];
+            paymentAmountElement.innerText = paymentAmount;
+            paymentMessageElement.style.display = 'block';
+        });
+
+        paymentMethodElement.addEventListener('change', function() {
+            let selectedMethod = this.value;
+            paymentMethodElements.forEach(function(methodElement) {
+                if (methodElement.classList.contains(selectedMethod)) {
+                    methodElement.style.display = 'block';
+                } else {
+                    methodElement.style.display = 'none';
+                }
+            });
+        });
+    </script>
+
+
+
+
 
 <script>
   function validateForm() {
@@ -150,11 +291,32 @@ $(document).ready(function(){
   var phone = document.getElementById("pnumber").value.trim();
   var address = document.getElementById("permanent_address").value.trim();
   var biodata = document.getElementById("contact_biodatas_number").value.trim();
+
+  var bkashnumber = document.getElementById("bkash_number").value.trim();
+  var bkash = document.getElementById("bkash_trxid").value.trim();
+  
+  var nagadnumber = document.getElementById("nagad_number").value.trim();
+  var nagad = document.getElementById("nagad_trxid").value.trim();
+
+  var roketnumber = document.getElementById("roket_number").value.trim();
+  var roket = document.getElementById("roket_trxid").value.trim();
+
+
   var nameError = document.getElementById("name-error");
   var emailError = document.getElementById("email-error");
   var phoneError = document.getElementById("phone-error");
   var addressError = document.getElementById("address-error");
   var biodataError = document.getElementById("biodata-error");
+
+  var bkashnumberError = document.getElementById("bkashnumber-error");
+  var bkashError = document.getElementById("bkash-error");
+
+  var nagadnumberError = document.getElementById("nagadnumber-error");
+  var nagadError = document.getElementById("nagad-error");
+
+  var roketnumberError = document.getElementById("roketnumber-error");
+  var roketError = document.getElementById("roket-error");
+
   var valid = true;
 
   // Validate name
@@ -252,6 +414,96 @@ $(document).ready(function(){
         document.getElementById('biodata-error').innerHTML = "";
       }
 
+
+
+
+
+        // 1 bkash
+  if (bkashnumber == "") {
+        document.getElementById('bkash_number').style.borderColor = "red";
+        document.getElementById('bkash_number').scrollIntoView({
+          behavior: 'smooth',
+          block: 'center',
+        });
+        document.getElementById('bkashnumber-error').innerHTML = "Please enter your Bkash Number";
+        return false;
+      }else{
+        document.getElementById('bkash_number').style.borderColor = "green";
+        document.getElementById('bkashnumber-error').innerHTML = "";
+      }
+
+
+        // 2 bkash trxid
+      if (bkash == "") {
+        document.getElementById('bkash_trxid').style.borderColor = "red";
+        document.getElementById('bkash_trxid').scrollIntoView({
+          behavior: 'smooth',
+          block: 'center',
+        });
+        document.getElementById('bkash-error').innerHTML = "Please enter Bkash TRXID";
+        return false;
+      }else{
+        document.getElementById('bkash_trxid').style.borderColor = "green";
+        document.getElementById('bkash-error').innerHTML = "";
+      }
+
+
+              // 1 nagad
+  if (nagadnumber == "") {
+        document.getElementById('nagad_number').style.borderColor = "red";
+        document.getElementById('nagad_number').scrollIntoView({
+          behavior: 'smooth',
+          block: 'center',
+        });
+        document.getElementById('nagadnumber-error').innerHTML = "Please enter your Nagad Number";
+        return false;
+      }else{
+        document.getElementById('nagad_number').style.borderColor = "green";
+        document.getElementById('nagadnumber-error').innerHTML = "";
+      }
+
+        // 2 nagad trxid
+      if (nagad == "") {
+        document.getElementById('nagad_trxid').style.borderColor = "red";
+        document.getElementById('nagad_trxid').scrollIntoView({
+          behavior: 'smooth',
+          block: 'center',
+        });
+        document.getElementById('nagad-error').innerHTML = "Please enter Bkash TRXID";
+        return false;
+      }else{
+        document.getElementById('nagad_trxid').style.borderColor = "green";
+        document.getElementById('nagad-error').innerHTML = "";
+      }
+
+              // 3 roket
+  if (roketnumber == "") {
+        document.getElementById('roket_number').style.borderColor = "red";
+        document.getElementById('roket_number').scrollIntoView({
+          behavior: 'smooth',
+          block: 'center',
+        });
+        document.getElementById('roketnumber-error').innerHTML = "Please enter your Bkash Number";
+        return false;
+      }else{
+        document.getElementById('roket_number').style.borderColor = "green";
+        document.getElementById('roketnumber-error').innerHTML = "";
+      }
+
+        // 3 roket trxid
+      if (roket == "") {
+        document.getElementById('roket_trxid').style.borderColor = "red";
+        document.getElementById('roket_trxid').scrollIntoView({
+          behavior: 'smooth',
+          block: 'center',
+        });
+        document.getElementById('roket-error').innerHTML = "Please enter Bkash TRXID";
+        return false;
+      }else{
+        document.getElementById('roket_trxid').style.borderColor = "green";
+        document.getElementById('roket-error').innerHTML = "";
+      }
+
   return valid;
 }
   </script>
@@ -312,6 +564,79 @@ $('form[name="myForm"]').submit(function(e) {
   }
 });
 </script>
+
+
+<script>
+const nextBtn = document.querySelector('.next-btn');
+const paymentForm = document.querySelector('.payment-form');
+
+nextBtn.addEventListener('click', () => {
+  paymentForm.style.display = 'block';
+});
+</script>
+
+
+<style>
+  .next-btn {
+  display: block;
+  margin: 0 auto;
+  margin-top: 20px;
+}
+
+  .payment-form {
+    margin: auto;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    width: 400px;
+    gap: 1.5rem;
+    padding: 20px;
+    background: white;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    height: 2;
+        }
+
+        .payment-form .form-group {
+            margin-bottom: 10px;
+        }
+
+        .payment-form .form-group label {
+            display: block;
+            font-weight: bold;
+            margin-bottom: 5px;
+        }
+
+        .payment-form .form-group input {
+            width: 100%;
+            padding: 10px;
+            box-sizing: border-box;
+            border: 1px solid #ccc;
+        }
+
+        .payment-form .form-group select {
+            width: 100%;
+            padding: 10px;
+            box-sizing: border-box;
+            border: 1px solid #ccc;
+        }
+
+        .payment-form button {
+            display: block;
+            width: 100%;
+            padding: 10px 15px;
+            box-sizing: border-box;
+            background-color: #4CAF50;
+            color: #fff;
+            font-weight: bold;
+            border: 0;
+            border-radius: 3px;
+            cursor: pointer;
+        }
+
+        .payment-form .payment-method {
+            display: none;
+        }
+    </style>
+
 
 
     
