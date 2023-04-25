@@ -138,9 +138,6 @@ $(document).ready(function(){
   </script>
 
 
-
-
-
 <div class="payment-form" style="display: none;">
 <div class="sb-biodata-field" style="background: #00bbff !important;">
           <h2>Payment <span>Getway</span></h2>
@@ -155,69 +152,61 @@ $(document).ready(function(){
                     <option value="4">4 Biodata</option>
                     <option value="5">5 Biodata</option>
                 </select>
+                <div id="payment-message" class="form-group" style="display: none; color: #ff0080;">Please pay <span id="payment-amount">70</span> tk to continue.</div>
             </div>
             
-            <div id="payment-message" class="form-group" style="display: none;">Please pay <span id="payment-amount">70</span> tk to continue.</div>
-           
             <div class="shosurbari-biodata-field">
                 <label for="edit-name">Choose your preferred payment method.</label>  <br>
                 <select name="payment_method" id="payment_method" required>
                 <option value=""  disabled selected>Payment Method</option>
                     <option value="bkash">Bkash</option>
                     <option value="nagad">Nagad</option>
-                    <option value="rocket">Rocket</option>
+                    <option  value="rocket">Rocket</option>
                 </select>
             </div>
 
-            
             <div class="payment-method bkash">
-        <p> please send money to personal Bkash number 01737-226404</p>
-                <div class="form-group">
-                    <label>Enter your Bkash Number</label>
-                    <input type="text" id="bkash_number" name="bkash_number" />
-                    <span id="bkashnumber-error" style="color:red; font-size:13px;"></span>
+                <div class="shosurbari-biodata-field">
+                <p style="color: #e2136e;"> please send money to personal Bkash number 01737-226404</p> <br>
+                  <label style="color: #e2136e;">Your Bkash Number</label>
+                  <input type="text" id="bkash_number" name="bkash_number" placeholder="Enter Number" class="form-text required" />
+                  <span id="bkashnumber-error" style="color:red; font-size:13px;"></span>
                 </div>
-                <div class="form-group">
-                    <label>Enter your Bkash Transaction ID</label>
-                    <input type="text" id="bkash_trxid" name="bkash_transaction_id" />
+                <div class="shosurbari-biodata-field">
+                    <label style="color: #e2136e;">Bkash Transaction ID</label>
+                    <input type="text" id="bkash_trxid" name="bkash_transaction_id" placeholder="Enter TrxID" class="form-text required"/>
                     <span id="bkash-error" style="color:red; font-size:13px;"></span>
                 </div>
             </div>
             
-            
-            <div class="payment-method nagad">
-        <p> please send money to personal Nagad number 01737-226404</p>
-
-                <div class="form-group">
-                    <label>Enter your Nagad Number</label>
-                    <input type="text" id="nagad_number" name="nagad_number" />
+          <div class="payment-method nagad">
+            <div class="shosurbari-biodata-field">
+            <p style="color: #f24f41;"> please send money to personal Nagad number 01737-226404</p> <br>
+                    <label style="color:#f24f41;">Your Nagad Number</label>
+                    <input type="text" id="nagad_number" name="nagad_number" placeholder="Enter Number" class="form-text required"/>
                     <span id="nagadnumber-error" style="color:red; font-size:13px;"></span>
                 </div>
-                <div class="form-group">
-                    <label>Enter your Nagad Transaction ID</label>
-                    <input type="text" id="nagad_trxid" name="nagad_transaction_id" />
+                <div class="shosurbari-biodata-field">
+                    <label style="color:#f24f41;">Nagad Transaction ID</label>
+                    <input type="text" id="nagad_trxid" name="nagad_transaction_id" placeholder="Enter TxnID" class="form-text required"/>
                     <span id="nagad-error" style="color:red; font-size:13px;"></span>
                 </div>
-            </div>
+          </div>
             
             
-            <div class="payment-method rocket">
-              <p> please send money to personal Roket number 01737-2264044</p>
-
-                <div class="form-group">
-                    <label>Enter your Rocket Number</label>
-                    <input type="text" id="roket_number" name="rocket_number" />
+          <div class="payment-method rocket">
+              <div class="shosurbari-biodata-field">
+              <p style="color: #A020F0;"> please send money to personal Roket number 01737-2264044</p> <br>
+                    <label style="color: #A020F0;">Your Rocket Number</label>
+                    <input type="text" id="roket_number" name="rocket_number" placeholder="Enter Number" class="form-text required"/>
                     <span id="roketnumber-error" style="color:red; font-size:13px;"></span>
-                </div>
-
-                <div class="form-group">
-                    <label>Enter your Rocket Transaction ID</label>
-                    <input type="text" id="roket_trxid" name="rocket_transaction_id" />
+              </div>
+              <div class="shosurbari-biodata-field">
+                    <label style="color: #A020F0;">Rocket Transaction ID</label>
+                    <input type="text" id="roket_trxid" name="rocket_transaction_id" placeholder="Enter TxnID" class="form-text required"/>
                     <span id="roket-error" style="color:red; font-size:13px;"></span>
                 </div>
-            </div>
-
-
+          </div>
 
 <div class="form-actions">
   <button type="submit" id="edit-submit" name="op" class="btn_4 submit">Submit</button>
@@ -256,8 +245,8 @@ $(document).ready(function(){
             '1': 70,
             '2': 130,
             '3': 190,
-            '4': 250,
-            '5': 310
+            '4': 245,
+            '5': 295
         }
         let paymentMethodElements = document.querySelectorAll('.payment-method');
         let paymentMessageElement = document.querySelector('#payment-message');
@@ -472,7 +461,7 @@ $(document).ready(function(){
           behavior: 'smooth',
           block: 'center',
         });
-        document.getElementById('nagad-error').innerHTML = "Please enter Bkash TRXID";
+        document.getElementById('nagad-error').innerHTML = "Please enter Nagad TRXID";
         return false;
       }else{
         document.getElementById('nagad_trxid').style.borderColor = "green";
@@ -486,7 +475,7 @@ $(document).ready(function(){
           behavior: 'smooth',
           block: 'center',
         });
-        document.getElementById('roketnumber-error').innerHTML = "Please enter your Bkash Number";
+        document.getElementById('roketnumber-error').innerHTML = "Please enter your Roket Number";
         return false;
       }else{
         document.getElementById('roket_number').style.borderColor = "green";
@@ -500,7 +489,7 @@ $(document).ready(function(){
           behavior: 'smooth',
           block: 'center',
         });
-        document.getElementById('roket-error').innerHTML = "Please enter Bkash TRXID";
+        document.getElementById('roket-error').innerHTML = "Please enter Roket TRXID";
         return false;
       }else{
         document.getElementById('roket_trxid').style.borderColor = "green";
