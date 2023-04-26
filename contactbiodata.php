@@ -287,6 +287,7 @@ $(document).ready(function(){
   var address = document.getElementById("permanent_address").value.trim();
   var biodata = document.getElementById("contact_biodatas_number").value.trim();
 
+
   var bkashnumber = document.getElementById("bkash_number").value.trim();
   var bkash = document.getElementById("bkash_trxid").value.trim();
   var nagadnumber = document.getElementById("nagad_number").value.trim();
@@ -301,6 +302,7 @@ $(document).ready(function(){
   var addressError = document.getElementById("address-error");
   var biodataError = document.getElementById("biodata-error");
 
+
   var bkashnumberError = document.getElementById("bkashnumber-error");
   var bkashError = document.getElementById("bkash-error");
   var nagadnumberError = document.getElementById("nagadnumber-error");
@@ -308,8 +310,8 @@ $(document).ready(function(){
   var roketnumberError = document.getElementById("roketnumber-error");
   var roketError = document.getElementById("roket-error");
 
-  var selectedOption = document.getElementById("payment_method").value;
 
+  var selectedOption = document.getElementById("payment_method").value;
   var valid = true;
 
   // Validate name
@@ -331,7 +333,7 @@ $(document).ready(function(){
       }
 
 
-            //Email validation
+//Email validation
             if (email == "") {
         document.getElementById('cust_email').style.borderColor = "red";
         document.getElementById('cust_email').scrollIntoView({
@@ -377,7 +379,6 @@ $(document).ready(function(){
       }
 
 
-
   // Validate address
   if (address == "") {
         document.getElementById('permanent_address').style.borderColor = "red";
@@ -392,8 +393,8 @@ $(document).ready(function(){
         document.getElementById('address-error').innerHTML = "";
       }
 
-  // Validate biodata
 
+  // Validate biodata
   if (biodata == "") {
         document.getElementById('contact_biodatas_number').style.borderColor = "red";
         document.getElementById('contact_biodatas_number').scrollIntoView({
@@ -418,24 +419,15 @@ $(document).ready(function(){
 
 
 
-
-
-
-
-
-
-
-
-
-      
+  // Validate Bkash
   if (selectedOption === "bkash") {
     nagadnumberError.style.display = "none";
     nagadError.style.display = "none";
     roketnumberError.style.display = "none";
     roketError.style.display = "none";
 
-// Check if bkash fields are filled in
-  // 1 bkash
+// Check if Bkash fields are filled in
+// Bkash Number
   if (bkashnumber == "") {
         document.getElementById('bkash_number').style.borderColor = "red";
         document.getElementById('bkash_number').scrollIntoView({
@@ -449,7 +441,7 @@ $(document).ready(function(){
         document.getElementById('bkashnumber-error').innerHTML = "";
       }
 
-  // 2 bkash trxid
+// Bkash TrxID
     if (bkash == "") {
         document.getElementById('bkash_trxid').style.borderColor = "red";
         document.getElementById('bkash_trxid').scrollIntoView({
@@ -467,6 +459,7 @@ $(document).ready(function(){
   
   
   
+// Validate Nagad
   else if (selectedOption === "nagad") {
     bkashnumberError.style.display = "none";
     bkashError.style.display = "none";
@@ -474,9 +467,9 @@ $(document).ready(function(){
     roketError.style.display = "none";
 
     
-    // Check if nagad fields are filled in
-              // 1 nagad
-              if (nagadnumber == "") {
+// Check if Nagad fields are filled in
+// Nagad Number
+       if (nagadnumber == "") {
         document.getElementById('nagad_number').style.borderColor = "red";
         document.getElementById('nagad_number').scrollIntoView({
           behavior: 'smooth',
@@ -489,8 +482,8 @@ $(document).ready(function(){
         document.getElementById('nagadnumber-error').innerHTML = "";
       }
 
-        // 2 nagad trxid
-      if (nagad == "") {
+// Nagad TxnID
+        if (nagad == "") {
         document.getElementById('nagad_trxid').style.borderColor = "red";
         document.getElementById('nagad_trxid').scrollIntoView({
           behavior: 'smooth',
@@ -507,8 +500,8 @@ $(document).ready(function(){
   
 
 
-  
-  
+
+// Validate Roket
   else if (selectedOption === "roket") {
     bkashnumberError.style.display = "none";
     bkashError.style.display = "none";
@@ -516,8 +509,8 @@ $(document).ready(function(){
     nagadError.style.display = "none";
 
  // Check if roket fields are filled in
-    // 3 roket
-  if (roketnumber == "") {
+// Roket Number
+        if (roketnumber == "") {
         document.getElementById('roket_number').style.borderColor = "red";
         document.getElementById('roket_number').scrollIntoView({
           behavior: 'smooth',
@@ -530,8 +523,8 @@ $(document).ready(function(){
         document.getElementById('roketnumber-error').innerHTML = "";
       }
 
-        // 3 roket trxid
-      if (roket == "") {
+// Roket TxnID
+        if (roket == "") {
         document.getElementById('roket_trxid').style.borderColor = "red";
         document.getElementById('roket_trxid').scrollIntoView({
           behavior: 'smooth',
@@ -548,7 +541,7 @@ $(document).ready(function(){
   
   
   else {
-    // no option selected
+// No Option Selected
     bkashnumberError.style.display = "none";
     bkashError.style.display = "none";
 
