@@ -81,7 +81,7 @@ $(document).ready(function(){
   <form action="" method="POST" name="myForm" onsubmit="return validateForm()">
     <div class="flex-container">
       <div class="sb-register-login">
-        <div class="sb-biodata-field" style="background: #00bbff !important;">
+        <div class="sb-biodata-field" style="background: #ff0080 !important;">
           <h2>Contact <span>Biodata</span></h2>
         </div>
 
@@ -121,8 +121,9 @@ $(document).ready(function(){
           <span id="biodata-error" style="color:red; font-size:13px;"></span>
         </div>
 
-        
+        <div class="shosurbari-biodata-field">
         <button type="button" class="next-btn">Make Payment</button>
+        </div>
 
       </div>
 
@@ -628,9 +629,23 @@ nextBtn.addEventListener('click', () => {
 
 <style>
   .next-btn {
-  display: block;
-  margin: 0 auto;
-  margin-top: 20px;
+    display: block;
+    margin: 0px auto -10px auto;
+    width: 100%;
+    color: #fff;
+    border: 1px solid #ccc;
+    padding: 6px;
+    border-radius: 4px;
+    background: #ff0080;
+    cursor: pointer;
+    position: relative;
+    transition: all .2s ease;
+    white-space: nowrap;
+}
+
+.next-btn:hover {
+    color: #fff;
+    background: #00bbff;
 }
 
   .payment-form {
