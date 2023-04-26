@@ -161,7 +161,7 @@ $(document).ready(function(){
                 <option value=""  disabled selected>Payment Method</option>
                     <option value="bkash">Bkash</option>
                     <option value="nagad">Nagad</option>
-                    <option  value="rocket">Rocket</option>
+                    <option  value="roket">Roket</option>
                 </select>
             </div>
 
@@ -192,21 +192,24 @@ $(document).ready(function(){
                     <span id="nagad-error" style="color:red; font-size:13px;"></span>
                 </div>
           </div>
+          
             
             
-          <div class="payment-method rocket">
+          <div class="payment-method roket">
               <div class="shosurbari-biodata-field">
-              <p style="color: #A020F0;"> please send money to personal Roket number 01737-2264044</p> <br>
-                    <label style="color: #A020F0;">Your Rocket Number</label>
-                    <input type="text" id="roket_number" name="rocket_number" placeholder="Enter Number" class="form-text required"/>
+              <p style="color: #d80dd8;"> please send money to personal Roket number 01737-2264044</p> <br>
+                    <label style="color: #d80dd8;">Your Roket Number</label>
+                    <input type="text" id="roket_number" name="roket_number" placeholder="Enter Number" class="form-text required"/>
                     <span id="roketnumber-error" style="color:red; font-size:13px;"></span>
               </div>
               <div class="shosurbari-biodata-field">
-                    <label style="color: #A020F0;">Rocket Transaction ID</label>
-                    <input type="text" id="roket_trxid" name="rocket_transaction_id" placeholder="Enter TxnID" class="form-text required"/>
+                    <label style="color: #d80dd8;">Roket Transaction ID</label>
+                    <input type="text" id="roket_trxid" name="roket_transaction_id" placeholder="Enter TxnID" class="form-text required"/>
                     <span id="roket-error" style="color:red; font-size:13px;"></span>
                 </div>
           </div>
+
+
 
 <div class="form-actions">
   <button type="submit" id="edit-submit" name="op" class="btn_4 submit">Submit</button>
@@ -286,10 +289,8 @@ $(document).ready(function(){
 
   var bkashnumber = document.getElementById("bkash_number").value.trim();
   var bkash = document.getElementById("bkash_trxid").value.trim();
-  
   var nagadnumber = document.getElementById("nagad_number").value.trim();
   var nagad = document.getElementById("nagad_trxid").value.trim();
-
   var roketnumber = document.getElementById("roket_number").value.trim();
   var roket = document.getElementById("roket_trxid").value.trim();
 
@@ -302,12 +303,12 @@ $(document).ready(function(){
 
   var bkashnumberError = document.getElementById("bkashnumber-error");
   var bkashError = document.getElementById("bkash-error");
-
   var nagadnumberError = document.getElementById("nagadnumber-error");
   var nagadError = document.getElementById("nagad-error");
-
   var roketnumberError = document.getElementById("roketnumber-error");
   var roketError = document.getElementById("roket-error");
+
+  var selectedOption = document.getElementById("payment_method").value;
 
   var valid = true;
 
@@ -426,18 +427,13 @@ $(document).ready(function(){
 
 
 
-        
-  if (bkash.checked) {
-    // Show bkash fields and hide others
-    bkashnumber.parentElement.style.display = "block";
-    bkash.parentElement.style.display = "block";
-    nagadnumber.parentElement.style.display = "none";
-    nagad.parentElement.style.display = "none";
-    roketnumber.parentElement.style.display = "none";
-    roket.parentElement.style.display = "none";
+      
+  if (selectedOption === "bkash") {
+    nagadnumberError.style.display = "none";
+    nagadError.style.display = "none";
+    roketnumberError.style.display = "none";
+    roketError.style.display = "none";
 
-
-        
 // Check if bkash fields are filled in
   // 1 bkash
   if (bkashnumber == "") {
@@ -466,19 +462,18 @@ $(document).ready(function(){
         document.getElementById('bkash_trxid').style.borderColor = "green";
         document.getElementById('bkash-error').innerHTML = "";
       }
-  }
+  } 
   
   
   
-  else if (nagad.checked) {
-    // Show nagad fields and hide others
-    nagadnumber.parentElement.style.display = "block";
-    nagad.parentElement.style.display = "block";
-    bkashnumber.parentElement.style.display = "none";
-    bkash.parentElement.style.display = "none";
-    roketnumber.parentElement.style.display = "none";
-    roket.parentElement.style.display = "none";
+  
+  else if (selectedOption === "nagad") {
+    bkashnumberError.style.display = "none";
+    bkashError.style.display = "none";
+    roketnumberError.style.display = "none";
+    roketError.style.display = "none";
 
+    
     // Check if nagad fields are filled in
               // 1 nagad
               if (nagadnumber == "") {
@@ -507,19 +502,20 @@ $(document).ready(function(){
         document.getElementById('nagad_trxid').style.borderColor = "green";
         document.getElementById('nagad-error').innerHTML = "";
       }
-  }
+  } 
+  
+  
 
 
-  else if (roket.checked) {
-    // Show roket fields and hide others
-    roketnumber.parentElement.style.display = "block";
-    roket.parentElement.style.display = "block";
-    nagadnumber.parentElement.style.display = "none";
-    nagad.parentElement.style.display = "none";
-    bkashnumber.parentElement.style.display = "none";
-    bkash.parentElement.style.display = "none";
+  
+  
+  else if (selectedOption === "roket") {
+    bkashnumberError.style.display = "none";
+    bkashError.style.display = "none";
+    nagadnumberError.style.display = "none";
+    nagadError.style.display = "none";
 
-    // Check if roket fields are filled in
+ // Check if roket fields are filled in
     // 3 roket
   if (roketnumber == "") {
         document.getElementById('roket_number').style.borderColor = "red";
@@ -547,7 +543,23 @@ $(document).ready(function(){
         document.getElementById('roket_trxid').style.borderColor = "green";
         document.getElementById('roket-error').innerHTML = "";
       }
+  } 
+  
+  
+  
+  else {
+    // no option selected
+    bkashnumberError.style.display = "none";
+    bkashError.style.display = "none";
+
+    nagadnumberError.style.display = "none";
+    nagadError.style.display = "none";
+
+    roketnumberError.style.display = "none";
+    roketError.style.display = "none";
+    valid = false;
   }
+
 
   return valid;
 }
