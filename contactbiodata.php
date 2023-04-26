@@ -325,7 +325,7 @@ $(document).ready(function(){
           behavior: 'smooth',
           block: 'center',
         });
-        document.getElementById('name-error').innerHTML = "Please enter your Full Name";
+        document.getElementById('name-error').innerHTML = "Please Enter Your Full Name";
         return false;
       }else{
         document.getElementById('cust_name').style.borderColor = "green";
@@ -340,11 +340,11 @@ $(document).ready(function(){
           behavior: 'smooth',
           block: 'center',
         });
-        document.getElementById('email-error').innerHTML = "Please enter your Email";
+        document.getElementById('email-error').innerHTML = "Please Enter Your Email";
         return false;
       }else if(! /^[a-zA-Z0-9._-]+@(gmail|outlook|hotmail|yahoo).com$/.test(email)){
         document.getElementById('cust_email').style.borderColor = "red";
-        document.getElementById('email-error').innerHTML = "Please enter a valid Email. Ex: (@gmail / @outlook / @hotmail / @yahoo).com";
+        document.getElementById('email-error').innerHTML = "Please Enter a valid Email. Ex: (@gmail / @outlook / @hotmail / @yahoo).com";
         document.getElementById('cust_email').scrollIntoView({
           behavior: 'smooth',
           block: 'center',
@@ -363,7 +363,7 @@ $(document).ready(function(){
           behavior: 'smooth',
           block: 'center',
         });
-        document.getElementById('phone-error').innerHTML = "Please enter your Phone Number";
+        document.getElementById('phone-error').innerHTML = "Please Enter Your Phone Number";
         return false;
       }else if(pnumber.length < 10 || pnumber.length > 14){
         document.getElementById('pnumber').style.borderColor = "red";
@@ -386,7 +386,7 @@ $(document).ready(function(){
           behavior: 'smooth',
           block: 'center',
         });
-        document.getElementById('address-error').innerHTML = "Please enter your address";
+        document.getElementById('address-error').innerHTML = "Please Enter Your Address";
         return false;
       }else{
         document.getElementById('permanent_address').style.borderColor = "green";
@@ -401,7 +401,7 @@ $(document).ready(function(){
           behavior: 'smooth',
           block: 'center',
         });
-        document.getElementById('biodata-error').innerHTML = "Please enter Biodata Number";
+        document.getElementById('biodata-error').innerHTML = "Please Enter Biodata Number";
         return false;
       }else{
         document.getElementById('contact_biodatas_number').style.borderColor = "green";
@@ -434,7 +434,7 @@ $(document).ready(function(){
           behavior: 'smooth',
           block: 'center',
         });
-        document.getElementById('bkashnumber-error').innerHTML = "Please enter your Bkash Number";
+        document.getElementById('bkashnumber-error').innerHTML = "Please Enter Your Bkash Number";
         return false;
       }else{
         document.getElementById('bkash_number').style.borderColor = "green";
@@ -448,7 +448,7 @@ $(document).ready(function(){
           behavior: 'smooth',
           block: 'center',
         });
-        document.getElementById('bkash-error').innerHTML = "Please enter Bkash TRXID";
+        document.getElementById('bkash-error').innerHTML = "Please Enter Bkash TrxID";
         return false;
       }else{
         document.getElementById('bkash_trxid').style.borderColor = "green";
@@ -475,7 +475,7 @@ $(document).ready(function(){
           behavior: 'smooth',
           block: 'center',
         });
-        document.getElementById('nagadnumber-error').innerHTML = "Please enter your Nagad Number";
+        document.getElementById('nagadnumber-error').innerHTML = "Please Enter Your Nagad Number";
         return false;
       }else{
         document.getElementById('nagad_number').style.borderColor = "green";
@@ -489,7 +489,7 @@ $(document).ready(function(){
           behavior: 'smooth',
           block: 'center',
         });
-        document.getElementById('nagad-error').innerHTML = "Please enter Nagad TRXID";
+        document.getElementById('nagad-error').innerHTML = "Please Enter Nagad TxnID";
         return false;
       }else{
         document.getElementById('nagad_trxid').style.borderColor = "green";
@@ -516,7 +516,7 @@ $(document).ready(function(){
           behavior: 'smooth',
           block: 'center',
         });
-        document.getElementById('roketnumber-error').innerHTML = "Please enter your Roket Number";
+        document.getElementById('roketnumber-error').innerHTML = "Please Enter Your Roket Number";
         return false;
       }else{
         document.getElementById('roket_number').style.borderColor = "green";
@@ -530,7 +530,7 @@ $(document).ready(function(){
           behavior: 'smooth',
           block: 'center',
         });
-        document.getElementById('roket-error').innerHTML = "Please enter Roket TRXID";
+        document.getElementById('roket-error').innerHTML = "Please Enter Roket TxnID";
         return false;
       }else{
         document.getElementById('roket_trxid').style.borderColor = "green";
