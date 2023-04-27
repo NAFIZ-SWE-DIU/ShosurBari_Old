@@ -327,21 +327,21 @@ text-align: center;
   <form action="" method="POST" name="myForm" onsubmit="return validateForm()">
     <div class="flex-container">
       <div class="sb-register-login">
-        <div class="sb-biodata-field" style="background: #00bbff !important;">
+        <div class="sb-biodata-field" style="background: #ff0080 !important;">
           <h2>Contact <span>Us</span></h2>
         </div>
 
-        <div class="shosurbari-biodata-field">
+        <div class="form-group">
           <input type="text" id="cust_name" placeholder="Your Full Name" name="name_contactus" value="" size="60" maxlength="60" class="form-text required">
           <span id="name-error" style="color:red; font-size:13px;"></span>
         </div>
 
-        <div class="shosurbari-biodata-field">
+        <div class="form-group">
           <input type="email" id="cust_email" placeholder="Your Email" name="email_contactus" value="" size="60" maxlength="60" class="form-text">
           <span id="email-error" style="color:red; font-size:13px;"></span>
         </div>
 
-        <div class="shosurbari-biodata-field">
+        <div class="form-group">
           <input type="tel" id="pnumber" placeholder="Your Phone Number" name="number_contactus" value="" size="60" minlength="10" maxlength="15" class="form-text required">
           <span id="phone-error" style="color:red; font-size:13px;"></span>
         </div>
@@ -357,8 +357,8 @@ text-align: center;
   </script>
 
 
-        <div class="shosurbari-biodata-field">
-          <textarea rows="4" id="contact_biodatas_number" name="message_contactus" placeholder="Type text..." class="form-text-describe required"></textarea>
+        <div class="form-group">
+          <textarea rows="4" id="contact_biodatas_number" name="message_contactus" placeholder="Type Your Message..." class="form-text-describe required"></textarea>
           <span id="biodata-error" style="color:red; font-size:13px;"></span>
         </div>
 
