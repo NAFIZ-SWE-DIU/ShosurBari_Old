@@ -138,11 +138,70 @@ function isloggedin(){
 
 
 
+/*-- -- -- -- -- -- -- -- -- -- -- -- -- ---- -- --
+-- -- -- -- -- -- -- -- --- -- -- -- -- -- -- -- --
+--                S  T  A  R  T                  --
+--            User Contact Us Function           --
+--                                               --
+-- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- ---
+-- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -*/
+function biodata_sale_customer(){
+	if ($_SERVER['REQUEST_METHOD'] == 'POST') {
+	$cust_name=$_POST['cust_name'];
+	$cust_email=$_POST['cust_email'];
+	$cust_number=$_POST['cust_number'];
+	$cust_permanent_address=$_POST['cust_permanent_address'];
+	$request_biodata_number=$_POST['request_biodata_number'];
+	$biodata_quantities=$_POST['biodata_quantities'];
+
+	$payment_method=$_POST['payment_method'];
+	$bkash_number=$_POST['bkash_number'];
+	$bkash_transaction_id=$_POST['bkash_transaction_id'];
+	$nagad_number=$_POST['nagad_number'];
+	$nagad_transaction_id=$_POST['nagad_transaction_id'];
+	$roket_number=$_POST['roket_number'];
+	$roket_transaction_id=$_POST['roket_transaction_id'];
+
+
+	require_once("includes/dbconn.php");
+
+
+	$sql = "INSERT 
+			INTO
+			customer(cust_name, cust_email, cust_number, cust_permanent_address, request_biodata_number, biodata_quantities, payment_method, bkash_number, bkash_transaction_id, nagad_number, nagad_transaction_id, roket_number, roket_transaction_id, request_date) 
+			VALUES
+			   ('$cust_name', '$cust_email', '$cust_number', '$cust_permanent_address', '$request_biodata_number', '$biodata_quantities', '$payment_method', '$bkash_number', '$bkash_transaction_id', '$nagad_number', '$nagad_transaction_id', '$roket_number', '$roket_transaction_id', CURDATE())";
+
+	if (mysqli_query($conn,$sql)) {
+
+	  header("location: index.php");
+
+	} else {
+	  echo "Error";
+	}
+}
+}
+/*-- -- -- -- -- -- -- -- -- -- -- -- -- ---- -- --
+-- -- -- -- -- -- -- -- --- -- -- -- -- -- -- -- --
+--                   E   N   D                   --
+--            User Contact Us Function           --
+--                                               --
+-- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- ---
+-- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -*/
+
+
+
+
+
+
+
+
+
 
 /*-- -- -- -- -- -- -- -- -- -- -- -- -- ---- -- --
 -- -- -- -- -- -- -- -- --- -- -- -- -- -- -- -- --
 --                S  T  A  R  T                  --
---           New User Register Function          --
+--            User Contact Us Function           --
 --                                               --
 -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- ---
 -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -*/
@@ -174,7 +233,7 @@ function contact_us(){
 /*-- -- -- -- -- -- -- -- -- -- -- -- -- ---- -- --
 -- -- -- -- -- -- -- -- --- -- -- -- -- -- -- -- --
 --                   E   N   D                   --
---           New User Register Function          --
+--            User Contact Us Function           --
 --                                               --
 -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- ---
 -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -*/
