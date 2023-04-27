@@ -108,6 +108,7 @@ $(document).ready(function(){
   justify-content: space-between;
   align-items: center;
   margin-bottom: 10px;
+  margin-top: -10px;
 }
 
 .remember-forgot label {
