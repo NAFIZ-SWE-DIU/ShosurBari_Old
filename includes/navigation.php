@@ -35,7 +35,7 @@
            </div>-->
 
 
-           <a class="brand" href="index.php"><img src="images/logo.png" alt="logo"></a>
+           <a class="brand" href="index.php"><img style="width: 175px" src="images/shosurbari-logo.png" alt="logo"></a>
            <div class="pull-right">
           	<nav class="navbar nav_bottom" role="navigation">
  
@@ -56,9 +56,8 @@
 					<li class="dropdown">
 		              <a href="#" class="dropdown-toggle" data-toggle="dropdown">Search<span class="caret"></span></a>
 		              <ul class="dropdown-menu" role="menu">
-		                <li><a href="search.php">Regular Search</a></li>
-		                <li><a href="search-id.php">Search By Profile ID</a></li>
-		                <li><a href="faq.php">Faq</a></li>
+		                <li><a href="search.php">Search & Find Biodata</a></li>
+		                <li><a href="faq.php">FAQ's</a></li>
 		                
 		              </ul>
 		            </li>
