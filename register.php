@@ -210,7 +210,7 @@ $(document).ready(function(){
     }
 </style>
 <div class="gender-select-reg">
-<label class="sb-profile-gender" for="sex">Whos Biodata?<span class="form-required" title="This field is required.">*</span></label>
+<label class="sb-profile-gender" for="sex">Your Gender<span class="form-required" title="This field is required.">*</span></label>
         <div class="gender-option">
             <input type="radio" name="gender" id="male" value="Male" onclick="genderSelected(this);"/>
             <label for="male"><i class="fa fa-male"></i> Male</label>
@@ -227,7 +227,7 @@ $(document).ready(function(){
 	<style>
 		.gender-error{
 	display: block;
-    margin-top: -15px;
+    margin-top: 0px;
     margin-bottom: 25px;
 		}
     .error {
@@ -274,13 +274,6 @@ $(document).ready(function(){
       }
     });
   </script>
-
-
-
-
-
-
-
 
 
 
@@ -364,7 +357,7 @@ $(document).ready(function(){
         return false;
       }else if (! /^[A-Za-z0-9]+$/.test(uname)){
         document.getElementById('uname').style.borderColor = "red";
-        document.getElementById('uname_error').innerHTML = "Please enter only Letters and Numbers. Can't used any symbol or space.";
+        document.getElementById('uname_error').innerHTML = "Please enter only Letters and Numbers. Can't used any symbol & space.";
         document.getElementById('uname').scrollIntoView({
           behavior: 'smooth',
           block: 'center',
@@ -399,27 +392,29 @@ $(document).ready(function(){
       }
       
 
-      //Phone number validation
-      if (pnumber == "") {
-        document.getElementById('pnumber').style.borderColor = "red";
-        document.getElementById('pnumber').scrollIntoView({
-          behavior: 'smooth',
-          block: 'center',
-        });
-        document.getElementById('pnumber_error').innerHTML = "Please enter your Phone Number";
-        return false;
-      }else if(pnumber.length < 10 || pnumber.length > 14){
-        document.getElementById('pnumber').style.borderColor = "red";
-        document.getElementById('pnumber_error').innerHTML = "Phone number must be between 10 and 14 characters";
-        document.getElementById('pnumber').scrollIntoView({
-          behavior: 'smooth',
-          block: 'center',
-        });
-        return false;
-      }else{
-        document.getElementById('pnumber').style.borderColor = "green";
-        document.getElementById('pnumber_error').innerHTML = "";
-      }
+//Phone number validation
+if (pnumber == "") {
+  document.getElementById('pnumber').style.borderColor = "red";
+  document.getElementById('pnumber').scrollIntoView({
+    behavior: 'smooth',
+    block: 'center',
+  });
+  document.getElementById('pnumber_error').innerHTML = "Please enter your Phone Number";
+  return false;
+} else if (!/^[0-9]{10,13}$/.test(pnumber)) {
+  document.getElementById('pnumber').style.borderColor = "red";
+  document.getElementById('pnumber_error').innerHTML = "Phone number must be between 10 and 14 digits";
+  document.getElementById('pnumber').scrollIntoView({
+    behavior: 'smooth',
+    block: 'center',
+  });
+  return false;
+} else {
+  document.getElementById('pnumber').style.borderColor = "green";
+  document.getElementById('pnumber_error').innerHTML = "";
+}
+
+
 
       
       //Password validation
