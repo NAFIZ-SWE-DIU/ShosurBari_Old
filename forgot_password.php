@@ -58,7 +58,7 @@ $(document).ready(function(){
 <div class="shosurbari-biodata">
     <form action="forgot_password.php" method="post">
 	<div class="flex-container">
-    <div class="sb-biodata">
+    <div class="sb-register-login">
 
 		    <h2 style="text-align:center; margin-bottom:50px">Reset Password</h2>
 
