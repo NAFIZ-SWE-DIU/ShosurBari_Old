@@ -1,6 +1,6 @@
 <?php include_once("includes/basic_includes.php");?>
 <?php include_once("functions.php"); ?>
-<?php register(); 
+<?php biodata_sale_customer(); 
 error_reporting(0);
 ?>
 <!DOCTYPE HTML>
@@ -85,17 +85,17 @@ $(document).ready(function(){
           <h2>Contact <span>Biodata</span></h2>
         </div>
 
-        <div class="shosurbari-biodata-field">
+        <div class="form-group">
           <input type="text" id="cust_name" placeholder="Your Full Name" name="cust_name" value="" size="60" maxlength="60" class="form-text required">
           <span id="name-error" style="color:red; font-size:13px;"></span>
         </div>
 
-        <div class="shosurbari-biodata-field">
+        <div class="form-group">
           <input type="email" id="cust_email" placeholder="Your Email" name="cust_email" value="" size="60" maxlength="60" class="form-text">
           <span id="email-error" style="color:red; font-size:13px;"></span>
         </div>
 
-        <div class="shosurbari-biodata-field">
+        <div class="form-group">
           <input type="tel" id="pnumber" placeholder="Your Phone Number" name="cust_number" value="" size="60" minlength="10" maxlength="15" class="form-text required">
           <span id="phone-error" style="color:red; font-size:13px;"></span>
         </div>
@@ -111,17 +111,17 @@ $(document).ready(function(){
   </script>
 
 
-        <div class="shosurbari-biodata-field">
-          <input type="text" id="permanent_address" name="permanent_address" placeholder="Your Permanent Address" value="" size="100" maxlength="100" class="form-text required">
+        <div class="form-group">
+          <input type="text" id="permanent_address" name="cust_permanent_address" placeholder="Your Permanent Address" value="" size="100" maxlength="100" class="form-text required">
           <span id="address-error" style="color:red; font-size:13px;"></span>
         </div>
 
-        <div class="shosurbari-biodata-field">
-          <textarea rows="4" id="contact_biodatas_number" name="contact_biodatas_number" placeholder="Biodatas Number. EX: 0000, 982..." class="form-text required"></textarea>
+        <div class="form-group">
+          <textarea rows="4" id="contact_biodatas_number" name="request_biodata_number" placeholder="Biodatas Number. EX: 0000, 982..." class="form-text required"></textarea>
           <span id="biodata-error" style="color:red; font-size:13px;"></span>
         </div>
 
-        <div class="shosurbari-biodata-field">
+        <div class="form-actions">
         <button type="button" class="next-btn">Make Payment</button>
         </div>
 
@@ -140,18 +140,18 @@ $(document).ready(function(){
 
 
 <div class="payment-form" style="display: none;">
-<div class="sb-biodata-field" style="background: #00bbff !important;">
+<div class="sb-biodata-field" style="background: #ff0080 !important;">
           <h2>Payment <span>Getway</span></h2>
         </div>
 <div class="shosurbari-biodata-field">
             <label for="edit-name">How many Biodatas do you want to contact?</label> <br>
-                <select name="biodata_options" id="biodata_options" required>
+                <select name="biodata_quantities" id="biodata_quantities" required>
                 <option value="" disabled selected>Biodata Quantities</option>
-                    <option value="1">1 Biodata</option>
-                    <option value="2">2 Biodata</option>
-                    <option value="3">3 Biodata</option>
-                    <option value="4">4 Biodata</option>
-                    <option value="5">5 Biodata</option>
+                    <option value="1 Biodata 70tk">1 Biodata</option>
+                    <option value="2 Biodata 130tk">2 Biodata</option>
+                    <option value="3 Biodata 190tk">3 Biodata</option>
+                    <option value="4 Biodata 245tk">4 Biodata</option>
+                    <option value="5 Biodata 295tk">5 Biodata</option>
                 </select>
                 <div id="payment-message" class="form-group" style="display: none; color: #ff0080;">Please pay <span id="payment-amount">70</span> tk to continue.</div>
             </div>
@@ -167,13 +167,13 @@ $(document).ready(function(){
             </div>
 
             <div class="payment-method bkash">
-                <div class="shosurbari-biodata-field">
+                <div class="form-group">
                 <p style="color: #e2136e;"> please send money to personal Bkash number 01737-226404</p> <br>
                   <label style="color: #e2136e;">Your Bkash Number</label>
                   <input type="text" id="bkash_number" name="bkash_number" placeholder="Enter Number" class="form-text required" />
                   <span id="bkashnumber-error" style="color:red; font-size:13px;"></span>
                 </div>
-                <div class="shosurbari-biodata-field">
+                <div class="form-group">
                     <label style="color: #e2136e;">Bkash Transaction ID</label>
                     <input type="text" id="bkash_trxid" name="bkash_transaction_id" placeholder="Enter TrxID" class="form-text required"/>
                     <span id="bkash-error" style="color:red; font-size:13px;"></span>
@@ -181,13 +181,13 @@ $(document).ready(function(){
             </div>
             
           <div class="payment-method nagad">
-            <div class="shosurbari-biodata-field">
+            <div class="form-group">
             <p style="color: #f24f41;"> please send money to personal Nagad number 01737-226404</p> <br>
                     <label style="color:#f24f41;">Your Nagad Number</label>
                     <input type="text" id="nagad_number" name="nagad_number" placeholder="Enter Number" class="form-text required"/>
                     <span id="nagadnumber-error" style="color:red; font-size:13px;"></span>
                 </div>
-                <div class="shosurbari-biodata-field">
+                <div class="form-group">
                     <label style="color:#f24f41;">Nagad Transaction ID</label>
                     <input type="text" id="nagad_trxid" name="nagad_transaction_id" placeholder="Enter TxnID" class="form-text required"/>
                     <span id="nagad-error" style="color:red; font-size:13px;"></span>
@@ -197,13 +197,13 @@ $(document).ready(function(){
             
             
           <div class="payment-method roket">
-              <div class="shosurbari-biodata-field">
+              <div class="form-group">
               <p style="color: #d80dd8;"> please send money to personal Roket number 01737-2264044</p> <br>
                     <label style="color: #d80dd8;">Your Roket Number</label>
                     <input type="text" id="roket_number" name="roket_number" placeholder="Enter Number" class="form-text required"/>
                     <span id="roketnumber-error" style="color:red; font-size:13px;"></span>
               </div>
-              <div class="shosurbari-biodata-field">
+              <div class="form-group">
                     <label style="color: #d80dd8;">Roket Transaction ID</label>
                     <input type="text" id="roket_trxid" name="roket_transaction_id" placeholder="Enter TxnID" class="form-text required"/>
                     <span id="roket-error" style="color:red; font-size:13px;"></span>
@@ -213,8 +213,9 @@ $(document).ready(function(){
 
 
 <div class="form-actions">
-  <button type="submit" id="edit-submit" name="op" class="btn_4 submit">Submit</button>
+  <button type="submit" id="edit-submit" name="op">Submit</button>
 </div>
+
 
 <!-- Popup message -->
 <div class="popup-message">
@@ -246,19 +247,19 @@ $(document).ready(function(){
 
     <script>
         let paymentOptions = {
-            '1': 70,
-            '2': 130,
-            '3': 190,
-            '4': 245,
-            '5': 295
+            '1 Biodata 70tk': 70,
+            '2 Biodata 130tk': 130,
+            '3 Biodata 190tk': 190,
+            '4 Biodata 245tk': 245,
+            '5 Biodata 295tk': 295
         }
         let paymentMethodElements = document.querySelectorAll('.payment-method');
         let paymentMessageElement = document.querySelector('#payment-message');
         let paymentAmountElement = document.querySelector('#payment-amount');
-        let biodataOptionsElement = document.querySelector('#biodata_options');
+        let biodataQuantitiesElement = document.querySelector('#biodata_quantities');
         let paymentMethodElement = document.querySelector('#payment_method');
 
-        biodataOptionsElement.addEventListener('change', function() {
+        biodataQuantitiesElement.addEventListener('change', function() {
             let paymentAmount = paymentOptions[this.value];
             paymentAmountElement.innerText = paymentAmount;
             paymentMessageElement.style.display = 'block';
@@ -628,9 +629,10 @@ nextBtn.addEventListener('click', () => {
 
 
 <style>
-  .next-btn {
-    display: block;
-    margin: 0px auto -10px auto;
+
+.form-actions button{
+  display: block;
+    margin: 25px auto 0px auto;
     width: 100%;
     color: #fff;
     border: 1px solid #ccc;
@@ -641,10 +643,11 @@ nextBtn.addEventListener('click', () => {
     position: relative;
     transition: all .2s ease;
     white-space: nowrap;
+    font-size: 0.60em;
 }
 
-.next-btn:hover {
-    color: #fff;
+.form-actions button:hover{
+    color: yellow;
     background: #00bbff;
 }
 
@@ -684,18 +687,7 @@ nextBtn.addEventListener('click', () => {
             border: 1px solid #ccc;
         }
 
-        .payment-form button {
-            display: block;
-            width: 100%;
-            padding: 10px 15px;
-            box-sizing: border-box;
-            background-color: #4CAF50;
-            color: #fff;
-            font-weight: bold;
-            border: 0;
-            border-radius: 3px;
-            cursor: pointer;
-        }
+
 
         .payment-form .payment-method {
             display: none;
