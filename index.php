@@ -201,7 +201,7 @@ $(document).ready(function(){
 			$("#flexiselDemo3").flexisel({
 				visibleItems: 4,
 				animationSpeed: 700,
-				autoPlay:false,
+				autoPlay:true,
 				autoPlaySpeed: 5000,    		
 				pauseOnHover: true,
 				enableResponsiveBreakpoints: true,
@@ -514,7 +514,6 @@ a.button.outline, span.button.outline, input[type=submit].outline {
 .nbs-flexisel-item li{
     width: 33%;
 }
-
 .nbs-flexisel-item {
 	  float: left;
     position: relative;
@@ -968,15 +967,19 @@ p { color: hsl(229, 6%, 66%); }
 
 <style>
 	#scroll-up-btn {
-                position: fixed;
-                bottom: 20px;
-                right: 30px;
-                cursor: pointer;
-				padding: 10px;
-				background: #ff008087;
-				color: #fff;
-				border-radius: 3px;
-            }
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    cursor: pointer;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    padding-left: 10px;
+    padding-right: 10px;
+    background: #ff008087;
+    color: #fff;
+    border-radius: 3px;
+}
+
 			#scroll-up-btn:hover {
 				padding: 10px;
 				background: #ff0080;
