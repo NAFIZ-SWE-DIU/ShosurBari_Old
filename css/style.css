@@ -340,20 +340,21 @@ ul.nav_1 li.last{
     border-radius:  0px; /* 16px 1px 16px 1px; */
 }
 .banner{
-	background:url(../images/wed.jpg)no-repeat center top;
+	background:url(../images/sb-bnr.png)no-repeat center top;
 	background-size:cover;
 	-webkit-background-size:cover;
 	-moz-background-size:cover;
 	-o-background-size:cover;
 	/* min-height:650px; */
-    min-height: 525px;
+    height: 830px;
+    margin-top: 35px;
 }
 .banner_info{
     margin-top: 250px;
 }
 
 .banner_info h3{
-   color:#fff;
+   color:#00ffbb;
    font-family: 'Oswald', sans-serif;
    font-size:4em;
    margin-bottom:30px;
@@ -423,7 +424,8 @@ ul.nav_1 li.last{
     transition: 0.3s;
     font-size: 16px;
     padding:5px;
-    width: 35%;
+   /* width: 35%; */
+    width: auto;
     color: black;
     outline: none;
     height: 33px;
@@ -2809,7 +2811,7 @@ ul.nav_1{
 
 .navigationpro ul{
     background: #fff;
-    width: 547px;
+    width: 599px;
     padding: 5px;
     border-radius: 2px;
     border: 1px solid #ccc;
@@ -2918,7 +2920,7 @@ ul.nav_1{
 .sb-biodata-field{
     padding: 7px;
     width: 100%;
-    margin-bottom: 30px;
+    margin-bottom: 25px;
     margin-top: 0px;
     background: #ff0080;
     border-radius: 4px;
@@ -2955,7 +2957,7 @@ ul.nav_1{
 }
 
 .shosurbari-biodata-field{
-    padding: 10px;
+    padding: 10px 0px;
 }
 /*-- -- -- -- -- -- -- -- -- -- -- -- -- ---- -- --
 -- -- -- -- -- -- -- -- --- -- -- -- -- -- -- -- --
@@ -3887,6 +3889,10 @@ ul.profile_item{
     font-size: 3em;
 }	
 
+.navigationpro ul {
+    width: 559px;
+}
+
 .hvr-shutter-out-horizontal {
     padding: 8px 25px;
     font-size: 18px;
@@ -3901,7 +3907,8 @@ ul.profile_item{
 }
 
 .banner {
-    min-height:334px;
+    height:422px;
+    margin-top: 35px;
 }
 
 .post-meta {
@@ -4052,7 +4059,7 @@ ul.nav_1 li {
 }
 
 .navigationpro ul {
-    width: 495px;
+    width: 543px;
 }
 
 .inline-block {
