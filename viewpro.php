@@ -1460,9 +1460,16 @@ if($row){
 				    </div>
 
 
+			<div class="biodatavalue_list">
+				<div class="contact-alert">
+					<h3>If you are agree for contact please red message in bellow</h3>
+					<p>You can contact Any Biodatas Profile but need some charge for contact You can contact Any Biodatas Profile but need some charge for contact </p>
+                </div>
+
 			    <div class="profile-btn2">
                 <a href="contactbiodata.php" target="_blank"> <button class="chatbtn" id="chatBtn"><i class="fa fa-phone"></i> Contact</button></a>
                  </div>
+			</div>
           
         </div>
       </div>
@@ -1777,7 +1784,7 @@ table {
 }
 
 .profile-btn2{
-	margin-top: 50px;
+	margin-top: 30px;
 	width: 50%;
 	margin-left: auto;
 	margin-right: auto;
@@ -2247,8 +2254,31 @@ a#profile-tab, a#home-tab, a#profile-tab1 {
 
 
 
+.contact-notice {
+margin-top: 50px;
+margin-left: auto;
+margin-right: auto;
+padding: 20px;
+}
 
+.contact-alert {
+margin: auto;
+padding: 0px;
+}
 
+.contact-alert p {
+margin-top: 0px;
+text-align: center;
+padding: 15px;
+border: 2px solid #00bbff;
+}
+
+.contact-alert h4{
+margin: auto;
+padding: 20px;
+text-align: center;
+}
+				
 
 
 /*-- -- -- -- -- -- -- -- -- -- -- -- -- ---- -- --
