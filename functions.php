@@ -87,32 +87,36 @@ function search(){
 -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -*/
 function register(){
 	if ($_SERVER['REQUEST_METHOD'] == 'POST') {
-	$fname=$_POST['fname'];
-	$uname=$_POST['uname'];
-	$gender=$_POST['gender'];
-	$pnumber=$_POST['pnumber'];
-	$email=$_POST['email'];
-	$pass_1=$_POST['pass_1'];
-	$pass_2=$_POST['pass_2'];
-	require_once("includes/dbconn.php");
+		$fname=$_POST['fname'];
+		$uname=$_POST['uname'];
+		$gender=$_POST['gender'];
+		$pnumber=$_POST['pnumber'];
+		$email=$_POST['email'];
+		$pass_1=$_POST['pass_1'];
+		$pass_2=$_POST['pass_2'];
+		require_once("includes/dbconn.php");
 
+		$sql = "INSERT 
+				INTO
+				   users
+				   ( profilestat, fullname, username, gender, number, email, password, userlevel) 
+				VALUES
+				   (0, '$fname', '$uname', '$gender', '$pnumber', '$email', '$pass_1', 0)";
 
-	$sql = "INSERT 
-			INTO
-			   users
-			   ( profilestat, fullname, username, gender, number, email, password, userlevel) 
-			VALUES
-			   (0, '$fname', '$uname', '$gender', '$pnumber', '$email', '$pass_1', 0)";
+		if (mysqli_query($conn,$sql)) {
+			// Get the ID of the newly registered user
+			$id = mysqli_insert_id($conn);
+			
+			// Set a session variable to store the user ID
+			$_SESSION['id'] = $id;
+			
+			// Redirect the user to the userhome.php page with the user ID as a parameter in the URL
+			header("location: userhome.php?id=$id");
 
-	if (mysqli_query($conn,$sql)) {
-	  //echo "<a href=\"login.php\">";
-	  //echo "</a>";
-	  header("location: login.php");
-
-	} else {
-	  echo "Error: " . $sql . "<br>" . $conn->error;
+		} else {
+		  echo "Error: " . $sql . "<br>" . $conn->error;
+		}
 	}
-}
 }
 
 function isloggedin(){
@@ -123,6 +127,7 @@ function isloggedin(){
 		return true;
 	}
 }
+
 /*-- -- -- -- -- -- -- -- -- -- -- -- -- ---- -- --
 -- -- -- -- -- -- -- -- --- -- -- -- -- -- -- -- --
 --                   E   N   D                   --
