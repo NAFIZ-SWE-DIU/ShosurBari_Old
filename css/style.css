@@ -2811,7 +2811,7 @@ ul.nav_1{
 
 .navigationpro ul{
     background: #fff;
-    width: 599px;
+    width: 619px;
     padding: 5px;
     border-radius: 2px;
     border: 1px solid #ccc;
@@ -3890,7 +3890,7 @@ ul.profile_item{
 }	
 
 .navigationpro ul {
-    width: 559px;
+    width: 579px;
 }
 
 .hvr-shutter-out-horizontal {
@@ -4025,6 +4025,8 @@ h6{
 ul.nav_1 li {
     margin: 0px;
 }
+
+
 }
 /*-- -- -- -- -- -- -- -- -- -- -- -- -- ---- -- --
 --           max-width:1024px / E  N  D          --
@@ -4059,7 +4061,7 @@ ul.nav_1 li {
 }
 
 .navigationpro ul {
-    width: 543px;
+    width: 563px;
 }
 
 .inline-block {
@@ -4627,10 +4629,17 @@ h6{
 .sb_singlebio_mobilesearch {
     display: none;
 }
+
+.navbar-collapse.collapse {
+    display: block!important;
+    height: auto!important;
+    padding-bottom: 0;
+    overflow: visible!important;
+    padding-left: 10px;
+    padding-right: 10px;
+}
 }
  /* Mobile Search End*/
-
-
 
 
 
@@ -5018,6 +5027,43 @@ h6{
 .sb_mobilesearch {
     margin-top: 20px;
 }
+
+
+
+/*404 Error Page Start */
+.error-message {
+    text-align: center;
+    margin-top: 90px;
+}
+
+/* Add background color and padding to the error page */
+.error-page {
+    background-color: #f8f9fa;
+    padding: 20px 0;
+    text-align: center;
+}
+
+/* Style the error title */
+.error-title {
+    font-size: 2rem;
+    color: red;
+}
+
+/* Style the error code */
+.error-code {
+    font-size: 5rem;
+    font-weight: bold;
+    color: #000;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+/* Style the error text */
+.error-text {
+    font-size: 1.5rem;
+    margin-bottom: 30px;
+}
+/*404 Error Page End */
 }
 /*-- -- -- -- -- -- -- -- -- -- -- -- -- ---- -- --
 --           max-width:736px / E  N  D           --
