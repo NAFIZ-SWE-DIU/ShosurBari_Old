@@ -39,16 +39,73 @@
            <div class="pull-right">
           	<nav class="navbar nav_bottom" role="navigation">
  
+
+
+
 		 <!-- Brand and toggle get grouped for better mobile display -->
-		  <div class="navbar-header nav_2">
-		      <button type="button" class="navbar-toggle collapsed navbar-toggle1" data-toggle="collapse" data-target="#bs-megadropdown-tabs">Menu
-		        <span class="sr-only">Toggle navigation</span>
-		        <span class="icon-bar"></span>
-		        <span class="icon-bar"></span>
-		        <span class="icon-bar"></span>
-		      </button>
-		      <a class="navbar-brand" href="#"></a>
-		   </div> 
+
+<div class="navbar-header nav_2">
+  <a class="navbar-brand" href="#">MENU</a>
+  <button type="button" class="navbar-toggle collapsed navbar-toggle1" data-toggle="collapse" data-target="#bs-megadropdown-tabs">
+    <span class="menu-text"></span>
+<div class="close-menu" onclick="myFunction(this)">
+    <div class="bar1"></div>
+    <div class="bar2"></div>
+    <div class="bar3"></div>
+</div>
+  </button>
+</div>
+
+<script>
+function myFunction(x) {
+  x.classList.toggle("change");
+}
+</script>
+
+<style>
+.bar1, .bar2, .bar3 {
+  width: 25px;
+  height: 3px;
+  background-color: #fff;
+  margin: 6px 0;
+  transition: 0.4s;
+}
+.change .bar1 {
+  transform: translate(0, 11px) rotate(-45deg);
+  color: red;
+}
+.change .bar2 {
+	opacity: 0;
+}
+.change .bar3 {
+  transform: translate(0, -11px) rotate(45deg);
+  color: red;
+}
+.navbar-brand{
+	height: 100%;
+    padding: 0;
+    margin: 10px 0 0 0;
+    padding-left: 15px;
+    font-size: 45px;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    font-weight: 500;
+	font-size: 17px;
+	color: #fff;
+	
+}
+@media (max-width: 765px){
+.navbar-toggle1 {
+    height: 40px;
+    margin: 0px 15px 0 0px;
+    color: #fff;
+    padding:0px;
+}
+}
+</style>
+
+
+
 		   <!-- Collect the nav links, forms, and other content for toggling -->
 		    <div class="collapse navbar-collapse" id="bs-megadropdown-tabs">
 		        <ul class="nav navbar-nav nav_1">
