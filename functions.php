@@ -96,12 +96,9 @@ function register(){
 		$pass_2=$_POST['pass_2'];
 		require_once("includes/dbconn.php");
 
-		$sql = "INSERT 
-				INTO
-				   users
-				   ( profilestat, fullname, username, gender, number, email, password, userlevel) 
-				VALUES
-				   (0, '$fname', '$uname', '$gender', '$pnumber', '$email', '$pass_1', 0)";
+		$sql = "INSERT INTO users 
+			( fullname, username, gender, number, email, password, active, register_date) 
+			VALUES ('$fname', '$uname', '$gender', '$pnumber', '$email', '$pass_1', 1, DATE_FORMAT(NOW(), '%e %M %Y, %h:%i:%s %p'))";
 
 		if (mysqli_query($conn,$sql)) {
 			// Get the ID of the newly registered user
@@ -109,6 +106,10 @@ function register(){
 			
 			// Set a session variable to store the user ID
 			$_SESSION['id'] = $id;
+			
+			// Create a record for the user in the deactivate table
+			$deactivate_sql = "INSERT INTO deactivate (user_id, status) VALUES ($id, 0)";
+			mysqli_query($conn, $deactivate_sql);
 			
 			// Redirect the user to the userhome.php page with the user ID as a parameter in the URL
 			header("location: userhome.php?id=$id");
@@ -118,6 +119,8 @@ function register(){
 		}
 	}
 }
+
+
 
 function isloggedin(){
 	if(!isset($_SESSION['id'])){
