@@ -90,10 +90,10 @@ function register(){
 		$fname=$_POST['fname'];
 		$uname=$_POST['uname'];
 		$gender=$_POST['gender'];
-		$pnumber=$_POST['pnumber'];
-		$email=$_POST['email'];
-		$pass_1=$_POST['pass_1'];
-		$pass_2=$_POST['pass_2'];
+		$pnumber = $_POST['pnumber'];
+		$email = $_POST['email'];
+		$pass_1 = $_POST['pass_1'];
+		$pass_2 = $_POST['pass_2'];
 		require_once("includes/dbconn.php");
 
 		$sql = "INSERT INTO users 
