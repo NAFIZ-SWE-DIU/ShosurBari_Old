@@ -30,7 +30,6 @@ error_reporting(0);
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/16.0.8/css/intlTelInput.css" />
 
 
-
 <!--font-Awesome-->
 <link href="css/font-awesome.css" rel="stylesheet"> 
 <!--font-Awesome-->
@@ -103,7 +102,7 @@ $(document).ready(function(){
 			  <span id="email_error" style="color:red; font-size:13px;"></span>
 			</div>
 
-			<div class="form-group">
+      <div class="form-group">
 		     <!--  <label for="edit-name">Phone Number<span class="form-required" title="This field is required.">*</span></label> -->
 		      <input type="pnumber" id="pnumber" placeholder="Phone Number*" name="pnumber" value="" size="60" minlength="10" maxlength="15" class="form-text required">
 			  <span id="pnumber_error" style="color:red; font-size:13px;"></span>
@@ -313,6 +312,7 @@ $(document).ready(function(){
 
 
 <?php include_once("footer.php");?>
+
 
 </body>
 </html>	
