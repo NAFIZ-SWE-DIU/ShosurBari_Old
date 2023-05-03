@@ -68,15 +68,7 @@ label.addEventListener('click', () => {
 
 
 <!-- Biodata Profile count -->
-<script>
-window.onload = countBiodata;
-function countBiodata() {
-    var sb_biodatanumber = document.getElementsByClassName("sb_biodatanumber");
-    var total = document.getElementsByClassName("total")[0];
-    total.innerHTML = sb_biodatanumber.length;
-}
 
-</script>
 
 
 
@@ -1317,9 +1309,31 @@ function countBiodata() {
 			<i class="fa fa-heart grey-heart"></i>
 			<span class="grey-line"></span>
 
-    <div class="total_biodata">
-      <h4>Total Profile Found: <span class="total"></span> </h4>
-    </div>
+<?php
+$search_query = isset($_GET['query']) ? $_GET['query'] : '';
+$page = isset($_GET['page']) ? (int) $_GET['page'] : 1;
+$start = ($page - 1) * 4; // fetch 4 records starting from this index
+
+$sql_count = "SELECT COUNT(*) FROM 1bd_personal_physical";
+if (!empty($search_query)) {
+    $sql_count .= " WHERE biodatagender LIKE '%$search_query%' OR Skin_tones LIKE '%$search_query%' OR height LIKE '%$search_query%' OR dateofbirth LIKE '%$search_query%'";
+}
+$result_count = mysqlexec($sql_count);
+$row_count = mysqli_fetch_array($result_count);
+$total_records = $row_count[0];
+$total_pages = ceil($total_records / 4); // 4 profiles per page
+
+$sql = "SELECT * FROM 1bd_personal_physical";
+if (!empty($search_query)) {
+    $sql .= " WHERE biodatagender LIKE '%$search_query%' OR Skin_tones LIKE '%$search_query%' OR height LIKE '%$search_query%' OR dateofbirth LIKE '%$search_query%'";
+}
+$sql .= " LIMIT $start, 4";
+$result = mysqlexec($sql);
+
+// display search results summary
+echo "<h3 class=\"sb-find-biodata\">Total profiles found: $total_records</h3>";
+?>
+
 </div>
 
 
@@ -2520,20 +2534,28 @@ function toggleCheckedAll(checkbox) {
       <div class="sb_biodata_profile">
 <!-- main profile -->
 <?php
+$search_query = isset($_GET['query']) ? $_GET['query'] : '';
 $page = isset($_GET['page']) ? (int) $_GET['page'] : 1;
-$start = ($page - 1) * 4; // fetch 6 records starting from this index
+$start = ($page - 1) * 4; // fetch 4 records starting from this index
 
 $sql_count = "SELECT COUNT(*) FROM 1bd_personal_physical";
+if (!empty($search_query)) {
+    $sql_count .= " WHERE biodatagender LIKE '%$search_query%' OR Skin_tones LIKE '%$search_query%' OR height LIKE '%$search_query%' OR dateofbirth LIKE '%$search_query%'";
+}
 $result_count = mysqlexec($sql_count);
 $row_count = mysqli_fetch_array($result_count);
 $total_records = $row_count[0];
-$total_pages = ceil($total_records / 4); // 6 profiles per page
+$total_pages = ceil($total_records / 4); // 4 profiles per page
 
-$sql = "SELECT * FROM 1bd_personal_physical LIMIT $start, 4";
+$sql = "SELECT * FROM 1bd_personal_physical";
+if (!empty($search_query)) {
+    $sql .= " WHERE biodatagender LIKE '%$search_query%' OR Skin_tones LIKE '%$search_query%' OR height LIKE '%$search_query%' OR dateofbirth LIKE '%$search_query%'";
+}
+$sql .= " LIMIT $start, 4";
 $result = mysqlexec($sql);
 
 $count = 0;
-while ($row = mysqli_fetch_assoc($result)) {
+while ($row = mysqli_fetch_assoc($result)){
     $profid = $row['user_id'];
     $biodatagender = $row['biodatagender'];
     $Skin_tones = $row['Skin_tones'];
@@ -2607,21 +2629,22 @@ while ($row = mysqli_fetch_assoc($result)) {
 
 <div class="abcd">
       <?php
-                echo "<div class=\"pagination\">";
-                if ($page > 1) {
-                    echo "<a href=\"?page=" . ($page - 1) . "\">Previous</a>";
-                }
-                for ($i = 1; $i <= $total_pages; $i++) {
-                    echo "<a href=\"?page=" . $i . "\"";
-                    if ($i == $page) {
-                        echo " class=\"active\"";
-                    }
-                    echo ">" . $i . "</a>";
-                }
-                if ($page < $total_pages) {
-                    echo "<a href=\"?page=" . ($page + 1) . "\">Next</a>";
-                }
-                echo "</div>";
+// display pagination links
+echo "<div class=\"pagination\">";
+if ($page > 1) {
+    echo "<a href=\"?query=$search_query&page=" . ($page - 1) . "\">Previous</a>";
+}
+for ($i = 1; $i <= $total_pages; $i++) {
+    echo "<a href=\"?query=$search_query&page=" . $i . "\"";
+    if ($i == $page) {
+        echo " class=\"active\"";
+    }
+    echo ">" . $i . "</a>";
+}
+if ($page < $total_pages) {
+    echo "<a href=\"?query=$search_query&page=" . ($page + 1) . "\">Next</a>";
+}
+echo "</div>";
       ?>
         </div>
 
@@ -2632,6 +2655,10 @@ while ($row = mysqli_fetch_assoc($result)) {
 
 
 <style>
+  .sb-find-biodata{
+    font-size: 20px;
+    margin-top: 15px;
+  }
   .abcd{
     width: 90%;
     margin: 50px auto 0px auto;
