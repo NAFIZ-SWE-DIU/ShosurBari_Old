@@ -2529,22 +2529,6 @@ $row_count = mysqli_fetch_array($result_count);
 $total_records = $row_count[0];
 $total_pages = ceil($total_records / 3); // 6 profiles per page
 
-echo "<div class=\"pagination\">";
-if ($page > 1) {
-    echo "<a href=\"?page=" . ($page - 1) . "\">Previous</a>";
-}
-for ($i = 1; $i <= $total_pages; $i++) {
-    echo "<a href=\"?page=" . $i . "\"";
-    if ($i == $page) {
-        echo " class=\"active\"";
-    }
-    echo ">" . $i . "</a>";
-}
-if ($page < $total_pages) {
-    echo "<a href=\"?page=" . ($page + 1) . "\">Next</a>";
-}
-echo "</div>";
-
 $sql = "SELECT * FROM 1bd_personal_physical LIMIT $start, 3";
 $result = mysqlexec($sql);
 
@@ -2617,12 +2601,58 @@ while ($row = mysqli_fetch_assoc($result)) {
 
                     $count++;
         	}
+
+          echo "<div class=\"pagination\">";
+if ($page > 1) {
+    echo "<a href=\"?page=" . ($page - 1) . "\">Previous</a>";
+}
+for ($i = 1; $i <= $total_pages; $i++) {
+    echo "<a href=\"?page=" . $i . "\"";
+    if ($i == $page) {
+        echo " class=\"active\"";
+    }
+    echo ">" . $i . "</a>";
+}
+if ($page < $total_pages) {
+    echo "<a href=\"?page=" . ($page + 1) . "\">Next</a>";
+}
+echo "</div>";
+          
         ?>
     </div>
 </div>
 
 
 
+
+<style>
+  .pagination {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 20px;
+}
+
+.pagination a {
+  color: #333;
+  text-decoration: none;
+  padding: 5px 10px;
+  margin: 0 5px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  transition: background-color 0.3s ease;
+}
+
+.pagination a:hover {
+  background-color: #ccc;
+}
+
+.pagination .active {
+  background-color: #333;
+  color: #fff;
+}
+
+  </style>
 
 
 
