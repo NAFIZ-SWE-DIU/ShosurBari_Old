@@ -1312,7 +1312,7 @@ label.addEventListener('click', () => {
 <?php
 $search_query = isset($_GET['query']) ? $_GET['query'] : '';
 $page = isset($_GET['page']) ? (int) $_GET['page'] : 1;
-$start = ($page - 1) * 4; // fetch 4 records starting from this index
+$start = ($page - 1) * 5; // 5 profiles per page 1 // fetch 4 records starting from this index 
 
 $sql_count = "SELECT COUNT(*) FROM 1bd_personal_physical";
 if (!empty($search_query)) {
@@ -1321,13 +1321,13 @@ if (!empty($search_query)) {
 $result_count = mysqlexec($sql_count);
 $row_count = mysqli_fetch_array($result_count);
 $total_records = $row_count[0];
-$total_pages = ceil($total_records / 4); // 4 profiles per page
+$total_pages = ceil($total_records / 5); // 5 profiles per page 2
 
 $sql = "SELECT * FROM 1bd_personal_physical";
 if (!empty($search_query)) {
     $sql .= " WHERE biodatagender LIKE '%$search_query%' OR Skin_tones LIKE '%$search_query%' OR height LIKE '%$search_query%' OR dateofbirth LIKE '%$search_query%'";
 }
-$sql .= " LIMIT $start, 4";
+$sql .= " LIMIT $start, 5"; // 5 profiles per page last is 3
 $result = mysqlexec($sql);
 
 // display search results summary
@@ -2536,7 +2536,7 @@ function toggleCheckedAll(checkbox) {
 <?php
 $search_query = isset($_GET['query']) ? $_GET['query'] : '';
 $page = isset($_GET['page']) ? (int) $_GET['page'] : 1;
-$start = ($page - 1) * 4; // fetch 4 records starting from this index
+$start = ($page - 1) * 5; // fetch 4 records starting from this index
 
 $sql_count = "SELECT COUNT(*) FROM 1bd_personal_physical";
 if (!empty($search_query)) {
@@ -2545,13 +2545,13 @@ if (!empty($search_query)) {
 $result_count = mysqlexec($sql_count);
 $row_count = mysqli_fetch_array($result_count);
 $total_records = $row_count[0];
-$total_pages = ceil($total_records / 4); // 4 profiles per page
+$total_pages = ceil($total_records / 5); // 4 profiles per page
 
 $sql = "SELECT * FROM 1bd_personal_physical";
 if (!empty($search_query)) {
     $sql .= " WHERE biodatagender LIKE '%$search_query%' OR Skin_tones LIKE '%$search_query%' OR height LIKE '%$search_query%' OR dateofbirth LIKE '%$search_query%'";
 }
-$sql .= " LIMIT $start, 4";
+$sql .= " LIMIT $start, 5";
 $result = mysqlexec($sql);
 
 $count = 0;
@@ -2629,9 +2629,9 @@ while ($row = mysqli_fetch_assoc($result)){
 
   <div class="pagination">
     <?php
-    $profiles_shown = ($page - 1) * 4 + 1;
-    $profiles_left = max(0, $total_records - $profiles_shown - 3); // display at most 4 profiles per page
-    echo "Showing $profiles_shown - " . min($total_records, $profiles_shown + 3) . " of $total_records profiles. ";
+    $profiles_shown = ($page - 1) * 5 + 1;
+    $profiles_left = max(0, $total_records - $profiles_shown - 4); // display at most 4 profiles per page
+    echo "Showing $profiles_shown - " . min($total_records, $profiles_shown + 4) . " of $total_records profiles. ";
     if ($page > 1) {
         echo "<a href=\"?query=$search_query&page=" . ($page - 1) . "\">Previous</a>";
     }
@@ -2669,7 +2669,7 @@ while ($row = mysqli_fetch_assoc($result)){
     padding: 0px;
     text-align: center;
   }
-  
+
 .pagination a {
   transition: background-color 0.3s ease;
     color: #000;
