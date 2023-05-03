@@ -2634,7 +2634,7 @@ while ($row = mysqli_fetch_assoc($result)) {
 <style>
   .abcd{
     width: 90%;
-    margin: 100px auto 0px auto;
+    margin: 50px auto 0px auto;
     flex-wrap: wrap;
     padding: 0px;
     text-align: center;
