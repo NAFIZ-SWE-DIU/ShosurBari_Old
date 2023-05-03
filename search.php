@@ -2627,26 +2627,29 @@ while ($row = mysqli_fetch_assoc($result)){
         ?>
 
 
-<div class="abcd">
-      <?php
-// display pagination links
-echo "<div class=\"pagination\">";
-if ($page > 1) {
-    echo "<a href=\"?query=$search_query&page=" . ($page - 1) . "\">Previous</a>";
-}
-for ($i = 1; $i <= $total_pages; $i++) {
-    echo "<a href=\"?query=$search_query&page=" . $i . "\"";
-    if ($i == $page) {
-        echo " class=\"active\"";
+  <div class="pagination">
+    <?php
+    $profiles_shown = ($page - 1) * 4 + 1;
+    $profiles_left = max(0, $total_records - $profiles_shown - 3); // display at most 4 profiles per page
+    echo "Showing $profiles_shown - " . min($total_records, $profiles_shown + 3) . " of $total_records profiles. ";
+    if ($page > 1) {
+        echo "<a href=\"?query=$search_query&page=" . ($page - 1) . "\">Previous</a>";
     }
-    echo ">" . $i . "</a>";
-}
-if ($page < $total_pages) {
-    echo "<a href=\"?query=$search_query&page=" . ($page + 1) . "\">Next</a>";
-}
-echo "</div>";
-      ?>
-        </div>
+    for ($i = 1; $i <= $total_pages; $i++) {
+        echo "<a href=\"?query=$search_query&page=" . $i . "\"";
+        if ($i == $page) {
+            echo " class=\"active\"";
+        }
+        echo ">" . $i . "</a>";
+    }
+    if ($page < $total_pages) {
+        echo "<a href=\"?query=$search_query&page=" . ($page + 1) . "\">Next</a>";
+        echo " $profiles_left profiles left.";
+    }
+    ?>
+</div>
+
+
 
     </div>
 </div>
@@ -2659,20 +2662,14 @@ echo "</div>";
     font-size: 20px;
     margin-top: 15px;
   }
-  .abcd{
+  .pagination{
     width: 90%;
     margin: 50px auto 0px auto;
     flex-wrap: wrap;
     padding: 0px;
     text-align: center;
   }
-.pagination {
-  justify-content: center;
-  align-items: center;
-  margin: 0px auto 0px auto;
-
-}
-
+  
 .pagination a {
   transition: background-color 0.3s ease;
     color: #000;
