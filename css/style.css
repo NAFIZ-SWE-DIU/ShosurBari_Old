@@ -3073,7 +3073,7 @@ ul.nav_1{
 .sb_biodata_profile{
     display: flex;
     flex-wrap: wrap;
-    width: 74%;
+    width: 79%;
     margin-top: -80px;
     margin-bottom: 0px;
     margin-right: 0px;
@@ -3138,7 +3138,7 @@ border-radius: 5px 5px 0px 0px;
 
 .sb_user{
     text-align: center;
-    padding: 15px 15px 15px;
+    padding: 10px 10px 10px;
     border-bottom-left-radius: 5px;
     border-bottom-right-radius: 5px;
 }
@@ -3209,6 +3209,9 @@ border-radius: 5px 5px 0px 0px;
 --                                               --
 -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- ---
 -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -*/
+
+
+
 
 
 
@@ -3450,7 +3453,7 @@ border-radius: 5px 5px 0px 0px;
 }
 
 .sbbiodata-search{
-    width: 252px;
+    width: 257px;
     position: inherit;
     margin-top: -50px;
     margin-left: 0px;
@@ -3769,7 +3772,7 @@ label{
 .sb_biodata_profile{
     display: flex;
     flex-wrap: wrap;
-    width: 74%;
+    width: 79%;
     margin-top: -80px;
     margin-bottom: 0px;
     margin-right: 0px;
@@ -3994,7 +3997,7 @@ h6{
 .sb_biodata_profile{
     display: flex;
     flex-wrap: wrap;
-    width: 73%;
+    width: 72%;
     margin-top: -100px;
     margin-bottom: 0px;
     margin-right: auto;
@@ -4247,7 +4250,7 @@ h6{
 .sb_biodata_profile{
     display: flex;
     flex-wrap: wrap;
-    width: 67%;
+    width: 66%;
     margin-top: -80px;
     margin-bottom: 0px;
     margin-right: 0px;
@@ -4260,12 +4263,12 @@ h6{
 }
 
 .sb_user .sb_value{
-    font-size: 14px;
+    font-size: 13px;
     width: 41%;
 }
 
 .sb_user .sb_data{
-    font-size: 14px;
+    font-size: 13px;
     width: 59%;
 }
 
