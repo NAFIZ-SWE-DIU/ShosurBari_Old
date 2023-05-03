@@ -2519,62 +2519,86 @@ function toggleCheckedAll(checkbox) {
 
       <div class="sb_biodata_profile">
 <!-- main profile -->
-        <?php
-if(isset($_POST['search'])){
-  $c_count = '1';
-  while ($row = mysqli_fetch_assoc($result))
-    {
-      $profid=$row['user_id'];
-      $biodatagender=$row['biodatagender'];
-      $Skin_tones=$row['Skin_tones'];
-      $height=$row['height'];
-      $dateofbirth=$row['dateofbirth'];
-      $religion=$row5['religion'];
+<?php
+$page = isset($_GET['page']) ? (int) $_GET['page'] : 1;
+$start = ($page - 1) * 3; // fetch 6 records starting from this index
 
+$sql_count = "SELECT COUNT(*) FROM 1bd_personal_physical";
+$result_count = mysqlexec($sql_count);
+$row_count = mysqli_fetch_array($result_count);
+$total_records = $row_count[0];
+$total_pages = ceil($total_records / 3); // 6 profiles per page
 
-      $sql2="SELECT * FROM photos WHERE user_id=$profid";
-      $result2 = mysqlexec($sql2);
-      if($result2)
-        $row2=mysqli_fetch_array($result2);
-        $pic1=$row2['pic1'];
-      
+echo "<div class=\"pagination\">";
+if ($page > 1) {
+    echo "<a href=\"?page=" . ($page - 1) . "\">Previous</a>";
+}
+for ($i = 1; $i <= $total_pages; $i++) {
+    echo "<a href=\"?page=" . $i . "\"";
+    if ($i == $page) {
+        echo " class=\"active\"";
+    }
+    echo ">" . $i . "</a>";
+}
+if ($page < $total_pages) {
+    echo "<a href=\"?page=" . ($page + 1) . "\">Next</a>";
+}
+echo "</div>";
 
-      $sql3="SELECT * FROM 2bd_personal_lifestyle WHERE user_id=$profid";		
-      $result3=mysqlexec($sql3);
-      if($result3)
-        while($row3=mysqli_fetch_assoc($result3))
-        $occupation=$row3['occupation'];
+$sql = "SELECT * FROM 1bd_personal_physical LIMIT $start, 3";
+$result = mysqlexec($sql);
 
-                      
-        $sql7="SELECT * FROM 3bd_educational_qualifications WHERE user_id=$profid";		
-        $result7=mysqlexec($sql7);
-        if($result7)
-          while($row7=mysqli_fetch_assoc($result7))
-          $education_method=$row5['education_method'];
+$count = 0;
+while ($row = mysqli_fetch_assoc($result)) {
+    $profid = $row['user_id'];
+    $biodatagender = $row['biodatagender'];
+    $Skin_tones = $row['Skin_tones'];
+    $height = $row['height'];
+    $dateofbirth = $row['dateofbirth'];
 
+    $sql2 = "SELECT * FROM photos WHERE user_id=$profid";
+    $result2 = mysqlexec($sql2);
+    if ($result2) {
+        $row2 = mysqli_fetch_array($result2);
+        $pic1 = $row2['pic1'];
+    }
 
-        $sql4="SELECT * FROM 4bd_address_details WHERE user_id=$profid";		
-        $result4=mysqlexec($sql4);
-        if($result4)
-          while($row4=mysqli_fetch_assoc($result4))
-          $permanent_address=$row4['permanent_address'];
+    $sql3 = "SELECT * FROM 2bd_personal_lifestyle WHERE user_id=$profid";
+    $result3 = mysqlexec($sql3);
+    if ($result3) {
+        $row3 = mysqli_fetch_assoc($result3);
+        $occupation = $row3['occupation'];
+    }
 
+    $sql4 = "SELECT * FROM 4bd_address_details WHERE user_id=$profid";
+    $result4 = mysqlexec($sql4);
+    if ($result4) {
+        $row4 = mysqli_fetch_assoc($result4);
+        $permanent_address = $row4['permanent_address'];
+    }
 
-          $sql6="SELECT * FROM 5bd_family_information WHERE user_id=$profid";		
-          $result6=mysqlexec($sql6);
-          if($result6)
-            while($row6=mysqli_fetch_assoc($result6))
-            $family_class=$row6['family_class'];
+    $sql5 = "SELECT * FROM 8bd_religion_details WHERE user_id=$profid";
+    $result5 = mysqlexec($sql5);
+    if ($result5) {
+        $row5 = mysqli_fetch_assoc($result5);
+        $religion = $row5['religion'];
+    }
+
+    $sql6 = "SELECT * FROM 5bd_family_information WHERE user_id=$profid";
+    $result6 = mysqlexec($sql6);
+    if ($result6) {
+        $row6 = mysqli_fetch_assoc($result6);
+        $family_class = $row6['family_class'];
+    }
           
 
 
           $sql5="SELECT * FROM 8bd_religion_details WHERE user_id=$profid";		
           $result5=mysqlexec($sql5);
-          if($result5)
-            while($row5=mysqli_fetch_assoc($result5))
-            $religion=$row5['religion'];
-
-
+            if ($result5) {
+              $row5 = mysqli_fetch_assoc($result5);
+              $religion=$row5['religion'];
+            }
  
             echo "<div class=\"biodatalist\">";
                     echo "<div class=\"sb_bio_header\">";
@@ -2591,10 +2615,8 @@ if(isset($_POST['search'])){
           <a href=\"viewpro.php?id={$profid}\" target=\"_blank\"> <button class=\"view_sb_profile\"> View Full Profile</button></a>
                     </div></div>";
 
+                    $count++;
         	}
-		}
-  
-
         ?>
     </div>
 </div>
