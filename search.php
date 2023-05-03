@@ -2521,15 +2521,15 @@ function toggleCheckedAll(checkbox) {
 <!-- main profile -->
 <?php
 $page = isset($_GET['page']) ? (int) $_GET['page'] : 1;
-$start = ($page - 1) * 3; // fetch 6 records starting from this index
+$start = ($page - 1) * 4; // fetch 6 records starting from this index
 
 $sql_count = "SELECT COUNT(*) FROM 1bd_personal_physical";
 $result_count = mysqlexec($sql_count);
 $row_count = mysqli_fetch_array($result_count);
 $total_records = $row_count[0];
-$total_pages = ceil($total_records / 3); // 6 profiles per page
+$total_pages = ceil($total_records / 4); // 6 profiles per page
 
-$sql = "SELECT * FROM 1bd_personal_physical LIMIT $start, 3";
+$sql = "SELECT * FROM 1bd_personal_physical LIMIT $start, 4";
 $result = mysqlexec($sql);
 
 $count = 0;
@@ -2626,32 +2626,33 @@ echo "</div>";
 
 
 <style>
-  .pagination {
-  display: flex;
+.pagination {
   justify-content: center;
   align-items: center;
-  margin-top: 20px;
+  margin: 50px auto;
+
 }
 
 .pagination a {
-  color: #333;
-  text-decoration: none;
-  padding: 5px 10px;
-  margin: 0 5px;
-  border: 1px solid #ccc;
-  border-radius: 5px;
   transition: background-color 0.3s ease;
+    color: #000;
+    padding: 8px 12px;
+    text-decoration: none;
+    font-size: 14px;
+    background-color: #eee;
+    border-radius: 50%;
+    margin: 0 3px;
 }
 
 .pagination a:hover {
-  background-color: #ccc;
-}
-
-.pagination .active {
-  background-color: #333;
+  background: #00bbff;
   color: #fff;
 }
 
+.pagination .active {
+  background: #ff0080;
+  color: #fff;
+}
   </style>
 
 
