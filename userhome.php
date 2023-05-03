@@ -8,8 +8,6 @@ if(isloggedin()){
 } else{
    header("location:login.php");
 }
-
-
 ?>
 <!DOCTYPE HTML>
 <html>
