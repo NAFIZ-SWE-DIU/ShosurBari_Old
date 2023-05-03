@@ -2601,24 +2601,30 @@ while ($row = mysqli_fetch_assoc($result)) {
 
                     $count++;
         	}
-
-          echo "<div class=\"pagination\">";
-if ($page > 1) {
-    echo "<a href=\"?page=" . ($page - 1) . "\">Previous</a>";
-}
-for ($i = 1; $i <= $total_pages; $i++) {
-    echo "<a href=\"?page=" . $i . "\"";
-    if ($i == $page) {
-        echo " class=\"active\"";
-    }
-    echo ">" . $i . "</a>";
-}
-if ($page < $total_pages) {
-    echo "<a href=\"?page=" . ($page + 1) . "\">Next</a>";
-}
-echo "</div>";
           
         ?>
+
+
+<div class="abcd">
+      <?php
+                echo "<div class=\"pagination\">";
+                if ($page > 1) {
+                    echo "<a href=\"?page=" . ($page - 1) . "\">Previous</a>";
+                }
+                for ($i = 1; $i <= $total_pages; $i++) {
+                    echo "<a href=\"?page=" . $i . "\"";
+                    if ($i == $page) {
+                        echo " class=\"active\"";
+                    }
+                    echo ">" . $i . "</a>";
+                }
+                if ($page < $total_pages) {
+                    echo "<a href=\"?page=" . ($page + 1) . "\">Next</a>";
+                }
+                echo "</div>";
+      ?>
+        </div>
+
     </div>
 </div>
 
@@ -2626,10 +2632,17 @@ echo "</div>";
 
 
 <style>
+  .abcd{
+    width: 90%;
+    margin: 100px auto 0px auto;
+    flex-wrap: wrap;
+    padding: 0px;
+    text-align: center;
+  }
 .pagination {
   justify-content: center;
   align-items: center;
-  margin: 80px auto 0px auto;
+  margin: 0px auto 0px auto;
 
 }
 
@@ -2639,9 +2652,10 @@ echo "</div>";
     padding: 8px 12px;
     text-decoration: none;
     font-size: 14px;
-    background-color: #eee;
+    background: #fff;
     border-radius: 50%;
     margin: 0 3px;
+    border: 1px solid #ccc;
 }
 
 .pagination a:hover {
@@ -2652,6 +2666,8 @@ echo "</div>";
 .pagination .active {
   background: #ff0080;
   color: #fff;
+  border: 1px solid #ddd;
+
 }
   </style>
 
