@@ -2676,7 +2676,7 @@ while ($row = mysqli_fetch_assoc($result)){
     padding: 8px 12px;
     text-decoration: none;
     font-size: 14px;
-    background: #fff;
+    background: #eee;
     border-radius: 50%;
     margin: 0 3px;
     border: 1px solid #ccc;
