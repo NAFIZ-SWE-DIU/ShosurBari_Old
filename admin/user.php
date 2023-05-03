@@ -491,42 +491,88 @@
     
 
     <style>
-  table {
+        @media (min-width:1280px){
+.user-database{
+    width: 1260px;
+    margin: auto;
+    padding: 20px 60px;
+}
+.admin-user-table th {
+    font-size: 18px;
+  }
+  
+}
+
+
+@media (max-width: 1280px){
+.user-database {
+    width: 1024px;
+    margin: auto;
+    padding: 20px 40px;
+
+}
+.admin-user-table th {
+    font-size: 18px;
+  }
+}
+
+@media (max-width: 1024px){
+.user-database {
+    width: auto;
+    margin: auto;
+    padding: 20px 30px;
+}
+.admin-user-table th {
+    font-size: 18px;
+  }
+}
+
+@media (max-width: 930px){
+.user-database {
+    width: auto;
+    margin: auto;
+    padding: 20px 15px;
+}
+.admin-user-table td {
+    font-size: 12px;
+  }
+  .admin-user-table th {
+    font-size: 15px;
+  }
+
+}
+
+ table {
     border-collapse: collapse;
     width: 100%;
   }
 
-td {
+  .admin-user-table td {
     padding: 8px;
     text-align: left;
-    border-bottom: 1px solid #ddd;
-    border: 1px solid #ccc;
+    border: 2px solid #ccc;
   }
 
-  th {
+  .admin-user-table th {
     background-color: #4CAF50;
     color: white;
     text-align: center;
-    font-size: 18px;
     font-weight: 600;
     padding: 8px;
-    border-bottom: 1px solid #ddd;
-    border: 1px solid #ccc;
+    border: 2px solid #ccc;
   }
 
-  tr.active {
+  .admin-user-table tr.active {
     background-color: #fff;
     color: #000;
   }
 
-  tr.inactive {
+
+  .admin-user-table tr.inactive {
     background-color: red;
     color: #fff;
   }
 
-  .user-database{
-    padding: 20px 60px;
-  }
   .user-database h2{
     text-align: center;
   }
@@ -607,18 +653,20 @@ td {
   $sql = "SELECT * FROM users $limit OFFSET $start";
   $result = mysqli_query($conn, $sql);
   if (mysqli_num_rows($result) > 0) {
-    echo "<table>";
-    echo "<tr>
-            <th>User ID</th>
-            <th>Full Name</th>
+    echo "<table class=\"admin-user-table\">";
+    echo "<tr class=\"admin-user-tr\">
+            <th>User
+            ID</th>
+            <th>FullName</th>
             <th>UserName</th>
             <th>Gender</th>
             <th>Email</th>
             <th>Phone</th>
-            <th>Reg. Date</th>
+            <th>Reg.Date</th>
             <th>Edit</th>
             <th>Delete</th>
-            <th>Deactivate/Activate</th>
+            <th>Deactivate
+            /Activate</th>
           </tr>";
     while($row = mysqli_fetch_assoc($result)) {
       $id=$row['id'];
@@ -633,6 +681,8 @@ td {
       echo "</td></tr>";
     }
     echo "</table>";
+
+    
 
     // Pagination links
     echo "<div class='pagination'>";
