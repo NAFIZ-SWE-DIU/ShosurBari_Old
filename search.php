@@ -2629,7 +2629,7 @@ echo "</div>";
 .pagination {
   justify-content: center;
   align-items: center;
-  margin: 50px auto;
+  margin: 80px auto 0px auto;
 
 }
 
