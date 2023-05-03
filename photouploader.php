@@ -63,6 +63,24 @@ $(document).ready(function(){
    
 
 
+<?php
+ $id=$_GET['id'];
+ $profileid=$id;
+//getting profile details from db
+$sql = "SELECT * FROM photos  WHERE user_id = $id";
+$result = mysqlexec($sql);
+$row=mysqli_fetch_assoc($result);
+if($row){
+    $pic1=$row['pic1'];
+}
+?>
+    <div class="col-sm-4 row_22">
+    <ul class="slides2">
+		<img src="profile/<?php echo $profileid;?>/<?php echo $pic1;?>" />
+	</ul>
+    </div>
+
+
 
 
 
@@ -87,10 +105,10 @@ if(isset($_POST['submit'])){
 }
 ?>     " class="form-file required">
 	    </div>
+
 	    <div class="form-actions">
 	    	<input type="submit" id="edit-submit" name="op" value="Upload" class="btn_1 submit">
 	    </div>
-
 
 
 	   </form>
