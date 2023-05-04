@@ -1311,10 +1311,19 @@ label.addEventListener('click', () => {
 			<i class="fa fa-heart grey-heart"></i>
 			<span class="grey-line"></span>
 
-<!-- HTML code to display the count of profiles found -->
-<script>
-  document.write('Found ' + count + ' profiles');
+
+
+  <script>
+document.addEventListener("DOMContentLoaded", function() {
+  var countDisplay = document.querySelector(".count-display");
+  if(countDisplay) {
+    countDisplay.innerHTML = "Found " + count + " profiles";
+  }
+});
 </script>
+<div class="count-display">Found <span> <script>document.write(count)</script></span> profiles</div>
+
+
 </div>
 
 
@@ -2595,17 +2604,19 @@ if(isset($_POST['search'])){
 
         ?>
 
-
-
 <div class="pagination">
   <a href="#" id="prev-page-btn" style="display:none">&laquo; Previous</a>
   <span id="page-numbers"></span>
   <a href="#" id="next-page-btn">Next &raquo;</a>
 </div>
 
+
+
+
+
 <script>
   // number of profiles per page
-  const profilesPerPage = 15;
+  const profilesPerPage = 1;
   // total number of profiles found
   const totalProfiles = <?php echo $c_count ?>;
   // calculate the total number of pages
@@ -2694,24 +2705,18 @@ if(isset($_POST['search'])){
     }
   });
 </script>
-
-<!-- HTML code to display the count of profiles found -->
-<script>
-  document.write('Found ' + count + ' profiles');
-</script>
-
   </div>
 </div>
-
-<!-- HTML code to display the count of profiles found -->
-<script>
-  document.write('Found ' + count + ' profiles');
-</script>
-
 
 
 
 <style>
+    .count-display {
+    font-size: 1.2em;
+    font-weight: 400;
+    color: #000000;
+    margin-top: 10px;
+  }
   
   .sb-find-biodata{
     font-size: 20px;
