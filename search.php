@@ -2700,7 +2700,7 @@ if (totalProfiles === 0) {
   document.getElementById("prev-page-btn").style.display = "none";
   document.getElementById("next-page-btn").style.display = "none";
 } else {
-  profilesshow = `Showing ${startIndex + 1} to ${Math.min(endIndex, totalProfiles)} Profiles`;
+  profilesshow = `(Showing ${startIndex + 1} to ${Math.min(endIndex, totalProfiles)} Profiles)`;
   if (startIndex === 0) {
     document.getElementById("prev-page-btn").style.display = "none";
   } else {
