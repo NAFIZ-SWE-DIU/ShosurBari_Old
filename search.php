@@ -8,6 +8,8 @@ $result=search();
 <html>
 <head>
 <title>Search - ShosurBari</title>
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 
@@ -68,6 +70,15 @@ label.addEventListener('click', () => {
 
 
 <!-- Biodata Profile count -->
+
+
+
+
+
+
+
+
+
 
 
 
@@ -1300,30 +1311,6 @@ label.addEventListener('click', () => {
 			<i class="fa fa-heart grey-heart"></i>
 			<span class="grey-line"></span>
 
-<?php
-$search_query = isset($_GET['query']) ? $_GET['query'] : '';
-$page = isset($_GET['page']) ? (int) $_GET['page'] : 1;
-$start = ($page - 1) * 5; // 5 profiles per page 1 // fetch 4 records starting from this index 
-
-$sql_count = "SELECT COUNT(*) FROM 1bd_personal_physical";
-if (!empty($search_query)) {
-    $sql_count .= " WHERE biodatagender LIKE '%$search_query%' OR Skin_tones LIKE '%$search_query%' OR height LIKE '%$search_query%' OR dateofbirth LIKE '%$search_query%'";
-}
-$result_count = mysqlexec($sql_count);
-$row_count = mysqli_fetch_array($result_count);
-$total_records = $row_count[0];
-$total_pages = ceil($total_records / 5); // 5 profiles per page 2
-
-$sql = "SELECT * FROM 1bd_personal_physical";
-if (!empty($search_query)) {
-    $sql .= " WHERE biodatagender LIKE '%$search_query%' OR Skin_tones LIKE '%$search_query%' OR height LIKE '%$search_query%' OR dateofbirth LIKE '%$search_query%'";
-}
-$sql .= " LIMIT $start, 5"; // 5 profiles per page last is 3
-$result = mysqlexec($sql);
-
-// display search results summary
-echo "<h3 class=\"sb-find-biodata\">Total profiles found: $total_records</h3>";
-?>
 
 </div>
 
@@ -2525,77 +2512,63 @@ function toggleCheckedAll(checkbox) {
       <div class="sb_biodata_profile">
 <!-- main profile -->
 <?php
-$search_query = isset($_GET['query']) ? $_GET['query'] : '';
-$page = isset($_GET['page']) ? (int) $_GET['page'] : 1;
-$start = ($page - 1) * 5; // fetch 4 records starting from this index
 
-$sql_count = "SELECT COUNT(*) FROM 1bd_personal_physical";
-if (!empty($search_query)) {
-    $sql_count .= " WHERE biodatagender LIKE '%$search_query%' OR Skin_tones LIKE '%$search_query%' OR height LIKE '%$search_query%' OR dateofbirth LIKE '%$search_query%'";
-}
-$result_count = mysqlexec($sql_count);
-$row_count = mysqli_fetch_array($result_count);
-$total_records = $row_count[0];
-$total_pages = ceil($total_records / 5); // 4 profiles per page
+$c_count = 0; //initialize counter to 0
 
-$sql = "SELECT * FROM 1bd_personal_physical";
-if (!empty($search_query)) {
-    $sql .= " WHERE biodatagender LIKE '%$search_query%' OR Skin_tones LIKE '%$search_query%' OR height LIKE '%$search_query%' OR dateofbirth LIKE '%$search_query%'";
-}
-$sql .= " LIMIT $start, 5";
-$result = mysqlexec($sql);
+if(isset($_POST['search'])){
+  while ($row = mysqli_fetch_assoc($result))
+  {
+      $profid=$row['user_id'];
+      $biodatagender=$row['biodatagender'];
+      $Skin_tones=$row['Skin_tones'];
+      $height=$row['height'];
+      $dateofbirth=$row['dateofbirth'];
+      $religion=$row5['religion'];
 
-$count = 0;
-while ($row = mysqli_fetch_assoc($result)){
-    $profid = $row['user_id'];
-    $biodatagender = $row['biodatagender'];
-    $Skin_tones = $row['Skin_tones'];
-    $height = $row['height'];
-    $dateofbirth = $row['dateofbirth'];
 
-    $sql2 = "SELECT * FROM photos WHERE user_id=$profid";
-    $result2 = mysqlexec($sql2);
-    if ($result2) {
-        $row2 = mysqli_fetch_array($result2);
-        $pic1 = $row2['pic1'];
-    }
+      $sql2="SELECT * FROM photos WHERE user_id=$profid";
+      $result2 = mysqlexec($sql2);
+      if($result2)
+        $row2=mysqli_fetch_array($result2);
+        $pic1=$row2['pic1'];
+      
 
-    $sql3 = "SELECT * FROM 2bd_personal_lifestyle WHERE user_id=$profid";
-    $result3 = mysqlexec($sql3);
-    if ($result3) {
-        $row3 = mysqli_fetch_assoc($result3);
-        $occupation = $row3['occupation'];
-    }
+      $sql3="SELECT * FROM 2bd_personal_lifestyle WHERE user_id=$profid";		
+      $result3=mysqlexec($sql3);
+      if($result3)
+        while($row3=mysqli_fetch_assoc($result3))
+        $occupation=$row3['occupation'];
 
-    $sql4 = "SELECT * FROM 4bd_address_details WHERE user_id=$profid";
-    $result4 = mysqlexec($sql4);
-    if ($result4) {
-        $row4 = mysqli_fetch_assoc($result4);
-        $permanent_address = $row4['permanent_address'];
-    }
+                      
+        $sql7="SELECT * FROM 3bd_educational_qualifications WHERE user_id=$profid";		
+        $result7=mysqlexec($sql7);
+        if($result7)
+          while($row7=mysqli_fetch_assoc($result7))
+          $education_method=$row5['education_method'];
 
-    $sql5 = "SELECT * FROM 8bd_religion_details WHERE user_id=$profid";
-    $result5 = mysqlexec($sql5);
-    if ($result5) {
-        $row5 = mysqli_fetch_assoc($result5);
-        $religion = $row5['religion'];
-    }
 
-    $sql6 = "SELECT * FROM 5bd_family_information WHERE user_id=$profid";
-    $result6 = mysqlexec($sql6);
-    if ($result6) {
-        $row6 = mysqli_fetch_assoc($result6);
-        $family_class = $row6['family_class'];
-    }
+        $sql4="SELECT * FROM 4bd_address_details WHERE user_id=$profid";		
+        $result4=mysqlexec($sql4);
+        if($result4)
+          while($row4=mysqli_fetch_assoc($result4))
+          $permanent_address=$row4['permanent_address'];
+
+
+          $sql6="SELECT * FROM 5bd_family_information WHERE user_id=$profid";		
+          $result6=mysqlexec($sql6);
+          if($result6)
+            while($row6=mysqli_fetch_assoc($result6))
+            $family_class=$row6['family_class'];
           
 
 
           $sql5="SELECT * FROM 8bd_religion_details WHERE user_id=$profid";		
           $result5=mysqlexec($sql5);
-            if ($result5) {
-              $row5 = mysqli_fetch_assoc($result5);
-              $religion=$row5['religion'];
-            }
+          if($result5)
+            while($row5=mysqli_fetch_assoc($result5))
+            $religion=$row5['religion'];
+
+
  
             echo "<div class=\"biodatalist\">";
                     echo "<div class=\"sb_bio_header\">";
@@ -2611,34 +2584,112 @@ while ($row = mysqli_fetch_assoc($result)){
 					<span class=\"sb_single_data\"> <span class=\"sb_value\"> Birth Year</span>        <span class=\"sb_data\"> {$dateofbirth}</span></span>
           <a href=\"viewpro.php?id={$profid}\" target=\"_blank\"> <button class=\"view_sb_profile\"> View Full Profile</button></a>
                     </div></div>";
+                    $c_count++;
 
-                    $count++;
         	}
-          
+        }
+        echo '<script> var count = ' . $c_count . '; </script>';
+
         ?>
 
 
-  <div class="pagination">
-    <?php
-    $profiles_shown = ($page - 1) * 5 + 1;
-    $profiles_left = max(0, $total_records - $profiles_shown - 4); // display at most 4 profiles per page
-    echo "Showing $profiles_shown - " . min($total_records, $profiles_shown + 4) . " of $total_records profiles. ";
-    if ($page > 1) {
-        echo "<a href=\"?query=$search_query&page=" . ($page - 1) . "\">Previous</a>";
-    }
-    for ($i = 1; $i <= $total_pages; $i++) {
-        echo "<a href=\"?query=$search_query&page=" . $i . "\"";
-        if ($i == $page) {
-            echo " class=\"active\"";
-        }
-        echo ">" . $i . "</a>";
-    }
-    if ($page < $total_pages) {
-        echo "<a href=\"?query=$search_query&page=" . ($page + 1) . "\">Next</a>";
-        echo " $profiles_left profiles left.";
-    }
-    ?>
+
+<div class="pagination">
+  <a href="#" id="prev-page-btn">&laquo; Previous</a>
+  <span id="page-numbers"></span>
+  <a href="#" id="next-page-btn">Next &raquo;</a>
 </div>
+
+<script>
+  // number of profiles per page
+  const profilesPerPage = 3;
+  // total number of profiles found
+  const totalProfiles = <?php echo $c_count ?>;
+  // calculate the total number of pages
+  const totalPages = Math.ceil(totalProfiles / profilesPerPage);
+
+  // initialize the current page to the first page
+  let currentPage = 1;
+
+  // function to generate page numbers
+  function generatePageNumbers() {
+    // clear the page numbers
+    document.getElementById("page-numbers").innerHTML = "";
+
+    // loop through all pages and generate page numbers
+    for (let i = 1; i <= totalPages; i++) {
+      // create a page number element
+      const pageNumberElem = document.createElement("a");
+      pageNumberElem.href = "#";
+      pageNumberElem.innerText = i;
+
+      // add an active class to the current page
+      if (i === currentPage) {
+        pageNumberElem.classList.add("active");
+      }
+
+      // add a click event listener to switch pages
+      pageNumberElem.addEventListener("click", () => {
+        currentPage = i;
+        showProfiles();
+      });
+
+      // append the page number element to the page numbers container
+      document.getElementById("page-numbers").appendChild(pageNumberElem);
+    }
+  }
+
+  // function to show profiles for the current page
+  function showProfiles() {
+    // calculate the starting index and ending index of the profiles to show
+    const startIndex = (currentPage - 1) * profilesPerPage;
+    const endIndex = Math.min(startIndex + profilesPerPage, totalProfiles);
+
+    // loop through the profiles and show only the profiles for the current page
+    for (let i = 0; i < totalProfiles; i++) {
+      const profileElem = document.getElementsByClassName("biodatalist")[i];
+      if (i >= startIndex && i < endIndex) {
+        profileElem.style.display = "block";
+      } else {
+        profileElem.style.display = "none";
+      }
+    }
+
+    // update the page numbers
+    generatePageNumbers();
+  }
+
+  // show the profiles for the first page
+  showProfiles();
+
+  // add click event listeners to the previous page and next page buttons
+  document.getElementById("prev-page-btn").addEventListener("click", () => {
+    if (currentPage > 1) {
+      currentPage--;
+      showProfiles();
+    }
+  });
+
+  document.getElementById("next-page-btn").addEventListener("click", () => {
+    if (currentPage < totalPages) {
+      currentPage++;
+      showProfiles();
+    }
+  });
+</script>
+
+
+
+
+
+
+
+<!-- HTML code to display the count of profiles found -->
+<script>
+  // display the count of profiles found
+  document.write('Found ' + count + ' profiles');
+</script>
+
 
 
 
@@ -2648,7 +2699,9 @@ while ($row = mysqli_fetch_assoc($result)){
 
 
 
+
 <style>
+  
   .sb-find-biodata{
     font-size: 20px;
     margin-top: 15px;
