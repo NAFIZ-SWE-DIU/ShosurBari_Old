@@ -81,15 +81,6 @@ label.addEventListener('click', () => {
 
 
 
-
-
-
-
-
-
-
-
-
 <div id="search-bar">
                                   <div class="sb_mobilesearch">
 
