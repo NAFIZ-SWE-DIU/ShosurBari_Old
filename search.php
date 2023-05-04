@@ -2614,7 +2614,7 @@ if(isset($_POST['search'])){
 
 <script>
   // number of profiles per page
-  const profilesPerPage = 1;
+  const profilesPerPage = 3;
   // total number of profiles found
   const totalProfiles = <?php echo $c_count ?>;
   // calculate the total number of pages
@@ -2689,8 +2689,9 @@ if(isset($_POST['search'])){
     const profilesLeft = totalProfiles - endIndex;
     document.getElementById("profiles-info").textContent = `(${profilesLeft} profiles left)`;
 
-    const profilesshow = totalProfiles - endIndex;
-    document.getElementById("profiles-show-info").textContent = `(Showing ${startIndex + 1} Profiles)`;
+const profilesshow = `(Showing ${startIndex + 1} to ${endIndex} Profiles)`;
+document.getElementById("profiles-show-info").textContent = profilesshow;
+
   }
   
   // show the profiles for the first page
