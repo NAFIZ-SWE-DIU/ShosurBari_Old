@@ -2686,10 +2686,32 @@ if(isset($_POST['search'])){
     }
 
     // update the text in the profiles-info span
-    const profilesLeft = totalProfiles - endIndex;
-    document.getElementById("profiles-info").textContent = `(${profilesLeft} profiles left)`;
+// update the text in the profiles-info span
+const profilesLeft = totalProfiles - endIndex;
+if (totalProfiles > 0) {
+  document.getElementById("profiles-info").textContent = `(${profilesLeft} profiles left)`;
+} else {
+  document.getElementById("profiles-info").style.display = "none";
+}
 
-const profilesshow = `(Showing ${startIndex + 1} to ${endIndex} Profiles)`;
+
+let profilesshow;
+if (totalProfiles === 0) {
+  document.getElementById("prev-page-btn").style.display = "none";
+  document.getElementById("next-page-btn").style.display = "none";
+} else {
+  profilesshow = `Showing ${startIndex + 1} to ${Math.min(endIndex, totalProfiles)} Profiles`;
+  if (startIndex === 0) {
+    document.getElementById("prev-page-btn").style.display = "none";
+  } else {
+    document.getElementById("prev-page-btn").style.display = "inline";
+  }
+  if (endIndex >= totalProfiles) {
+    document.getElementById("next-page-btn").style.display = "none";
+  } else {
+    document.getElementById("next-page-btn").style.display = "inline";
+  }
+}
 document.getElementById("profiles-show-info").textContent = profilesshow;
 
   }
