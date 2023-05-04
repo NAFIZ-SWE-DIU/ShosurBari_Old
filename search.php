@@ -2605,14 +2605,12 @@ if(isset($_POST['search'])){
         ?>
 
 <div class="pagination">
+<span id="profiles-show-info" style="color:#00bbff;"></span>
   <a href="#" id="prev-page-btn" style="display:none">&laquo; Previous</a>
   <span id="page-numbers"></span>
   <a href="#" id="next-page-btn">Next &raquo;</a>
+  <span id="profiles-info" style="color:#ff0080;"></span>
 </div>
-
-
-
-
 
 <script>
   // number of profiles per page
@@ -2653,11 +2651,6 @@ if(isset($_POST['search'])){
     }
   }
 
-
-
-
-
-  
   // function to show profiles for the current page
   function showProfiles() {
     // calculate the starting index and ending index of the profiles to show
@@ -2672,6 +2665,7 @@ if(isset($_POST['search'])){
       } else {
         profileElem.style.display = "none";
       }
+
     }
 
     // update the page numbers
@@ -2690,8 +2684,15 @@ if(isset($_POST['search'])){
     } else {
       document.getElementById("next-page-btn").style.display = "inline-block";
     }
-  }
 
+    // update the text in the profiles-info span
+    const profilesLeft = totalProfiles - endIndex;
+    document.getElementById("profiles-info").textContent = `(${profilesLeft} profiles left)`;
+
+    const profilesshow = totalProfiles - endIndex;
+    document.getElementById("profiles-show-info").textContent = `(Showing ${startIndex + 1} Profiles)`;
+  }
+  
   // show the profiles for the first page
   showProfiles();
 
@@ -2711,6 +2712,7 @@ if(isset($_POST['search'])){
 
     
   });
+
 </script>
   </div>
 </div>
