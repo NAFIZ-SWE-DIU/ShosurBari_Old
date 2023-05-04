@@ -2653,6 +2653,11 @@ if(isset($_POST['search'])){
     }
   }
 
+
+
+
+
+  
   // function to show profiles for the current page
   function showProfiles() {
     // calculate the starting index and ending index of the profiles to show
@@ -2703,6 +2708,8 @@ if(isset($_POST['search'])){
       currentPage++;
       showProfiles();
     }
+
+    
   });
 </script>
   </div>
