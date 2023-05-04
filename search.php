@@ -1311,7 +1311,10 @@ label.addEventListener('click', () => {
 			<i class="fa fa-heart grey-heart"></i>
 			<span class="grey-line"></span>
 
-
+<!-- HTML code to display the count of profiles found -->
+<script>
+  document.write('Found ' + count + ' profiles');
+</script>
 </div>
 
 
@@ -2595,14 +2598,14 @@ if(isset($_POST['search'])){
 
 
 <div class="pagination">
-  <a href="#" id="prev-page-btn">&laquo; Previous</a>
+  <a href="#" id="prev-page-btn" style="display:none">&laquo; Previous</a>
   <span id="page-numbers"></span>
   <a href="#" id="next-page-btn">Next &raquo;</a>
 </div>
 
 <script>
   // number of profiles per page
-  const profilesPerPage = 3;
+  const profilesPerPage = 15;
   // total number of profiles found
   const totalProfiles = <?php echo $c_count ?>;
   // calculate the total number of pages
@@ -2657,6 +2660,20 @@ if(isset($_POST['search'])){
 
     // update the page numbers
     generatePageNumbers();
+
+    // hide previous button if current page is the first page
+    if (currentPage === 1) {
+      document.getElementById("prev-page-btn").style.display = "none";
+    } else {
+      document.getElementById("prev-page-btn").style.display = "inline-block";
+    }
+
+    // hide next button if current page is the last page
+    if (currentPage === totalPages) {
+      document.getElementById("next-page-btn").style.display = "none";
+    } else {
+      document.getElementById("next-page-btn").style.display = "inline-block";
+    }
   }
 
   // show the profiles for the first page
@@ -2678,24 +2695,18 @@ if(isset($_POST['search'])){
   });
 </script>
 
-
-
-
-
-
-
 <!-- HTML code to display the count of profiles found -->
 <script>
-  // display the count of profiles found
   document.write('Found ' + count + ' profiles');
 </script>
 
-
-
-
-    </div>
+  </div>
 </div>
 
+<!-- HTML code to display the count of profiles found -->
+<script>
+  document.write('Found ' + count + ' profiles');
+</script>
 
 
 
