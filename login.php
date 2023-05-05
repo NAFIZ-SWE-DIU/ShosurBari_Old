@@ -1,4 +1,5 @@
 <?php include_once("functions.php");?>
+<?php require_once('auth/auth.php');?>
 <!DOCTYPE HTML>
 <html>
 <head>
@@ -85,22 +86,24 @@ $(document).ready(function(){
 
 			<div class="form-group">
       <!--  <label for="edit-name">Email or Username <span class="form-required" title="This field is required.">*</span></label> -->
-	      <input type="text" id="edit-name" placeholder="Your Email or Username" name="username" value="" size="60" maxlength="60" class="form-text required">
+      <input type="text" id="edit-name" placeholder="Your Email or Username" name="username" value="<?php if(isset($_COOKIE['username'])) { echo $_COOKIE['username']; } ?>" size="60" maxlength="60" class="form-text required">
       </div>
 
 
 			<div class="form-group">
        <!-- <label for="edit-pass">Password <span class="form-required" title="This field is required.">*</span></label> -->
-	      <input type="password" id="edit-pass" placeholder="Your Password"  name="password" size="60" maxlength="128" class="form-text required">
+       <input type="password" id="edit-pass" placeholder="Your Password"  name="password" value="<?php if(isset($_COOKIE['password'])) { echo $_COOKIE['password']; } ?>" size="60" maxlength="128" class="form-text required">
         <span class="show-password" style="color:#02a7e6;  font-size:18px;"><i style="color:black;  font-size:18px;" class="fa fa-eye" aria-hidden="true"></i></span> 
       </div>
 
 			<div class="remember-forgot">
-        <label>
-          <input type="checkbox" name="remember" value="1"> Remember me
-        </label>
+      <label><input type="checkbox" id="edit-remember" name="remember" value="1" <?php if(isset($_COOKIE['username'])) { echo "checked"; } ?>> Remember me</label>
         <a href="forgot_password.php">Forgot password?</a>
 </div>
+
+
+
+
 
       <style>
 .remember-forgot{
