@@ -1,9 +1,6 @@
-
-
-
 <?php
 if (isset($_POST['username']) && isset($_POST['password'])) {
-		session_start();
+	session_start();
 	error_reporting(0);
 	require_once("../includes/dbconn.php");
 	$userlevel=$_GET['user'];
@@ -24,6 +21,14 @@ if (isset($_POST['username']) && isset($_POST['password'])) {
 		$id = $row['id'];
 		session_start();
 		$_SESSION['id'] = $id;
+
+		// if remember me checkbox is checked
+		if (isset($_POST['remember'])) {
+			// set cookies with user's login credentials
+			setcookie('username', $username, time() + (86400 * 30), '/');
+			setcookie('password', $password, time() + (86400 * 30), '/');
+		}
+
 		header("location:../userhome.php?id={$row['id']}");
 	} 
 	else {
