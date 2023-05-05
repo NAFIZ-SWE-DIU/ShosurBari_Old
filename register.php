@@ -283,9 +283,18 @@ $(document).ready(function(){
 
 
 
-			<div class="form-actions">
-			<button  type="submit" id="edit-submit" name="op" class="btn_4 submit"> <span> </span> Create Account</button>
-			</div>
+<div class="form-actions">
+    <?php if(isset($_COOKIE['username'])) { ?>
+        <input type="hidden" id="edit-remember" name="remember" value="1">
+    <?php } else { ?>
+        <div class="form-group">
+            <label><input type="checkbox" id="edit-remember" name="remember" value="1" checked> Remember me</label>
+        </div>
+    <?php } ?>
+    <button type="submit" id="edit-submit" name="op" class="btn_4 submit"><span></span> Create Account</button>
+</div>
+
+
 
 
 
