@@ -2811,7 +2811,7 @@ ul.nav_1{
 
 .navigationpro ul{
     background: #fff;
-    width: 619px;
+    width: 623px;
     padding: 5px;
     border-radius: 2px;
     border: 1px solid #ccc;
@@ -3893,7 +3893,7 @@ ul.profile_item{
 }	
 
 .navigationpro ul {
-    width: 579px;
+    width: 583px;
 }
 
 .hvr-shutter-out-horizontal {
@@ -4029,6 +4029,9 @@ ul.nav_1 li {
     margin: 0px;
 }
 
+.nbs-flexisel-container{
+    max-width: 879px;
+}
 
 }
 /*-- -- -- -- -- -- -- -- -- -- -- -- -- ---- -- --
@@ -4064,7 +4067,7 @@ ul.nav_1 li {
 }
 
 .navigationpro ul {
-    width: 563px;
+    width: 567px;
 }
 
 .inline-block {
@@ -4282,6 +4285,10 @@ h6{
 
 .fa-chevron-down:before {
     font-size: 10px;
+}
+
+.nbs-flexisel-container{
+    max-width: 701px;
 }
 }
 /*-- -- -- -- -- -- -- -- -- -- -- -- -- ---- -- --
@@ -4611,6 +4618,10 @@ h6{
 
 .navigationpro ul {
     width: 280px;
+}
+
+.nbs-flexisel-container{
+    max-width: 696px;
 }
 }
 /*-- -- -- -- -- -- -- -- -- -- -- -- -- ---- -- --
@@ -5067,6 +5078,10 @@ h6{
     margin-bottom: 20px;
 }
 /*404 Error Page End */
+
+.nbs-flexisel-container{
+    max-width: 500px; /* 399px; */
+}
 }
 /*-- -- -- -- -- -- -- -- -- -- -- -- -- ---- -- --
 --           max-width:736px / E  N  D           --
@@ -5269,6 +5284,9 @@ h6{
 
 .sb_mobilesearch #search-button {
     width: 151px;
+}
+.nbs-flexisel-container{
+    max-width: 250px; /* 399px; */
 }
 }
 /*-- -- -- -- -- -- -- -- -- -- -- -- -- ---- -- --
