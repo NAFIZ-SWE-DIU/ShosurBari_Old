@@ -100,23 +100,32 @@ function register(){
 			( fullname, username, gender, number, email, password, active, register_date) 
 			VALUES ('$fname', '$uname', '$gender', '$pnumber', '$email', '$pass_1', 1, DATE_FORMAT(NOW(), '%e %M %Y, %h:%i:%s %p'))";
 
-		if (mysqli_query($conn,$sql)) {
-			// Get the ID of the newly registered user
-			$id = mysqli_insert_id($conn);
-			
-			// Set a session variable to store the user ID
-			$_SESSION['id'] = $id;
-			
-			// Create a record for the user in the deactivate table
-			$deactivate_sql = "INSERT INTO deactivate (user_id, status) VALUES ($id, 0)";
-			mysqli_query($conn, $deactivate_sql);
-			
-			// Redirect the user to the userhome.php page with the user ID as a parameter in the URL
-			header("location: userhome.php?id=$id");
+	
+
+
+if (mysqli_query($conn,$sql)) {
+    // Get the ID of the newly registered user
+    $id = mysqli_insert_id($conn);
+    
+    // Set a session variable to store the user ID
+    $_SESSION['id'] = $id;
+    
+    // Create a record for the user in the deactivate table
+    $deactivate_sql = "INSERT INTO deactivate (user_id, status) VALUES ($id, 0)";
+    mysqli_query($conn, $deactivate_sql);
+    
+    // Save login information in cookie
+    setcookie('username', $uname, time() + (86400 * 365), "/");
+    setcookie('email', $email, time() + (86400 * 365), "/");
+    setcookie('password', $pass_1, time() + (86400 * 365), "/");
+    
+    // Redirect the user to the userhome.php page with the user ID as a parameter in the URL
+    header("location: userhome.php?id=$id");
 
 		} else {
-		  echo "Error: " . $sql . "<br>" . $conn->error;
+ 		 echo "Error: " . $sql . "<br>" . $conn->error;
 		}
+
 	}
 }
 
