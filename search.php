@@ -143,28 +143,11 @@ label.addEventListener('click', () => {
       <label for="female_mob"><i class="fa fa-female"></i> Bride</label><br>
 </div>
 </div>
-<div id="gender-error" class="error-message" style="display: none; margin-top: 10px; color: red;">Please Select Biodatas gender.</div>
+<div id="gender-error-mob" class="error-message" style="display: none; margin-top: 10px; color: red;">Please Select Biodatas gender.</div>
 </div>
 
 
-<script>
-    function validateForm() {
-        var biodataGender = document.querySelector('input[name="biodatagender"]:checked');
-        if (!biodataGender) {
-            var errorDiv = document.getElementById('gender-error');
-            errorDiv.style.display = 'block';
 
-            // Scroll the error message to the center of the window
-            var windowHeight = window.innerHeight;
-            var errorDivHeight = errorDiv.offsetHeight;
-            var scrollPosition = errorDiv.offsetTop - (windowHeight - errorDivHeight) / 2;
-            window.scrollTo({ top: scrollPosition, behavior: 'smooth' });
-
-            return false;
-        }
-        return true;
-    }
-</script>
 
 
 
@@ -1382,13 +1365,34 @@ document.addEventListener("DOMContentLoaded", function() {
             <input type="radio" name="biodatagender" id="female" value="Female"/>
             <label for="female"><i class="fa fa-female"></i> Bride</label><br>
 		</div>
-    <div id="gender-error" class="error-message" style="display: none;">Please select gender.</div>
-
     </div>
+    <div id="gender-error-laptop" class="error-message" style="display: none; margin-top: 10px; color: red;">Please Select Biodatas gender.</div>
 </div>
 
 
+<script>
+    function validateForm() {
+        var biodataGender = document.querySelector('input[name="biodatagender"]:checked');
+        if (!biodataGender) {
+            var errorDiv;
+            if (window.innerWidth <= 768) {
+                errorDiv = document.getElementById('gender-error-mob');
+            } else {
+                errorDiv = document.getElementById('gender-error-laptop');
+            }
+            errorDiv.style.display = 'block';
 
+            // Scroll the error message to the center of the window
+            var windowHeight = window.innerHeight;
+            var errorDivHeight = errorDiv.offsetHeight;
+            var scrollPosition = errorDiv.offsetTop - (windowHeight - errorDivHeight) / 2;
+            window.scrollTo({ top: scrollPosition, behavior: 'smooth' });
+
+            return false;
+        }
+        return true;
+    }
+</script>
 
 <div class="wrapper">
   <label class="form-control toggle-next ellipsis">Religion  <span style=" color:#ff0080;">   <i class="fa fa-chevron-down"></i></span></label>
@@ -2534,7 +2538,7 @@ function toggleCheckedAll(checkbox) {
 
   <div class="form_but1">
 	  <div class="clearfix"> </div>
-    <input type="submit" name="search" value="Search Biodatas"/>
+    <input type="submit" name="search" value="Search Biodatas" onclick="return validateForm();"/>
   </div>
 
  </form>
