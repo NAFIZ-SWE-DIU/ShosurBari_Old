@@ -76,7 +76,7 @@ $(document).ready(function(){
 -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -->
 <div class="shosurbari-biodata">
 	
-    <form action="auth/auth.php?user=1" method="post">
+    <form action="auth/auth.php?user=1" method="post" name="SbLogForm" onsubmit="return SbLogineForm()">
 		<div class="flex-container">
     <div class="sb-register-login">
 
@@ -86,22 +86,97 @@ $(document).ready(function(){
 
 			<div class="form-group">
       <!--  <label for="edit-name">Email or Username <span class="form-required" title="This field is required.">*</span></label> -->
-      <input type="text" id="edit-name" placeholder="Your Email or Username" name="username" value="<?php if(isset($_COOKIE['username'])) { echo $_COOKIE['username']; } ?>" size="60" maxlength="60" class="form-text required">
+      <input type="text" id="username_email" placeholder="Your Email or Username" name="username" value="<?php if(isset($_COOKIE['username'])) { echo $_COOKIE['username']; } ?>" size="60" maxlength="60" class="form-text required">
+      <span id="uname_email_error" style="font-size:13px; margin-top: 0px; background: #ffddee; border-radius: 1px 2px 4px 4px; text-align: center; display: none;"></span>
       </div>
 
 
 			<div class="form-group">
        <!-- <label for="edit-pass">Password <span class="form-required" title="This field is required.">*</span></label> -->
-       <input type="password" id="edit-pass" placeholder="Your Password"  name="password" value="<?php if(isset($_COOKIE['password'])) { echo $_COOKIE['password']; } ?>" size="60" maxlength="128" class="form-text required">
-        <span class="show-password" style="color:#02a7e6;  font-size:18px;"><i style="color:black;  font-size:18px;" class="fa fa-eye" aria-hidden="true"></i></span> 
+       <input type="password" id="sb_log_pass" placeholder="Your Password" name="password" value="<?php if(isset($_COOKIE['password'])) { echo $_COOKIE['password']; } ?>" size="60" maxlength="128" class="form-text required">
+        <span class="show-password" style="color:#02a7e6;  font-size:18px;"><i style="color:black;  font-size:15px;" class="fa fa-eye" aria-hidden="true"></i></span> 
+        <span id="password_error" style="font-size:13px; margin-top: 0px; background: #ffddee; border-radius: 1px 2px 4px 4px; text-align: center; display: none;"></span>
+
       </div>
 
 			<div class="remember-forgot">
       <label><input type="checkbox" id="edit-remember" name="remember" value="1" <?php if(isset($_COOKIE['username'])) { echo "checked"; } ?>> Remember me</label>
         <a href="forgot_password.php">Forgot password?</a>
-</div>
+     </div>
 
 
+
+
+
+     <script>
+  		// Form Input field when error the show border red and scroll up start
+      function SbLogineForm(){
+      var username_email = document.forms["SbLogForm"]["username_email"].value;
+      var sb_log_pass = document.forms["SbLogForm"]["sb_log_pass"].value;
+
+
+    
+      //Full Name validation
+      if (username_email == "") {
+        document.getElementById('username_email').style.borderColor = "red";
+        document.getElementById('username_email').scrollIntoView({
+          behavior: 'smooth',
+          block: 'center',
+        });
+
+        var errorDiv = document.getElementById('uname_email_error');
+        errorDiv.innerHTML = "Please Enter Your Username or Email !";
+        errorDiv.style.display = 'block';
+        errorDiv.classList.add('fade-in');
+
+        // Change color multiple times
+        var colors = ['green', 'blue', 'red'];
+        var colorIndex = 0;
+        setInterval(function() {
+          errorDiv.style.color = colors[colorIndex];
+          colorIndex = (colorIndex + 1) % colors.length;
+        }, 500);
+
+        return false;
+      }else{
+        document.getElementById('username_email').style.borderColor = "green";
+        document.getElementById('uname_email_error').innerHTML = "";
+      }
+      
+
+
+
+
+            //Password validation
+            if (sb_log_pass == "") {
+        document.getElementById('sb_log_pass').style.borderColor = "red";
+        document.getElementById('sb_log_pass').scrollIntoView({
+          behavior: 'smooth',
+          block: 'center',
+        });
+
+        var errorDiv = document.getElementById('password_error');
+        errorDiv.innerHTML = "Please Enter Your Password !";
+        errorDiv.style.display = 'block';
+        errorDiv.classList.add('fade-in');
+
+        // Change color multiple times
+        var colors = ['green', 'blue', 'red'];
+        var colorIndex = 0;
+        setInterval(function() {
+          errorDiv.style.color = colors[colorIndex];
+          colorIndex = (colorIndex + 1) % colors.length;
+        }, 500);
+
+        return false;
+      }else{
+        document.getElementById('sb_log_pass').style.borderColor = "green";
+        document.getElementById('password_error').innerHTML = "";
+      }
+
+
+    }
+    </script>
 
 
 
