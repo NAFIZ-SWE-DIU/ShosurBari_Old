@@ -143,7 +143,7 @@ label.addEventListener('click', () => {
       <label for="female_mob"><i class="fa fa-female"></i> Bride</label><br>
 </div>
 </div>
-<div id="gender-error-mob" class="error-message" style="display: none; margin-top: 10px; color: red;">Please Select Biodatas gender.</div>
+<div id="gender-error-mob" class="error-message" style="display: none; margin-top: 10px; text-align:center;">Please Select Biodatas gender.</div>
 </div>
 
 
@@ -1366,7 +1366,7 @@ document.addEventListener("DOMContentLoaded", function() {
             <label for="female"><i class="fa fa-female"></i> Bride</label><br>
 		</div>
     </div>
-    <div id="gender-error-laptop" class="error-message" style="display: none; margin-top: 10px; color: red;">Please Select Biodatas gender.</div>
+    <div id="gender-error-laptop" class="error-message" style="display: none; margin-top: 10px; text-align:center;">Please Select Biodatas gender.</div>
 </div>
 
 
@@ -1381,6 +1381,15 @@ document.addEventListener("DOMContentLoaded", function() {
                 errorDiv = document.getElementById('gender-error-laptop');
             }
             errorDiv.style.display = 'block';
+            errorDiv.classList.add('fade-in');
+
+            // Change color multiple times
+            var colors = ['green', 'blue', 'red'];
+            var colorIndex = 0;
+            setInterval(function() {
+                errorDiv.style.color = colors[colorIndex];
+                colorIndex = (colorIndex + 1) % colors.length;
+            }, 500);
 
             // Scroll the error message to the center of the window
             var windowHeight = window.innerHeight;
