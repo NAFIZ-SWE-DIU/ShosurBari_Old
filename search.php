@@ -134,7 +134,7 @@ label.addEventListener('click', () => {
 <div class="gender-radio-select">
 <label class="ellipsis" for="Looking">Looking :</label>
   <div class="gender-option">
-      <input type="radio" name="biodatagender" id="male_mob" value="Male" />
+      <input type="radio" name="biodatagender" id="male_mob" value="Male" required/>
       <label for="male_mob"><i class="fa fa-male"></i> Groom</label>
   </div>
   
@@ -143,8 +143,28 @@ label.addEventListener('click', () => {
       <label for="female_mob"><i class="fa fa-female"></i> Bride</label><br>
 </div>
 </div>
+<div id="gender-error" class="error-message" style="display: none; margin-top: 10px; color: red;">Please Select Biodatas gender.</div>
 </div>
 
+
+<script>
+    function validateForm() {
+        var biodataGender = document.querySelector('input[name="biodatagender"]:checked');
+        if (!biodataGender) {
+            var errorDiv = document.getElementById('gender-error');
+            errorDiv.style.display = 'block';
+
+            // Scroll the error message to the center of the window
+            var windowHeight = window.innerHeight;
+            var errorDivHeight = errorDiv.offsetHeight;
+            var scrollPosition = errorDiv.offsetTop - (windowHeight - errorDivHeight) / 2;
+            window.scrollTo({ top: scrollPosition, behavior: 'smooth' });
+
+            return false;
+        }
+        return true;
+    }
+</script>
 
 
 
@@ -1237,7 +1257,7 @@ label.addEventListener('click', () => {
 
 <div class="form_but1">
 <div class="clearfix"> </div>
-<input type="submit" name="search" value="Search Biodatas"/>
+<input type="submit" name="search" value="Search Biodatas" onclick="return validateForm();"/>
 </div>
 
 </form>
@@ -1354,7 +1374,7 @@ document.addEventListener("DOMContentLoaded", function() {
 <div class="gender-radio-select">
 <label class="ellipsis" for="Looking">Looking :</label>
         <div class="gender-option">
-            <input type="radio" name="biodatagender" id="male" value="Male"/>
+            <input type="radio" name="biodatagender" id="male" value="Male" required/>
             <label for="male"><i class="fa fa-male"></i> Groom</label>
         </div>
 
@@ -1362,8 +1382,13 @@ document.addEventListener("DOMContentLoaded", function() {
             <input type="radio" name="biodatagender" id="female" value="Female"/>
             <label for="female"><i class="fa fa-female"></i> Bride</label><br>
 		</div>
+    <div id="gender-error" class="error-message" style="display: none;">Please select gender.</div>
+
     </div>
 </div>
+
+
+
 
 <div class="wrapper">
   <label class="form-control toggle-next ellipsis">Religion  <span style=" color:#ff0080;">   <i class="fa fa-chevron-down"></i></span></label>
@@ -2754,25 +2779,44 @@ document.getElementById("profiles-show-info").textContent = profilesshow;
     font-size: 20px;
     margin-top: 15px;
   }
-  .pagination{
-    width: 90%;
-    margin: 50px auto 0px auto;
-    flex-wrap: wrap;
-    padding: 0px;
-    text-align: center;
-  }
+  .pagination {
+  width: 90%;
+  margin: 50px auto 0px auto;
+  padding: 0px;
+  text-align: center;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
 
 .pagination a {
   transition: background-color 0.3s ease;
-    color: #000;
-    padding: 8px 12px;
-    text-decoration: none;
-    font-size: 14px;
-    background: #eee;
-    border-radius: 50%;
-    margin: 0 3px;
-    border: 1px solid #ccc;
+  color: #000;
+  padding: 8px 12px;
+  text-decoration: none;
+  font-size: 14px;
+  background: #eee;
+  border-radius: 50%;
+  margin: 8px 3px;
+  border: 1px solid #ccc;
 }
+  #prev-page-btn{
+    margin-bottom: 15px;
+    margin-top: 0px;
+  }
+  #profiles-show-info{
+    margin-bottom: 10px;
+  }
+
+  #next-page-btn{
+    margin-bottom: 0px;
+    margin-top: 15px;
+  }
+  #profiles-info{
+    margin-top: 10px;
+  }
 
 .pagination a:hover {
   background: #00bbff;
@@ -2783,9 +2827,8 @@ document.getElementById("profiles-show-info").textContent = profilesshow;
   background: #ff0080;
   color: #fff;
   border: 1px solid #ddd;
-
 }
-  </style>
+ </style>
 
 
 
