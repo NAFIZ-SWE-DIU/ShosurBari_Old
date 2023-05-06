@@ -143,7 +143,7 @@ label.addEventListener('click', () => {
       <label for="female_mob"><i class="fa fa-female"></i> Bride</label><br>
 </div>
 </div>
-<div id="gender-error-mob" class="error-message" style="display: none; margin-top: 10px; text-align:center;">Please Select Biodatas gender.</div>
+<div id="gender-error-mob" class="error-message" style="display: none; margin-top: 10px; text-align:center;">Please Select Biodatas Gender !</div>
 </div>
 
 
@@ -1366,7 +1366,7 @@ document.addEventListener("DOMContentLoaded", function() {
             <label for="female"><i class="fa fa-female"></i> Bride</label><br>
 		</div>
     </div>
-    <div id="gender-error-laptop" class="error-message" style="display: none; margin-top: 10px; text-align:center;">Please Select Biodatas gender.</div>
+    <div id="gender-error-laptop" class="error-message" style="font-size:13px; margin-top: 0px; background: #ffddee; border-radius: 1px 2px 4px 4px; text-align: center; display: none;">Please Select Biodatas Gender !</div>
 </div>
 
 
