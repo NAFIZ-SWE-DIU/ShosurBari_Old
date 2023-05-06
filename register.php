@@ -85,26 +85,26 @@ $(document).ready(function(){
 
 		<div class="form-group">
 		    <!--  <label for="edit-name">Full Name<span class="form-required" title="This field is required.">*</span></label> -->
-		      <input type="text" id="fname" placeholder="Full Name*" name="fname" value="" size="60" maxlength="60" class="form-text required">
+		      <input type="text" id="fname" placeholder="Full Name" name="fname" value="" size="60" maxlength="60" class="form-text required">
 			  <span id="fname_error" style="font-size:13px; margin-top: 0px; background: #ffddee; border-radius: 1px 2px 4px 4px; text-align: center; display: none;"></span>
 			</div>
 
 			<div class="form-group">
 		      <!-- <label for="edit-name">Username<span class="form-required" title="This field is required.">*</span></label> -->
-		      <input type="text" id="uname" placeholder="Username*" name="uname" value="" size="60" maxlength="60" class="form-text required">
+		      <input type="text" id="uname" placeholder="Username" name="uname" value="" size="60" maxlength="60" class="form-text required">
 			  <span id="uname_error" style="font-size:13px; margin-top: 0px; background: #ffddee; border-radius: 1px 2px 4px 4px; text-align: center; display: none;"></span>
 			</div>
 
 
 			<div class="form-group">
 		      <!-- <label for="edit-name">Emails<span class="form-required" title="This field is required.">*</span></label> -->
-		      <input type="text" id="email" placeholder="Email*" name="email" value="" size="60" maxlength="60" class="form-text required">
+		      <input type="text" id="email" placeholder="Email" name="email" value="" size="60" maxlength="60" class="form-text required">
 			  <span id="email_error" style="font-size:13px; margin-top: 0px; background: #ffddee; border-radius: 1px 2px 4px 4px; text-align: center; display: none;"></span>
 			</div>
 
       <div class="form-group">
 		     <!--  <label for="edit-name">Phone Number<span class="form-required" title="This field is required.">*</span></label> -->
-		      <input type="pnumber" id="pnumber" placeholder="Phone Number*" name="pnumber" value="" size="60" minlength="10" maxlength="15" class="form-text required">
+		      <input type="pnumber" id="pnumber" placeholder="Phone Number" name="pnumber" value="" size="60" minlength="10" maxlength="15" class="form-text required">
 			  <span id="pnumber_error" style="font-size:13px; margin-top: 0px; background: #ffddee; border-radius: 1px 2px 4px 4px; text-align: center; display: none;"></span>
 			</div>
 
@@ -120,14 +120,14 @@ $(document).ready(function(){
 
 		    <div class="form-group">
 		      <!-- <label for="edit-pass">Password<span class="form-required" title="This field is required.">*</span></label> -->
-		      <input type="password" id="pass_1" placeholder="New Password*" name="pass_1" size="60" maxlength="128" class="form-text required">
+		      <input type="password" id="pass_1" placeholder="New Password" name="pass_1" size="60" maxlength="128" class="form-text required">
 			  <span class="show-password" style="color:#00bbff;  font-size:18px;"><i style="color:black;  font-size:15px;" class="fa fa-eye" aria-hidden="true"></i></span> 
 			  <span  id="pass_1_error" style="font-size:13px; margin-top: 0px; background: #ffddee; border-radius: 1px 2px 4px 4px; text-align: center; display: none;"></span>
 			</div>
 
 			<div class="form-group">
 		      <!-- <label for="edit-pass">Confirm Password<span class="form-required" title="This field is required.">*</span></label> -->
-		      <input type="password" id="pass_2" placeholder="Confirm Password*" name="pass_2" size="60" maxlength="128" class="form-text required">
+		      <input type="password" id="pass_2" placeholder="Confirm Password" name="pass_2" size="60" maxlength="128" class="form-text required">
 			  <span class="show-password" style="color:#00bbff;  font-size:18px;"><i style="color:black;  font-size:15px;" class="fa fa-eye" aria-hidden="true"></i></span> 
 			  <span  id="pass_2_error" style="font-size:13px; margin-top: 0px; background: #ffddee; border-radius: 1px 2px 4px 4px; text-align: center; display: none;"></span>
 			</div>
@@ -208,8 +208,8 @@ $(document).ready(function(){
 		border-radius: 3px
     }
 </style>
-<div class="gender-select-reg">
-<label class="sb-profile-gender" for="sex">Your Gender<span class="form-required" title="This field is required.">*</span></label>
+<div class="gender-select-reg" id="gender-select-reg">
+<label class="sb-profile-gender" for="sex">Your Gender<span class="form-required" title="This field is required."></span></label>
         <div class="gender-option">
             <input type="radio" name="gender" id="male" value="Male" onclick="genderSelected(this);"/>
             <label for="male"><i class="fa fa-male"></i> Male</label>
@@ -238,47 +238,64 @@ $(document).ready(function(){
       border: 1px solid green;
     }
   </style>
-	<script>
-    const form = document.querySelector('form');
-    const maleRadio = document.querySelector('#male');
-    const femaleRadio = document.querySelector('#female');
-    const genderError = document.querySelector('#gender-error');
 
-    form.addEventListener('submit', (e) => {
-      let errors = 0;
 
-      if (!maleRadio.checked && !femaleRadio.checked) {
-        genderError.innerHTML = 'Please Select Your Biodata!';
-        genderError.style.display = 'block';
-        document.querySelectorAll('input[name=gender]').forEach(r => {
-          r.classList.add('error');
-        });
+<script>
+  const form = document.querySelector('form');
+  const maleRadio = document.querySelector('#male');
+  const femaleRadio = document.querySelector('#female');
+  const genderError = document.querySelector('#gender-error');
+  const genderSelectReg = document.querySelector('#gender-select-reg');
 
-    // Color animation
-    let colorIndex = 0;
-    const colors = ['green', 'blue', 'red'];
-    const animationInterval = setInterval(() => {
-      genderError.style.color = colors[colorIndex];
-      colorIndex = (colorIndex + 1) % colors.length;
-    }, 500);
+  form.addEventListener('submit', (e) => {
+    let errors = 0;
 
-        errors++;
-      }
+    if (!maleRadio.checked && !femaleRadio.checked) {
+      document.getElementById('gender-select-reg').style.borderColor = "red";
+      genderError.innerHTML = 'Please Select Your Gender!';
+      genderError.style.display = 'block';
+      document.querySelectorAll('input[name=gender]').forEach(r => {
+        r.classList.add('error');
+      });
 
-      if (maleRadio.checked || femaleRadio.checked) {
-        genderError.innerHTML = '';
-        genderError.style.display = 'none';
-        document.querySelectorAll('input[name=gender]').forEach(r => {
-          r.classList.remove('error');
-        });
-      }
+      // Color animation
+      let colorIndex = 0;
+      const colors = ['green', 'blue', 'red'];
+      const animationInterval = setInterval(() => {
+        genderError.style.color = colors[colorIndex];
+        colorIndex = (colorIndex + 1) % colors.length;
+      }, 500);
 
-      if (errors > 0) {
-        e.preventDefault();
-        window.scrollTo(0, 0);
-      }
+      errors++;
+    }
+
+    if (maleRadio.checked || femaleRadio.checked) {
+      genderError.innerHTML = '';
+      genderError.style.display = 'none';
+      document.querySelectorAll('input[name=gender]').forEach(r => {
+        r.classList.remove('error');
+      });
+    }
+
+    if (errors > 0) {
+      e.preventDefault();
+      window.scrollTo(0, 0);
+    }
+  });
+
+  function genderSelected(radio) {
+    genderError.style.display = 'none';
+    document.querySelectorAll('input[name=gender]').forEach(r => {
+      r.classList.remove('error');
     });
-  </script>
+
+    if (radio.value === 'Male') {
+      genderSelectReg.style.borderColor = 'green';
+    } else if (radio.value === 'Female') {
+      genderSelectReg.style.borderColor = 'green';
+    }
+  }
+</script>
 
 
 
@@ -356,7 +373,7 @@ $(document).ready(function(){
         });
 
         var errorDiv = document.getElementById('fname_error');
-        errorDiv.innerHTML = "Please Enter Your Full Name";
+        errorDiv.innerHTML = "Please Enter Your Full Name !";
         errorDiv.style.display = 'block';
         errorDiv.classList.add('fade-in');
         
@@ -388,7 +405,7 @@ $(document).ready(function(){
         });
 
         var errorDiv = document.getElementById('uname_error');
-        errorDiv.innerHTML = "Please Enter Your Username";
+        errorDiv.innerHTML = "Please Enter Your Username !";
         errorDiv.style.display = 'block';
         errorDiv.classList.add('fade-in');
 
@@ -410,7 +427,7 @@ $(document).ready(function(){
         });
 
         var errorDiv = document.getElementById('uname_error');
-        errorDiv.innerHTML = "Please Enter Only Letters And Numbers. Can't Used Any Symbol & Space.";
+        errorDiv.innerHTML = "Please Enter Only Letters And Numbers. Can Not Used Any Symbol & Space !";
         errorDiv.style.display = 'block';
         errorDiv.classList.add('fade-in');
 
@@ -441,7 +458,7 @@ $(document).ready(function(){
         });
 
         var errorDiv = document.getElementById('email_error');
-        errorDiv.innerHTML = "Please Enter Your Email";
+        errorDiv.innerHTML = "Please Enter Your Email !";
         errorDiv.style.display = 'block';
         errorDiv.classList.add('fade-in');
 
@@ -491,7 +508,7 @@ if (pnumber == "") {
   });
 
   var errorDiv = document.getElementById('pnumber_error');
-  errorDiv.innerHTML = "Please Enter Your Phone Number";
+  errorDiv.innerHTML = "Please Enter Your Phone Number !";
   errorDiv.style.display = 'block';
   errorDiv.classList.add('fade-in');
 
@@ -513,7 +530,7 @@ if (pnumber == "") {
   });
 
   var errorDiv = document.getElementById('pnumber_error');
-  errorDiv.innerHTML = "Phone Number Must Be Between 10 And 14 Digits";
+  errorDiv.innerHTML = "Phone Number Must Be Between 10 To 14 Digits. Don't Used Space & Plus Symbol !";
   errorDiv.style.display = 'block';
   errorDiv.classList.add('fade-in');
 
@@ -543,7 +560,7 @@ if (pnumber == "") {
         });
 
         var errorDiv = document.getElementById('pass_1_error');
-        errorDiv.innerHTML = "Please Enter Your New Password";
+        errorDiv.innerHTML = "Please Enter Your New Password !";
         errorDiv.style.display = 'block';
         errorDiv.classList.add('fade-in');
 
@@ -573,7 +590,7 @@ if (pnumber == "") {
         });
 
         var errorDiv = document.getElementById('pass_2_error');
-        errorDiv.innerHTML = "Please Enter Your Confirm Password";
+        errorDiv.innerHTML = "Please Enter Your Confirm Password !";
         errorDiv.style.display = 'block';
         errorDiv.classList.add('fade-in');
 
@@ -594,7 +611,7 @@ if (pnumber == "") {
         });
 
         var errorDiv = document.getElementById('pass_2_error');
-        errorDiv.innerHTML = "Your Password Do Not Match";
+        errorDiv.innerHTML = "Your Password Do Not Match !";
         errorDiv.style.display = 'block';
         errorDiv.classList.add('fade-in');
 
