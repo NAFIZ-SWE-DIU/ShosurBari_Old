@@ -42,25 +42,108 @@ function searchid(){
 }
 
 
+
+
+
+
+
+
+
+
+
+
+
+
 /*-- -- -- -- -- -- -- -- -- -- -- -- -- ---- -- --
 -- -- -- -- -- -- -- -- --- -- -- -- -- -- -- -- --
 --            Multiple Option Search             --
 -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- ---
 -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -*/
-function search(){
+function search()
+{
+    if ($_SERVER['REQUEST_METHOD'] == 'POST') {
+        $biodatagender = isset($_POST['biodatagender']) ? $_POST['biodatagender'] : '';
+        $Skin_tones = isset($_POST['Skin_tones']) ? $_POST['Skin_tones'] : '';
+        $maritalstatus = isset($_POST['maritalstatus']) ? $_POST['maritalstatus'] : '';
+        $education_method = isset($_POST['education_method']) ? $_POST['education_method'] : '';
 
-	if ($_SERVER['REQUEST_METHOD'] == 'POST') {
-	   $biodatagender=$_POST['biodatagender'];
-	   $Skin_tones=$_POST['Skin_tones'];
+        // Check if any option is not selected
+        if (empty($biodatagender) || empty($Skin_tones) || empty($maritalstatus) || empty($education_method)) {
+            // If any option is not selected, return the page
+            return;
+        }
 
-	   $sql="SELECT * FROM 1bd_personal_physical  WHERE  
-		biodatagender LIKE '$biodatagender'  
-	   AND Skin_tones LIKE '$Skin_tones'  
-	   ";
-	   $result = mysqlexec($sql);
-	   return $result;
-	}
+        $sql = "SELECT * FROM 1bd_personal_physical 
+        LEFT JOIN 2bd_personal_lifestyle ON 1bd_personal_physical.user_id = 2bd_personal_lifestyle.user_id
+        LEFT JOIN 3bd_educational_qualifications ON 1bd_personal_physical.user_id = 3bd_educational_qualifications.user_id
+        WHERE 1=1";
+
+        if (!empty($biodatagender)) {
+            if (!is_array($biodatagender)) {
+                $sql .= " AND biodatagender = '$biodatagender'";
+            } else {
+                $sql .= " AND (";
+                $conditions = [];
+                foreach ($biodatagender as $gender) {
+                    $conditions[] = "biodatagender = '$gender'";
+                }
+                $sql .= implode(" OR ", $conditions);
+                $sql .= ")";
+            }
+        }
+
+        if (!empty($Skin_tones)) {
+            if (!is_array($Skin_tones)) {
+                $skinTonesArray = explode(',', $Skin_tones);
+                $skinTonesCondition = implode("','", $skinTonesArray);
+                $sql .= " AND Skin_tones IN ('$skinTonesCondition')";
+            }
+        }
+
+        if (!empty($maritalstatus)) {
+            if (!is_array($maritalstatus)) {
+                $maritalStatusArray = explode(',', $maritalstatus);
+                $maritalStatusCondition = implode("','", $maritalStatusArray);
+                $sql .= " AND maritalstatus IN ('$maritalStatusCondition')";
+            }
+        }
+
+        if (!empty($education_method)) {
+            if (!is_array($education_method)) {
+                $educationMethodArray = explode(',', $education_method);
+                $educationMethodCondition = implode("','", $educationMethodArray);
+                $sql .= " AND education_method IN ('$educationMethodCondition')";
+            }
+        }
+
+        $result = mysqlexec($sql);
+
+        // Check if no matching data found for biodatagender
+        if (empty($result) && !is_array($biodatagender)) {
+            // If no matching data found for biodatagender, return the page
+            return;
+        } elseif (empty($result) && is_array($biodatagender)) {
+            // If no matching data found for any of the biodatagender options, return the page
+            return;
+        }
+
+        return $result;
+    }
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 /*-- -- -- -- -- -- -- -- -- -- -- -- -- ---- -- --
 -- -- -- -- -- -- -- -- --- -- -- -- -- -- -- -- --
 --                   E   N   D                   --
@@ -158,7 +241,7 @@ function isloggedin(){
 /*-- -- -- -- -- -- -- -- -- -- -- -- -- ---- -- --
 -- -- -- -- -- -- -- -- --- -- -- -- -- -- -- -- --
 --                S  T  A  R  T                  --
---            User Contact Us Function           --
+--            Biodata Contact / Request          --
 --                                               --
 -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- ---
 -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -*/
@@ -201,7 +284,7 @@ function biodata_sale_customer(){
 /*-- -- -- -- -- -- -- -- -- -- -- -- -- ---- -- --
 -- -- -- -- -- -- -- -- --- -- -- -- -- -- -- -- --
 --                   E   N   D                   --
---            User Contact Us Function           --
+--            Biodata Contact / Request          --
 --                                               --
 -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- ---
 -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -*/
