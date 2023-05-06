@@ -86,26 +86,26 @@ $(document).ready(function(){
 		<div class="form-group">
 		    <!--  <label for="edit-name">Full Name<span class="form-required" title="This field is required.">*</span></label> -->
 		      <input type="text" id="fname" placeholder="Full Name*" name="fname" value="" size="60" maxlength="60" class="form-text required">
-			  <span id="fname_error" style="color:red; font-size:13px;"></span>
+			  <span id="fname_error" style="font-size:13px; margin-top: 0px; background: #ffddee; border-radius: 1px 2px 4px 4px; text-align: center; display: none;"></span>
 			</div>
 
 			<div class="form-group">
 		      <!-- <label for="edit-name">Username<span class="form-required" title="This field is required.">*</span></label> -->
 		      <input type="text" id="uname" placeholder="Username*" name="uname" value="" size="60" maxlength="60" class="form-text required">
-			  <span id="uname_error" style="color:red;  font-size:13px;"></span>
+			  <span id="uname_error" style="font-size:13px; margin-top: 0px; background: #ffddee; border-radius: 1px 2px 4px 4px; text-align: center; display: none;"></span>
 			</div>
 
 
 			<div class="form-group">
 		      <!-- <label for="edit-name">Emails<span class="form-required" title="This field is required.">*</span></label> -->
 		      <input type="text" id="email" placeholder="Email*" name="email" value="" size="60" maxlength="60" class="form-text required">
-			  <span id="email_error" style="color:red; font-size:13px;"></span>
+			  <span id="email_error" style="font-size:13px; margin-top: 0px; background: #ffddee; border-radius: 1px 2px 4px 4px; text-align: center; display: none;"></span>
 			</div>
 
       <div class="form-group">
 		     <!--  <label for="edit-name">Phone Number<span class="form-required" title="This field is required.">*</span></label> -->
 		      <input type="pnumber" id="pnumber" placeholder="Phone Number*" name="pnumber" value="" size="60" minlength="10" maxlength="15" class="form-text required">
-			  <span id="pnumber_error" style="color:red; font-size:13px;"></span>
+			  <span id="pnumber_error" style="font-size:13px; margin-top: 0px; background: #ffddee; border-radius: 1px 2px 4px 4px; text-align: center; display: none;"></span>
 			</div>
 
       <script>
@@ -121,15 +121,15 @@ $(document).ready(function(){
 		    <div class="form-group">
 		      <!-- <label for="edit-pass">Password<span class="form-required" title="This field is required.">*</span></label> -->
 		      <input type="password" id="pass_1" placeholder="New Password*" name="pass_1" size="60" maxlength="128" class="form-text required">
-			  <span class="show-password" style="color:#00bbff;  font-size:18px;"><i style="color:black;  font-size:18px;" class="fa fa-eye" aria-hidden="true"></i></span> 
-			  <span  id="pass_1_error" style="color:red; font-size:13px;"></span>
+			  <span class="show-password" style="color:#00bbff;  font-size:18px;"><i style="color:black;  font-size:15px;" class="fa fa-eye" aria-hidden="true"></i></span> 
+			  <span  id="pass_1_error" style="font-size:13px; margin-top: 0px; background: #ffddee; border-radius: 1px 2px 4px 4px; text-align: center; display: none;"></span>
 			</div>
 
 			<div class="form-group">
 		      <!-- <label for="edit-pass">Confirm Password<span class="form-required" title="This field is required.">*</span></label> -->
 		      <input type="password" id="pass_2" placeholder="Confirm Password*" name="pass_2" size="60" maxlength="128" class="form-text required">
-			  <span class="show-password" style="color:#00bbff;  font-size:18px;"><i style="color:black;  font-size:18px;" class="fa fa-eye" aria-hidden="true"></i></span> 
-			  <span  id="pass_2_error" style="color:red;  font-size:13px;"></span>
+			  <span class="show-password" style="color:#00bbff;  font-size:18px;"><i style="color:black;  font-size:15px;" class="fa fa-eye" aria-hidden="true"></i></span> 
+			  <span  id="pass_2_error" style="font-size:13px; margin-top: 0px; background: #ffddee; border-radius: 1px 2px 4px 4px; text-align: center; display: none;"></span>
 			</div>
 
 	<script>
@@ -213,7 +213,6 @@ $(document).ready(function(){
         <div class="gender-option">
             <input type="radio" name="gender" id="male" value="Male" onclick="genderSelected(this);"/>
             <label for="male"><i class="fa fa-male"></i> Male</label>
-			<p id="error_msg" style="color:red; font-size:13px; marging-bottom:100px;"></p>
         </div>
         <div class="gender-option">
             <input type="radio" name="gender" id="female" value="Female" onclick="genderSelected(this);"/>
@@ -221,7 +220,7 @@ $(document).ready(function(){
 		</div>
     </div>
 	<div class="gender-error">
-		<span style="display:none;" id="gender-error" class="error"></span>
+		<span style="font-size:13px; margin-top: 0px; background: #ffddee; border-radius: 1px 2px 4px 4px; text-align: center; display: none;" id="gender-error" class="error"></span>
     </div>
 	<style>
 		.gender-error{
@@ -229,10 +228,9 @@ $(document).ready(function(){
     margin-top: 0px;
     margin-bottom: 25px;
 		}
-    .error {
-    border: 1px solid red;
-	text-align:center;
-	margin-top: 13px;
+  .error {
+	  text-align:left;
+	  margin-top: 3px;
     border-radius: 4px;
     color: red;
     font-size: 13px;    }
@@ -250,11 +248,19 @@ $(document).ready(function(){
       let errors = 0;
 
       if (!maleRadio.checked && !femaleRadio.checked) {
-        genderError.innerHTML = 'Please select Gender Whos Biodata!';
+        genderError.innerHTML = 'Please Select Your Biodata!';
         genderError.style.display = 'block';
         document.querySelectorAll('input[name=gender]').forEach(r => {
           r.classList.add('error');
         });
+
+    // Color animation
+    let colorIndex = 0;
+    const colors = ['green', 'blue', 'red'];
+    const animationInterval = setInterval(() => {
+      genderError.style.color = colors[colorIndex];
+      colorIndex = (colorIndex + 1) % colors.length;
+    }, 500);
 
         errors++;
       }
@@ -339,6 +345,7 @@ $(document).ready(function(){
       var pass_2 = document.forms["myForm"]["pass_2"].value;
 
 
+
     
       //Full Name validation
       if (fname == "") {
@@ -347,13 +354,30 @@ $(document).ready(function(){
           behavior: 'smooth',
           block: 'center',
         });
-        document.getElementById('fname_error').innerHTML = "Please enter your Full Name";
+
+        var errorDiv = document.getElementById('fname_error');
+        errorDiv.innerHTML = "Please Enter Your Full Name";
+        errorDiv.style.display = 'block';
+        errorDiv.classList.add('fade-in');
+        
+
+        // Change color multiple times
+        var colors = ['green', 'blue', 'red'];
+        var colorIndex = 0;
+        setInterval(function() {
+          errorDiv.style.color = colors[colorIndex];
+          colorIndex = (colorIndex + 1) % colors.length;
+        }, 500);
+
         return false;
       }else{
         document.getElementById('fname').style.borderColor = "green";
         document.getElementById('fname_error').innerHTML = "";
       }
       
+
+
+
 
       //Username validation
       if (uname == "") {
@@ -362,20 +386,50 @@ $(document).ready(function(){
           behavior: 'smooth',
           block: 'center',
         });
-        document.getElementById('uname_error').innerHTML = "Please enter your Username";
+
+        var errorDiv = document.getElementById('uname_error');
+        errorDiv.innerHTML = "Please Enter Your Username";
+        errorDiv.style.display = 'block';
+        errorDiv.classList.add('fade-in');
+
+        // Change color multiple times
+        var colors = ['green', 'blue', 'red'];
+        var colorIndex = 0;
+        setInterval(function() {
+          errorDiv.style.color = colors[colorIndex];
+          colorIndex = (colorIndex + 1) % colors.length;
+        }, 500);
+
         return false;
+
       }else if (! /^[A-Za-z0-9]+$/.test(uname)){
         document.getElementById('uname').style.borderColor = "red";
-        document.getElementById('uname_error').innerHTML = "Please enter only Letters and Numbers. Can't used any symbol & space.";
         document.getElementById('uname').scrollIntoView({
           behavior: 'smooth',
           block: 'center',
         });
+
+        var errorDiv = document.getElementById('uname_error');
+        errorDiv.innerHTML = "Please Enter Only Letters And Numbers. Can't Used Any Symbol & Space.";
+        errorDiv.style.display = 'block';
+        errorDiv.classList.add('fade-in');
+
+        // Change color multiple times
+        var colors = ['green', 'blue', 'red'];
+        var colorIndex = 0;
+        setInterval(function() {
+          errorDiv.style.color = colors[colorIndex];
+          colorIndex = (colorIndex + 1) % colors.length;
+        }, 500);
+
         return false;
       }else{
         document.getElementById('uname').style.borderColor = "green";
         document.getElementById('uname_error').innerHTML = "";
       }
+
+
+
 
     
       //Email validation
@@ -385,15 +439,41 @@ $(document).ready(function(){
           behavior: 'smooth',
           block: 'center',
         });
-        document.getElementById('email_error').innerHTML = "Please enter your Email";
+
+        var errorDiv = document.getElementById('email_error');
+        errorDiv.innerHTML = "Please Enter Your Email";
+        errorDiv.style.display = 'block';
+        errorDiv.classList.add('fade-in');
+
+        // Change color multiple times
+        var colors = ['green', 'blue', 'red'];
+        var colorIndex = 0;
+        setInterval(function() {
+          errorDiv.style.color = colors[colorIndex];
+          colorIndex = (colorIndex + 1) % colors.length;
+        }, 500);
+
         return false;
       }else if(! /^[a-zA-Z0-9._-]+@(gmail|outlook|hotmail|yahoo).com$/.test(email)){
         document.getElementById('email').style.borderColor = "red";
-        document.getElementById('email_error').innerHTML = "Please enter a valid Email. Ex: (@gmail / @outlook / @hotmail / @yahoo).com";
         document.getElementById('email').scrollIntoView({
           behavior: 'smooth',
           block: 'center',
         });
+
+        var errorDiv = document.getElementById('email_error');
+        errorDiv.innerHTML = "Please Enter a Valid Email. Can Used: (@gmail or @outlook or @hotmail or @yahoo).com";
+        errorDiv.style.display = 'block';
+        errorDiv.classList.add('fade-in');
+
+        // Change color multiple times
+        var colors = ['green', 'blue', 'red'];
+        var colorIndex = 0;
+        setInterval(function() {
+          errorDiv.style.color = colors[colorIndex];
+          colorIndex = (colorIndex + 1) % colors.length;
+        }, 500);
+
         return false;
       }else{
         document.getElementById('email').style.borderColor = "green";
@@ -401,22 +481,50 @@ $(document).ready(function(){
       }
       
 
-//Phone number validation
+// Phone number validation
 if (pnumber == "") {
-  document.getElementById('pnumber').style.borderColor = "red";
-  document.getElementById('pnumber').scrollIntoView({
+  var pnumberElement = document.getElementById('pnumber');
+  pnumberElement.style.borderColor = "red";
+  pnumberElement.scrollIntoView({
     behavior: 'smooth',
     block: 'center',
   });
-  document.getElementById('pnumber_error').innerHTML = "Please enter your Phone Number";
+
+  var errorDiv = document.getElementById('pnumber_error');
+  errorDiv.innerHTML = "Please Enter Your Phone Number";
+  errorDiv.style.display = 'block';
+  errorDiv.classList.add('fade-in');
+
+  // Change color multiple times
+  var colors = ['green', 'blue', 'red'];
+  var colorIndex = 0;
+  setInterval(function() {
+    errorDiv.style.color = colors[colorIndex];
+    colorIndex = (colorIndex + 1) % colors.length;
+  }, 500);
+
   return false;
 } else if (!/^[0-9]{10,13}$/.test(pnumber)) {
-  document.getElementById('pnumber').style.borderColor = "red";
-  document.getElementById('pnumber_error').innerHTML = "Phone number must be between 10 and 14 digits";
-  document.getElementById('pnumber').scrollIntoView({
+  var pnumberElement = document.getElementById('pnumber');
+  pnumberElement.style.borderColor = "red";
+  pnumberElement.scrollIntoView({
     behavior: 'smooth',
     block: 'center',
   });
+
+  var errorDiv = document.getElementById('pnumber_error');
+  errorDiv.innerHTML = "Phone Number Must Be Between 10 And 14 Digits";
+  errorDiv.style.display = 'block';
+  errorDiv.classList.add('fade-in');
+
+  // Change color multiple times
+  var colors = ['green', 'blue', 'red'];
+  var colorIndex = 0;
+  setInterval(function() {
+    errorDiv.style.color = colors[colorIndex];
+    colorIndex = (colorIndex + 1) % colors.length;
+  }, 500);
+
   return false;
 } else {
   document.getElementById('pnumber').style.borderColor = "green";
@@ -433,7 +541,20 @@ if (pnumber == "") {
           behavior: 'smooth',
           block: 'center',
         });
-        document.getElementById('pass_1_error').innerHTML = "Please enter your new Password";
+
+        var errorDiv = document.getElementById('pass_1_error');
+        errorDiv.innerHTML = "Please Enter Your New Password";
+        errorDiv.style.display = 'block';
+        errorDiv.classList.add('fade-in');
+
+        // Change color multiple times
+        var colors = ['green', 'blue', 'red'];
+        var colorIndex = 0;
+        setInterval(function() {
+          errorDiv.style.color = colors[colorIndex];
+          colorIndex = (colorIndex + 1) % colors.length;
+        }, 500);
+
         return false;
       }else{
         document.getElementById('pass_1').style.borderColor = "green";
@@ -441,6 +562,8 @@ if (pnumber == "") {
       }
 
       
+
+
       //Confirm Password validation
       if (pass_2 == "") {
         document.getElementById('pass_2').style.borderColor = "red";
@@ -448,15 +571,41 @@ if (pnumber == "") {
           behavior: 'smooth',
           block: 'center',
         });
-        document.getElementById('pass_2_error').innerHTML = "Please enter your Confirm Password";
+
+        var errorDiv = document.getElementById('pass_2_error');
+        errorDiv.innerHTML = "Please Enter Your Confirm Password";
+        errorDiv.style.display = 'block';
+        errorDiv.classList.add('fade-in');
+
+        // Change color multiple times
+        var colors = ['green', 'blue', 'red'];
+        var colorIndex = 0;
+        setInterval(function() {
+          errorDiv.style.color = colors[colorIndex];
+          colorIndex = (colorIndex + 1) % colors.length;
+        }, 500);
+
         return false;
       }else if(pass_2 != pass_1){
         document.getElementById('pass_2').style.borderColor = "red";
-        document.getElementById('pass_2_error').innerHTML = "Password do not match";
         document.getElementById('pass_2').scrollIntoView({
           behavior: 'smooth',
           block: 'center',
         });
+
+        var errorDiv = document.getElementById('pass_2_error');
+        errorDiv.innerHTML = "Your Password Do Not Match";
+        errorDiv.style.display = 'block';
+        errorDiv.classList.add('fade-in');
+
+        // Change color multiple times
+        var colors = ['green', 'blue', 'red'];
+        var colorIndex = 0;
+        setInterval(function() {
+          errorDiv.style.color = colors[colorIndex];
+          colorIndex = (colorIndex + 1) % colors.length;
+        }, 500);
+
         return false;
       }else{
         document.getElementById('pass_2').style.borderColor = "green";
