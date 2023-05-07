@@ -1,4 +1,12 @@
-<?php include_once("includes/basic_includes.php");?>
+<?php include_once("includes/basic_includes.php");
+
+// Check if the user is logged in
+if (isset($_SESSION['id'])) {
+  // User is logged in, output CSS to hide the section
+  echo '<style>.sb-home-reg { display: none; }</style>';
+}
+?>
+
 <?php include_once("functions.php"); ?>
 <!DOCTYPE HTML>
 <html>
@@ -39,41 +47,166 @@ $(document).ready(function(){
 <!-- ============================  Navigation Start =========================== -->
  <?php include_once("includes/navigation.php");?>
 <!-- ============================  Navigation End ============================ -->
+ 
+
+
+
+
+
+
+
+<!-- ============================  BANNER START ============================ -->
+
 <div class="banner">
-  <div class="container">
+
     <div class="banner_info">
-      <h3>Thousands of verified Members</h3>
-      <a href="register.php" class="hvr-shutter-out-horizontal">Create your Profile</a>
+
+      <h3 id="banner_text">Thousands of verified Members here</h3>
+      <h4>বাংলাদেশী  ম্যাট্রিমনি শশুরবাড়ি ডট কম</h4>
+      <h5>সকল ধর্ম, বর্ণ, জেলা, পেশার দেশি ও প্রবাসী বাঙালি পাত্র পাত্রী খুঁজে পাওয়ার সহজ মাধ্যম।</h5>
+
+      <h6>“বিবাহ হয় দৃষ্টি নিয়ন্ত্রণকারী, যৌনাঙ্গের পবিত্রতা রক্ষাকারী।”</h6>
+      <p>["বুখারী/৫০৬৫", "মুসলিম/১৪০০", "মিশকাত/৩০৮০:নিকাহ"]</p>
+
+
+      <div class="sb-home-reg">
+        <a href="register.php" class="sb-create-account"><button >নতুন একাউন্ট খুলুন</button></a>
+      </div>
+
     </div>
-  </div>
+
+
   <body onLoad="initClock()">
-  <div class="clock" id="timedate">
-    <a id="d">1</a>
-	<a id="mon">January</a>,
-    <a id="y">0</a><br />
-    <a id="h">12</a> :
-    <a id="m">00</a>:
-    <a id="s">00</a>:
-    <a id="mi">000</a>
-  </div>
+    <div class="clock" id="timedate">
+      <h4>Today</h4>
+
+      <div class="day-date">
+        <p class="day">Day : <a id="day"></a></p>
+        <p class="date">Date : <a id="date"></a></p>
+      </div>
+
+      <div class="month-year">
+        <p class="month">Month : <a id="month"></a></p>
+        <p class="year">Year : <a id="year"></a><br></p>
+      </div>
+
+      <p class="time"> Time : <a id="time"></a> </p>
+    </div>
+
 </div> 
 
+<!-- ============================  BANNER END ============================ -->
 
 
 
-<div class="sb-search-page">
-  <h2>Find your perfect Partner</h2>
-  <div class="sb-search-btn">
-    <a href="search.php"><button > Search Biodata </button></a>
-  </div>
-</div>
+
+
+
+
+
 
 <style>
 
+.banner{
+	background:url(../images/sb-bnr.png)no-repeat center top;
+  background: url(https://bannerboo.com/bitrix/templates/landing_tpl/i/header_tpl_bg.svg?v2);
+
+	background-size:cover;
+	-webkit-background-size:cover;
+	-moz-background-size:cover;
+	-o-background-size:cover;
+	/* min-height:650px; */
+    height: 600px;
+    margin-top: 35px;
+
+    display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+
+  .banner_info {
+    background-color: rgba(255, 255, 255, 0); /* Transparent background */
+    border: 2px solid;
+    border-radius: 5px;
+    padding: 20px;
+    position: relative;
+    overflow: hidden;
+    margin: auto;
+    width:55%;
+    animation: colorAnimation 10s linear infinite;
+
+
+    display: inline-flex;
+  flex-direction: column;
+
+  }
+
+    /* search start */
+
+    .sb-search-page h2 {
+  font-size: 3em;
+  animation: textAnimation 10s linear infinite;
+  margin-bottom: 20px;
+}
+
+.sb-search-page p {
+  font-size: 1.3em;
+  text-align: center;
+  animation: textAnimation 10s linear infinite;
+  margin-bottom: 20px;
+}
+
+.sb-home-reg button{
+    background: #ff0080;
+    padding: 10px;
+    border: 2px solid #f0f0f0;
+    border-radius: 4px;
+    color: #fff;
+    font-size: 20px;
+    width: 222px;
+  }
+
+  .sb-home-reg button:hover{
+    background: #00bbff;
+    color: #fff;
+  }
+
+  .sb-home-reg a{
+    color: #fff;
+    font-size: 24px;
+  }
+
+@keyframes textAnimation {
+  0% {
+      color: red;
+    }
+    14.28% {
+      color: orange;
+    }
+    28.56% {
+      color: yellow;
+    }
+    42.84% {
+      color: green;
+    }
+    57.12% {
+      color: blue;
+    }
+    71.4% {
+      color:  Maroon;
+    }
+    85.68% {
+      color: violet;
+    }
+    100% {
+      color: red;
+    }
+}
+
+
   .sb-search-page{
-    margin-top: 30px;
-    margin-left: auto;
-    margin-right: auto;
+    margin: auto 50px auto auto;
     width: 100%;
   }
 
@@ -88,7 +221,7 @@ $(document).ready(function(){
   }
 
   .sb-search-page .sb-search-btn{
-    margin-top: 20px;
+    margin-top: 50px;
     margin-left: auto;
     margin-right: auto;
     border-radius: 4px;
@@ -107,7 +240,352 @@ $(document).ready(function(){
     color: #fff;
     font-size: 24px;
   }
+
+  /* search end */
+
+  @keyframes colorAnimation {
+    0% {
+      border-color: red;
+    }
+    25% {
+      border-color: orange;
+    }
+    50% {
+      border-color: green;
+    }
+    75% {
+      border-color: #43C6DB;
+    }
+    100% {
+      border-color: #3EA055;
+    }
+  }
+
+
+  @keyframes slideLeft {
+    0% {
+      transform: translateX(100%);
+      color: red;
+    }
+    33.33% {
+      transform: translateX(0%);
+      color: green;
+    }
+  }
+
+  .banner_info h3 {
+    position: relative;
+    overflow: hidden;
+    font-size: 4em;
+    font-family: 'Oswald', sans-serif;
+    margin-bottom:30px;
+    line-height: 70px;
+   
+  }
+
+  .banner_info h4 {
+    font-size: 3em;
+   font-family: 'Oswald', sans-serif;
+   margin-bottom: 0px;
+   text-align: center;
+   line-height: 70px;
+    font-weight: 600;
+  }
+
+  .banner_info h5 {
+    font-size: 1.5em;
+   font-family: 'Oswald', sans-serif;
+   margin-top:0px;
+   margin-bottom:0px;
+   text-align: center;
+   line-height: 40px;
+   color: #F660AB;
+  }
+
+  .banner_info h6 {
+    font-size: 1.5em;
+   font-family: 'Oswald', sans-serif;
+   margin-top:80px;
+   margin-bottom:0px;
+   text-align: center;
+   font-weight: 600;
+   line-height: 40px;
+  }
+
+  .banner_info p {
+  font-size: 1em;
+   font-family: 'Oswald', sans-serif;
+   margin-top:0px;
+   margin-bottom:30px;
+   text-align: center;
+   color: #00bbff;
+   line-height: 40px;
+  }
+
+
+
+  .sb-home-reg  {
+   margin: auto;
+   text-align: center;
+  }
+
+  .grid_1{
+	padding:2em 0;
+  margin-top: 60px;
+}
+</style>
+
+
+
+<script>
+  var bannerText = document.getElementById("banner_text");
+  var animationDelay = 10; // in seconds
+
+  function startAnimation() {
+    bannerText.style.animation = "slideLeft 30s linear infinite";
+
+    setTimeout(function() {
+      bannerText.style.animation = "";
+      startAnimation();
+    }, animationDelay * 1000);
+  }
+
+  startAnimation();
+</script>
+
+
+
+
+
+
+
+
+
+
+
+<style>
+    .clock h4{
+      text-align: center;
+      margin: auto;
+      padding: 10px;
+      font-size: 25px;
+    }
+
+    #timedate {
+    font: small-caps lighter 43px/150% "Segoe UI", Frutiger, "Frutiger Linotype", "Dejavu Sans", "Helvetica Neue", Arial, sans-serif;
+    text-align:center;
+    width: 280px;
+    border-left: 3px solid #ed1f24;
+    font-size: 25px;
+
+      background-color: transparent;
+      color: #fff;
+      padding: 10px;
+      border-radius: 4px;
+      margin-top: -300px;
+      margin-left: auto;
+      margin-right: 30px;
+
+      display: inline-flex;
+  flex-direction: column;
+
+  }
+
+      /* Day Date Start */
+
+    .day{
+      font-size:17px;
+      font-weight: 600;
+      color: #000;
+      padding: 1px 2px;
+      width: 50%;
+      border: 1px solid transparent;
+      animation: borderAnimation 15s infinite;
+    }
+    .day a{
+      font-size:17px;
+      font-weight: 600;
+      color: #00bbff;
+    }
+
+    .day-date{
+      display: flex;
+    }
+    .date{
+      font-size:17px;
+      font-weight: 600;
+      color: #000;
+      padding: 1px 2px;
+      width: 50%;
+      border-top: 1px solid transparent;
+      border-right: 1px solid transparent;
+      border-bottom: 1px solid transparent;
+      animation: borderAnimation 15s infinite;
+    }
+    .date a{
+      font-size:17px;
+      font-weight: 600;
+      color: #00bbff;
+    }
+
+    /* Month Yaer Start */
+    .month{
+      font-size:17px;
+      font-weight: 600;
+      color: #000;
+      padding: 1px 2px;
+      width: 50%;
+      border-left: 1px solid transparent;
+      border-right: 1px solid transparent;
+      animation: borderAnimation 15s infinite;
+    }
+    .month a{
+      font-size:17px;
+      font-weight: 600;
+      color: #00bbff;
+    }
+
+    .month-year{
+      display: flex;
+    }
+    .year{
+      font-size:17px;
+      font-weight: 600;
+      color: #000;
+      padding: 1px 2px;
+      width: 50%;
+      border-right: 1px solid transparent;
+      animation: borderAnimation 15s infinite;
+    }
+    .year a{
+      font-size:17px;
+      font-weight: 600;
+      color: #00bbff;
+    }
+
+    .time{
+      font-size:17px;
+      font-weight: 600;
+      color: #000;
+      padding: 1px 2px;
+      width: auto;
+      border: 1px solid transparent;
+      animation: borderAnimation 15s infinite;
+    }
+    .time a{
+      font-size:17px;
+      font-weight: 600;
+      color: #00bbff;
+    }
+
+
+
+
+
+
+
+    
+    .clock,
+ {
+      border: 1px solid transparent;
+      animation: borderAnimation 15s infinite;
+    }
+
+    .clock {
+      border: 1px solid transparent;
+      animation: borderAnimation 15s infinite;
+    }
+
+    
+
+    @keyframes borderAnimation {
+      0% {
+        border-color: green;
+      }
+
+      25% {
+        border-color: blue;
+      }
+
+      50% {
+        border-color: red;
+      }
+
+      75% {
+        border-color: blue;
+      }
+
+      100% {
+        border-color: green;
+      }
+    }
+
+    .clock h4 {
+      animation: textAnimation 4s infinite;
+    }
+
+    @keyframes textAnimation {
+      0% {
+        color: orange;
+      }
+
+      33% {
+        color: green;
+      }
+
+      75% {
+        color: blue;
+      }
+
+      100% {
+        color: orange;
+      }
+    }
   </style>
+
+<script>
+    Number.prototype.pad = function(n) {
+      for (var r = this.toString(); r.length < n; r = '0' + r);
+      return r;
+    };
+
+    function updateClock() {
+      var now = new Date();
+      var sec = now.getSeconds(),
+          min = now.getMinutes(),
+          hou = now.getHours(),
+          dy = now.getDate(),
+          mo = now.getMonth(),
+          yr = now.getFullYear();
+
+      var days = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
+      var months = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
+
+      var ampm = hou >= 12 ? 'PM' : 'AM';
+      hou = hou % 12;
+      hou = hou ? hou : 12;
+
+      document.getElementById("day").textContent = days[now.getDay()];
+      document.getElementById("date").textContent = dy;
+      document.getElementById("month").textContent = months[mo];
+      document.getElementById("year").textContent = yr;
+      document.getElementById("time").textContent = hou.pad(2) + ":" + min.pad(2) + ":" + sec.pad(2) + " " + ampm;
+    }
+
+    function initClock() {
+      updateClock();
+      setInterval(updateClock, 1000);
+    }
+  </script>
+
+
+<div class="sb-search-page">
+  <h2>Find your perfect Partner</h2>
+  <p>  মনের মতন জীবন সঙ্গী খুঁজে পেতে নিচের সার্চ বাটনে ক্লিক করুন</p>
+  <div class="sb-search-btn">
+    <a href="search.php"><button > Search Biodata </button></a>
+  </div>
+</div>
 
 
 <div class="grid_1">
@@ -292,7 +770,7 @@ $(document).ready(function(){
   }
 .sbnew-account{
   width: 100%;
-  margin: auto;
+  margin: 50px auto 0px auto;
 }
 .biodatarecent_viewlist {
     border: 1px solid #ccc;
@@ -472,12 +950,7 @@ a.button.outline, span.button.outline, input[type=submit].outline {
     font-size: 11px;
 }
 
-.nbs-flexisel-container {
-	position: relative;
-	max-width: 80%;
-  margin-left: auto;
-  margin-right: auto;
-}
+
 
 .nbs-flexisel-ul {
 	position: relative;
@@ -549,6 +1022,31 @@ a.button.outline, span.button.outline, input[type=submit].outline {
   }
 
 
+
+  
+  @media (max-width: 480px) {
+  .nbs-flexisel-item {
+	  float: left;
+    position: relative;
+    margin:-9px;
+    margin-bottom:6px;
+    padding: 6px;
+    line-height: 17px;
+    min-height: 220px;
+  }
+
+  .biodatarecent_viewlist {
+    width: 75%;
+}
+
+.nbs-flexisel-container {
+    width: 245px;
+    position: relative;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+  }
 
 
 
@@ -669,12 +1167,21 @@ ul#flexiselDemo3 h3 a:hover{
 
 
   .shosurbari-user-statistic{
-    margin-top: 30px;
-    margin-bottom: 30px;
+    margin-top: 100px;
+    margin-bottom: 100px;
     text-align: center;
   }
+
+  h1{
+  font-weight: 600;
+  color: hsl(234, 12%, 34%);
+  text-align: center;
+}
+.shosurbari-user-statistic {
+  margin-bottom: 60px;
+}
 	
-h1, h2, h3 {
+h2, h3 {
   font-weight: 600;
   color: hsl(234, 12%, 34%);
   text-align: center;
@@ -685,9 +1192,8 @@ p { color: hsl(229, 6%, 66%); }
 .cards-container {
   /* List Styling Clean-Up */
   list-style: none;
-  padding: 0; margin: 0;
-  margin: auto;
-  margin-bottom: 50px;
+  padding: 0; 
+  margin: 100px auto;
 }
 .total-grmbrd{
   margin-top:  -10px;
@@ -961,27 +1467,32 @@ p { color: hsl(229, 6%, 66%); }
 
 
 
+   <!-- <i class="fa fa-arrow-up"></i> -->
+
+
 <div id="scroll-up-btn" onclick="scrollToTop()">
-    <i class="fa fa-arrow-up"></i>
+    <i class="fa fa-angle-double-up"></i>
 </div>
 
 <style>
 	#scroll-up-btn {
-    position: fixed;
-    bottom: 20px;
-    right: 20px;
-    cursor: pointer;
-    padding-top: 5px;
-    padding-bottom: 5px;
-    padding-left: 10px;
-    padding-right: 10px;
-    background: #ff008087;
-    color: #fff;
-    border-radius: 3px;
-}
-
+                position: fixed;
+                bottom: 20px;
+                right: 20px;
+                cursor: pointer;
+				padding-top: 5px;
+    			padding-bottom: 5px;
+				padding-left: 12px;
+    			padding-right: 12px;
+				background: #ff008087;
+				color: #fff;
+				border-radius: 3px;
+            }
 			#scroll-up-btn:hover {
-				padding: 10px;
+				padding-top: 7px;
+    			padding-bottom: 7px;
+				padding-left: 12px;
+    			padding-right: 12px;
 				background: #ff0080;
 				color: #fff;
 				border-radius: 3px;
