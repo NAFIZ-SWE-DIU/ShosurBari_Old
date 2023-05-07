@@ -743,6 +743,40 @@ i.fa1:hover {
     color: #00bbff;
     line-height: 40px;
 }
+
+@keyframes colorAnimation {
+    0% {
+    border-color: red;
+    }
+
+    25% {
+    border-color: orange;
+    }
+
+    50% {
+    border-color: green;
+    }
+
+    75% {
+    border-color: #43C6DB;
+    }
+
+    100% {
+    border-color: #3EA055;
+    }
+}
+
+@keyframes slideLeft {
+    0% {
+    transform: translateX(100%);
+    color: red;
+    }
+    
+    33.33% {
+    transform: translateX(0%);
+    color: green;
+    }
+}
 /*Banner Message/Text End*/
 
 
@@ -775,6 +809,7 @@ i.fa1:hover {
     margin: auto;
     padding: 10px;
     font-size: 25px;
+    animation: textAnimation 4s infinite;
 }
 
 .clock {
@@ -891,6 +926,28 @@ i.fa1:hover {
     font-weight: 600;
     color: #00bbff;
 }
+
+@keyframes borderAnimation {
+    0% {
+    border-color: green;
+    }
+
+    25% {
+    border-color: blue;
+    }
+
+    50% {
+    border-color: red;
+    }
+
+    75% {
+    border-color: blue;
+    }
+
+    100% {
+    border-color: green;
+    }
+}
 /*Banner Clock  End*/
 /*Banner Section End*/
 
@@ -938,6 +995,40 @@ i.fa1:hover {
 .sb-search-btn button:hover {
     background: #00bbff;
     color: #fff;
+}
+
+@keyframes textAnimation {
+    0% {
+    color: red;
+    }
+
+    14.28% {
+    color: orange;
+    }
+
+    28.56% {
+    color: #3B2F2F;
+    }
+
+    42.84% {
+    color: green;
+    }
+
+    57.12% {
+    color: blue;
+    }
+
+    71.4% {
+    color:  Maroon;
+    }
+
+    85.68% {
+    color: #342D7E;
+    }
+
+    100% {
+    color: red;
+    }
 }
 /*Home Search Option End*/
 
@@ -1209,6 +1300,73 @@ ul#flexiselDemo3 h3 a:hover{
 
 .total-success-feature-card{
     border-color: #15ab15;
+}
+
+
+@media (min-width: 788px) {
+    .cards-container { 
+      width: 728px;
+    }
+  
+    .cards-container::after {
+      content: "";
+      clear: both;
+      display: table;
+    }
+}
+  
+@media (min-width: 1166px) {
+    .cards-container {
+      width: 1106px;
+    }
+}
+  
+@media (min-width: 788px) {
+    [class$='feature-card'] {
+      float: left;
+    }
+  
+    @media (min-width: 1166px) {
+      [class$='feature-card']:first-child {
+        margin: 140px 0;
+      }
+     
+      [class$='feature-card']:nth-child(2),
+      [class$='feature-card']:nth-child(3) {
+        margin: 0 22px;
+      }
+  
+      [class$='feature-card']:last-child {
+        margin-top: -110px;
+      }
+  
+      [class$='feature-card']:nth-child(3) {
+        margin-top: 30px;
+      }
+    }
+  
+    @media (max-width: 1165px) {
+      [class$='feature-card']:nth-child(3),
+      [class$='feature-card']:nth-child(4) {
+        margin-top: 30px;
+      }
+  
+      [class$='feature-card']:nth-child(2),
+      [class$='feature-card']:nth-child(4) {
+        margin-left: 28px;
+      }
+    }
+}
+  
+@media (max-width: 787px) {
+    [class$='feature-card'] {
+      width: 300px; height: 220px;
+      margin: auto;
+    }
+  
+    [class$='feature-card']:not(:first-child) {
+      margin-top: 22px;
+    }
 }
 /*Home otal Groom / Bride Count & SB How Work Info End*/
 
