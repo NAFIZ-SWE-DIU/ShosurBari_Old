@@ -667,10 +667,10 @@ i.fa1:hover {
 -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- ---
 -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -*/
 /*Banner Section Start*/
-/*Banner Message/Text Start*/
+/*Banner Message/Info Start*/
 .banner{
     background:url(../images/sb-bnr.png)no-repeat center top;
-    background: url(https://bannerboo.com/bitrix/templates/landing_tpl/i/header_tpl_bg.svg?v2);
+ /*   background: url(https://bannerboo.com/bitrix/templates/landing_tpl/i/header_tpl_bg.svg?v2); */
 	background-size:cover;
 	-webkit-background-size:cover;
 	-moz-background-size:cover;
@@ -690,7 +690,7 @@ i.fa1:hover {
     position: relative;
     overflow: hidden;
     margin: auto;
-    width:55%;
+    text-align: center;
     animation: colorAnimation 10s linear infinite;
     display: inline-flex;
     flex-direction: column;
@@ -717,11 +717,11 @@ i.fa1:hover {
 .banner_info h5 {
     font-size: 1.5em;
     font-family: 'Oswald', sans-serif;
-    margin-top:0px;
+    margin-top:5px;
     margin-bottom:0px;
     text-align: center;
-    line-height: 40px;
-    color: #F660AB;
+    line-height: 35px;
+    color: #00bbff;
 }
 
 .banner_info h6 {
@@ -777,7 +777,7 @@ i.fa1:hover {
     color: green;
     }
 }
-/*Banner Message/Text End*/
+/*Banner Message/Info End*/
 
 
 /*Banner Register Button Start*/
@@ -821,7 +821,6 @@ i.fa1:hover {
     font: small-caps lighter 43px/150% "Segoe UI", Frutiger, "Frutiger Linotype", "Dejavu Sans", "Helvetica Neue", Arial, sans-serif;
     text-align:center;
     font-size: 25px;
-    width: 280px;
     border-left: 3px solid #ed1f24;
     background-color: transparent;
     color: #fff;
@@ -830,7 +829,7 @@ i.fa1:hover {
     margin-top: -300px;
     margin-left: auto;
     margin-right: 30px;
-    display: inline-flex;
+    display: none; /*inline-flex;*/
     flex-direction: column;
 }
 
@@ -845,14 +844,10 @@ i.fa1:hover {
     animation: borderAnimation 15s infinite;
 }
 
-.day a{
+.day a, .date a{
     font-size:17px;
     font-weight: 600;
-    color: #00bbff;
-}
-
-.day-date{
-    display: flex;
+    color: #fff;
 }
 
 .date{
@@ -867,10 +862,8 @@ i.fa1:hover {
     animation: borderAnimation 15s infinite;
 }
 
-.date a{
-    font-size:17px;
-    font-weight: 600;
-    color: #00bbff;
+.day-date{
+    display: flex;
 }
 
 /* Month Yaer Start */
@@ -885,14 +878,10 @@ i.fa1:hover {
     animation: borderAnimation 15s infinite;
 }
 
-.month a{
+.month a, .year a, .time a{
     font-size:17px;
     font-weight: 600;
-    color: #00bbff;
-}
-
-.month-year{
-    display: flex;
+    color: #fff;
 }
 
 .year{
@@ -905,10 +894,8 @@ i.fa1:hover {
     animation: borderAnimation 15s infinite;
 }
 
-.year a{
-    font-size:17px;
-    font-weight: 600;
-    color: #00bbff;
+.month-year{
+    display: flex;
 }
 
 .time{
@@ -921,11 +908,6 @@ i.fa1:hover {
     animation: borderAnimation 15s infinite;
 }
 
-.time a{
-    font-size:17px;
-    font-weight: 600;
-    color: #00bbff;
-}
 
 @keyframes borderAnimation {
     0% {
@@ -1154,7 +1136,7 @@ ul#flexiselDemo3 h3 a:hover{
 /*Home Featured Profiles End*/
 
 
-/*Home otal Groom / Bride Count & SB How Work Info Start*/
+/*Home total Groom / Bride Count & SB How Work Info Start*/
 .shosurbari-user-statistic{
     margin-top: 100px;
     margin-bottom: 100px;
@@ -1249,6 +1231,20 @@ ul#flexiselDemo3 h3 a:hover{
 
 .total-success{
     margin-top:  -10px;
+}
+
+.total-success h1,
+.total-success h2,
+.total-success h3,
+.total-success h4,
+.total-success h5,
+.total-success h6,
+.total-success p{
+    text-align: center;
+}
+
+h1, h2, h3, h4, h5, h6, p{
+    text-align: center;
 }
 
 .total-success-feature-card img{
@@ -1368,7 +1364,7 @@ ul#flexiselDemo3 h3 a:hover{
       margin-top: 22px;
     }
 }
-/*Home otal Groom / Bride Count & SB How Work Info End*/
+/*Home total Groom / Bride Count & SB How Work Info End*/
 
 
 .grid_1{
@@ -4171,6 +4167,39 @@ ul.profile_item{
 .ellipsis {
     font-size: 14px;
 }
+
+.banner_info{
+    width: 920px;
+}
+
+#timedate{
+    width: 250px;
+}
+
+.banner_info h3 {
+
+    font-size: 3.5em;
+}
+
+.banner_info h4 {
+    font-size: 2.5em;
+}
+
+.banner_info h5 {
+    font-size: 1.5em;
+}
+
+.banner_info h6 {
+    font-size: 1.5em;
+}
+
+.banner_info p {
+    font-size: 1em;
+}
+
+.sb-search-page h2 {
+    margin-top: 100px;
+}
 }
 /*-- -- -- -- -- -- -- -- -- -- -- -- -- ---- -- --
 --           max-width:1280px / E  N  D          --
@@ -4190,12 +4219,20 @@ ul.profile_item{
     margin-left: auto;
     margin-right: auto;
 }
+
+.banner_info{
+    width: 950px;
+}
+
+#timedate{
+    width: 250px;
+}
 }
 
 @media (min-width:1024px){
     .nbs-flexisel-container {
         position: relative;
-        width: 949px;
+        width: 920px;
         margin-left: auto;
         margin-right: auto;
     }
@@ -4212,9 +4249,34 @@ ul.profile_item{
 -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -*/
 @media (max-width:1024px){
 
-.banner_info h3 {
-    font-size: 3em;
-}	
+    .banner_info{
+        width: 920px;
+    }
+    
+    #timedate{
+        width: 250px;
+    }
+    
+    .banner_info h3 {
+    
+        font-size: 3em;
+    }
+    
+    .banner_info h4 {
+        font-size: 2em;
+    }
+    
+    .banner_info h5 {
+        font-size: 1em;
+    }
+    
+    .banner_info h6 {
+        font-size: 1em;
+    }
+    
+    .banner_info p {
+        font-size: .7em;
+    }
 
 .navigationpro ul {
     width: 567px;
@@ -4223,10 +4285,6 @@ ul.profile_item{
 .hvr-shutter-out-horizontal {
     padding: 8px 25px;
     font-size: 18px;
-}
-
-.banner_info {
-    margin:7em 0 0 0;
 }
 
 .profile_search {
