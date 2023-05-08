@@ -269,7 +269,17 @@ if($row){
 $religion=$row['religion'];
 }
 ?>
-
+<style>
+	.short_biodata_value{
+		border-radius: 5px;
+	}
+	.short_biodata_value tbody tr{
+		border-radius: 5px;
+	}
+	.short_biodata_value tbody tr td{
+		border-radius: 5px;
+	}
+</style>
 
 
 		<div class="biodatanumber_head">
@@ -1554,17 +1564,15 @@ if($row){
 }
 
 .profile-header {
-  background: #fff;
+  background: #00bbff22;
   width: 100%;
   display: flex;
   height: 140px;
   position: relative;
-  /* box-shadow: 0px 3px 4px rgba(0, 0, 0, 0.2); */
-  box-shadow: 0px 2px 7px 6px rgba(0, 0, 0, 0.2);
+  box-shadow: 0px 3px 4px rgba(0, 0, 0, 0.2); 
   margin-top: 36px;
-  border: 1px solid #ccc;
   margin-left: auto;
-    margin-right: auto;
+	margin-right: auto;
 }
 
 
@@ -1629,7 +1637,11 @@ if($row){
   font-size: 2rem;
   font-family: sans-serif;
   font-weight: bold;
+  animation: textAnimation 10s linear infinite;
 }
+
+
+
 
 .profile-nav-info .address {
   display: flex;
@@ -1665,10 +1677,13 @@ if($row){
   .biodatavalue_list {
     width: 100%;
     margin-top: 25px;
-    background: rgb(245, 242, 242);
+    background: #fff;
     border-radius: 4px;
-    box-shadow: 0px 2px 7px 6px rgba(0, 0, 0, 0.2);
     padding: 15px;
+	border-top: 3px solid #ff0080;
+	border-bottom: 1px solid #ccc;
+	border-left: 1px solid #ccc;
+	border-right: 1px solid #ccc;
 }
 
 .biodata_value_data{
@@ -1677,19 +1692,18 @@ if($row){
 
 
 .biodatavalue_list h3{
-  color: white;
     font-size: 1.5em;
     text-align: center;
-    background: #ff0080;
+    background: #fff;
     margin-bottom: 0px;
     padding: 10px;
-    border-radius: 4px 4px 0px 0px;
-    border-bottom: 0px;
-    border-top: 2px;
-    border-left: 2px;
-    border-right: 2px;
-    border-color: #00bbff;
-    border-style: groove;
+	border-radius: 4px 4px 0px 0px;
+	border-top: 1px #ccc;
+	border-bottom: 0px;
+	border-left: 1px #ccc;
+	border-right: 1px #ccc;
+	border-style: groove;
+	animation: textAnimation 10s linear infinite;
 }
 
 
@@ -1716,13 +1730,11 @@ table {
   padding: 90px 10px 10px;
   font-family: "Bree Serif", serif;
   z-index: 99;
-    background: rgb(245, 242, 242);
+    background: #00bbff22;
     border-radius: 0px 0px 4px 4px;
-    box-shadow: 0px 2px 7px 6px rgba(0, 0, 0, 0.2);
-
-    border-left: 1px solid #ccc;
 	margin-left: auto;
     margin-right: auto;
+	box-shadow: 0px 3px 4px rgba(0, 0, 0, 0.2); 
 }
 
 .profile-side p {
@@ -1940,6 +1952,7 @@ button.copylink i {
 
   .profile-nav-info h3 {
     font-size: 25px;
+	text-align: left;
 }
 
   .profile-nav-info .address {
@@ -2006,6 +2019,10 @@ button.copylink i {
 
 
 @media (max-width: 930px) {
+
+	.profile-nav-info h3 {
+    text-align: center;
+	}
 
   .profile-header {
     display: flex;
