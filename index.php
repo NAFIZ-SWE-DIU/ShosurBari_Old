@@ -64,8 +64,10 @@ $(document).ready(function(){
       <h4>বাংলাদেশী  ম্যাট্রিমনি শশুরবাড়ি ডট কম</h4>
       <h5>সকল ধর্ম, বর্ণ, জেলা, পেশার দেশি ও প্রবাসী বাঙালি পাত্র পাত্রী <br> খুঁজে পাওয়ার সহজ মাধ্যম।</h5>
 
+      <div class="hadith">
       <h6>“বিবাহ হয় দৃষ্টি নিয়ন্ত্রণকারী, যৌনাঙ্গের পবিত্রতা রক্ষাকারী।”</h6>
       <p>["বুখারী/৫০৬৫", "মুসলিম/১৪০০", "মিশকাত/৩০৮০:নিকাহ"]</p>
+      </div>
 
 
       <div class="sb-home-reg">
@@ -248,7 +250,7 @@ function initClock() {
 			$("#flexiselDemo3").flexisel({
 				visibleItems: 4,
 				animationSpeed: 700,
-				autoPlay:true,
+				autoPlay:false,
 				autoPlaySpeed: 5000,    		
 				pauseOnHover: true,
 				enableResponsiveBreakpoints: true,
