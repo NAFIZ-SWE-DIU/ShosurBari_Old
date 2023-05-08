@@ -669,8 +669,8 @@ i.fa1:hover {
 /*Banner Section Start*/
 /*Banner Message/Info Start*/
 .banner{
-    background:url(../images/sb-bnr.png)no-repeat center top;
- /*   background: url(https://bannerboo.com/bitrix/templates/landing_tpl/i/header_tpl_bg.svg?v2); */
+    background:url(../images/bg.png)no-repeat center top;
+   /* background: url(https://bannerboo.com/bitrix/templates/landing_tpl/i/header_tpl_bg.svg?v2); */
 	background-size:cover;
 	-webkit-background-size:cover;
 	-moz-background-size:cover;
@@ -979,21 +979,22 @@ i.fa1:hover {
     color: #fff;
 }
 
+
 @keyframes textAnimation {
     0% {
     color: red;
     }
 
     14.28% {
-    color: orange;
+    color: green;
     }
 
     28.56% {
-    color: #3B2F2F;
+    color: #ff0080;
     }
 
     42.84% {
-    color: green;
+    color: orange;
     }
 
     57.12% {
@@ -1005,7 +1006,7 @@ i.fa1:hover {
     }
 
     85.68% {
-    color: #342D7E;
+    color: #00bbff;
     }
 
     100% {
@@ -1512,7 +1513,7 @@ td.day_label {
     padding: 8px;
     font-size: 16px;
     font-weight: 450;
-    border: 2px #00bbff;
+    border: 1px #ccc;
     border-style: groove;
     width: 50%;
     position: inherit;
@@ -1522,7 +1523,7 @@ td.day_value {
     padding: 8px;
     font-size: 15px;
     font-weight: 400;
-    border: 2px #00bbff;
+    border: 1px #ccc;
     border-style: groove;
 }
 
@@ -3947,7 +3948,7 @@ label{
     padding: 2px;
     transition: all 0.3s;
 	font-weight: 500;
-    font-size: 11px;
+    font-size: 15px;
     cursor: pointer;
 	margin-top: 4px;
     margin-bottom: 4px;
@@ -4962,7 +4963,7 @@ h6{
 .gender-radio-select .gender-option label {
     display: inline-block;
     padding: 2px;
-    font-size: 13px;
+    font-size: 15px;
     transition: all 0.3s;
     font-weight: 500;
     cursor: pointer;
@@ -6298,7 +6299,7 @@ h6{
 .gender-radio-select .gender-option label {
     display: inline-block;
     padding: 2px;
-    font-size: 12px;
+    font-size: 14px;
     transition: all 0.3s;
     font-weight: 500;
     cursor: pointer;
