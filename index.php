@@ -75,6 +75,25 @@ $(document).ready(function(){
     </div>
 
 
+<script>
+// Text Animation Start
+var bannerText = document.getElementById("banner_text");
+var animationDelay = 10; // in seconds
+
+function startAnimation() {
+  bannerText.style.animation = "slideLeft 30s linear infinite";
+
+  setTimeout(function() {
+    bannerText.style.animation = "";
+    startAnimation();
+  }, animationDelay * 1000);
+}
+startAnimation();
+// Text Animation End
+</script>
+
+
+
     <body onLoad="initClock()">
     <div class="clock" id="timedate">
       <h4>Today</h4>
@@ -93,6 +112,44 @@ $(document).ready(function(){
     </div>
 
   </div> 
+
+
+<script>
+// START CLOCK SCRIPT
+Number.prototype.pad = function(n) {
+  for (var r = this.toString(); r.length < n; r = '0' + r);
+  return r;
+};
+
+function updateClock() {
+  var now = new Date();
+  var sec = now.getSeconds(),
+      min = now.getMinutes(),
+      hou = now.getHours(),
+      dy = now.getDate(),
+      mo = now.getMonth(),
+      yr = now.getFullYear();
+
+  var days = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
+  var months = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
+
+  var ampm = hou >= 12 ? 'PM' : 'AM';
+  hou = hou % 12;
+  hou = hou ? hou : 12;
+
+  document.getElementById("day").textContent = days[now.getDay()];
+  document.getElementById("date").textContent = dy;
+  document.getElementById("month").textContent = months[mo];
+  document.getElementById("year").textContent = yr;
+  document.getElementById("time").textContent = hou.pad(2) + ":" + min.pad(2) + ":" + sec.pad(2) + " " + ampm;
+}
+
+function initClock() {
+  updateClock();
+  setInterval(updateClock, 1000);
+}
+// END CLOCK SCRIPT
+</script>
 <!-- ============================  BANNER END ============================ -->
 
 
@@ -216,6 +273,10 @@ $(document).ready(function(){
 	   <script type="text/javascript" src="js/jquery.flexisel.js"></script>
     </div>
 </div>
+
+
+
+
 
 
 
