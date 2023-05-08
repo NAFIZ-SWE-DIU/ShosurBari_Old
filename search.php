@@ -135,15 +135,15 @@ label.addEventListener('click', () => {
 <label class="ellipsis" for="Looking">Looking :</label>
   <div class="gender-option">
       <input type="radio" name="biodatagender" id="male_mob" value="Male" required/>
-      <label for="male_mob"><i class="fa fa-male"></i> Groom</label>
+      <label for="male_mob"><i class="fa fa-male"></i> পাত্র</label>
   </div>
   
   <div class="gender-option">
       <input type="radio" name="biodatagender" id="female_mob" value="Female"/>
-      <label for="female_mob"><i class="fa fa-female"></i> Bride</label><br>
+      <label for="female_mob"><i class="fa fa-female"></i> পাত্রী</label><br>
 </div>
 </div>
-<div id="gender-error-mob" class="error-message" style="display: none; margin-top: 10px; text-align:center;">Please Select Biodatas Gender !</div>
+<div id="gender-error-mob" class="error-message" style="font-size:13px; margin-top: 0px; background: #ffddee; border-radius: 1px 2px 4px 4px; text-align: center; display: none;">Please Select Biodata !</div>
 </div>
 
 
@@ -160,32 +160,32 @@ label.addEventListener('click', () => {
   <div class="inner-wrap">
     
     <label>
-      <input type="checkbox" name="religion" value="Any Religion" class="SelectBox all" checked />
+      <input type="checkbox" name="religion[]" value="Any Religion" class="SelectBox all" checked />
       <span>Any Religion</span>
     </label><br>
 
     <label>
-      <input type="checkbox" name="religion" value="Muslim" class="SelectBox val" />
+      <input type="checkbox" name="religion[]" value="Muslim" class="SelectBox val" />
       <span>Muslim</span>
     </label><br>
 
     <label>
-      <input type="checkbox" name="religion" value="Hindu" class="SelectBox val" />
+      <input type="checkbox" name="religion[]" value="Hindu" class="SelectBox val" />
       <span>Hindu</span>
     </label><br>
 
     <label>
-      <input type="checkbox" name="religion" value="Christian" class="SelectBox val" />
+      <input type="checkbox" name="religion[]" value="Christian" class="SelectBox val" />
       <span>Christian</span>
     </label><br>
 
     <label>
-      <input type="checkbox" name="religion" value="Budhism" class="SelectBox val" />
+      <input type="checkbox" name="religion[]" value="Budhism" class="SelectBox val" />
       <span>Budhism</span>
     </label><br> 
     
     <label>
-      <input type="checkbox" name="religion" value="Others" class="SelectBox val" />
+      <input type="checkbox" name="religion[]" value="Others" class="SelectBox val" />
       <span>Others</span>
     </label>
     
@@ -202,32 +202,32 @@ label.addEventListener('click', () => {
   <div class="inner-wrap">
     
     <label>
-      <input type="checkbox" name="maritalstatus" value="Any Marital Status" class="SelectBox all" checked />
+      <input type="checkbox" name="maritalstatus[]" value="Any Marital Status" class="SelectBox all" checked />
       <span>Any Marital Status</span>
     </label><br>
 
     <label>
-      <input type="checkbox" name="maritalstatus" value="Unmarried" class="SelectBox val" />
+      <input type="checkbox" name="maritalstatus[]" value="Unmarried" class="SelectBox val" />
       <span>Unmarried </span>
     </label><br>
 
     <label>
-      <input type="checkbox" name="maritalstatus" value="Divorced" class="SelectBox val" />
+      <input type="checkbox" name="maritalstatus[]" value="Divorced" class="SelectBox val" />
       <span>Divorced</span>
     </label><br>
 
     <label>
-      <input type="checkbox" name="maritalstatus" value="Widow" class="SelectBox val" />
+      <input type="checkbox" name="maritalstatus[]" value="Widow" class="SelectBox val" />
       <span>Widow</span>
     </label><br>
 
     <label>
-      <input type="checkbox" name="maritalstatus" value="Widower" class="SelectBox val" />
+      <input type="checkbox" name="maritalstatus[]" value="Widower" class="SelectBox val" />
       <span>Widower</span>
     </label><br>
 
     <label>
-      <input type="checkbox" name="maritalstatus" value="Married" class="SelectBox val" />
+      <input type="checkbox" name="maritalstatus[]" value="Married" class="SelectBox val" />
       <span>Married</span>
     </label>
     
@@ -245,27 +245,27 @@ label.addEventListener('click', () => {
   <div class="inner-wrap">
     
     <label>
-      <input type="checkbox" name="Skin_tones" value="Any Skin Tones" class="SelectBox all" checked />
+      <input type="checkbox" name="Skin_tones[]" value="Any Skin Tones" class="SelectBox all" checked />
       <span>Any Skin Tones</span>
     </label><br>
 
     <label>
-      <input type="checkbox" name="Skin_tones" value="Light" class="SelectBox val" />
+      <input type="checkbox" name="Skin_tones[]" value="Light" class="SelectBox val" />
       <span>Light</span>
     </label><br>
 
     <label>
-      <input type="checkbox" name="Skin_tones" value="Fair" class="SelectBox val" />
+      <input type="checkbox" name="Skin_tones[]" value="Fair" class="SelectBox val" />
       <span>Fair</span>
     </label><br>
 
     <label>
-      <input type="checkbox" name="Skin_tones" value="Medium" class="SelectBox val" />
+      <input type="checkbox" name="Skin_tones[]" value="Medium" class="SelectBox val" />
       <span>Medium</span>
     </label><br>
 
     <label>
-      <input type="checkbox" name="Skin_tones" value="Dark" class="SelectBox val" />
+      <input type="checkbox" name="Skin_tones[]" value="Dark" class="SelectBox val" />
       <span>Dark</span>
     </label>
     
@@ -1199,37 +1199,37 @@ label.addEventListener('click', () => {
   <div class="inner-wrap">
     
     <label>
-      <input type="checkbox" name="education_method" value="Any Education Method" class="SelectBox all" checked />
+      <input type="checkbox" name="education_method[]" value="Any Education Method" class="SelectBox all" checked />
       <span>Any Education Method</span>
     </label><br>
 
     <label>
-      <input type="checkbox" name="education_method" value="Genaral" class="SelectBox val" />
+      <input type="checkbox" name="education_method[]" value="Genaral" class="SelectBox val" />
       <span>Genaral</span>
     </label><br>
 
     <label>
-      <input type="checkbox" name="education_method" value="Dakhil" class="SelectBox val" />
+      <input type="checkbox" name="education_method[]" value="Dakhil" class="SelectBox val" />
       <span>Dakhil</span>
     </label><br>
 
     <label>
-      <input type="checkbox" name="education_method" value="Technical" class="SelectBox val" />
+      <input type="checkbox" name="education_method[]" value="Technical" class="SelectBox val" />
       <span>Technical</span>
     </label><br>
 
     <label>
-      <input type="checkbox" name="education_method" value="Qawmi Madrasa" class="SelectBox val" />
+      <input type="checkbox" name="education_method[]" value="Qawmi Madrasa" class="SelectBox val" />
       <span>Qawmi Madrasa</span>
     </label><br>
     
     <label>
-      <input type="checkbox" name="education_method" value="Other" class="SelectBox val" />
+      <input type="checkbox" name="education_method[]" value="Other" class="SelectBox val" />
       <span>Other</span>
     </label><br> 
     
     <label>
-      <input type="checkbox" name="education_method" value="None" class="SelectBox val" />
+      <input type="checkbox" name="education_method[]" value="None" class="SelectBox val" />
       <span>None</span>
     </label>
     
@@ -1358,15 +1358,15 @@ document.addEventListener("DOMContentLoaded", function() {
 <label class="ellipsis" for="Looking">Looking :</label>
         <div class="gender-option">
             <input type="radio" name="biodatagender" id="male" value="Male" required/>
-            <label for="male"><i class="fa fa-male"></i> Groom</label>
+            <label for="male"><i class="fa fa-male"></i> পাত্র</label>
         </div>
 
         <div class="gender-option">
             <input type="radio" name="biodatagender" id="female" value="Female"/>
-            <label for="female"><i class="fa fa-female"></i> Bride</label><br>
+            <label for="female"><i class="fa fa-female"></i> পাত্রী</label><br>
 		</div>
     </div>
-    <div id="gender-error-laptop" class="error-message" style="font-size:13px; margin-top: 0px; background: #ffddee; border-radius: 1px 2px 4px 4px; text-align: center; display: none;">Please Select Biodatas Gender !</div>
+    <div id="gender-error-laptop" class="error-message" style="font-size:13px; margin-top: 0px; background: #ffddee; border-radius: 1px 2px 4px 4px; text-align: center; display: none;">Please Select Biodata !</div>
 </div>
 
 
@@ -1410,32 +1410,32 @@ document.addEventListener("DOMContentLoaded", function() {
         <div class="inner-wrap">
           
           <label>
-            <input type="checkbox" name="religion" value="Any Religion" class="SelectBox all" checked />
+            <input type="checkbox" name="religion[]" value="Any Religion" class="SelectBox all" checked />
             <span>Any Religion</span>
           </label><br>
 
           <label>
-            <input type="checkbox" name="religion" value="Muslim" class="SelectBox val" />
+            <input type="checkbox" name="religion[]" value="Muslim" class="SelectBox val" />
             <span>Muslim</span>
           </label><br>
 
           <label>
-            <input type="checkbox" name="religion" value="Hindu" class="SelectBox val" />
+            <input type="checkbox" name="religion[]" value="Hindu" class="SelectBox val" />
             <span>Hindu</span>
           </label><br>
 
           <label>
-            <input type="checkbox" name="religion" value="Christian" class="SelectBox val" />
+            <input type="checkbox" name="religion[]" value="Christian" class="SelectBox val" />
             <span>Christian</span>
           </label><br>
 
           <label>
-            <input type="checkbox" name="religion" value="Budhism" class="SelectBox val" />
+            <input type="checkbox" name="religion[]" value="Budhism" class="SelectBox val" />
             <span>Budhism</span>
           </label><br> 
           
           <label>
-            <input type="checkbox" name="religion" value="Others" class="SelectBox val" />
+            <input type="checkbox" name="religion[]" value="Others" class="SelectBox val" />
             <span>Others</span>
           </label>
           
@@ -1452,32 +1452,32 @@ document.addEventListener("DOMContentLoaded", function() {
         <div class="inner-wrap">
           
           <label>
-            <input type="checkbox" name="maritalstatus" value="Any Marital Status" class="SelectBox all" checked />
+            <input type="checkbox" name="maritalstatus[]" value="Any Marital Status" class="SelectBox all" checked />
             <span>Any Marital Status</span>
           </label><br>
 
           <label>
-            <input type="checkbox" name="maritalstatus" value="Unmarried" class="SelectBox val" />
+            <input type="checkbox" name="maritalstatus[]" value="Unmarried" class="SelectBox val" />
             <span>Unmarried </span>
           </label><br>
 
           <label>
-            <input type="checkbox" name="maritalstatus" value="Divorced" class="SelectBox val" />
+            <input type="checkbox" name="maritalstatus[]" value="Divorced" class="SelectBox val" />
             <span>Divorced</span>
           </label><br>
 
           <label>
-            <input type="checkbox" name="maritalstatus" value="Widow" class="SelectBox val" />
+            <input type="checkbox" name="maritalstatus[]" value="Widow" class="SelectBox val" />
             <span>Widow</span>
           </label><br>
 
           <label>
-            <input type="checkbox" name="maritalstatus" value="Widower" class="SelectBox val" />
+            <input type="checkbox" name="maritalstatus[]" value="Widower" class="SelectBox val" />
             <span>Widower</span>
           </label><br>
 
           <label>
-            <input type="checkbox" name="maritalstatus" value="Married" class="SelectBox val" />
+            <input type="checkbox" name="maritalstatus[]" value="Married" class="SelectBox val" />
             <span>Married</span>
           </label>
           
@@ -1552,27 +1552,27 @@ function toggleCheckedAll(checkbox) {
         <div class="inner-wrap">
           
           <label>
-            <input type="checkbox" name="Skin_tones" value="Any Skin Tones" class="SelectBox all" checked />
+            <input type="checkbox" name="Skin_tones[]" value="Any Skin Tones" class="SelectBox all" checked />
             <span>Any Skin Tones</span>
           </label><br>
 
           <label>
-            <input type="checkbox" name="Skin_tones" value="Light" class="SelectBox val" />
+            <input type="checkbox" name="Skin_tones[]" value="Light" class="SelectBox val" />
             <span>Light</span>
           </label><br>
 
           <label>
-            <input type="checkbox" name="Skin_tones" value="Fair" class="SelectBox val" />
+            <input type="checkbox" name="Skin_tones[]" value="Fair" class="SelectBox val" />
             <span>Fair</span>
           </label><br>
 
           <label>
-            <input type="checkbox" name="Skin_tones" value="Medium" class="SelectBox val" />
+            <input type="checkbox" name="Skin_tones[]" value="Medium" class="SelectBox val" />
             <span>Medium</span>
           </label><br>
 
           <label>
-            <input type="checkbox" name="Skin_tones" value="Dark" class="SelectBox val" />
+            <input type="checkbox" name="Skin_tones[]" value="Dark" class="SelectBox val" />
             <span>Dark</span>
           </label>
           
@@ -2506,37 +2506,37 @@ function toggleCheckedAll(checkbox) {
         <div class="inner-wrap">
           
           <label>
-            <input type="checkbox" name="education_method" value="Any Education Method" class="SelectBox all" checked />
+            <input type="checkbox" name="education_method[]" value="Any Education Method" class="SelectBox all" checked />
             <span>Any Education Method</span>
           </label><br>
 
           <label>
-            <input type="checkbox" name="education_method" value="Genaral" class="SelectBox val" />
+            <input type="checkbox" name="education_method[]" value="Genaral" class="SelectBox val" />
             <span>Genaral</span>
           </label><br>
 
           <label>
-            <input type="checkbox" name="education_method" value="Dakhil" class="SelectBox val" />
+            <input type="checkbox" name="education_method[]" value="Dakhil" class="SelectBox val" />
             <span>Dakhil</span>
           </label><br>
 
           <label>
-            <input type="checkbox" name="education_method" value="Technical" class="SelectBox val" />
+            <input type="checkbox" name="education_method[]" value="Technical" class="SelectBox val" />
             <span>Technical</span>
           </label><br>
 
           <label>
-            <input type="checkbox" name="education_method" value="Qawmi Madrasa" class="SelectBox val" />
+            <input type="checkbox" name="education_method[]" value="Qawmi Madrasa" class="SelectBox val" />
             <span>Qawmi Madrasa</span>
           </label><br>
           
           <label>
-            <input type="checkbox" name="education_method" value="Other" class="SelectBox val" />
+            <input type="checkbox" name="education_method[]" value="Other" class="SelectBox val" />
             <span>Other</span>
           </label><br> 
           
           <label>
-            <input type="checkbox" name="education_method" value="None" class="SelectBox val" />
+            <input type="checkbox" name="education_method[]" value="None" class="SelectBox val" />
             <span>None</span>
           </label>
           
