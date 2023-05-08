@@ -1680,7 +1680,7 @@ if($row){
     background: #fff;
     border-radius: 4px;
     padding: 15px;
-	border-top: 3px solid #ff0080;
+	border-top: 3px solid #06b6d4;
 	border-bottom: 1px solid #ccc;
 	border-left: 1px solid #ccc;
 	border-right: 1px solid #ccc;
@@ -1828,7 +1828,7 @@ color: #fff;
         border: 1px solid #ccc;
         padding: 6px;
         border-radius: 4px;
-        background: #ff0080;
+        background: #06b6d4;
         cursor: pointer;
         position: relative;
         transition: all .2s ease;
@@ -1841,7 +1841,7 @@ button.copylink:hover {
 }
 
 button.chatbtn:hover {
-  background: #ff0080;
+  background: #06b6d4;
   color: #fff;
 }
 
@@ -2319,7 +2319,7 @@ text-align: center;
 }
 
 .sbbio_header_recent_view{
-background: #ff0080;
+background: #06b6d4;
 margin: 0px;
 padding-top: 10px;
 border: 1px solid #00bbff;
@@ -2343,7 +2343,7 @@ border-radius: 5px 5px 0px 0px;
     padding: 2px;
     border-bottom-left-radius: 5px;
     border-bottom-right-radius: 5px;
-    background: #ff0080;
+    background: #06b6d4;
     line-height: 1.1;
     margin-bottom: 2px;
     margin-top: 2px;
@@ -2406,7 +2406,7 @@ border-radius: 5px 5px 0px 0px;
     margin-top: 7px;
     margin-bottom: 5px;
     border-radius: 4px;
-    background: #ff0080;
+    background: #06b6d4;
     color: white;
     width:100%;
     font-size: 15px;
