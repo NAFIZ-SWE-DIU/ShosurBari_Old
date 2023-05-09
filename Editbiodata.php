@@ -1507,7 +1507,6 @@ $partner_attributes=$row['partner_attributes'];
 -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -->
 
 
-			
 
 
 
