@@ -86,26 +86,26 @@ $(document).ready(function(){
 		<div class="form-group">
 		    <!--  <label for="edit-name">Full Name<span class="form-required" title="This field is required.">*</span></label> -->
 		      <input type="text" id="fname" placeholder="Full Name" name="fname" value="" size="60" maxlength="60" class="form-text required">
-			  <span id="fname_error" style="font-size:13px; margin-top: 0px; background: #ffddee; border-radius: 1px 2px 4px 4px; text-align: center; display: none;"></span>
+			  <span id="fname_error" style="font-size:16px; margin-top: 0px; background: #ffddee; border-radius: 1px 2px 4px 4px; text-align: center; display: none;"></span>
 			</div>
 
 			<div class="form-group">
 		      <!-- <label for="edit-name">Username<span class="form-required" title="This field is required.">*</span></label> -->
 		      <input type="text" id="uname" placeholder="Username" name="uname" value="" size="60" maxlength="60" class="form-text required">
-			  <span id="uname_error" style="font-size:13px; margin-top: 0px; background: #ffddee; border-radius: 1px 2px 4px 4px; text-align: center; display: none;"></span>
+			  <span id="uname_error" style="font-size:16px; margin-top: 0px; background: #ffddee; border-radius: 1px 2px 4px 4px; text-align: center; display: none;"></span>
 			</div>
 
 
 			<div class="form-group">
 		      <!-- <label for="edit-name">Emails<span class="form-required" title="This field is required.">*</span></label> -->
 		      <input type="text" id="email" placeholder="Email" name="email" value="" size="60" maxlength="60" class="form-text required">
-			  <span id="email_error" style="font-size:13px; margin-top: 0px; background: #ffddee; border-radius: 1px 2px 4px 4px; text-align: center; display: none;"></span>
+			  <span id="email_error" style="font-size:16px; margin-top: 0px; background: #ffddee; border-radius: 1px 2px 4px 4px; text-align: center; display: none;"></span>
 			</div>
 
       <div class="form-group">
 		     <!--  <label for="edit-name">Phone Number<span class="form-required" title="This field is required.">*</span></label> -->
 		      <input type="pnumber" id="pnumber" placeholder="Phone Number" name="pnumber" value="" size="60" minlength="10" maxlength="15" class="form-text required">
-			  <span id="pnumber_error" style="font-size:13px; margin-top: 0px; background: #ffddee; border-radius: 1px 2px 4px 4px; text-align: center; display: none;"></span>
+			  <span id="pnumber_error" style="font-size:16px; margin-top: 0px; background: #ffddee; border-radius: 1px 2px 4px 4px; text-align: center; display: none;"></span>
 			</div>
 
       <script>
@@ -122,14 +122,14 @@ $(document).ready(function(){
 		      <!-- <label for="edit-pass">Password<span class="form-required" title="This field is required.">*</span></label> -->
 		      <input type="password" id="pass_1" placeholder="New Password" name="pass_1" size="60" maxlength="128" class="form-text required">
 			  <span class="show-password" style="color:#00bbff;  font-size:18px;"><i style="color:black;  font-size:15px;" class="fa fa-eye" aria-hidden="true"></i></span> 
-			  <span  id="pass_1_error" style="font-size:13px; margin-top: 0px; background: #ffddee; border-radius: 1px 2px 4px 4px; text-align: center; display: none;"></span>
+			  <span  id="pass_1_error" style="font-size:16px; margin-top: 0px; background: #ffddee; border-radius: 1px 2px 4px 4px; text-align: center; display: none;"></span>
 			</div>
 
 			<div class="form-group">
 		      <!-- <label for="edit-pass">Confirm Password<span class="form-required" title="This field is required.">*</span></label> -->
 		      <input type="password" id="pass_2" placeholder="Confirm Password" name="pass_2" size="60" maxlength="128" class="form-text required">
 			  <span class="show-password" style="color:#00bbff;  font-size:18px;"><i style="color:black;  font-size:15px;" class="fa fa-eye" aria-hidden="true"></i></span> 
-			  <span  id="pass_2_error" style="font-size:13px; margin-top: 0px; background: #ffddee; border-radius: 1px 2px 4px 4px; text-align: center; display: none;"></span>
+			  <span  id="pass_2_error" style="font-size:16px; margin-top: 0px; background: #ffddee; border-radius: 1px 2px 4px 4px; text-align: center; display: none;"></span>
 			</div>
 
 	<script>
@@ -158,7 +158,7 @@ $(document).ready(function(){
     width: 100%;
     white-space: nowrap;
     overflow: hidden;
-    color: #ff0080;
+    color: #06b6d4;
     border-radius: 4px;
   }
     .gender-select-reg{
@@ -220,7 +220,7 @@ $(document).ready(function(){
 		</div>
     </div>
 	<div class="gender-error">
-		<span style="font-size:13px; margin-top: 0px; background: #ffddee; border-radius: 1px 2px 4px 4px; text-align: center; display: none;" id="gender-error" class="error"></span>
+		<span style="font-size:16px; margin-top: 0px; background: #ffddee; border-radius: 1px 2px 4px 4px; text-align: center; display: none;" id="gender-error" class="error"></span>
     </div>
 	<style>
 		.gender-error{
@@ -479,7 +479,7 @@ $(document).ready(function(){
         });
 
         var errorDiv = document.getElementById('email_error');
-        errorDiv.innerHTML = "Please Enter a Valid Email. Can Used: (@gmail or @outlook or @hotmail or @yahoo).com";
+        errorDiv.innerHTML = "Please Enter a Valid Email. Only Used: (@gmail or @outlook or @hotmail or @yahoo).com";
         errorDiv.style.display = 'block';
         errorDiv.classList.add('fade-in');
 
@@ -496,6 +496,9 @@ $(document).ready(function(){
         document.getElementById('email').style.borderColor = "green";
         document.getElementById('email_error').innerHTML = "";
       }
+      
+
+
       
 
 // Phone number validation
@@ -633,3 +636,4 @@ if (pnumber == "") {
 		// Form Input field when error the show border red and scroll up start
 
   </script>
+
