@@ -1570,7 +1570,7 @@ if($row){
   height: 140px;
   position: relative;
   box-shadow: 0px 3px 4px rgba(0, 0, 0, 0.2); 
-  margin-top: 36px;
+  margin-top: 22px;
   margin-left: auto;
 	margin-right: auto;
 }
@@ -1625,7 +1625,7 @@ if($row){
         border-radius: 4px;
         font-size: 15px;
         font-weight: 500;
-        background-color:#00bbff;
+        background-color: #06b6d4;
         width: auto;
         padding: 0px;
         margin: auto;
@@ -1726,14 +1726,18 @@ table {
 }
 
 .profile-side {
-  width: 100%;
-  padding: 90px 10px 10px;
-  font-family: "Bree Serif", serif;
-  z-index: 99;
+  	width: 100%;
+  	padding: 90px 0px 10px 0px;
+	font-family: "Bree Serif", serif;
+  	z-index: 99;
     background: #00bbff22;
     border-radius: 0px 0px 4px 4px;
 	margin-left: auto;
     margin-right: auto;
+	border-top:0px solid #ccc;
+	border-right:1px solid #ccc;
+	border-bottom:1px solid #ccc;
+	border-left:1px solid #ccc;
 	box-shadow: 0px 3px 4px rgba(0, 0, 0, 0.2); 
 }
 
@@ -1815,7 +1819,7 @@ color: #fff;
         border: 1px solid #ccc;
         padding: 6px;
         border-radius: 4px;
-        background: #00bbff;
+        background: #06b6d4;
         cursor: pointer;
         position: relative;
         transition: all .2s ease;
@@ -1836,12 +1840,12 @@ color: #fff;
 }
 
 button.copylink:hover {
-  background: #00bbff;
+  background: #0aa4ca;
   color: #fff;
 }
 
 button.chatbtn:hover {
-  background: #06b6d4;
+  background: #0aa4ca;
   color: #fff;
 }
 
@@ -1908,7 +1912,7 @@ button.copylink i {
 
 @media (min-width:1600px){
 .UserProfile {
-    width: 90%;
+    width: 1550px;
 	margin: auto;
 }
 }
@@ -2030,7 +2034,7 @@ button.copylink i {
     flex-direction: column;
     text-align: center;
     padding-bottom: 20px;
-	margin-top: 36px;
+	margin-top: 22px;
   }
 
   .profile-img {
@@ -2060,8 +2064,8 @@ button.copylink i {
   }
 
   .left-side {
-    width: 50%;
-	margin-top: 30px;
+    width: 70%;
+	margin-top: 0px;
 	margin-left: auto;
     margin-right: auto;
 }
@@ -2126,7 +2130,7 @@ button.copylink i {
 
   @media (max-width:768px){
 	.left-side {
-    width: 60%;
+    width: 70%;
 	
 }
 .biodatarecent_viewlist {
@@ -2142,13 +2146,13 @@ button.copylink i {
 
 @media (max-width:736px){
 	.profile-header {
-	margin-top: 72px;
+	margin-top: 68px;
   }
 }
 
 @media (max-width:600px){
 	.left-side {
-    width: 60%;
+    width: 90%;
 }
 
 .biodatarecent_viewlist {
@@ -2179,7 +2183,7 @@ padding: 3px;
 
 @media (max-width:480px){
 	.left-side {
-    width: 60%;
+    width: 90%;
 }
 
 .biodatarecent_viewlist {
@@ -2202,7 +2206,7 @@ padding: 3px;
 
 @media (max-width:384px){
 	.left-side {
-    width: 72%;
+    width: 90%;
 }
 
 .biodatarecent_viewlist {
@@ -2229,7 +2233,7 @@ a#profile-tab, a#home-tab, a#profile-tab1 {
 
 @media (max-width:320px){
 	.left-side {
-    width: 85%;
+    width: 90%;
 }
 
 .biodatarecent_viewlist {
@@ -2349,8 +2353,8 @@ border-radius: 5px 5px 0px 0px;
     margin-top: 2px;
 }
 .sb_biodatanumber_recentview{
-    font-size: 15px;
-    color: yellow;
+    font-size: 17px;
+    color: #fff;
     font-weight: 500;
 }
 
