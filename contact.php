@@ -209,7 +209,7 @@ p { color: hsl(229, 6%, 66%); }
   border-color: #00bbff;
 }
 .total-bride-feature-card{
-  border-color: #ff0080;
+  border-color: #06b6d4;
 }
 .total-success-feature-card{
   border-color: #15ab15;
@@ -327,28 +327,31 @@ text-align: center;
   <form action="" method="POST" name="myForm" onsubmit="return validateForm()">
     <div class="flex-container">
       <div class="sb-register-login">
-        <div class="sb-biodata-field" style="background: #ff0080 !important;">
+        <div class="sb-biodata-field" style="background: #06b6d4 !important;">
           <h2>Contact <span>Us</span></h2>
         </div>
 
         <div class="form-group">
-          <input type="text" id="cust_name" placeholder="Your Full Name" name="name_contactus" value="" size="60" maxlength="60" class="form-text required">
-          <span id="name-error" style="color:red; font-size:13px;"></span>
+          <input type="text" id="name_contactus" placeholder="Your Full Name" name="name_contactus" value="" size="60" maxlength="60" class="form-text required">
+          <span id="name-error" style="font-size: 16px; margin-top: 0px; background: #ffddee; border-radius: 1px 2px 4px 4px; text-align: center; display: none;"></span>
         </div>
 
         <div class="form-group">
-          <input type="email" id="cust_email" placeholder="Your Email" name="email_contactus" value="" size="60" maxlength="60" class="form-text">
-          <span id="email-error" style="color:red; font-size:13px;"></span>
+          <input type="email" id="email_contactus" placeholder="Your Email" name="email_contactus" value="" size="60" maxlength="60" class="form-text">
+          <span id="email-error" style="font-size: 16px; margin-top: 0px; background: #ffddee; border-radius: 1px 2px 4px 4px; text-align: center; display: none;"></span>
         </div>
 
+
+
+        
         <div class="form-group">
-          <input type="tel" id="pnumber" placeholder="Your Phone Number" name="number_contactus" value="" size="60" minlength="10" maxlength="15" class="form-text required">
-          <span id="phone-error" style="color:red; font-size:13px;"></span>
+          <input type="tel" id="number_contactus" placeholder="Your Phone Number" name="number_contactus" value="" size="60" minlength="10" maxlength="15" class="form-text required">
+          <span id="phone-error" style="font-size: 16px; margin-top: 0px; background: #ffddee; border-radius: 1px 2px 4px 4px; text-align: center; display: none;"></span>
         </div>
 
   <script>
     $(document).ready(function() {
-      var input = document.querySelector("#pnumber");
+      var input = document.querySelector("#number_contactus");
       window.intlTelInput(input, {
         separateDialCode: true,
         preferredCountries: ["bd"]
@@ -358,8 +361,8 @@ text-align: center;
 
 
         <div class="form-group">
-          <textarea rows="4" id="contact_biodatas_number" name="message_contactus" placeholder="Type Your Message..." class="form-text-describe required"></textarea>
-          <span id="biodata-error" style="color:red; font-size:13px;"></span>
+          <textarea rows="4" id="message_contactus" name="message_contactus" placeholder="Type Your Message..." class="form-text-describe required" maxlength="1000"></textarea>
+          <span id="message-error" style="font-size: 16px; margin-top: 0px; background: #ffddee; border-radius: 1px 2px 4px 4px; text-align: center; display: none;"></span>
         </div>
 
         <div class="form-actions">
@@ -386,14 +389,18 @@ text-align: center;
 
 <script>
   function validateForm() {
-  var name = document.getElementById("cust_name").value.trim();
-  var email = document.getElementById("cust_email").value.trim();
-  var phone = document.getElementById("pnumber").value.trim();
-  var biodata = document.getElementById("contact_biodatas_number").value.trim();
+  var name = document.getElementById("name_contactus").value.trim();
+  var email = document.getElementById("email_contactus").value.trim();
+  var phone = document.getElementById("number_contactus").value.trim();
+
+  var messageInput = document.getElementById("message_contactus");
+  var message = messageInput.value.trim();
+
+
   var nameError = document.getElementById("name-error");
   var emailError = document.getElementById("email-error");
   var phoneError = document.getElementById("phone-error");
-  var biodataError = document.getElementById("biodata-error");
+  var messageError = document.getElementById("message-error");
   var valid = true;
 
   // Validate name
@@ -402,78 +409,168 @@ text-align: center;
 
 //Full Name validation
         if (name == "") {
-        document.getElementById('cust_name').style.borderColor = "red";
-        document.getElementById('cust_name').scrollIntoView({
+        document.getElementById('name_contactus').style.borderColor = "red";
+        document.getElementById('name_contactus').scrollIntoView({
           behavior: 'smooth',
           block: 'center',
         });
-        document.getElementById('name-error').innerHTML = "Please enter your Full Name";
+
+        var errorDiv = document.getElementById('name-error');
+        errorDiv.innerHTML = "Please enter your Full Name !";
+        errorDiv.style.display = 'block';
+        errorDiv.classList.add('fade-in');
+
+        // Change color multiple times
+        var colors = ['green', 'blue', 'red'];
+        var colorIndex = 0;
+        setInterval(function() {
+          errorDiv.style.color = colors[colorIndex];
+          colorIndex = (colorIndex + 1) % colors.length;
+        }, 500);
+
         return false;
       }else{
-        document.getElementById('cust_name').style.borderColor = "green";
+        document.getElementById('name_contactus').style.borderColor = "green";
         document.getElementById('name-error').innerHTML = "";
       }
 
 
             //Email validation
             if (email == "") {
-        document.getElementById('cust_email').style.borderColor = "red";
-        document.getElementById('cust_email').scrollIntoView({
+        document.getElementById('email_contactus').style.borderColor = "red";
+        document.getElementById('email_contactus').scrollIntoView({
           behavior: 'smooth',
           block: 'center',
         });
-        document.getElementById('email-error').innerHTML = "Please enter your Email";
+
+        var errorDiv = document.getElementById('email-error');
+        errorDiv.innerHTML = "Please enter your Email !";
+        errorDiv.style.display = 'block';
+        errorDiv.classList.add('fade-in');
+
+        // Change color multiple times
+        var colors = ['green', 'blue', 'red'];
+        var colorIndex = 0;
+        setInterval(function() {
+          errorDiv.style.color = colors[colorIndex];
+          colorIndex = (colorIndex + 1) % colors.length;
+        }, 500);
+
         return false;
       }else if(! /^[a-zA-Z0-9._-]+@(gmail|outlook|hotmail|yahoo).com$/.test(email)){
-        document.getElementById('cust_email').style.borderColor = "red";
-        document.getElementById('email-error').innerHTML = "Please enter a valid Email. Ex: (@gmail / @outlook / @hotmail / @yahoo).com";
-        document.getElementById('cust_email').scrollIntoView({
+        document.getElementById('email_contactus').style.borderColor = "red";
+        document.getElementById('email_contactus').scrollIntoView({
           behavior: 'smooth',
           block: 'center',
         });
+
+        var errorDiv = document.getElementById('email-error');
+        errorDiv.innerHTML = "Please Enter a Valid Email. Only Used: (@gmail or @outlook or @hotmail or @yahoo).com";
+        errorDiv.style.display = 'block';
+        errorDiv.classList.add('fade-in');
+
+        // Change color multiple times
+        var colors = ['green', 'blue', 'red'];
+        var colorIndex = 0;
+        setInterval(function() {
+          errorDiv.style.color = colors[colorIndex];
+          colorIndex = (colorIndex + 1) % colors.length;
+        }, 500);
+
         return false;
       }else{
-        document.getElementById('cust_email').style.borderColor = "green";
+        document.getElementById('email_contactus').style.borderColor = "green";
         document.getElementById('email-error').innerHTML = "";
       }
 
 
+
+
   //Phone number validation
-            if (phone == "") {
-        document.getElementById('pnumber').style.borderColor = "red";
-        document.getElementById('pnumber').scrollIntoView({
-          behavior: 'smooth',
-          block: 'center',
-        });
-        document.getElementById('phone-error').innerHTML = "Please enter your Phone Number";
-        return false;
-      }else if(pnumber.length < 10 || pnumber.length > 14){
-        document.getElementById('pnumber').style.borderColor = "red";
-        document.getElementById('phone-error').innerHTML = "Phone number must be between 10 and 14 characters";
-        document.getElementById('pnumber').scrollIntoView({
-          behavior: 'smooth',
-          block: 'center',
-        });
-        return false;
-      }else{
-        document.getElementById('pnumber').style.borderColor = "green";
-        document.getElementById('phone-error').innerHTML = "";
-      }
+var phoneInput = document.getElementById("number_contactus");
+var phone = phoneInput.value.replace(/[^\d]/g, ''); // Remove any non-digit characters from the input
 
-  // Validate biodata
+if (phone.length === 0) {
+  phoneInput.style.borderColor = "red";
+  phoneInput.scrollIntoView({
+    behavior: 'smooth',
+    block: 'center',
+  });
 
-  if (biodata == "") {
-        document.getElementById('contact_biodatas_number').style.borderColor = "red";
-        document.getElementById('contact_biodatas_number').scrollIntoView({
-          behavior: 'smooth',
-          block: 'center',
-        });
-        document.getElementById('biodata-error').innerHTML = "Please type your text";
-        return false;
-      }else{
-        document.getElementById('contact_biodatas_number').style.borderColor = "green";
-        document.getElementById('biodata-error').innerHTML = "";
-      }
+  var errorDiv = document.getElementById('phone-error');
+  errorDiv.innerHTML = "Please enter your phone number!";
+  errorDiv.style.display = 'block';
+  errorDiv.classList.add('fade-in');
+
+  // Change color multiple times
+  var colors = ['green', 'blue', 'red'];
+  var colorIndex = 0;
+  setInterval(function() {
+    errorDiv.style.color = colors[colorIndex];
+    colorIndex = (colorIndex + 1) % colors.length;
+  }, 500);
+
+  return false;
+} else if (phone.length < 10 || phone.length > 15) {
+  phoneInput.style.borderColor = "red";
+  phoneInput.scrollIntoView({
+    behavior: 'smooth',
+    block: 'center',
+  });
+
+  var errorDiv = document.getElementById('phone-error');
+  errorDiv.innerHTML = "Phone number must be between 10 and 15 digits, Remove any non-digit characters & space from the input.";
+  errorDiv.style.display = 'block';
+  errorDiv.classList.add('fade-in');
+
+  // Change color multiple times
+  var colors = ['green', 'blue', 'red'];
+  var colorIndex = 0;
+  setInterval(function() {
+    errorDiv.style.color = colors[colorIndex];
+    colorIndex = (colorIndex + 1) % colors.length;
+  }, 500);
+
+  return false;
+} else {
+  phoneInput.style.borderColor = "green";
+  document.getElementById('phone-error').innerHTML = "";
+}
+
+
+
+
+
+
+// Validate Message
+if (message === "") {
+  messageInput.style.borderColor = "red";
+  messageInput.scrollIntoView({
+    behavior: 'smooth',
+    block: 'center',
+  });
+
+
+
+  var errorDiv = document.getElementById('message-error');
+        errorDiv.innerHTML = "Please type your message !";
+        errorDiv.style.display = 'block';
+        errorDiv.classList.add('fade-in');
+
+        // Change color multiple times
+        var colors = ['green', 'blue', 'red'];
+        var colorIndex = 0;
+        setInterval(function() {
+          errorDiv.style.color = colors[colorIndex];
+          colorIndex = (colorIndex + 1) % colors.length;
+        }, 500);
+
+  return false;
+} else {
+  messageInput.style.borderColor = "green";
+  document.getElementById('message-error').innerHTML = "";
+}
+
 
   return valid;
 }
@@ -582,7 +679,7 @@ $('form[name="myForm"]').submit(function(e) {
   margin-left: auto;
   margin-right: auto;
   padding: 5px 10px;
-  background-color: #00bbff;
+  background-color: #06b6d4;
   color: #fff;
   border: none;
   border-radius: 2px;
@@ -590,7 +687,7 @@ $('form[name="myForm"]').submit(function(e) {
 }
 
 .popup-message button.close-button:hover {
-  background-color: #ff0080;
+  background-color: #0aa4ca;
   color: #fff;
 }
 
