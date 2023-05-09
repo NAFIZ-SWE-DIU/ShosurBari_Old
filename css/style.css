@@ -47,7 +47,7 @@ body a{
 }
 
 ::selection {
-    color: yellow;
+    color: #fff;
     background: #0aa4ca;
 }
 
@@ -56,6 +56,10 @@ body a{
     height: 6px;
     width: var(--progress);
     background-color: #fff;
+}
+
+button{
+    transition: background-color 0.3s, color 0.3s;
 }
   
 button:hover {
@@ -190,8 +194,27 @@ input#submit-btn {
     margin-top: 10px;
 }
 
+.navbar-inner_1 {
+    padding: 0px 0px;
+    background: #06b6d4;
+    border: none;
+    font-size: 0.85em;
+    box-shadow: none; /* Initially set box shadow to none */
+    -webkit-box-shadow: none;
+    -moz-box-shadow: none;
+    -o-box-shadow: none;
+    position: fixed;
+    width: 100%;
+    z-index: 9999;
+    top: 0;
+    left: 0;
+    right: 0;
+    transition: box-shadow 0.3s; /* Add transition for smooth effect */
+  }
+  
+  /*
 .navbar-inverse-blue .navbar-inner {
-    padding: 7px 0;
+    padding: 0px 0px;
     background:#06b6d4; 
     border:none;
     font-size: 0.85em;
@@ -204,7 +227,7 @@ input#submit-btn {
 }
 
 .navbar-inner_1{
-    padding: 7px 0;
+    padding: 0px 0px;
     background:#06b6d4;
     border:none;
     font-size: 0.85em;
@@ -213,6 +236,7 @@ input#submit-btn {
     -moz-box-shadow: 0 5px 5px rgba(0,0,0,0.14);
     -o-box-shadow: 0 5px 5px rgba(0,0,0,0.14);
 }
+*/
 
 .navbar-header.nav_2 {
     display: none;
@@ -524,7 +548,7 @@ ul.nav_1{
 -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- ---
 -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -*/
 .footer{
-	background:#193f4c;
+	background:#06b6d4;
 	padding:1em 0;
     box-shadow: 0 4px 8px 0 rgb(0 0 0 / 20%), 0 6px 20px 0 rgb(0 0 0 / 19%);
     margin-top: 100px;
@@ -537,7 +561,7 @@ ul.nav_1{
 }
 
 .col_2 h4 {
-	color:#0aa4ca;
+	color: #fff;
 	font-size:1.3em;
 	margin-bottom:1em;
     text-align: center;
@@ -569,9 +593,8 @@ ul.footer_links li a{
 
 ul.footer_links li a:hover{
     padding: 4px;
-    border-radius: 3px;
-    background: #0aa4ca;
-    color: #fff;
+    text-decoration: underline;
+    color: #000;
     transform: scale(1.1);
 }
 
@@ -588,10 +611,10 @@ ul.footer_social li {
 }
 
 i.fa1 {
-    background:#06b6d4;
+    background:#fff;
     width: 26px;
     height: 26px;
-    color: #fff;
+    color: #06b6d4;
     line-height: 26px;
     border-radius: 20px;
     transition: transform .3s;
@@ -615,9 +638,43 @@ i.fa1:hover {
 }
 
 .shosurbari-copy-right p a{
-	color:#ff0080;
+    animation: textAnimationDeveloped 10s linear infinite;
     font-size: 15px;
     transition: transform 0.3s;
+}
+
+@keyframes textAnimationDeveloped {
+    0% {
+    color: #fdf4ff;
+    }
+
+    14.28% {
+    color: blue;
+    }
+
+    28.56% {
+    color: #991b1b;
+    }
+
+    42.84% {
+    color: black;
+    }
+
+    57.12% {
+    color: blue;
+    }
+
+    71.4% {
+    color:  #991b1b;
+    }
+
+    85.68% {
+    color: black;
+    }
+
+    100% {
+    color: #fdf4ff;
+    }
 }
 
 .shosurbari-copy-right p a:hover{
@@ -635,7 +692,7 @@ i.fa1:hover {
     right: 20px;
     cursor: pointer;
     padding: 7px 14px;
-    background:  #06b6d4;
+    background:  #22d3ee;
     color: #fff;
     border-radius: 2px;
     transition: transform 0.3s;
@@ -676,16 +733,7 @@ i.fa1:hover {
 /*Banner Message/Info Start*/
 .banner{
     background:url(../images/bg.png)no-repeat center top;
-   /* background: url(https://bannerboo.com/bitrix/templates/landing_tpl/i/header_tpl_bg.svg?v2); */
-	background-size:cover;
-	-webkit-background-size:cover;
-	-moz-background-size:cover;
-	-o-background-size:cover;
-    height: 600px;
-    margin-top: 35px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+
 }
 
 .banner_info {
@@ -708,10 +756,10 @@ i.fa1:hover {
     line-height: 70px;
 }
 
-.banner_info h4 {
+.banner_info h1 {
     font-size: 3em;
     font-family: 'Oswald', sans-serif;
-    margin-bottom: 0px;
+    margin-bottom: 10px;
     text-align: center;
     line-height: 70px;
     font-weight: 600;
@@ -727,16 +775,7 @@ i.fa1:hover {
     color: #0aa4ca;
 }
 
-.hadith{
-    border: 2px solid;
-    border-radius: 10px;
-    animation: colorAnimation 10s linear infinite;
-    padding: 20px 10px;
-    width: 80%;
-    margin-top: 60px;
-    margin-bottom: 60px;
-    background: #ecfeff;
-}
+
 
 .hadith h6 {
     font-size: 1.3em;
@@ -819,132 +858,7 @@ i.fa1:hover {
 
 
 /*Banner Clock  Start*/
-.clock h4{
-    text-align: center;
-    margin: auto;
-    padding: 10px;
-    font-size: 25px;
-    animation: textAnimation 4s infinite;
-}
 
-.clock {
-    border: 1px solid transparent;
-    animation: borderAnimation 15s infinite;
-}
-
-#timedate {
-    font: small-caps lighter 43px/150% "Segoe UI", Frutiger, "Frutiger Linotype", "Dejavu Sans", "Helvetica Neue", Arial, sans-serif;
-    text-align:center;
-    font-size: 25px;
-    border-left: 3px solid #ed1f24;
-    background-color: transparent;
-    color: #fff;
-    padding: 10px;
-    border-radius: 4px;
-    margin-top: -300px;
-    margin-left: auto;
-    margin-right: 30px;
-    display: none; /*inline-flex;*/
-    flex-direction: column;
-}
-
-/* Day Date Start */
-.day{
-    font-size:17px;
-    font-weight: 600;
-    color: #000;
-    padding: 1px 2px;
-    width: 50%;
-    border: 1px solid transparent;
-    animation: borderAnimation 15s infinite;
-}
-
-.day a, .date a{
-    font-size:17px;
-    font-weight: 600;
-    color: #fff;
-}
-
-.date{
-    font-size:17px;
-    font-weight: 600;
-    color: #000;
-    padding: 1px 2px;
-    width: 50%;
-    border-top: 1px solid transparent;
-    border-right: 1px solid transparent;
-    border-bottom: 1px solid transparent;
-    animation: borderAnimation 15s infinite;
-}
-
-.day-date{
-    display: flex;
-}
-
-/* Month Yaer Start */
-.month{
-    font-size:17px;
-    font-weight: 600;
-    color: #000;
-    padding: 1px 2px;
-    width: 50%;
-    border-left: 1px solid transparent;
-    border-right: 1px solid transparent;
-    animation: borderAnimation 15s infinite;
-}
-
-.month a, .year a, .time a{
-    font-size:17px;
-    font-weight: 600;
-    color: #fff;
-}
-
-.year{
-    font-size:17px;
-    font-weight: 600;
-    color: #000;
-    padding: 1px 2px;
-    width: 50%;
-    border-right: 1px solid transparent;
-    animation: borderAnimation 15s infinite;
-}
-
-.month-year{
-    display: flex;
-}
-
-.time{
-    font-size:17px;
-    font-weight: 600;
-    color: #000;
-    padding: 1px 2px;
-    width: auto;
-    border: 1px solid transparent;
-    animation: borderAnimation 15s infinite;
-}
-
-
-@keyframes borderAnimation {
-    0% {
-    border-color: green;
-    }
-
-    25% {
-    border-color: blue;
-    }
-
-    50% {
-    border-color: red;
-    }
-
-    75% {
-    border-color: blue;
-    }
-
-    100% {
-    border-color: green;
-    }
-}
 /*Banner Clock  End*/
 /*Banner Section End*/
 
@@ -952,7 +866,7 @@ i.fa1:hover {
 /*Body Section Start*/
 /*Home Search Option Start*/
 .sb-search-page{
-    margin: auto 50px auto auto;
+    margin: 70px auto;
     width: 100%;
     text-align: center;
 }
@@ -971,7 +885,7 @@ i.fa1:hover {
 }
 
 .sb-search-page .sb-search-btn {
-    margin-top: 50px;
+    margin-top: 30px;
     margin-left: auto;
     margin-right: auto;
     border-radius: 4px;
@@ -1565,14 +1479,14 @@ opened_1*/
 
 .nav-tabs1>li.active>a, .nav-tabs1>li.active>a:focus, .nav-tabs1>li.active>a:hover {
     color: #fff;
-    background-color:#06b6d4;
+    background-color:#0aa4ca;
     border:none;
-    border-radius: 0px;
+    border-radius: 3px;
     margin: 5px;
 }
 
 .nav-tabs1 .open>a, .nav-tabs1 .open>a:hover, .nav-tabs1 .open>a:focus, .nav-tabs1>li>a:hover, .nav-tabs1>li>a:focus {
-    background-color:#06b6d4 !important;
+    background-color:#0aa4ca !important;
     border-color:#06b6d4;
     color: #fff !important;
     margin: 5px;
@@ -2677,16 +2591,27 @@ label{
     border: none;
     margin: 1em 0 0 0;
     font-size: 0.60em;
+    transition: background-color 0.3s, color 0.3s;
 }
 
-.btn_1:hover, .btn_2:hover, .btn_3:hover, .btn_4:hover, .btn_5:hover{
+.btn_1:hover, .btn_2:hover, .btn_4:hover{
 	background: #0aa4ca;
     color: #fff;
+}
+
+.btn_3:hover, .btn_5:hover{
+	color: #0aa4ca;
 }
 
 .form-actions p{
     font-size: 14px;
     color: black;
+}
+
+.form-actions a{
+    font-size: 16px;
+    color: black;
+    text-decoration: underline;
 }
 
 
@@ -2709,6 +2634,7 @@ label{
     border: none;
     margin: 0px;
     font-size: 0.60em;
+    transition: background-color 0.3s, color 0.3s;
 }
 
 /* Login Your Account BUTTON 3 */
@@ -2719,18 +2645,12 @@ label{
     top: 5px;
 }
 .btn_3{
-    background: #04aa6d;
-    border-radius: 6px;
-    width: 100%;
-    padding: 3px;
+    background: none;
+    width: 60%;
     display: inline-block;
-    color: #fff;
-    text-transform: uppercase;
-    outline: none;
-    border: none;
-    margin-top: 7px;
-    margin-bottom: -50px;
-    font-size: 0.45em;
+    color: #000;
+    margin-top: 7px auto -50px auto;
+    transition: color 0.1s;
 }
 
 /*Creat Account BUTTON 4 */
@@ -2740,7 +2660,8 @@ label{
     left: 0px;
     top: 3px;
 }
-.btn_4{
+
+.btn_4 {
     background: #06b6d4;
     border-radius: 6px;
     width: 100%;
@@ -2752,7 +2673,9 @@ label{
     border: none;
     margin: 0px;
     font-size: 0.60em;
-}
+    transition: background-color 0.3s, color 0.3s;
+  }
+
 
 /*Create New Account  BUTTON 5 */
 .btn_5 span {
@@ -2762,18 +2685,12 @@ label{
     top: 3px;
 }
 .btn_5{
-    background: #04aa6d;
-    border-radius: 6px;
-    width: 100%;
-    padding: 4px;
+    background: none;
+    width: 60%;
     display: inline-block;
-    color: #fff;
-    text-transform: uppercase;
-    outline: none;
-    border: none;
-    margin-top: 7px;
-    margin-bottom: -50px;
-    font-size: 0.45em;
+    color: #000;
+    margin-top: 7px auto -50px auto;
+    transition: color 0.1s;
 }
 
 /* FORM SUBMIT BUTTON END */
@@ -3310,7 +3227,7 @@ border-radius: 5px 5px 0px 0px;
 }
 .sb_biodatanumber{
     font-size: 24px;
-    color: yellow;
+    color: #fff;
     font-weight: 500;
 }
 
@@ -3441,7 +3358,7 @@ border-radius: 5px 5px 0px 0px;
 }
 
 .biodatarecent_viewlist:hover{
-    background: #0aa4ca27;
+    background: #ecfeff;
     box-shadow: 0 4px 8px 0 rgb(0 0 0 / 20%), 0 6px 20px 0 rgb(0 0 0 / 19%);
     transform: scale(1.03); 
 }
@@ -3477,8 +3394,8 @@ border-radius: 5px 5px 0px 0px;
     margin-top: 2px;
 }
 .sb_biodatanumber_recentview{
-    font-size: 15px;
-    color: yellow;
+    font-size: 16px;
+    color: #fff;
     font-weight: 500;
 }
 
@@ -4031,17 +3948,13 @@ ul.profile_item{
     width: 920px;
 }
 
-#timedate{
-    width: 250px;
+.banner_info h1 {
+    font-size: 3.5em;
 }
 
 .banner_info h3 {
 
     font-size: 3.5em;
-}
-
-.banner_info h4 {
-    font-size: 2.5em;
 }
 
 .banner_info h5 {
@@ -4083,9 +3996,6 @@ ul.profile_item{
     width: 950px;
 }
 
-#timedate{
-    width: 250px;
-}
 }
 
 @media (min-width:1024px){
@@ -4110,10 +4020,6 @@ ul.profile_item{
 
     .banner_info{
         width: 920px;
-    }
-    
-    #timedate{
-        width: 250px;
     }
     
     .banner_info h3 {
@@ -4764,7 +4670,7 @@ h6{
     width: 180px;
     margin-left: auto;
     margin-right: 50px;
-    background: #0aa4ca;
+    background: #06b6d4;
     color: #FFF;
     padding: 10px;
     border-radius: 5px;
@@ -4772,6 +4678,10 @@ h6{
     text-align: center;
     cursor: pointer;
     height: 40px;
+}
+
+.sb_mobilesearch #search-button:hover{
+    background: #0aa4ca;
 }
 
 #close-button{
