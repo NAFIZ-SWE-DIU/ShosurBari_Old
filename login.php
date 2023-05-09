@@ -87,7 +87,7 @@ $(document).ready(function(){
 			<div class="form-group">
       <!--  <label for="edit-name">Email or Username <span class="form-required" title="This field is required.">*</span></label> -->
       <input type="text" id="username_email" placeholder="Your Email or Username" name="username" value="<?php if(isset($_COOKIE['username'])) { echo $_COOKIE['username']; } ?>" size="60" maxlength="60" class="form-text required">
-      <span id="uname_email_error" style="font-size:13px; margin-top: 0px; background: #ffddee; border-radius: 1px 2px 4px 4px; text-align: center; display: none;"></span>
+      <span id="uname_email_error" style="font-size: 16px; margin-top: 0px; background: #ffddee; border-radius: 1px 2px 4px 4px; text-align: center; display: none;"></span>
       </div>
 
 
@@ -95,7 +95,7 @@ $(document).ready(function(){
        <!-- <label for="edit-pass">Password <span class="form-required" title="This field is required.">*</span></label> -->
        <input type="password" id="sb_log_pass" placeholder="Your Password" name="password" value="<?php if(isset($_COOKIE['password'])) { echo $_COOKIE['password']; } ?>" size="60" maxlength="128" class="form-text required">
         <span class="show-password" style="color:#02a7e6;  font-size:18px;"><i style="color:black;  font-size:15px;" class="fa fa-eye" aria-hidden="true"></i></span> 
-        <span id="password_error" style="font-size:13px; margin-top: 0px; background: #ffddee; border-radius: 1px 2px 4px 4px; text-align: center; display: none;"></span>
+        <span id="password_error" style="font-size: 16px; margin-top: 0px; background: #ffddee; border-radius: 1px 2px 4px 4px; text-align: center; display: none;"></span>
 
       </div>
 
@@ -181,6 +181,7 @@ $(document).ready(function(){
 
 
       <style>
+        
 .remember-forgot{
   display: flex;
   justify-content: space-between;
