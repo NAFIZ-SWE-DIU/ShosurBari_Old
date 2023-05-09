@@ -41,7 +41,7 @@
 
 			
     		<div class="clearfix"> </div>
-    		<div class="copy">
+    		<div class="shosurbari-copy-right">
 		      <p>Copyright © 2022-23 ShosurBari.com | All Rights Reserved  | Developed By - <a href="https://www.facebook.com/NAFIZ.SWE.DIU/" target="_blank">Nafiz Noyon</a></p>
 	        </div>
     	</div>
@@ -53,30 +53,9 @@
 
 
 <div id="scroll-up-btn" onclick="scrollToTop()">
-    <i class="fa fa-arrow-up"></i>
+    <i class="fa fa-angle-double-up"></i>
 </div>
 
-<style>
-	#scroll-up-btn {
-                position: fixed;
-                bottom: 20px;
-                right: 20px;
-                cursor: pointer;
-				padding-top: 5px;
-    			padding-bottom: 5px;
-				padding-left: 10px;
-    			padding-right: 10px;
-				background: #ff008087;
-				color: #fff;
-				border-radius: 3px;
-            }
-			#scroll-up-btn:hover {
-				padding: 10px;
-				background: #ff0080;
-				color: #fff;
-				border-radius: 3px;
-            }
-  </style>
 
 <script>
     window.onscroll = function() {scrollFunction()};
@@ -100,3 +79,18 @@ function scrollToTop() {
 }
   </script>
 
+
+
+<script>
+    window.addEventListener("scroll", function() {
+  var navbar = document.querySelector(".navbar-inner_1");
+  
+  // Check if the page is scrolled down more than 0 pixels
+  if (window.pageYOffset > 50) {
+    navbar.style.boxShadow = "0 -3px 12px 0 #000";
+    // You can modify the box shadow style here to your desired effect
+  } else {
+    navbar.style.boxShadow = "none";
+  }
+});
+  </script>
