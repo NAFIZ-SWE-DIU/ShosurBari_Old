@@ -58,10 +58,13 @@ $(document).ready(function(){
 <!-- ============================  BANNER START ============================ -->
   <div class="banner">
 
+  
+
     <div class="banner_info">
 
+
       <h3 id="banner_text">Thousands of verified Members here</h3>
-      <h4>বাংলাদেশী  ম্যাট্রিমনি শশুরবাড়ি ডট কম</h4>
+      <h1>বাংলাদেশী  ম্যাট্রিমনি শশুরবাড়ি ডট কম</h1>
       <h5>সকল ধর্ম, বর্ণ, জেলা, পেশার দেশি ও প্রবাসী বাঙালি পাত্র পাত্রী <br> খুঁজে পাওয়ার সহজ মাধ্যম।</h5>
 
       <div class="hadith">
@@ -99,20 +102,14 @@ startAnimation();
     <body onLoad="initClock()">
     <div class="clock" id="timedate">
       <h4>Today</h4>
+        <p>Day    : <a id="day"> </a></p>
+        <p>Date   : <a id="date"> </a></p>
 
-      <div class="day-date">
-        <p class="day">Day : <a id="day"></a></p>
-        <p class="date">Date : <a id="date"></a></p>
-      </div>
+        <p>Month  : <a id="month"> </a></p>
+        <p>Year   : <a id="year">  </a><br></p>
 
-      <div class="month-year">
-        <p class="month">Month : <a id="month"></a></p>
-        <p class="year">Year : <a id="year"></a><br></p>
-      </div>
-
-      <p class="time"> Time : <a id="time"></a> </p>
+        <p>Time   : <a id="time">  </a> </p>
     </div>
-
   </div> 
 
 
@@ -165,7 +162,13 @@ function initClock() {
 </div>
 
 
+
+
+
+
 <div class="grid_1">
+
+
       <div class="sb-featured-profiles">
       	<h1>Featured Profiles</h1>
         
@@ -250,7 +253,7 @@ function initClock() {
 			$("#flexiselDemo3").flexisel({
 				visibleItems: 4,
 				animationSpeed: 700,
-				autoPlay:false,
+				autoPlay:true,
 				autoPlaySpeed: 5000,    		
 				pauseOnHover: true,
 				enableResponsiveBreakpoints: true,
@@ -327,8 +330,72 @@ function initClock() {
     </li>
   </ul>
 	
-
 <style>
+
+.banner {
+  /* background: url(https://bannerboo.com/bitrix/templates/landing_tpl/i/header_tpl_bg.svg?v2); */
+  background-size: cover;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  height: 90vh; /* Set height to 90% of the viewport height */
+  margin-top: 22px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  /* Add additional CSS design properties below */
+  border: 1px solid #ccc;
+  border-radius: none;
+  padding: 20px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+}
+
+
+/* Day Date Start */
+
+  .clock h4{
+    font-size: 22px;
+    color: #06b6d4;
+    padding-left: 10px;
+    display: inline-flex;
+}
+
+.clock {
+    text-align:center;
+    border-left: 3px solid #06b6d4;
+    background-color: transparent;
+    margin-top: -375px;
+    margin-left: auto;
+    margin-right: 15px;
+    width: 200px;
+    display: inline-flex;
+    flex-direction: column;
+}
+
+.clock p{
+    font-size: 15px;
+    color: #000;
+    padding-left: 10px;
+    display: inline-flex;
+    font-weight: 500;
+}
+
+.clock a{
+    font-size: 14px;
+    color: #000;
+    padding-left: 5px;
+}
+
+.hadith{
+    border: 2px solid;
+    border-radius: 10px;
+    animation: colorAnimation 10s linear infinite;
+    padding: 20px 10px;
+    width: 80%;
+    margin: 60px auto;
+    background: #ecfeff;
+}
+
 .biodatarecent_viewlist {
   border: 1px solid #ccc;
   border-radius: 6px;
@@ -466,4 +533,3 @@ function initClock() {
   <?php include_once("footer.php");?>
 </body>
 </html>	
-
