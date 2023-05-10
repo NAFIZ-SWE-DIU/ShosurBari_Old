@@ -98,6 +98,9 @@ $email=$row['email'];
 if($row){
     $pnumber=$row['number'];
     }
+if($row){
+    $id=$row['id'];
+}
  }
 ?>
 <?php echo "Welcome: $username"; ?>
@@ -523,7 +526,7 @@ input[type=submit] {
 
 
 <div class="shosurbari-biodata">
-    <form action="" method="POST">
+    <form action="" method="POST" name="myForm" onsubmit="return validateForm()">
 
         <div class="flex-container">
             <div class="sb-biodata">
@@ -555,15 +558,18 @@ input[type=submit] {
 
                 <div class="form-group">
                     <label>Change Password</label>
-                    <input type="password" name="pass_1" class="form-text" />
+                    <input type="password" id="pass_1" name="pass_1" class="form-text" />
                     <span class="show-password" style="color:#02a7e6;  font-size:18px; top:18px;"><i style="color:black;  font-size:18px;" class="fa fa-eye" aria-hidden="true"></i></span> 
+                    <span  id="pass_1_error" style="font-size:16px; margin-top: 0px; background: #ffddee; border-radius: 1px 2px 4px 4px; text-align: center; display: none;"></span>
                 </div>
 
 
         <div class="form-group">
             <label>Confirm Password</label>
-            <input type="password" name="pass_2" class="form-text" />
-                    <span class="show-password" style="color:#02a7e6;  font-size:18px; top:18px;"><i style="color:black;  font-size:18px;" class="fa fa-eye" aria-hidden="true"></i></span> 
+            <input type="password" id="pass_2" name="pass_2" class="form-text" />
+            <span class="show-password" style="color:#02a7e6;  font-size:18px; top:18px;"><i style="color:black;  font-size:18px;" class="fa fa-eye" aria-hidden="true"></i></span> 
+            <span  id="pass_2_error" style="font-size:16px; margin-top: 0px; background: #ffddee; border-radius: 1px 2px 4px 4px; text-align: center; display: none;"></span>
+
         </div>
 
         <script>
@@ -600,51 +606,96 @@ input[type=submit] {
 
 
 
+<script>
+    function validateForm(){
 
-<?php
-if (isset($_POST['update_account'])) {
-    // Update user account
-    $username = $_POST['username'];
-    $current_password = $_POST['current_password'];
-    $pass_1 = $_POST['pass_1'];
-    $pass_2 = $_POST['pass_2'];
+      var pass_1 = document.forms["myForm"]["pass_1"].value;
+      var pass_2 = document.forms["myForm"]["pass_2"].value;
 
-    // Check if passwords match
-    if ($pass_1 != $pass_2) {
-        echo 'Passwords do not match';
-    } else {
-        // Check if current password matches the one in the database
-        $query = "SELECT password FROM users WHERE username = '$username'";
-        $result = mysqli_query($conn, $query);
-        $row = mysqli_fetch_assoc($result);
-        $stored_password = $row['password'];
 
-        if ($current_password != $stored_password) {
-            echo 'Current password is incorrect';
-        } else {
-            // Update user details in the database
-            $update_query = "UPDATE users SET password = '$pass_1' WHERE username = '$username'";
-            $update_result = mysqli_query($conn, $update_query);
+      
+      //Password validation
+      if (pass_1 == "") {
+        document.getElementById('pass_1').style.borderColor = "red";
+        document.getElementById('pass_1').scrollIntoView({
+          behavior: 'smooth',
+          block: 'center',
+        });
 
-            if ($update_result) {
-                echo 'Account Updated';
-                // Clear the password fields
-                $pass_1 = '';
-                $pass_2 = '';
-            } else {
-                echo 'Error updating account';
-            }
-        }
+        var errorDiv = document.getElementById('pass_1_error');
+        errorDiv.innerHTML = "Please Enter Your New Password !";
+        errorDiv.style.display = 'block';
+        errorDiv.classList.add('fade-in');
+
+        // Change color multiple times
+        var colors = ['green', 'blue', 'red'];
+        var colorIndex = 0;
+        setInterval(function() {
+          errorDiv.style.color = colors[colorIndex];
+          colorIndex = (colorIndex + 1) % colors.length;
+        }, 500);
+
+        return false;
+      }else{
+        document.getElementById('pass_1').style.borderColor = "green";
+        document.getElementById('pass_1').style.backgroundColor = "#ecfeff";
+        document.getElementById('pass_1_error').innerHTML = "";
+      }
+
+      
+
+
+      //Confirm Password validation
+      if (pass_2 == "") {
+        document.getElementById('pass_2').style.borderColor = "red";
+        document.getElementById('pass_2').scrollIntoView({
+          behavior: 'smooth',
+          block: 'center',
+        });
+
+        var errorDiv = document.getElementById('pass_2_error');
+        errorDiv.innerHTML = "Please Enter Your Confirm Password !";
+        errorDiv.style.display = 'block';
+        errorDiv.classList.add('fade-in');
+
+        // Change color multiple times
+        var colors = ['green', 'blue', 'red'];
+        var colorIndex = 0;
+        setInterval(function() {
+          errorDiv.style.color = colors[colorIndex];
+          colorIndex = (colorIndex + 1) % colors.length;
+        }, 500);
+
+        return false;
+      }else if(pass_2 != pass_1){
+        document.getElementById('pass_2').style.borderColor = "red";
+        document.getElementById('pass_2').scrollIntoView({
+          behavior: 'smooth',
+          block: 'center',
+        });
+
+        var errorDiv = document.getElementById('pass_2_error');
+        errorDiv.innerHTML = "Your Password Do Not Match !";
+        errorDiv.style.display = 'block';
+        errorDiv.classList.add('fade-in');
+
+        // Change color multiple times
+        var colors = ['green', 'blue', 'red'];
+        var colorIndex = 0;
+        setInterval(function() {
+          errorDiv.style.color = colors[colorIndex];
+          colorIndex = (colorIndex + 1) % colors.length;
+        }, 500);
+
+        return false;
+      }else{
+        document.getElementById('pass_2').style.borderColor = "green";
+        document.getElementById('pass_2').style.backgroundColor = "#ecfeff";
+        document.getElementById('pass_2_error').innerHTML = "";
+      }
+
     }
-}
-?>
-
-
-
-
-
-
-
+</script>
 
 
 
