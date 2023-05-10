@@ -108,12 +108,12 @@ form {
 
 select option:checked{
     background: #06b6d4;
-    color: yellow;
+    color: #fff;
 }
 
 .result-selected{
     background: #06b6d4;
-    color: yellow;
+    color: #fff;
 }
 
 .chosen-container-single .chosen-single {
@@ -438,7 +438,7 @@ ul.nav_1 li.last{
 ul.nav_1{
     font-size: 20px;
     font-weight: 500;
-    color: yellow;
+    color: #fff;
 }
 
 .collapse_userprofile{
@@ -1434,7 +1434,7 @@ table.table_working_hours {
     border-style: groove;
 }
 .biodatanumber h2 span{
-    color: yellow;
+    color: #fff;
 }
 
 /* Table colunm border start*/
@@ -3101,7 +3101,7 @@ ul.feature_list.feature_list1 {
 
 .sb-biodata-field h2{
     text-align: center;
-    color: yellow;
+    color: #fff;
     margin: auto;
 }
 
@@ -5368,6 +5368,10 @@ h6{
 -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -*/
 @media (max-width: 540px){
 
+    .shosurbari-user-account {
+        width: 370px;
+    }
+
 td.day_value {
     font-size: 13px;
 }
@@ -5465,6 +5469,10 @@ h6{
 --      Media Responsive / Phone Responsive      --
 -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -*/
 @media (max-width:480px){
+
+    .shosurbari-user-account {
+        width: 365px;
+    }
 
 .banner_info h3 {
     font-size: 1.5em;
@@ -5755,6 +5763,10 @@ h6{
 --      Media Responsive / Phone Responsive      --
 -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -*/
 @media (max-width:414px){
+
+    .shosurbari-user-account {
+        width: 330px;
+    }
 
 .wrap_1 {
     width: 375px;
@@ -6115,6 +6127,10 @@ h6{
 -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -*/
 @media (max-width:384px){
 
+    .shosurbari-user-account {
+        width: 290px;
+    }
+
 .wrap_1 {
     width: 350px;
 }	
@@ -6399,7 +6415,9 @@ h6{
 --      Media Responsive / Phone Responsive      --
 -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -*/
 @media (max-width: 350px) {
-    
+    .shosurbari-user-account {
+        width: 265px;
+    }
 .sb-biodata{
     width: 80%;
 }
