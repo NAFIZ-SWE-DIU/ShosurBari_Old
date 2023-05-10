@@ -196,7 +196,7 @@ if (mysqli_query($conn,$sql)) {
     // Create a record for the user in the deactivate table
     $deactivate_sql = "INSERT INTO deactivate (user_id, status) VALUES ($id, 0)";
     mysqli_query($conn, $deactivate_sql);
-    
+
     // Save login information in cookie
     setcookie('username', $uname, time() + (86400 * 365), "/");
     setcookie('email', $email, time() + (86400 * 365), "/");
@@ -222,6 +222,50 @@ function isloggedin(){
 		return true;
 	}
 }
+
+
+
+
+
+function updatePassword($userId, $newPassword) {
+    require_once("includes/dbconn.php");
+    
+    // Update the password in the database
+    $update_query = "UPDATE users SET password = '$newPassword' WHERE id = $userId";
+    $update_result = mysqli_query($conn, $update_query);
+
+    if ($update_result) {
+        return true; // Password updated successfully
+    } else {
+        return false; // Error updating password
+    }
+}
+
+if (isset($_POST['update_account'])) {
+    // Update user account
+    $userId = $_SESSION['id'];
+    $newPassword = $_POST['pass_1'];
+    $confirmPassword = $_POST['pass_2'];
+
+    // Check if new passwords match
+    if ($newPassword != $confirmPassword) {
+        echo 'New passwords do not match';
+    } else {
+        // Check if current password matches the one in the database
+        $query = "SELECT password FROM users WHERE id = $userId";
+
+		 
+            // Update the password
+            $passwordUpdated = updatePassword($userId, $newPassword);
+
+            if ($passwordUpdated) {
+                echo 'Password updated successfully';
+            } else {
+                echo 'Error updating password';
+            }
+    }
+}
+
 
 /*-- -- -- -- -- -- -- -- -- -- -- -- -- ---- -- --
 -- -- -- -- -- -- -- -- --- -- -- -- -- -- -- -- --
