@@ -16,7 +16,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST'){ uploadphoto($id); }
 <!DOCTYPE HTML>
 <html>
 <head>
-<title>User Home - ShosurBari</title>
+<title>Update Account - ShosurBari</title>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 
@@ -59,13 +59,15 @@ $(document).ready(function(){
 <!-- ============================  Navigation Start =========================== -->
  <?php include_once("includes/navigation.php");?>
 <!-- ============================  Navigation End ============================ -->
+
+
 <div class="grid_3">
   <div class="container">
    <div class="breadcrumb1">
      <ul>
         <a href="index.php"><i class="fa fa-home home_1"></i></a>
         <span class="divider">&nbsp;<|>&nbsp;</span>
-        <li class="current-page"><h4>User Home</h4></li>
+        <li class="current-page"><h4>Update Account</h4></li>
      </ul>
      <?php
 		/*	If(isset($_SESSION['username'])) {
@@ -105,23 +107,21 @@ if($row){
 
 
 <style>
-	.update-image img{
-	height: 145px;
-    width: 100%;
+
+    .update-image img {
+    height: 145px;
+    width: 175px;
     padding: 2px;
     background: #f5f2f2;
     box-shadow: 0px 2px 7px 6px rgb(0 0 0 / 20%);
-    margin-top: -20px;
-    margin-left: 0px;
-    margin-right: 2px;
-    margin-bottom: 20px;
+    margin-top: 20px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 0px;
     border-radius: 4px;
-	}
-    .update-image-button{
-        font-size: 14px;
-        white-space: nowrap;
-		display: flex;
 }
+
+
 .deleteimage{
 	padding: 10px;
 	margin-top:-10px; 
@@ -146,6 +146,221 @@ if($row){
 ?>
 
 
+
+<style>
+.update-image-input form{
+    width: 100px;
+    margin-left: 0;
+}
+
+input[type=submit] {
+    cursor: pointer;
+    width: 120px;
+    height: 35px;
+    margin-top: 10px;
+    background: #06b6d4;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    color: #fff;
+    box-shadow: 1px 1px 4px #888;
+}
+
+.delete-image {
+    order: 3;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.delete-image form {
+    width: 100%;
+    padding-top: 5px;
+}
+
+.delete-image form button {
+    display: block;
+    margin: 0 auto;
+    width: 120px;
+    background: #ff0080;
+    color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+}
+
+.delete-image button:hover{
+    background: #0aa4ca;
+    color: #fff;
+}
+
+.delete-image p{
+    margin-top: 15px;
+    font-size: 15px;
+    line-height: 24px;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    width: 100%;
+    background: #fff;
+}
+
+
+.shosurbari-user-account{
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    width: 400px;
+    gap: 1.5rem;
+    padding: 20px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 40px;
+    margin-top: 20px;
+    background: white;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+.uploaded-photo {
+    margin-bottom: 20px;
+}
+
+.uploaded-photo span {
+    display: block;
+    margin-bottom: 10px;
+}
+
+.update-image-button{
+
+    gap: 10px;
+    margin-bottom: 20px;
+    font-size: 14px;
+    white-space: nowrap;
+    width: 100%;
+}
+
+.update-image {
+    order: 2;
+}
+
+.update-image-input {
+    order: 1;
+    margin-top: 0px;
+    width: 40%;
+}
+
+.form-file {
+    margin-bottom: 10px;
+}
+
+.popup-message {
+  display: none;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: #c5ffc5;
+  border: 2px solid green;
+  border-radius: 4px;
+  padding: 20px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  z-index: 9999;
+}
+
+.popup-message h3 {
+  margin-top: 0;
+  margin-bottom: 10px;
+  text-align: center;
+  color: #04aa6d;
+  font-size: 24px;
+}
+
+.popup-message p {
+  margin: 0;
+  font-size: 18px;
+  text-align: center;
+  color: #000;
+}
+
+.popup-message button.close-button {
+  display: block;
+  margin-top: 10px;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 5px 10px;
+  background-color: #06b6d4;
+  color: #fff;
+  border: none;
+  border-radius: 2px;
+  cursor: pointer;
+}
+
+.popup-message button.close-button:hover {
+  background-color: #0aa4ca;
+  color: #fff;
+}
+
+.update-image .fa{
+    font-size: 30px;
+    color: #06b6d4;
+    box-shadow: 0px 5px 10px 0px #aaa;
+    background: #fff;
+    padding: 8px;
+    border-radius: 50%;
+    transition: background-color 0.5s, color 0.5s;
+
+}
+
+.update-image .fa:hover{
+    color: #fff;
+    background: #0aa4ca;
+    transition: background-color 0.5s, color 0.5s;
+}
+
+.update-image .fa::after {
+    position: absolute;
+    content: "";
+    width: 100%;
+    height: 1px;
+    background: #0aa4ca;
+    z-index: -1;
+}
+
+.update-image {
+    position: relative;
+}
+.image-wrapper{
+    width: 175px;
+    margin: 20px auto;
+}
+
+.update-image .image-wrapper img {
+    max-width: 100%;
+    max-height: 100%;
+}
+
+.update-image .camera-wrapper {
+    position: relative;
+    justify-content: center;
+    align-items: center;
+}
+
+.update-image .camera-wrapper i {
+    position: absolute;
+    font-size: 30px;
+    color: #06b6d4;
+    box-shadow: 0px 5px 10px 0px #aaa;
+    background: #fff;
+    padding: 8px;
+    border-radius: 50%;
+}
+
+
+#file-input-wrapper {
+    display: none;
+}
+
+</style>
+
+
 <!-- -- -- -- -- -- -- -- -- -- -- -- -- ---- -- --
 -- -- -- -- -- -- -- -- --- -- -- -- -- -- -- -- --
 --                S  T  A  R  T                  --
@@ -153,115 +368,208 @@ if($row){
 --                                               --
 -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- ---
 -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -->
-<div class="shosurbari-biodata">
-	
-<form action="" method="POST" enctype="multipart/form-data">
-		<div class="flex-container">
-    <div class="sb-biodata">
+<script>
+    function showFileInput() {
+        var cameraIcon = document.querySelector('.camera-wrapper i');
+        var fileInputWrapper = document.querySelector('#file-input-wrapper');
+        var deleteImageSection = document.querySelector('.delete-image');
 
-	    <div class="sb-biodata-field">
-		    <h2>Update Your <span>Account</span></h2>
+        cameraIcon.style.display = 'none';
+        fileInputWrapper.style.display = 'block';
+        deleteImageSection.style.display = 'none';
+    }
+
+    // Check if image exists on page load
+    window.addEventListener('DOMContentLoaded', function () {
+        var imageWrapper = document.querySelector('.image-wrapper');
+        var cameraIcon = document.querySelector('.camera-wrapper i');
+        var deleteImageSection = document.querySelector('.delete-image');
+
+        if (imageWrapper) {
+            deleteImageSection.style.display = 'block';
+            cameraIcon.style.display = 'none';
+        } else {
+            deleteImageSection.style.display = 'none';
+            cameraIcon.style.display = 'block';
+        }
+    });
+</script>
+
+
+
+
+<div class="shosurbari-user-account">
+            <div class="sb-biodata-field">
+                <h2><span>Upadate Your Photo</span></h2>
+            </div>
+
+            <div class="shosurbari-user-img">
+                <?php
+                // Retrieve the user's uploaded photo from the database
+                $sql = "SELECT pic1 FROM photos WHERE user_id = '$user_id'";
+                $result = mysqli_query($conn, $sql);
+                $row = mysqli_fetch_assoc($result);
+                $uploadedPhoto = $row['pic1'];
+
+                if (!empty($uploadedPhoto)) {
+                    echo "<img src='profile/$profileid/$uploadedPhoto' />";
+                }
+                ?>
+            </div>
+
+            <div class="uploaded-photo">
+                <?php if (!empty($uploadedPhoto)): ?>
+                    <img src="profile/<?php echo $profileid; ?>/<?php echo $uploadedPhoto; ?>" />
+                <?php endif; ?>
+            </div>
+
+            <div class="update-image-button">
+                <div class="update-image">
+                    <?php if (!empty($pic1)): ?>
+                        <div class="image-wrapper">
+                            <img src="profile/<?php echo $profileid; ?>/<?php echo $pic1; ?>" />
+                        </div>
+                    <?php else: ?>
+                        <div class="camera-wrapper" onclick="showFileInput()">
+                            <i class="fa fa-camera"></i>
+                            <img src="images/shosurbari-male-icon.jpg" />
+                        </div>
+                    <?php endif; ?>
+                </div>
+
+                <div class="delete-image">
+                    <form action="" method="POST" enctype="multipart/form-data">
+                        <?php if (!empty($pic1)): ?>
+                            <button type="submit" name="delete_photo" value="Delete" class="delete_photo-btn delete-button">Delete Photo</button>
+                            <p>আপনি যদি আপনার বর্তমান ছবি পরিবর্তন বা <br>আপডেট করতে চান, প্রথমে আপনার প্রোফাইল <br>থেকে বর্তমান ছবি ডিলিট করুন। তারপর <br>নতুন ছবি আপলোড করুন।</p>
+                        <?php endif; ?>
+                        <?php
+                        if (isset($_POST['delete_photo'])) {
+                            // Delete photo from profile folder
+                            $dir = 'profile/' . $user_id . '/';
+                            unlink($dir . $pic1);
+
+                            // Delete photo from database
+                            $sql = "UPDATE photos SET pic1 = NULL WHERE user_id = '$user_id'";
+                            $result = mysqli_query($conn, $sql);
+
+                            if ($result) {
+                                // Show green message
+                                echo "<div style='color:green;'>Photo deleted successfully! Please refresh the page.</div>";
+                            }
+                        }
+                        ?>
+                    </form>
+                </div>
+
+
+                <div class="update-image-input" id="file-input-wrapper">
+                    <form action="" method="POST" enctype="multipart/form-data">
+                        <label for="file-upload" class="file-upload-btn upload-button">Choose Photo</label>
+                        <input type="file" id="file-upload" name="pic1" class="form-file required" />
+                        <input type="submit" id="edit-submit" name="update_photo" value="Upload" class="update_photo-btn submit-button" />
+                    </form>
+                </div>
+            </div>
+</div>
+
+
+
+
+<div class="popup-message" style="display: none;">
+  <h3></h3>
+  <p></p>
+</div>
+
+<script>
+    <?php
+    if (isset($_POST['update_photo'])) {
+        // Your existing code for updating the photo
+
+        // JavaScript code to show the success popup message
+        echo 'showSuccessMessage();';
+    }
+    ?>
+
+    function showSuccessMessage() {
+        // Show the popup message
+        var popup = document.querySelector('.popup-message');
+        popup.style.display = 'block';
+
+        // Set the message text
+        popup.querySelector('h3').innerHTML = 'Success!';
+        popup.querySelector('p').innerHTML = 'Your photo has been uploaded successfully.';
+
+        // Add a close button to the popup message
+        var closeButton = document.createElement('button');
+        closeButton.innerHTML = 'Close';
+        closeButton.classList.add('close-button');
+        popup.appendChild(closeButton);
+
+        // Hide the popup when the close button is clicked
+        closeButton.addEventListener('click', function() {
+            popup.style.display = 'none';
+        });
+    }
+</script>
+
+
+
+
+
+
+
+
+<div class="shosurbari-biodata">
+    <form action="" method="POST">
+        <div class="flex-container">
+            <div class="sb-biodata">
+                <div class="form-group">
+                    <label for="edit-name">Current Password</label>
+                    <input type="password" id="edit-pass" name="password" value="<?php echo $password; ?>" class="form-text" />
+                    <span class="show-password" style="color:#02a7e6;  font-size:18px; top:18px;"><i style="color:black;  font-size:18px;" class="fa fa-eye" aria-hidden="true"></i></span> 
+                </div>
+
+                <div class="form-group">
+                    <label>Change Password</label>
+                    <input type="password" name="pass_1" class="form-text" />
+                    <span class="show-password" style="color:#02a7e6;  font-size:18px; top:18px;"><i style="color:black;  font-size:18px;" class="fa fa-eye" aria-hidden="true"></i></span> 
+                </div>
+
+
+        <div class="form-group">
+            <label>Confirm Password</label>
+            <input type="password" name="pass_2" class="form-text" />
+            <span class="show-password" style="color:#02a7e6;  font-size:18px; top:18px;"><i style="color:black;  font-size:18px;" class="fa fa-eye" aria-hidden="true"></i></span> 
         </div>
 
-		<div class="update-image-button">
-
-	      <div class="update-image">
-		  <img src="profile/<?php echo $profileid;?>/<?php echo $pic1;?>" />
-          </div>
-
-
-		  <div class="deleteimage">
-		  <button style=" margin-top:5px;  margin-bottom:5px; padding: 5px 5%; font-size: 13px; font-weight:bold; background: red;"  type="submit" name="delete_photo" value="Delete" class="btn_1">Delete Photo</button>
-		  <?php
-if(isset($_POST['delete_photo'])){
-  // delete photo from profile folder
-  $user_id = // get the user id from the session
-  $dir = 'profile/'.$user_id.'/';
-  unlink($dir.$pic1);
-  
-  // delete photo from database
-  $sql = "DELETE FROM photos WHERE pic1 = '$pic1'";
-  $result = mysqli_query($conn, $sql);
-
-  if($result){
-    // show green message
-    echo "<div style='color:green;'> Photo deleted successfully! Please Refresh the page.</div>";
-  }
-}
-?>
-
-
-
-<input style="margin-top:5px;  margin-bottom:5px; width:90%; background:green; color:white; font-weight:bold;" type="file" id="edit-name" name="pic1" value="<?php
-if(isset($_POST['submit'])){
-    $user_id = $_POST['user_id'];
-
-    if(isset($_FILES['pic1'])){
-        //get file details
-        $file_name = $_FILES['pic1']['name'];
-
-        //show file name
-        echo "File Name: ".$file_name;
-    }
-}
-?>" class="form-file required">
-
-
-<input style="margin-top:5px;  margin-bottom:5px; padding: 5px 5%; font-size: 13px; font-weight:bold;" type="submit" id="edit-submit" name="op" value="Update Photo" class="btn_1 submit">
-</div>
-</div>
-
-
-
-
-
-		  <div class="form-group">
-            <label for="edit-name">Current Password</label>
-			  <input type="password" id="edit-pass" name="password" value="<?php echo $password; ?>" class="form-text" />
-			  <span class="show-password" style="color:#02a7e6;  font-size:18px; top:18px;"><i style="color:black;  font-size:18px;" class="fa fa-eye" aria-hidden="true"></i></span> 
-		</div>
-	
-
-	<div class="form-group">
-	<label>Change Password</label>
-	<input type="password" name="pass_1" class="form-text" />
-    <span class="show-password" style="color:#02a7e6;  font-size:18px; top:18px;"><i style="color:black;  font-size:18px;" class="fa fa-eye" aria-hidden="true"></i></span> 
-    </div>
-
-
-    <div class="form-group">
-	<label>Confirm Password</label>
-	<input type="password" name="pass_2" class="form-text" />
-    <span class="show-password" style="color:#02a7e6;  font-size:18px; top:18px;"><i style="color:black;  font-size:18px;" class="fa fa-eye" aria-hidden="true"></i></span> 
-    </div>
-
-    <script>
-        let showPass = document.querySelectorAll('.show-password');
-        showPass.forEach(function(el) {
-            el.addEventListener('click', function(){
-                let input = this.previousElementSibling;
-                if (input.type === "password") {
-                    input.type = "text";
-                    this.innerHTML = "<i class='fa fa-eye-slash'></i>";
-                } else {
-                    input.type = "password";
-                    this.innerHTML = "<i class='fa fa-eye'></i>";
-                }
+        <script>
+            let showPass = document.querySelectorAll('.show-password');
+            showPass.forEach(function(el) {
+                el.addEventListener('click', function(){
+                    let input = this.previousElementSibling;
+                    if (input.type === "password") {
+                        input.type = "text";
+                        this.innerHTML = "<i class='fa fa-eye-slash'></i>";
+                    } else {
+                        input.type = "password";
+                        this.innerHTML = "<i class='fa fa-eye'></i>";
+                    }
+                });
             });
-        });
-    </script>
+        </script>
 	
 
-    <div class="form-group">
-	    <label>Email Address</label>
-	    <input type="text" name="email" class="form-text" value="<?php echo $email; ?>" />
-    </div>
-    
+        <div class="form-group">
+            <label>Email Address</label>
+            <input type="text" name="email" class="form-text" value="<?php echo $email; ?>" disabled />
+        </div>
+        
 
-    <div class="form-group">
-		<label>Phone Number</label><br>
-		<input type="number" id="pnumber" name="pnumber" value="<?php echo $pnumber; ?>" size="60" minlength="10" maxlength="15" class="form-text required">
-	</div>
+        <div class="form-group">
+            <label>Phone Number</label><br>
+            <input type="number" id="pnumber" name="pnumber" value="<?php echo $pnumber; ?>" size="60" minlength="10" maxlength="15" class="form-text required">
+        </div>
 
 
 		<div class="form-actions">
@@ -271,8 +579,9 @@ if(isset($_POST['submit'])){
 
     </div>
     </div>
-	</form>
-  </div>
+</form>
+</div>
+
 
 
 
@@ -305,6 +614,13 @@ if(isset($_POST['update_account'])) {
 
 
 
+
+
+
+
+
+
+
 <?php include_once("footer.php")?>
 <!-- FlexSlider -->
 <script defer src="js/jquery.flexslider.js"></script>
@@ -320,3 +636,4 @@ $(window).load(function() {
 </script>   
 </body>
 </html>	
+
