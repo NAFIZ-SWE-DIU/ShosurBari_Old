@@ -2708,9 +2708,8 @@ label{
 
   .form-group .show-password {
     position: absolute;
-    right: 0px;
-    top: -9px;
-    padding: 15px;
+    right: 10px;
+    padding: 6px;
     font-size: 16px;
     cursor: pointer;
   }
