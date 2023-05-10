@@ -228,7 +228,21 @@ function initClock() {
 					echo "<li class=\"sb_newbiodata\">";
           echo "<div class=\"biodatarecent_viewlist\">";
           echo "<div class=\"sbbio_header_recent_view\">";
-          echo "<a href=\"view_profile.php?id={$profid}\" target=\"_blank\"> <img  class=\"img-responsive\" src=\"profile/{$profid}\/{$pic1}\"/></a>";
+
+
+          // Start of Default Photo Show
+          echo "<a href=\"view_profile.php?id={$profid}\" target=\"_blank\">";
+
+          if (!empty($pic1)) {
+              echo "<img class=\"img-responsive\" src=\"profile/{$profid}/{$pic1}\"/>";
+          } else {
+              echo "<img class=\"img-responsive\" src=\"images/shosurbari-male-icon.jpg\"/>";
+          }
+
+          echo "</a>";
+          // End of Default photo Show
+
+
           echo "<div class=\"sbbio_number_recentview\"><span class=\"sb_biodatanumber_recentview\"> {$profid} <br> Biodata Number </span> </div>";
           echo "</div>";
    
