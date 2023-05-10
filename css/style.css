@@ -165,6 +165,38 @@ input#submit-btn {
     padding: 6px 20px;
     border: 1px solid #fff;
 }
+
+
+
+
+
+
+/*Form Size with Media responsive START*/
+.mx-wd {
+    width: 400px;
+}
+
+.mn-wd {
+    width: 400px;
+}
+
+.-wd-600 {
+    width: 350px;
+}
+
+.-wd-480 {
+    width: 300px;
+}
+
+.-wd-384 {
+    width: 270px;
+}
+
+.-wd-320 {
+    width: 250px;
+}
+/*Form Size with Media responsive END*/
+
 /*Form Type End*/
 /*-- -- -- -- -- -- -- -- -- -- -- -- -- ---- -- --
 -- -- -- -- -- -- -- -- --- -- -- -- -- -- -- -- --
@@ -2612,6 +2644,7 @@ label{
     font-size: 16px;
     color: black;
     text-decoration: underline;
+    white-space: nowrap;
 }
 
 
@@ -5349,6 +5382,10 @@ h6{
     margin-left: auto;
     margin-right: auto;
 }
+
+.shosurbari-user-account {
+    width: 350px;
+}
 }
 /*-- -- -- -- -- -- -- -- -- -- -- -- -- ---- -- --
 --            max-width:600px / E  N  D          --
@@ -5366,10 +5403,6 @@ h6{
 --      Media Responsive / Phone Responsive      --
 -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -*/
 @media (max-width: 540px){
-
-    .shosurbari-user-account {
-        width: 370px;
-    }
 
 td.day_value {
     font-size: 13px;
@@ -5470,7 +5503,7 @@ h6{
 @media (max-width:480px){
 
     .shosurbari-user-account {
-        width: 365px;
+        width: 300px;
     }
 
 .banner_info h3 {
@@ -5723,7 +5756,7 @@ h6{
 }
 
 .sb-register-login{
-    width: 285px;
+    width: 300px;
 }
 
 .navigationpro ul {
@@ -5762,10 +5795,6 @@ h6{
 --      Media Responsive / Phone Responsive      --
 -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -*/
 @media (max-width:414px){
-
-    .shosurbari-user-account {
-        width: 330px;
-    }
 
 .wrap_1 {
     width: 375px;
@@ -6120,6 +6149,7 @@ h6{
 
 
 
+
 /*-- -- -- -- -- -- -- -- -- -- -- -- -- ---- -- --
 --          max-width: 384px / S T A R T          --
 --      Media Responsive / Phone Responsive      --
@@ -6127,7 +6157,7 @@ h6{
 @media (max-width:384px){
 
     .shosurbari-user-account {
-        width: 290px;
+        width: 270px;
     }
 
 .wrap_1 {
@@ -6389,7 +6419,7 @@ h6{
 }
 
 .sb-register-login{
-    width: 260px;
+    width: 270px;
 }
 
 .gender-select-reg .gender-option label {
@@ -6408,15 +6438,11 @@ h6{
 
 
 
-
 /*-- -- -- -- -- -- -- -- -- -- -- -- -- ---- -- --
 --       max-width:350px / S  T  A  R  T         --
 --      Media Responsive / Phone Responsive      --
 -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -*/
 @media (max-width: 350px) {
-    .shosurbari-user-account {
-        width: 265px;
-    }
 .sb-biodata{
     width: 80%;
 }
@@ -6838,6 +6864,14 @@ h6{
 .navigationpro ul {
     width: 180px;
 }
+
+.shosurbari-user-account {
+    width: 250px;
+}
+
+.sb-register-login{
+    width: 250px;
+}
 }
 /*-- -- -- -- -- -- -- -- -- -- -- -- -- ---- -- --
 --           max-width:320px / E  N  D           --
@@ -6852,3 +6886,5 @@ h6{
 --                                               --
 -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- ---
 -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -*/
+
+
