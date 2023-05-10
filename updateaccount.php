@@ -96,7 +96,7 @@ if($row){
 $email=$row['email'];
 }
 if($row){
-    $pnumber=$row['pnumber'];
+    $pnumber=$row['number'];
     }
  }
 ?>
@@ -341,6 +341,7 @@ input[type=submit] {
     position: relative;
     justify-content: center;
     align-items: center;
+    width: 50%;
 }
 
 .update-image .camera-wrapper i {
@@ -400,7 +401,7 @@ input[type=submit] {
 
 <div class="shosurbari-user-account">
             <div class="sb-biodata-field">
-                <h2><span>Upadate Your Photo</span></h2>
+                <h2>Upadate Your Photo</h2>
             </div>
 
             <div class="shosurbari-user-img">
@@ -520,15 +521,37 @@ input[type=submit] {
 
 
 
+
 <div class="shosurbari-biodata">
     <form action="" method="POST">
+
         <div class="flex-container">
             <div class="sb-biodata">
-                <div class="form-group">
-                    <label for="edit-name">Current Password</label>
-                    <input type="password" id="edit-pass" name="password" value="<?php echo $password; ?>" class="form-text" />
-                    <span class="show-password" style="color:#02a7e6;  font-size:18px; top:18px;"><i style="color:black;  font-size:18px;" class="fa fa-eye" aria-hidden="true"></i></span> 
-                </div>
+
+
+            <div class="form-group">
+            <label>Username</label>
+            <input type="text" name="uname" style="background: #ecfeff" class="form-text" value="<?php echo $username; ?>" disabled />
+        </div>
+
+
+            <div class="form-group">
+            <label>Email Address</label>
+            <input type="text" name="email" style="background: #ecfeff" class="form-text" value="<?php echo $email; ?>" disabled />
+        </div>
+        
+
+        <div class="form-group">
+            <label>Phone Number</label><br>
+            <input type="text" id="pnumber" name="pnumber" style="background: #ecfeff" value="<?php echo $pnumber; ?>" size="60" minlength="10" maxlength="15" class="form-text" disabled>
+        </div>
+
+
+        <div class="form-group">
+    <label for="edit-name">Current Password</label>
+    <input type="text" id="edit-pass" name="current_password" style="background: #ecfeff" value="<?php echo $password; ?>" class="form-text" disabled/>
+    <span class="show-password" style="display: none; color: #02a7e6; font-size: 18px; top: 18px;"><i style="color: black; font-size: 18px;" class="fa fa-eye-slash"></i></span> 
+</div>
 
                 <div class="form-group">
                     <label>Change Password</label>
@@ -540,7 +563,7 @@ input[type=submit] {
         <div class="form-group">
             <label>Confirm Password</label>
             <input type="password" name="pass_2" class="form-text" />
-            <span class="show-password" style="color:#02a7e6;  font-size:18px; top:18px;"><i style="color:black;  font-size:18px;" class="fa fa-eye" aria-hidden="true"></i></span> 
+                    <span class="show-password" style="color:#02a7e6;  font-size:18px; top:18px;"><i style="color:black;  font-size:18px;" class="fa fa-eye" aria-hidden="true"></i></span> 
         </div>
 
         <script>
@@ -560,53 +583,59 @@ input[type=submit] {
         </script>
 	
 
-        <div class="form-group">
-            <label>Email Address</label>
-            <input type="text" name="email" class="form-text" value="<?php echo $email; ?>" disabled />
-        </div>
-        
-
-        <div class="form-group">
-            <label>Phone Number</label><br>
-            <input type="number" id="pnumber" name="pnumber" value="<?php echo $pnumber; ?>" size="60" minlength="10" maxlength="15" class="form-text required">
-        </div>
 
 
 		<div class="form-actions">
-           <button type="submit" name="update_account" value="Update Account" class="btn_1 submit"  > <span> </span> Update Password</button>
+            <button type="submit" name="update_account" value="Update Account" class="btn_1 submit">
+                <span>Update Password</span>
+            </button>
         </div>
 
 
     </div>
     </div>
+
 </form>
 </div>
 
 
 
 
-  <?php 
-if(isset($_POST['update_account'])) {
-	//update user account
-	$username = $_POST['username'];
-	$password = $_POST['password'];
-	$pass_1 = $_POST['pass_1'];
-	$pass_2 = $_POST['pass_2'];
-	$email = $_POST['email'];
-    $email = $_POST['pnumber'];
+<?php
+if (isset($_POST['update_account'])) {
+    // Update user account
+    $username = $_POST['username'];
+    $current_password = $_POST['current_password'];
+    $pass_1 = $_POST['pass_1'];
+    $pass_2 = $_POST['pass_2'];
 
-	
-	//check if passwords match
-	if($new_password != $confirm_password) {
-		echo 'Passwords do not match';
-	}
-	
-	//update user details in database
-	$query = "UPDATE users SET username = '$username', password = '$pass_1', email = '$email', pnumber = '$pnumber' WHERE username = '$username' AND password = '$password'";
-	$result = mysqli_query($conn, $query);
-	if($result) {
-		echo 'Account Updated';
-	}
+    // Check if passwords match
+    if ($pass_1 != $pass_2) {
+        echo 'Passwords do not match';
+    } else {
+        // Check if current password matches the one in the database
+        $query = "SELECT password FROM users WHERE username = '$username'";
+        $result = mysqli_query($conn, $query);
+        $row = mysqli_fetch_assoc($result);
+        $stored_password = $row['password'];
+
+        if ($current_password != $stored_password) {
+            echo 'Current password is incorrect';
+        } else {
+            // Update user details in the database
+            $update_query = "UPDATE users SET password = '$pass_1' WHERE username = '$username'";
+            $update_result = mysqli_query($conn, $update_query);
+
+            if ($update_result) {
+                echo 'Account Updated';
+                // Clear the password fields
+                $pass_1 = '';
+                $pass_2 = '';
+            } else {
+                echo 'Error updating account';
+            }
+        }
+    }
 }
 ?>
 
