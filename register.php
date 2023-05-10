@@ -121,14 +121,14 @@ $(document).ready(function(){
 		    <div class="form-group">
 		      <!-- <label for="edit-pass">Password<span class="form-required" title="This field is required.">*</span></label> -->
 		      <input type="password" id="pass_1" placeholder="New Password" name="pass_1" size="60" maxlength="128" class="form-text required">
-			  <span class="show-password" style="color:#00bbff;  font-size:18px;"><i style="color:black;  font-size:15px;" class="fa fa-eye" aria-hidden="true"></i></span> 
+			  <span class="show-password" style="color:#0aa4ca;  font-size:18px; top:0px;"> <i style="color:black;  font-size:18px;" class="fa fa-eye" aria-hidden="true"></i></span> 
 			  <span  id="pass_1_error" style="font-size:16px; margin-top: 0px; background: #ffddee; border-radius: 1px 2px 4px 4px; text-align: center; display: none;"></span>
 			</div>
 
 			<div class="form-group">
 		      <!-- <label for="edit-pass">Confirm Password<span class="form-required" title="This field is required.">*</span></label> -->
 		      <input type="password" id="pass_2" placeholder="Confirm Password" name="pass_2" size="60" maxlength="128" class="form-text required">
-			  <span class="show-password" style="color:#00bbff;  font-size:18px;"><i style="color:black;  font-size:15px;" class="fa fa-eye" aria-hidden="true"></i></span> 
+			  <span class="show-password" style="color:#0aa4ca;  font-size:18px; top:0px;"> <i style="color:black;  font-size:18px;" class="fa fa-eye" aria-hidden="true"></i></span> 
 			  <span  id="pass_2_error" style="font-size:16px; margin-top: 0px; background: #ffddee; border-radius: 1px 2px 4px 4px; text-align: center; display: none;"></span>
 			</div>
 
