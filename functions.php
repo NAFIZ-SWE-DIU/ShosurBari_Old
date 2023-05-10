@@ -267,6 +267,24 @@ if (isset($_POST['update_account'])) {
 }
 
 
+
+//Update Password set cookie / save info to cookie.
+if (isset($_POST['update_account'])) {
+    // Retrieve the change and confirm password values
+    $newPassword = $_POST['pass_1'];
+    $confirmPassword = $_POST['pass_2'];
+
+    // Check if the change and confirm password match
+    if ($newPassword === $confirmPassword) {
+        // Save the change password value in the cookie
+        setcookie('password', $newPassword, time() + (86400 * 365), "/");
+    } else {
+        // Display an error message if the passwords don't match
+        echo "Change and confirm passwords do not match.";
+    }
+}
+
+
 /*-- -- -- -- -- -- -- -- -- -- -- -- -- ---- -- --
 -- -- -- -- -- -- -- -- --- -- -- -- -- -- -- -- --
 --                   E   N   D                   --
