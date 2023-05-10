@@ -553,13 +553,13 @@ input[type=submit] {
         <div class="form-group">
     <label for="edit-name">Current Password</label>
     <input type="text" id="edit-pass" name="current_password" style="background: #ecfeff" value="<?php echo $password; ?>" class="form-text" disabled/>
-    <span class="show-password" style="display: none; color: #02a7e6; font-size: 18px; top: 18px;"><i style="color: black; font-size: 18px;" class="fa fa-eye-slash"></i></span> 
+    <span class="show-password" style="display: none; color: #0aa4ca; font-size: 18px; top: 24px;"><i style="color: black; font-size: 18px;" class="fa fa-eye-slash"></i></span> 
 </div>
 
                 <div class="form-group">
                     <label>Change Password</label>
                     <input type="password" id="pass_1" name="pass_1" class="form-text" />
-                    <span class="show-password" style="color:#02a7e6;  font-size:18px; top:18px;"><i style="color:black;  font-size:18px;" class="fa fa-eye" aria-hidden="true"></i></span> 
+                    <span class="show-password" style="color:#0aa4ca;  font-size:18px; bottom:0px;"><i style="color:black;  font-size:18px;" class="fa fa-eye" aria-hidden="true"></i></span> 
                     <span  id="pass_1_error" style="font-size:16px; margin-top: 0px; background: #ffddee; border-radius: 1px 2px 4px 4px; text-align: center; display: none;"></span>
                 </div>
 
@@ -567,7 +567,7 @@ input[type=submit] {
         <div class="form-group">
             <label>Confirm Password</label>
             <input type="password" id="pass_2" name="pass_2" class="form-text" />
-            <span class="show-password" style="color:#02a7e6;  font-size:18px; top:18px;"><i style="color:black;  font-size:18px;" class="fa fa-eye" aria-hidden="true"></i></span> 
+            <span class="show-password" style="color:#0aa4ca;  font-size:18px; bottom:0px;"><i style="color:black;  font-size:18px;" class="fa fa-eye" aria-hidden="true"></i></span> 
             <span  id="pass_2_error" style="font-size:16px; margin-top: 0px; background: #ffddee; border-radius: 1px 2px 4px 4px; text-align: center; display: none;"></span>
 
         </div>
@@ -591,11 +591,18 @@ input[type=submit] {
 
 
 
-		<div class="form-actions">
-            <button type="submit" name="update_account" value="Update Account" class="btn_1 submit">
-                <span>Update Password</span>
-            </button>
+    <div class="form-actions">
+    <?php if (isset($_SESSION['id'])) { ?>
+        <input type="hidden" id="edit-remember" name="remember" value="1">
+    <?php } else { ?>
+        <div class="form-group">
+            <label><input type="checkbox" id="edit-remember" name="remember" value="1" <?php if(isset($_COOKIE['remember']) && $_COOKIE['remember'] == 1) { echo 'checked'; } ?>> Remember me</label>
         </div>
+    <?php } ?>
+  <button type="submit" name="update_account" value="Update Account" class="btn_1 submit">
+    <span>Update Password</span>
+  </button>
+</div>
 
 
     </div>
@@ -603,6 +610,7 @@ input[type=submit] {
 
 </form>
 </div>
+
 
 
 
