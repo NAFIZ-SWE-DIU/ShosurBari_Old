@@ -207,6 +207,9 @@ input[type=submit] {
     background: #fff;
 }
 
+input[type=file] {
+    width: 200px;
+}
 
 .shosurbari-user-account{
     border: 1px solid #ccc;
@@ -525,17 +528,13 @@ input[type=submit] {
 
 
 
-<div class="shosurbari-biodata">
+<div class="shosurbari-user-account">
     <form action="" method="POST" name="myForm" onsubmit="return validateForm()">
-
-        <div class="flex-container">
-            <div class="sb-biodata">
-
 
             <div class="form-group">
             <label>Username</label>
             <input type="text" name="uname" style="background: #ecfeff" class="form-text" value="<?php echo $username; ?>" disabled />
-        </div>
+            </div>
 
 
             <div class="form-group">
@@ -604,9 +603,6 @@ input[type=submit] {
   </button>
 </div>
 
-
-    </div>
-    </div>
 
 </form>
 </div>
