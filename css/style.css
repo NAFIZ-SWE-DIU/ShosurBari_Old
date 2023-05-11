@@ -1407,17 +1407,11 @@ span.m_3{
 /*-- -- -- -- -- -- -- -- -- -- -- -- -- ---- -- --
 -- -- -- -- -- -- -- -- --- -- -- -- -- -- -- -- --
 --                  S  T  A  R  T                --
---       SHOSUR BARI - USER PROFILE BIO DATA  1111   --
+--  SHOSUR BARI - SEARCH PAGE / VIEW BIO DATA    --
 -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- ---
 -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -*/
 
 /*Profile Short Heading Start*/
-.UserProfile{
-    width: 100%;
-    margin-left: 0px;
-    margin-right: 0px;
-}
-
 .profile-header {
     background: #00bbff22;
     width: 100%;
@@ -1430,9 +1424,14 @@ span.m_3{
     margin-right: auto;
 }
 
+.biodatanumber_head table {
+    max-width: 100%;
+    margin: auto;
+}
+
 .profile-img {
     float: left;
-    min-width: 32%;
+    min-width: 36%;
     height: 200px;
     margin-left: 0;
     margin-right: 0;
@@ -1507,11 +1506,11 @@ span.m_3{
 }
 
 .left-side{
-    width: 32%;
+    width: 36%;
 }
   
-.right-side{
-    width: 65%;
+.right-side {
+    width: 62%;
     margin-top: 50px;
     margin-left: auto;
     margin-right: 0;
@@ -1698,7 +1697,6 @@ button.copylink i {
 /*Profile Short Heading End*/
 
 
-
 /*Recent View Profile List Start*/
 .biodatarecent_viewlist{
     border: 1px solid #ccc;
@@ -1738,11 +1736,11 @@ button.copylink i {
 }
 
 .sbbio_header_recent_view{
-background: #06b6d4;
-margin: 0px;
-padding-top: 10px;
-border: 1px solid #0aa4ca;
-border-radius: 5px 5px 0px 0px;
+    background: #06b6d4;
+    margin: 0px;
+    padding-top: 10px;
+    border: 1px solid #0aa4ca;
+    border-radius: 5px 5px 0px 0px;
 }
 
 .sbbio_number_recentview{
@@ -1796,8 +1794,6 @@ border-radius: 5px 5px 0px 0px;
     position: inherit;
 }
 
-
-
 .sb_user_recentview .sb_data_recentview{
     color: black;
     padding: 3px;
@@ -1823,11 +1819,11 @@ border-radius: 5px 5px 0px 0px;
 }
 
 .view_sb_profile_recentview:hover{
-  background:#0aa4ca;
+    background:#0aa4ca;
 }
 
 .view_sb_profile_recentview a{
-  color: white;
+    color: white;
 }
 /*Recent View Profile List End*/
 
@@ -1855,7 +1851,7 @@ border-radius: 5px 5px 0px 0px;
 /*-- -- -- -- -- -- -- -- -- -- -- -- -- ---- -- --
 -- -- -- -- -- -- -- -- --- -- -- -- -- -- -- -- --
 --                   E   N   D                   --
---       SHOSUR BARI - USER PROFILE BIO DATA  2222   --
+--  SHOSUR BARI - SEARCH PAGE / VIEW BIO DATA    --
 -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- ---
 -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -*/
 
@@ -1955,20 +1951,19 @@ table.table_working_hours {
 td.day_label {
     color: #000000;
     padding: 8px;
-    font-size: 16px;
     font-weight: 450;
     border: 1px #ccc;
     border-style: groove;
-    width: 50%;
+    width: 40%;
     position: inherit;
 }
 td.day_value {
     color: black;
     padding: 8px;
-    font-size: 15px;
     font-weight: 400;
     border: 1px #ccc;
     border-style: groove;
+    width: 60%;
 }
 
 /*table_working_hours
@@ -3839,7 +3834,7 @@ border-radius: 5px 5px 0px 0px;
 .sbbiodata_profile_recentview {
     display: flex;
     flex-wrap: wrap;
-    width: 100%;
+    width: auto;
     margin-top: 80px;
     margin-bottom: 0px;
     margin-right: auto;
@@ -4287,16 +4282,53 @@ label{
 -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -*/
 
 @media (min-width:1600px){
+
+    .contact-bio,
+.copy-sbbio-link {
+  width: 50%;
+  margin-top: 20px;
+  margin-bottom: 0px;
+  margin-left: 5px;
+  margin-right: 5px;
+}
+
+button.chatbtn,
+button.copylink {
+width: 100%;
+padding: 3px;
+}
+
+    .sb_user_recentview .sb_value_recentview {
+        font-size: 14px;
+    }
+    .sb_user_recentview .sb_data_recentview {
+        font-size: 14px;
+    }
+
     .UserProfile {
-        width: 1550px;
+        width: 1450px;
         margin: auto;
+    }
+
+    td.day_label {
+        font-size: 16px;
+    }
+    td.day_value {
+        font-size: 15px;
     }
 }
     
 @media (max-width:1600px){
     .UserProfile {
-        width: 90%;
+        width: 1200px;
         margin: auto;
+    }
+
+    td.day_label {
+        font-size: 15px;
+    }
+    td.day_value {
+        font-size: 14px;
     }
 }
 
@@ -4344,9 +4376,48 @@ label{
 -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -*/
 @media (max-width:1280px){
 
-    .biodatarecent_viewlist{
+    .profile-nav-info h3 {
+        font-size: 25px;
+        text-align: left;
+    }
+
+    .profile-img img {
+        height: 175px;
+        width: 175px;
+        top: 30px;
+    }
+
+    .profile-img {
+        min-width: 30%;
+    }
+
+    .left-side{
+        width: 30%;
+    }
+      
+    .right-side {
+        width: 68%;
+        margin-top: 50px;
+        margin-left: auto;
+        margin-right: 0;
+    }
+
+    .UserProfile {
+        width: 985px;
+        margin: auto;
+    }
+
+    .sb_user_recentview .sb_value_recentview {
+        font-size: 14px;
+    }
+    .sb_user_recentview .sb_data_recentview {
+        font-size: 14px;
+    }
+
+    .biodatarecent_viewlist {
         width: 85%;
     }
+
 
     .sb_newbiodata li{
         width: 33%;
@@ -4442,6 +4513,11 @@ ul.profile_item{
 .sb-search-page h2 {
     margin-top: 100px;
 }
+
+.profile-nav-info .address {
+    font-size: 14px;
+}
+
 }
 /*-- -- -- -- -- -- -- -- -- -- -- -- -- ---- -- --
 --           max-width:1280px / E  N  D          --
@@ -4509,6 +4585,66 @@ ul.profile_item{
 --      Media Responsive / Phone Responsive      --
 -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -*/
 @media (max-width:1024px){
+
+    .profile-img img {
+        height: 170px;
+        width: 170px;
+        top: 30px;
+      }
+    
+      .nav>li>a {
+        position: relative;
+        display: block;
+        padding: 10px 10px;
+    }
+    
+      .nav-tabs1>li.active>a, .nav-tabs1>li.active>a:focus, .nav-tabs1>li.active>a:hover {
+        padding: 6px;
+    }
+      .profile-nav-info {
+        width: 24%;
+    }
+      .profile-nav-info h3 {
+        font-size: 23px;
+    }
+    .profile-nav-info .address {
+        font-size: 13px;
+    }
+    .nav-tabs1 {
+        font-size: 14px;
+    }
+    
+    .see_sb_biodata {
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .profile-img {
+        min-width: 32%;
+    }
+
+    .left-side{
+        width: 32%;
+    }
+      
+    .right-side {
+        width: 65%;
+        margin-top: 50px;
+        margin-left: auto;
+        margin-right: 0;
+    }
+
+    td.day_label {
+        font-size: 14px;
+    }
+    td.day_value {
+        font-size: 14px;
+    }
+
+    .UserProfile {
+        width: 860px;
+        margin: auto;
+    }
 
     .banner_info{
         width: 920px;
@@ -4689,6 +4825,11 @@ ul.nav_1 li {
 }
 
 
+@media only screen and (min-width: 930px) {
+    .sbbiodata_profile_recentview-mobile{
+      display: none;
+    }
+}
 
 
 
@@ -4697,6 +4838,82 @@ ul.nav_1 li {
 --      Media Responsive / Phone Responsive      --
 -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -*/
 @media (max-width:930px){
+
+    .sbbiodata_profile_recentview{
+        display: none;
+      }
+
+      .sbbiodata_profile_recentview-mobile h3{
+        text-align: center;
+        width: 100%;
+    }
+
+    .profile-nav-info .address {
+        justify-content: center;
+      }
+
+    .profile-side {
+        width: 100%;
+        text-align: center;
+        padding: 20px;
+        margin: auto;
+      }
+
+    .main-bd {
+        flex-direction: column;
+        padding-right: 0;
+      }
+
+    .profile-nav-info {
+        text-align: center;
+        width: 90%;
+        margin: auto;
+        margin-top: 20px;
+        margin-bottom: 20px;
+      }
+
+    .profile-img img {
+        position: relative;
+        height: 170px;
+        width: 170px;
+      }
+
+    .profile-img {
+        float: left;
+        width: 100%;
+        height: 200px;
+      }
+
+    .profile-nav-info h3 {
+        text-align: center;
+        }
+
+    .right-side {
+        width: 90%;
+        margin-top: 50px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .left-side {
+        width: 400px;
+        margin-top: 0px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .UserProfile {
+        width: 100%;
+        margin: auto;
+    }
+
+    .sb_user_recentview .sb_value_recentview {
+        font-size: 13px;
+    }
+
+    .sb_user_recentview .sb_data_recentview {
+        font-size: 13px;
+    }
 
     .biodatarecent_viewlist {
         width: 30%;
@@ -4844,8 +5061,7 @@ ul.nav_1 li {
     background:#0aa4ca;
     width: auto;
     padding: 0px;
-    margin-bottom: 2em;
-    margin-left: 10%;
+    margin: auto;
     white-space: nowrap;
 }
 
@@ -4946,6 +5162,17 @@ h6{
     margin-left: auto;
     margin-right: auto;
 }
+
+.sbbiodata_profile_recentview-mobile {
+    width: 745px;
+	display: flex;
+    flex-wrap: wrap;
+    margin-top: 80px;
+    margin-bottom: 0px;
+    margin-right: auto;
+    margin-left: auto;
+    padding: 0px;
+}
 }
 /*-- -- -- -- -- -- -- -- -- -- -- -- -- ---- -- --
 --          max-width:930px / E  N  D         --
@@ -4969,6 +5196,10 @@ h6{
 
     .biodatarecent_viewlist {
         width: 45%;
+    }
+
+    .sbbiodata_profile_recentview-mobile{
+        width: 540px;
     }
 
 ul.nav_1 li {
@@ -5282,6 +5513,16 @@ h6{
     margin-left: auto;
     margin-right: auto;
 }
+
+.sb_user_recentview .sb_value_recentview {
+    font-size: 14px;
+	width: 44%;
+}
+.sb_user_recentview .sb_data_recentview {
+    font-size: 14px;
+	width: 56%;
+}
+
 }
 /*-- -- -- -- -- -- -- -- -- -- -- -- -- ---- -- --
 --           max-width:768px / E  N  D           --
@@ -5616,14 +5857,6 @@ ul.profile_item{
     margin-right: auto;
 }
 
-td.day_value {
-    font-size: 14px;
-}
-
-td.day_label {
-    font-size: 14px;
-}
-
 h1{
     font-size: 34px;
 }
@@ -5760,8 +5993,16 @@ h6{
 -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -*/
 @media (max-width: 600px){
 
+    .left-side {
+        width: 350px;
+    }
+
     .biodatarecent_viewlist {
-        width: 46%;
+        width: 60%;
+    }
+
+    .sbbiodata_profile_recentview-mobile{
+        width: 430px;
     }
 
 ul.profile_item{
@@ -5774,14 +6015,6 @@ ul.profile_item{
     margin-bottom: 20px;
     margin-left: auto;
     margin-right: auto;
-}
-
-td.day_value {
-    font-size: 13px;
-}
-
-td.day_label {
-    font-size: 13px;
 }
 
 h1{
@@ -5889,14 +6122,6 @@ h6{
 -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -*/
 @media (max-width: 540px){
 
-td.day_value {
-    font-size: 13px;
-}
-
-td.day_label {
-    font-size: 13px;
-}
-
 h1{
     font-size: 32px;
 }
@@ -5987,8 +6212,13 @@ h6{
 -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -*/
 @media (max-width:480px){
 
-    .biodatarecent_viewlist {
-        width: 48%;
+    .contact-bio,
+.copy-sbbio-link {
+  font-size: 13px;
+}
+
+    .left-side {
+        width: 300px;
     }
 
     .sb_featured_profiles {
@@ -6149,14 +6379,6 @@ ul.profile_item{
     margin-right: auto;
 }
 
-td.day_value {
-    font-size: 13px;
-}
-
-td.day_label {
-    font-size: 13px;
-}
-
 h1{
     font-size: 32px;
 }
@@ -6276,6 +6498,22 @@ h6{
     padding: 6px;
     line-height: 17px;
     min-height: 220px;
+}
+
+.sb_user_recentview .sb_value_recentview {
+    font-size: 13px;
+	width: 44%;
+}
+.sb_user_recentview .sb_data_recentview {
+    font-size: 13px;
+	width: 56%;
+}
+.sbbiodata_profile_recentview-mobile{
+    width: 290px;
+}
+
+.biodatarecent_viewlist {
+    width: 85%;
 }
 }
 /*-- -- -- -- -- -- -- -- -- -- -- -- -- ---- -- --
@@ -6520,14 +6758,6 @@ ul.profile_item{
     margin-right: auto;
 }
 
-td.day_value {
-    font-size: 13px;
-}
-
-td.day_label {
-    font-size: 13px;
-}
-
 h1{
     font-size: 30px;
 }
@@ -6659,8 +6889,12 @@ h6{
 -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -*/
 @media (max-width:384px){
 
-    .biodatarecent_viewlist {
-        width: 70%;
+    a#profile-tab, a#home-tab, a#profile-tab1 {
+        font-size: 12px;
+        padding: 3px;
+    }
+    .nav-tabs1>li.active>a, .nav-tabs1>li.active>a:focus, .nav-tabs1>li.active>a:hover {
+        margin: 3px;
     }
 
     .shosurbari-user-account {
@@ -6829,14 +7063,6 @@ ul.profile_item{
     margin-bottom: 20px;
     margin-left: auto;
     margin-right: auto;
-}
-
-td.day_value {
-    font-size: 13px;
-}
-
-td.day_label {
-    font-size: 13px;
 }
 
 h1{
@@ -7032,8 +7258,48 @@ h6{
 -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -*/
 @media (max-width:320px){
 
+    a#profile-tab, a#home-tab, a#profile-tab1 {
+        font-size: 14px;
+        padding: 5px;
+    }
+    .nav-tabs1>li.active>a, .nav-tabs1>li.active>a:focus, .nav-tabs1>li.active>a:hover {
+        margin: 5px;
+    }
+    
+    .nav-tabs1 {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        padding: 0px;
+        margin: 0px;
+        white-space: normal;
+      }
+    
+      .profile-img img {
+        position: relative;
+        height: 160px;
+        width: 160px;
+      }
+
+    .left-side {
+        width: 263px;
+    }
+
+    .sb_user_recentview .sb_value_recentview {
+        font-size: 13px;
+        width: 44%;
+    }
+    .sb_user_recentview .sb_data_recentview {
+        font-size: 13px;
+        width: 56%;
+    }
+    .sbbiodata_profile_recentview-mobile{
+        width: 240px;
+    }
+    
     .biodatarecent_viewlist {
-        width: 70%;
+        width: 90%;
     }
 
 .wrap_1 {
@@ -7269,14 +7535,6 @@ ul.profile_item{
     margin-bottom: 20px;
     margin-left: auto;
     margin-right: auto;
-}
-
-td.day_value {
-    font-size: 13px;
-}
-
-td.day_label {
-    font-size: 13px;
 }
 
 h1{
