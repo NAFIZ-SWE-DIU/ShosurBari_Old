@@ -107,8 +107,21 @@ $(document).ready(function(){
   <div class="profile-header">  <!-- a profile-header div -->
 
             <div class="profile-img">
-			    <img  src="profile/<?php echo $profileid;?>/<?php echo $pic1;?>" />
+			<?php if (!empty($pic1)): ?>
+                    <img src="profile/<?php echo $profileid; ?>/<?php echo $pic1; ?>" />
+                <?php else: ?>
+                    <img src="images/shosurbari-male-icon.jpg" />
+                <?php endif; ?>
 		    </div>
+
+
+
+			
+
+
+
+
+
 
 
     <div class="profile-nav-info">
@@ -440,7 +453,22 @@ $('.clipboard').on('click', function() {
 
 		   echo "<div class=\"biodatarecent_viewlist\">";
 		   echo "<div class=\"sbbio_header_recent_view\">";
-		   echo "<a href=\"view_profile.php?id={$profid}\" target=\"_blank\"> <img  class=\"img-responsive\" src=\"profile/{$profid}\/{$pic1}\"/></a>";
+
+
+		             // Start of Default Photo Show
+					 echo "<a href=\"view_profile.php?id={$profid}\" target=\"_blank\">";
+
+					 if (!empty($pic1)) {
+						 echo "<img class=\"img-responsive\" src=\"profile/{$profid}/{$pic1}\"/>";
+					 } else {
+						 echo "<img class=\"img-responsive\" src=\"images/shosurbari-male-icon.jpg\"/>";
+					 }
+		   
+					 echo "</a>";
+					 // End of Default photo Show
+
+
+
 		   echo "<div class=\"sbbio_number_recentview\"><span class=\"sb_biodatanumber_recentview\"> {$profid} <br> Biodata Number </span> </div>";
 		   echo "</div>";
 
@@ -1533,7 +1561,20 @@ if($row){
 
 		   echo "<div class=\"biodatarecent_viewlist\">";
 		   echo "<div class=\"sbbio_header_recent_view\">";
-		   echo "<a href=\"view_profile.php?id={$profid}\" target=\"_blank\"> <img  class=\"img-responsive\" src=\"profile/{$profid}\/{$pic1}\"/></a>";
+
+		   
+          // Start of Default Photo Show
+          echo "<a href=\"view_profile.php?id={$profid}\" target=\"_blank\">";
+
+          if (!empty($pic1)) {
+              echo "<img class=\"img-responsive\" src=\"profile/{$profid}/{$pic1}\"/>";
+          } else {
+              echo "<img class=\"img-responsive\" src=\"images/shosurbari-male-icon.jpg\"/>";
+          }
+
+          echo "</a>";
+          // End of Default photo Show
+
 		   echo "<div class=\"sbbio_number_recentview\"><span class=\"sb_biodatanumber_recentview\"> {$profid} <br> Biodata Number </span> </div>";
 		   echo "</div>";
 
@@ -1557,383 +1598,19 @@ if($row){
 
 <style>
 
-.UserProfile{
-    width: 100%;
-    margin-left: 0px;
-    margin-right: 0px;
+.m22{
+	width: 2222px;
 }
 
-.profile-header {
-  background: #00bbff22;
-  width: 100%;
-  display: flex;
-  height: 140px;
-  position: relative;
-  box-shadow: 0px 3px 4px rgba(0, 0, 0, 0.2); 
-  margin-top: 22px;
-  margin-left: auto;
-	margin-right: auto;
-}
-
-
-.profile-img {
-  float: left;
-  min-width: 32%;
-  height: 200px;
-  margin-left: 0;
-  margin-right: 0;
-}
-
-.profile-img img {
-  height: 175px;
-  width: 175px;
-  border: 5px solid #fff;
-  position: relative;
-  top: 35px;
-  z-index: 5;
-  background: rgb(245, 242, 242);
-  border-radius: 50%;
-  box-shadow: 0px 2px 7px 6px rgba(0, 0, 0, 0.2);
-  margin: 0 auto;
-  display: block;
-}
-
-.profile-nav-info {
-  float: left;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  padding-top: 0px;
-  width: 24.66%;
-  margin-left: 0;
-  margin-right: 0;
-}
-.see_sb_biodata{
-  float: left;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  padding-top: 0px;
-  width: auto;
-  margin-left: 0;
-  margin-right: 0;
-}
-
-.nav-tabs1 {
-        display: inline-block;
-        border-bottom: none;
-        border-radius: 4px;
-        font-size: 15px;
-        font-weight: 500;
-        background-color: #06b6d4;
-        width: auto;
-        padding: 0px;
-        margin: auto;
-        white-space: nowrap;
-}
-
-.profile-nav-info h3 {
-  font-variant: small-caps;
-  font-size: 2rem;
-  font-family: sans-serif;
-  font-weight: bold;
-  animation: textAnimation 10s linear infinite;
-}
-
-
-
-
-.profile-nav-info .address {
-  display: flex;
-  font-weight: bold;
-  color: #777;
-}
-
-.profile-nav-info .address p {
-  margin-right: 5px;
-}
-
-.left-side{
-  width: 32%;
-}
-
-.right-side{
-  width: 65%;
-  margin-top: 50px;
-  margin-left: auto;
-  margin-right: 0;
-}
-
-.separate_biodata_sector{
-  float: left;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  padding-top: 0px;
-  width: 100%;
-}
-
-
-  .biodatavalue_list {
-    width: 100%;
-    margin-top: 25px;
-    background: #fff;
-    border-radius: 4px;
-    padding: 15px;
-	border-top: 3px solid #06b6d4;
-	border-bottom: 1px solid #ccc;
-	border-left: 1px solid #ccc;
-	border-right: 1px solid #ccc;
-}
-
-.biodata_value_data{
-  width: 100%;
-}
-
-
-.biodatavalue_list h3{
-    font-size: 1.5em;
-    text-align: center;
-    background: #fff;
-    margin-bottom: 0px;
-    padding: 10px;
-	border-radius: 4px 4px 0px 0px;
-	border-top: 1px #ccc;
-	border-bottom: 0px;
-	border-left: 1px #ccc;
-	border-right: 1px #ccc;
-	border-style: groove;
-	animation: textAnimation 10s linear infinite;
-}
-
-
-
-.main-bd {
-  width: 100%;
-  display: flex;
-  margin-left: auto;
-  margin-right: auto;
-}
 table {
     max-width: 100%;
     background-color: transparent;
     margin: auto;
 }
-.biodatanumber_head{
-	width: 100%;
-	margin-left: auto;
-    margin-right: auto;
-}
 
-.profile-side {
-  	width: 100%;
-  	padding: 90px 0px 10px 0px;
-	font-family: "Bree Serif", serif;
-  	z-index: 99;
-    background: #00bbff22;
-    border-radius: 0px 0px 4px 4px;
-	margin-left: auto;
-    margin-right: auto;
-	border-top:0px solid #ccc;
-	border-right:1px solid #ccc;
-	border-bottom:1px solid #ccc;
-	border-left:1px solid #ccc;
-	box-shadow: 0px 3px 4px rgba(0, 0, 0, 0.2); 
-}
-
-.profile-side p {
-  margin-bottom: 7px;
-  color: #333;
-  font-size: 14px;
-}
-
-.profile-side p i {
-  color: #e40046;
-  margin-right: 10px;
-}
-
-.mobile-no i {
-  transform: rotateY(180deg);
-  color: #e40046;
-}
-
-
-#copy-message {
-  position: fixed;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  padding: 10px;
-  background: #c5ffc5;
-  border: 1px solid green;
-  border-radius: 4px;
-  color: green;
-  font-size: 1rem;
-  opacity: 0;
-  display: none;
-  transition: opacity 0.3s ease-in-out;
-  pointer-events: none;
-}
-#copy-message.show {
-  opacity: 1;
-  pointer-events: auto;
-}
-
-
-
-.contact-bio,
-.copy-sbbio-link {
-  padding: 0px;
-  width: 50%;
-  border-radius: 4px;
-  background: #00bbff;
-  color: #fff;
-  font-family: "Bree Serif";
-  font-size: 1rem;
-  margin: 2px 15px;
-  cursor: pointer;
-  outline: none;
-  margin-top: 20px;
-  margin-bottom: 10px;
-  transition:  0.3s ease-in-out;
-  box-shadow: 0px 5px 7px 0px rgba(0, 0, 0, 0.3);
-}
-
-.profile-btn2{
-	margin-top: 30px;
-	width: 50%;
-	margin-left: auto;
-	margin-right: auto;
-}
-
-.profile-btn {
-  display: flex;
-  white-space: nowrap;
-  width: 100%;
-  margin: auto;
-}
-
-button.chatbtn{
-width: 100%;
-color: #fff;
-        border: 1px solid #ccc;
-        padding: 6px;
-        border-radius: 4px;
-        background: #06b6d4;
-        cursor: pointer;
-        position: relative;
-        transition: all .2s ease;
-        white-space: nowrap;
-}
-
-button.copylink {
-width: 100%;
-color: #fff;
-        border: 1px solid #ccc;
-        padding: 6px;
-        border-radius: 4px;
-        background: #06b6d4;
-        cursor: pointer;
-        position: relative;
-        transition: all .2s ease;
-        white-space: nowrap;
-}
-
-button.copylink:hover {
-  background: #0aa4ca;
-  color: #fff;
-}
-
-button.chatbtn:hover {
-  background: #0aa4ca;
-  color: #fff;
-}
-
-button.chatbtn i,
-button.copylink i {
-  margin-right: 5px;
-}
-
-
-
-
-
-
-
-
-
-.user-rating {
-  display: flex;
-}
-
-.user-rating h3 {
-  font-size: 2.5rem;
-  font-weight: 200;
-  margin-right: 5px;
-  letter-spacing: 1px;
-  color: #666;
-}
-
-.user-rating .no-of-user-rate {
-  font-size: 0.9rem;
-}
-
-.rate {
-  padding-top: 6px;
-}
-
-.rate i {
-  font-size: 0.9rem;
-  color: rgba(228, 0, 70, 1);
-}
-
-.nav {
-  width: 100%;
-  z-index: -1;
-}
-
-
-
-.profile-body {
-  width: 100%;
-  z-index: -1;
-}
-
-.tab {
-  display: none;
-}
-
-.tab {
-  padding: 20px;
-  width: 100%;
-  text-align: center;
-}
-
-
-@media (min-width:1600px){
-.UserProfile {
-    width: 1550px;
-	margin: auto;
-}
-}
-
-@media (max-width:1600px){
-.UserProfile {
-    width: 90%;
-	margin: auto;
-}
-}
-
-
-
-.biodatarecent_viewlist{
-    width: 47%;
-}
 
 @media (max-width:1280px){
-	.biodatarecent_viewlist{
-    width: 85%;
-}
+
 
 .sb_user_recentview .sb_value_recentview {
     font-size: 14px;
@@ -2028,14 +1705,7 @@ button.copylink i {
     text-align: center;
 	}
 
-  .profile-header {
-    display: flex;
-    height: 100%;
-    flex-direction: column;
-    text-align: center;
-    padding-bottom: 20px;
-	margin-top: 22px;
-  }
+
 
   .profile-img {
     float: left;
@@ -2088,9 +1758,6 @@ button.copylink i {
     justify-content: center;
   }
 
-  .user-rating {
-    justify-content: center;
-  }
   
   .sbbiodata_profile_recentview{
 	display: none;
@@ -2111,9 +1778,7 @@ button.copylink i {
     padding: 0px;
 }
 
-.biodatarecent_viewlist {
-    width: 30%;
-}
+
 .sb_user_recentview .sb_value_recentview {
     font-size: 14px;
 }
@@ -2133,9 +1798,7 @@ button.copylink i {
     width: 70%;
 	
 }
-.biodatarecent_viewlist {
-    width: 45%;
-}
+
 .sb_user_recentview .sb_value_recentview {
     font-size: 14px;
 }
@@ -2144,20 +1807,13 @@ button.copylink i {
 }
 }
 
-@media (max-width:736px){
-	.profile-header {
-	margin-top: 68px;
-  }
-}
 
 @media (max-width:600px){
 	.left-side {
     width: 90%;
 }
 
-.biodatarecent_viewlist {
-    width: 46%;
-}
+
 .sb_user_recentview .sb_value_recentview {
     font-size: 13px;
 }
@@ -2186,9 +1842,7 @@ padding: 3px;
     width: 90%;
 }
 
-.biodatarecent_viewlist {
-    width: 48%;
-}
+
 .sb_user_recentview .sb_value_recentview {
     font-size: 12px;
 	width: 42%;
@@ -2209,9 +1863,7 @@ padding: 3px;
     width: 90%;
 }
 
-.biodatarecent_viewlist {
-    width: 70%;
-}
+
 .sb_user_recentview .sb_value_recentview {
     font-size: 14px;
 	width: 40%;
@@ -2236,9 +1888,6 @@ a#profile-tab, a#home-tab, a#profile-tab1 {
     width: 90%;
 }
 
-.biodatarecent_viewlist {
-    width: 70%;
-}
 .sb_user_recentview .sb_value_recentview {
     font-size: 12px;
 	width: 40%;
@@ -2272,165 +1921,6 @@ a#profile-tab, a#home-tab, a#profile-tab1 {
     width: 160px;
   }
 }
-
-
-
-.contact-notice {
-margin-top: 50px;
-margin-left: auto;
-margin-right: auto;
-padding: 20px;
-}
-
-.contact-alert {
-margin: auto;
-padding: 0px;
-}
-
-.contact-alert p {
-margin-top: 0px;
-text-align: center;
-padding: 15px;
-border: 2px solid #00bbff;
-}
-
-.contact-alert h4{
-margin: auto;
-padding: 20px;
-text-align: center;
-}
-				
-
-
-/*-- -- -- -- -- -- -- -- -- -- -- -- -- ---- -- --
--- -- -- -- -- -- -- -- --- -- -- -- -- -- -- -- --
---                S  T  A  R  T                  --
--- User Profile View Page / Recent View Profile  --
---                                               --
--- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- ---
--- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -*/
-
-
-.biodatarecent_viewlist h3{
-    margin-bottom: auto;
-    margin-top: 30px;
-}
-
-.biodatarecent_viewlist:hover{
-    background: #00bbff11;
-    box-shadow: 0 4px 8px 0 rgb(0 0 0 / 20%), 0 6px 20px 0 rgb(0 0 0 / 19%);
-    transform: scale(1.03); 
-}
-
-.sbbio_header_recent_view{
-background: #06b6d4;
-margin: 0px;
-padding-top: 10px;
-border: 1px solid #00bbff;
-border-radius: 5px 5px 0px 0px;
-}
-
-.biodatarecent_viewlist img{
-    width: 75px;
-    height: 70px;
-    border-radius: 50%;
-    padding: 2px;
-    margin-left: auto;
-    margin-right: auto;
-    margin-bottom: auto;
-    margin-top: 0px;
-    border: 1px solid #ccc;
-}
-
-.sbbio_number_recentview{
-    text-align: center;
-    padding: 2px;
-    border-bottom-left-radius: 5px;
-    border-bottom-right-radius: 5px;
-    background: #06b6d4;
-    line-height: 1.1;
-    margin-bottom: 2px;
-    margin-top: 2px;
-}
-.sb_biodatanumber_recentview{
-    font-size: 17px;
-    color: #fff;
-    font-weight: 500;
-}
-
-.sb_user_recentview{
-    text-align: center;
-    padding: 7px 7px 7px;
-    border-bottom-left-radius: 5px;
-    border-bottom-right-radius: 5px;
-}
-
-.sb_single_data_recentview{
-    display: flex;
-    flex-wrap: wrap;
-    padding-top: 0px;
-    padding-bottom: 0px;
-    margin-top: 0px;
-    margin-bottom: 0px;
-}
-
-.sb_user_recentview .sb_single_data_recentview{
-    display: flex;
-    flex-wrap: wrap;
-    padding-top: 0px;
-    padding-bottom: 0px;
-}
-
-.sb_user_recentview .sb_value_recentview{
-    color: black;
-    padding: 3px;
-    font-size: 13px;
-    font-weight: 400;
-    border: 1px solid #d5d5d5;
-    border-style: groove;
-    width: 45%;
-    position: inherit;
-}
-
-.sb_user_recentview .sb_data_recentview{
-    color: black;
-    padding: 3px;
-    font-size: 13px;
-    font-weight: 400;
-    border: 1px solid #d5d5d5;
-    border-style: groove;
-    width: 55%;
-    position: inherit;
-}
-
-.view_sb_profile_recentview{
-    text-align: center;
-    border: 1px solid #d5d5d5;
-    padding: 2px;
-    margin-top: 7px;
-    margin-bottom: 5px;
-    border-radius: 4px;
-    background: #06b6d4;
-    color: white;
-    width:100%;
-    font-size: 15px;
-}
-
-.view_sb_profile_recentview:hover{
-  background:#00bbff;
-  color: #fff;
-}
-
-.view_sb_profile_recentview a{
-  color: white;
-}
-/*-- -- -- -- -- -- -- -- -- -- -- -- -- ---- -- --
--- -- -- -- -- -- -- -- --- -- -- -- -- -- -- -- --
---                 E    N    D                   --
--- User Profile View Page / Recent View Profile  --
---                                               --
--- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- ---
--- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -*/
 
 </style>
 
