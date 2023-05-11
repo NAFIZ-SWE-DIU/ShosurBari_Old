@@ -80,7 +80,8 @@ form {
     margin-bottom: auto;
     margin-top: 0px;
     padding-top: 20px;
-    background: url(https://bestanimations.com/media/many-hearts/260842010many-little-heart-make-big-heart-gif.gif);
+    background: url(../images/shosurbari-big-heart-gif.gif);
+    /* background: url(https://bestanimations.com/media/many-hearts/260842010many-little-heart-make-big-heart-gif.gif); */
     border-radius: 4px;
 }
 
@@ -172,11 +173,7 @@ input#submit-btn {
 
 
 /*Form Size with Media responsive START*/
-.mx-wd {
-    width: 400px;
-}
-
-.mn-wd {
+.mx-min-wd {
     width: 400px;
 }
 
@@ -193,7 +190,7 @@ input#submit-btn {
 }
 
 .-wd-320 {
-    width: 250px;
+    width: 263px;
 }
 /*Form Size with Media responsive END*/
 
@@ -205,6 +202,7 @@ input#submit-btn {
 --                                               --
 -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- ---
 -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -*/
+
 
 
 
@@ -762,9 +760,24 @@ i.fa1:hover {
 -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- ---
 -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -*/
 /*Banner Section Start*/
+
 /*Banner Message/Info Start*/
 .banner{
     background:url(../images/bg.png)no-repeat center top;
+    background-size: cover;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    height: 90vh; /* Set height to 90% of the viewport height */
+    margin-top: 22px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    /* Add additional CSS design properties below */
+    border: 1px solid #ccc;
+    border-radius: none;
+    padding: 20px;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
 
 }
 
@@ -807,7 +820,15 @@ i.fa1:hover {
     color: #0aa4ca;
 }
 
-
+.hadith{
+    border: 2px solid;
+    border-radius: 10px;
+    animation: colorAnimation 10s linear infinite;
+    padding: 20px 10px;
+    width: 80%;
+    margin: 60px auto;
+    background: #ecfeff;
+}
 
 .hadith h6 {
     font-size: 1.3em;
@@ -890,7 +911,38 @@ i.fa1:hover {
 
 
 /*Banner Clock  Start*/
+.clock {
+    text-align:center;
+    border-left: 3px solid #06b6d4;
+    background-color: transparent;
+    margin-top: -375px;
+    margin-left: auto;
+    margin-right: 15px;
+    width: 200px;
+    display: inline-flex;
+    flex-direction: column;
+}
 
+.clock h4{
+    font-size: 22px;
+    color: #06b6d4;
+    padding-left: 10px;
+    display: inline-flex;
+}
+
+.clock p{
+    font-size: 15px;
+    color: #000;
+    padding-left: 10px;
+    display: inline-flex;
+    font-weight: 500;
+}
+
+.clock a{
+    font-size: 14px;
+    color: #000;
+    padding-left: 5px;
+}
 /*Banner Clock  End*/
 /*Banner Section End*/
 
@@ -1416,7 +1468,7 @@ span.divider {
 }
 .col-md-8.profile_left {
     padding-left: 0;
-    background: url(https://bestanimations.com/media/many-hearts/260842010many-little-heart-make-big-heart-gif.gif); /* #00bbff; */
+    background: url(../images/shosurbari-big-heart-gif.gif);
     width: 79.5%;
 }
 
@@ -3370,6 +3422,47 @@ border-radius: 5px 5px 0px 0px;
     width: 100%;
 }
 
+
+/*NEW ACCOUNT START*/
+.sb_featured_profiles{
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    width: 90%;
+    gap: 1.5rem;
+    padding: 0px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: auto;
+    margin-top: 30px;
+    background: white;
+    transition: transform .2s;
+  }
+
+.sb_featured_profiles h3{
+    margin-bottom: auto;
+    margin-top: 30px;
+}
+
+.sb_featured_profiles:hover{
+    background: #ecfeff;
+    box-shadow: 0 4px 8px 0 rgb(0 0 0 / 20%), 0 6px 20px 0 rgb(0 0 0 / 19%);
+    transform: scale(1.03); 
+}
+
+.sb_featured_profiles img{
+    width: 75px;
+    height: 70px;
+    border-radius: 50%;
+    padding: 2px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: auto;
+    margin-top: 0px;
+    border: 1px solid #ccc;
+}
+/*NEW ACCOUNT END*/
+
+
 .biodatarecent_viewlist{
     border: 1px solid #ccc;
     border-radius: 6px;
@@ -3395,14 +3488,6 @@ border-radius: 5px 5px 0px 0px;
     transform: scale(1.03); 
 }
 
-.sbbio_header_recent_view{
-background: #06b6d4;
-margin: 0px;
-padding-top: 10px;
-border: 1px solid #0aa4ca;
-border-radius: 5px 5px 0px 0px;
-}
-
 .biodatarecent_viewlist img{
     width: 75px;
     height: 70px;
@@ -3413,6 +3498,14 @@ border-radius: 5px 5px 0px 0px;
     margin-bottom: auto;
     margin-top: 0px;
     border: 1px solid #ccc;
+}
+
+.sbbio_header_recent_view{
+background: #06b6d4;
+margin: 0px;
+padding-top: 10px;
+border: 1px solid #0aa4ca;
+border-radius: 5px 5px 0px 0px;
 }
 
 .sbbio_number_recentview{
@@ -3934,6 +4027,30 @@ label{
 -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -*/
 @media (max-width:1280px){
 
+    .sb_newbiodata li{
+        width: 33%;
+      }
+    
+      .sb_newbiodata .nbs-flexisel-item li{
+        width: 33%;
+      }
+    
+      .nbs-flexisel-item li{
+        width: 33%;
+      }
+    
+      .nbs-flexisel-item {
+          float: left;
+        position: relative;
+        margin:-7px;
+        margin-bottom:6px;
+        padding: 6px;
+        line-height: 17px;
+        min-height: 220px;
+      }
+
+
+
 ul.profile_item{
 	padding:0;
 	margin:0 0 1.5em 0;
@@ -4014,6 +4131,28 @@ ul.profile_item{
 
 
 @media (min-width:1280px){
+
+    .nbs-flexisel-item {
+        float: left;
+      position: relative;
+      margin:-7px;
+      margin-bottom:6px;
+      padding: 6px;
+      line-height: 17px;
+      min-height: 220px;
+    }
+  
+    .sb_newbiodata .nbs-flexisel-item li{
+      width: 33%;
+    }
+  
+    .sb_newbiodata li{
+      width: 33%;
+    }
+  
+    .nbs-flexisel-item li{
+      width: 33%;
+    }
 
 .flex-container-shosurbaribio {
     display: flex;
@@ -5386,6 +5525,10 @@ h6{
 .shosurbari-user-account {
     width: 350px;
 }
+
+.payment-form {
+    width: 350px;
+}
 }
 /*-- -- -- -- -- -- -- -- -- -- -- -- -- ---- -- --
 --            max-width:600px / E  N  D          --
@@ -5502,7 +5645,15 @@ h6{
 -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -*/
 @media (max-width:480px){
 
+    .sb_featured_profiles {
+        width: 75%;
+      }
+
     .shosurbari-user-account {
+        width: 300px;
+    }
+
+    .payment-form {
         width: 300px;
     }
 
@@ -5764,15 +5915,21 @@ h6{
 }
 
 .nbs-flexisel-container{
-    width: 280px; /* 399px; */
+    /* width: 280px; */
+    width: 245px;
     position: relative;
     margin-left: auto;
     margin-right: auto;
 }
 
 .nbs-flexisel-item {
-    margin: -9px;
-    margin-bottom: 6px;
+    float: left;
+    position: relative;
+    margin:-9px;
+    margin-bottom:6px;
+    padding: 6px;
+    line-height: 17px;
+    min-height: 220px;
 }
 }
 /*-- -- -- -- -- -- -- -- -- -- -- -- -- ---- -- --
@@ -6159,6 +6316,11 @@ h6{
     .shosurbari-user-account {
         width: 270px;
     }
+
+    .payment-form {
+        width: 270px;
+    }
+    
 
 .wrap_1 {
     width: 350px;
@@ -6866,11 +7028,15 @@ h6{
 }
 
 .shosurbari-user-account {
-    width: 250px;
+    width: 263px;
 }
 
 .sb-register-login{
-    width: 250px;
+    width: 263px;
+}
+
+.payment-form {
+    width: 263px;
 }
 }
 /*-- -- -- -- -- -- -- -- -- -- -- -- -- ---- -- --
