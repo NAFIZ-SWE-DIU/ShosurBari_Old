@@ -70,6 +70,45 @@ button:hover {
     color: black;
 }
 
+.breadcrumb1 {
+    margin-bottom:2em;
+}
+
+.breadcrumb1 ul{
+	padding:0;
+	margin:0;
+	list-style:none;
+}
+
+.breadcrumb1 li {
+    position: relative;
+    margin-right: 10px;
+    padding-right: 10px;
+    display: inline-block;
+    color:#000;
+    font-size:1em;
+}
+
+.breadcrumb1 li a {
+    display:inline-block;
+    color:#06b6d4;
+}
+
+.breadcrumb1 li a:hover{
+	color:#000;
+	text-decoration:none;
+}
+
+i.home_1{
+	color:#06b6d4;
+	font-size:15px;
+}
+
+span.divider {
+    padding: 0 5px;
+    color: #ccc;
+}
+
 
 /*Form Type Start*/
 form {
@@ -1127,236 +1166,6 @@ ul#flexiselDemo3 h3 a:hover{
 /*Home Featured Profiles End*/
 
 
-/*Home total Groom / Bride Count & SB How Work Info Start*/
-.shosurbari-user-statistic{
-    margin-top: 100px;
-    margin-bottom: 100px;
-    text-align: center;
-}
-
-.shosurbari-user-statistic h1{
-    font-weight: 600;
-    color: hsl(234, 12%, 34%);
-    text-align: center;
-}
-
-.shosurbari-user-statistic {
-    margin-bottom: 60px;
-}
-	
-.shosurbari-user-statistic h2, 
-.shosurbari-user-statistich3 {
-    font-weight: 600;
-    color: hsl(234, 12%, 34%);
-    text-align: center;
-}
-
-.shosurbari-user-statistic p {
-    color: hsl(229, 6%, 66%);
-}
-
-.cards-container {
-    list-style: none;
-    padding: 0; 
-    margin: 100px auto;
-}
-
-.total-grmbrd{
-    margin-top:  -10px;
-}
-
-.total-grmbrd-feature-card img{
-    height: 80px;
-    width: 80px;
-    border: 5px solid #fff;
-    position: relative;
-    z-index: 5;
-    background: rgb(245, 242, 242);
-    border-radius: 50%;
-    box-shadow: 0px 2px 7px 6px rgba(0, 0, 0, 0.2);
-    margin-left:  auto;
-    margin-right:  auto;
-    margin-top:  0px;
-    margin-bottom:  20px;
-    display: block;
-}
-
-.total-groom{
-    margin-top:  -10px;
-}
-
-.total-groom-feature-card img{
-    height: 80px;
-    width: 80px;
-    border: 5px solid #fff;
-    position: relative;
-    z-index: 5;
-    background: rgb(245, 242, 242);
-    border-radius: 50%;
-    box-shadow: 0px 2px 7px 6px rgba(0, 0, 0, 0.2);
-    margin-left:  auto;
-    margin-right:  auto;
-    margin-top:  0px;
-    margin-bottom:  20px;
-    display: block;
-}
-
-.total-bride{
-    margin-top:  -10px;
-}
-
-.total-bride-feature-card img{
-    height: 80px;
-    width: 80px;
-    border: 5px solid #fff;
-    position: relative;
-    z-index: 5;
-    background: rgb(245, 242, 242);
-    border-radius: 50%;
-    box-shadow: 0px 2px 7px 6px rgba(0, 0, 0, 0.2);
-    margin-left:  auto;
-    margin-right:  auto;
-    margin-top:  0px;
-    margin-bottom:  20px;
-    display: block;
-}
-
-.total-success{
-    margin-top:  -10px;
-}
-
-.total-success h1,
-.total-success h2,
-.total-success h3,
-.total-success h4,
-.total-success h5,
-.total-success h6,
-.total-success p{
-    text-align: center;
-}
-
-h1, h2, h3, h4, h5, h6, p{
-    text-align: center;
-}
-
-.total-success-feature-card img{
-    height: 80px;
-    width: 80px;
-    border: 5px solid #fff;
-    position: relative;
-    z-index: 5;
-    background: rgb(245, 242, 242);
-    border-radius: 50%;
-    box-shadow: 0px 2px 7px 6px rgba(0, 0, 0, 0.2);
-    margin-left:  auto;
-    margin-right:  auto;
-    margin-top:  0px;
-    margin-bottom:  20px;
-    display: block;
-}
-
-[class$='feature-card'] {
-    position: relative;
-    box-sizing: border-box;
-    width: 350px; height: 250px;
-    margin: 0;
-    padding: 32px;
-    /* Box Details */
-    border-radius: 10px;
-    border-top: solid 5px black;
-    box-shadow: 2px 5px 20px rgb(0,0,0,0.1);
-}
-  
-[class$='feature-card'] h2,
-[class$='feature-card'] p {
-    margin: 0;
-}
-
-/* Top Border Colors Rules */
-.total-grmbrd-feature-card{
-    border-color: #193f4c;
-}
-
-.total-groom-feature-card{
-    border-color: #0aa4ca;
-}
-
-.total-bride-feature-card{
-    border-color: #06b6d4;
-}
-
-.total-success-feature-card{
-    border-color: #15ab15;
-}
-
-@media (min-width: 788px) {
-    .cards-container { 
-      width: 728px;
-    }
-  
-    .cards-container::after {
-      content: "";
-      clear: both;
-      display: table;
-    }
-}
-  
-@media (min-width: 1166px) {
-    .cards-container {
-      width: 1106px;
-    }
-}
-  
-@media (min-width: 788px) {
-    [class$='feature-card'] {
-      float: left;
-    }
-  
-    @media (min-width: 1166px) {
-      [class$='feature-card']:first-child {
-        margin: 140px 0;
-      }
-     
-      [class$='feature-card']:nth-child(2),
-      [class$='feature-card']:nth-child(3) {
-        margin: 0 22px;
-      }
-  
-      [class$='feature-card']:last-child {
-        margin-top: -110px;
-      }
-  
-      [class$='feature-card']:nth-child(3) {
-        margin-top: 30px;
-      }
-    }
-  
-    @media (max-width: 1165px) {
-      [class$='feature-card']:nth-child(3),
-      [class$='feature-card']:nth-child(4) {
-        margin-top: 30px;
-      }
-  
-      [class$='feature-card']:nth-child(2),
-      [class$='feature-card']:nth-child(4) {
-        margin-left: 28px;
-      }
-    }
-}
-  
-@media (max-width: 787px) {
-    [class$='feature-card'] {
-      width: 300px; height: 220px;
-      margin: auto;
-    }
-  
-    [class$='feature-card']:not(:first-child) {
-      margin-top: 22px;
-    }
-}
-/*Home total Groom / Bride Count & SB How Work Info End*/
-
-
 .grid_1{
 	padding:2em 0;
 }
@@ -1694,6 +1503,19 @@ button.chatbtn i,
 button.copylink i {
 	margin-right: 5px;
 }
+
+.short_biodata_value{
+    border-radius: 5px;
+}
+
+.short_biodata_value tbody tr{
+    border-radius: 5px;
+}
+
+.short_biodata_value tbody tr td{
+    border-radius: 5px;
+    text-align: left;
+}
 /*Profile Short Heading End*/
 
 
@@ -1854,76 +1676,6 @@ button.copylink i {
 --  SHOSUR BARI - SEARCH PAGE / VIEW BIO DATA    --
 -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- ---
 -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -*/
-
-
-
-
-
-/* --view_profile --*/
-.breadcrumb1 {
-    margin-bottom:2em;
-}
-.breadcrumb1 ul{
-	padding:0;
-	margin:0;
-	list-style:none;
-}
-.breadcrumb1 li {
-    position: relative;
-    margin-right: 10px;
-    padding-right: 10px;
-    display: inline-block;
-    color:#000;
-    font-size:1em;
-}
-.breadcrumb1 li a {
-    display:inline-block;
-    color:#06b6d4;
-}
-.breadcrumb1 li a:hover{
-	color:#000;
-	text-decoration:none;
-}
-i.home_1{
-	color:#06b6d4;
-	font-size:15px;
-}
-span.divider {
-    padding: 0 5px;
-    color: #ccc;
-}
-.col-md-8.profile_left {
-    padding-left: 0;
-    background: url(../images/shosurbari-big-heart-gif.gif);
-    width: 79.5%;
-}
-
-.col-sm-4.row_2 {
-    padding-left: 0;
-}
-
-.col-sm-4 .row_2 {
-    padding-left: 0;
-}
-.row_22 {
-    padding-left: 0;
-    display: inline-flex;
-}
-
-
-table.table_working_hours {
-    width: 100%;
-    background: white;
-}
-.shortdetails{
-    width: 100%;
-    background: rgb(44, 151, 39);
-}
-
-.table_working_hours tr {
-    border: 0;
-}
-
 
 
 .biodatanumber h2{
@@ -3845,6 +3597,7 @@ border-radius: 5px 5px 0px 0px;
 .sbbiodata_profile_recentview h3{
     text-align: center;
     width: 100%;
+    font-size: 27px;
 }
 
 
@@ -4377,7 +4130,7 @@ padding: 3px;
 @media (max-width:1280px){
 
     .profile-nav-info h3 {
-        font-size: 25px;
+        font-size: 26px;
         text-align: left;
     }
 
@@ -4605,7 +4358,7 @@ ul.profile_item{
         width: 24%;
     }
       .profile-nav-info h3 {
-        font-size: 23px;
+        font-size: 24px;
     }
     .profile-nav-info .address {
         font-size: 13px;
@@ -4736,30 +4489,6 @@ ul.profile_item{
     font-size: 10px;
 }
 
-h1{
-    font-size: 36px;
-}
-
-h2{
-    font-size: 30px;
-}
-
-h3{
-    font-size: 25px;
-}
-
-h4{
-    font-size: 20px;
-}
-
-h5{
-    font-size: 17px;
-}
-
-h6{
-    font-size: 15px;
-}
-
 .biodatanumber h2{
     font-size: 30px;
 }
@@ -4838,6 +4567,22 @@ ul.nav_1 li {
 --      Media Responsive / Phone Responsive      --
 -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -*/
 @media (max-width:930px){
+
+    /* Nav bar Sticky for Mobile. Profile Show with scroll. Start*/
+    .fixed {
+            position: fixed;
+            top: 64px;
+            left: 0;
+            width: 100%;
+            z-index: 100;
+            margin-left: auto;
+            margin-right: auto;
+    }
+          
+    a#profile-tab, a#home-tab, a#profile-tab1 {
+        padding: 10px 5px;
+    }
+    /* Nav bar Sticky for Mobile. Profile Show with scroll. End*/
 
     .sbbiodata_profile_recentview{
         display: none;
@@ -5060,7 +4805,7 @@ ul.nav_1 li {
     font-weight: 500;
     background:#0aa4ca;
     width: auto;
-    padding: 0px;
+    padding-top: 0px;
     margin: auto;
     white-space: nowrap;
 }
@@ -5089,30 +4834,6 @@ ul.profile_item{
     margin-bottom: 20px;
     margin-left: auto;
     margin-right: auto;
-}
-
-h1{
-    font-size: 34px;
-}
-
-h2{
-    font-size: 28px;
-}
-
-h3{
-    font-size: 23px;
-}
-
-h4{
-    font-size: 18px;
-}
-
-h5{
-    font-size: 16px;
-}
-
-h6{
-    font-size: 14px;
 }
 
 .biodatanumber h2{
@@ -5292,31 +5013,6 @@ i.icon_4 {
     margin-left: 0px;
     margin-right: 0px;
     margin-bottom: 31px;
-}
-
-h1{
-    font-size: 34px;
-}
-
-h2{
-    font-size: 28px;
-}
-
-h3{
-    font-size: 23px;
-}
-
-h4{
-    font-size: 18px;
-}
-
-h5{
-    font-size: 16px;
-}
-
-
-h6{
-    font-size: 14px;
 }
 
 .biodatanumber h2{
@@ -5614,6 +5310,18 @@ h6{
 -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -*/
 @media (max-width: 736px){
 
+    /* Nav bar Sticky for Mobile. Profile Show with scroll. Start*/
+    .fixed {
+        position: fixed;
+        top: 110px;
+        left: 0;
+        width: 100%;
+        z-index: 100;
+        margin-left: auto;
+        margin-right: auto;
+    }
+    /* Nav bar Sticky for Mobile. Profile Show with scroll. End*/
+
 .columns {
     margin: 2em 0 0 0;
 }
@@ -5857,30 +5565,6 @@ ul.profile_item{
     margin-right: auto;
 }
 
-h1{
-    font-size: 34px;
-}
-
-h2{
-    font-size: 28px;
-}
-
-h3{
-    font-size: 23px;
-}
-
-h4{
-    font-size: 18px;
-}
-
-h5{
-    font-size: 16px;
-}
-
-h6{
-    font-size: 14px;
-}
-
 .biodatanumber h2{
     font-size: 27px;
 }
@@ -6017,29 +5701,6 @@ ul.profile_item{
     margin-right: auto;
 }
 
-h1{
-    font-size: 33px;
-}
-h2{
-    font-size: 27px;
-}
-
-h3{
-    font-size: 22px;
-}
-
-h4{
-    font-size: 17px;
-}
-
-h5{
-    font-size: 15px;
-}
-
-h6{
-    font-size: 13px;
-}
-
 .biodatanumber h2{
     font-size: 27px;
 }
@@ -6121,30 +5782,6 @@ h6{
 --      Media Responsive / Phone Responsive      --
 -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -*/
 @media (max-width: 540px){
-
-h1{
-    font-size: 32px;
-}
-
-h2{
-    font-size: 26px;
-}
-
-h3{
-    font-size: 21px;
-}
-
-h4{
-    font-size: 16px;
-}
-
-h5{
-    font-size: 14px;
-}
-
-h6{
-    font-size: 12px;
-}
 
 .biodatanumber h2{
     font-size: 24px;
@@ -6377,30 +6014,6 @@ ul.profile_item{
     margin-bottom: 20px;
     margin-left: auto;
     margin-right: auto;
-}
-
-h1{
-    font-size: 32px;
-}
-
-h2{
-    font-size: 26px;
-}
-
-h3{
-    font-size: 21px;
-}
-
-h4{
-    font-size: 16px;
-}
-
-h5{
-    font-size: 14px;
-}
-
-h6{
-    font-size: 12px;
 }
 
 .biodatanumber h2{
@@ -6758,30 +6371,6 @@ ul.profile_item{
     margin-right: auto;
 }
 
-h1{
-    font-size: 30px;
-}
-
-h2{
-    font-size: 24px;
-}
-
-h3{
-    font-size: 19px;
-}
-
-h4{
-    font-size: 14px;
-}
-
-h5{
-    font-size: 13px;
-}
-
-h6{
-    font-size: 11px;
-}
-
 .biodatanumber h2{
     font-size: 16px;
 }
@@ -6891,7 +6480,6 @@ h6{
 
     a#profile-tab, a#home-tab, a#profile-tab1 {
         font-size: 12px;
-        padding: 3px;
     }
     .nav-tabs1>li.active>a, .nav-tabs1>li.active>a:focus, .nav-tabs1>li.active>a:hover {
         margin: 3px;
@@ -7065,30 +6653,6 @@ ul.profile_item{
     margin-right: auto;
 }
 
-h1{
-    font-size: 28px;
-}
-
-h2{
-    font-size: 22px;
-}
-
-h3{
-    font-size: 17px;
-}
-
-h4{
-    font-size: 12px;
-}
-
-h5{
-    font-size: 11px;
-}
-
-h6{
-    font-size: 10px;
-}
-
 .biodatanumber h2{
     font-size: 12px;
 }
@@ -7260,7 +6824,6 @@ h6{
 
     a#profile-tab, a#home-tab, a#profile-tab1 {
         font-size: 14px;
-        padding: 5px;
     }
     .nav-tabs1>li.active>a, .nav-tabs1>li.active>a:focus, .nav-tabs1>li.active>a:hover {
         margin: 5px;
@@ -7535,30 +7098,6 @@ ul.profile_item{
     margin-bottom: 20px;
     margin-left: auto;
     margin-right: auto;
-}
-
-h1{
-    font-size: 28px;
-}
-
-h2{
-    font-size: 22px;
-}
-
-h3{
-    font-size: 17px;
-}
-
-h4{
-    font-size: 12px;
-}
-
-h5{
-    font-size: 11px;
-}
-
-h6{
-    font-size: 10px;
 }
 
 .update-image-button{
