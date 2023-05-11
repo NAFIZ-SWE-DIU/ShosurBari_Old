@@ -135,6 +135,36 @@ echo "<script>alert(\"Invalid Profile ID\")</script>";
 			</div>
 	 	</div>
 
+		
+		<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+		<script>
+		// Profile Section Show With Scrolling Just for Mobile Responsive.
+		$(window).scroll(function() {
+		var scroll = $(window).scrollTop();
+		var headerHeight = $('.profile-header').outerHeight() * 0.9; // 90% of the profile-header height
+
+		if (scroll >= headerHeight) {
+			$('.nav-tabs1').addClass('fixed');
+		} else {
+			$('.nav-tabs1').removeClass('fixed');
+		}
+		});
+
+		$(document).ready(function() {
+		// Smooth scroll to the target section
+		$('.nav-tabs1 a').click(function(event) {
+			event.preventDefault();
+			
+			var targetOffset = $('.profile-header').offset().top + ($('.profile-header').outerHeight() / 2) + 550; // Adjust the scroll offset as desired
+			
+			$('html, body').animate({
+			scrollTop: targetOffset
+			}, 1000);
+		});
+		});
+		</script>
+		
+
 
 		<div class="main-bd">  <!-- 2 main-bd div -->
     		<div class="left-side">
