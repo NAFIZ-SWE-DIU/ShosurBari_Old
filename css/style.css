@@ -4129,6 +4129,7 @@ padding: 3px;
 -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -*/
 @media (max-width:1280px){
 
+
     .profile-nav-info h3 {
         font-size: 26px;
         text-align: left;
@@ -4568,21 +4569,7 @@ ul.nav_1 li {
 -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -*/
 @media (max-width:930px){
 
-    /* Nav bar Sticky for Mobile. Profile Show with scroll. Start*/
-    .fixed {
-            position: fixed;
-            top: 64px;
-            left: 0;
-            width: 100%;
-            z-index: 100;
-            margin-left: auto;
-            margin-right: auto;
-    }
-          
-    a#profile-tab, a#home-tab, a#profile-tab1 {
-        padding: 10px 5px;
-    }
-    /* Nav bar Sticky for Mobile. Profile Show with scroll. End*/
+
 
     .sbbiodata_profile_recentview{
         display: none;
@@ -5309,18 +5296,6 @@ i.icon_4 {
 --      Media Responsive / Phone Responsive      --
 -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -*/
 @media (max-width: 736px){
-
-    /* Nav bar Sticky for Mobile. Profile Show with scroll. Start*/
-    .fixed {
-        position: fixed;
-        top: 110px;
-        left: 0;
-        width: 100%;
-        z-index: 100;
-        margin-left: auto;
-        margin-right: auto;
-    }
-    /* Nav bar Sticky for Mobile. Profile Show with scroll. End*/
 
 .columns {
     margin: 2em 0 0 0;
