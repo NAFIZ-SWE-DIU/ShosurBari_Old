@@ -155,16 +155,120 @@ echo "<script>alert(\"Invalid Profile ID\")</script>";
 		$('.nav-tabs1 a').click(function(event) {
 			event.preventDefault();
 			
-			var targetOffset = $('.profile-header').offset().top + ($('.profile-header').outerHeight() / 2) + 550; // Adjust the scroll offset as desired
+			var targetOffset = $('.profile-header').offset().top + ($('.profile-header').outerHeight() / 2) + 500; // Adjust the scroll offset as desired
 			
 			$('html, body').animate({
 			scrollTop: targetOffset
-			}, 1000);
+			}, 950);
 		});
 		});
 		</script>
 		
+<style>
 
+@media (max-width:930px){
+
+/* Nav bar Sticky for Mobile. Profile Show with scroll. Start*/
+.fixed {
+	position: fixed;
+	top: 64px;
+	left: 10px;
+	right: 10px;
+	width: 90%;
+	z-index: 100;
+	margin-left: auto;
+	margin-right: auto;
+	border-radius: 0px 0px 4px 4px;
+	display: flex;
+  	justify-content: center;
+}
+.nav-tabs1>li
+
+a#profile-tab, a#home-tab, a#profile-tab1 {
+	width: 100%;
+    padding: 10px 15px;
+	margin: 5px auto;
+}
+.nav-tabs1>li{
+	margin-left: 7px;
+	margin-right: 7px;
+	border-top: 0px solid #06b6d4;
+	border-right: 1px solid #06b6d4;
+	border-bottom: 0px solid #06b6d4;
+	border-left: 1px solid #06b6d4;
+
+}
+}  
+/* Nav bar Sticky for Mobile. Profile Show with scroll. End*/
+
+@media (max-width: 736px){
+.fixed {
+	top: 110px;
+}
+}
+
+@media (max-width: 600px){
+	.fixed {
+	left: 10px;
+	right: 10px;
+	width: 90%;
+}
+.nav-tabs1>li
+
+a#profile-tab, a#home-tab, a#profile-tab1 {
+	width: 100%;
+    padding: 8px 10px;
+	margin: 5px auto;
+	font-size: 14px;
+}
+.nav-tabs1>li{
+	margin-left: 4px;
+	margin-right: 4px;
+}
+}
+
+
+@media (max-width: 480px){
+	.fixed {
+	left: 10px;
+	right: 10px;
+	width: 90%;
+}
+.nav-tabs1>li
+
+a#profile-tab, a#home-tab, a#profile-tab1 {
+	width: 100%;
+    padding: 7px 7px;
+	margin: 5px auto;
+	font-size: 13px;
+}
+.nav-tabs1>li{
+	margin-left: 3px;
+	margin-right: 3px;
+}
+}
+
+@media (max-width: 384px){
+	.fixed {
+	left: 10px;
+	right: 10px;
+	width: 90%;
+}
+.nav-tabs1>li
+
+a#profile-tab, a#home-tab, a#profile-tab1 {
+	width: 100%;
+    padding: 6px 3px;
+	margin: 5px auto;
+	font-size: 12px;
+}
+.nav-tabs1>li{
+	margin-left: 2px;
+	margin-right: 2px;
+}
+}
+
+	</style>
 
 		<div class="main-bd">  <!-- 2 main-bd div -->
     		<div class="left-side">
