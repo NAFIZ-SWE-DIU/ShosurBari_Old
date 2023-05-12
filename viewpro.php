@@ -158,7 +158,7 @@ echo "<script>alert(\"Invalid Profile ID\")</script>";
 
 		var targetOffset = $('.profile-header').offset().top + ($('.profile-header').outerHeight() / 2);
 
-		if ($(window).width() >= 931 && $(window).width() <= 7680) {
+		if ($(window).width() >= 931 && $(window).width() <= 2200) {
 		// Media width between 1024px and 1280px
 		targetOffset -= -5; // Adjust the scroll offset as desired (scroll top 50px)
 		} else {
@@ -176,6 +176,14 @@ echo "<script>alert(\"Invalid Profile ID\")</script>";
 
 		<style>
 			/*View Profile Details NavBar Sticky Start*/
+			@media(min-width:2150px){
+				.UserProfile {
+				width: 2000px;
+				margin: auto;
+			}
+			}
+
+			@media(max-width:2150px){
 			.fixed {
 				position: fixed;
 				top: 64px;
@@ -205,6 +213,7 @@ echo "<script>alert(\"Invalid Profile ID\")</script>";
 				border-bottom: 0px solid #06b6d4;
 				border-left: 1px solid #06b6d4;
 				border-radius: 4px;
+			}
 			}
 
 			@media (max-width:1920px){
