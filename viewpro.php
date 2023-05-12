@@ -174,6 +174,154 @@ echo "<script>alert(\"Invalid Profile ID\")</script>";
 		</script>
 
 
+		<style>
+			/*View Profile Details NavBar Sticky Start*/
+			.fixed {
+				position: fixed;
+				top: 64px;
+				right: 5%;
+				width: 55.8%;
+				z-index: 100;
+				margin-left: auto;
+				margin-right: auto;
+				border-radius: 0px 0px 4px 4px;
+				display: flex;
+				justify-content: center;
+				background:#06b6d4;
+			}
+
+			a#profile-tab, a#home-tab, a#profile-tab1 {
+				width: 100%;
+				padding: 12px 25px;
+				margin: 5px auto;
+				font-size: 17px;
+			}
+
+			.nav-tabs1>li{
+				margin-left: 7px;
+				margin-right: 7px;
+				border-top: 0px solid #06b6d4;
+				border-right: 1px solid #06b6d4;
+				border-bottom: 0px solid #06b6d4;
+				border-left: 1px solid #06b6d4;
+				border-radius: 4px;
+			}
+
+			@media (max-width:1920px){
+			a#profile-tab, a#home-tab, a#profile-tab1 {
+				padding: 12px 20px;
+				font-size: 17px;
+			}
+			}
+
+			@media (max-width:1600px){
+				a#profile-tab, a#home-tab, a#profile-tab1 {
+				padding: 11px 15px;
+				font-size: 16px;
+			}
+			}
+
+			@media (max-width:1400px){
+				a#profile-tab, a#home-tab, a#profile-tab1 {
+				padding: 11px 13px;
+				font-size: 15px;
+			}
+			}
+
+			@media (max-width:1280px){
+			.fixed {
+				right: 5%;
+				width: 61.2%;
+			}
+
+			a#profile-tab, a#home-tab, a#profile-tab1 {
+				padding: 10px 10px;
+				font-size: 14px;
+			}
+			}
+
+			@media (max-width:1024px){
+			.fixed {
+				right: 5%;
+				width: 58.5%;
+			}
+
+			a#profile-tab, a#home-tab, a#profile-tab1 {
+				padding: 10px 4px;
+				font-size: 13px;
+			}
+			}
+
+			@media (max-width:930px){
+			.fixed {
+				left: 10px;
+				right: 10px;
+				width: 81%;
+			}
+
+			a#profile-tab, a#home-tab, a#profile-tab1 {
+				width: 100%;
+				padding: 10px 10px;
+				margin: 5px auto;
+				font-size: 14px;
+			}
+			}  
+
+			@media (max-width: 736px){
+			.fixed {
+				top: 110px;
+			}
+			}
+
+			@media (max-width: 600px){
+			a#profile-tab, a#home-tab, a#profile-tab1 {
+				padding: 8px 10px;
+			}
+
+			.nav-tabs1>li{
+				margin-left: 4px;
+				margin-right: 4px;
+			}
+			}
+
+			@media (max-width: 480px){
+			a#profile-tab, a#home-tab, a#profile-tab1 {
+				padding: 8px 3px;
+				font-size: 13px;
+			}
+
+			.nav-tabs1>li{
+				margin-left: 3px;
+				margin-right: 3px;
+			}
+			}
+
+			@media (max-width: 384px){
+
+			a#profile-tab, a#home-tab, a#profile-tab1 {
+				padding: 6px 1px;
+				font-size: 11px;
+			}
+
+			.nav-tabs1>li{
+				margin-left: 2px;
+				margin-right: 2px;
+			}
+			}
+
+			@media (max-width: 320px){
+			a#profile-tab, a#home-tab, a#profile-tab1 {
+				padding: 6px 2px;
+				font-size: 12px;
+			}
+			.nav-tabs1>li{
+				margin-left: 0px;
+				margin-right: 0px;
+			}
+			}
+			/*View Profile Details NavBar Sticky End*/
+		</style>
+
 
 		<div class="main-bd">  <!-- 2 main-bd div -->
     		<div class="left-side">
