@@ -1808,13 +1808,64 @@ button.copylink i {
     height: 100%;
     background-color: rgba(0, 0, 0, 0.5);
     z-index: 9998;
-  }
+}
 /*-- -- -- -- -- -- -- -- -- -- -- -- -- ---- -- --
 -- -- -- -- -- -- -- -- --- -- -- -- -- -- -- -- --
 --                   E   N   D                   --
 --           SHOSUR BARI - CONTACT US PAGE       --
 -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- ---
 -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -*/
+
+
+
+
+
+/*-- -- -- -- -- -- -- -- -- -- -- -- -- ---- -- --
+-- -- -- -- -- -- -- -- --- -- -- -- -- -- -- -- --
+--                  S  T  A  R  T                --
+--     SHOSUR BARI - TERMS & CONDITION PAGE      --
+-- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- ---
+-- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -*/
+ul.feature_list.feature_list1 {
+    margin-bottom: 2em;
+}
+
+.feature_list li {
+    color: #555;
+    font-size: 0.85em;
+    line-height: 2.3em;
+}
+
+.feature_list li a {
+    color: #555;
+}
+
+.terms_1 h3{
+	color:#000;
+	font-size:1.3em;
+}
+
+.terms_1 h5{
+	color: #000;
+    font-size: 1.3em;
+    margin: 2em 0 1em 0;
+}
+
+.terms_1 p {
+    color: #555;
+    font-size: 0.85em;
+    line-height: 1.8em;
+    margin-bottom: 10px;
+}
+/*-- -- -- -- -- -- -- -- -- -- -- -- -- ---- -- --
+-- -- -- -- -- -- -- -- --- -- -- -- -- -- -- -- --
+--                   E   N   D                   --
+--     SHOSUR BARI - TERMS & CONDITION PAGE      --
+-- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- ---
+-- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -*/
+
+
+
 
 
 
@@ -3125,57 +3176,6 @@ label{
     content: 'Show Password';
   }
 /* Password Show Eye END */
-
-
-/* -- terms and conditions --*/
-ul.feature_list.feature_list1 {
-    margin-bottom: 2em;
-}
-.feature_list li {
-    color: #555;
-    font-size: 0.85em;
-    line-height: 2.3em;
-}
-.feature_list li a {
-    color: #555;
-}
-.terms_1 h3{
-	color:#000;
-	font-size:1.3em;
-}
-.terms_1 h5{
-	color: #000;
-    font-size: 1.3em;
-    margin: 2em 0 1em 0;
-}
-.terms_1 p {
-    color: #555;
-    font-size: 0.85em;
-    line-height: 1.8em;
-    margin-bottom: 10px;
-}
-/*--menu--*/
-/* -- responsive deisgn --*/
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
