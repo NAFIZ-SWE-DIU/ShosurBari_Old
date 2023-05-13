@@ -1221,20 +1221,9 @@ span.m_3{
 /*-- -- -- -- -- -- -- -- -- -- -- -- -- ---- -- --
 -- -- -- -- -- -- -- -- --- -- -- -- -- -- -- -- --
 --                  S  T  A  R  T                --
---  SHOSUR BARI - USER PROFILE / VIEW BIO DATA   --
+--  SHOSUR BARI - USER PROFILE PAGE / VIEW BIO   --
 -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- ---
 -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -*/
-
-
-
-
-
-
-
-
-
-
-
 
 /*Profile Short Heading Start*/
 .profile-header {
@@ -1261,17 +1250,17 @@ span.m_3{
     margin-left: 0;
     margin-right: 0;
 }
-  
+
 .profile-img img {
-    height: 175px;
-    width: 175px;
+    height: 168px;
+    width: 168px;
     border: 5px solid #fff;
     position: relative;
     top: 35px;
     z-index: 5;
     background: rgb(245, 242, 242);
     border-radius: 50%;
-    box-shadow: 0px 2px 7px 6px rgba(0, 0, 0, 0.2);
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
     margin: 0 auto;
     display: block;
 }
@@ -1332,6 +1321,7 @@ span.m_3{
 
 .left-side{
     width: 36%;
+    border-radius: 4px;
 }
   
 .right-side {
@@ -1355,7 +1345,7 @@ span.m_3{
     margin-top: 25px;
     background: #fff;
     border-radius: 4px;
-    padding: 15px;
+    padding: 10px;
     border-top: 3px solid #06b6d4;
     border-bottom: 1px solid #ccc;
     border-left: 1px solid #ccc;
@@ -1407,7 +1397,6 @@ span.m_3{
 	border-right:1px solid #ccc;
 	border-bottom:1px solid #ccc;
 	border-left:1px solid #ccc;
-	box-shadow: 0px 3px 4px rgba(0, 0, 0, 0.2); 
 }
 
 .profile-side p {
@@ -1689,9 +1678,144 @@ button.copylink i {
 /*-- -- -- -- -- -- -- -- -- -- -- -- -- ---- -- --
 -- -- -- -- -- -- -- -- --- -- -- -- -- -- -- -- --
 --                   E   N   D                   --
---  SHOSUR BARI - USER PROFILE / VIEW BIO DATA   --
+--  SHOSUR BARI - USER PROFILE PAGE / VIEW BIO   --
 -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- ---
 -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -*/
+
+
+
+
+
+/*-- -- -- -- -- -- -- -- -- -- -- -- -- ---- -- --
+-- -- -- -- -- -- -- -- --- -- -- -- -- -- -- -- --
+--                  S  T  A  R  T                --
+--            SHOSUR BARI - ABOUT PAGE           --
+-- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- ---
+-- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -*/
+.shosurbari-about-contact {
+    width: 90%;
+    margin: 10px auto;
+}
+
+.shosurbari-details {
+    width: 100%;
+    margin: 50px auto;
+    padding: 10px
+}
+
+.shosurbari-details h1 {
+    margin-top: 0px;
+    margin-bottom: 0px;
+    margin-left: auto;
+    margin-right: auto;
+    font-size: 30px;
+}
+
+.shosurbari-details h2 {
+    margin-top: 80px;
+    margin-bottom: 0px;
+    margin-left: auto;
+    margin-right: auto;
+    font-size: 30px;
+}
+
+.shosurbari-details h3 {
+    margin-top: 80px;
+    margin-bottom: 0px;
+    margin-left: auto;
+    margin-right: auto;
+    font-size: 30px;
+}
+
+.shosurbari-details p {
+    margin: 15px auto 30px auto;
+    font-size: 17px;
+    text-align: justify;
+}
+/*-- -- -- -- -- -- -- -- -- -- -- -- -- ---- -- --
+-- -- -- -- -- -- -- -- --- -- -- -- -- -- -- -- --
+--                   E   N   D                   --
+--            SHOSUR BARI - ABOUT PAGE           --
+-- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- ---
+-- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -*/
+
+
+
+
+
+/*-- -- -- -- -- -- -- -- -- -- -- -- -- ---- -- --
+-- -- -- -- -- -- -- -- --- -- -- -- -- -- -- -- --
+--                  S  T  A  R  T                --
+--           SHOSUR BARI - CONTACT US PAGE       --
+-- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- ---
+-- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -*/
+/*PoUp Message Start*/
+.popup-message {
+    display: none;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: #c5ffc5;
+    border: 2px solid green;
+    border-radius: 4px;
+    padding: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    z-index: 9999;
+}
+  
+.popup-message h3 {
+    margin-top: 0;
+    margin-bottom: 10px;
+    text-align: center;
+    color: #04aa6d;
+    font-size: 24px;
+}
+  
+.popup-message p {
+    margin: 0;
+    font-size: 18px;
+    text-align: center;
+    color: #000;
+}
+  
+.popup-message button.close-button {
+    display: block;
+    margin-top: 10px;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 5px 10px;
+    background-color: #06b6d4;
+    color: #fff;
+    border: none;
+    border-radius: 2px;
+    cursor: pointer;
+}
+  
+.popup-message button.close-button:hover {
+    background-color: #0aa4ca;
+    color: #fff;
+}
+/*PoUp Message End*/
+  
+/* Overlay styles */
+.overlay {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 9998;
+  }
+/*-- -- -- -- -- -- -- -- -- -- -- -- -- ---- -- --
+-- -- -- -- -- -- -- -- --- -- -- -- -- -- -- -- --
+--                   E   N   D                   --
+--           SHOSUR BARI - CONTACT US PAGE       --
+-- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- ---
+-- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -*/
+
 
 
 
@@ -2993,7 +3117,7 @@ label{
     cursor: pointer;
   }
 
-  .form-group:hover .fa-eye {
+.form-group:hover .fa-eye {
     color: #0aa4ca;
   }
 
@@ -3001,271 +3125,6 @@ label{
     content: 'Show Password';
   }
 /* Password Show Eye END */
-
-
-
-
-.sharing li {
-    margin-bottom:1em;
-}
-.sharing li a{
-	color:#000;
-}
-.sharing .fa-boxed {
-    margin-right: 20px;
-    color: #fff;
-    width: 34px;
-    height: 34px;
-    line-height: 34px;
-    border-radius: 100%;
-    display: inline-block;
-}
-.sharing .facebook .fa-boxed {
-    background-color: #3F5F95;
-    border-color: #3F5F95;
-}
-.sharing .twitter .fa-boxed {
-    background-color: #4CAFE8;
-    border-color: #4CAFE8;
-}
-.sharing .google .fa-boxed {
-    background-color: #DB4E37;
-    border-color: #DB4E37;
-}
-.sharing .linkedin .fa-boxed {
-    background-color: #296996;
-    border-color: #296996;
-}
-.sharing .mail .fa-boxed {
-    background-color: #863587;
-    border-color: #863587;
-}
-.sharing .facebook .fa-boxed:hover, .sharing .twitter .fa-boxed:hover, .sharing .google .fa-boxed:hover, .sharing .linkedin .fa-boxed:hover, .sharing .mail .fa-boxed:hover{
-	opacity:0.9;
-}
-.login_left{
-	padding-left:0;
-}
-.form-item.form-type-textfield.form-item-name {
-    margin-bottom: 1em;
-}
-.form-control {
-    box-shadow: none !important;
-    border-radius: 2px;
-    -webkit-border-radius: 2px;
-    -moz-border-radius: 2px;
-    -o-border-radius: 2px;
-}
-.form_box {
-    padding-left: 0;
-}
-.form_box1{
-    padding-right: 0;
-}
-.age_select {
-    margin-bottom: 1em;
-}
-.control-lable {
-    padding: 0;
-}
-label.label_radio {
-    font-size: 0.85em;
-    font-weight: 300;
-}
-/* --faq --*/
-dl.faq-list{
-	margin-bottom:0;
-}
-.faq-list dd{
-	position:relative;
-}
-.faq-list_h {
-    position: relative;
-    margin: 0;
-    padding: 0 0 5px 28px;
-    background: none;
-    font-weight: normal;
-}
-.faq-list .marker {
-    position: absolute;
-    top: 0;
-    left: 0;
-    display: block;
-    font-weight: bold;
-    margin: 0;
-} 
-.faq-list .marker1{
-    position: absolute;
-    top: 0;
-    left: 0;
-    display: block;
-    font-weight: bold;
-    margin: 0;
-} 
-p.m_4 {
-    padding-left: 30px;
-    font-size:0.85em;
-    color:#555;
-    line-height:1.8em;
-    margin-bottom: 2em;
-}
-p.m_5{
-	margin-bottom:0;
-}
-
-
-
-
-
-
-/*-- shortcodes --*/
-.short_codes{
-	padding:5em 0;
-}
-.headings h1, h2,h3,h4,h5,h6{
-	font-weight:400;
-}
-.headings p, .column_grid p {
-	color:#555;
-	font-size:0.85em;
-	line-height:1.8em;
-}
-.list_1{
-	margin:3em 0 0 0;
-}
-.list_1 h3{
-	color:#000;
-	font-size:1.5em;
-	margin:1em 0;
-}
-.progress {
-    height:15px;
-    margin-bottom: 16px;
-    background: #ebebeb;
-    -webkit-box-shadow: none;
-    box-shadow: none;
-}
-.progress-bar {
-    line-height:15px;
-    height:15px;
-    overflow: hidden;
-    position: relative;
-    text-align: right;
-    padding: 0 20px;
-    background: #0aa4ca;
-    border-radius: 4px 0 0 4px;
-    -webkit-box-shadow: none;
-    box-shadow: none;
-}
-.progress-bar-success {
-    background: #a6ce39;
-}
-.progress-bar-info {
-    background: #73c9e3;
-}
-.progress-bar-warning {
-    background: #fcbe5c;
-}
-.progress-bar-danger {
-    background: #d9534f;
-}
-.progress-label {
-    font-size: 14px;
-    color: #fff;
-    float: left;
-}
-.columns {
-    margin: 3em 0 0 0;
-}
-
-
-
-
-
-
-
-
-
-
-/* --contact --*/
-p + .addr, .addr + .addr, .terms + .addr {
-    margin-top: 26px;
-}
-.grid_4{
-    width: 270px;
-    float: left;
-    margin-left: 30px;
-}
-.grid_5 p{
-	color:#555;
-	font-size:0.85em;
-	line-height:1.8em;
-}
-.addr dl dt {
-    min-width: 90px;
-}
-.addr dl dt, .addr dl dd {
-    display: inline-block;
-    color: #555;
-    font-size: 0.85em;
-}
-form#contact-form {
-    width: 50%;
-    margin: 0 auto;
-}
-#contact-form input[type='text'], #contact-form textarea {
-    background-color: white;
-    border: none;
-    width: 100%;
-    border-radius: 0;
-    outline: none;
-    --webkit-appearance: none;
-    padding: 15px;
-    margin-bottom:5px;
-    font-size: 0.85em;
-    color: #999;
-}
-#contact-form textarea{
-	height:150px;
-}
-#contact-form input[type="submit"] {
-    color: #FFF;
-    font-size: 1em;
-    padding: 13px 20px;
-    text-transform: uppercase;
-    background: #06b6d4;
-    -webkit-transition: all 0.3s ease-out;
-    -moz-transition: all 0.3s ease-out;
-    -ms-transition: all 0.3s ease-out;
-    -o-transition: all 0.3s ease-out;
-    transition: all 0.3s ease-out;
-    border: none;
-    cursor: pointer;
-    outline: none;
-    width: 100%;
-    font-weight: 500;
-}
-#contact-form input[type="submit"]:hover{
-	background:#0aa4ca;
-}
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 /* -- terms and conditions --*/
@@ -4145,8 +4004,8 @@ padding: 3px;
     }
 
     .profile-img img {
-        height: 175px;
-        width: 175px;
+        height: 168px;
+        width: 168px;
         top: 30px;
     }
 
@@ -4287,6 +4146,11 @@ ul.profile_item{
 
 @media (min-width:1280px){
 
+    .shosurbari-about-contact {
+        width: 1170px;
+        margin: auto;
+    
+    }
     .nbs-flexisel-item {
         float: left;
       position: relative;
@@ -4345,8 +4209,8 @@ ul.profile_item{
 @media (max-width:1024px){
 
     .profile-img img {
-        height: 170px;
-        width: 170px;
+        height: 168px;
+        width: 168px;
         top: 30px;
       }
     
@@ -4568,7 +4432,9 @@ ul.nav_1 li {
 -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -*/
 @media (max-width:930px){
 
-
+    .biodatavalue_list {
+        padding: 8px;
+    }
 
     .sbbiodata_profile_recentview{
         display: none;
@@ -4605,8 +4471,8 @@ ul.nav_1 li {
 
     .profile-img img {
         position: relative;
-        height: 170px;
-        width: 170px;
+        height: 168px;
+        width: 168px;
       }
 
     .profile-img {
@@ -4628,9 +4494,10 @@ ul.nav_1 li {
 
     .left-side {
         width: 400px;
-        margin-top: 0px;
+        margin-top: 30px;
         margin-left: auto;
         margin-right: auto;
+        border-top: 3px solid #06b6d4;
     }
 
     .sb_user_recentview .sb_value_recentview {
@@ -4786,6 +4653,7 @@ ul.nav_1 li {
     font-size: 15px;
     font-weight: 500;
     background:#06b6d4;
+    box-shadow: 0px 3px 4px rgba(0, 0, 0, 0.2);
     width: auto;
     padding-top: 0px;
     margin: auto;
@@ -5292,6 +5160,10 @@ i.icon_4 {
 -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -*/
 @media (max-width: 736px){
 
+    .left-side {
+        width: 350px;
+    }
+
 .columns {
     margin: 2em 0 0 0;
 }
@@ -5647,10 +5519,6 @@ ul.profile_item{
 -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -*/
 @media (max-width: 600px){
 
-    .left-side {
-        width: 350px;
-    }
-
     .biodatarecent_viewlist {
         width: 60%;
     }
@@ -5825,7 +5693,7 @@ ul.profile_item{
 }
 
     .left-side {
-        width: 300px;
+        width: 90%;
     }
 
     .sb_featured_profiles {
@@ -6807,16 +6675,12 @@ ul.profile_item{
         padding: 0px;
         margin: 0px;
         white-space: normal;
-      }
+    }
     
-      .profile-img img {
+    .profile-img img {
         position: relative;
-        height: 160px;
-        width: 160px;
-      }
-
-    .left-side {
-        width: 263px;
+        height: 168px;
+        width: 168px;
     }
 
     .sb_user_recentview .sb_value_recentview {
