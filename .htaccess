@@ -1,3 +1,11 @@
 #This is 404 error page to show
-
 ErrorDocument 404 http://localhost/shosurbari/404.php
+
+
+#For Remove the file name and display only the user ID
+RewriteEngine On
+RewriteBase /shosurbari/
+
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule ^([0-9]+)$ view_profile.php?id=$1 [L]
