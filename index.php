@@ -201,7 +201,7 @@ $(document).ready(function(){
 
       <ul id="flexiselDemo3">
         <?php
-        	$sql="SELECT * FROM 1bd_personal_physical";
+        	$sql="SELECT * FROM 1bd_personal_physical ORDER BY profilecreationdate DESC LIMIT 20"; //Last 20 New Profile View maximum 20 Profile Show
         	$result=mysqlexec($sql);
         	if($result){
         	while($row=mysqli_fetch_assoc($result)){
@@ -264,7 +264,7 @@ $(document).ready(function(){
             <span class=\"sb_single_data_recentview\"> <span class=\"sb_value_recentview\"> Gender </span>  <span class=\"sb_data_recentview\">{$biodatagender}</span></span>
             <span class=\"sb_single_data_recentview\"> <span class=\"sb_value_recentview\"> Religion </span>  <span class=\"sb_data_recentview\">{$religion}</span></span>
             <span class=\"sb_single_data_recentview\"> <span class=\"sb_value_recentview\"> Birth Year</span>        <span class=\"sb_data_recentview\"> {$dateofbirth}</span></span>
-            <a href=\"viewpro.php?id={$profid}\" target=\"_blank\"><button class=\"view_sb_profile_recentview\"> View Full Profile</button> </a>
+            <a href=\"view_profile.php?id={$profid}\" target=\"_blank\"><button class=\"view_sb_profile_recentview\"> View Full Profile</button> </a>
             </div></div>";
             echo "</li>";
         	}
@@ -273,8 +273,8 @@ $(document).ready(function(){
       </ul>
 
 
+      <!-- START FOR PROFILES ANIMATION SLIDE SHOW -->
       <script type="text/javascript">
-        //START FOR PROFILES ANIMATION SLIDE SHOW
         $(window).load(function() {
         $("#flexiselDemo3").flexisel({
           visibleItems: 4,
@@ -299,8 +299,9 @@ $(document).ready(function(){
           }
         });   
         });
-        // ENDT FOR PROFILES ANIMATION SLIDE SHOW
       </script>
+      <!-- ENDT FOR PROFILES ANIMATION SLIDE SHOW -->
+
 
       <script type="text/javascript" src="js/jquery.flexisel.js"></script>
     </div>
