@@ -81,7 +81,7 @@ echo "<script>alert(\"Invalid Profile ID\")</script>";
 
 
 
-	<div class="UserProfile">  <!-- 1 UserProfile div -->
+	<div class="UserProfile">  <!-- UserProfile -->
 		<div class="profile-header">
 
             <div class="profile-img">
@@ -158,11 +158,11 @@ echo "<script>alert(\"Invalid Profile ID\")</script>";
 
 		var targetOffset = $('.profile-header').offset().top + ($('.profile-header').outerHeight() / 2);
 
-		if ($(window).width() >= 931 && $(window).width() <= 2200) {
-		// Media width between 1024px and 1280px
+		if ($(window).width() >= 931 && $(window).width() <= 2000) {
+		// Media width between 931px and 2000px
 		targetOffset -= -5; // Adjust the scroll offset as desired (scroll top 50px)
 		} else {
-		targetOffset += 500; // Adjust the scroll offset as desired
+		targetOffset += 530; // Adjust the scroll offset as desired
 		}
 
 
@@ -332,7 +332,7 @@ echo "<script>alert(\"Invalid Profile ID\")</script>";
 		</style>
 
 
-		<div class="main-bd">  <!-- 2 main-bd div -->
+		<div class="main-bd"> <!-- Main BioData-->
     		<div class="left-side">
       			<div class="profile-side">
 		
@@ -561,7 +561,7 @@ echo "<script>alert(\"Invalid Profile ID\")</script>";
 					<h3>Profiles Recent View</h3>
 
 					<?php
-						$sql="SELECT * FROM 1bd_personal_physical  ORDER BY profilecreationdate DESC LIMIT 10";
+						$sql="SELECT * FROM 1bd_personal_physical  ORDER BY profilecreationdate DESC LIMIT 20"; //Last 20 Profile View maximum 20 Profile Show
 						$result=mysqlexec($sql);
 						$count=1;
 						while($row=mysqli_fetch_assoc($result)){
@@ -609,7 +609,7 @@ echo "<script>alert(\"Invalid Profile ID\")</script>";
 						<span class=\"sb_single_data_recentview\"> <span class=\"sb_value_recentview\"> Occupation </span>      <span class=\"sb_data_recentview\"> {$occupation}</span></span>
 						<span class=\"sb_single_data_recentview\"> <span class=\"sb_value_recentview\"> Address </span>      <span class=\"sb_data_recentview\"> {$permanent_address}</span></span>
 						<span class=\"sb_single_data_recentview\"> <span class=\"sb_value_recentview\"> Birth Year</span>        <span class=\"sb_data_recentview\"> {$dateofbirth}</span></span>
-						<a href=\"viewpro.php?id={$profid}\" target=\"_blank\"><button class=\"view_sb_profile_recentview\"> View Full Profile</button> </a>
+						<a href=\"view_profile.php?id={$profid}\" target=\"_blank\"><button class=\"view_sb_profile_recentview\"> View Full Profile</button> </a>
 						</div></div>";
 						$count++;
 						}
@@ -627,7 +627,7 @@ echo "<script>alert(\"Invalid Profile ID\")</script>";
 			-- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- ---
 			-- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -->	
 
-			<div class="right-side"> <!-- 3 right-side div -->
+			<div class="right-side"> <!-- Right-Side -->
 				<div class="separate_biodata_sector">
 					<div class="bs-example bs-example-tabs" role="tabpanel" data-example-id="togglable-tabs">
 						<div id="myTabContent" class="tab-content">
@@ -1379,6 +1379,7 @@ echo "<script>alert(\"Invalid Profile ID\")</script>";
 									</table>
 								</div>
 							</div>
+							<div class="clearfix"> </div>
 							<!-- -- -- -- -- -- -- -- -- -- -- -- -- ---- -- --
 							-- -- -- -- -- -- -- -- --- -- -- -- -- -- -- -- --
 							--                   E   N   D                   --
@@ -1519,6 +1520,7 @@ echo "<script>alert(\"Invalid Profile ID\")</script>";
 									</table>
 								</div>
 							</div>
+							<div class="clearfix"> </div>
 							<!-- -- -- -- -- -- -- -- -- -- -- -- -- ---- -- --
 							-- -- -- -- -- -- -- -- --- -- -- -- -- -- -- -- --
 							--                S  T  A  R  T                  --
@@ -1556,9 +1558,9 @@ echo "<script>alert(\"Invalid Profile ID\")</script>";
 						</div>
 					</div>
 				</div>
-			</div> <!-- right-side div -->
-		</div> <!-- main-bd div -->
-	</div> <!-- UserProfile div -->
+			</div> <!-- Right Side -->
+		</div> <!-- Main BioData -->
+	</div> <!-- UserProfile -->
 
 
 
@@ -1575,7 +1577,7 @@ echo "<script>alert(\"Invalid Profile ID\")</script>";
         <h3>Profiles Recent View</h3>
 
         <?php
-        	$sql="SELECT * FROM 1bd_personal_physical  ORDER BY profilecreationdate DESC LIMIT 10";
+        	$sql="SELECT * FROM 1bd_personal_physical  ORDER BY profilecreationdate DESC LIMIT 20";  //Last 20 Profile View maximum 20 Profile Show
             $result=mysqlexec($sql);
             $count=1;
             while($row=mysqli_fetch_assoc($result)){
@@ -1623,7 +1625,7 @@ echo "<script>alert(\"Invalid Profile ID\")</script>";
 			<span class=\"sb_single_data_recentview\"> <span class=\"sb_value_recentview\"> Occupation </span>      <span class=\"sb_data_recentview\"> {$occupation}</span></span>
 			<span class=\"sb_single_data_recentview\"> <span class=\"sb_value_recentview\"> Address </span>      <span class=\"sb_data_recentview\"> {$permanent_address}</span></span>
 			<span class=\"sb_single_data_recentview\"> <span class=\"sb_value_recentview\"> Birth Year</span>        <span class=\"sb_data_recentview\"> {$dateofbirth}</span></span>
-			<a href=\"viewpro.php?id={$profid}\" target=\"_blank\"><button class=\"view_sb_profile_recentview\"> View Full Profile</button> </a>
+			<a href=\"view_profile.php?id={$profid}\" target=\"_blank\"><button class=\"view_sb_profile_recentview\"> View Full Profile</button> </a>
 			</div></div>";
 			$count++;
         	}
