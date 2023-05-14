@@ -114,7 +114,7 @@ $username=$row['username'];
 -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -->
     <div class="shosurbari-biodata">
 		<div class="shosurbari-biodata-edit">
-            <h1>Edit <span>Biodata</span></h1>
+            <h1>Edit Biodata</h1>
         </div>
 
 	    <form action="editbiodata.php" method="POST">
@@ -181,7 +181,7 @@ if($row){
             <div class="sb-biodata">
 
                 <div class="sb-biodata-field">
-		            <h2>Personal & <span>Physical</span></h2>
+		            <h2>Personal & Physical</h2>
                 </div>
 
 			  <div class="sb-biodata-option">
@@ -432,7 +432,7 @@ $aboutme=$row['aboutme'];
                     <div class="sb-biodata">
 
                         <div class="sb-biodata-field">
-		                   <h2>Personal & <span>Life Style</span></h2>
+		                   <h2>Personal & Life Style</h2>
                         </div>
 
 						    <div class="sb-biodata-option">
@@ -657,7 +657,7 @@ $maximum_education=$row['maximum_education'];
                     <div class="sb-biodata">
 
                         <div class="sb-biodata-field">
-		                   <h2>Educational <span>Qualifications</span></h2>
+		                   <h2>Educational Qualifications</h2>
                         </div>
 
 						<div class="sb-biodata-option">
@@ -792,7 +792,7 @@ $childhood=$row['childhood'];
  <div class="sb-biodata">
 					
 <div class="sb-biodata-field">
-   <h2>Address <span>Details</span></h2>
+   <h2>Address Details</h2>
 </div>
 
 <div class="sb-biodata-option">
@@ -1007,7 +1007,7 @@ $family_religious=$row['family_religious'];
                    <div class="sb-biodata">
 
                         <div class="sb-biodata-field">
-		                   <h2>Family <span>Information</span></h2>
+		                   <h2>Family Information</h2>
                         </div>
 
 						<div class="sb-biodata-option">
@@ -1135,7 +1135,7 @@ $profileby_male=$row['profileby_male'];
                         <div class="sb-biodata">
 
                             <div class="sb-biodata-field">
-		                        <h2>Marriage related <span>Information</span></h2>
+		                        <h2>Marriage related Information</h2>
                             </div>
 
 							<div class="sb-biodata-option">
@@ -1242,7 +1242,7 @@ $profileby_female=$row['profileby_female'];
                         <div class="sb-biodata">
 
                             <div class="sb-biodata-field">
-		                        <h2>Marriage related <span>Information</span></h2>
+		                        <h2>Marriage related Information</h2>
                             </div>
 
 							<div class="sb-biodata-option">
@@ -1341,7 +1341,7 @@ $yourreligion_condition=$row['yourreligion_condition'];
                         <div class="sb-biodata">
 
                             <div class="sb-biodata-field">
-		                        <h2>Religion <span>Details</span></h2>
+		                        <h2>Religion Details</h2>
                             </div>
 
 							<div class="sb-biodata-option">
@@ -1442,7 +1442,7 @@ $partner_attributes=$row['partner_attributes'];
                     <div class="sb-biodata">
 
                         <div class="sb-biodata-field">
-		                   <h2>Expected Life <span>Partner</span></h2>
+		                   <h2>Expected Life Partner</h2>
                         </div>
 
 						<div class="sb-biodata-option">
