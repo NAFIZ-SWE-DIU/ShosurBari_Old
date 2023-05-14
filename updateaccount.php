@@ -670,7 +670,7 @@ $(document).ready(function(){
 
 
         
-        //Password validation
+        //New Password validation
         if (pass_1 == "") {
             document.getElementById('pass_1').style.borderColor = "red";
             document.getElementById('pass_1').scrollIntoView({
@@ -749,7 +749,6 @@ $(document).ready(function(){
             document.getElementById('pass_2').style.backgroundColor = "#ecfeff";
             document.getElementById('pass_2_error').innerHTML = "";
         }
-
         }
     </script>
 
