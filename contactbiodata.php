@@ -81,7 +81,7 @@ $(document).ready(function(){
   <form action="" method="POST" name="myForm" onsubmit="return validateForm()">
     <div class="flex-container">
       <div class="sb-register-login">
-        <div class="sb-biodata-field" style="background: #ff0080 !important;">
+        <div class="sb-biodata-field" style="background: #06b6d4 !important;">
           <h2>Contact Biodata</h2>
         </div>
 
@@ -140,7 +140,7 @@ $(document).ready(function(){
 
 
 <div class="payment-form" style="display: none;">
-<div class="sb-biodata-field" style="background: #ff0080 !important;">
+<div class="sb-biodata-field" style="background: #06b6d4 !important;">
           <h2>Payment Getway</h2>
         </div>
 <div class="shosurbari-biodata-field">
@@ -171,12 +171,12 @@ $(document).ready(function(){
                 <p> Please send money to personal Bkash number 01737-226404</p> <br>
                   <label> Your Bkash Number</label>
                   <input type="text" id="bkash_number" name="bkash_number" placeholder="Enter Number" class="form-text required" />
-                  <span id="bkashnumber-error" style="color:red; font-size:13px;"></span>
+                  <span  id="bkashnumber-error" style="font-size:16px; margin-top: 0px; background: #ffddee; border-radius: 1px 2px 4px 4px; text-align: center; display: none;"></span>
                 </div>
                 <div class="form-group">
                     <label>Bkash Transaction ID</label>
                     <input type="text" id="bkash_trxid" name="bkash_transaction_id" placeholder="Enter TrxID" class="form-text required"/>
-                    <span id="bkash-error" style="color:red; font-size:13px;"></span>
+                    <span  id="bkash-error" style="font-size:16px; margin-top: 0px; background: #ffddee; border-radius: 1px 2px 4px 4px; text-align: center; display: none;"></span>
                 </div>
             </div>
             
@@ -185,12 +185,12 @@ $(document).ready(function(){
             <p> Please send money to personal Nagad number 01737-226404</p> <br>
                     <label> Your Nagad Number</label>
                     <input type="text" id="nagad_number" name="nagad_number" placeholder="Enter Number" class="form-text required"/>
-                    <span id="nagadnumber-error" style="color:red; font-size:13px;"></span>
+                    <span  id="nagadnumber-error" style="font-size:16px; margin-top: 0px; background: #ffddee; border-radius: 1px 2px 4px 4px; text-align: center; display: none;"></span>
                 </div>
                 <div class="form-group">
                     <label> Nagad Transaction ID</label>
                     <input type="text" id="nagad_trxid" name="nagad_transaction_id" placeholder="Enter TxnID" class="form-text required"/>
-                    <span id="nagad-error" style="color:red; font-size:13px;"></span>
+                    <span  id="nagad-error" style="font-size:16px; margin-top: 0px; background: #ffddee; border-radius: 1px 2px 4px 4px; text-align: center; display: none;"></span>
                 </div>
           </div>
           
@@ -201,12 +201,12 @@ $(document).ready(function(){
               <p> Please send money to personal Roket number 01737-2264044</p> <br>
                     <label> Your Roket Number</label>
                     <input type="text" id="roket_number" name="roket_number" placeholder="Enter Number" class="form-text required"/>
-                    <span id="roketnumber-error" style="color:red; font-size:13px;"></span>
+                    <span  id="roketnumber-error" style="font-size:16px; margin-top: 0px; background: #ffddee; border-radius: 1px 2px 4px 4px; text-align: center; display: none;"></span>
               </div>
               <div class="form-group">
                     <label> Roket Transaction ID</label>
                     <input type="text" id="roket_trxid" name="roket_transaction_id" placeholder="Enter TxnID" class="form-text required"/>
-                    <span id="roket-error" style="color:red; font-size:13px;"></span>
+                    <span  id="roket-error" style="font-size:16px; margin-top: 0px; background: #ffddee; border-radius: 1px 2px 4px 4px; text-align: center; display: none;"></span>
                 </div>
           </div>
 
@@ -327,7 +327,20 @@ $(document).ready(function(){
           behavior: 'smooth',
           block: 'center',
         });
-        document.getElementById('name-error').innerHTML = "Please Enter Your Full Name";
+
+        var errorDiv = document.getElementById('name-error');
+        errorDiv.innerHTML = "Please Enter Your Full Name !";
+        errorDiv.style.display = 'block';
+        errorDiv.classList.add('fade-in');
+
+        // Change color multiple times
+        var colors = ['green', 'blue', 'red'];
+        var colorIndex = 0;
+        setInterval(function() {
+          errorDiv.style.color = colors[colorIndex];
+          colorIndex = (colorIndex + 1) % colors.length;
+        }, 500);
+
         return false;
       }else{
         document.getElementById('cust_name').style.borderColor = "green";
@@ -335,22 +348,53 @@ $(document).ready(function(){
       }
 
 
-//Email validation
-            if (email == "") {
+
+
+
+
+          
+      //Email validation
+      if (email == "") {
         document.getElementById('cust_email').style.borderColor = "red";
         document.getElementById('cust_email').scrollIntoView({
           behavior: 'smooth',
           block: 'center',
         });
-        document.getElementById('email-error').innerHTML = "Please Enter Your Email";
+
+        var errorDiv = document.getElementById('email-error');
+        errorDiv.innerHTML = "Please Enter Your Email !";
+        errorDiv.style.display = 'block';
+        errorDiv.classList.add('fade-in');
+
+        // Change color multiple times
+        var colors = ['green', 'blue', 'red'];
+        var colorIndex = 0;
+        setInterval(function() {
+          errorDiv.style.color = colors[colorIndex];
+          colorIndex = (colorIndex + 1) % colors.length;
+        }, 500);
+
         return false;
       }else if(! /^[a-zA-Z0-9._-]+@(gmail|outlook|hotmail|yahoo).com$/.test(email)){
         document.getElementById('cust_email').style.borderColor = "red";
-        document.getElementById('email-error').innerHTML = "Please Enter a valid Email. Ex: (@gmail / @outlook / @hotmail / @yahoo).com";
         document.getElementById('cust_email').scrollIntoView({
           behavior: 'smooth',
           block: 'center',
         });
+
+        var errorDiv = document.getElementById('email-error');
+        errorDiv.innerHTML = "Please Enter a Valid Email. Only Used: (@gmail or @outlook or @hotmail or @yahoo).com";
+        errorDiv.style.display = 'block';
+        errorDiv.classList.add('fade-in');
+
+        // Change color multiple times
+        var colors = ['green', 'blue', 'red'];
+        var colorIndex = 0;
+        setInterval(function() {
+          errorDiv.style.color = colors[colorIndex];
+          colorIndex = (colorIndex + 1) % colors.length;
+        }, 500);
+
         return false;
       }else{
         document.getElementById('cust_email').style.borderColor = "green";
@@ -358,27 +402,66 @@ $(document).ready(function(){
       }
 
 
-  //Phone number validation
-            if (phone == "") {
+
+
+
+        //Phone number validation
+        if (phone == "") {
         document.getElementById('pnumber').style.borderColor = "red";
         document.getElementById('pnumber').scrollIntoView({
           behavior: 'smooth',
           block: 'center',
         });
-        document.getElementById('phone-error').innerHTML = "Please Enter Your Phone Number";
+
+  var errorDiv = document.getElementById('phone-error');
+  errorDiv.innerHTML = "Please Enter Your Phone Number !";
+  errorDiv.style.display = 'block';
+  errorDiv.classList.add('fade-in');
+
+  // Change color multiple times
+  var colors = ['green', 'blue', 'red'];
+  var colorIndex = 0;
+  setInterval(function() {
+    errorDiv.style.color = colors[colorIndex];
+    colorIndex = (colorIndex + 1) % colors.length;
+  }, 500);
+
+  
         return false;
+     // } else if (!/^[0-9]{10,13}$/.test(pnumber)) {
       }else if(pnumber.length < 10 || pnumber.length > 14){
         document.getElementById('pnumber').style.borderColor = "red";
-        document.getElementById('phone-error').innerHTML = "Phone number must be between 10 and 14 characters";
+        document.getElementById('phone-error').innerHTML = "Phone Number Must Be Between 10 To 14 Digits. Don't Used Space & Plus Symbol !";
         document.getElementById('pnumber').scrollIntoView({
           behavior: 'smooth',
           block: 'center',
         });
+
+  var errorDiv = document.getElementById('phone-error');
+  errorDiv.innerHTML = "Please Enter Your Phone Number !";
+  errorDiv.style.display = 'block';
+  errorDiv.classList.add('fade-in');
+
+  // Change color multiple times
+  var colors = ['green', 'blue', 'red'];
+  var colorIndex = 0;
+  setInterval(function() {
+    errorDiv.style.color = colors[colorIndex];
+    colorIndex = (colorIndex + 1) % colors.length;
+  }, 500);
+
         return false;
       }else{
         document.getElementById('pnumber').style.borderColor = "green";
         document.getElementById('phone-error').innerHTML = "";
       }
+
+
+
+
+
+
+
 
 
   // Validate address
@@ -388,7 +471,20 @@ $(document).ready(function(){
           behavior: 'smooth',
           block: 'center',
         });
-        document.getElementById('address-error').innerHTML = "Please Enter Your Address";
+
+  var errorDiv = document.getElementById('address-error');
+  errorDiv.innerHTML = "Please Enter Your Address !";
+  errorDiv.style.display = 'block';
+  errorDiv.classList.add('fade-in');
+
+  // Change color multiple times
+  var colors = ['green', 'blue', 'red'];
+  var colorIndex = 0;
+  setInterval(function() {
+    errorDiv.style.color = colors[colorIndex];
+    colorIndex = (colorIndex + 1) % colors.length;
+  }, 500);
+
         return false;
       }else{
         document.getElementById('permanent_address').style.borderColor = "green";
@@ -403,7 +499,20 @@ $(document).ready(function(){
           behavior: 'smooth',
           block: 'center',
         });
-        document.getElementById('biodata-error').innerHTML = "Please Enter Biodata Number";
+
+  var errorDiv = document.getElementById('biodata-error');
+  errorDiv.innerHTML = "Please Enter Biodata Number !";
+  errorDiv.style.display = 'block';
+  errorDiv.classList.add('fade-in');
+
+  // Change color multiple times
+  var colors = ['green', 'blue', 'red'];
+  var colorIndex = 0;
+  setInterval(function() {
+    errorDiv.style.color = colors[colorIndex];
+    colorIndex = (colorIndex + 1) % colors.length;
+  }, 500);
+
         return false;
       }else{
         document.getElementById('contact_biodatas_number').style.borderColor = "green";
@@ -436,12 +545,27 @@ $(document).ready(function(){
           behavior: 'smooth',
           block: 'center',
         });
-        document.getElementById('bkashnumber-error').innerHTML = "Please Enter Your Bkash Number";
+
+  var errorDiv = document.getElementById('bkashnumber-error');
+  errorDiv.innerHTML = "Please Enter Your Bkash Number !";
+  errorDiv.style.display = 'block';
+  errorDiv.classList.add('fade-in');
+
+  // Change color multiple times
+  var colors = ['green', 'blue', 'red'];
+  var colorIndex = 0;
+  setInterval(function() {
+    errorDiv.style.color = colors[colorIndex];
+    colorIndex = (colorIndex + 1) % colors.length;
+  }, 500);
+
         return false;
       }else{
         document.getElementById('bkash_number').style.borderColor = "green";
         document.getElementById('bkashnumber-error').innerHTML = "";
       }
+
+
 
 // Bkash TrxID
     if (bkash == "") {
@@ -450,15 +574,28 @@ $(document).ready(function(){
           behavior: 'smooth',
           block: 'center',
         });
-        document.getElementById('bkash-error').innerHTML = "Please Enter Bkash TrxID";
+
+  var errorDiv = document.getElementById('bkash-error');
+  errorDiv.innerHTML = "Please Enter Bkash TrxID From Your SMS Box !";
+  errorDiv.style.display = 'block';
+  errorDiv.classList.add('fade-in');
+
+  // Change color multiple times
+  var colors = ['green', 'blue', 'red'];
+  var colorIndex = 0;
+  setInterval(function() {
+    errorDiv.style.color = colors[colorIndex];
+    colorIndex = (colorIndex + 1) % colors.length;
+  }, 500);
+
         return false;
       }else{
         document.getElementById('bkash_trxid').style.borderColor = "green";
         document.getElementById('bkash-error').innerHTML = "";
       }
   } 
-  
-  
+
+
   
   
 // Validate Nagad
@@ -477,12 +614,27 @@ $(document).ready(function(){
           behavior: 'smooth',
           block: 'center',
         });
-        document.getElementById('nagadnumber-error').innerHTML = "Please Enter Your Nagad Number";
+
+        var errorDiv = document.getElementById('nagadnumber-error');
+  errorDiv.innerHTML = "Please Enter Your Nagad Number !";
+  errorDiv.style.display = 'block';
+  errorDiv.classList.add('fade-in');
+
+  // Change color multiple times
+  var colors = ['green', 'blue', 'red'];
+  var colorIndex = 0;
+  setInterval(function() {
+    errorDiv.style.color = colors[colorIndex];
+    colorIndex = (colorIndex + 1) % colors.length;
+  }, 500);
+
         return false;
       }else{
         document.getElementById('nagad_number').style.borderColor = "green";
         document.getElementById('nagadnumber-error').innerHTML = "";
       }
+
+
 
 // Nagad TxnID
         if (nagad == "") {
@@ -491,7 +643,20 @@ $(document).ready(function(){
           behavior: 'smooth',
           block: 'center',
         });
-        document.getElementById('nagad-error').innerHTML = "Please Enter Nagad TxnID";
+
+  var errorDiv = document.getElementById('nagad-error');
+  errorDiv.innerHTML = "Please Enter Nagad TxnID From Your SMS Box !";
+  errorDiv.style.display = 'block';
+  errorDiv.classList.add('fade-in');
+
+  // Change color multiple times
+  var colors = ['green', 'blue', 'red'];
+  var colorIndex = 0;
+  setInterval(function() {
+    errorDiv.style.color = colors[colorIndex];
+    colorIndex = (colorIndex + 1) % colors.length;
+  }, 500);
+
         return false;
       }else{
         document.getElementById('nagad_trxid').style.borderColor = "green";
@@ -518,7 +683,20 @@ $(document).ready(function(){
           behavior: 'smooth',
           block: 'center',
         });
-        document.getElementById('roketnumber-error').innerHTML = "Please Enter Your Roket Number";
+
+  var errorDiv = document.getElementById('roketnumber-error');
+  errorDiv.innerHTML = "Please Enter Your Roket Number !";
+  errorDiv.style.display = 'block';
+  errorDiv.classList.add('fade-in');
+
+  // Change color multiple times
+  var colors = ['green', 'blue', 'red'];
+  var colorIndex = 0;
+  setInterval(function() {
+    errorDiv.style.color = colors[colorIndex];
+    colorIndex = (colorIndex + 1) % colors.length;
+  }, 500);
+
         return false;
       }else{
         document.getElementById('roket_number').style.borderColor = "green";
@@ -532,7 +710,20 @@ $(document).ready(function(){
           behavior: 'smooth',
           block: 'center',
         });
-        document.getElementById('roket-error').innerHTML = "Please Enter Roket TxnID";
+
+  var errorDiv = document.getElementById('roket-error');
+  errorDiv.innerHTML = "Please Enter Roket TxnID From Your SMS Box !";
+  errorDiv.style.display = 'block';
+  errorDiv.classList.add('fade-in');
+
+  // Change color multiple times
+  var colors = ['green', 'blue', 'red'];
+  var colorIndex = 0;
+  setInterval(function() {
+    errorDiv.style.color = colors[colorIndex];
+    colorIndex = (colorIndex + 1) % colors.length;
+  }, 500);
+        
         return false;
       }else{
         document.getElementById('roket_trxid').style.borderColor = "green";
@@ -638,7 +829,7 @@ nextBtn.addEventListener('click', () => {
     border: 1px solid #ccc;
     padding: 6px;
     border-radius: 4px;
-    background: #ff0080;
+    background: #06b6d4;
     cursor: pointer;
     position: relative;
     transition: all .2s ease;
@@ -647,8 +838,8 @@ nextBtn.addEventListener('click', () => {
 }
 
 .form-actions button:hover{
-    color: yellow;
-    background: #00bbff;
+    color: #fff;
+    background: #0aa4ca;
 }
 
   .payment-form {
@@ -732,7 +923,7 @@ nextBtn.addEventListener('click', () => {
   margin-left: auto;
   margin-right: auto;
   padding: 5px 10px;
-  background-color: #00bbff;
+  background-color: #06b6d4;
   color: #fff;
   border: none;
   border-radius: 2px;
@@ -740,7 +931,7 @@ nextBtn.addEventListener('click', () => {
 }
 
 .popup-message button.close-button:hover {
-  background-color: #ff0080;
+  background-color: #0aa4ca;
   color: #fff;
 }
 
