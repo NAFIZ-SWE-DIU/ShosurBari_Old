@@ -63,37 +63,6 @@ function myFunction(x) {
 </script>
 
 <style>
-.bar1, .bar2, .bar3 {
-  width: 25px;
-  height: 3px;
-  background-color: #fff;
-  margin: 6px 0;
-  transition: 0.4s;
-}
-.change .bar1 {
-  transform: translate(0, 11px) rotate(-45deg);
-  color: red;
-}
-.change .bar2 {
-	opacity: 0;
-}
-.change .bar3 {
-  transform: translate(0, -11px) rotate(45deg);
-  color: red;
-}
-.navbar-brand{
-	height: 100%;
-    padding: 0;
-    margin: 10px 0 0 0;
-    padding-left: 15px;
-    font-size: 45px;
-    text-transform: uppercase;
-    letter-spacing: 3px;
-    font-weight: 500;
-	font-size: 17px;
-	color: #fff;
-	
-}
 @media (max-width: 765px){
 .navbar-toggle1 {
     height: 40px;
@@ -148,6 +117,7 @@ function myFunction(x) {
 		        </ul>
 		     </div><!-- /.navbar-collapse -->
 		    </nav>
+			
 			<div id="progress-bar"></div>
 		   </div> <!-- end pull-right -->
           <div class="clearfix"> </div>
