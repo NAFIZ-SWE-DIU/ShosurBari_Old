@@ -103,9 +103,115 @@ $(document).ready(function(){
 				and guide you every step of the way. Start your search for love and companionship with us today.
 			</p>
 		</div>
+
+
+
+		<div class="about_middle">
+			<h2>Our Team</h2>
+			<div class="about_middle-grid1">
+
+				<div class="col-sm-6 testi_grid list-item-0">
+					<blockquote class="testi_grid_blockquote">
+
+						<figure class="featured-thumbnail">
+							<img src="images/nn.png"  class="img-responsive" alt=""/>
+						</figure>
+
+						<div>
+							<h3>Nafizul Islam Noyon</h3>
+							<h4>CEO and Software Engineer:</h4>
+							<p>
+							Nafizul Islam Noyon is the CEO of Shosurbari.com and a highly skilled software engineer. With a passion for creating innovative solutions,
+							Nafizul has been instrumental in the development and maintenance of our matrimony platform. His technical expertise and visionary 
+							leadership have played a crucial role in shaping the website into what it is today. Nafizul's dedication to providing a seamless
+							user experience has been pivotal in establishing Shosurbari.com as a trusted platform for matrimonial connections.
+							</p>
+							<div class="clearfix"></div>
+						</div>
+
+					</blockquote>
+					<small class="testi-meta"><span class="user">Eiusmod tempor incididunt</span></small>
+				</div>
+
+
+				<div class="col-sm-6 testi_grid list-item-1">
+					<blockquote class="testi_grid_blockquote">
+
+						<figure class="featured-thumbnail">
+							<img src="images/nafi.png" class="img-responsive" alt=""/>
+						</figure>
+
+						<div>
+							<h3>Nasimul Islam Nayem</h3>
+							<h4>Security Consultant and MBBS Doctor:</h4>
+							<p>
+								Nasimul Islam Nayem is a key member of our team, bringing a unique blend of expertise as a security consultant 
+								and an accomplished MBBS doctor. With a deep understanding of online security, Nasimul ensures the safety and
+								privacy of our users' data. His commitment to maintaining the highest security standards sets Shosurbari.com 
+								apart as a secure and reliable platform. Nasimul's background in medicine also provides valuable insights into
+								user safety and well-being, further enhancing the overall user experience.
+							</p>
+							<div class="clearfix"></div>
+						</div>
+
+					</blockquote>
+					<small class="testi-meta1"><span class="user">Sint occaecat </span></small>
+				</div>
+				<div class="clearfix"> </div>
+			</div>
+
+
+			<div class="about_middle-grid2">
+					
+				<div class="col-sm-6 testi_grid list-item-0">
+					<blockquote class="testi_grid_blockquote">
+
+						<figure class="featured-thumbnail">
+							<img src="images/nafizn.png" class="img-responsive" alt=""/>
+						</figure>
+
+						<div>
+							<h3>Aive Rahman</h3>
+							<h4>Customer Support Specialist and Civil Engineer:</h4>
+							<p>
+								Aive is an indispensable part of our team, serving as a customer support specialist with a background in civil engineering.
+								With her exceptional communication skills and dedication to customer satisfaction, Aive is always ready to assist users 
+								with any inquiries or concerns they may have. Her ability to empathize and provide prompt solutions ensures that our users
+								receive the support they need, fostering a positive and engaging experience on Shosurbari.com. Aive's technical expertise 
+								as a civil engineer also contributes to enhancing the functionality and usability of our platform.
+							</p>
+							<div class="clearfix"></div>
+						</div>
+
+					</blockquote>
+					<small class="testi-meta"><span class="user">Eiusmod tempor incididunt</span></small>
+				</div>
+
+				<div class="col-sm-6 testi_grid list-item-1">
+					<blockquote class="testi_grid_blockquote">
+
+						<figure class="featured-thumbnail">
+							<img src="images/naf.png" class="img-responsive" alt=""/>
+						</figure>
+
+						<div>
+							<h3>Nafizul Islam Noyon</h3>
+							<h4>Security Consultant and MBBS Doctor:</h4>
+							<p>
+								Aenean nonummy hendrerit mau phasellu porta. Fusce suscipit varius mi sed. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Nulla dui.…
+							</p>
+							<div class="clearfix"></div>
+						</div>
+
+					</blockquote>
+					<small class="testi-meta1"><span class="user">Sint occaecat </span></small>
+				</div>
+				<div class="clearfix"> </div>
+			</div>
+
+		</div>
 	</div>
 
 	<?php include_once("footer.php");?>
-
 </body>
 </html>	
