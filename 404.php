@@ -7,7 +7,7 @@ $result=search();
 <!DOCTYPE HTML>
 <html>
 <head>
-<title>Error - ShosurBari</title>
+<title>Error 404- ShosurBari</title>
 </head>
 <body>
 
@@ -18,7 +18,7 @@ $result=search();
     <div class="error-page-area">
         <div class="error-page-wrap">
             <i class="notika-icon notika-close"></i>
-            <h2>ERROR <span class="counter" style="color:#ff0080;">404!</span></h2>
+            <h2>ERROR <span class="counter" style="color:#06b6d4;">404!</span></h2>
             <p>Sorry, But the page you are looking for has not been found. Try checking the URL for an error, then hit the refresh button on your browser or try found something else in our site.</p>
             <a href="index.php" class="btn">Go to Back Home Page</a>
             <a href="contact.php" class="btn error-btn-mg">Report Problem</a>
@@ -31,7 +31,7 @@ $result=search();
 .error-page-area{
     min-height:100vh;
     text-align:center;
-    background:#00bbff;
+    background:#06b6d4;
 }
 .error-page-area:before{
     content:'';
@@ -68,7 +68,7 @@ $result=search();
     padding: 10px;
 }
 .error-page-wrap .btn{
-	background:#ff0080;
+	background:#06b6d4;
 	color:#fff;
 	border-radius:2px;
 	box-shadow: 0 2px 5px rgba(0,0,0,.16), 0 2px 10px rgba(0,0,0,.12);
@@ -79,7 +79,7 @@ $result=search();
     text-decoration: none;
 }
 .error-page-wrap .btn:hover{
-	background:#00bbff;
+	background:#0aa4ca;
 	color:#fff;
     padding: 7px;
 }
