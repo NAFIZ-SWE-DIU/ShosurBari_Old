@@ -202,7 +202,7 @@ $(document).ready(function(){
         font-size: 17px;
     }
     .gender-select-reg .gender-option input[type="radio"]:checked + label{
-        background: #00bbff;
+        background: #0aa4ca;
         border: 1px solid #ccc;
         color: #fff;
 		border-radius: 3px
@@ -496,7 +496,7 @@ $(document).ready(function(){
         document.getElementById('email').style.borderColor = "green";
         document.getElementById('email_error').innerHTML = "";
       }
-      
+
 
 
       
