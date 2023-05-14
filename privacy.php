@@ -3,13 +3,12 @@
 
 <!DOCTYPE HTML>
 <html>
+
+
 <head>
-<title>Find Your Perfect Partner - Makemylove
- | Privacy :: Make My Love
-</title>
+<title>Privacy & Policy - ShosurBari</title>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-
 <script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); } </script>
 <link href="css/bootstrap-3.1.1.min.css" rel='stylesheet' type='text/css' />
 <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
@@ -37,54 +36,135 @@ $(document).ready(function(){
 });
 </script>
 </head>
+
+
+
+
 <body>
-<!-- ============================  Navigation Start =========================== -->
-<?php include_once("includes/navigation.php");?>
-<!-- ============================  Navigation End ============================ -->
-<div class="grid_3">
-  <div class="container">
-   <div class="breadcrumb1">
-     <ul>
-        <a href="index.php"><i class="fa fa-home home_1"></i></a>
-        <span class="divider">&nbsp;<|>&nbsp;</span>
-        <li class="current-page"><h4>Privacy Policy</h4></li>
-     </ul>
-   </div>
-   <div class="terms_1">
-	    <h3>The standard chunk of Lorem Ipsum used since the 1500s is reproduced</h3>	
-	    <ul class="feature_list">
-			<li><a href="#">1. There are many variations of passages of Lorem Ipsum available.</a></li>
-			<li><a href="#">2. It is a long established fact that a reader.</a></li>
-			<li><a href="#">3. Nulla rutrum nisi mi, iaculis commodo nibh lobortis sed.</a></li>
-			<li><a href="#">4. Sed pulvinar, nunc vitae molestie dapibus, lacus dolor dignissim sapien.</a></li>
-			<li><a href="#">5. Pellentesque ipsum ex, imperdiet quis consequat sed, consectetur ut ante.</a></li>
-			<li><a href="#">6. Aliquam libero felis, mollis vitae elementum vel, bibendum eu tortor.</a></li>
-			<li><a href="#">7. Lorem ipsum dolor sit amet.</a></li>
-		</ul>
-	    <h5>It is a long established fact that a reader will be distracted by the readable content of a page </h5>   
-	    <ul class="feature_list feature_list1">
-			<li><a href="#">There are many variations of passages of Lorem Ipsum available.</a></li>
-			<li><a href="#">It is a long established fact that a reader.</a></li>
-			<li><a href="#">Nulla rutrum nisi mi, iaculis commodo nibh lobortis sed.</a></li>
-			<li><a href="#">Sed pulvinar, nunc vitae molestie dapibus, lacus dolor dignissim sapien.</a></li>
-			<li><a href="#">Pellentesque ipsum ex, imperdiet quis consequat sed, consectetur ut ante.</a></li>
-			<li><a href="#">Aliquam libero felis, mollis vitae elementum vel, bibendum eu tortor.</a></li>
-			<li><a href="#">Lorem ipsum dolor sit amet.</a></li>
-		</ul>
-		<p>"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."</p>
-		<p>"At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate non provident, similique sunt in culpa qui officia deserunt mollitia animi, id est laborum et dolorum fuga. Et harum quidem rerum facilis est et expedita distinctio.</p>
-		<p>But I must explain to you how all this mistaken idea of denouncing pleasure and praising pain was born and I will give you a complete account of the system, and expound the actual teachings of the great explorer of the truth,</p>
-		<p>On the other hand, we denounce with righteous indignation and dislike men who are so beguiled and demoralized by the charms of pleasure of the moment, so blinded by desire, that they cannot foresee the pain and trouble that are bound to ensue; and equal blame belongs to those who fail in their duty through weakness of will, which is the same as saying through shrinking from toil and pain.</p>
-		<p>"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."</p>
-		<p>"At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate non provident, similique sunt in culpa qui officia deserunt mollitia animi, id est laborum et dolorum fuga. Et harum quidem rerum facilis est et expedita distinctio.</p>
-		<p>But I must explain to you how all this mistaken idea of denouncing pleasure and praising pain was born and I will give you a complete account of the system, and expound the actual teachings of the great explorer of the truth,</p>
-		<p>On the other hand, we denounce with righteous indignation and dislike men who are so beguiled and demoralized by the charms of pleasure of the moment, so blinded by desire, that they cannot foresee the pain and trouble that are bound to ensue; and equal blame belongs to those who fail in their duty through weakness of will, which is the same as saying through shrinking from toil and pain.</p>
-     </div>
-   </div>
-</div>
+	<!-- ============================  Navigation Start =========================== -->
+	<?php include_once("includes/navigation.php");?>
+	<!-- ============================  Navigation End ============================ -->
+	
+	<div class="grid_3">
+		<div class="container">
+			<div class="breadcrumb1">
+				<ul>
+					<a href="index.php"><i class="fa fa-home home_1"></i></a>
+					<span class="divider">&nbsp;<|>&nbsp;</span>
+					<li class="current-page"><h4>Privacy & Policy</h4></li>
+				</ul>
+			</div>
+		</div>
+	</div>
 
 
-<?php include_once("footer.php");?>
+
+	<div class="shosurbari-trmcnd-prvplcy">
+		<div class="shosurbari-security">
+			<h1> ShosurBari Privacy & Policy </h1>
+			<p> Welcome to ShosurBari.com, the trusted online matrimony service provider. This Privacy Policy
+				explains how we collect, use, share, and protect your personal information when you use our 
+				services. We are committed to ensuring your privacy and maintaining the security of your data.
+				By using ShosurBari.com, you consent to the practices described in this Privacy Policy.
+			</p>
+
+			<h2> 1. Collection of Personal Information </h2>
+			<p> To provide our services, we collect the following information when you create a new account or update your profile: </p>
+
+			<ol>
+				<li>
+					Contact Information: This includes your name, email address, phone number, and other relevant contact details.
+				</li>
+				
+				<li>
+					Biodata and Profile Information: We collect information about your personal and family background, address, educational qualifications, profession, and other details necessary for matrimonial purposes.
+				</li>
+
+				<li>
+					Profile Photo: You have the option to upload a profile photo, which can be viewed by other members of ShosurBari.com.
+				</li>
+			</ol>
+
+
+			<h2> 2. Use of Collected Information </h2>
+			<p> We utilize the information we collect for the following purposes: </p>
+
+			<ol>
+				<li>
+					Matchmaking: Your personal and profile information helps us in suggesting potential matches that align with your preferences and criteria.
+				</li>
+				
+				<li>
+					Communication: We use your contact information to facilitate communication between you and other members, enabling you to connect and interact on our platform.
+				</li>
+
+				<li>
+					Profile Verification: We may verify the accuracy and authenticity of your profile to ensure the reliability of our services.
+				</li>
+
+				<li>
+					Service Enhancement: Your feedback and usage patterns may be used to improve our platform, features, and user experience.
+				</li>
+			</ol>
+
+
+			<h3> 3. Sharing of Personal Information </h3>
+			<p> At ShosurBari.com, we respect your privacy and do not share your personal information with third parties for marketing purposes. However, we may share certain information in the following cases: </p>
+
+			<ol>
+				<li>
+					Matchmaking and Communication: To facilitate matchmaking and communication, we may share relevant information with potential matches who meet your preferences.
+				</li>
+
+				<li>
+					Legal Requirements: We may disclose your information in response to legal requests, court orders, or to comply with applicable laws and regulations.
+				</li>
+			</ol>
+
+
+			<h3> 4. Control and Access to Your Information </h3>
+			<p> 
+				You can access, update, or delete your personal information by logging into your account on ShosurBari.com.
+				You have the flexibility to manage your profile information, including your profile photo, at any time. 
+				Additionally, you can change your password to maintain account security.
+			</p>
+
+			<h4> 5. Security Measures </h4>
+			<p> 
+				We take comprehensive measures to protect your personal information from unauthorized access, misuse, or loss.
+				We employ industry-standard security technologies, encryption protocols, and secure servers to ensure the confidentiality and integrity of your data.
+			</p>
+
+			<h4> 6. Retention of Personal Information </h4>
+			<p>
+				We retain your personal information for as long as necessary to fulfill the purposes outlined in this Privacy Policy, unless a longer retention period is required or permitted by law.
+			</p>
+
+			<h5> 7. Updates to Privacy Policy </h5>
+			<p>
+				We may update our Privacy Policy from time to time. Any modifications will be communicated to you through the email address associated with your account or by posting a notice on our website.
+				It is recommended to review our Privacy Policy periodically to stay informed about how we handle your information.
+			</p>
+
+			<h4> 8. Use of Cookies </h5>
+			<p>
+				ShosurBari.com uses cookies to enhance your browsing experience and provide personalized features. Cookies are small files stored on your device
+				 that enable us to recognize you and remember your preferences for future visits. By using our website, you consent to the use of cookies in accordance with our Cookie Policy.
+			</p>
+
+			<h4> 9. Contact Us </h5>
+			<p>
+				If you have any questions, concerns, or feedback regarding our Privacy Policy or the handling of your personal information, please <a href="contact.php"> contact us </a> using the provided contact details on our website.
+				We will strive to address your inquiries promptly and resolve any issues to your satisfaction.
+			</p>
+
+			<p>
+				By using ShosurBari.com, you acknowledge that you have read, understood, and agreed to the terms and practices outlined in this Privacy Policy.
+			</p>
+		</div>
+	</div>
+
+	<?php include_once("footer.php");?>
 
 </body>
 </html>	
