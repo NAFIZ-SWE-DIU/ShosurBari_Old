@@ -82,6 +82,7 @@ function scrollToTop() {
 
 
 <script>
+	// Navigation Bar Bottom Shadow when scroll down.
     window.addEventListener("scroll", function() {
   var navbar = document.querySelector(".navbar-inner_1");
   
@@ -94,3 +95,4 @@ function scrollToTop() {
   }
 });
   </script>
+  
