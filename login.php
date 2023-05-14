@@ -199,7 +199,7 @@ $(document).ready(function(){
 .remember-forgot a {
   font-size: 14px;
   white-space: nowrap;
-  color: #00bbff;
+  color: #0aa4ca;
 }
   </style>
 
