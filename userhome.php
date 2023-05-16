@@ -2,16 +2,31 @@
 <?php include_once("functions.php"); ?>
 <?php
 error_reporting(0);
-$id=$_GET['id'];
-if(isloggedin()){
- //do nothing stay here
-} else{
-   header("location:login.php");
+require_once("includes/dbconn.php");
+if (!isset($_SESSION['id'])) {
+  // Redirect the user to the login page or display an error message
+  header("location: login.php");
+  exit;
 }
+
+// Get the user ID from the session
+$userId = $_SESSION['id'];
+
+// Retrieve the user's account status from the database
+$statusSql = "SELECT deactivated FROM users WHERE id = $userId";
+$result = mysqli_query($conn, $statusSql);
+$row = mysqli_fetch_assoc($result);
+$deactivated = $row['deactivated'];
 ?>
+
+
+
+
+
+
+
 <!DOCTYPE HTML>
 <html>
-
 
 <head>
 <title>User Home - ShosurBari</title>
@@ -74,23 +89,44 @@ $(document).ready(function(){
           }
           }
         ?>
-        <?php echo "Welcome: $username"; ?>
+
+        <div class="shosurbari-userhome-status">
+          <h3><?php echo "Welcome: $username"; ?></h3>
+
+          <!-- Display the account status -->
+          <h4 >Account Status:
+            <?php if ($deactivated == 0) {
+              echo '<span style="color: green;">Active</span>';
+              } else {
+              echo '<span style="color: red;">Deactivated</span>';
+              }
+            ?>
+          </h4>
+
+          <form action="deactivate_account.php" method="post">
+            <?php if ($deactivated == 1) { ?>
+              <button type="submit" name="action" value="activate">Activate Account</button>
+            <?php } else { ?>
+              <button type="submit" name="action" value="deactivate">Deactivate Account</button>
+            <?php } ?>
+          </form>
+        </div>
+
       </div>
     </div>
   </div>
 
 
-
-  <div class="navigationpro" style="background-color: #fff;"> <!-- Innernavigation starts -->
+  <div class="navigationpro" style="background-color: #fff;">
     <div class="collapse_userprofile navbar-collapseprofile" id="bs-megadropdown-tabs">
       <ul class="nav navbar-nav nav_1">
         <li><a href="view_profile.php?id=<?php echo $id;?>">View Profile</a></li>
         <li><a href="editbiodata.php?id=<?php echo $id;?>">Post Biodata</a></li>
         <li><a href="updateaccount.php?id=<?php echo $id;?>">Update Account</a></li>
-        <li><a href="search.php">Search Biodata</a></li> 
+        <li><a href="search.php">Search Biodata</a></li>
       </ul>
     </div>
-  </div> <!-- End of inner navigation -->
+  </div>
 
 
   <?php include_once("footer.php")?>
