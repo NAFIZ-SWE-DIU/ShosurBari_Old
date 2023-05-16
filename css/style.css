@@ -1,3 +1,4 @@
+
 /*-- -- -- -- -- -- -- -- -- -- -- -- -- ---- -- --
 -- -- -- -- -- -- -- -- --- -- -- -- -- -- -- -- --
 --                S  T  A  R  T                  --
@@ -67,6 +68,14 @@ button:hover {
 
 .selectsearch{
     color: black;
+}
+
+.grid_3 {
+    padding-top: 5em;
+    padding-right: 0px;
+    padding-bottom: 0em;
+    padding-left: 0px;
+    margin-bottom: 10px;
 }
 
 .breadcrumb1 {
@@ -272,32 +281,6 @@ input#submit-btn {
     right: 0;
     transition: box-shadow 0.3s; /* Add transition for smooth effect */
 }
-  
-/*
-.navbar-inverse-blue .navbar-inner {
-    padding: 0px 0px;
-    background:#06b6d4; 
-    border:none;
-    font-size: 0.85em;
-    position: fixed;
-    width: 100%;
-    z-index: 9999;
-    top: 0;
-    left: 0;
-    right: 0;
-}
-
-.navbar-inner_1{
-    padding: 0px 0px;
-    background:#06b6d4;
-    border:none;
-    font-size: 0.85em;
-    box-shadow: 0 5px 5px rgba(0,0,0,0.14);
-    -webkit-box-shadow: 0 5px 5px rgba(0,0,0,0.14);
-    -moz-box-shadow: 0 5px 5px rgba(0,0,0,0.14);
-    -o-box-shadow: 0 5px 5px rgba(0,0,0,0.14);
-}
-*/
 
 .navbar-header.nav_2 {
     display: none;
@@ -326,7 +309,7 @@ input#submit-btn {
     box-shadow: 0 4px 8px 0 rgb(0 0 0 / 20%), 0 6px 20px 0 rgb(0 0 0 / 19%);
 }
 
-.navbar-nav {
+.navbar-nav { /*Include UserHome Page*/
     margin:0;
     float:right;
 }
@@ -434,7 +417,7 @@ input#submit-btn {
     width: 100%;
 }
 
-ul.nav_1{
+ul.nav_1{  /*Include UserHome Page*/
 	float:none;
 	margin: 0px 0 0 0;
 }
@@ -497,8 +480,8 @@ ul.nav_1{
     color: #fff;
 }
 
-.collapse_userprofile{
-    margin-top: -30px;
+.collapse_userprofile{  /*Include UserHome Page*/
+    margin-top: 20px;
 }
 
 .UserProfile {
@@ -506,7 +489,7 @@ ul.nav_1{
     margin: auto;
 }
 
-.navigationpro{
+.navigationpro{  /*Include UserHome Page*/
     width: 100%;
 }
 
@@ -539,14 +522,6 @@ ul.nav_1{
 .navigationpro .navbar-nav>li>.dropdown-menu{
     border-radius: 2px;
     width: auto;
-}
-
-.grid_3 {
-    padding-top: 5em;
-    padding-right: 0px;
-    padding-bottom: 0em;
-    padding-left: 0px;
-    margin-bottom: 10px;
 }
 
 
@@ -834,17 +809,7 @@ i.fa1:hover {
     font-weight: 600;
 }
 
-.banner_info h5 {
-    font-size: 1.5em;
-    font-family: 'Oswald', sans-serif;
-    margin-top:5px;
-    margin-bottom:0px;
-    text-align: center;
-    line-height: 35px;
-    color: #0aa4ca;
-}
-
-.hadith{
+.shosurbari-title{
     border: 2px solid;
     border-radius: 10px;
     animation: colorAnimation 10s linear infinite;
@@ -854,23 +819,14 @@ i.fa1:hover {
     background: #ecfeff;
 }
 
-.hadith h6 {
-    font-size: 1.3em;
+.shosurbari-title h4 {
+    font-size: 25px;
     font-family: 'Oswald', sans-serif;
     text-align: center;
-    font-weight: 600;
-    line-height: 40px;
     margin-top: 10px;
+    line-height: 30px;
 }
 
-.hadith p {
-    font-size: 1em;
-    font-family: 'Oswald', sans-serif;
-    text-align: center;
-    color: #0aa4ca;
-    line-height: 20px;
-    margin-bottom: 10px;
-}
 
 @keyframes colorAnimation {
     0% {
@@ -2135,6 +2091,60 @@ ol li{
 
 
 
+/*-- -- -- -- -- -- -- -- -- -- -- -- -- ---- -- --
+-- -- -- -- -- -- -- -- --- -- -- -- -- -- -- -- --
+--                  S  T  A  R  T                --
+--          SHOSUR BARI - USER HOME PAGE         --
+-- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- ---
+-- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -*/
+.shosurbari-userhome-status{
+    padding: 20px 0px;
+    margin-top: 10px;
+}
+
+.shosurbari-userhome-status h3,
+.shosurbari-userhome-status h4{
+  font-size: 17px;
+  font-weight: 450;
+}
+
+.shosurbari-userhome-status form{
+    margin-left: 0px;
+    width: 185px;
+    margin-top: -10px;
+}
+
+.shosurbari-userhome-status form button{
+    margin-top: 0px;
+    margin-left: 0px;
+    width: 185px;
+    padding: 7px;
+    background: transparent;
+    color: #000;
+    border: 2px solid #06b6d4;
+    border-radius: 2px;
+    font-size: 17px;
+    transition: 0.4s;
+}
+
+.shosurbari-userhome-status form button:hover{
+    background: #0aa4ca;
+    color: #fff;
+    transform: scale(1.1);
+}
+/*-- -- -- -- -- -- -- -- -- -- -- -- -- ---- -- --
+-- -- -- -- -- -- -- -- --- -- -- -- -- -- -- -- --
+--                   E   N   D                   --
+--          SHOSUR BARI - USER HOME PAGE         --
+-- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- ---
+-- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -*/
+
+
+
+
+
+
+
 
 /* Table colunm border start*/
 td.day_label {
@@ -2195,29 +2205,6 @@ a#profile-tab, a#home-tab, a#profile-tab1{
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 /* --services --*/
 .page_header{
 	text-align:center;
@@ -2225,22 +2212,18 @@ a#profile-tab, a#home-tab, a#profile-tab1{
 }
 .page_header h1{
 	font-family: 'Oswald', sans-serif;
-    font-size: 2.5em;
+    font-size: 33px;
     color: #000;
     margin-bottom:1em;
     font-weight: 500;
 }
-.page_header h3{
-	font-size: 1.3em;
-    color: #06b6d4;
-    margin-bottom: 1em;
-    font-weight: 400;
-}
+
 .page_header p{
-	font-size:0.85em;
-    color:#555;
+	font-size: 16px;
+    color:#000;
     line-height:1.8em;
 }
+
 i.icon_4{
 	color:#06b6d4;
 	display: block;
@@ -2249,7 +2232,13 @@ i.icon_4{
 }
 
 
-
+.page_header h1{
+	font-family: 'Oswald', sans-serif;
+    font-size: 33px;
+    color: #000;
+    margin-bottom:1em;
+    font-weight: 500;
+}
 
 
 
