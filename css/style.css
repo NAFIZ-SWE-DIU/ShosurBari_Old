@@ -2013,9 +2013,7 @@ small.testi-meta1{
     background-color: #0aa4ca;
     color: #fff;
 }
-/*PopUp Message End*/
   
-/* Overlay styles */
 .overlay {
     display: none;
     position: fixed;
@@ -2026,6 +2024,7 @@ small.testi-meta1{
     background-color: rgba(0, 0, 0, 0.5);
     z-index: 9998;
 }
+/*PopUp Message End*/
 /*-- -- -- -- -- -- -- -- -- -- -- -- -- ---- -- --
 -- -- -- -- -- -- -- -- --- -- -- -- -- -- -- -- --
 --                   E   N   D                   --
