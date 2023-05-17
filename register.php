@@ -66,13 +66,8 @@ $(document).ready(function(){
     </div>
   </div>
 
-  <!-- -- -- -- -- -- -- -- -- -- -- -- -- ---- -- --
-  -- -- -- -- -- -- -- -- --- -- -- -- -- -- -- -- --
-  --                S  T  A  R  T                  --
-  --   SHOSURBARI BIODATA FORM FIELD ALL SECTION   --
-  --                                               --
-  -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- ---
-  -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -->
+
+
   <div class="shosurbari-biodata">
     <form action="" method="POST" name="myForm" onsubmit="return validateForm()">
       <div class="flex-container">
@@ -188,37 +183,42 @@ $(document).ready(function(){
 
 
 
-
-
+<!-- Phone Number Country Code With Country Flag -->
 <script>
-            $(document).ready(function() {
-            var input = document.querySelector("#pnumber");
-            window.intlTelInput(input, {
-              separateDialCode: true,
-              preferredCountries: ["bd"]
-            });
-            });
-          </script>
+  $(document).ready(function() {
+    var input = document.querySelector("#pnumber");
+    window.intlTelInput(input, {
+    separateDialCode: true,
+    preferredCountries: ["bd"]
+    });
+  });
+</script>
 
 
+
+
+
+<!-- Phone Number Country Code With Country Flag -->
 <script>
-            let showPass = document.querySelectorAll('.show-password');
-            showPass.forEach(function(el) {
-              el.addEventListener('click', function(){
-                let input = this.previousElementSibling;
-                  if (input.type === "password") {
-                  input.type = "text";
-                  this.innerHTML = "<i class='fa fa-eye-slash'></i>";
-                  } else {
-                  input.type = "password";
-                  this.innerHTML = "<i class='fa fa-eye'></i>";
-                }
-              });
-            });
-          </script>
+  let showPass = document.querySelectorAll('.show-password');
+  showPass.forEach(function(el) {
+    el.addEventListener('click', function(){
+      let input = this.previousElementSibling;
+      if (input.type === "password") {
+      input.type = "text";
+      this.innerHTML = "<i class='fa fa-eye-slash'></i>";
+      } else {
+      input.type = "password";
+      this.innerHTML = "<i class='fa fa-eye'></i>";
+      }
+    });
+  });
+</script>
 
 
 
+
+<!-- Gender Selection -->
 <script>
   const form = document.querySelector('form');
   const maleRadio = document.querySelector('#male');
@@ -234,25 +234,25 @@ $(document).ready(function(){
       genderError.innerHTML = 'Please Select Your Gender!';
       genderError.style.display = 'block';
       document.querySelectorAll('input[name=gender]').forEach(r => {
-        r.classList.add('error');
+      r.classList.add('error');
       });
 
       // Color animation
       let colorIndex = 0;
       const colors = ['green', 'blue', 'red'];
       const animationInterval = setInterval(() => {
-        genderError.style.color = colors[colorIndex];
-        colorIndex = (colorIndex + 1) % colors.length;
+      genderError.style.color = colors[colorIndex];
+      colorIndex = (colorIndex + 1) % colors.length;
       }, 500);
 
-      errors++;
+    errors++;
     }
 
     if (maleRadio.checked || femaleRadio.checked) {
       genderError.innerHTML = '';
       genderError.style.display = 'none';
       document.querySelectorAll('input[name=gender]').forEach(r => {
-        r.classList.remove('error');
+      r.classList.remove('error');
       });
     }
 
@@ -265,7 +265,7 @@ $(document).ready(function(){
   function genderSelected(radio) {
     genderError.style.display = 'none';
     document.querySelectorAll('input[name=gender]').forEach(r => {
-      r.classList.remove('error');
+    r.classList.remove('error');
     });
 
     if (radio.value === 'Male') {
@@ -277,296 +277,311 @@ $(document).ready(function(){
 </script>
 
 
+
+
+
+<!-- Gender Selection -->
 <script>
-  		// Form Input field when error the show border red and scroll up start
-      function validateForm(){
-      var fname = document.forms["myForm"]["fname"].value;
-      var uname = document.forms["myForm"]["uname"].value;
-      var email = document.forms["myForm"]["email"].value;
-      var pnumber = document.forms["myForm"]["pnumber"].value;
-      var pass_1 = document.forms["myForm"]["pass_1"].value;
-      var pass_2 = document.forms["myForm"]["pass_2"].value;
+  // Form Input field when error then show border red and scroll - JS start
+  function validateForm(){
+    var fname = document.forms["myForm"]["fname"].value;
+    var uname = document.forms["myForm"]["uname"].value;
+    var email = document.forms["myForm"]["email"].value;
+    var pnumber = document.forms["myForm"]["pnumber"].value;
+    var pass_1 = document.forms["myForm"]["pass_1"].value;
+    var pass_2 = document.forms["myForm"]["pass_2"].value;
 
 
 
     
-      //Full Name validation
-      if (fname == "") {
-        document.getElementById('fname').style.borderColor = "red";
-        document.getElementById('fname').scrollIntoView({
-          behavior: 'smooth',
-          block: 'center',
-        });
+    //Full Name validation
+    if (fname == "") {
+      document.getElementById('fname').style.borderColor = "red";
+      document.getElementById('fname').scrollIntoView({
+      behavior: 'smooth',
+      block: 'center',
+      });
 
-        var errorDiv = document.getElementById('fname_error');
-        errorDiv.innerHTML = "Please Enter Your Full Name !";
-        errorDiv.style.display = 'block';
-        errorDiv.classList.add('fade-in');
+      var errorDiv = document.getElementById('fname_error');
+      errorDiv.innerHTML = "Please Enter Your Full Name !";
+      errorDiv.style.display = 'block';
+      errorDiv.classList.add('fade-in');
         
 
-        // Change color multiple times
-        var colors = ['green', 'blue', 'red'];
-        var colorIndex = 0;
-        setInterval(function() {
-          errorDiv.style.color = colors[colorIndex];
-          colorIndex = (colorIndex + 1) % colors.length;
-        }, 500);
+      // Change color multiple times
+      var colors = ['green', 'blue', 'red'];
+      var colorIndex = 0;
+      setInterval(function() {
+      errorDiv.style.color = colors[colorIndex];
+      colorIndex = (colorIndex + 1) % colors.length;
+      }, 500);
 
-        return false;
-      }else{
-        document.getElementById('fname').style.borderColor = "green";
-        document.getElementById('fname_error').innerHTML = "";
-      }
-      
-
+    return false;
+    }else{
+    document.getElementById('fname').style.borderColor = "green";
+    document.getElementById('fname_error').innerHTML = "";
+    }
 
 
 
-      //Username validation
-      if (uname == "") {
-        document.getElementById('uname').style.borderColor = "red";
-        document.getElementById('uname').scrollIntoView({
-          behavior: 'smooth',
-          block: 'center',
-        });
 
-        var errorDiv = document.getElementById('uname_error');
-        errorDiv.innerHTML = "Please Enter Your Username !";
-        errorDiv.style.display = 'block';
-        errorDiv.classList.add('fade-in');
 
-        // Change color multiple times
-        var colors = ['green', 'blue', 'red'];
-        var colorIndex = 0;
-        setInterval(function() {
-          errorDiv.style.color = colors[colorIndex];
-          colorIndex = (colorIndex + 1) % colors.length;
-        }, 500);
+    //Username validation
+    if (uname == "") {
+      document.getElementById('uname').style.borderColor = "red";
+      document.getElementById('uname').scrollIntoView({
+      behavior: 'smooth',
+      block: 'center',
+      });
 
-        return false;
+      var errorDiv = document.getElementById('uname_error');
+      errorDiv.innerHTML = "Please Enter Your Username !";
+      errorDiv.style.display = 'block';
+      errorDiv.classList.add('fade-in');
 
-      }else if (! /^[A-Za-z0-9]+$/.test(uname)){
-        document.getElementById('uname').style.borderColor = "red";
-        document.getElementById('uname').scrollIntoView({
-          behavior: 'smooth',
-          block: 'center',
-        });
+      // Change color multiple times
+      var colors = ['green', 'blue', 'red'];
+      var colorIndex = 0;
+      setInterval(function() {
+      errorDiv.style.color = colors[colorIndex];
+      colorIndex = (colorIndex + 1) % colors.length;
+      }, 500);
 
-        var errorDiv = document.getElementById('uname_error');
-        errorDiv.innerHTML = "Please Enter Only Letters And Numbers. Can Not Used Any Symbol & Space !";
-        errorDiv.style.display = 'block';
-        errorDiv.classList.add('fade-in');
+    return false;
 
-        // Change color multiple times
-        var colors = ['green', 'blue', 'red'];
-        var colorIndex = 0;
-        setInterval(function() {
-          errorDiv.style.color = colors[colorIndex];
-          colorIndex = (colorIndex + 1) % colors.length;
-        }, 500);
+    }else if (! /^[A-Za-z0-9]+$/.test(uname)){
+      document.getElementById('uname').style.borderColor = "red";
+      document.getElementById('uname').scrollIntoView({
+      behavior: 'smooth',
+      block: 'center',
+      });
 
-        return false;
-      }else{
-        document.getElementById('uname').style.borderColor = "green";
-        document.getElementById('uname_error').innerHTML = "";
-      }
+      var errorDiv = document.getElementById('uname_error');
+      errorDiv.innerHTML = "Please Enter Only Letters And Numbers. Can Not Used Any Symbol & Space !";
+      errorDiv.style.display = 'block';
+      errorDiv.classList.add('fade-in');
+
+      // Change color multiple times
+      var colors = ['green', 'blue', 'red'];
+      var colorIndex = 0;
+      setInterval(function() {
+      errorDiv.style.color = colors[colorIndex];
+      colorIndex = (colorIndex + 1) % colors.length;
+      }, 500);
+
+    return false;
+    }else{
+    document.getElementById('uname').style.borderColor = "green";
+    document.getElementById('uname_error').innerHTML = "";
+    }
 
 
 
 
     
-      //Email validation
-      if (email == "") {
-        document.getElementById('email').style.borderColor = "red";
-        document.getElementById('email').scrollIntoView({
-          behavior: 'smooth',
-          block: 'center',
-        });
+    //Email validation
+    if (email == "") {
+      document.getElementById('email').style.borderColor = "red";
+      document.getElementById('email').scrollIntoView({
+      behavior: 'smooth',
+      block: 'center',
+      });
 
-        var errorDiv = document.getElementById('email_error');
-        errorDiv.innerHTML = "Please Enter Your Email !";
-        errorDiv.style.display = 'block';
-        errorDiv.classList.add('fade-in');
+      var errorDiv = document.getElementById('email_error');
+      errorDiv.innerHTML = "Please Enter Your Email !";
+      errorDiv.style.display = 'block';
+      errorDiv.classList.add('fade-in');
 
-        // Change color multiple times
-        var colors = ['green', 'blue', 'red'];
-        var colorIndex = 0;
-        setInterval(function() {
-          errorDiv.style.color = colors[colorIndex];
-          colorIndex = (colorIndex + 1) % colors.length;
-        }, 500);
+      // Change color multiple times
+      var colors = ['green', 'blue', 'red'];
+      var colorIndex = 0;
+      setInterval(function() {
+      errorDiv.style.color = colors[colorIndex];
+      colorIndex = (colorIndex + 1) % colors.length;
+      }, 500);
 
-        return false;
-      }else if(! /^[a-zA-Z0-9._-]+@(gmail|outlook|hotmail|yahoo).com$/.test(email)){
-        document.getElementById('email').style.borderColor = "red";
-        document.getElementById('email').scrollIntoView({
-          behavior: 'smooth',
-          block: 'center',
-        });
+    return false;
 
-        var errorDiv = document.getElementById('email_error');
-        errorDiv.innerHTML = "Please Enter a Valid Email. Only Used: (@gmail or @outlook or @hotmail or @yahoo).com";
-        errorDiv.style.display = 'block';
-        errorDiv.classList.add('fade-in');
+    }else if(! /^[a-zA-Z0-9._-]+@(gmail|outlook|hotmail|yahoo).com$/.test(email)){
+      document.getElementById('email').style.borderColor = "red";
+      document.getElementById('email').scrollIntoView({
+      behavior: 'smooth',
+      block: 'center',
+      });
 
-        // Change color multiple times
-        var colors = ['green', 'blue', 'red'];
-        var colorIndex = 0;
-        setInterval(function() {
-          errorDiv.style.color = colors[colorIndex];
-          colorIndex = (colorIndex + 1) % colors.length;
-        }, 500);
+      var errorDiv = document.getElementById('email_error');
+      errorDiv.innerHTML = "Please Enter a Valid Email. Only Used: (@gmail or @outlook or @hotmail or @yahoo).com";
+      errorDiv.style.display = 'block';
+      errorDiv.classList.add('fade-in');
 
-        return false;
-      }else{
-        document.getElementById('email').style.borderColor = "green";
-        document.getElementById('email_error').innerHTML = "";
-      }
+      // Change color multiple times
+      var colors = ['green', 'blue', 'red'];
+      var colorIndex = 0;
+      setInterval(function() {
+      errorDiv.style.color = colors[colorIndex];
+      colorIndex = (colorIndex + 1) % colors.length;
+      }, 500);
 
-
-
-      
-
-// Phone number validation
-if (pnumber == "") {
-  var pnumberElement = document.getElementById('pnumber');
-  pnumberElement.style.borderColor = "red";
-  pnumberElement.scrollIntoView({
-    behavior: 'smooth',
-    block: 'center',
-  });
-
-  var errorDiv = document.getElementById('pnumber_error');
-  errorDiv.innerHTML = "Please Enter Your Phone Number !";
-  errorDiv.style.display = 'block';
-  errorDiv.classList.add('fade-in');
-
-  // Change color multiple times
-  var colors = ['green', 'blue', 'red'];
-  var colorIndex = 0;
-  setInterval(function() {
-    errorDiv.style.color = colors[colorIndex];
-    colorIndex = (colorIndex + 1) % colors.length;
-  }, 500);
-
-  return false;
-} else if (!/^[0-9]{10,13}$/.test(pnumber)) {
-  var pnumberElement = document.getElementById('pnumber');
-  pnumberElement.style.borderColor = "red";
-  pnumberElement.scrollIntoView({
-    behavior: 'smooth',
-    block: 'center',
-  });
-
-  var errorDiv = document.getElementById('pnumber_error');
-  errorDiv.innerHTML = "Phone Number Must Be Between 10 To 14 Digits. Don't Used Space & Plus Symbol !";
-  errorDiv.style.display = 'block';
-  errorDiv.classList.add('fade-in');
-
-  // Change color multiple times
-  var colors = ['green', 'blue', 'red'];
-  var colorIndex = 0;
-  setInterval(function() {
-    errorDiv.style.color = colors[colorIndex];
-    colorIndex = (colorIndex + 1) % colors.length;
-  }, 500);
-
-  return false;
-} else {
-  document.getElementById('pnumber').style.borderColor = "green";
-  document.getElementById('pnumber_error').innerHTML = "";
-}
-
-
-
-      
-      //Password validation
-      if (pass_1 == "") {
-        document.getElementById('pass_1').style.borderColor = "red";
-        document.getElementById('pass_1').scrollIntoView({
-          behavior: 'smooth',
-          block: 'center',
-        });
-
-        var errorDiv = document.getElementById('pass_1_error');
-        errorDiv.innerHTML = "Please Enter Your New Password !";
-        errorDiv.style.display = 'block';
-        errorDiv.classList.add('fade-in');
-
-        // Change color multiple times
-        var colors = ['green', 'blue', 'red'];
-        var colorIndex = 0;
-        setInterval(function() {
-          errorDiv.style.color = colors[colorIndex];
-          colorIndex = (colorIndex + 1) % colors.length;
-        }, 500);
-
-        return false;
-      }else{
-        document.getElementById('pass_1').style.borderColor = "green";
-        document.getElementById('pass_1_error').innerHTML = "";
-      }
-
-      
-
-
-      //Confirm Password validation
-      if (pass_2 == "") {
-        document.getElementById('pass_2').style.borderColor = "red";
-        document.getElementById('pass_2').scrollIntoView({
-          behavior: 'smooth',
-          block: 'center',
-        });
-
-        var errorDiv = document.getElementById('pass_2_error');
-        errorDiv.innerHTML = "Please Enter Your Confirm Password !";
-        errorDiv.style.display = 'block';
-        errorDiv.classList.add('fade-in');
-
-        // Change color multiple times
-        var colors = ['green', 'blue', 'red'];
-        var colorIndex = 0;
-        setInterval(function() {
-          errorDiv.style.color = colors[colorIndex];
-          colorIndex = (colorIndex + 1) % colors.length;
-        }, 500);
-
-        return false;
-      }else if(pass_2 != pass_1){
-        document.getElementById('pass_2').style.borderColor = "red";
-        document.getElementById('pass_2').scrollIntoView({
-          behavior: 'smooth',
-          block: 'center',
-        });
-
-        var errorDiv = document.getElementById('pass_2_error');
-        errorDiv.innerHTML = "Your Password Do Not Match !";
-        errorDiv.style.display = 'block';
-        errorDiv.classList.add('fade-in');
-
-        // Change color multiple times
-        var colors = ['green', 'blue', 'red'];
-        var colorIndex = 0;
-        setInterval(function() {
-          errorDiv.style.color = colors[colorIndex];
-          colorIndex = (colorIndex + 1) % colors.length;
-        }, 500);
-
-        return false;
-      }else{
-        document.getElementById('pass_2').style.borderColor = "green";
-        document.getElementById('pass_2_error').innerHTML = "";
-      }
-
+    return false;
+    }else{
+    document.getElementById('email').style.borderColor = "green";
+    document.getElementById('email_error').innerHTML = "";
     }
-		// Form Input field when error the show border red and scroll up start
 
-  </script>
 
+
+      
+
+    // Phone number validation
+    if (pnumber == "") {
+      var pnumberElement = document.getElementById('pnumber');
+      pnumberElement.style.borderColor = "red";
+      pnumberElement.scrollIntoView({
+      behavior: 'smooth',
+      block: 'center',
+      });
+
+      var errorDiv = document.getElementById('pnumber_error');
+      errorDiv.innerHTML = "Please Enter Your Phone Number !";
+      errorDiv.style.display = 'block';
+      errorDiv.classList.add('fade-in');
+
+      // Change color multiple times
+      var colors = ['green', 'blue', 'red'];
+      var colorIndex = 0;
+      setInterval(function() {
+      errorDiv.style.color = colors[colorIndex];
+      colorIndex = (colorIndex + 1) % colors.length;
+      }, 500);
+
+    return false;
+
+    } else if (!/^[0-9]{10,13}$/.test(pnumber)) {
+      var pnumberElement = document.getElementById('pnumber');
+      pnumberElement.style.borderColor = "red";
+      pnumberElement.scrollIntoView({
+      behavior: 'smooth',
+      block: 'center',
+      });
+
+      var errorDiv = document.getElementById('pnumber_error');
+      errorDiv.innerHTML = "Phone Number Must Be Between 10 To 14 Digits. Don't Used Space & Plus Symbol !";
+      errorDiv.style.display = 'block';
+      errorDiv.classList.add('fade-in');
+
+      // Change color multiple times
+      var colors = ['green', 'blue', 'red'];
+      var colorIndex = 0;
+      setInterval(function() {
+      errorDiv.style.color = colors[colorIndex];
+      colorIndex = (colorIndex + 1) % colors.length;
+      }, 500);
+
+    return false;
+
+    } else {
+    document.getElementById('pnumber').style.borderColor = "green";
+    document.getElementById('pnumber_error').innerHTML = "";
+    }
+
+
+
+
+      
+    //Password validation
+    if (pass_1 == "") {
+      document.getElementById('pass_1').style.borderColor = "red";
+      document.getElementById('pass_1').scrollIntoView({
+      behavior: 'smooth',
+      block: 'center',
+      });
+
+      var errorDiv = document.getElementById('pass_1_error');
+      errorDiv.innerHTML = "Please Enter Your New Password !";
+      errorDiv.style.display = 'block';
+      errorDiv.classList.add('fade-in');
+
+      // Change color multiple times
+      var colors = ['green', 'blue', 'red'];
+      var colorIndex = 0;
+      setInterval(function() {
+      errorDiv.style.color = colors[colorIndex];
+      colorIndex = (colorIndex + 1) % colors.length;
+      }, 500);
+
+    return false;
+
+    }else{
+    document.getElementById('pass_1').style.borderColor = "green";
+    document.getElementById('pass_1_error').innerHTML = "";
+    }
+
+      
+
+
+    //Confirm Password validation
+    if (pass_2 == "") {
+      document.getElementById('pass_2').style.borderColor = "red";
+      document.getElementById('pass_2').scrollIntoView({
+      behavior: 'smooth',
+      block: 'center',
+      });
+
+      var errorDiv = document.getElementById('pass_2_error');
+      errorDiv.innerHTML = "Please Enter Your Confirm Password !";
+      errorDiv.style.display = 'block';
+      errorDiv.classList.add('fade-in');
+
+      // Change color multiple times
+      var colors = ['green', 'blue', 'red'];
+      var colorIndex = 0;
+      setInterval(function() {
+      errorDiv.style.color = colors[colorIndex];
+      colorIndex = (colorIndex + 1) % colors.length;
+      }, 500);
+
+    return false;
+
+    }else if(pass_2 != pass_1){
+      document.getElementById('pass_2').style.borderColor = "red";
+      document.getElementById('pass_2').scrollIntoView({
+      behavior: 'smooth',
+      block: 'center',
+      });
+
+      var errorDiv = document.getElementById('pass_2_error');
+      errorDiv.innerHTML = "Your Password Do Not Match !";
+      errorDiv.style.display = 'block';
+      errorDiv.classList.add('fade-in');
+
+      // Change color multiple times
+      var colors = ['green', 'blue', 'red'];
+      var colorIndex = 0;
+      setInterval(function() {
+      errorDiv.style.color = colors[colorIndex];
+      colorIndex = (colorIndex + 1) % colors.length;
+      }, 500);
+
+    return false;
+
+    }else{
+    document.getElementById('pass_2').style.borderColor = "green";
+    document.getElementById('pass_2_error').innerHTML = "";
+    }
+
+
+  }
+  // Form Input field when error then show border red and scroll - JS End
+</script>
+
+
+
+
+
+<!-- Agree with Term & Conditions + Privacy & Policy Check Box -->
 <script>
-  // check box
-    function toggleSubmitButton(checked) {
-        var submitButton = document.getElementById("edit-submit");
-        submitButton.style.display = checked ? "block" : "none";
-    }
+  function toggleSubmitButton(checked) {
+    var submitButton = document.getElementById("edit-submit");
+    submitButton.style.display = checked ? "block" : "none";
+  }
 </script>
