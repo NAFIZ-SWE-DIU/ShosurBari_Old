@@ -158,6 +158,63 @@ form {
     box-shadow: 0 0 3px #fff inset, 0 1px 1px rgb(0 0 0 / 10%);
 }
 
+.form-text-describe {
+    display: block;
+    width: 100%;
+    height: 100px;
+    margin-top: 2px;
+    margin-bottom: 20px;
+    padding: 6px 12px;
+    font-size: 16px;
+    line-height: 1.5;
+    color: black;
+    background-color: #4cafe809;
+    background-image: none;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    outline: none;
+    -webkit-transition: border-color ease-in-out .15s, -webkit-box-shadow ease-in-out .15s;
+    -o-transition: border-color ease-in-out .15s, box-shadow ease-in-out .15s;
+    transition: border-color ease-in-out .15s, box-shadow ease-in-out .15s;
+}
+
+label{
+    display: inline-block;
+    margin-bottom: 2px;
+    font-weight: 700;
+    margin-top: 2px;
+}
+
+.form-text-describe:focus{
+    border-color: #0aa4ca;
+    outline: 0;
+    box-shadow: none !important;
+}
+
+.form-text, .form-select, .form-textarea {
+    display: block;
+    width: 100%;
+    height: 38px;
+    padding: 6px 12px;
+    font-size: 16px;
+    line-height: 1.5;
+    color: black;
+    background-color: #4cafe809;
+    background-image: none;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    outline: none;
+    -webkit-transition: border-color ease-in-out .15s, -webkit-box-shadow ease-in-out .15s;
+    -o-transition: border-color ease-in-out .15s, box-shadow ease-in-out .15s;
+    transition: border-color ease-in-out .15s, box-shadow ease-in-out .15s;
+}
+
+.form-control:focus, .form-text:focus, .form-textarea:focus, .form-select:focus{
+    border-color: #0aa4ca;
+    outline: 0;
+    box-shadow: none !important;
+}
+
 select option:checked{
     background: #06b6d4;
     color: #fff;
@@ -219,7 +276,7 @@ input#submit-btn {
 }
 
 
-/*Form Size with Media responsive START*/
+/*For Remember Form Size with Media responsive START*/
 .mx-min-wd {
     width: 400px;
 }
@@ -239,7 +296,7 @@ input#submit-btn {
 .-wd-320 {
     width: 263px;
 }
-/*Form Size with Media responsive END*/
+/*For Remember Form Size with Media responsive END*/
 /*Form Type End*/
 /*-- -- -- -- -- -- -- -- -- -- -- -- -- ---- -- --
 -- -- -- -- -- -- -- -- --- -- -- -- -- -- -- -- --
@@ -2143,6 +2200,243 @@ ol li{
 
 
 
+/*-- -- -- -- -- -- -- -- -- -- -- -- -- ---- -- --
+-- -- -- -- -- -- -- -- --- -- -- -- -- -- -- -- --
+--                  S  T  A  R  T                --
+--        SHOSUR BARI - REGISTRATION PAGE        --
+-- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- ---
+-- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -*/
+/*Gender Option Start*/
+.sb-profile-gender{
+    text-overflow: ellipsis;
+    width: 100%;
+    white-space: nowrap;
+    overflow: hidden;
+    color: #06b6d4;
+    border-radius: 4px;
+}
+.gender-select-reg{
+    padding: 00px 10px;
+    display: flex;
+	align-items: center;
+	border: 1px solid #ccc;
+    border-radius: 4px;
+    -webkit-border-radius: 4px;
+    background: #4cafe809;
+}
+
+.gender-select-reg .gender-option{
+    margin-top: 0px;
+    margin-bottom: 0px;
+    margin-left: 20px;
+    margin-right: -50px;
+    width: 78%;
+}
+
+.gender-select-reg .gender-option input[type="radio"]{
+	display: none;
+}
+
+.gender-select-reg .gender-option label{
+    display: inline-block;
+    padding: 3px;
+    transition: all 0.3s;
+	font-weight: 500;
+    cursor: pointer;
+    margin-top: 4px;
+    margin-bottom: 4px;
+    margin-left: -27px;
+    margin-right: 19px;
+	border: 1px solid #ccc;
+	border-radius: 3px;
+    background: white;
+    }
+    
+.gender-select-reg .gender-option label i{
+    font-size: 17px;
+}
+
+.gender-select-reg .gender-option input[type="radio"]:checked + label{
+    background: #0aa4ca;
+    border: 1px solid #ccc;
+    color: #fff;
+	border-radius: 3px
+}
+
+.gender-error{
+	display: block;
+    margin-top: 0px;
+    margin-bottom: 25px;
+}
+
+.error {
+	text-align:left;
+	margin-top: 3px;
+    border-radius: 4px;
+    color: red;
+    font-size: 13px;
+}
+
+.success {
+    border: 1px solid green;
+}
+/*Gender Option End*/
+
+
+/*Terms & Conditions + Privacy & Policy Check Box Start*/
+.sb-terms-privacy-checkbox {
+    display: flex;
+    margin-bottom: 25px;
+}
+
+.sb-terms-privacy-checkbox input{
+  margin-top: -20px;
+}
+
+.checkbox-label {
+    margin-left: 5px;
+    font-size: 14px;
+    font-weight: 400;
+    text-align: left;
+    color: #000;
+}
+
+.form-actions .checkbox-label a{
+    font-size: 14px;
+    font-weight: 400;
+    color: #06b6d4;
+}
+
+.checkbox-label a:hover{
+    color: #0aa4ca;
+}
+
+.sb-terms-privacy-checkbox {
+    display: flex;
+    align-items: center;
+}
+
+.checkbox-label {
+    margin-left: 5px;
+}
+/*Terms & Conditions + Privacy & Policy Check Box End*/
+
+
+/* Checkbox with Right Mark Start */
+#terms-checkbox {
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    width: 21px;
+    height: 16px;
+    border: 1px solid #000;
+    border-radius: 3px;
+    outline: none;
+    transition: background-color 0.3s;
+    position: relative;
+}
+
+#terms-checkbox:checked {
+    background-color: #0aa4ca;
+    border-color: #0aa4ca;
+    color: #fff;
+}
+
+#terms-checkbox:checked::after {
+    content: '';
+    position: absolute;
+    width: 6px;
+    height: 12px;
+    border: solid #fff;
+    border-width: 0 3px 3px 0;
+    transform: rotate(45deg);
+    top: 0px;
+    left: 4px;
+}
+/* Checkbox with Right Mark End */
+/*-- -- -- -- -- -- -- -- -- -- -- -- -- ---- -- --
+-- -- -- -- -- -- -- -- --- -- -- -- -- -- -- -- --
+--                   E   N   D                   --
+--        SHOSUR BARI - REGISTRATION PAGE        --
+-- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- ---
+-- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -*/
+
+
+
+
+
+/*-- -- -- -- -- -- -- -- -- -- -- -- -- ---- -- --
+-- -- -- -- -- -- -- -- --- -- -- -- -- -- -- -- --
+--                  S  T  A  R  T                --
+--             SHOSUR BARI - LOGIN PAGE          --
+-- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- ---
+-- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -*/
+/*Remember Check Box Start*/
+.remember-forgot{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 10px;
+    margin-top: -10px;
+}
+  
+.remember-forgot label {
+    margin-right: 10px;
+    white-space: nowrap;
+    font-size: 14px;
+    font-weight: 400;
+}
+  
+.remember-forgot a {
+    font-size: 14px;
+    white-space: nowrap;
+    color: #0aa4ca;
+    font-weight: 400;
+}
+/*Remember Check Box End*/
+
+
+/*Checkbox with Right Mark Start */
+#edit-remember {
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    width: 16px;
+    height: 16px;
+    border: 1px solid #000;
+    border-radius: 3px;
+    outline: none;
+    transition: background-color 0.3s;
+    position: relative;
+    margin-right: 4px;
+    margin-bottom: -3px;
+}
+
+#edit-remember:checked {
+    background-color: #0aa4ca;
+    border-color: #0aa4ca;
+    color: #fff;
+}
+
+#edit-remember:checked::after {
+    content: '';
+    position: absolute;
+    width: 6px;
+    height: 12px;
+    border: solid #fff;
+    border-width: 0 3px 3px 0;
+    transform: rotate(45deg);
+    top: 0px;
+    left: 4px;
+}
+/*Checkbox with Right Mark End */
+/*-- -- -- -- -- -- -- -- -- -- -- -- -- ---- -- --
+-- -- -- -- -- -- -- -- --- -- -- -- -- -- -- -- --
+--                   E   N   D                   --
+--             SHOSUR BARI - LOGIN PAGE          --
+-- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- ---
+-- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -*/
+
 
 
 
@@ -2156,6 +2450,7 @@ td.day_label {
     width: 40%;
     position: inherit;
 }
+
 td.day_value {
     color: black;
     padding: 8px;
@@ -2163,15 +2458,6 @@ td.day_value {
     border: 1px #ccc;
     border-style: groove;
     width: 60%;
-}
-
-/*table_working_hours
-opened_1*/
-/* Table colunm border end*/
-
-.col_3 {
-    margin-bottom:3em;
-    display: inline-flex;
 }
 
 .nav-tabs1>li.active>a, .nav-tabs1>li.active>a:focus, .nav-tabs1>li.active>a:hover {
@@ -2239,73 +2525,6 @@ i.icon_4{
     margin-bottom:1em;
     font-weight: 500;
 }
-
-
-
-/* -- login --*/
-.form-text-describe {
-    display: block;
-    width: 100%;
-    height: 100px;
-    margin-top: 2px;
-    margin-bottom: 20px;
-    padding: 6px 12px;
-   /* margin-top: 0px;
-    margin-bottom: 20px; */
-    font-size: 16px;
-    line-height: 1.5;
-    color: black;
-    background-color: #4cafe809;
-    background-image: none;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-    outline: none;
-    -webkit-transition: border-color ease-in-out .15s, -webkit-box-shadow ease-in-out .15s;
-    -o-transition: border-color ease-in-out .15s, box-shadow ease-in-out .15s;
-    transition: border-color ease-in-out .15s, box-shadow ease-in-out .15s;
-}
-
-label span{
-    color: red;
-}
-label{
-    display: inline-block;
-    margin-bottom: 2px;
-    font-weight: 700;
-    margin-top: 2px;
-}
-
-.form-text-describe:focus{
-    border-color: #0aa4ca;
-    outline: 0;
-    box-shadow: none !important;
-}
-
-.form-text, .form-select, .form-textarea {
-    display: block;
-    width: 100%;
-    height: 38px;
-    padding: 6px 12px;
-    font-size: 16px;
-    line-height: 1.5;
-    color: black;
-    background-color: #4cafe809;
-    background-image: none;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-    outline: none;
-    -webkit-transition: border-color ease-in-out .15s, -webkit-box-shadow ease-in-out .15s;
-    -o-transition: border-color ease-in-out .15s, box-shadow ease-in-out .15s;
-    transition: border-color ease-in-out .15s, box-shadow ease-in-out .15s;
-}
-
-.form-control:focus, .form-text:focus, .form-textarea:focus, .form-select:focus{
-    border-color: #0aa4ca;
-    outline: 0;
-    box-shadow: none !important;
-}
-
-
 
 
 
@@ -4854,6 +5073,14 @@ ul.profile_item{
 -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -*/
 @media (max-width: 600px){
 
+    #terms-checkbox {
+        width: 27px;
+    }
+
+    #terms-checkbox:checked::after{
+        left: 5px;
+    }
+
     .biodatarecent_viewlist {
         width: 60%;
     }
@@ -5021,6 +5248,10 @@ ul.profile_item{
 --      Media Responsive / Phone Responsive      --
 -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -*/
 @media (max-width:480px){
+
+    #terms-checkbox {
+        width: 32px;
+    }
 
     .contact-bio,
 .copy-sbbio-link {
@@ -5397,10 +5628,6 @@ ul.profile_item{
     font-size: 1em;
 }
 
-.col_3 {
-    margin-bottom: 2em;
-}
-
 .page_header h3 {
     font-size: 1em;
 }
@@ -5650,6 +5877,14 @@ ul.profile_item{
 --      Media Responsive / Phone Responsive      --
 -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -*/
 @media (max-width:384px){
+
+    #terms-checkbox {
+        width: 36px;
+    }
+
+    .sb-terms-privacy-checkbox input {
+        margin-top: -40px;
+    }
 
     a#profile-tab, a#home-tab, a#profile-tab1 {
         font-size: 12px;
