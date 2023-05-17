@@ -5,11 +5,12 @@ error_reporting(0);
 ?>
 <!DOCTYPE HTML>
 <html>
+
+
 <head>
 <title>Register - ShosurBari</title>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-
 <script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); } </script>
 <link href="css/bootstrap-3.1.1.min.css" rel='stylesheet' type='text/css' />
 <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
@@ -23,12 +24,10 @@ error_reporting(0);
 <link href='//fonts.googleapis.com/css?family=Oswald:300,400,700' rel='stylesheet' type='text/css'>
 <link href='//fonts.googleapis.com/css?family=Ubuntu:300,400,500,700' rel='stylesheet' type='text/css'>
 
-
 <!-- Country Code with Flag for Number input field -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/16.0.8/js/intlTelInput.min.js"></script>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/16.0.8/css/intlTelInput.css" />
-
+<script src="https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/16.0.8/js/intlTelInput.min.js"></script>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/16.0.8/css/intlTelInput.css" />
 
 <!--font-Awesome-->
 <link href="css/font-awesome.css" rel="stylesheet"> 
@@ -47,197 +46,177 @@ $(document).ready(function(){
     );
 });
 </script>
-
-
-
 </head>
+
+
 <body>
-<!-- ============================  Navigation Start =========================== -->
-<?php include_once("includes/navigation.php");?>
-<!-- ============================  Navigation End ============================ -->
-<div class="grid_3">
-  <div class="container">
-   <div class="breadcrumb1">
-     <ul>
-        <a href="index.php"><i class="fa fa-home home_1"></i></a>
-        <span class="divider">&nbsp;<|>&nbsp;</span>
-        <li class="current-page"><h4>Register</h4></li>
-     </ul>
-   </div>
-</div>
-</div>
+  <!-- ============================  Navigation Start =========================== -->
+  <?php include_once("includes/navigation.php");?>
+  <!-- ============================  Navigation End ============================ -->
 
-<!-- -- -- -- -- -- -- -- -- -- -- -- -- ---- -- --
--- -- -- -- -- -- -- -- --- -- -- -- -- -- -- -- --
---                S  T  A  R  T                  --
---   SHOSURBARI BIODATA FORM FIELD ALL SECTION   --
---                                               --
--- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- ---
--- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -->
-<div class="shosurbari-biodata">
-<form action="" method="POST" name="myForm" onsubmit="return validateForm()">
-<div class="flex-container">
-    <div class="sb-register-login">
+  <div class="grid_3">
+    <div class="container">
+      <div class="breadcrumb1">
+        <ul>
+          <a href="index.php"><i class="fa fa-home home_1"></i></a>
+          <span class="divider">&nbsp;<|>&nbsp;</span>
+          <li class="current-page"><h4>Register</h4></li>
+        </ul>
+      </div>
+    </div>
+  </div>
 
-		<div class="sb-biodata-field">
-		    <h2>Create New <span>Account</span></h2>
+  <!-- -- -- -- -- -- -- -- -- -- -- -- -- ---- -- --
+  -- -- -- -- -- -- -- -- --- -- -- -- -- -- -- -- --
+  --                S  T  A  R  T                  --
+  --   SHOSURBARI BIODATA FORM FIELD ALL SECTION   --
+  --                                               --
+  -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- ---
+  -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -->
+  <div class="shosurbari-biodata">
+    <form action="" method="POST" name="myForm" onsubmit="return validateForm()">
+      <div class="flex-container">
+        <div class="sb-register-login">
+
+          <div class="sb-biodata-field">
+            <h2>Create New <span>Account</span></h2>
+          </div>
+
+          <div class="form-group">
+            <!--  <label for="edit-name">Full Name<span class="form-required" title="This field is required.">*</span></label> -->
+            <input type="text" id="fname" placeholder="Full Name" name="fname" value="" size="60" maxlength="60" class="form-text required">
+            <span id="fname_error" style="font-size:16px; margin-top: 0px; background: #ffddee; border-radius: 1px 2px 4px 4px; text-align: center; display: none;"></span>
+          </div>
+
+          <div class="form-group">
+            <!-- <label for="edit-name">Username<span class="form-required" title="This field is required.">*</span></label> -->
+            <input type="text" id="uname" placeholder="Username" name="uname" value="" size="60" maxlength="60" class="form-text required">
+            <span id="uname_error" style="font-size:16px; margin-top: 0px; background: #ffddee; border-radius: 1px 2px 4px 4px; text-align: center; display: none;"></span>
+          </div>
+
+          <div class="form-group">
+            <!-- <label for="edit-name">Emails<span class="form-required" title="This field is required.">*</span></label> -->
+            <input type="text" id="email" placeholder="Email" name="email" value="" size="60" maxlength="60" class="form-text required">
+            <span id="email_error" style="font-size:16px; margin-top: 0px; background: #ffddee; border-radius: 1px 2px 4px 4px; text-align: center; display: none;"></span>
+          </div>
+
+          <div class="form-group">
+            <!--  <label for="edit-name">Phone Number<span class="form-required" title="This field is required.">*</span></label> -->
+            <input type="pnumber" id="pnumber" placeholder="Phone Number" name="pnumber" value="" size="60" minlength="10" maxlength="15" class="form-text required">
+            <span id="pnumber_error" style="font-size:16px; margin-top: 0px; background: #ffddee; border-radius: 1px 2px 4px 4px; text-align: center; display: none;"></span>
+          </div>
+
+
+
+
+
+          <div class="form-group">
+            <!-- <label for="edit-pass">Password<span class="form-required" title="This field is required.">*</span></label> -->
+            <input type="password" id="pass_1" placeholder="New Password" name="pass_1" size="60" maxlength="128" class="form-text required">
+            <span class="show-password" style="color:#0aa4ca;  font-size:18px; top:0px;"> <i style="color:black;  font-size:18px;" class="fa fa-eye" aria-hidden="true"></i></span> 
+            <span  id="pass_1_error" style="font-size:16px; margin-top: 0px; background: #ffddee; border-radius: 1px 2px 4px 4px; text-align: center; display: none;"></span>
+          </div>
+
+          <div class="form-group">
+            <!-- <label for="edit-pass">Confirm Password<span class="form-required" title="This field is required.">*</span></label> -->
+            <input type="password" id="pass_2" placeholder="Confirm Password" name="pass_2" size="60" maxlength="128" class="form-text required">
+            <span class="show-password" style="color:#0aa4ca;  font-size:18px; top:0px;"> <i style="color:black;  font-size:18px;" class="fa fa-eye" aria-hidden="true"></i></span> 
+            <span  id="pass_2_error" style="font-size:16px; margin-top: 0px; background: #ffddee; border-radius: 1px 2px 4px 4px; text-align: center; display: none;"></span>
+          </div>
+
+          <div class="gender-select-reg" id="gender-select-reg">
+            <label class="sb-profile-gender" for="sex">Your Gender<span class="form-required" title="This field is required."></span></label>
+
+            <div class="gender-option">
+              <input type="radio" name="gender" id="male" value="Male" onclick="genderSelected(this);"/>
+              <label for="male"><i class="fa fa-male"></i> Male</label>
+            </div>
+
+            <div class="gender-option">
+              <input type="radio" name="gender" id="female" value="Female" onclick="genderSelected(this);"/>
+              <label for="female"><i class="fa fa-female"></i> Female</label><br>
+		        </div>
+          </div>
+
+	        <div class="gender-error">
+		        <span style="font-size:16px; margin-top: 0px; background: #ffddee; border-radius: 1px 2px 4px 4px; text-align: center; display: none;" id="gender-error" class="error"></span>
+          </div>
+
+
+
+          <div class="form-actions">
+            <?php if(isset($_COOKIE['username'])) { ?>
+              <input type="hidden" id="edit-remember" name="remember" value="1">
+              <?php } else { ?>
+
+              <div class="form-group">
+                <label><input type="checkbox" id="edit-remember" name="remember" value="1" checked> Remember me</label>
+              </div>
+
+            <?php } ?>
+
+            <div class="sb-terms-privacy-checkbox">
+              <input type="checkbox" id="terms-checkbox" name="terms" value="1" onclick="toggleSubmitButton(this.checked);" required>
+              <label class="checkbox-label" for="terms-checkbox">I agree to the <a target="_blank" href="terms.php">Terms and Conditions</a> and have read the <a target="_blank" href="privacy.php">Privacy Policy.</a></label>
+            </div>
+
+            <button type="submit" id="edit-submit" name="op" class="btn_4 submit"><span></span> Create Account</button>
+          </div>
+
+			    <div class="or">
+		        <p><span class="sb-or">OR</span></p>
+          </div>
+
+	  	    <div class="form-actions">
+			      <p>Do you have an account?</p>
+			      <a class="btn_3 submit" href="login.php"> <span> </span> Login Your Account</a>
+	        </div>
+
         </div>
-
-		<div class="form-group">
-		    <!--  <label for="edit-name">Full Name<span class="form-required" title="This field is required.">*</span></label> -->
-		      <input type="text" id="fname" placeholder="Full Name" name="fname" value="" size="60" maxlength="60" class="form-text required">
-			  <span id="fname_error" style="font-size:16px; margin-top: 0px; background: #ffddee; border-radius: 1px 2px 4px 4px; text-align: center; display: none;"></span>
-			</div>
-
-			<div class="form-group">
-		      <!-- <label for="edit-name">Username<span class="form-required" title="This field is required.">*</span></label> -->
-		      <input type="text" id="uname" placeholder="Username" name="uname" value="" size="60" maxlength="60" class="form-text required">
-			  <span id="uname_error" style="font-size:16px; margin-top: 0px; background: #ffddee; border-radius: 1px 2px 4px 4px; text-align: center; display: none;"></span>
-			</div>
+      </div>
+	  </form>
+  </div>
 
 
-			<div class="form-group">
-		      <!-- <label for="edit-name">Emails<span class="form-required" title="This field is required.">*</span></label> -->
-		      <input type="text" id="email" placeholder="Email" name="email" value="" size="60" maxlength="60" class="form-text required">
-			  <span id="email_error" style="font-size:16px; margin-top: 0px; background: #ffddee; border-radius: 1px 2px 4px 4px; text-align: center; display: none;"></span>
-			</div>
+  <?php include_once("footer.php");?>
 
-      <div class="form-group">
-		     <!--  <label for="edit-name">Phone Number<span class="form-required" title="This field is required.">*</span></label> -->
-		      <input type="pnumber" id="pnumber" placeholder="Phone Number" name="pnumber" value="" size="60" minlength="10" maxlength="15" class="form-text required">
-			  <span id="pnumber_error" style="font-size:16px; margin-top: 0px; background: #ffddee; border-radius: 1px 2px 4px 4px; text-align: center; display: none;"></span>
-			</div>
 
-      <script>
-      $(document).ready(function() {
-      var input = document.querySelector("#pnumber");
-      window.intlTelInput(input, {
-        separateDialCode: true,
-        preferredCountries: ["bd"]
-      });
-      });
-      </script>
+</body>
+</html>	
 
-		    <div class="form-group">
-		      <!-- <label for="edit-pass">Password<span class="form-required" title="This field is required.">*</span></label> -->
-		      <input type="password" id="pass_1" placeholder="New Password" name="pass_1" size="60" maxlength="128" class="form-text required">
-			  <span class="show-password" style="color:#0aa4ca;  font-size:18px; top:0px;"> <i style="color:black;  font-size:18px;" class="fa fa-eye" aria-hidden="true"></i></span> 
-			  <span  id="pass_1_error" style="font-size:16px; margin-top: 0px; background: #ffddee; border-radius: 1px 2px 4px 4px; text-align: center; display: none;"></span>
-			</div>
 
-			<div class="form-group">
-		      <!-- <label for="edit-pass">Confirm Password<span class="form-required" title="This field is required.">*</span></label> -->
-		      <input type="password" id="pass_2" placeholder="Confirm Password" name="pass_2" size="60" maxlength="128" class="form-text required">
-			  <span class="show-password" style="color:#0aa4ca;  font-size:18px; top:0px;"> <i style="color:black;  font-size:18px;" class="fa fa-eye" aria-hidden="true"></i></span> 
-			  <span  id="pass_2_error" style="font-size:16px; margin-top: 0px; background: #ffddee; border-radius: 1px 2px 4px 4px; text-align: center; display: none;"></span>
-			</div>
 
-	<script>
-        let showPass = document.querySelectorAll('.show-password');
-        showPass.forEach(function(el) {
-            el.addEventListener('click', function(){
-                let input = this.previousElementSibling;
-                if (input.type === "password") {
-                    input.type = "text";
-                    this.innerHTML = "<i class='fa fa-eye-slash'></i>";
-                } else {
-                    input.type = "password";
-                    this.innerHTML = "<i class='fa fa-eye'></i>";
-                }
+
+
+
+
+<script>
+            $(document).ready(function() {
+            var input = document.querySelector("#pnumber");
+            window.intlTelInput(input, {
+              separateDialCode: true,
+              preferredCountries: ["bd"]
             });
-        });
-    </script>
+            });
+          </script>
 
 
+<script>
+            let showPass = document.querySelectorAll('.show-password');
+            showPass.forEach(function(el) {
+              el.addEventListener('click', function(){
+                let input = this.previousElementSibling;
+                  if (input.type === "password") {
+                  input.type = "text";
+                  this.innerHTML = "<i class='fa fa-eye-slash'></i>";
+                  } else {
+                  input.type = "password";
+                  this.innerHTML = "<i class='fa fa-eye'></i>";
+                }
+              });
+            });
+          </script>
 
-
-
-<style type="text/css">
-  .sb-profile-gender{
-    text-overflow: ellipsis;
-    width: 100%;
-    white-space: nowrap;
-    overflow: hidden;
-    color: #06b6d4;
-    border-radius: 4px;
-  }
-    .gender-select-reg{
-        padding: 00px 10px;
-        display: flex;
-	    	align-items: center;
-		    border: 1px solid #ccc;
-        border-radius: 4px;
-        -webkit-border-radius: 4px;
-        background: #4cafe809;
-    }
-
-    .gender-select-reg .gender-option{
-        margin-top: 0px;
-    margin-bottom: 0px;
-    margin-left: 20px;
-    margin-right: -50px;
-    width: 78%;
-}
-
-    .gender-select-reg .gender-option input[type="radio"]{
-		display: none;
-    }
-
-    .gender-select-reg .gender-option label{
-        display: inline-block;
-        padding: 3px;
-        transition: all 0.3s;
-		    font-weight: 500;
-        cursor: pointer;
-        margin-top: 4px;
-        margin-bottom: 4px;
-        margin-left: -27px;
-        margin-right: 19px;
-		    border: 1px solid #ccc;
-		    border-radius: 3px;
-        background: white;
-    }
-    
-    .gender-select-reg .gender-option label i{
-        font-size: 17px;
-    }
-    .gender-select-reg .gender-option input[type="radio"]:checked + label{
-        background: #0aa4ca;
-        border: 1px solid #ccc;
-        color: #fff;
-		border-radius: 3px
-    }
-</style>
-<div class="gender-select-reg" id="gender-select-reg">
-<label class="sb-profile-gender" for="sex">Your Gender<span class="form-required" title="This field is required."></span></label>
-        <div class="gender-option">
-            <input type="radio" name="gender" id="male" value="Male" onclick="genderSelected(this);"/>
-            <label for="male"><i class="fa fa-male"></i> Male</label>
-        </div>
-        <div class="gender-option">
-            <input type="radio" name="gender" id="female" value="Female" onclick="genderSelected(this);"/>
-            <label for="female"><i class="fa fa-female"></i> Female</label><br>
-		</div>
-    </div>
-	<div class="gender-error">
-		<span style="font-size:16px; margin-top: 0px; background: #ffddee; border-radius: 1px 2px 4px 4px; text-align: center; display: none;" id="gender-error" class="error"></span>
-    </div>
-	<style>
-		.gender-error{
-	display: block;
-    margin-top: 0px;
-    margin-bottom: 25px;
-		}
-  .error {
-	  text-align:left;
-	  margin-top: 3px;
-    border-radius: 4px;
-    color: red;
-    font-size: 13px;    }
-    .success {
-      border: 1px solid green;
-    }
-  </style>
 
 
 <script>
@@ -296,59 +275,6 @@ $(document).ready(function(){
     }
   }
 </script>
-
-
-
-
-
-
-
-
-
-
-<div class="form-actions">
-    <?php if(isset($_COOKIE['username'])) { ?>
-        <input type="hidden" id="edit-remember" name="remember" value="1">
-    <?php } else { ?>
-        <div class="form-group">
-            <label><input type="checkbox" id="edit-remember" name="remember" value="1" checked> Remember me</label>
-        </div>
-    <?php } ?>
-    <button type="submit" id="edit-submit" name="op" class="btn_4 submit"><span></span> Create Account</button>
-</div>
-
-
-
-
-
-			<div class="or">
-		    <p><span class="sb-or">OR</span></p>
-        </div>
-
-	  	<div class="form-actions">
-			<p>Do you have an account?</p>
-			<a class="btn_3 submit" href="login.php"> <span> </span> Login Your Account</a>
-	    </div>
-    </div>
-<!-- -- -- -- -- -- -- -- -- -- -- -- -- ---- -- --
--- -- -- -- -- -- -- -- --- -- -- -- -- -- -- -- --
---                   E   N   D                   --
---        Religion Details / sb-biodata-8        --
---                                               --
--- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- ---
--- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -->
-
-    </div>
-	</form>
-    </div>
-
-
-<?php include_once("footer.php");?>
-
-
-</body>
-</html>	
-
 
 
 <script>
@@ -637,3 +563,10 @@ if (pnumber == "") {
 
   </script>
 
+<script>
+  // check box
+    function toggleSubmitButton(checked) {
+        var submitButton = document.getElementById("edit-submit");
+        submitButton.style.display = checked ? "block" : "none";
+    }
+</script>
