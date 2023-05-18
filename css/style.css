@@ -539,6 +539,7 @@ ul.nav_1{
 
 .collapse_userprofile{  /*Include UserHome Page*/
     margin-top: 20px;
+    width: 100%;
 }
 
 .UserProfile {
@@ -552,12 +553,12 @@ ul.nav_1{
 
 .navigationpro ul{
     background: #fff;
-    width: 623px;
+    width: 543px;
     padding: 5px;
     border-radius: 2px;
     border: 1px solid #ccc;
     box-shadow: 0px 5px 10px 0px #aaa;
-    margin: auto;
+    margin: auto 0px auto auto;
 }
 
 .navigationpro ul li{
@@ -1966,7 +1967,7 @@ small.testi-meta1{
 -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- ---
 -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -*/
 /*About Page & Contact Page used same class / Follow About Page*/
-/*PopUp Message Start*/
+/*PopUp Message For All PopUp Start*/
 .popup-message {
     display: none;
     position: fixed;
@@ -2024,7 +2025,7 @@ small.testi-meta1{
     background-color: rgba(0, 0, 0, 0.5);
     z-index: 9998;
 }
-/*PopUp Message End*/
+/*PopUp Message For All PopUp End*/
 /*-- -- -- -- -- -- -- -- -- -- -- -- -- ---- -- --
 -- -- -- -- -- -- -- -- --- -- -- -- -- -- -- -- --
 --                   E   N   D                   --
@@ -2153,9 +2154,15 @@ ol li{
 --          SHOSUR BARI - USER HOME PAGE         --
 -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- ---
 -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -*/
+.navigationpro {
+    display: flex;
+    margin: auto;
+}
+
 .shosurbari-userhome-status{
     padding: 20px 0px;
-    margin-top: 10px;
+    margin-top: 0px;
+    width:  250px;
 }
 
 .shosurbari-userhome-status h3,
@@ -2439,6 +2446,225 @@ ol li{
 
 
 
+
+/*-- -- -- -- -- -- -- -- -- -- -- -- -- ---- -- --
+-- -- -- -- -- -- -- -- --- -- -- -- -- -- -- -- --
+--                  S  T  A  R  T                --
+--      SHOSUR BARI - ACCOUNT UPDATE PAGE        --
+--       SHOSUR BARI - PHOTO UPDATE PAGE         --
+-- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- ---
+-- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -*/
+.shosurbari-user-account .form-actions {  /* Both Page*/
+    width: 100%;
+    margin-bottom: 0px;
+    margin-top: 0px;
+    text-align: center;
+    font-size: 30px;
+}
+
+.shosurbari-user-account{  /* Both Page*/
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    width: 400px;
+    gap: 1.5rem;
+    padding: 20px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 40px;
+    margin-top: 20px;
+    background: white;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+.shosurbari-user-account form{   /* Both Page*/
+    background: white;
+}
+
+input[type=file] {
+    width: 200px;
+}
+
+input[type=submit] {
+    cursor: pointer;
+    width: 120px;
+    height: 35px;
+    margin-top: 10px;
+    background: #06b6d4;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    color: #fff;
+    box-shadow: 1px 1px 4px #888;
+}
+
+.uploaded-photo {
+    margin-bottom: 20px;
+}
+
+.uploaded-photo span {
+    display: block;
+    margin-bottom: 10px;
+}
+
+.update-image img {
+    height: 145px;
+    width: 175px;
+    padding: 2px;
+    background: #f5f2f2;
+    box-shadow: 0px 2px 7px 6px rgb(0 0 0 / 20%);
+    margin-top: 20px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 0px;
+    border-radius: 4px;
+}
+
+.update-image-input form{
+    width: 100px;
+    margin-left: 0;
+}
+
+.update-image-button{
+    gap: 10px;
+    margin-bottom: 0px;
+    font-size: 14px;
+    white-space: nowrap;
+    width: 100%;
+}
+
+.update-image {
+    order: 2;
+}
+
+.update-image-input {
+    order: 1;
+    margin-top: 0px;
+    width: 40%;
+}
+
+.form-file {
+    margin-bottom: 10px;
+}
+
+.update-image .fa{
+    font-size: 30px;
+    color: #06b6d4;
+    box-shadow: 0px 5px 10px 0px #aaa;
+    background: #fff;
+    padding: 8px;
+    border-radius: 50%;
+    transition: background-color 0.5s, color 0.5s;
+
+}
+
+.update-image .fa:hover{
+    color: #fff;
+    background: #0aa4ca;
+    transition: background-color 0.5s, color 0.5s;
+}
+
+.update-image .fa::after {
+    position: absolute;
+    content: "";
+    width: 100%;
+    height: 1px;
+    background: #0aa4ca;
+    z-index: -1;
+}
+
+.update-image {
+    position: relative;
+}
+
+.image-wrapper{
+    width: 175px;
+    margin: 20px auto;
+}
+
+.update-image .image-wrapper img {
+    max-width: 100%;
+    max-height: 100%;
+}
+
+.update-image .camera-wrapper {
+    position: relative;
+    justify-content: center;
+    align-items: center;
+    width: 50%;
+}
+
+.update-image .camera-wrapper i {
+    position: absolute;
+    font-size: 25px;
+    color: #06b6d4;
+    box-shadow: 0px 5px 10px 0px #aaa;
+    background: #fff;
+    padding: 8px;
+    border-radius: 50%;
+}
+
+#file-input-wrapper {
+    display: none;
+}
+
+.deleteimage{
+    padding: 10px;
+    margin-top:-10px; 
+    margin-left: 10px;
+}
+
+.delete-image {
+    order: 3;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.delete-image form {
+    width: 100%;
+    padding-top: 5px;
+}
+
+.delete-image form button {
+    display: block;
+    margin: 0 auto;
+    width: 120px;
+    background: #ff0080;
+    color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+}
+
+.delete-image button:hover{
+    background: #0aa4ca;
+    color: #fff;
+}
+
+.delete-image p{
+    margin-top: 15px;
+    font-size: 15px;
+    line-height: 24px;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    width: 100%;
+    background: #fff;
+    text-align: center;
+}
+/*-- -- -- -- -- -- -- -- -- -- -- -- -- ---- -- --
+-- -- -- -- -- -- -- -- --- -- -- -- -- -- -- -- --
+--                   E   N   D                   --
+--      SHOSUR BARI - ACCOUNT UPDATE PAGE        --
+--       SHOSUR BARI - PHOTO UPDATE PAGE         --
+-- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- ---
+-- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -*/
+
+
+
+
+
+
+
 /* Table colunm border start*/
 td.day_label {
     color: #000000;
@@ -2576,14 +2802,14 @@ i.icon_4{
 .btn_1{
     background: #06b6d4;
     border-radius: 6px;
-    width: auto;
-    padding: 8px 70px;
+    width: 100%;
+    padding: 5.5px;
     display: inline-block;
     color: #fff;
     text-transform: uppercase;
     outline: none;
     border: none;
-    margin: 1em 0 0 0;
+    margin: 0px;
     font-size: 0.60em;
     transition: background-color 0.3s, color 0.3s;
 }
@@ -3687,6 +3913,24 @@ ul.profile_item{
 -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -*/
 
 
+@media(min-width: 1200px){
+    .navigationpro {
+        width: 1138px;
+    }
+}
+
+@media(max-width: 1200px){
+    .navigationpro {
+        width: 938px;
+    }
+}
+
+
+@media(max-width: 992px){
+    .navigationpro {
+        width: 715px;
+    }
+}
 
 
 @media (min-width:1280px){
@@ -3840,7 +4084,7 @@ ul.profile_item{
     }
 
 .navigationpro ul {
-    width: 567px;
+    width: 495px;
 }
 
 .hvr-shutter-out-horizontal {
@@ -4081,10 +4325,6 @@ ul.nav_1 li {
     margin: 3px;
 }
 
-.navigationpro ul {
-    width: 567px;
-}
-
 .inline-block {
     padding-right: 1%;
 }
@@ -4313,6 +4553,14 @@ ul.profile_item{
 -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -*/
 @media (max-width: 768px){
 
+    .navigationpro {
+        display: block;
+        margin-top: -50px;
+        width: auto;
+        margin-left: 25px;
+        margin-right: 25px
+      }
+
     .shosurbari-faq {
         width: 80%;
         margin: auto;
@@ -4388,7 +4636,7 @@ label.gender_1 {
 }
 
 .navbar-nav > li > a {
-    padding: 4px 8px;
+    padding: 8px 8px;
     font-size: 14px;
 }
 
@@ -4604,6 +4852,7 @@ i.icon_4 {
 
 .navigationpro ul {
     width: 280px;
+    margin: auto;
 }
 
 .nbs-flexisel-container{
@@ -5072,6 +5321,11 @@ ul.profile_item{
 -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -*/
 @media (max-width: 600px){
 
+    .navigationpro {
+        display: block;
+        margin-top: -50px;
+      }
+
     #terms-checkbox {
         width: 27px;
     }
@@ -5247,6 +5501,10 @@ ul.profile_item{
 --      Media Responsive / Phone Responsive      --
 -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -*/
 @media (max-width:480px){
+
+    .update-image .camera-wrapper i{
+        font-size: 20px;
+    }
 
     #terms-checkbox {
         width: 32px;
