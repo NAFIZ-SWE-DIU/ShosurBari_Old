@@ -117,295 +117,37 @@ $(document).ready(function(){
                     }
                 ?>
 
-
-
                 <div class="shosurbari-userhome-status">
-                        <h3><?php echo "Welcome: $username"; ?></h3>
+                    <h3><?php echo "Welcome: $username"; ?></h3>
                     <!-- Display the account status -->
                     <h4 >Account Status:
-                    <?php if ($deactivated == 0) {
-                        echo '<span style="color: green;">Active</span>';
-                    } else {
-                        echo '<span style="color: red;">Deactivated</span> <br>';
-                        echo '<span style="color: #0aa4ca; font-size: 14px;">Please Active your account, Go back UserHome page !</span>';
-                    } ?>
+                        <?php
+                            if ($deactivated == 0) {
+                                echo '<span style="color: green;">Active</span>';
+                            } else {
+                                echo '<span style="color: red;">Deactivated</span> <br>';
+                                echo '<span style="color: #0aa4ca; font-size: 14px;">Please Active your account, Go back UserHome page !</span>';
+                            }
+                        ?>
                     </h4>
-
                 </div>
 
-
-
+            </div>
         </div>
     </div>
-</div>
-
-
-    <style>
-            .update-image img {
-            height: 145px;
-            width: 175px;
-            padding: 2px;
-            background: #f5f2f2;
-            box-shadow: 0px 2px 7px 6px rgb(0 0 0 / 20%);
-            margin-top: 20px;
-            margin-left: auto;
-            margin-right: auto;
-            margin-bottom: 0px;
-            border-radius: 4px;
-        }
-
-        .deleteimage{
-            padding: 10px;
-            margin-top:-10px; 
-            margin-left: 10px;
-        }
-    </style>
 
 
     <?php
         $id=$_GET['id'];
         $profileid=$id;
-        //getting profile details from db
+        //getting profile Picture from db
         $sql = "SELECT * FROM photos  WHERE user_id = $id";
         $result = mysqlexec($sql);
         $row=mysqli_fetch_assoc($result);
         if($row){
-            $pic1=$row['pic1'];
+        $pic1=$row['pic1'];
         }
     ?>
-
-
-    <style>
-
-    .shosurbari-user-account .form-actions {
-        width: 100%;
-        margin-bottom: 0px;
-        margin-top: 0px;
-        text-align: center;
-        font-size: 30px;
-    }
-    .update-image-input form{
-        width: 100px;
-        margin-left: 0;
-    }
-
-    input[type=submit] {
-        cursor: pointer;
-        width: 120px;
-        height: 35px;
-        margin-top: 10px;
-        background: #06b6d4;
-        border: 1px solid #ccc;
-        border-radius: 4px;
-        color: #fff;
-        box-shadow: 1px 1px 4px #888;
-    }
-
-    .delete-image {
-        order: 3;
-        width: 100%;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-    }
-
-    .delete-image form {
-        width: 100%;
-        padding-top: 5px;
-    }
-
-    .delete-image form button {
-        display: block;
-        margin: 0 auto;
-        width: 120px;
-        background: #ff0080;
-        color: #fff;
-        border: 1px solid #ddd;
-        border-radius: 4px;
-    }
-
-    .delete-image button:hover{
-        background: #0aa4ca;
-        color: #fff;
-    }
-
-    .delete-image p{
-        margin-top: 15px;
-        font-size: 15px;
-        line-height: 24px;
-        padding: 10px;
-        border: 1px solid #ddd;
-        border-radius: 4px;
-        width: 100%;
-        background: #fff;
-        text-align: center;
-    }
-
-    input[type=file] {
-        width: 200px;
-    }
-
-    .shosurbari-user-account{
-        border: 1px solid #ccc;
-        border-radius: 6px;
-        width: 400px;
-        gap: 1.5rem;
-        padding: 20px;
-        margin-left: auto;
-        margin-right: auto;
-        margin-bottom: 40px;
-        margin-top: 20px;
-        background: white;
-        box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-    }
-
-    .shosurbari-user-account form{
-        background: white;
-    }
-
-    .uploaded-photo {
-        margin-bottom: 20px;
-    }
-
-    .uploaded-photo span {
-        display: block;
-        margin-bottom: 10px;
-    }
-
-    .update-image-button{
-
-        gap: 10px;
-        margin-bottom: 0px;
-        font-size: 14px;
-        white-space: nowrap;
-        width: 100%;
-    }
-
-    .update-image {
-        order: 2;
-    }
-
-    .update-image-input {
-        order: 1;
-        margin-top: 0px;
-        width: 40%;
-    }
-
-    .form-file {
-        margin-bottom: 10px;
-    }
-
-    .popup-message {
-        display: none;
-        position: fixed;
-        top: 50%;
-        left: 50%;
-        transform: translate(-50%, -50%);
-        background-color: #c5ffc5;
-        border: 2px solid green;
-        border-radius: 4px;
-        padding: 20px;
-        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-        z-index: 9999;
-    }
-
-    .popup-message h3 {
-        margin-top: 0;
-        margin-bottom: 10px;
-        text-align: center;
-        color: #04aa6d;
-        font-size: 24px;
-    }
-
-    .popup-message p {
-        margin: 0;
-        font-size: 18px;
-        text-align: center;
-        color: #000;
-    }
-
-    .popup-message button.close-button {
-        display: block;
-        margin-top: 10px;
-        margin-left: auto;
-        margin-right: auto;
-        padding: 5px 10px;
-        background-color: #06b6d4;
-        color: #fff;
-        border: none;
-        border-radius: 2px;
-        cursor: pointer;
-    }
-
-    .popup-message button.close-button:hover {
-        background-color: #0aa4ca;
-        color: #fff;
-    }
-
-    .update-image .fa{
-        font-size: 30px;
-        color: #06b6d4;
-        box-shadow: 0px 5px 10px 0px #aaa;
-        background: #fff;
-        padding: 8px;
-        border-radius: 50%;
-        transition: background-color 0.5s, color 0.5s;
-
-    }
-
-    .update-image .fa:hover{
-        color: #fff;
-        background: #0aa4ca;
-        transition: background-color 0.5s, color 0.5s;
-    }
-
-    .update-image .fa::after {
-        position: absolute;
-        content: "";
-        width: 100%;
-        height: 1px;
-        background: #0aa4ca;
-        z-index: -1;
-    }
-
-    .update-image {
-        position: relative;
-    }
-
-    .image-wrapper{
-        width: 175px;
-        margin: 20px auto;
-    }
-
-    .update-image .image-wrapper img {
-        max-width: 100%;
-        max-height: 100%;
-    }
-
-    .update-image .camera-wrapper {
-        position: relative;
-        justify-content: center;
-        align-items: center;
-        width: 50%;
-    }
-
-    .update-image .camera-wrapper i {
-        position: absolute;
-        font-size: 30px;
-        color: #06b6d4;
-        box-shadow: 0px 5px 10px 0px #aaa;
-        background: #fff;
-        padding: 8px;
-        border-radius: 50%;
-    }
-
-
-    #file-input-wrapper {
-        display: none;
-    }
-    </style>
-
-
 
 
     <!-- -- -- -- -- -- -- -- -- -- -- -- -- ---- -- --
@@ -522,7 +264,7 @@ $(document).ready(function(){
 
                 <form action="" method="POST" enctype="multipart/form-data">
                     <label for="file-upload" class="file-upload-btn upload-button">Choose Photo</label>
-                    <input type="file" id="file-upload" name="pic1" class="form-file required" />
+                    <input type="file" id="file-upload" name="pic1" class="form-file" required/>
                     <input type="submit" id="edit-submit" name="update_photo" value="Upload" class="update_photo-btn submit-button" />
                 </form>
 
