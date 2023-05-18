@@ -274,6 +274,47 @@ input#submit-btn {
     padding: 6px 20px;
     border: 1px solid #fff;
 }
+/*Form Type End*/
+
+
+/* FORM SUBMIT BUTTON START */
+.btn_1{
+    background: #06b6d4;
+    border-radius: 4px;
+    width: 100%;
+    padding: 5px;
+    display: inline-block;
+    color: #fff;
+    text-transform: uppercase;
+    outline: none;
+    border: none;
+    margin: 0px;
+    font-size: 0.60em;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.btn_1:hover {
+	background: #0aa4ca;
+    color: #fff;
+}
+
+.form-actions p{
+    font-size: 14px;
+    color: black;
+}
+
+.form-actions a{
+    font-size: 16px;
+    color: black;
+    text-decoration: underline;
+    white-space: nowrap;
+}
+
+.form-actions a:hover{
+	color: #0aa4ca;
+
+}
+/* FORM SUBMIT BUTTON END */
 
 
 /*For Remember Form Size with Media responsive START*/
@@ -1241,7 +1282,6 @@ span.m_3{
 --  SHOSUR BARI - USER PROFILE PAGE / VIEW BIO   --
 -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- ---
 -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -*/
-
 /*Profile Short Heading Start*/
 .profile-header {
     background: #00bbff22;
@@ -1316,6 +1356,29 @@ span.m_3{
     margin: auto;
     white-space: nowrap;
 }
+
+.nav-tabs1>li.active>a, .nav-tabs1>li.active>a:focus, .nav-tabs1>li.active>a:hover {
+    color: #fff;
+    background-color:#0aa4ca;
+    border:none;
+    border-radius: 3px;
+    margin: 5px;
+}
+
+.nav-tabs1 .open>a, .nav-tabs1 .open>a:hover, .nav-tabs1 .open>a:focus, .nav-tabs1>li>a:hover, .nav-tabs1>li>a:focus {
+    background-color:#0aa4ca !important;
+    border-color:#06b6d4;
+    color: #fff !important;
+    margin: 5px;
+}
+
+.nav-tabs1>li{
+	margin-bottom:0;
+}
+
+a#profile-tab, a#home-tab, a#profile-tab1{
+    color: #ffffff;
+} 
 
 .profile-nav-info h3 {
     font-variant: small-caps;
@@ -1542,6 +1605,23 @@ button.copylink i {
 
 
 /*Recent View Profile List Start*/
+.sbbiodata_profile_recentview {
+    display: flex;
+    flex-wrap: wrap;
+    width: auto;
+    margin-top: 80px;
+    margin-bottom: 0px;
+    margin-right: auto;
+    margin-left: auto;
+    padding: 0px;
+}
+
+.sbbiodata_profile_recentview h3{
+    text-align: center;
+    width: 100%;
+    font-size: 27px;
+}
+
 .biodatarecent_viewlist{
     border: 1px solid #ccc;
     border-radius: 6px;
@@ -1692,6 +1772,27 @@ button.copylink i {
 }
 /*Contact Full Bio Bottom Info End*/
 
+
+/*Biodata Table Form / Data show Start*/
+td.day_label {
+    color: #000000;
+    padding: 8px;
+    font-weight: 450;
+    border: 1px #ccc;
+    border-style: groove;
+    width: 40%;
+    position: inherit;
+}
+
+td.day_value {
+    color: black;
+    padding: 8px;
+    font-weight: 400;
+    border: 1px #ccc;
+    border-style: groove;
+    width: 60%;
+}
+/*Biodata Table Form / Data show End*/
 /*-- -- -- -- -- -- -- -- -- -- -- -- -- ---- -- --
 -- -- -- -- -- -- -- -- --- -- -- -- -- -- -- -- --
 --                   E   N   D                   --
@@ -2148,10 +2249,12 @@ ol li{
 
 
 
+
+
 /*-- -- -- -- -- -- -- -- -- -- -- -- -- ---- -- --
 -- -- -- -- -- -- -- -- --- -- -- -- -- -- -- -- --
 --                  S  T  A  R  T                --
---          SHOSUR BARI - USER HOME PAGE         --
+--     SHOSUR BARI - USER ACCOUNT HOME PAGE      --
 -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- ---
 -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -*/
 .navigationpro {
@@ -2198,7 +2301,7 @@ ol li{
 /*-- -- -- -- -- -- -- -- -- -- -- -- -- ---- -- --
 -- -- -- -- -- -- -- -- --- -- -- -- -- -- -- -- --
 --                   E   N   D                   --
---          SHOSUR BARI - USER HOME PAGE         --
+--     SHOSUR BARI - USER ACCOUNT HOME PAGE      --
 -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- ---
 -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -*/
 
@@ -2209,9 +2312,51 @@ ol li{
 /*-- -- -- -- -- -- -- -- -- -- -- -- -- ---- -- --
 -- -- -- -- -- -- -- -- --- -- -- -- -- -- -- -- --
 --                  S  T  A  R  T                --
---        SHOSUR BARI - REGISTRATION PAGE        --
+--           SHOSUR BARI - REGISTER PAGE         --
 -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- ---
 -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -*/
+.sb-register-login{
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    width: 400px;
+    gap: 1.5rem;
+    padding: 20px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 40px;
+    margin-top: 20px;
+    background: white;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+/* Password Show Eye Icon Start */
+.form-group{
+    position: relative;
+}
+
+.form-group input {
+    padding-right: 25px;
+    background: #4cafe809;
+}
+
+.form-group .show-password {
+    position: absolute;
+    right: 10px;
+    padding: 6px;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+.form-group:hover .fa-eye {
+    color: #0aa4ca;
+}
+
+.form-group:hover .fa-eye:before {
+    content: 'Show Password';
+}
+/* Password Show Eye Icon END */
+
+
 /*Gender Option Start*/
 .sb-profile-gender{
     text-overflow: ellipsis;
@@ -2221,6 +2366,7 @@ ol li{
     color: #06b6d4;
     border-radius: 4px;
 }
+
 .gender-select-reg{
     padding: 00px 10px;
     display: flex;
@@ -2256,7 +2402,7 @@ ol li{
 	border: 1px solid #ccc;
 	border-radius: 3px;
     background: white;
-    }
+}
     
 .gender-select-reg .gender-option label i{
     font-size: 17px;
@@ -2360,10 +2506,46 @@ ol li{
     left: 4px;
 }
 /* Checkbox with Right Mark End */
+
+
+/*Used OR For Separate SignUp & SignIn Option Start*/
+.or{
+    font-size: 15px;
+    text-align: center;
+    margin-top: 2px;
+    margin-bottom: 2px;
+    position: relative;
+    text-align: center;
+    z-index: 1;
+}
+
+.or::before {
+    position: absolute;
+    content: "";
+    width: 100%;
+    height: 1px;
+    background: #0aa4ca;
+    left: 0;
+    right: 0;
+    top: 50%;
+    z-index: -1;
+}
+
+.sb-or{
+    background: white;
+    padding-left: 10px;
+    padding-right: 10px;
+}
+
+.or p{
+    margin-top: 10px;
+    margin-bottom: 0px;
+}
+/*Used OR For Separate SignUp & SignIn Option End*/
 /*-- -- -- -- -- -- -- -- -- -- -- -- -- ---- -- --
 -- -- -- -- -- -- -- -- --- -- -- -- -- -- -- -- --
 --                   E   N   D                   --
---        SHOSUR BARI - REGISTRATION PAGE        --
+--           SHOSUR BARI - REGISTER PAGE         --
 -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- ---
 -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -*/
 
@@ -2663,60 +2845,17 @@ input[type=submit] {
 
 
 
-
-
-/* Table colunm border start*/
-td.day_label {
-    color: #000000;
-    padding: 8px;
-    font-weight: 450;
-    border: 1px #ccc;
-    border-style: groove;
-    width: 40%;
-    position: inherit;
+/*-- -- -- -- -- -- -- -- -- -- -- -- -- ---- -- --
+-- -- -- -- -- -- -- -- --- -- -- -- -- -- -- -- --
+--                  S  T  A  R  T                --
+--            SHOSUR BARI - SERVICE PAGE         --
+-- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- ---
+-- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -*/
+.shosurbari-service{
+    width: 90%;
+    margin: 10px auto;
 }
 
-td.day_value {
-    color: black;
-    padding: 8px;
-    font-weight: 400;
-    border: 1px #ccc;
-    border-style: groove;
-    width: 60%;
-}
-
-.nav-tabs1>li.active>a, .nav-tabs1>li.active>a:focus, .nav-tabs1>li.active>a:hover {
-    color: #fff;
-    background-color:#0aa4ca;
-    border:none;
-    border-radius: 3px;
-    margin: 5px;
-}
-
-.nav-tabs1 .open>a, .nav-tabs1 .open>a:hover, .nav-tabs1 .open>a:focus, .nav-tabs1>li>a:hover, .nav-tabs1>li>a:focus {
-    background-color:#0aa4ca !important;
-    border-color:#06b6d4;
-    color: #fff !important;
-    margin: 5px;
-}
-
-.nav-tabs1>li{
-	margin-bottom:0;
-}
-
-a#profile-tab, a#home-tab, a#profile-tab1{
-    color: #ffffff;
-} 
-
-
-
-
-
-
-
-
-
-/* --services --*/
 .page_header{
 	text-align:center;
 	margin-bottom: 2em;
@@ -2733,6 +2872,11 @@ a#profile-tab, a#home-tab, a#profile-tab1{
 	font-size: 16px;
     color:#000;
     line-height:1.8em;
+    text-align: justify;
+}
+
+.item_content{
+    text-align: justify;
 }
 
 i.icon_4{
@@ -2741,208 +2885,13 @@ i.icon_4{
     font-size:70px;
     line-height: 120px;
 }
+/*-- -- -- -- -- -- -- -- -- -- -- -- -- ---- -- --
+-- -- -- -- -- -- -- -- --- -- -- -- -- -- -- -- --
+--                     E   N   D                 --
+--            SHOSUR BARI - SERVICE PAGE         --
+-- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- ---
+-- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -*/
 
-
-.page_header h1{
-	font-family: 'Oswald', sans-serif;
-    font-size: 33px;
-    color: #000;
-    margin-bottom:1em;
-    font-weight: 500;
-}
-
-
-
-
-
-
-
-
-
-
-
-
-
-/* FORM SUBMIT BUTTON START */
-/* OR */
-.or{
-    font-size: 15px;
-    text-align: center;
-    margin-top: 2px;
-    margin-bottom: 2px;
-    position: relative;
-    text-align: center;
-    z-index: 1;
-}
-
-.or::before {
-    position: absolute;
-    content: "";
-    width: 100%;
-    height: 1px;
-    background: #0aa4ca;
-    left: 0;
-    right: 0;
-    top: 50%;
-    z-index: -1;
-}
-.sb-or{
-    background: white;
-    padding-left: 10px;
-    padding-right: 10px;
-}
-
-.or p{
-    margin-top: 10px;
-    margin-bottom: 0px;
-}
-
-
-/* BUTTON 1 */
-.btn_1{
-    background: #06b6d4;
-    border-radius: 6px;
-    width: 100%;
-    padding: 5.5px;
-    display: inline-block;
-    color: #fff;
-    text-transform: uppercase;
-    outline: none;
-    border: none;
-    margin: 0px;
-    font-size: 0.60em;
-    transition: background-color 0.3s, color 0.3s;
-}
-
-.btn_1:hover, .btn_2:hover, .btn_4:hover{
-	background: #0aa4ca;
-    color: #fff;
-}
-
-.btn_3:hover, .btn_5:hover{
-	color: #0aa4ca;
-}
-
-.form-actions p{
-    font-size: 14px;
-    color: black;
-}
-
-.form-actions a{
-    font-size: 16px;
-    color: black;
-    text-decoration: underline;
-    white-space: nowrap;
-}
-
-
-/*Login Your Account BUTTON 2 */
-.btn_2 span {
-    width: 7%;
-    position: relative;
-    left: 0px;
-    top: 5px;
-}
-.btn_2{
-    background: #06b6d4;
-    border-radius: 6px;
-    width: 100%;
-    padding: 4px;
-    display: inline-block;
-    color: #fff;
-    text-transform: uppercase;
-    outline: none;
-    border: none;
-    margin: 0px;
-    font-size: 0.60em;
-    transition: background-color 0.3s, color 0.3s;
-}
-
-/* Login Your Account BUTTON 3 */
-.btn_3 span {
-    width: 6%;
-    position: relative;
-    left: 0px;
-    top: 5px;
-}
-.btn_3{
-    background: none;
-    width: 60%;
-    display: inline-block;
-    color: #000;
-    margin-top: 7px auto -50px auto;
-    transition: color 0.1s;
-}
-
-/*Creat Account BUTTON 4 */
-.btn_4 span  {
-    width: 4%;
-    position: relative;
-    left: 0px;
-    top: 3px;
-}
-
-.btn_4 {
-    background: #06b6d4;
-    border-radius: 6px;
-    width: 100%;
-    padding: 5.5px;
-    display: inline-block;
-    color: #fff;
-    text-transform: uppercase;
-    outline: none;
-    border: none;
-    margin: 0px;
-    font-size: 0.60em;
-    transition: background-color 0.3s, color 0.3s;
-  }
-
-
-/*Create New Account  BUTTON 5 */
-.btn_5 span {
-    width: 3.5%;
-    position: relative;
-    left: 0px;
-    top: 3px;
-}
-.btn_5{
-    background: none;
-    width: 60%;
-    display: inline-block;
-    color: #000;
-    margin-top: 7px auto -50px auto;
-    transition: color 0.1s;
-}
-
-/* FORM SUBMIT BUTTON END */
-
-
-/* Password Show Eye Start */
-
-.form-group{
-    position: relative;
-  }
-  .form-group input {
-    padding-right: 25px;
-    background: #4cafe809;
-  }
-
-  .form-group .show-password {
-    position: absolute;
-    right: 10px;
-    padding: 6px;
-    font-size: 16px;
-    cursor: pointer;
-  }
-
-.form-group:hover .fa-eye {
-    color: #0aa4ca;
-  }
-
-  .form-group:hover .fa-eye:before {
-    content: 'Show Password';
-  }
-/* Password Show Eye END */
 
 
 
@@ -2950,11 +2899,9 @@ i.icon_4{
 /*-- -- -- -- -- -- -- -- -- -- -- -- -- ---- -- --
 -- -- -- -- -- -- -- -- --- -- -- -- -- -- -- -- --
 --                S  T  A  R  T                  --
---         SHOSUR BARI BIODATA FORM LIST         --
---                                               --
+--   SHOSUR BARI BIODATA POST PAGE / FORM LIST   --
 -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- ---
 -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -*/
-
 .sb-biodata{
     border: 1px solid #ccc;
     border-radius: 6px;
@@ -2966,26 +2913,8 @@ i.icon_4{
     margin-bottom: 40px;
     margin-top: 20px;
     background: white;
-    /*  background: rgb(241, 239, 239);
-   box-shadow: 0px 2px 7px 6px rgb(0 0 0 / 20%); */
    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
-
-
-.sb-register-login{
-    border: 1px solid #ccc;
-    border-radius: 6px;
-    width: 400px;
-    gap: 1.5rem;
-    padding: 20px;
-    margin-left: auto;
-    margin-right: auto;
-    margin-bottom: 40px;
-    margin-top: 20px;
-    background: white;
-    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-}
-
 
 .shosurbari-biodata .shosurbari-biodata-edit{
     text-align: center;
@@ -3023,7 +2952,7 @@ i.icon_4{
     display: flex;
     align-items: center;
     flex-wrap: wrap;
-  }
+}
 
 .shosurbari-biodata .form-actions{
     width: 100%;
@@ -3039,15 +2968,9 @@ i.icon_4{
 /*-- -- -- -- -- -- -- -- -- -- -- -- -- ---- -- --
 -- -- -- -- -- -- -- -- --- -- -- -- -- -- -- -- --
 --                    E   N   D                  --
---         SHOSUR BARI BIODATA FORM LIST         --
---                                               --
+--   SHOSUR BARI BIODATA POST PAGE / FORM LIST   --
 -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- ---
 -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -*/
-
-
-
-
-
 
 
 
@@ -3056,13 +2979,9 @@ i.icon_4{
 /*-- -- -- -- -- -- -- -- -- -- -- -- -- ---- -- --
 -- -- -- -- -- -- -- -- --- -- -- -- -- -- -- -- --
 --                S  T  A  R  T                  --
---   After Search User Page / User List Page     --
---                                               --
+--       After Search  Page / User List Page     --
 -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- ---
 -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -*/
-/* background: #00bbff;
-   background: #06b6d4;
-*/
 .flex-container-shosurbaribio {
     display: flex;
     flex-wrap: wrap;
@@ -3078,7 +2997,7 @@ i.icon_4{
     margin-right: 0px;
     margin-left: 0px;
     padding: 0px;
-    }
+}
 
 .biodatalist{
     border: 1px solid #ccc;
@@ -3092,7 +3011,6 @@ i.icon_4{
     margin-top: 30px;
     background: white;
     transition: transform .2s;
-  /*  box-shadow: 0 4px 8px 0 rgb(0 0 0 / 20%), 0 6px 20px 0 rgb(0 0 0 / 19%); */
 }
 
 .biodatalist:hover{
@@ -3102,11 +3020,11 @@ i.icon_4{
 }
 
 .sb_bio_header{
-background: #06b6d4;
-margin: 0px;
-padding-top: 10px;
-border: 1px solid #0aa4ca;
-border-radius: 5px 5px 0px 0px;
+    background: #06b6d4;
+    margin: 0px;
+    padding-top: 10px;
+    border: 1px solid #0aa4ca;
+    border-radius: 5px 5px 0px 0px;
 }
 
 .biodatalist img{
@@ -3127,8 +3045,8 @@ border-radius: 5px 5px 0px 0px;
     border-bottom-left-radius: 5px;
     border-bottom-right-radius: 5px;
     background: #06b6d4;
-
 }
+
 .sb_biodatanumber{
     font-size: 24px;
     color: #fff;
@@ -3204,15 +3122,9 @@ border-radius: 5px 5px 0px 0px;
 /*-- -- -- -- -- -- -- -- -- -- -- -- -- ---- -- --
 -- -- -- -- -- -- -- -- --- -- -- -- -- -- -- -- --
 --                 E    N    D                   --
---   After Search User Page / User List Page     --
---                                               --
+--        After Search Page / User List Page     --
 -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- ---
 -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -*/
-
-
-
-
-
 
 
 
@@ -3222,27 +3134,8 @@ border-radius: 5px 5px 0px 0px;
 -- -- -- -- -- -- -- -- --- -- -- -- -- -- -- -- --
 --                S  T  A  R  T                  --
 -- User Profile View Page / Recent View Profile  --
---                                               --
 -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- ---
 -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -*/
-
-.sbbiodata_profile_recentview {
-    display: flex;
-    flex-wrap: wrap;
-    width: auto;
-    margin-top: 80px;
-    margin-bottom: 0px;
-    margin-right: auto;
-    margin-left: auto;
-    padding: 0px;
-}
-
-.sbbiodata_profile_recentview h3{
-    text-align: center;
-    width: 100%;
-    font-size: 27px;
-}
-
 
 /*NEW ACCOUNT START*/
 .sb_featured_profiles{
@@ -3282,13 +3175,10 @@ border-radius: 5px 5px 0px 0px;
     border: 1px solid #ccc;
 }
 /*NEW ACCOUNT END*/
-
-
 /*-- -- -- -- -- -- -- -- -- -- -- -- -- ---- -- --
 -- -- -- -- -- -- -- -- --- -- -- -- -- -- -- -- --
 --                 E    N    D                   --
 -- User Profile View Page / Recent View Profile  --
---                                               --
 -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- ---
 -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -*/
 
@@ -3414,7 +3304,7 @@ border-radius: 5px 5px 0px 0px;
     margin-bottom: 10px;
 }
 
-input[type=submit] {
+input[type=submit] {   /* Include User Photo Update Page, Upload Button*/
     cursor: pointer;
     width: 100%;
     height: 35px;
@@ -3636,33 +3526,6 @@ label{
 -- -- -- -- -- -- -- -- --- -- -- -- -- -- -- -- --
 --                 E    N    D                   --
 --  SHOSURBARI SINGLE / MULTIPLE BIODATA SEARCH  --
---                                               --
--- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- ---
--- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -*/
-
-
-
-
-
-
-
-
-
-
-/*-- -- -- -- -- -- -- -- -- -- -- -- -- ---- -- --
--- -- -- -- -- -- -- -- --- -- -- -- -- -- -- -- --
---                S  T  A  R  T                  --
--- User Profile View / Single User Profile View  --
---                                               --
--- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- ---
--- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -*/
-
-
-
-/*-- -- -- -- -- -- -- -- -- -- -- -- -- ---- -- --
--- -- -- -- -- -- -- -- --- -- -- -- -- -- -- -- --
---                 E    N    D                   --
--- User Profile View / Single User Profile View  --
 --                                               --
 -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- ---
 -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -*/
@@ -3936,7 +3799,8 @@ ul.profile_item{
 @media (min-width:1280px){
 
     .shosurbari-about-contact,
-    .shosurbari-trmcnd-prvplcy {
+    .shosurbari-trmcnd-prvplcy,
+    .shosurbari-service {
         width: 1170px;
         margin: auto;
     }
