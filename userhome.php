@@ -90,39 +90,56 @@ $(document).ready(function(){
           }
         ?>
 
-        <div class="shosurbari-userhome-status">
-          <h3><?php echo "Welcome: $username"; ?></h3>
-
-          <!-- Display the account status -->
-          <h4 >Account Status:
-            <?php if ($deactivated == 0) {
-              echo '<span style="color: green;">Active</span>';
-              } else {
-              echo '<span style="color: red;">Deactivated</span>';
-              }
-            ?>
-          </h4>
-
-          <form action="deactivate_account.php" method="post">
-            <?php if ($deactivated == 1) { ?>
-              <button type="submit" name="action" value="activate">Activate Account</button>
-            <?php } else { ?>
-              <button type="submit" name="action" value="deactivate">Deactivate Account</button>
-            <?php } ?>
-          </form>
-        </div>
-
       </div>
     </div>
   </div>
 
 
   <div class="navigationpro" style="background-color: #fff;">
+
+    <div class="shosurbari-userhome-status">
+      <h3><?php echo "Welcome: $username"; ?></h3>
+
+      <!-- Display the account status -->
+      <h4 >Account Status:
+        <?php if ($deactivated == 0) {
+          echo '<span style="color: green;">Active</span>';
+          } else {
+          echo '<span style="color: red;">Deactivated</span>';
+          }
+        ?>
+      </h4>
+
+      <form action="deactivate_account.php" method="post">
+        <?php if ($deactivated == 1) { ?>
+          <button type="submit" name="action" value="activate">Activate Account</button>
+          <?php } else { ?>
+          <button type="submit" name="action" value="deactivate">Deactivate Account</button>
+        <?php } ?>
+      </form>
+    </div>
+
+
     <div class="collapse_userprofile navbar-collapseprofile" id="bs-megadropdown-tabs">
       <ul class="nav navbar-nav nav_1">
         <li><a href="view_profile.php?id=<?php echo $id;?>">View Profile</a></li>
-        <li><a href="editbiodata.php?id=<?php echo $id;?>">Post Biodata</a></li>
-        <li><a href="updateaccount.php?id=<?php echo $id;?>">Update Account</a></li>
+
+        <li class="dropdown">
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown">Biodata <span class="caret"></span> </a>
+          <ul class="dropdown-menu" role="menu">
+            <li><a href="editbiodata.php?id=<?php echo $id;?>">Biodata Post</a></li>
+            <li><a href="photoupdate.php?id=<?php echo $id;?>">Photo Upload/Delete</a></li>
+          </ul>
+        </li>
+
+        <li class="dropdown">
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown">Update <span class="caret"></span> </a>
+          <ul class="dropdown-menu" role="menu">
+            <li><a href="editbiodata.php?id=<?php echo $id;?>">Biodata Update</a></li>
+            <li><a href="accountupdate.php?id=<?php echo $id;?>">Account Update</a></li>
+          </ul>
+        </li>
+
         <li><a href="search.php">Search Biodata</a></li>
       </ul>
     </div>
