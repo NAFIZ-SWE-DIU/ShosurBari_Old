@@ -110,14 +110,33 @@ echo "<script>alert(\"Invalid Profile ID\")</script>";
 					//Biodata 4
 					if($row){
 					$present_address=$row['present_address'];
-					$profilecreationdate=$row['profilecreationdate'];
+					}
+
+					// Get profile creation date from 1bd_personal_physical table
+					$sql = "SELECT profilecreationdate FROM 1bd_personal_physical WHERE user_id = $id";
+					$result = mysqlexec($sql);
+					$row = mysqli_fetch_assoc($result);
+
+					// Check if profile creation date exists and format it
+					$profilecreationdate = '';
+					if ($row && !empty($row['profilecreationdate'])) {
+						// Convert the profile creation date to a DateTime object
+						$profileCreationDateTime = new DateTime($row['profilecreationdate']);
+
+						// Get the formatted date string in the desired format (date month year)
+						$formattedProfileCreationDate = $profileCreationDateTime->format('d F Y');
+
+						// Set the formatted profile creation date
+						$profilecreationdate = $formattedProfileCreationDate;
 					}
 				?>
 
 				<div class="address">
-					<?php if (!empty ($present_address)) { ?>
-						<td class="day_value closed"> Present Address : <?php echo $present_address;?> </td> <br>
-						<td class="day_value closed"> Profile Create : <?php echo $profilecreationdate;?> </td>
+					<?php if (!empty($present_address)) { ?>
+						<td class="day_value closed">Present Address: <?php echo $present_address; ?></td><br>
+						<?php if (!empty($profilecreationdate)) { ?>
+							<td class="day_value closed">Profile Create: <?php echo $profilecreationdate; ?></td>
+						<?php } ?>
 					<?php } ?>
 				</div>
     		</div>
@@ -564,23 +583,24 @@ echo "<script>alert(\"Invalid Profile ID\")</script>";
 						$sql="SELECT * FROM 1bd_personal_physical  ORDER BY profilecreationdate DESC LIMIT 20"; //Last 20 Profile View maximum 20 Profile Show
 						$result=mysqlexec($sql);
 						$count=1;
+						
 						while($row=mysqli_fetch_assoc($result)){
 						$profid=$row['user_id'];
-						$Skin_tones=$row['Skin_tones'];
-						$height=$row['height'];
-						$dateofbirth=$row['dateofbirth'];
+						$Skin_tones_recentview1=$row['Skin_tones'];
+						$height_recentview1=$row['height'];
+						$dateofbirth_recentview1=$row['dateofbirth'];
 
 						$sql3="SELECT * FROM 2bd_personal_lifestyle WHERE user_id=$profid";		
 						$result3=mysqlexec($sql3);
 						if($result3)
 						while($row3=mysqli_fetch_assoc($result3))
-						$occupation=$row3['occupation'];
+						$occupation_recentview1=$row3['occupation'];
 
 						$sql4="SELECT * FROM 4bd_address_details WHERE user_id=$profid";		
 						$result4=mysqlexec($sql4);
 						if($result4)
 						while($row4=mysqli_fetch_assoc($result4))
-						$permanent_address=$row4['permanent_address'];
+						$permanent_address_recentview1=$row4['permanent_address'];
 							
 						//getting photo
 						$sql2="SELECT * FROM photos WHERE user_id=$profid";
@@ -604,11 +624,11 @@ echo "<script>alert(\"Invalid Profile ID\")</script>";
 						echo "<div class=\"sbbio_number_recentview\"><span class=\"sb_biodatanumber_recentview\"> {$profid} <br> Biodata Number </span> </div>";
 						echo "</div>";
 						echo "<div class=\"sb_user_recentview\">
-						<span class=\"sb_single_data_recentview\"> <span class=\"sb_value_recentview\"> Skin Tones </span>  <span class=\"sb_data_recentview\">{$Skin_tones}</span></span>
-						<span class=\"sb_single_data_recentview\"> <span class=\"sb_value_recentview\"> Height </span>  <span class=\"sb_data_recentview\">{$height}</span></span>
-						<span class=\"sb_single_data_recentview\"> <span class=\"sb_value_recentview\"> Occupation </span>      <span class=\"sb_data_recentview\"> {$occupation}</span></span>
-						<span class=\"sb_single_data_recentview\"> <span class=\"sb_value_recentview\"> Address </span>      <span class=\"sb_data_recentview\"> {$permanent_address}</span></span>
-						<span class=\"sb_single_data_recentview\"> <span class=\"sb_value_recentview\"> Birth Year</span>        <span class=\"sb_data_recentview\"> {$dateofbirth}</span></span>
+						<span class=\"sb_single_data_recentview\"> <span class=\"sb_value_recentview\"> Skin Tones </span>  <span class=\"sb_data_recentview\">{$Skin_tones_recentview1}</span></span>
+						<span class=\"sb_single_data_recentview\"> <span class=\"sb_value_recentview\"> Height </span>  <span class=\"sb_data_recentview\">{$height_recentview1}</span></span>
+						<span class=\"sb_single_data_recentview\"> <span class=\"sb_value_recentview\"> Occupation </span>      <span class=\"sb_data_recentview\"> {$occupation_recentview1}</span></span>
+						<span class=\"sb_single_data_recentview\"> <span class=\"sb_value_recentview\"> Address </span>      <span class=\"sb_data_recentview\"> {$permanent_address_recentview1}</span></span>
+						<span class=\"sb_single_data_recentview\"> <span class=\"sb_value_recentview\"> Birth Year</span>        <span class=\"sb_data_recentview\"> {$dateofbirth_recentview1}</span></span>
 						<a href=\"view_profile.php?id={$profid}\" target=\"_blank\"><button class=\"view_sb_profile_recentview\"> View Full Profile</button> </a>
 						</div></div>";
 						$count++;
@@ -1558,9 +1578,9 @@ echo "<script>alert(\"Invalid Profile ID\")</script>";
 						</div>
 					</div>
 				</div>
-			</div> <!-- Right Side -->
-		</div> <!-- Main BioData -->
-	</div> <!-- UserProfile -->
+			</div>
+		</div>
+	</div>
 
 
 
@@ -1582,21 +1602,21 @@ echo "<script>alert(\"Invalid Profile ID\")</script>";
             $count=1;
             while($row=mysqli_fetch_assoc($result)){
             $profid=$row['user_id'];
-			$Skin_tones=$row['Skin_tones'];
-			$height=$row['height'];
-			$dateofbirth=$row['dateofbirth'];
+			$Skin_tones_recentview2=$row['Skin_tones'];
+			$height_recentview2=$row['height'];
+			$dateofbirth_recentview2=$row['dateofbirth'];
 
 			$sql3="SELECT * FROM 2bd_personal_lifestyle WHERE user_id=$profid";		
 			$result3=mysqlexec($sql3);
 			if($result3)
 			while($row3=mysqli_fetch_assoc($result3))
-			$occupation=$row3['occupation'];
+			$occupation_recentview2=$row3['occupation'];
 
 			$sql4="SELECT * FROM 4bd_address_details WHERE user_id=$profid";		
 			$result4=mysqlexec($sql4);
 			if($result4)
 			while($row4=mysqli_fetch_assoc($result4))
-			$permanent_address=$row4['permanent_address'];
+			$permanent_address_recentview2=$row4['permanent_address'];
 				
             //getting photo
             $sql2="SELECT * FROM photos WHERE user_id=$profid";
@@ -1620,11 +1640,11 @@ echo "<script>alert(\"Invalid Profile ID\")</script>";
 			echo "<div class=\"sbbio_number_recentview\"><span class=\"sb_biodatanumber_recentview\"> {$profid} <br> Biodata Number </span> </div>";
 			echo "</div>";
 			echo "<div class=\"sb_user_recentview\">
-			<span class=\"sb_single_data_recentview\"> <span class=\"sb_value_recentview\"> Skin Tones </span>  <span class=\"sb_data_recentview\">{$Skin_tones}</span></span>
-			<span class=\"sb_single_data_recentview\"> <span class=\"sb_value_recentview\"> Height </span>  <span class=\"sb_data_recentview\">{$height}</span></span>
-			<span class=\"sb_single_data_recentview\"> <span class=\"sb_value_recentview\"> Occupation </span>      <span class=\"sb_data_recentview\"> {$occupation}</span></span>
-			<span class=\"sb_single_data_recentview\"> <span class=\"sb_value_recentview\"> Address </span>      <span class=\"sb_data_recentview\"> {$permanent_address}</span></span>
-			<span class=\"sb_single_data_recentview\"> <span class=\"sb_value_recentview\"> Birth Year</span>        <span class=\"sb_data_recentview\"> {$dateofbirth}</span></span>
+			<span class=\"sb_single_data_recentview\"> <span class=\"sb_value_recentview\"> Skin Tones </span>  	<span class=\"sb_data_recentview\">{$Skin_tones_recentview2}</span></span>
+			<span class=\"sb_single_data_recentview\"> <span class=\"sb_value_recentview\"> Height </span>  <span 	class=\"sb_data_recentview\">{$height_recentview2}</span></span>
+			<span class=\"sb_single_data_recentview\"> <span class=\"sb_value_recentview\"> Occupation </span>      <span class=\"sb_data_recentview\"> {$occupation_recentview2}</span></span>
+			<span class=\"sb_single_data_recentview\"> <span class=\"sb_value_recentview\"> Address </span>      	<span class=\"sb_data_recentview\"> {$permanent_address_recentview2}</span></span>
+			<span class=\"sb_single_data_recentview\"> <span class=\"sb_value_recentview\"> Birth Year</span>       <span class=\"sb_data_recentview\"> {$dateofbirth_recentview2}</span></span>
 			<a href=\"view_profile.php?id={$profid}\" target=\"_blank\"><button class=\"view_sb_profile_recentview\"> View Full Profile</button> </a>
 			</div></div>";
 			$count++;
