@@ -182,7 +182,7 @@ if($row){
 -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -->
 <fieldset>
 
-            <div class="sb-biodata" id="">
+            <div class="sb-biodata" id="personalPhysical">
 
                 <div class="sb-biodata-field">
 		            <h2>Personal & Physical</h2>
@@ -441,7 +441,7 @@ $aboutme=$row['aboutme'];
 --                                               --
 -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- ---
 -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -->
-                    <div class="sb-biodata" id="">
+                    <div class="sb-biodata" id="personalLife">
 
                         <div class="sb-biodata-field">
 		                   <h2>Personal & Life Style</h2>
@@ -675,7 +675,7 @@ $maximum_education=$row['maximum_education'];
 -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- ---
 -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -->
 
-                <div class="sb-biodata" id="">
+                <div class="sb-biodata" id="educationalQualifications">
 
                     <div class="sb-biodata-field">
 		                <h2>Educational Qualifications</h2>
@@ -816,7 +816,7 @@ $childhood=$row['childhood'];
 --                                               --
 -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- ---
 -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -->
- <div class="sb-biodata" id="">
+ <div class="sb-biodata" id="addressDetails">
 					
 <div class="sb-biodata-field">
    <h2>Address Details</h2>
@@ -1032,7 +1032,7 @@ $family_religious=$row['family_religious'];
 --                                               --
 -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- ---
 -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -->
-                   <div class="sb-biodata" id="">
+                   <div class="sb-biodata" id="familyInfo">
 
                         <div class="sb-biodata-field">
 		                   <h2>Family Information</h2>
@@ -1161,7 +1161,7 @@ $profileby_male=$row['profileby_male'];
 --                                               --
 -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- ---
 -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -->
-                        <div class="sb-biodata" id="">
+                        <div class="sb-biodata" id="maleMarriageInfo">
 
                             <div class="sb-biodata-field">
 		                        <h2>Marriage related Information</h2>
@@ -1266,7 +1266,7 @@ $profileby_female=$row['profileby_female'];
 --                                               --
 -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- ---
 -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -->
-                        <div class="sb-biodata" id="">
+                        <div class="sb-biodata" id="femaleMarriageInfo">
 
                             <div class="sb-biodata-field">
 		                        <h2>Marriage related Information</h2>
@@ -1363,7 +1363,7 @@ $yourreligion_condition=$row['yourreligion_condition'];
 --                                               --
 -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- ---
 -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -->
-                        <div class="sb-biodata" id="">
+                        <div class="sb-biodata" id="religionDetails">
 
                             <div class="sb-biodata-field">
 		                        <h2>Religion Details</h2>
@@ -1464,7 +1464,7 @@ $partner_attributes=$row['partner_attributes'];
 --                                               --
 -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- ---
 -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -->
-                    <div class="sb-biodata" id="">
+                    <div class="sb-biodata" id="expectedPartner">
 
                         <div class="sb-biodata-field">
 		                   <h2>Expected Life Partner</h2>
@@ -1670,18 +1670,26 @@ $partner_attributes=$row['partner_attributes'];
     background: #27AE60;
     color: white;
 }
+.error-message-empty{
+	color: red;
+}
 </style>
-
+ 
 
 <script>
 // jQuery time
 var current_fs, next_fs, previous_fs; // fieldsets
 
 $(".next").click(function() {
-  current_fs = $(this).parent();
-  next_fs = $(this).parent().next();
+  current_fs = $(this).closest("fieldset");
+  next_fs = current_fs.next("fieldset");
 
-  // Activate next step on progressbar using the index of next_fs
+  // Validate fields in the current fieldset
+  if (!validateFields(current_fs)) {
+    return; // Stop execution if fields are empty
+  }
+
+  // Activate next step on progressbar
   $("#progressbar li").eq($("fieldset").index(next_fs)).addClass("active");
 
   // Show the next fieldset
@@ -1693,17 +1701,18 @@ $(".next").click(function() {
   $('html, body').animate({ scrollTop: $('#progressbar').offset().top }, 800);
 });
 
-$(".previous").click(function() {
-  current_fs = $(this).parent();
-  previous_fs = $(this).parent().prev();
 
-  // De-activate current step on progressbar
-  $("#progressbar li").eq($("fieldset").index(current_fs)).removeClass("active");
+$(".previous").click(function() {
+  current_fs = $(this).closest("fieldset");
+  previous_fs = current_fs.prev("fieldset");
 
   // Show the previous fieldset
   previous_fs.show();
   // Hide the current fieldset
   current_fs.hide();
+
+  // De-activate current step on progressbar
+  $("#progressbar li").eq($("fieldset").index(current_fs)).removeClass("active");
 
   // Smooth scroll to the top of the progress bar
   $('html, body').animate({ scrollTop: $('#progressbar').offset().top }, 800);
@@ -1712,6 +1721,54 @@ $(".previous").click(function() {
 $(".submit").click(function() {
   return false;
 });
+
+
+
+
+
+
+
+// Validate the fields in the current fieldset
+function validateFields(current_fs) {
+  var isValid = true;
+
+  // Get all required input fields within the current fieldset
+  var inputs = current_fs.find(":input[required]");
+
+  // Remove previous error messages
+  current_fs.find(".error-message-empty").remove();
+
+  // Loop through each input field and check if it's empty
+  inputs.each(function() {
+    if ($(this).val().trim() === "") {
+      $(this).addClass("error"); // Add error class to highlight the empty field
+      isValid = false;
+
+      // Show error message
+      var errorMessage = "<span class='error-message-empty'>This field is required.</span>";
+      $(this).after(errorMessage);
+    } else {
+      $(this).removeClass("error"); // Remove error class if the field is not empty
+    }
+  });
+
+  // Scroll to the first empty input field
+  if (!isValid) {
+    var firstEmptyField = current_fs.find(".error").first();
+    var windowHeight = $(window).height();
+    var fieldTop = firstEmptyField.offset().top;
+    var fieldHeight = firstEmptyField.outerHeight();
+    var middleOffset = (windowHeight / 2) - (fieldHeight / 2);
+    var scrollTo = fieldTop - middleOffset;
+
+    $('html, body').animate({ scrollTop: scrollTo }, 800);
+  }
+
+  return isValid;
+}
+
+
+
 </script>
 
 
