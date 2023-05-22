@@ -112,20 +112,25 @@ $username=$row['username'];
 <!-- multistep form -->
 <form id="biodataForm">
   <!-- progressbar -->
-    <ul id="progressbar">
-        <li class="active">Physical</li>
-        <li> LifeStyle</li>
-        <li>Education</li>
-        <li>Address</li>
-        <li>Family</li>
-        <li>MarriageInfo</li>
-        <li> MarriageInfo</li>
-        <li>Religion</li>
-        <li>LifePartner</li>
-    </ul>
+  <ul id="progressbar">
+    <li class="active" id="personalPhysical">Physical</li>
+    <li id="personalLife">LifeStyle</li>
+    <li id="educationalQualifications">Education</li>
+    <li id="addressDetails">Address</li>
+    <li id="familyInfo">Family</li>
+    <li id="MarriageInfo">MarriageInfo</li>
+    <li id="religionDetails">Religion</li>
+    <li id="expectedPartner">LifePartner</li>
+</ul>
 
 
-
+<?php
+if ($biodatagender == 'Male') {
+    $biodatagender = 'Male';
+} else {
+    $biodatagender = 'Female';
+}
+?>
 
 
 
@@ -1118,42 +1123,92 @@ $family_religious=$row['family_religious'];
 
 
 
-<!--6 fieldsets start-->
-    <fieldset>
 
-    <?php
+<?php
 include("includes/dbconn.php");
 
 //$id=$_GET['id'];
 //bd_marriage_related_qs_male_6($id);
-
-
 
 //getting profile details from db
 $sql="SELECT * FROM 6bd_marriage_related_qs_male WHERE user_id = $id";
 $result = mysqlexec($sql);
 
 if($result){
-$row=mysqli_fetch_assoc($result);
-if($row){
-$guardians_agree_male=$row['guardians_agree_male'];
-}
-if($row){
-$allowstudy_aftermarriage=$row['allowstudy_aftermarriage'];
-}
-if($row){
-$allowjob_aftermarriage=$row['allowjob_aftermarriage'];
-}
-if($row){
-$livewife_aftermarriage=$row['livewife_aftermarriage'];
-}
-if($row){
-$profileby_male=$row['profileby_male'];
-}
+    $row=mysqli_fetch_assoc($result);
+    if($row){
+        $guardians_agree_male=$row['guardians_agree_male'];
+    }
+    if($row){
+        $allowstudy_aftermarriage=$row['allowstudy_aftermarriage'];
+    }
+    if($row){
+        $allowjob_aftermarriage=$row['allowjob_aftermarriage'];
+    }
+    if($row){
+        $livewife_aftermarriage=$row['livewife_aftermarriage'];
+    }
+    if($row){
+        $profileby_male=$row['profileby_male'];
+    }
 }
 
-	//echo $guardians_agree_male.' '.$allowstudy_aftermarriage.' '.$allowjob_aftermarriage.' '.$livewife_aftermarriage.' '.$profileby_male;
+//include("includes/dbconn.php");
+
+//$id=$_GET['id'];
+//bd_marriage_related_qs_female_7($id);
+
+//getting profile details from db
+$sql="SELECT * FROM 7bd_marriage_related_qs_female WHERE user_id = $id";
+$result = mysqlexec($sql);
+
+if($result){
+    $row=mysqli_fetch_assoc($result);
+    if($row){
+        $guardians_agree_female=$row['guardians_agree_female'];
+    }
+    if($row){
+        $anyjob_aftermarriage=$row['anyjob_aftermarriage'];
+    }
+    if($row){
+        $studies_aftermarriage=$row['studies_aftermarriage'];
+    }
+    if($row){
+        $agree_marriage_student=$row['agree_marriage_student'];
+    }
+    if($row){
+        $profileby_female=$row['profileby_female'];
+    }
+}
+
+
+
+
+$biodatagender = ""; // Initialize the variable
+
+if (isset($_POST['biodatagender'])) {
+    $biodatagender = $_POST['biodatagender'];
+} else {
+    if ($isMaleSectionVisible || $isFemaleSectionVisible) {
+        // Set the default value based on the visibility of Male and Female sections
+        if ($isMaleSectionVisible) {
+            $biodatagender = "Male";
+        } elseif ($isFemaleSectionVisible) {
+            $biodatagender = "Female";
+        }
+    } else {
+        // Set a default value if neither Male nor Female sections are visible
+        $biodatagender = "Male";
+    }
+}
+
+
+
+$isMaleSectionVisible = ($biodatagender == "Male"); // Set visibility based on biodatagender value
+$isFemaleSectionVisible = ($biodatagender == "Female"); // Set visibility based on biodatagender value
 ?>
+<!--6 fieldsets start-->
+<fieldset>
 <!-- -- -- -- -- -- -- -- -- -- -- -- -- ---- -- --
 -- -- -- -- -- -- -- -- --- -- -- -- -- -- -- -- --
 --                S  T  A  R  T                  --
@@ -1161,7 +1216,10 @@ $profileby_male=$row['profileby_male'];
 --                                               --
 -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- ---
 -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -->
+<?php if ($isMaleSectionVisible): ?>
+
                         <div class="sb-biodata" id="maleMarriageInfo">
+
 
                             <div class="sb-biodata-field">
 		                        <h2>Marriage related Information</h2>
@@ -1214,10 +1272,15 @@ $profileby_male=$row['profileby_male'];
 --                                               --
 -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- ---
 -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -->
-        <input type="button" name="previous" class="previous action-button" value="Previous" />
-        <input type="button" name="next" class="next action-button" value="Next" />
-    </fieldset>
+
 <!--6 fieldsets end-->
+
+<?php endif; ?>
+
+
+
+
+
 
 
 
@@ -1225,40 +1288,7 @@ $profileby_male=$row['profileby_male'];
 
 
 <!--7 fieldsets start-->
-    <fieldset>
 
-    <?php
-include("includes/dbconn.php");
-
-//$id=$_GET['id'];
-//bd_marriage_related_qs_female_7($id);
-
-
-
-//getting profile details from db
-$sql="SELECT * FROM 7bd_marriage_related_qs_female WHERE user_id = $id";
-$result = mysqlexec($sql);
-
-if($result){
-$row=mysqli_fetch_assoc($result);
-if($row){
-$guardians_agree_female=$row['guardians_agree_female'];
-}
-if($row){
-$anyjob_aftermarriage=$row['anyjob_aftermarriage'];
-}
-if($row){
-$studies_aftermarriage=$row['studies_aftermarriage'];
-}
-if($row){
-$agree_marriage_student=$row['agree_marriage_student'];
-}
-if($row){
-$profileby_female=$row['profileby_female'];
-}
-}
-	//echo $guardians_agree_female.' '.$anyjob_aftermarriage.' '.$studies_aftermarriage.' '.$agree_marriage_student.' '.$profileby_female;
-?>
 <!-- -- -- -- -- -- -- -- -- -- -- -- -- ---- -- --
 -- -- -- -- -- -- -- -- --- -- -- -- -- -- -- -- --
 --                S  T  A  R  T                  --
@@ -1266,7 +1296,10 @@ $profileby_female=$row['profileby_female'];
 --                                               --
 -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- ---
 -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -->
+<?php if ($isFemaleSectionVisible): ?>
+
                         <div class="sb-biodata" id="femaleMarriageInfo">
+
 
                             <div class="sb-biodata-field">
 		                        <h2>Marriage related Information</h2>
@@ -1312,6 +1345,8 @@ $profileby_female=$row['profileby_female'];
 			                </div>
                         </div>    
                     </div>
+					<?php endif; ?>
+
 <!-- -- -- -- -- -- -- -- -- -- -- -- -- ---- -- --
 -- -- -- -- -- -- -- -- --- -- -- -- -- -- -- -- --
 --                   E   N   D                   --
@@ -1323,6 +1358,13 @@ $profileby_female=$row['profileby_female'];
         <input type="button" name="next" class="next action-button" value="Next" />
     </fieldset>
 <!--7 fieldsets end-->
+
+
+
+
+
+
+
 
 
 
