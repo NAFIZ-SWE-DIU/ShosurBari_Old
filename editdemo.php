@@ -197,7 +197,7 @@ if($row){
 
 		        <div class="shosurbari-biodata-field">
 		            <label for="edit-name">Biodata Type<span class="form-required" title="This field is required.">*</span></label>
-	                <select name="biodatagender" required>
+					<select name="biodatagender" required onchange="toggleSections(this.value)">
 					    <option hidden selected><?php echo $biodatagender; ?></option>
 	                    <option value="Male">Male</option>
 	                    <option value="Female">Female</option> 
@@ -300,6 +300,8 @@ if($row){
 		                    <option value="2011">2011</option>
 		                    <option value="2012">2012</option>
 		                    <option value="2013">2013</option>
+							<option value="2014">2014</option>
+		                    <option value="2015">2015</option>
 	                    </select>
 	                </div>
 
@@ -1123,12 +1125,9 @@ $family_religious=$row['family_religious'];
 
 
 
-
+<!--6 fieldsets start-->
 <?php
 include("includes/dbconn.php");
-
-//$id=$_GET['id'];
-//bd_marriage_related_qs_male_6($id);
 
 //getting profile details from db
 $sql="SELECT * FROM 6bd_marriage_related_qs_male WHERE user_id = $id";
@@ -1153,11 +1152,8 @@ if($result){
     }
 }
 
-//include("includes/dbconn.php");
 
-//$id=$_GET['id'];
 //bd_marriage_related_qs_female_7($id);
-
 //getting profile details from db
 $sql="SELECT * FROM 7bd_marriage_related_qs_female WHERE user_id = $id";
 $result = mysqlexec($sql);
@@ -1180,44 +1176,17 @@ if($result){
         $profileby_female=$row['profileby_female'];
     }
 }
-
-
-
-
-$biodatagender = ""; // Initialize the variable
-
-if (isset($_POST['biodatagender'])) {
-    $biodatagender = $_POST['biodatagender'];
-} else {
-    if ($isMaleSectionVisible || $isFemaleSectionVisible) {
-        // Set the default value based on the visibility of Male and Female sections
-        if ($isMaleSectionVisible) {
-            $biodatagender = "Male";
-        } elseif ($isFemaleSectionVisible) {
-            $biodatagender = "Female";
-        }
-    } else {
-        // Set a default value if neither Male nor Female sections are visible
-        $biodatagender = "Male";
-    }
-}
-
-
-
-$isMaleSectionVisible = ($biodatagender == "Male"); // Set visibility based on biodatagender value
-$isFemaleSectionVisible = ($biodatagender == "Female"); // Set visibility based on biodatagender value
 ?>
-<!--6 fieldsets start-->
+
+
 <fieldset>
 <!-- -- -- -- -- -- -- -- -- -- -- -- -- ---- -- --
 -- -- -- -- -- -- -- -- --- -- -- -- -- -- -- -- --
 --                S  T  A  R  T                  --
---   Male Marriage related Info / sb-biodata-6   --
+--  Male / Female Marriage Info / sb-biodata-6   --
 --                                               --
 -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- ---
 -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -->
-<?php if ($isMaleSectionVisible): ?>
-
                         <div class="sb-biodata" id="maleMarriageInfo">
 
 
@@ -1232,20 +1201,42 @@ $isFemaleSectionVisible = ($biodatagender == "Female"); // Set visibility based 
 			                    <input type="text" id="edit-name" name="guardians_agree_male"  value="<?php echo $guardians_agree_male; ?>"  size="100" maxlength="100" class="form-text" required>
 		                    </div>
 
-							<div class="shosurbari-biodata-field">
-		                        <label for="edit-name">Would you like to allow your wife to study after marriage?<span class="form-required" title="This field is required.">*</span></label>
-			                    <input type="text" id="edit-name" name="allowstudy_aftermarriage"  value="<?php echo $allowstudy_aftermarriage; ?>"  size="100" maxlength="100" class="form-text" required>
-		                    </div>
 
-							<div class="shosurbari-biodata-field">
+
+							<div class="shosurbari-biodata-field" id="male-allow-wife-job">
 		                        <label for="edit-name">Would you like to allow your wife to do any job after marriage?<span class="form-required" title="This field is required.">*</span></label>
 			                    <input type="text" id="edit-name" name="allowjob_aftermarriage"  value="<?php echo $allowjob_aftermarriage; ?>"  size="100" maxlength="100" class="form-text" required>
 		                    </div>
+							<!--Top Male | OR | Bellow Female-->
+							<div class="shosurbari-biodata-field" id="female-job-after-marriage">
+								<label for="edit-name">Are you willing to do any job after marriage?<span class="form-required" title="This field is required.">*</span></label>
+								<input type="text" id="edit-name" name="anyjob_aftermarriage" value="<?php echo $anyjob_aftermarriage; ?>" size="100" maxlength="100" class="form-text" required>
+							</div>
 
-							<div class="shosurbari-biodata-field">
+
+
+
+							<div class="shosurbari-biodata-field" id="male-allow-wife-study">
+								<label for="edit-name">Would you like to allow your wife to study after marriage?<span class="form-required" title="This field is required.">*</span></label>
+								<input type="text" id="edit-name" name="allowstudy_aftermarriage" value="<?php echo $allowstudy_aftermarriage; ?>" size="100" maxlength="100" class="form-text" required>
+							</div>
+							<!--Top Male | OR | Bellow Female-->
+							<div class="shosurbari-biodata-field" id="female-study-after-marriage">
+		                        <label for="edit-name">Would you like to continue your studies after marriage?<span class="form-required" title="This field is required.">*</span></label>
+			                    <input type="text" id="edit-name" name="studies_aftermarriage"   value="<?php echo $studies_aftermarriage; ?>"  size="200" maxlength="200" class="form-text" required>
+		                    </div>
+
+							
+							<div class="shosurbari-biodata-field" id="male-live-with-wife">
 		                        <label for="edit-name">Where will you live with your wife after marriage?<span class="form-required" title="This field is required.">*</span></label>
 			                    <input type="text" id="edit-name" name="livewife_aftermarriage"  value="<?php echo $livewife_aftermarriage; ?>"  size="100" maxlength="100" class="form-text" required>
 		                    </div>
+							<!--Top Male | OR | Bellow Female-->
+							<div class="shosurbari-biodata-field" id="female-agree-marriage-student">
+		                        <label for="edit-name">Are you agree Marriage to student?<span class="form-required" title="This field is required.">*</span></label>
+			                    <input type="text" id="edit-name" name="agree_marriage_student"   value="<?php echo $agree_marriage_student; ?>"size="200" maxlength="200" class="form-text" required>
+		                    </div>
+
 
 							<div class="shosurbari-biodata-field">
 		                        <label for="edit-name">Profile Created by<span class="form-required" title="This field is required.">*</span></label>
@@ -1268,15 +1259,61 @@ $isFemaleSectionVisible = ($biodatagender == "Female"); // Set visibility based 
 <!-- -- -- -- -- -- -- -- -- -- -- -- -- ---- -- --
 -- -- -- -- -- -- -- -- --- -- -- -- -- -- -- -- --
 --                   E   N   D                   --
---   Male Marriage related Info / sb-biodata-6   --
+--  Male / Female Marriage Info / sb-biodata-6   --
 --                                               --
 -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- ---
 -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -->
+        <input type="button" name="previous" class="previous action-button" value="Previous" />
+        <input type="button" name="next" class="next action-button" value="Next" />
+</fieldset>
 
+
+
+<script>
+	function toggleSections(selectedGender) {
+    var maleallowJobwife = document.getElementById('male-allow-wife-job');
+    var femaleJobSection = document.getElementById('female-job-after-marriage');
+	
+							
+	var maleallowStudywife = document.getElementById('male-allow-wife-study');
+    var femaleStudySection = document.getElementById('female-study-after-marriage');
+
+	var maleliveWithwife = document.getElementById('male-live-with-wife');
+    var femaleagreeMarriagestudent = document.getElementById('female-agree-marriage-student');
+							
+
+    if (selectedGender === 'Male') {
+        maleallowJobwife.style.display = 'block';
+        femaleJobSection.style.display = 'none';
+
+		maleallowStudywife.style.display = 'block';
+        femaleStudySection.style.display = 'none';
+
+		maleliveWithwife.style.display = 'block';
+        femaleagreeMarriagestudent.style.display = 'none';
+
+    } else if (selectedGender === 'Female') {
+        maleallowJobwife.style.display = 'none';
+        femaleJobSection.style.display = 'block';
+
+		maleallowStudywife.style.display = 'none';
+        femaleStudySection.style.display = 'block';
+
+		maleliveWithwife.style.display = 'none';
+        femaleagreeMarriagestudent.style.display = 'block';
+    } else {
+        maleallowJobwife.style.display = 'none';
+        femaleJobSection.style.display = 'none';
+
+		maleallowStudywife.style.display = 'none';
+        femaleStudySection.style.display = 'none';
+
+		maleliveWithwife.style.display = 'none';
+        femaleagreeMarriagestudent.style.display = 'none';
+    }
+}
+</script>
 <!--6 fieldsets end-->
-
-<?php endif; ?>
-
 
 
 
@@ -1288,99 +1325,10 @@ $isFemaleSectionVisible = ($biodatagender == "Female"); // Set visibility based 
 
 
 <!--7 fieldsets start-->
+<fieldset>
 
-<!-- -- -- -- -- -- -- -- -- -- -- -- -- ---- -- --
--- -- -- -- -- -- -- -- --- -- -- -- -- -- -- -- --
---                S  T  A  R  T                  --
---  Female Marriage related Info / sb-biodata-7  --
---                                               --
--- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- ---
--- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -->
-<?php if ($isFemaleSectionVisible): ?>
-
-                        <div class="sb-biodata" id="femaleMarriageInfo">
-
-
-                            <div class="sb-biodata-field">
-		                        <h2>Marriage related Information</h2>
-                            </div>
-
-							<div class="sb-biodata-option">
-
-							<div class="shosurbari-biodata-field">
-		                        <label for="edit-name">Do your guardians agree to your marriage?<span class="form-required" title="This field is required.">*</span></label>
-			                    <input type="text" id="edit-name" name="guardians_agree_female"   value="<?php echo $guardians_agree_female; ?>"  size="100" maxlength="100" class="form-text" required>
-		                    </div>
-
-							<div class="shosurbari-biodata-field">
-		                        <label for="edit-name">Are you willing to do any job after marriage?<span class="form-required" title="This field is required.">*</span></label>
-			                    <input type="text" id="edit-name" name="anyjob_aftermarriage"   value="<?php echo $anyjob_aftermarriage; ?>"  size="100" maxlength="100" class="form-text" required>
-		                    </div>
-
-							<div class="shosurbari-biodata-field">
-		                        <label for="edit-name">Would you like to continue your studies after marriage?<span class="form-required" title="This field is required.">*</span></label>
-			                    <input type="text" id="edit-name" name="studies_aftermarriage"   value="<?php echo $studies_aftermarriage; ?>"  size="200" maxlength="200" class="form-text" required>
-		                    </div>
-
-							<div class="shosurbari-biodata-field">
-		                        <label for="edit-name">Are you agree Marriage to student?<span class="form-required" title="This field is required.">*</span></label>
-			                    <input type="text" id="edit-name" name="agree_marriage_student"   value="<?php echo $agree_marriage_student; ?>"size="200" maxlength="200" class="form-text" required>
-		                    </div>
-
-							<div class="shosurbari-biodata-field">
-		                        <label for="edit-name">Profile Created by<span class="form-required" title="This field is required.">*</span></label>
-	                            <select name="profileby_female" required>
-								<option hidden selected><?php echo $profileby_female; ?></option>
-	                            <option value="Self">Self</option>
-								<option value="Father">Father</option>
-	                            <option value="Mother">Mother</option>
-	                            <option value="Brother">Brother</option>
-	                            <option value="Sister">Sister</option>
-								<option value="Uncle">Uncle</option> 
-	                            <option value="Aunty">Aunty</option>
-								<option value="Grandfather">Grandfather</option> 
-	                            <option value="Grandmother">Grandmother</option> 
-	               		        <option value="Other">Other</option> 
-	                            </select>
-			                </div>
-                        </div>    
-                    </div>
-					<?php endif; ?>
-
-<!-- -- -- -- -- -- -- -- -- -- -- -- -- ---- -- --
--- -- -- -- -- -- -- -- --- -- -- -- -- -- -- -- --
---                   E   N   D                   --
---  Female Marriage related Info / sb-biodata-7  --
---                                               --
--- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- ---
--- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -->
-        <input type="button" name="previous" class="previous action-button" value="Previous" />
-        <input type="button" name="next" class="next action-button" value="Next" />
-    </fieldset>
-<!--7 fieldsets end-->
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-<!--8 fieldsets start-->
-        <fieldset>
-
-        <?php
+<?php
 include("includes/dbconn.php");
-
-//$id=$_GET['id'];
-//bd_religion_details_8($id);
-
 
 
 //getting profile details from db
@@ -1401,7 +1349,7 @@ $yourreligion_condition=$row['yourreligion_condition'];
 <!-- -- -- -- -- -- -- -- -- -- -- -- -- ---- -- --
 -- -- -- -- -- -- -- -- --- -- -- -- -- -- -- -- --
 --                S  T  A  R  T                  --
---        Religion Details / sb-biodata-8        --
+--        Religion Details / sb-biodata-7        --
 --                                               --
 -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- ---
 -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -->
@@ -1435,14 +1383,14 @@ $yourreligion_condition=$row['yourreligion_condition'];
 <!-- -- -- -- -- -- -- -- -- -- -- -- -- ---- -- --
 -- -- -- -- -- -- -- -- --- -- -- -- -- -- -- -- --
 --                   E   N   D                   --
---        Religion Details / sb-biodata-8        --
+--        Religion Details / sb-biodata-7        --
 --                                               --
 -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- ---
 -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -->
         <input type="button" name="previous" class="previous action-button" value="Previous" />
         <input type="button" name="next" class="next action-button" value="Next" />
     </fieldset>
-<!--8 fieldsets end-->
+<!--7 fieldsets end-->
 
 
 
@@ -1450,15 +1398,11 @@ $yourreligion_condition=$row['yourreligion_condition'];
 
 
 
-<!--9 fieldsets start-->
-    <fieldset>
+<!--8 fieldsets start-->
+<fieldset>
 
-
-    <?php
+<?php
 include("includes/dbconn.php");
-
-//$id=$_GET['id'];
-//bd_expected_life_partner_9($id);
 
 //getting profile details from db
 $sql="SELECT * FROM 9bd_expected_life_partner WHERE user_id = $id";
@@ -1502,7 +1446,7 @@ $partner_attributes=$row['partner_attributes'];
 <!-- -- -- -- -- -- -- -- -- -- -- -- -- ---- -- --
 -- -- -- -- -- -- -- -- --- -- -- -- -- -- -- -- --
 --                S  T  A  R  T                  --
---     Expected Life Partner / sb-biodata-9      --
+--     Expected Life Partner / sb-biodata-8      --
 --                                               --
 -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- ---
 -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -->
@@ -1568,7 +1512,7 @@ $partner_attributes=$row['partner_attributes'];
 <!-- -- -- -- -- -- -- -- -- -- -- -- -- ---- -- --
 -- -- -- -- -- -- -- -- --- -- -- -- -- -- -- -- --
 --                   E   N   D                   --
---     Expected Life Partner / sb-biodata-9      --
+--     Expected Life Partner / sb-biodata-8      --
 --                                               --
 -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- ---
 -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -->
@@ -1578,7 +1522,7 @@ $partner_attributes=$row['partner_attributes'];
         <input type="button" name="previous" class="previous action-button" value="Previous" />
         <input type="submit" name="submit" class="submit action-button" value="Calculate" />
     </fieldset>
-<!--9 fieldsets end-->
+<!--8 fieldsets end-->
 </div>
 </form>
 
@@ -1669,7 +1613,7 @@ $partner_attributes=$row['partner_attributes'];
     list-style-type: none;
     color: #000;
     font-size: 15px;
-    width: 11%;
+    width: 12%;
     float: left;
     position: relative;
     z-index: 2; /* Ensure the list items appear above the connectors */
@@ -1685,8 +1629,8 @@ $partner_attributes=$row['partner_attributes'];
     color: #fff;
     background: #06b6d4;
     border-radius: 50%;
-    margin: -5px auto 0px auto;
-    font-size: 14px;
+    margin: -5px 0px 10px 65px;
+	font-size: 14px;
 }
 
 #progressbar li:after {
@@ -1696,7 +1640,7 @@ $partner_attributes=$row['partner_attributes'];
     border-radius: 0px;
     background: #06b6d4;
     position: absolute;
-    left: -35%;
+    left: -20%;
     top: 9px;
     z-index: -1; /* Ensure the connectors appear behind the list items */
 }
