@@ -414,9 +414,6 @@ $result = mysqlexec($sql);
 if($result){
 $row=mysqli_fetch_assoc($result);
 if($row){
-$maritalstatus=$row['maritalstatus'];
-}
-if($row){
 $smoke=$row['smoke'];
 }
 if($row){
@@ -449,19 +446,6 @@ $aboutme=$row['aboutme'];
                         </div>
 
 						    <div class="sb-biodata-option">
-
-							<div class="shosurbari-biodata-field">
-				                <label for="edit-name">Marital status<span class="form-required" title="This field is required.">*</span></label>
-	                            <select name="maritalstatus" required>
-					            <option hidden selected><?php echo $maritalstatus; ?></option>
-	                            <option value="Unmarried">Unmarried</option>
-	                            <option value="Divorced">Divorced</option>
-	                            <option value="Widow">Widow</option>
-						        <option value="Widower">Widower</option>
-						        <option value="Married">Married</option>
-	                            </select>
-			                </div>
-
 							<div class="shosurbari-biodata-field">
 		                        <label for="edit-name">Smoke or Drinks<span class="form-required" title="This field is required.">*</span></label>
 	                            <select name="smoke" required>
@@ -1123,6 +1107,7 @@ $family_religious=$row['family_religious'];
 <?php
 include("includes/dbconn.php");
 
+//bd_marriage_related_qs_male_6($id);
 //getting profile details from db
 $sql="SELECT * FROM 6bd_marriage_related_qs_male WHERE user_id = $id";
 $result = mysqlexec($sql);
@@ -1168,6 +1153,72 @@ if($result){
     }
     if($row){
         $profileby=$row['profileby'];
+    }
+}
+
+
+//6bd_7bd_marital_status($id);
+//getting profile details from db
+$sql="SELECT * FROM 6bd_7bd_marital_status WHERE user_id = $id";
+$result = mysqlexec($sql);
+
+if($result){
+    $row=mysqli_fetch_assoc($result);
+    if($row){
+        $maritalstatus=$row['maritalstatus'];
+    }
+
+
+    if($row){
+        $divorce_reason=$row['divorce_reason'];
+    }
+    if($row){
+        $divorce_how_many_son=$row['divorce_how_many_son'];
+    }
+    if($row){
+        $divorce_son_details=$row['divorce_son_details'];
+    }
+
+
+    if($row){
+        $how_widow=$row['how_widow'];
+    }
+	if($row){
+        $widow_how_many_son=$row['widow_how_many_son'];
+    }
+    if($row){
+        $widow_son_details=$row['widow_son_details'];
+    }
+
+
+    if($row){
+        $how_widower=$row['how_widower'];
+    }
+    if($row){
+        $widower_how_many_son=$row['widower_how_many_son'];
+    }
+    if($row){
+        $widower_son_details=$row['widower_son_details'];
+    }
+
+
+	if($row){
+        $get_wife_permission=$row['get_wife_permission'];
+    }
+    if($row){
+        $get_family_permission=$row['get_family_permission'];
+    }
+    if($row){
+        $why_again_married=$row['why_again_married'];
+    }
+	if($row){
+        $married_how_many_son=$row['married_how_many_son'];
+    }
+    if($row){
+        $married_son_details=$row['married_son_details'];
+    }
+    if($row){
+        $profilecreationdate=$row['profilecreationdate'];
     }
 }
 ?>
@@ -1291,7 +1342,7 @@ if($result){
     <!-- Married Section -->
     <div class="shosurbari-biodata-field" id="married-section" style="display: none;">
 		<div class="shosurbari-biodata-field">
-            <label for="edit-name">Get permission from your previous Wife?<span class="form-required" title="This field is required.">*</span></label>
+            <label for="edit-name">Get permission from your present Wife?<span class="form-required" title="This field is required.">*</span></label>
 			<input type="text" id="edit-name" name="get_wife_permission"  value="<?php echo $get_wife_permission; ?>"  size="100" maxlength="100" class="form-text" required>
         </div>
 
@@ -2005,7 +2056,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 	$bloodgroup=$_POST['bloodgroup'];
 
 	//Biodata 2
-	$maritalstatus=$_POST['maritalstatus'];
 	$smoke=$_POST['smoke'];
 	$occupation=$_POST['occupation'];
 	$occupation_describe=$_POST['occupation_describe'];
@@ -2035,6 +2085,27 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 	$family_class=$_POST['family_class'];
 	$financial_condition=$_POST['financial_condition'];
 	$family_religious=$_POST['family_religious'];
+
+	// Marital Status 6 & 7
+	$maritalstatus=$_POST['maritalstatus'];
+	// Divorce
+	$divorce_reason=$_POST['divorce_reason'];
+	$divorce_how_many_son=$_POST['divorce_how_many_son'];
+	$divorce_son_details=$_POST['divorce_son_details'];
+	// Widow
+	$how_widow=$_POST['how_widow'];
+	$widow_how_many_son=$_POST['widow_how_many_son'];
+	$widow_son_details=$_POST['widow_son_details'];
+	// Widower
+	$how_widower=$_POST['how_widower'];
+	$widower_how_many_son=$_POST['widower_how_many_son'];
+	$widower_son_details=$_POST['widower_son_details'];
+	// Married
+	$get_wife_permission=$_POST['get_wife_permission'];
+	$get_family_permission=$_POST['get_family_permission'];
+	$why_again_married=$_POST['why_again_married'];
+	$married_how_many_son=$_POST['married_how_many_son'];
+	$married_son_details=$_POST['married_son_details'];
 
 	//Biodata 6
 	$guardians_agree_male=$_POST['guardians_agree_male'];
@@ -2093,7 +2164,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 	//Biodata 2
     insertData("2bd_personal_lifestyle", [
         'user_id' => $id,
-        'maritalstatus' => $maritalstatus,
         'smoke' => $smoke,
         'occupation' => $occupation,
         'occupation_describe' => $occupation_describe,
@@ -2139,6 +2209,32 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         'financial_condition' => $financial_condition,
         'family_religious' => $family_religious
     ]);
+
+
+	// Marital Status 6 & 7
+	insertData("6bd_7bd_marital_status", [
+			'user_id' => $id,
+			'maritalstatus' => $maritalstatus,
+
+			'divorce_reason' => $divorce_reason,
+			'divorce_how_many_son' => $divorce_how_many_son,
+			'divorce_son_details' => $divorce_son_details,
+
+			'how_widow' => $how_widow,
+			'widow_how_many_son' => $widow_how_many_son,
+			'widow_son_details' => $widow_son_details,
+		
+			'how_widower' => $how_widower,
+			'widower_how_many_son' => $widower_how_many_son,
+			'widower_son_details' => $widower_son_details,
+
+			'get_wife_permission' => $get_wife_permission,
+			'get_family_permission' => $get_family_permission,
+			'why_again_married' => $why_again_married,			'how_widower' => $how_widower,
+			'married_how_many_son' => $married_how_many_son,
+			'married_son_details' => $married_son_details,
+			'profilecreationdate' => $profilecreationdate,
+		]);
 
 
 	//Biodata 6
