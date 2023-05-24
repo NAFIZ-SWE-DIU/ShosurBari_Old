@@ -810,39 +810,41 @@ $childhood=$row['childhood'];
 <div class="sb-biodata-option">
 
 
+					<!-- Add onchange event to the select element -->
 					<div class="shosurbari-biodata-field">
-					    <label for="edit-pass">Division of Permanent Address<span class="form-required" title="This field is required.">*</span></label>
-	                    <select name="permanent_division" required>
-						    <option hidden selected><?php echo $permanent_division; ?></option>
-	                        <option value="Barishal	">Barishal</option>
-	                        <option value="Chattogram">Chattogram</option> 
-	               		    <option value="Dhaka">Dhaka</option>
-							<option value="Khulna">Khulna</option>
-	                        <option value="Mymensingh">Mymensingh</option> 
-	               		    <option value="Rajshahi">Rajshahi</option>
-							<option value="Rangpur">Rangpur</option>
-	                        <option value="Sylhet">Sylhet</option> 
-	                    </select>
-                    </div>
+					<label>Division of Permanent Address<span class="form-required" title="This field is required.">*</span></label>
+					<select name="permanent_division" required onchange="showSection(this.value)">
+						<option ></option>
+						<option value="barishal">Barishal</option>
+						<option value="chattogram">Chattogram</option>
+						<option value="dhaka">Dhaka</option>
+						<option value="khulna">Khulna</option>
+						<option value="mymensingh">Mymensingh</option>
+						<option value="rajshahi">Rajshahi</option>
+						<option value="rangpur">Rangpur</option>
+						<option value="sylhet">Sylhet</option>
+					</select>
+					</div>
 
-
-					<script src="https://code.jquery.com/jquery-3.6.3.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/chosen/1.8.7/chosen.jquery.min.js"></script>
-					<div class="shosurbari-biodata-field">
-					    <label for="permanent_address">District of Permanent Address<span class="form-required" title="This field is required.">*</span></label>  
-						<select name="permanent_address" class="selectsearch" required>
-
-						<option hidden selected><?php echo $permanent_address; ?></option>
-							<optgroup label="Barishal Division">
+					
+						<div class="shosurbari-biodata-field section" id="barishal" style="display: none;">
+						<label>District of Permanent Address<span class="form-required" title="This field is required.">*</span></label>
+						<select name="permanent_address">
+							<option></option>
 	                        <option value="Barguna">Barguna</option>
 	                        <option value="Barishal">Barishal</option> 
 	               		    <option value="Bhola">Bhola</option>
 							<option value="Jhalokati">Jhalokati</option>
 	                        <option value="Patuakhali">Patuakhali</option> 
 	               		    <option value="Pirojpur">Pirojpur</option>
-                        </optgroup>
+						</select>
+					</div>
 
-						<optgroup label="Chattagram Division">
+
+					<div class="shosurbari-biodata-field section" id="chattogram" style="display: none;">
+					<label>District of Permanent Address<span class="form-required" title="This field is required.">*</span></label>
+					<select name="permanent_address">
+					<option></option>
 							<option value="Bandarban">Bandarban</option>
 	                        <option value="Brahmanbaria">Brahmanbaria</option> 
 	               		    <option value="Chandpur">Chandpur</option>
@@ -854,9 +856,14 @@ $childhood=$row['childhood'];
 							<option value="Lakshmipur">Lakshmipur</option>
 							<option value="Noakhali">Noakhali</option>
 	                        <option value="Rangamati">Rangamati</option>
-                        </optgroup>
+						</select>
+					</div>
 
-						<optgroup label="Dhaka Division">
+
+					<div class="shosurbari-biodata-field section" id="dhaka" style="display: none;">
+					<label>District of Permanent Address<span class="form-required" title="This field is required.">*</span></label>
+					<select name="permanent_address">
+					<option></option>
 	               		    <option value="Dhaka">Dhaka</option>
 							<option value="Faridpur">Faridpur</option>
 	                        <option value="Gazipur">Gazipur</option> 
@@ -870,9 +877,13 @@ $childhood=$row['childhood'];
 	               		    <option value="Rajbari">Rajbari</option>
 							<option value="Shariatpur">Shariatpur</option>
 	                        <option value="Tangail">Tangail</option>
-                        </optgroup>
+						</select>
+					</div>
 
-						<optgroup label="Khulna Division">
+					<div class="shosurbari-biodata-field section" id="khulna" style="display: none;">
+					<label>District of Permanent Address<span class="form-required" title="This field is required.">*</span></label>
+					<select name="permanent_address">
+					<option></option>
 	               		    <option value="Bagerhat">Bagerhat</option>
 							<option value="Chuadanga">Chuadanga</option>
 	                        <option value="Jashore">Jashore</option>
@@ -883,16 +894,24 @@ $childhood=$row['childhood'];
 							<option value="Meherpur">Meherpur</option>
 	                        <option value="Narail">Narail</option> 
 	               		    <option value="Satkhira">Satkhira</option>
-                        </optgroup>
+						</select>
+                    </div>
 
-						<optgroup label="Mymensingh Division">
+					<div class="shosurbari-biodata-field section" id="mymensingh" style="display: none;">
+					<label>District of Permanent Address<span class="form-required" title="This field is required.">*</span></label>
+					<select name="permanent_address">
+					<option></option>
 							<option value="Jamalpur">Jamalpur</option>
 	                        <option value="Mymensingh">Mymensingh</option> 
 	               		    <option value="Netrokona">Netrokona</option>
 							<option value="Sherpur">Sherpur</option>
-                        </optgroup>
+							</select>
+                        </div>
 
-						<optgroup label="Rajshahi Division">
+						<div class="shosurbari-biodata-field section" id="rajshahi" style="display: none;">
+					<label>District of Permanent Address<span class="form-required" title="This field is required.">*</span></label>
+					<select name="permanent_address">
+					<option></option>
 							<option value="Bogura">Bogura</option>
 							<option value="Chapai Nawabganj">Chapai Nawabganj</option> 
 	                        <option value="Joypurhat">Joypurhat</option> 
@@ -901,9 +920,13 @@ $childhood=$row['childhood'];
 	               		    <option value="Pabna">Pabna</option>
 							<option value="Rajshahi">Rajshahi</option>
 	                        <option value="Sirajganj">Sirajganj</option>
-                        </optgroup>
+						</select>
+                        </div>
 
-						<optgroup label="Rangpur Division">
+						<div class="shosurbari-biodata-field section" id="rangpur" style="display: none;">
+					<label>District of Permanent Address<span class="form-required" title="This field is required.">*</span></label>
+					<select name="permanent_address">
+					<option></option>
 	               		    <option value="Dinajpur">Dinajpur</option>
 							<option value="Gaibandha">Gaibandha</option>
 	                        <option value="Kurigram">Kurigram</option>
@@ -912,20 +935,36 @@ $childhood=$row['childhood'];
 							<option value="Panchagarh">Panchagarh</option>
 							<option value="Rangpur">Rangpur</option>
 							<option value="Thakurgaon">Thakurgaon</option>
-                        </optgroup>
+						</select>
+                    </div>
 
-						<optgroup label="Sylhet Division">
+					<div class="shosurbari-biodata-field section" id="sylhet" style="display: none;">
+					<label>District of Permanent Address<span class="form-required" title="This field is required.">*</span></label>
+					<select name="permanent_address">
+					<option>Select District</option>
 	                        <option value="Habiganj">Habiganj</option> 
 	               		    <option value="Moulvibazar">Moulvibazar</option>
 							<option value="Sunamganj">Sunamganj</option>
 	                        <option value="Sylhet">Sylhet</option>
-                        </optgroup>
-
 	                    </select>
-                    </div>
+					</div>
+
+
 					<script>
-						jQuery('.selectsearch').chosen();
+					function showSection(division) {
+					// Hide all district sections
+					var districtSections = document.getElementsByClassName("section");
+					for (var i = 0; i < districtSections.length; i++) {
+						districtSections[i].style.display = "none";
+					}
+					// Show the selected division's district section
+					var selectedDivisionSection = document.getElementById(division);
+					if (selectedDivisionSection) {
+						selectedDivisionSection.style.display = "block";
+					}
+					}
 					</script>
+
 
 
 <div class="shosurbari-biodata-field">
@@ -1343,12 +1382,12 @@ if($result){
     <div class="shosurbari-biodata-field" id="married-section" style="display: none;">
 		<div class="shosurbari-biodata-field">
             <label for="edit-name">Get permission from your present Wife?<span class="form-required" title="This field is required.">*</span></label>
-			<input type="text" id="edit-name" name="get_wife_permission"  value="<?php echo $get_wife_permission; ?>"  size="100" maxlength="100" class="form-text" required>
+			<input type="text" id="edit-name" name="get_wife_permission"  value="<?php echo $get_wife_permission; ?>"  size="100" maxlength="100" class="form-text">
         </div>
 
 		<div class="shosurbari-biodata-field">
             <label for="edit-name">Get permission from your Family & Wife's Family?<span class="form-required" title="This field is required.">*</span></label>
-			<input type="text" id="edit-name" name="get_family_permission"  value="<?php echo $get_family_permission; ?>"  size="100" maxlength="100" class="form-text" required>
+			<input type="text" id="edit-name" name="get_family_permission"  value="<?php echo $get_family_permission; ?>"  size="100" maxlength="100" class="form-text">
         </div>
 
 		<div class="shosurbari-biodata-field">
