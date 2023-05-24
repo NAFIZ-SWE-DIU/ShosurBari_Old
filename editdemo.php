@@ -124,13 +124,7 @@ $username=$row['username'];
 </ul>
 
 
-<?php
-if ($biodatagender == 'Male') {
-    $biodatagender = 'Male';
-} else {
-    $biodatagender = 'Female';
-}
-?>
+
 
 
 
@@ -1148,7 +1142,7 @@ if($result){
         $livewife_aftermarriage=$row['livewife_aftermarriage'];
     }
     if($row){
-        $profileby_male=$row['profileby_male'];
+        $profileby=$row['profileby'];
     }
 }
 
@@ -1173,7 +1167,7 @@ if($result){
         $agree_marriage_student=$row['agree_marriage_student'];
     }
     if($row){
-        $profileby_female=$row['profileby_female'];
+        $profileby=$row['profileby'];
     }
 }
 ?>
@@ -1195,6 +1189,49 @@ if($result){
                             </div>
 
 							<div class="sb-biodata-option">
+							<div class="shosurbari-biodata-field">
+								<label for="edit-name">Marital status<span class="form-required" title="This field is required.">*</span></label>
+								<select name="maritalstatus" required onchange="toggleDivorce(this.value)">
+									<option hidden selected><?php echo $maritalstatus; ?></option>
+									<option value="Unmarried">Unmarried</option>
+									<option value="Divorced">Divorced</option>
+									<option value="Widow">Widow</option>
+									<option value="Widower">Widower</option>
+									<option value="Married">Married</option>
+								</select>
+							</div>
+
+							<!--Top Divorce | OR | Bellow Divorce-->
+							<div class="shosurbari-biodata-field" id="divorce-reason" style="display: none;">
+								<label for="edit-name">Reason of Divorce?<span class="form-required" title="This field is required.">*</span></label>
+								<textarea rows="5" name="divorce_reason" placeholder="Describe Your Divorce Reason" class="form-text-describe" required><?php echo $divorce_reason; ?></textarea>
+							</div>
+
+							<!--Top Divorce | AND | Bellow Divorce-->
+							<div class="shosurbari-biodata-field" id="divorce-how-many-son" style="display: none;">
+								<label for="edit-name">How many sons?<span class="form-required" title="This field is required.">*</span></label>
+								<select name="divorce_how_many_son" required onchange="toggleSonDetails(this.value)">
+									<option hidden selected><?php echo $divorce_how_many_son; ?></option>
+									<option value="No Son">No Son</option>
+									<option value="1 Son">1 Son</option>
+									<option value="2 Son">2 Son</option>
+									<option value="3 Son">3 Son</option>
+									<option value="4 Son">4 Son</option>
+									<option value="5 Son">5 Son</option>
+									<option value="6 Son">6 Son</option>
+									<option value="7 Son">7 Son</option>
+									<option value="8 Son">8 Son</option>
+								</select>
+							</div>
+
+							<!--Top Divorce Son | AND | Bellow Divorce Son-->
+							<div class="shosurbari-biodata-field" id="divorce-son-details" style="display: none;">
+								<label for="edit-name">Son Details?<span class="form-required" title="This field is required.">*</span></label>
+								<textarea rows="5" name="divorce_son_details" placeholder="Describe Your Religious Condition" class="form-text-describe"><?php echo $divorce_son_details; ?></textarea>
+							</div>
+
+
+
 
 							<div class="shosurbari-biodata-field">
 		                        <label for="edit-name">Do your guardians agree to your marriage?<span class="form-required" title="This field is required.">*</span></label>
@@ -1240,8 +1277,8 @@ if($result){
 
 							<div class="shosurbari-biodata-field">
 		                        <label for="edit-name">Profile Created by<span class="form-required" title="This field is required.">*</span></label>
-	                            <select name="profileby_male" required>
-								<option hidden selected><?php echo $profileby_male; ?></option>
+	                            <select name="profileby" required>
+								<option hidden selected><?php echo $profileby; ?></option>
 	                            <option value="Self">Self</option>
 								<option value="Father">Father</option>
 	                            <option value="Mother">Mother</option>
@@ -1265,7 +1302,6 @@ if($result){
 -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -->
         <input type="button" name="previous" class="previous action-button" value="Previous" />
         <input type="button" name="next" class="next action-button" value="Next" />
-</fieldset>
 
 
 
@@ -1312,8 +1348,35 @@ if($result){
         femaleagreeMarriagestudent.style.display = 'none';
     }
 }
+
+function toggleDivorce(selectedStatus) {
+        var divorceReasonSection = document.getElementById('divorce-reason');
+        var divorceSonSection = document.getElementById('divorce-how-many-son');
+        var divorceSonDetailsSection = document.getElementById('divorce-son-details');
+
+        if (selectedStatus === 'Divorced') {
+            divorceReasonSection.style.display = 'block';
+            divorceSonSection.style.display = 'block';
+            toggleSonDetails(document.getElementsByName('how_many_son')[0].value);
+        } else {
+            divorceReasonSection.style.display = 'none';
+            divorceSonSection.style.display = 'none';
+            divorceSonDetailsSection.style.display = 'none';
+        }
+    }
+
+    function toggleSonDetails(selectedSonCount) {
+        var divorceSonDetailsSection = document.getElementById('divorce-son-details');
+
+        if (selectedSonCount !== 'No Son') {
+            divorceSonDetailsSection.style.display = 'block';
+        } else {
+            divorceSonDetailsSection.style.display = 'none';
+        }
+    }
 </script>
 <!--6 fieldsets end-->
+</fieldset>
 
 
 
@@ -1826,14 +1889,14 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 	$allowstudy_aftermarriage=$_POST['allowstudy_aftermarriage'];
 	$allowjob_aftermarriage=$_POST['allowjob_aftermarriage'];
 	$livewife_aftermarriage=$_POST['livewife_aftermarriage'];
-	$profileby_male=$_POST['profileby_male'];
+	$profileby=$_POST['profileby'];
  
 	//Biodata 7
 	$guardians_agree_female=$_POST['guardians_agree_female'];
 	$anyjob_aftermarriage=$_POST['anyjob_aftermarriage'];
 	$studies_aftermarriage=$_POST['studies_aftermarriage'];
 	$agree_marriage_student=$_POST['agree_marriage_student'];
-	$profileby_female=$_POST['profileby_female'];
+	$profileby=$_POST['profileby'];
 
 	//Biodata 8
 	$religion=$_POST['religion'];
@@ -1933,7 +1996,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         'allowstudy_aftermarriage' => $allowstudy_aftermarriage,
         'allowjob_aftermarriage' => $allowjob_aftermarriage,
         'livewife_aftermarriage' => $livewife_aftermarriage,
-        'profileby_male' => $profileby_male
+        'profileby' => $profileby
     ]);
 
 
@@ -1944,7 +2007,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         'anyjob_aftermarriage' => $anyjob_aftermarriage,
         'studies_aftermarriage' => $studies_aftermarriage,
         'agree_marriage_student' => $agree_marriage_student,
-        'profileby_female' => $profileby_female
+        'profileby' => $profileby
     ]);
 
 
