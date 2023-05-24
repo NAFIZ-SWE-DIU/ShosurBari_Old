@@ -191,7 +191,7 @@ if($row){
 
 		        <div class="shosurbari-biodata-field">
 		            <label for="edit-name">Biodata Type<span class="form-required" title="This field is required.">*</span></label>
-					<select name="biodatagender" required onchange="toggleSections(this.value)">
+					<select name="biodatagender" required onchange="toggleGenderSections(this.value)">
 					    <option hidden selected><?php echo $biodatagender; ?></option>
 	                    <option value="Male">Male</option>
 	                    <option value="Female">Female</option> 
@@ -1189,46 +1189,156 @@ if($result){
                             </div>
 
 							<div class="sb-biodata-option">
-							<div class="shosurbari-biodata-field">
-								<label for="edit-name">Marital status<span class="form-required" title="This field is required.">*</span></label>
-								<select name="maritalstatus" required onchange="toggleDivorce(this.value)">
-									<option hidden selected><?php echo $maritalstatus; ?></option>
-									<option value="Unmarried">Unmarried</option>
-									<option value="Divorced">Divorced</option>
-									<option value="Widow">Widow</option>
-									<option value="Widower">Widower</option>
-									<option value="Married">Married</option>
-								</select>
-							</div>
+    <div class="shosurbari-biodata-field">
+        <label for="edit-name">Marital status<span class="form-required" title="This field is required.">*</span></label>
+        <select name="maritalstatus" required onchange="toggleMaritalStatus(this.value)">
+            <option hidden selected></option>
+            <option value="Unmarried">Unmarried</option>
+            <option value="Divorced">Divorced</option>
+            <option value="Widow">Widow</option>
+            <option value="Widower">Widower</option>
+            <option value="Married">Married</option>
+        </select>
+    </div>
 
-							<!--Top Divorce | OR | Bellow Divorce-->
-							<div class="shosurbari-biodata-field" id="divorce-reason" style="display: none;">
-								<label for="edit-name">Reason of Divorce?<span class="form-required" title="This field is required.">*</span></label>
-								<textarea rows="5" name="divorce_reason" placeholder="Describe Your Divorce Reason" class="form-text-describe" required><?php echo $divorce_reason; ?></textarea>
-							</div>
+    <!-- Divorce Section -->
+    <div class="shosurbari-biodata-field" id="divorce-section" style="display: none;">
+        <div class="shosurbari-biodata-field">
+            <label for="edit-name">Reason of Divorce?<span class="form-required" title="This field is required.">*</span></label>
+            <textarea rows="5" name="divorce_reason" placeholder="Describe Your Divorce Reason" class="form-text-describe"></textarea>
+        </div>
 
-							<!--Top Divorce | AND | Bellow Divorce-->
-							<div class="shosurbari-biodata-field" id="divorce-how-many-son" style="display: none;">
-								<label for="edit-name">How many sons?<span class="form-required" title="This field is required.">*</span></label>
-								<select name="divorce_how_many_son" required onchange="toggleSonDetails(this.value)">
-									<option hidden selected><?php echo $divorce_how_many_son; ?></option>
-									<option value="No Son">No Son</option>
-									<option value="1 Son">1 Son</option>
-									<option value="2 Son">2 Son</option>
-									<option value="3 Son">3 Son</option>
-									<option value="4 Son">4 Son</option>
-									<option value="5 Son">5 Son</option>
-									<option value="6 Son">6 Son</option>
-									<option value="7 Son">7 Son</option>
-									<option value="8 Son">8 Son</option>
-								</select>
-							</div>
+        <div class="shosurbari-biodata-field">
+            <label for="edit-name">How many sons?<span class="form-required" title="This field is required.">*</span></label>
+            <select name="divorce_how_many_son" onchange="toggleDivorceSonDetails(this.value)">
+                <option hidden selected>Select Number of Sons</option>
+                <option value="No Son">No Son</option>
+                <option value="1 Son">1 Son</option>
+                <option value="2 Son">2 Son</option>
+                <option value="3 Son">3 Son</option>
+                <option value="4 Son">4 Son</option>
+                <option value="5 Son">5 Son</option>
+                <option value="6 Son">6 Son</option>
+                <option value="7 Son">7 Son</option>
+                <option value="8 Son">8 Son</option>
+            </select>
+        </div>
 
-							<!--Top Divorce Son | AND | Bellow Divorce Son-->
-							<div class="shosurbari-biodata-field" id="divorce-son-details" style="display: none;">
-								<label for="edit-name">Son Details?<span class="form-required" title="This field is required.">*</span></label>
-								<textarea rows="5" name="divorce_son_details" placeholder="Describe Your Religious Condition" class="form-text-describe"><?php echo $divorce_son_details; ?></textarea>
-							</div>
+        <div class="shosurbari-biodata-field" id="divorce-son-details" style="display: none;">
+            <label for="edit-name">Son Details?<span class="form-required" title="This field is required.">*</span></label>
+            <textarea rows="5" name="divorce_son_details" placeholder="Describe Your Son Details" class="form-text-describe"></textarea>
+        </div>
+    </div>
+
+    <!-- Widow Section -->
+    <div class="shosurbari-biodata-field" id="widow-section" style="display: none;">
+        <div class="shosurbari-biodata-field">
+            <label for="edit-name">How to Widow?<span class="form-required" title="This field is required.">*</span></label>
+            <textarea rows="5" name="how_widow" placeholder="Describe How You Became a Widow" class="form-text-describe"></textarea>
+        </div>
+
+        <div class="shosurbari-biodata-field">
+            <label for="edit-name">How many sons?<span class="form-required" title="This field is required.">*</span></label>
+            <select name="widow_how_many_son" onchange="toggleWidowSonDetails(this.value)">
+                <option hidden selected>Select Number of Sons</option>
+                <option value="No Son">No Son</option>
+                <option value="1 Son">1 Son</option>
+                <option value="2 Son">2 Son</option>
+                <option value="3 Son">3 Son</option>
+                <option value="4 Son">4 Son</option>
+                <option value="5 Son">5 Son</option>
+                <option value="6 Son">6 Son</option>
+                <option value="7 Son">7 Son</option>
+                <option value="8 Son">8 Son</option>
+            </select>
+        </div>
+
+        <div class="shosurbari-biodata-field" id="widow-son-details" style="display: none;">
+            <label for="edit-name">Son Details?<span class="form-required" title="This field is required.">*</span></label>
+            <textarea rows="5" name="widow_son_details" placeholder="Describe Your Son Details" class="form-text-describe"></textarea>
+        </div>
+    </div>
+
+    <!-- Widower Section -->
+    <div class="shosurbari-biodata-field" id="widower-section" style="display: none;">
+        <div class="shosurbari-biodata-field">
+            <label for="edit-name">How to Widower?<span class="form-required" title="This field is required.">*</span></label>
+            <textarea rows="5" name="how_widower" placeholder="Describe How You Became a Widower" class="form-text-describe"></textarea>
+        </div>
+
+        <div class="shosurbari-biodata-field">
+            <label for="edit-name">How many sons?<span class="form-required" title="This field is required.">*</span></label>
+            <select name="widower_how_many_son" onchange="toggleWidowerSonDetails(this.value)">
+                <option hidden selected>Select Number of Sons</option>
+                <option value="No Son">No Son</option>
+                <option value="1 Son">1 Son</option>
+                <option value="2 Son">2 Son</option>
+                <option value="3 Son">3 Son</option>
+                <option value="4 Son">4 Son</option>
+                <option value="5 Son">5 Son</option>
+                <option value="6 Son">6 Son</option>
+                <option value="7 Son">7 Son</option>
+                <option value="8 Son">8 Son</option>
+            </select>
+        </div>
+
+        <div class="shosurbari-biodata-field" id="widower-son-details" style="display: none;">
+            <label for="edit-name">Son Details?<span class="form-required" title="This field is required.">*</span></label>
+            <textarea rows="5" name="widower_son_details" placeholder="Describe Your Son Details" class="form-text-describe"></textarea>
+        </div>
+    </div>
+
+    <!-- Married Section -->
+    <div class="shosurbari-biodata-field" id="married-section" style="display: none;">
+		<div class="shosurbari-biodata-field">
+            <label for="edit-name">Get permission from your previous Wife?<span class="form-required" title="This field is required.">*</span></label>
+			<input type="text" id="edit-name" name="get_wife_permission"  value="<?php echo $get_wife_permission; ?>"  size="100" maxlength="100" class="form-text" required>
+        </div>
+
+		<div class="shosurbari-biodata-field">
+            <label for="edit-name">Get permission from your Family & Wife's Family?<span class="form-required" title="This field is required.">*</span></label>
+			<input type="text" id="edit-name" name="get_family_permission"  value="<?php echo $get_family_permission; ?>"  size="100" maxlength="100" class="form-text" required>
+        </div>
+
+		<div class="shosurbari-biodata-field">
+            <label for="edit-name">Why again Married?<span class="form-required" title="This field is required.">*</span></label>
+            <textarea rows="5" name="why_again_married" placeholder="Describe How You Became a Widower" class="form-text-describe"></textarea>
+        </div>
+
+        <div class="shosurbari-biodata-field">
+            <label for="edit-name">How many sons?<span class="form-required" title="This field is required.">*</span></label>
+			<select name="married_how_many_son" onchange="toggleMarriedSonDetails(this.value)">
+                <option hidden selected>Select Number of Sons</option>
+                <option value="No Son">No Son</option>
+                <option value="1 Son">1 Son</option>
+                <option value="2 Son">2 Son</option>
+                <option value="3 Son">3 Son</option>
+                <option value="4 Son">4 Son</option>
+                <option value="5 Son">5 Son</option>
+                <option value="6 Son">6 Son</option>
+                <option value="7 Son">7 Son</option>
+                <option value="8 Son">8 Son</option>
+            </select>
+        </div>
+        <div class="shosurbari-biodata-field" id="married-son-details" style="display: none;">
+            <label for="edit-name">Son Details?<span class="form-required" title="This field is required.">*</span></label>
+            <textarea rows="5" name="married_son_details" placeholder="Describe Your Son Details" class="form-text-describe"></textarea>
+        </div>
+    </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -1237,7 +1347,6 @@ if($result){
 		                        <label for="edit-name">Do your guardians agree to your marriage?<span class="form-required" title="This field is required.">*</span></label>
 			                    <input type="text" id="edit-name" name="guardians_agree_male"  value="<?php echo $guardians_agree_male; ?>"  size="100" maxlength="100" class="form-text" required>
 		                    </div>
-
 
 
 							<div class="shosurbari-biodata-field" id="male-allow-wife-job">
@@ -1306,7 +1415,7 @@ if($result){
 
 
 <script>
-	function toggleSections(selectedGender) {
+	function toggleGenderSections(selectedGender) {
     var maleallowJobwife = document.getElementById('male-allow-wife-job');
     var femaleJobSection = document.getElementById('female-job-after-marriage');
 	
@@ -1349,31 +1458,74 @@ if($result){
     }
 }
 
-function toggleDivorce(selectedStatus) {
-        var divorceReasonSection = document.getElementById('divorce-reason');
-        var divorceSonSection = document.getElementById('divorce-how-many-son');
-        var divorceSonDetailsSection = document.getElementById('divorce-son-details');
 
-        if (selectedStatus === 'Divorced') {
-            divorceReasonSection.style.display = 'block';
-            divorceSonSection.style.display = 'block';
-            toggleSonDetails(document.getElementsByName('how_many_son')[0].value);
-        } else {
-            divorceReasonSection.style.display = 'none';
-            divorceSonSection.style.display = 'none';
-            divorceSonDetailsSection.style.display = 'none';
-        }
+
+
+
+
+function toggleMaritalStatus(selectedStatus) {
+    var divorceSection = document.getElementById('divorce-section');
+    var widowSection = document.getElementById('widow-section');
+    var widowerSection = document.getElementById('widower-section');
+    var marriedSection = document.getElementById('married-section');
+
+    // Hide all sections initially
+    divorceSection.style.display = 'none';
+    widowSection.style.display = 'none';
+    widowerSection.style.display = 'none';
+    marriedSection.style.display = 'none';
+
+    if (selectedStatus === 'Divorced') {
+        divorceSection.style.display = 'block';
+    } else if (selectedStatus === 'Widow') {
+        widowSection.style.display = 'block';
+    } else if (selectedStatus === 'Widower') {
+        widowerSection.style.display = 'block';
+    } else if (selectedStatus === 'Married') {
+        marriedSection.style.display = 'block';
     }
+}
 
-    function toggleSonDetails(selectedSonCount) {
-        var divorceSonDetailsSection = document.getElementById('divorce-son-details');
+function toggleDivorceSonDetails(selectedDivorceSonCount) {
+    var divorceSonDetailsSection = document.getElementById('divorce-son-details');
 
-        if (selectedSonCount !== 'No Son') {
-            divorceSonDetailsSection.style.display = 'block';
-        } else {
-            divorceSonDetailsSection.style.display = 'none';
-        }
+    if (selectedDivorceSonCount !== 'No Son') {
+        divorceSonDetailsSection.style.display = 'block';
+    } else {
+        divorceSonDetailsSection.style.display = 'none';
     }
+}
+
+function toggleWidowSonDetails(selectedWidowSonCount) {
+    var widowSonDetailsSection = document.getElementById('widow-son-details');
+
+    if (selectedWidowSonCount !== 'No Son') {
+        widowSonDetailsSection.style.display = 'block';
+    } else {
+        widowSonDetailsSection.style.display = 'none';
+    }
+}
+
+function toggleWidowerSonDetails(selectedWidowerSonCount) {
+    var widowerSonDetailsSection = document.getElementById('widower-son-details');
+
+    if (selectedWidowerSonCount !== 'No Son') {
+        widowerSonDetailsSection.style.display = 'block';
+    } else {
+        widowerSonDetailsSection.style.display = 'none';
+    }
+}
+
+function toggleMarriedSonDetails(selectedMarriedSonCount) {
+    var marriedSonDetailsSection = document.getElementById('married-son-details');
+
+    if (selectedMarriedSonCount !== 'No Son') {
+        marriedSonDetailsSection.style.display = 'block';
+    } else {
+        marriedSonDetailsSection.style.display = 'none';
+    }
+}
+
 </script>
 <!--6 fieldsets end-->
 </fieldset>
