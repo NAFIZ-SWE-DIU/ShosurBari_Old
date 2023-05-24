@@ -4,19 +4,19 @@
 <?php
 error_reporting(0);
 $id=$_GET['id'];
-//safty purpose copy the get id
+//Safty purpose copy the get id
 $profileid=$id;
 
-//getting profile details from db
+//Getting profile details from db
 $sql = "SELECT * FROM 1bd_personal_physical  WHERE user_id = $id";
 $result = mysqlexec($sql);
 if($result){
 $row=mysqli_fetch_assoc($result);
-//end of getting profile detils
+//End of getting profile detils
 
 $pic1="";
 
-//getting image filenames from db
+//Getting image filenames from db
 $sql2="SELECT * FROM photos WHERE user_id = $profileid";
 $result2 = mysqlexec($sql2);
 if($result2){
@@ -413,9 +413,6 @@ echo "<script>alert(\"Invalid Profile ID\")</script>";
 
 							//Biodata 2
 							if($row){
-							$maritalstatus=$row['maritalstatus'];
-							}
-							if($row){
 							$occupation = $row['occupation'];
 							}
 						?>
@@ -436,6 +433,26 @@ echo "<script>alert(\"Invalid Profile ID\")</script>";
 							//Biodata 4
 							if($row){
 							$permanent_address=$row['permanent_address'];
+							}
+						?>
+
+
+
+						<!-- -- -- -- -- -- -- -- -- -- -- -- -- ---- -- --
+						--     SB Short Biodata / 6bd_7bd_marital_status --
+						-- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -->
+						<?php
+							$id=$_GET['id'];
+							$profileid=$id;
+							
+							//getting profile details from db
+							$sql = "SELECT * FROM 6bd_7bd_marital_status  WHERE user_id = $id";
+							$result = mysqlexec($sql);
+							$row=mysqli_fetch_assoc($result);
+
+							//Biodata 4
+							if($row){
+							$maritalstatus=$row['maritalstatus'];
 							}
 						?>
 
@@ -701,49 +718,63 @@ echo "<script>alert(\"Invalid Profile ID\")</script>";
 										<tbody>
 
 											<tr class="opened">
+												<?php if (!empty($biodatagender)) { ?>
 												<td class="day_label">Biodata Type</td>
-												<?php if (!empty ($biodatagender)) { ?>
+												<?php } ?>
+												<?php if (!empty($biodatagender)) { ?>
 												<td class="day_value"><?php echo $biodatagender; ?></td>
 												<?php } ?>
 											</tr>
 
 											<tr class="opened">
+											<?php if (!empty ($dob)) { ?>
 												<td class="day_label">DOB</td>
+												<?php } ?>
 												<?php if (!empty ($dob)) { ?>
 												<td class="day_value"><?php echo $dob;?></td>
 												<?php } ?>
 											</tr>
 
 											<tr class="opened">
+											<?php if (!empty ($height)) { ?>
 												<td class="day_label">Height</td>
+												<?php } ?>
 												<?php if (!empty ($height)) { ?>
 												<td class="day_value"><?php echo $height;?></td>
 												<?php } ?>
 											</tr>
 											
 											<tr class="opened">
+											<?php if (!empty ($weight)) { ?>
 												<td class="day_label">Weight</td>
+												<?php } ?>
 												<?php if (!empty ($weight)) { ?>
 												<td class="day_value"><?php echo $weight;?></td>
 												<?php } ?>
 											</tr>
 
 											<tr class="opened">
+											<?php if (!empty ($physicalstatus)) { ?>
 												<td class="day_label">Physical Status</td>
+												<?php } ?>
 												<?php if (!empty ($physicalstatus)) { ?>
 												<td class="day_value closed"><span><?php echo $physicalstatus;?></span></td>
 												<?php } ?>
 											</tr>
 
 											<tr class="opened">
+											<?php if (!empty ($Skin_tones)) { ?>
 												<td class="day_label">Skin Tones</td>
+												<?php } ?>
 												<?php if (!empty ($Skin_tones)) { ?>
 												<td class="day_value closed"><span><?php echo $Skin_tones;?></span></td>
 												<?php } ?>
 											</tr>
 
 											<tr class="opened">
+											<?php if (!empty ($bloodgroup)) { ?>
 												<td class="day_label">Blood Group</td>
+												<?php } ?>
 												<?php if (!empty ($bloodgroup)) { ?>
 												<td class="day_value closed"><span><?php echo $bloodgroup;?></span></td>
 												<?php } ?>
@@ -783,9 +814,6 @@ echo "<script>alert(\"Invalid Profile ID\")</script>";
 									$row= mysqli_fetch_assoc($result);
 
 									if($row){
-									$maritalstatus=$row['maritalstatus'];
-									}
-									if($row){
 									$smoke=$row['smoke'];
 									}
 									if($row){
@@ -809,42 +837,45 @@ echo "<script>alert(\"Invalid Profile ID\")</script>";
 										<tbody>
 
 											<tr class="opened">
-												<td class="day_label">Marital Status</td>
-												<?php if (!empty ($maritalstatus)) { ?>
-												<td class="day_value"><?php echo $maritalstatus;?></td>
-												<?php } ?>
-											</tr>
-
-											<tr class="opened">
+												<?php if (!empty ($smoke)) { ?>
 												<td class="day_label">Smoke or Drinks</td>
+												<?php } ?>
 												<?php if (!empty ($smoke)) { ?>
 												<td class="day_value"><?php echo $smoke;?></td>
 												<?php } ?>
 											</tr>
 
 											<tr class="opened">
+												<?php if (!empty ($occupation)) { ?>
 												<td class="day_label">Occupation</td>
+												<?php } ?>
 												<?php if (!empty ($occupation)) { ?>
 												<td class="day_value"><?php echo $occupation;?></td>
 												<?php } ?>
 											</tr>
 											
 											<tr class="opened">
+												<?php if (!empty ($occupation_describe)) { ?>
 												<td class="day_label">Occupation Describe</td>
+												<?php } ?>
 												<?php if (!empty ($occupation_describe)) { ?>
 												<td class="day_value"><?php echo $occupation_describe;?></td>
 												<?php } ?>
 											</tr>
 
 											<tr class="opened">
+												<?php if (!empty ($dress_code)) { ?>
 												<td class="day_label">Dress Code</td>
+												<?php } ?>
 												<?php if (!empty ($dress_code)) { ?>
 												<td class="day_value closed"><span><?php echo $dress_code;?></span></td>
 												<?php } ?>
 											</tr>
 
 											<tr class="opened">
+												<?php if (!empty ($aboutme)) { ?>
 												<td class="day_label">About Me</td>
+												<?php } ?>
 												<?php if (!empty ($aboutme)) { ?>
 												<td class="day_value closed"><span><?php echo $aboutme;?></span></td>
 												<?php } ?>
@@ -903,28 +934,36 @@ echo "<script>alert(\"Invalid Profile ID\")</script>";
 										<tbody>
 
 											<tr class="opened">
+												<?php if (!empty ($education_method)) { ?>
 												<td class="day_label">Education Method</td>
+												<?php } ?>
 												<?php if (!empty ($education_method)) { ?>
 												<td class="day_value"><?php echo $education_method; ?></td>
 												<?php } ?>
 											</tr>
 
 											<tr class="opened">
+												<?php if (!empty ($sscpassyear)) { ?>
 												<td class="day_label">SSC Passing Year</td>
+												<?php } ?>
 												<?php if (!empty ($sscpassyear)) { ?>
 												<td class="day_value"><?php echo $sscpassyear;?></td>
 												<?php } ?>
 											</tr>
 
 											<tr class="opened">
+												<?php if (!empty ($current_education)) { ?>
 												<td class="day_label">Current Education</td>
+												<?php } ?>
 												<?php if (!empty ($current_education)) { ?>
 												<td class="day_value"><?php echo $current_education;?></td>
 												<?php } ?>
 											</tr>
 											
 											<tr class="opened">
+												<?php if (!empty ($maximum_education)) { ?>
 												<td class="day_label">Maximum Education</td>
+												<?php } ?>
 												<?php if (!empty ($maximum_education)) { ?>
 												<td class="day_value"><?php echo $maximum_education; ?></td>
 												<?php } ?>
@@ -983,29 +1022,36 @@ echo "<script>alert(\"Invalid Profile ID\")</script>";
 										<tbody>
 
 											<tr class="opened">
+												<?php if (!empty ($permanent_division)) { ?>
 												<td class="day_label">Permanent Address Division</td>
+												<?php } ?>
 												<?php if (!empty ($permanent_division)) { ?>
 												<td class="day_value"><?php echo $permanent_division; ?></td>
 												<?php } ?>
 											</tr>
 
 											<tr class="opened">
+												<?php if (!empty ($permanent_address)) { ?>
 												<td class="day_label">Permanent Address District</td>
+												<?php } ?>
 												<?php if (!empty ($permanent_address)) { ?>
 												<td class="day_value"><?php echo $permanent_address;?></td>
 												<?php } ?>
 											</tr>
 
 											<tr class="opened">
+												<?php if (!empty ($present_address)) { ?>
 												<td class="day_label">Present Address</td>
+												<?php } ?>
 												<?php if (!empty ($present_address)) { ?>
 												<td class="day_value"><?php echo $present_address;?></td>
 												<?php } ?>
 											</tr>
 
-											
 											<tr class="opened">
+												<?php if (!empty ($childhood)) { ?>
 												<td class="day_label">Childhood</td>
+												<?php } ?>
 												<?php if (!empty ($childhood)) { ?>
 												<td class="day_value"><?php echo $childhood; ?></td>
 												<?php } ?>
@@ -1036,36 +1082,256 @@ echo "<script>alert(\"Invalid Profile ID\")</script>";
 									$id=$_GET['id'];
 									$profileid=$id;
 									
+
+									//bd_marriage_related_qs_male_6($id);
 									//getting profile details from db
-									$sql = "SELECT * FROM 6bd_marriage_related_qs_male WHERE user_id = $id";
+									$sql="SELECT * FROM 6bd_marriage_related_qs_male WHERE user_id = $id";
 									$result = mysqlexec($sql);
 
 									if($result){
-									$row= mysqli_fetch_assoc($result);
+										$row=mysqli_fetch_assoc($result);
+										if($row){
+											$guardians_agree_male=$row['guardians_agree_male'];
+										}
+										if($row){
+											$allowstudy_aftermarriage=$row['allowstudy_aftermarriage'];
+										}
+										if($row){
+											$allowjob_aftermarriage=$row['allowjob_aftermarriage'];
+										}
+										if($row){
+											$livewife_aftermarriage=$row['livewife_aftermarriage'];
+										}
+										if($row){
+											$profileby=$row['profileby'];
+										}
+									}
 
-									if($row){
-									$guardians_agree_male=$row['guardians_agree_male'];
+
+									//bd_marriage_related_qs_female_7($id);
+									//getting profile details from db
+									$sql="SELECT * FROM 7bd_marriage_related_qs_female WHERE user_id = $id";
+									$result = mysqlexec($sql);
+
+									if($result){
+										$row=mysqli_fetch_assoc($result);
+										if($row){
+											$guardians_agree_female=$row['guardians_agree_female'];
+										}
+										if($row){
+											$anyjob_aftermarriage=$row['anyjob_aftermarriage'];
+										}
+										if($row){
+											$studies_aftermarriage=$row['studies_aftermarriage'];
+										}
+										if($row){
+											$agree_marriage_student=$row['agree_marriage_student'];
+										}
+										if($row){
+											$profileby=$row['profileby'];
+										}
 									}
-									if($row){
-									$allowstudy_aftermarriage=$row['allowstudy_aftermarriage'];
-									}
-									if($row){
-									$allowjob_aftermarriage=$row['allowjob_aftermarriage'];
-									}
-									if($row){
-									$livewife_aftermarriage=$row['livewife_aftermarriage'];
-									}
-									if($row){
-									$profileby_male=$row['profileby_male'];
-									}
+
+
+									//6bd_7bd_marital_status($id);
+									//getting profile details from db
+									$sql="SELECT * FROM 6bd_7bd_marital_status WHERE user_id = $id";
+									$result = mysqlexec($sql);
+
+									if($result){
+										$row=mysqli_fetch_assoc($result);
+										if($row){
+											$maritalstatus=$row['maritalstatus'];
+										}
+
+
+										if($row){
+											$divorce_reason=$row['divorce_reason'];
+										}
+										if($row){
+											$divorce_how_many_son=$row['divorce_how_many_son'];
+										}
+										if($row){
+											$divorce_son_details=$row['divorce_son_details'];
+										}
+
+
+										if($row){
+											$how_widow=$row['how_widow'];
+										}
+										if($row){
+											$widow_how_many_son=$row['widow_how_many_son'];
+										}
+										if($row){
+											$widow_son_details=$row['widow_son_details'];
+										}
+
+
+										if($row){
+											$how_widower=$row['how_widower'];
+										}
+										if($row){
+											$widower_how_many_son=$row['widower_how_many_son'];
+										}
+										if($row){
+											$widower_son_details=$row['widower_son_details'];
+										}
+
+
+										if($row){
+											$get_wife_permission=$row['get_wife_permission'];
+										}
+										if($row){
+											$get_family_permission=$row['get_family_permission'];
+										}
+										if($row){
+											$why_again_married=$row['why_again_married'];
+										}
+										if($row){
+											$married_how_many_son=$row['married_how_many_son'];
+										}
+										if($row){
+											$married_son_details=$row['married_son_details'];
+										}
+										if($row){
+											$profilecreationdate=$row['profilecreationdate'];
+										}
 									}
 								?>
 
 				    			<div class="biodatavalue_list">
 									<table class="biodata_value_data">
-										<h3>Marriage related Information - M</h3>
+										<h3>Marriage related Information</h3>
 										<tbody>
 
+										<!-- Marital Status 6 & 7 -->
+											<tr class="opened">
+												<?php if (!empty ($maritalstatus)) { ?>
+												<td class="day_label">Marital Status</td>
+												<?php } ?>
+												<?php if (!empty ($maritalstatus)) { ?>
+												<td class="day_value"><?php echo $maritalstatus; ?></td>
+												<?php } ?>
+											</tr>
+
+											<!-- If Divorce -->
+											<tr class="opened">
+												<?php if (!empty ($divorce_reason)) { ?>
+												<td class="day_label">Reason of Divorce?</td>
+												<?php } ?>
+												<?php if (!empty ($divorce_reason)) { ?>
+												<td class="day_value"><?php echo $divorce_reason; ?></td>
+												<?php } ?>
+											</tr>
+
+											<tr class="opened">
+												<?php if (!empty ($divorce_how_many_son)) { ?>
+												<td class="day_label">How many sons?</td>
+												<?php } ?>
+												<?php if (!empty ($divorce_how_many_son)) { ?>
+												<td class="day_value"><?php echo $divorce_how_many_son; ?></td>
+												<?php } ?>
+											</tr>
+
+											<tr class="opened">
+												<?php if (!empty ($divorce_son_details)) { ?>
+												<td class="day_label">Son Details?</td>
+												<?php } ?>
+												<?php if (!empty ($divorce_son_details)) { ?>
+												<td class="day_value"><?php echo $divorce_son_details; ?></td>
+												<?php } ?>
+											</tr>
+
+
+											<!-- If Widow -->
+											<tr class="opened">
+												<?php if (!empty ($how_widow)) { ?>
+												<td class="day_label">How to Widow?</td>
+												<?php } ?>
+												<?php if (!empty ($how_widow)) { ?>
+												<td class="day_value"><?php echo $how_widow; ?></td>
+												<?php } ?>
+											</tr>
+
+											<tr class="opened">
+												<?php if (!empty ($widow_how_many_son)) { ?>
+												<td class="day_label">How many sons?</td>
+												<?php } ?>
+												<?php if (!empty ($widow_how_many_son)) { ?>
+												<td class="day_value"><?php echo $widow_how_many_son; ?></td>
+												<?php } ?>
+											</tr>
+
+											<tr class="opened">
+												<td class="day_label">Son Details?</td>
+												<?php if (!empty ($widow_son_details)) { ?>
+												<td class="day_value"><?php echo $widow_son_details; ?></td>
+												<?php } ?>
+											</tr>
+
+											<!-- If Widower -->
+											<tr class="opened">
+												<td class="day_label">How to Widower?</td>
+												<?php if (!empty ($how_widower)) { ?>
+												<td class="day_value"><?php echo $how_widower; ?></td>
+												<?php } ?>
+											</tr>
+
+											<tr class="opened">
+												<td class="day_label">How many sons?</td>
+												<?php if (!empty ($widower_how_many_son)) { ?>
+												<td class="day_value"><?php echo $widower_how_many_son; ?></td>
+												<?php } ?>
+											</tr>
+
+											<tr class="opened">
+												<td class="day_label">Son Details?</td>
+												<?php if (!empty ($widower_son_details)) { ?>
+												<td class="day_value"><?php echo $widower_son_details; ?></td>
+												<?php } ?>
+											</tr>
+
+
+											<!-- If Married -->
+											<tr class="opened">
+												<td class="day_label">Get permission from your present Wife?</td>
+												<?php if (!empty ($get_wife_permission)) { ?>
+												<td class="day_value"><?php echo $get_wife_permission; ?></td>
+												<?php } ?>
+											</tr>
+
+											<tr class="opened">
+												<td class="day_label">Get permission from your Family & Wife's Family?</td>
+												<?php if (!empty ($get_family_permission)) { ?>
+												<td class="day_value"><?php echo $get_family_permission; ?></td>
+												<?php } ?>
+											</tr>
+
+											<tr class="opened">
+												<td class="day_label">Why again Married?</td>
+												<?php if (!empty ($why_again_married)) { ?>
+												<td class="day_value"><?php echo $why_again_married; ?></td>
+												<?php } ?>
+											</tr>
+
+											<tr class="opened">
+												<td class="day_label">How many sons?</td>
+												<?php if (!empty ($married_how_many_son)) { ?>
+												<td class="day_value"><?php echo $married_how_many_son; ?></td>
+												<?php } ?>
+											</tr>
+
+											<tr class="opened">
+												<td class="day_label">Son Details?</td>
+												<?php if (!empty ($married_son_details)) { ?>
+												<td class="day_value"><?php echo $married_son_details; ?></td>
+												<?php } ?>
+											</tr>
+
+
+											
+
+										<!-- bd_marriage_related_qs_Male & Female($id); -->
 											<tr class="opened">
 												<td class="day_label">Guardians Agree</td>
 												<?php if (!empty ($guardians_agree_male)) { ?>
@@ -1073,12 +1339,21 @@ echo "<script>alert(\"Invalid Profile ID\")</script>";
 												<?php } ?>
 											</tr>
 
+
 											<tr class="opened">
 												<td class="day_label">Allow Study After Marriage</td>
 												<?php if (!empty ($allowstudy_aftermarriage)) { ?>
 												<td class="day_value"><?php echo $allowstudy_aftermarriage;?></td>
 												<?php } ?>
 											</tr>
+											<!-- Top Male |OR| Bellow Female -->
+											<tr class="opened">
+												<td class="day_label">Studies After Marriage</td>
+												<?php if (!empty ($studies_aftermarriage)) { ?>
+												<td class="day_value"><?php echo $studies_aftermarriage;?></td>
+												<?php } ?>
+											</tr>
+
 
 											<tr class="opened">
 												<td class="day_label">Allow Job After Marriage</td>
@@ -1086,6 +1361,14 @@ echo "<script>alert(\"Invalid Profile ID\")</script>";
 												<td class="day_value"><?php echo $allowjob_aftermarriage;?></td>
 												<?php } ?>
 											</tr>
+											<!-- Top Male |OR| Bellow Female -->
+											<tr class="opened">
+												<td class="day_label">Any Job After Marriage</td>
+												<?php if (!empty ($anyjob_aftermarriage)) { ?>
+												<td class="day_value"><?php echo $anyjob_aftermarriage;?></td>
+												<?php } ?>
+											</tr>
+
 											
 											<tr class="opened">
 												<td class="day_label">Live Wife After Marriage</td>
@@ -1093,11 +1376,20 @@ echo "<script>alert(\"Invalid Profile ID\")</script>";
 												<td class="day_value"><?php echo $livewife_aftermarriage; ?></td>
 												<?php } ?>
 											</tr>
+											<!-- Top Male |OR| Bellow Female -->
+											<tr class="opened">
+												<td class="day_label">Agree Marriage Student</td>
+												<?php if (!empty ($agree_marriage_student)) { ?>
+												<td class="day_value"><?php echo $agree_marriage_student; ?></td>
+												<?php } ?>
+											</tr>
+
+
 
 											<tr class="opened">
 												<td class="day_label">Profile By</td>
-												<?php if (!empty ($profileby_male)) { ?>
-												<td  class="day_value closed"><span><?php echo $profileby_male;?></span></td>
+												<?php if (!empty ($profileby)) { ?>
+												<td  class="day_value closed"><span><?php echo $profileby;?></span></td>
 												<?php } ?>
 											</tr>
 
@@ -1122,72 +1414,50 @@ echo "<script>alert(\"Invalid Profile ID\")</script>";
 								--  Female Marriage related Info / sb-biodata-7  --
 								-- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- ---
 								-- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -->
-								<?php
-									$id=$_GET['id'];
-									$profileid=$id;
+								<!-- <?php
+									// $id=$_GET['id'];
+									// $profileid=$id;
 									
-									//getting profile details from db
-									$sql = "SELECT * FROM 7bd_marriage_related_qs_female WHERE user_id = $id";
-									$result = mysqlexec($sql);
+									// //getting profile details from db
+									// $sql = "SELECT * FROM 7bd_marriage_related_qs_female WHERE user_id = $id";
+									// $result = mysqlexec($sql);
 
-									if($result){
-									$row= mysqli_fetch_assoc($result);
+									// if($result){
+									// $row= mysqli_fetch_assoc($result);
 
-									if($row){
-									$guardians_agree_female=$row['guardians_agree_female'];
-									}
-									if($row){
-									$anyjob_aftermarriage=$row['anyjob_aftermarriage'];
-									}
-									if($row){
-									$studies_aftermarriage=$row['studies_aftermarriage'];
-									}
-									if($row){
-									$agree_marriage_student=$row['agree_marriage_student'];
-									}
-									if($row){
-									$profileby_female=$row['profileby_female'];
-									}
-									}
-								?>
+									// if($row){
+									// $guardians_agree_female=$row['guardians_agree_female'];
+									// }
+									// if($row){
+									// $anyjob_aftermarriage=$row['anyjob_aftermarriage'];
+									// }
+									// if($row){
+									// $studies_aftermarriage=$row['studies_aftermarriage'];
+									// }
+									// if($row){
+									// $agree_marriage_student=$row['agree_marriage_student'];
+									// }
+									// if($row){
+									// $profileby=$row['profileby'];
+									// }
+									// }
+								?> -->
 
 								<div class="biodatavalue_list">
 									<table class="biodata_value_data">
 										<h3>Marriage related Information - F</h3>
 										<tbody>
 
-											<tr class="opened">
-												<td class="day_label">Guardians Agree</td>
-												<?php if (!empty ($guardians_agree_female)) { ?>
-												<td class="day_value"><?php echo $guardians_agree_female; ?></td>
-												<?php } ?>
-											</tr>
 
-											<tr class="opened">
-												<td class="day_label">Any Job After Marriage</td>
-												<?php if (!empty ($anyjob_aftermarriage)) { ?>
-												<td class="day_value"><?php echo $anyjob_aftermarriage;?></td>
-												<?php } ?>
-											</tr>
 
-											<tr class="opened">
-												<td class="day_label">Studies After Marriage</td>
-												<?php if (!empty ($studies_aftermarriage)) { ?>
-												<td class="day_value"><?php echo $studies_aftermarriage;?></td>
-												<?php } ?>
-											</tr>
+
 											
-											<tr class="opened">
-												<td class="day_label">Agree Marriage Student</td>
-												<?php if (!empty ($agree_marriage_student)) { ?>
-												<td class="day_value"><?php echo $agree_marriage_student; ?></td>
-												<?php } ?>
-											</tr>
+
 
 											<tr class="opened">
 												<td class="day_label">Profile By</td>
-												<?php if (!empty ($profileby_female)) { ?>
-												<td class="day_value closed"><span><?php echo $profileby_female;?></span></td>
+												<?php if (!empty ($profileby)) { ?>
+												<td class="day_value closed"><span><?php echo $profileby;?></span></td>
 												<?php } ?>
 											</tr>
 
