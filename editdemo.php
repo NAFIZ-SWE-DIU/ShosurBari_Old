@@ -747,65 +747,115 @@ $maximum_education=$row['maximum_education'];
 						<!-- Madrasa ending -->
 	
 <script>
-// Function to show or hide sections based on the selected value
-function toggleSections() {
-  var selectedValue = document.getElementById("secondary_edu_method").value;
-  var dawraPassField = document.getElementById("dawra_pass_field");
-  var dawraPassingYearField = document.getElementById("dawra_passing_year_field");
-  var currentEduLevelField = document.getElementById("current_edu_level_field");
+	// Function to show or hide sections based on the selected value
+	function toggleSections() {
+		var selectedValue = document.getElementById("secondary_edu_method").value;
 
-  // Hide all sections by default
-  document.getElementById("hafez_field").style.display = "none";
-  document.getElementById("hafeza_field").style.display = "none";
-  dawraPassField.style.display = "none";
-  dawraPassingYearField.style.display = "none";
-  currentEduLevelField.style.display = "none";
+		document.getElementById("dawra_pass_field").style.display = "none";
+		document.getElementById("dawra_passing_year_field").style.display = "none";
+		document.getElementById("current_edu_level_field").style.display = "none";
 
-  // Show or hide sections based on the selected value
-  if (selectedValue === "কাওমী মাদ্রাসা") {
-    document.getElementById("hafez_field").style.display = "block";
-    document.getElementById("hafeza_field").style.display = "block";
-    dawraPassField.style.display = "block";
-  } else {
-    currentEduLevelField.style.display = "block";
-  }
+		// Hide all sections by default
+		document.getElementById("hafez_field").style.display = "none";
+		document.getElementById("hafeza_field").style.display = "none";
+		document.getElementById("maxedu_qualification").style.display = "none";
 
-  // Hide the current_edu_level_field if dawra_pass_field is not "না, অধ্যায়নরত আছি"
-  if (dawraPassField.style.display !== "block") {
-    currentEduLevelField.style.display = "none";
-  }
-}
+		document.getElementById("maxedu_qualification").style.display = "none";
+		document.getElementById("gnrl_mdrs_scnd_pass").style.display = "none";
+		document.getElementById("gnrl_mdrs_scnd_pass_year").style.display = "none";
+		document.getElementById("gnrl_mdrs_scnd_exam_year").style.display = "none";  
+		document.getElementById("gnrl_mdrs_running_stdn").style.display = "none";
 
-// Function to show or hide fields based on the selected value of dawra_pass_field
-function toggleDawraFields() {
-  var selectedValue = document.getElementById("dawra_pass").value;
-  var dawraPassingYearField = document.getElementById("dawra_passing_year_field");
-  var currentEduLevelField = document.getElementById("current_edu_level_field");
+		document.getElementById("higher_seconday_edumethod").style.display = "none";
+		document.getElementById("gnrl_mdrs_hrscnd_pass").style.display = "none";
+		document.getElementById("gnrl_mdrs_hrscnd_pass_year").style.display = "none";
+		document.getElementById("gnrl_mdrs_hrscnd_exam_year").style.display = "none";
+		document.getElementById("higher_seconday_group").style.display = "none";
 
-  // Hide all fields by default
-  dawraPassingYearField.style.display = "none";
-  currentEduLevelField.style.display = "none";
+		document.getElementById("doploma_hrscnd_pass").style.display = "none";
+		document.getElementById("doploma_hrscnd_pass_year").style.display = "none";
+		document.getElementById("doploma_hrscnd_subject").style.display = "none";
+		document.getElementById("doploma_hrscnd_exam_year").style.display = "none";
+		document.getElementById("university_edumethod").style.display = "none";
 
-  // Show or hide fields based on the selected value
-  if (selectedValue === "হ্যাঁ") {
-    dawraPassingYearField.style.display = "block";
-    currentEduLevelField.style.display = "none"; // Hide the current_edu_level_field
-  } else if (selectedValue === "না, অধ্যায়নরত আছি") {
-    dawraPassingYearField.style.display = "none";
-    currentEduLevelField.style.display = "block";
-  }
-}
+		document.getElementById("varsity_pass").style.display = "none";
+		document.getElementById("varsity_pass_year").style.display = "none";
+		document.getElementById("varsity_subject").style.display = "none";
+		document.getElementById("varsity_exam_year").style.display = "none";
+		document.getElementById("varsity_name").style.display = "none";
+
+
+		// Show or hide sections based on the selected value
+		if (selectedValue === "কাওমী মাদ্রাসা") {
+			document.getElementById("hafez_field").style.display = "block";
+			document.getElementById("hafeza_field").style.display = "block";
+			document.getElementById("dawra_pass_field").style.display = "block";
+			document.getElementById("dawra_passing_year_field").style.display = "none";
+			document.getElementById("current_edu_level_field").style.display = "none";
+		}
+
+		// Show or hide sections based on the selected value
+		if (selectedValue === "অন্যান্য") {
+			document.getElementById("maxedu_qualification").style.display = "block";
+		}
+
+		// Show or hide sections based on the selected value
+		if (selectedValue === "জেনারেল") {
+			document.getElementById("gnrl_mdrs_scnd_pass").style.display = "block";
+		}
+
+        // Show or hide sections based on the selected value
+		if (selectedValue === "আলিয়া মাদ্রাসা") {
+   			document.getElementById("gnrl_mdrs_scnd_pass").style.display = "block";
+  		}
+
+		// Show or hide sections based on the selected value
+		if (selectedValue === "ভোকেশনাল") {
+    		document.getElementById("gnrl_mdrs_scnd_pass").style.display = "block";
+  		}
+
+    	// Show or hide sections based on the selected value
+		if (selectedValue === "মাধ্যমিক পড়িনাই") {
+    		document.getElementById("maxedu_qualification").style.display = "block";
+  		}
+	}
+
+
+	// Function to show or hide fields based on the selected value of dawra_pass_field
+	function toggleDawraFields() {
+		var selectedValue = document.getElementById("dawra_pass").value;
+
+		var dawraPassingYearField = document.getElementById("dawra_passing_year_field");
+		var currentEduLevelField = document.getElementById("current_edu_level_field");
+
+
+
+		// Show or hide fields based on the selected value
+		if (selectedValue === "হ্যাঁ") {
+			dawraPassingYearField.style.display = "block";
+			currentEduLevelField.style.display = "none"; // Hide the current_edu_level_field
+		}
+		
+		else if (selectedValue === "না, অধ্যায়নরত আছি") {
+			dawraPassingYearField.style.display = "none";
+			currentEduLevelField.style.display = "block";
+		}
+
+		else if (selectedValue === "না, বাদ দিয়েছি") {
+			dawraPassingYearField.style.display = "none";
+			currentEduLevelField.style.display = "none";
+		}
+	}
+
 
 // Attach the functions to the onchange events of the dropdowns
 document.getElementById("secondary_edu_method").onchange = toggleSections;
 document.getElementById("dawra_pass").onchange = toggleDawraFields;
 
+
 // Trigger the functions initially to set the initial state
 toggleSections();
 toggleDawraFields();
-
-
-
 </script>
 
 
@@ -815,10 +865,9 @@ toggleDawraFields();
 
 
 						<!-- Maddhomik Start -->
-
-						<div class="shosurbari-biodata-field">
-						   <label for="edu-method">মাধ্যমিক/সমমান পাশ করেছেন?<span class="form-required" title="This field is required.">*</span></label>
-						   <select name="general_madrasa_secondary_pass">
+						<div class="shosurbari-biodata-field" id="gnrl_mdrs_scnd_pass">
+						   <label for="secondary_pass">মাধ্যমিক/সমমান পাশ করেছেন?<span class="form-required" title="This field is required.">*</span></label>
+						   <select name="general_madrasa_secondary_pass" id="secondary_pass">
 						   <option hidden selected></option>
 		                       <option value="হ্যাঁ">হ্যাঁ</option>
 							   <option value="না, পরীক্ষার্থী">না, পরীক্ষার্থী</option>
@@ -827,9 +876,9 @@ toggleDawraFields();
 	                        </select>
 	                    </div>
 
-						<div class="shosurbari-biodata-field">
-							<label for="edu-method">কত সালে মাধ্যমিক/সমমান পাশ করেছেন?<span class="form-required" title="This field is required.">*</span></label>
-							<select name="generalmadrasa_secondary_passing_year">
+						<div class="shosurbari-biodata-field" id="gnrl_mdrs_scnd_pass_year">
+							<label for="gnrl_mdrs_scnd_pass_year">কত সালে মাধ্যমিক/সমমান পাশ করেছেন?<span class="form-required" title="This field is required.">*</span></label>
+							<select name="generalmadrasa_secondary_passing_year" id="gnrl_mdrs_scnd_pass_year">
 							<option hidden selected></option>
 								<option value="nonyear">None</option>
 								<option value="2024">SSC Candidet2024</option>
@@ -840,9 +889,9 @@ toggleDawraFields();
 	                    	</select>
 	                	</div>
 
-						<div class="shosurbari-biodata-field">
-							<label for="edu-method">কত সালে মাধ্যমিক/সমমান পরীক্ষা দেবেন?<span class="form-required" title="This field is required.">*</span></label>
-							<select name="generalmadrasa_secondary_exam_year">
+						<div class="shosurbari-biodata-field" id="gnrl_mdrs_scnd_exam_year">
+							<label for="gnrl_mdrs_scnd_exam_year">কত সালে মাধ্যমিক/সমমান পরীক্ষা দেবেন?<span class="form-required" title="This field is required.">*</span></label>
+							<select name="generalmadrasa_secondary_exam_year" id="gnrl_mdrs_scnd_exam_year">
 							<option hidden selected></option>
 							<option value="nonyear">None</option>
 		                    <option value="2024">SSC Candidet2024</option>
@@ -853,9 +902,14 @@ toggleDawraFields();
 	                    	</select>
 	                	</div>
 
-						<div class="shosurbari-biodata-field">
-						   <label for="edu-method">উচ্চমাধ্যমিক/ সমমান কোন মাদ্ধমে পড়েছেন?<span class="form-required" title="This field is required.">*</span></label>
-						   <select name="higher_secondary_edu_method">
+						<div class="shosurbari-biodata-field" id="gnrl_mdrs_running_stdn">
+		                    <label for="gnrl_mdrs_running_stdn">oddhyayon roto achi<span class="form-required" title="This field is required.">*</span></label>
+		                    <input type="text" id="gnrl_mdrs_running_stdn" name="university_name" value="" size="250" maxlength="250" class="form-text required">
+		                </div>
+
+						<div class="shosurbari-biodata-field" id="higher_seconday_edumethod">
+						   <label for="higher_seconday_edumethod">উচ্চমাধ্যমিক/ সমমান কোন মাদ্ধমে পড়েছেন?<span class="form-required" title="This field is required.">*</span></label>
+						   <select name="higher_secondary_edu_method" id="higher_seconday_edumethod">
 						   <option hidden selected></option>
 		                       <option value="জেনারেল">জেনারেল</option>
 		                       <option value="আলিয়া মাদ্রাসা">আলিয়া মাদ্রাসা</option>
@@ -870,9 +924,9 @@ toggleDawraFields();
 
 
 						<!-- Ucchomaddhomik start -->
-						<div class="shosurbari-biodata-field">
-						   <label for="edu-method">উচ্চমাধ্যমিক/সমমান পাশ করেছেন?<span class="form-required" title="This field is required.">*</span></label>
-	                        <select name="general_madrasa_highersecondary_pass">
+						<div class="shosurbari-biodata-field" id="gnrl_mdrs_hrscnd_pass">
+						   <label for="gnrl_mdrs_hrscnd_pass">উচ্চমাধ্যমিক/সমমান পাশ করেছেন?<span class="form-required" title="This field is required.">*</span></label>
+	                        <select name="general_madrasa_highersecondary_pass" id="gnrl_mdrs_hrscnd_pass">
 							<option hidden selected></option>
 		                       <option value="হ্যাঁ">হ্যাঁ</option>
 							   <option value="না, পরীক্ষার্থী">না, পরীক্ষার্থী</option>
@@ -880,7 +934,7 @@ toggleDawraFields();
 	                        </select>
 	                    </div>
 
-						<div class="shosurbari-biodata-field">
+						<div class="shosurbari-biodata-field" id="gnrl_mdrs_hrscnd_pass_year">
 							<label for="edu-method">কত সালে উচ্চমাধ্যমিক/সমমান পাশ করেছেন?<span class="form-required" title="This field is required.">*</span></label>
 							<select name="generalmadrasa_highersecondary_passing_year">
 							<option hidden selected></option>
@@ -893,7 +947,7 @@ toggleDawraFields();
 	                    	</select>
 	                	</div>
 
-						<div class="shosurbari-biodata-field">
+						<div class="shosurbari-biodata-field" id="gnrl_mdrs_hrscnd_exam_year">
 							<label for="edu-method">কত সালে উচ্চমাধ্যমিক/সমমান পরীক্ষা দেবেন?<span class="form-required" title="This field is required.">*</span></label>
 							<select name="generalmadrasa_highersecondary_exam_year">
 							<option hidden selected></option>
@@ -906,7 +960,7 @@ toggleDawraFields();
 	                    	</select>
 	                	</div>
 
-						<div class="shosurbari-biodata-field">
+						<div class="shosurbari-biodata-field" id="higher_seconday_group">
 							<label for="edu-method">উচ্চমাধ্যমিক/সমমানে আপনার গ্রুপ?<span class="form-required" title="This field is required.">*</span></label>
 							<select name="generalmadrasa_highersecondary_group">
 							<option hidden selected></option>
@@ -919,7 +973,7 @@ toggleDawraFields();
 
 
 						<!--Diploma Start -->
-						<div class="shosurbari-biodata-field">
+						<div class="shosurbari-biodata-field" id="doploma_hrscnd_pass">
 						   <label for="edu-method">ডিপ্লোমা পাশ করেছেন?<span class="form-required" title="This field is required.">*</span></label>
 	                        <select name="diploma_secondary_pass">
 							<option hidden selected></option>
@@ -928,8 +982,8 @@ toggleDawraFields();
 	                        </select>
 	                    </div>
 
-						<div class="shosurbari-biodata-field">
-						   <label for="edu-method">কত সালে ডিপ্লোমা পাশ করেছেন?<span class="form-required" title="This field is required.">*</span></label>
+						<div class="shosurbari-biodata-field" id="doploma_hrscnd_pass_year">
+						   <label for="doploma_hrscnd_pass_year">কত সালে ডিপ্লোমা পাশ করেছেন?<span class="form-required" title="This field is required.">*</span></label>
 	                        <select name="diploma_secondary_passing_year">
 							<option hidden selected></option>
 		                    <option value="2022">2022</option>
@@ -938,12 +992,12 @@ toggleDawraFields();
 	                        </select>
 	                    </div>
 
-						<div class="shosurbari-biodata-field">
+						<div class="shosurbari-biodata-field" id="doploma_hrscnd_subject">
 						   <label for="edu-method">ডিপ্লোমায় আপনার সাবজেক্ট কোনটি?<span class="form-required" title="This field is required.">*</span></label>
 						   <input type="text" id="diploma_secondary_subject" name="diploma_secondary_subject"  size="250" maxlength="250" class="form-text required">
 	                    </div>
 
-						<div class="shosurbari-biodata-field">
+						<div class="shosurbari-biodata-field" id="doploma_hrscnd_exam_year">
 						   <label for="edu-method">ডিপ্লোমা অধ্যায়ন কত সালে সম্পূর্ণ হবে?<span class="form-required" title="This field is required.">*</span></label>
 	                        <select name="diploma_secondary_studycomplete_year">
 							<option hidden selected></option>
@@ -954,7 +1008,7 @@ toggleDawraFields();
 	                        </select>
 	                    </div>
 
-						<div class="shosurbari-biodata-field">
+						<div class="shosurbari-biodata-field" id="university_edumethod">
 						   <label for="edu-method">স্নাতক/সমমান কোন মাদ্ধমে পড়েছেন?<span class="form-required" title="This field is required.">*</span></label>
 	                        <select name="varsity_edu_method">
 							<option hidden selected></option>
@@ -971,7 +1025,7 @@ toggleDawraFields();
 
 
 						<!-- Esnatok Start -->
-						<div class="shosurbari-biodata-field">
+						<div class="shosurbari-biodata-field" id="varsity_pass">
 						   <label for="edu-method">স্নাতক/সমমান পাশ করেছেন?<span class="form-required" title="This field is required.">*</span></label>
 	                        <select name="varsity_pass">
 							<option hidden selected></option>
@@ -980,7 +1034,7 @@ toggleDawraFields();
 	                        </select>
 	                    </div>
 
-						<div class="shosurbari-biodata-field">
+						<div class="shosurbari-biodata-field" id="varsity_pass_year">
 						   <label for="edu-method">কত সালে স্নাতক/সমমান পাশ করেছেন?<span class="form-required" title="This field is required.">*</span></label>
 	                        <select name="varsity_passing_year">
 							<option hidden selected></option>
@@ -990,12 +1044,12 @@ toggleDawraFields();
 	                        </select>
 	                    </div>
 
-						<div class="shosurbari-biodata-field">
+						<div class="shosurbari-biodata-field" id="varsity_subject">
 		                    <label for="edu-method">স্নাতক/সমমানে আপনার সাবজেক্ট কোনটি?<span class="form-required" title="This field is required.">*</span></label>
 		                    <input type="text" id="varsity_subject" name="varsity_subject" value="" size="250" maxlength="250" class="form-text required">
 		                </div>
 
-						<div class="shosurbari-biodata-field">
+						<div class="shosurbari-biodata-field" id="varsity_exam_year">
 						   <label for="edu-method">স্নাতক/সমমান অধ্যায়ন কত সালে সম্পূর্ণ হবে?<span class="form-required" title="This field is required.">*</span></label>
 	                        <select name="varsity_studycomplete_year">
 							<option hidden selected></option>
@@ -1006,7 +1060,7 @@ toggleDawraFields();
 	                        </select>
 	                    </div>
 
-						<div class="shosurbari-biodata-field">
+						<div class="shosurbari-biodata-field" id="varsity_name">
 		                    <label for="edu-method">স্নাতক/সমমানে আপনার প্রতিষ্ঠান?<span class="form-required" title="This field is required.">*</span></label>
 		                    <input type="text" id="university_name" name="university_name" value="" size="250" maxlength="250" class="form-text required">
 		                </div>
