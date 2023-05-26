@@ -1297,6 +1297,8 @@ $maximum_education=$row['maximum_education'];
 		function toggleVarsityPassFields() {
 		var selecteValue = document.getElementById("university_pass").value;
 
+		document.getElementById("varsity_pass").style.display = "none";
+
 		document.getElementById("varsity_pass_year").style.display = "none";
 		document.getElementById("varsity_subject").style.display = "none";
 		document.getElementById("varsity_exam_year").style.display = "none";
@@ -1305,6 +1307,7 @@ $maximum_education=$row['maximum_education'];
 
 		// Show or hide fields based on the selected value
 		if (selecteValue === "হ্যাঁ") {
+			document.getElementById("varsity_pass").style.display = "block";
 		document.getElementById("varsity_pass_year").style.display = "block";
 		document.getElementById("varsity_subject").style.display = "block";
 		document.getElementById("varsity_exam_year").style.display = "none";
@@ -1312,6 +1315,7 @@ $maximum_education=$row['maximum_education'];
 		}
 
 		else if (selecteValue === "না, অধ্যায়নরত আছি") {
+		document.getElementById("varsity_pass").style.display = "block";
 		document.getElementById("varsity_pass_year").style.display = "none";
 		document.getElementById("varsity_subject").style.display = "block";
 		document.getElementById("varsity_exam_year").style.display = "block";
