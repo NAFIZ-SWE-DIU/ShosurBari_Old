@@ -995,7 +995,6 @@ $maximum_education=$row['maximum_education'];
 		document.getElementById("higher_seconday_group").style.display = "none";
 		document.getElementById("hrgnrl_mdrs_running_stdn").style.display = "none";
 
-
 		document.getElementById("doploma_hrscnd_pass").style.display = "none";
 		document.getElementById("doploma_hrscnd_pass_year").style.display = "none";
 		document.getElementById("doploma_hrscnd_subject").style.display = "none";
@@ -1078,10 +1077,29 @@ $maximum_education=$row['maximum_education'];
 		else if (selectValue === "না, পরীক্ষার্থী") {
 
 
-			document.getElementById("gnrl_mdrs_scnd_pass_year").style.display = "none";
+		document.getElementById("gnrl_mdrs_scnd_pass_year").style.display = "none";
 		document.getElementById("gnrl_mdrs_scnd_exam_year").style.display = "block";
 		document.getElementById("gnrl_mdrs_running_stdn").style.display = "none";
-			document.getElementById("higher_seconday_edumethod").style.display = "none";
+		document.getElementById("higher_seconday_edumethod").style.display = "none";
+
+		document.getElementById("higher_seconday_edumethod").style.display = "none";
+		document.getElementById("gnrl_mdrs_hrscnd_pass").style.display = "none";
+		document.getElementById("gnrl_mdrs_hrscnd_pass_year").style.display = "none";
+		document.getElementById("gnrl_mdrs_hrscnd_exam_year").style.display = "none";
+		document.getElementById("higher_seconday_group").style.display = "none";
+		document.getElementById("hrgnrl_mdrs_running_stdn").style.display = "none";
+
+		document.getElementById("doploma_hrscnd_pass").style.display = "none";
+		document.getElementById("doploma_hrscnd_pass_year").style.display = "none";
+		document.getElementById("doploma_hrscnd_subject").style.display = "none";
+		document.getElementById("doploma_hrscnd_exam_year").style.display = "none";
+		document.getElementById("varsity_edumethod").style.display = "none";
+
+		document.getElementById("varsity_pass").style.display = "none";
+		document.getElementById("varsity_pass_year").style.display = "none";
+		document.getElementById("varsity_subject").style.display = "none";
+		document.getElementById("varsity_exam_year").style.display = "none";
+		document.getElementById("varsity_name").style.display = "none";
 		}
 
 		else if (selectValue === "না, অধ্যায়নরত আছি") {
@@ -1089,13 +1107,53 @@ $maximum_education=$row['maximum_education'];
 		document.getElementById("gnrl_mdrs_scnd_exam_year").style.display = "none";
 		document.getElementById("gnrl_mdrs_running_stdn").style.display = "block";
 			document.getElementById("higher_seconday_edumethod").style.display = "none";
+
+
+		document.getElementById("higher_seconday_edumethod").style.display = "none";
+		document.getElementById("gnrl_mdrs_hrscnd_pass").style.display = "none";
+		document.getElementById("gnrl_mdrs_hrscnd_pass_year").style.display = "none";
+		document.getElementById("gnrl_mdrs_hrscnd_exam_year").style.display = "none";
+		document.getElementById("higher_seconday_group").style.display = "none";
+		document.getElementById("hrgnrl_mdrs_running_stdn").style.display = "none";
+
+		document.getElementById("doploma_hrscnd_pass").style.display = "none";
+		document.getElementById("doploma_hrscnd_pass_year").style.display = "none";
+		document.getElementById("doploma_hrscnd_subject").style.display = "none";
+		document.getElementById("doploma_hrscnd_exam_year").style.display = "none";
+		document.getElementById("varsity_edumethod").style.display = "none";
+
+		document.getElementById("varsity_pass").style.display = "none";
+		document.getElementById("varsity_pass_year").style.display = "none";
+		document.getElementById("varsity_subject").style.display = "none";
+		document.getElementById("varsity_exam_year").style.display = "none";
+		document.getElementById("varsity_name").style.display = "none";
 		}
 
 		else if (selectValue === "অধ্যায়ন বাদ দিয়েছি") {
-			document.getElementById("gnrl_mdrs_scnd_pass_year").style.display = "none";
+		document.getElementById("gnrl_mdrs_scnd_pass_year").style.display = "none";
 		document.getElementById("gnrl_mdrs_scnd_exam_year").style.display = "none";
 		document.getElementById("gnrl_mdrs_running_stdn").style.display = "none";
-			document.getElementById("higher_seconday_edumethod").style.display = "none";
+		document.getElementById("higher_seconday_edumethod").style.display = "none";
+
+
+		document.getElementById("higher_seconday_edumethod").style.display = "none";
+		document.getElementById("gnrl_mdrs_hrscnd_pass").style.display = "none";
+		document.getElementById("gnrl_mdrs_hrscnd_pass_year").style.display = "none";
+		document.getElementById("gnrl_mdrs_hrscnd_exam_year").style.display = "none";
+		document.getElementById("higher_seconday_group").style.display = "none";
+		document.getElementById("hrgnrl_mdrs_running_stdn").style.display = "none";
+
+		document.getElementById("doploma_hrscnd_pass").style.display = "none";
+		document.getElementById("doploma_hrscnd_pass_year").style.display = "none";
+		document.getElementById("doploma_hrscnd_subject").style.display = "none";
+		document.getElementById("doploma_hrscnd_exam_year").style.display = "none";
+		document.getElementById("varsity_edumethod").style.display = "none";
+
+		document.getElementById("varsity_pass").style.display = "none";
+		document.getElementById("varsity_pass_year").style.display = "none";
+		document.getElementById("varsity_subject").style.display = "none";
+		document.getElementById("varsity_exam_year").style.display = "none";
+		document.getElementById("varsity_name").style.display = "none";
 		}
 	}
 
@@ -1129,6 +1187,13 @@ $maximum_education=$row['maximum_education'];
 		document.getElementById("doploma_hrscnd_pass_year").style.display = "none";
 		document.getElementById("doploma_hrscnd_subject").style.display = "none";
 		document.getElementById("doploma_hrscnd_exam_year").style.display = "none";
+		
+		document.getElementById("varsity_edumethod").style.display = "none";
+		document.getElementById("varsity_pass").style.display = "none";
+		document.getElementById("varsity_pass_year").style.display = "none";
+		document.getElementById("varsity_subject").style.display = "none";
+		document.getElementById("varsity_exam_year").style.display = "none";
+		document.getElementById("varsity_name").style.display = "none";
 		}
 
 		else if (selecteValue === "ডিপ্লোমা") {
@@ -1142,6 +1207,13 @@ $maximum_education=$row['maximum_education'];
 		document.getElementById("doploma_hrscnd_pass_year").style.display = "none";
 		document.getElementById("doploma_hrscnd_subject").style.display = "none";
 		document.getElementById("doploma_hrscnd_exam_year").style.display = "none";
+
+		document.getElementById("varsity_edumethod").style.display = "none";
+		document.getElementById("varsity_pass").style.display = "none";
+		document.getElementById("varsity_pass_year").style.display = "none";
+		document.getElementById("varsity_subject").style.display = "none";
+		document.getElementById("varsity_exam_year").style.display = "none";
+		document.getElementById("varsity_name").style.display = "none";
 		}
 
 		else if (selecteValue === "কাওমী মাদ্রাসা") {
@@ -1155,6 +1227,13 @@ $maximum_education=$row['maximum_education'];
 		document.getElementById("doploma_hrscnd_pass_year").style.display = "none";
 		document.getElementById("doploma_hrscnd_subject").style.display = "none";
 		document.getElementById("doploma_hrscnd_exam_year").style.display = "none";
+
+		document.getElementById("varsity_edumethod").style.display = "none";
+		document.getElementById("varsity_pass").style.display = "none";
+		document.getElementById("varsity_pass_year").style.display = "none";
+		document.getElementById("varsity_subject").style.display = "none";
+		document.getElementById("varsity_exam_year").style.display = "none";
+		document.getElementById("varsity_name").style.display = "none";
 		}
 
 		else if (selecteValue === "অধ্যায়ন বাদ দিয়েছি") {
@@ -1168,6 +1247,13 @@ $maximum_education=$row['maximum_education'];
 		document.getElementById("doploma_hrscnd_pass_year").style.display = "none";
 		document.getElementById("doploma_hrscnd_subject").style.display = "none";
 		document.getElementById("doploma_hrscnd_exam_year").style.display = "none";
+
+		document.getElementById("varsity_edumethod").style.display = "none";
+		document.getElementById("varsity_pass").style.display = "none";
+		document.getElementById("varsity_pass_year").style.display = "none";
+		document.getElementById("varsity_subject").style.display = "none";
+		document.getElementById("varsity_exam_year").style.display = "none";
+		document.getElementById("varsity_name").style.display = "none";
 		}
 
 		else if (selecteValue === "অন্যান্য") {
@@ -1181,6 +1267,13 @@ $maximum_education=$row['maximum_education'];
 		document.getElementById("doploma_hrscnd_pass_year").style.display = "none";
 		document.getElementById("doploma_hrscnd_subject").style.display = "none";
 		document.getElementById("doploma_hrscnd_exam_year").style.display = "none";
+
+		document.getElementById("varsity_edumethod").style.display = "none";
+		document.getElementById("varsity_pass").style.display = "none";
+		document.getElementById("varsity_pass_year").style.display = "none";
+		document.getElementById("varsity_subject").style.display = "none";
+		document.getElementById("varsity_exam_year").style.display = "none";
+		document.getElementById("varsity_name").style.display = "none";
 		}
 	}
 
@@ -1209,7 +1302,13 @@ $maximum_education=$row['maximum_education'];
 		document.getElementById("gnrl_mdrs_hrscnd_exam_year").style.display = "block";
 		document.getElementById("higher_seconday_group").style.display = "block";
 		document.getElementById("hrgnrl_mdrs_running_stdn").style.display = "none";
+
 		document.getElementById("varsity_edumethod").style.display = "none";
+		document.getElementById("varsity_pass").style.display = "none";
+		document.getElementById("varsity_pass_year").style.display = "none";
+		document.getElementById("varsity_subject").style.display = "none";
+		document.getElementById("varsity_exam_year").style.display = "none";
+		document.getElementById("varsity_name").style.display = "none";
 		}
 
 		else if (selecteValue === "না, এখনো অধ্যায়নরত") {
@@ -1217,7 +1316,13 @@ $maximum_education=$row['maximum_education'];
 		document.getElementById("gnrl_mdrs_hrscnd_exam_year").style.display = "none";
 		document.getElementById("higher_seconday_group").style.display = "block";
 		document.getElementById("hrgnrl_mdrs_running_stdn").style.display = "block";
+
 		document.getElementById("varsity_edumethod").style.display = "none";
+		document.getElementById("varsity_pass").style.display = "none";
+		document.getElementById("varsity_pass_year").style.display = "none";
+		document.getElementById("varsity_subject").style.display = "none";
+		document.getElementById("varsity_exam_year").style.display = "none";
+		document.getElementById("varsity_name").style.display = "none";
 		}
 	}
 
@@ -1246,6 +1351,13 @@ $maximum_education=$row['maximum_education'];
 		document.getElementById("doploma_hrscnd_subject").style.display = "block";
 		document.getElementById("doploma_hrscnd_exam_year").style.display = "block";
 		document.getElementById("varsity_edumethod").style.display = "none";
+
+		document.getElementById("varsity_edumethod").style.display = "none";
+		document.getElementById("varsity_pass").style.display = "none";
+		document.getElementById("varsity_pass_year").style.display = "none";
+		document.getElementById("varsity_subject").style.display = "none";
+		document.getElementById("varsity_exam_year").style.display = "none";
+		document.getElementById("varsity_name").style.display = "none";
 		}
 	}
 
