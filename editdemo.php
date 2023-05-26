@@ -2010,6 +2010,14 @@ if($result){
         </select>
     </div>
 
+	<!-- Unmarried Sections -->
+	<div class="shosurbari-biodata-field" id="unmarried-section" style="display: none;">
+		<div class="shosurbari-biodata-field">
+			<label for="edit-name">Do your guardians agree to your marriage?<span class="form-required" title="This field is required.">*</span></label>
+			<input type="text" id="edit-name" name="guardians_agree_male"  value="<?php echo $guardians_agree_male; ?>"  size="100" maxlength="100" class="form-text" required>
+		</div>
+	</div>
+
     <!-- Divorce Section -->
     <div class="shosurbari-biodata-field" id="divorce-section" style="display: none;">
         <div class="shosurbari-biodata-field">
@@ -2037,6 +2045,11 @@ if($result){
             <label for="edit-name">Son Details?<span class="form-required" title="This field is required.">*</span></label>
             <textarea rows="5" name="divorce_son_details" placeholder="Describe Your Son Details" class="form-text-describe"></textarea>
         </div>
+
+		<div class="shosurbari-biodata-field">
+		    <label for="edit-name">Do your guardians agree to your marriage?<span class="form-required" title="This field is required.">*</span></label>
+			<input type="text" id="edit-name" name="guardians_agree_male"  value="<?php echo $guardians_agree_male; ?>"  size="100" maxlength="100" class="form-text" required>
+		</div>
     </div>
 
     <!-- Widow Section -->
@@ -2066,6 +2079,11 @@ if($result){
             <label for="edit-name">Son Details?<span class="form-required" title="This field is required.">*</span></label>
             <textarea rows="5" name="widow_son_details" placeholder="Describe Your Son Details" class="form-text-describe"></textarea>
         </div>
+
+		<div class="shosurbari-biodata-field">
+		    <label for="edit-name">Do your guardians agree to your marriage?<span class="form-required" title="This field is required.">*</span></label>
+			<input type="text" id="edit-name" name="guardians_agree_male"  value="<?php echo $guardians_agree_male; ?>"  size="100" maxlength="100" class="form-text" required>
+		</div>
     </div>
 
     <!-- Widower Section -->
@@ -2095,6 +2113,11 @@ if($result){
             <label for="edit-name">Son Details?<span class="form-required" title="This field is required.">*</span></label>
             <textarea rows="5" name="widower_son_details" placeholder="Describe Your Son Details" class="form-text-describe"></textarea>
         </div>
+
+		<div class="shosurbari-biodata-field">
+		    <label for="edit-name">Do your guardians agree to your marriage?<span class="form-required" title="This field is required.">*</span></label>
+			<input type="text" id="edit-name" name="guardians_agree_male"  value="<?php echo $guardians_agree_male; ?>"  size="100" maxlength="100" class="form-text" required>
+		</div>
     </div>
 
     <!-- Married Section -->
@@ -2142,20 +2165,6 @@ if($result){
 
 
 
-
-
-
-
-
-
-
-
-
-
-							<div class="shosurbari-biodata-field">
-		                        <label for="edit-name">Do your guardians agree to your marriage?<span class="form-required" title="This field is required.">*</span></label>
-			                    <input type="text" id="edit-name" name="guardians_agree_male"  value="<?php echo $guardians_agree_male; ?>"  size="100" maxlength="100" class="form-text" required>
-		                    </div>
 
 
 							<div class="shosurbari-biodata-field" id="male-allow-wife-job">
@@ -2218,8 +2227,8 @@ if($result){
 --                                               --
 -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- ---
 -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -->
-        <input type="button" name="previous" class="previous action-button" value="Previous" />
-        <input type="button" name="next" class="next action-button" value="Next" />
+    <input type="button" name="previous" class="previous action-button" value="Previous" />
+    <input type="button" name="next" class="next action-button" value="Next" />
 
 
 
@@ -2273,18 +2282,22 @@ if($result){
 
 
 function toggleMaritalStatus(selectedStatus) {
+	var unmarriedSection = document.getElementById('unmarried-section');
     var divorceSection = document.getElementById('divorce-section');
     var widowSection = document.getElementById('widow-section');
     var widowerSection = document.getElementById('widower-section');
     var marriedSection = document.getElementById('married-section');
 
     // Hide all sections initially
+	unmarriedSection.style.display = 'none';
     divorceSection.style.display = 'none';
     widowSection.style.display = 'none';
     widowerSection.style.display = 'none';
     marriedSection.style.display = 'none';
 
-    if (selectedStatus === 'Divorced') {
+    if (selectedStatus === 'Unmarried') {
+        unmarriedSection.style.display = 'block';
+    } else if (selectedStatus === 'Divorced') {
         divorceSection.style.display = 'block';
     } else if (selectedStatus === 'Widow') {
         widowSection.style.display = 'block';
