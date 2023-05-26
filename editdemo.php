@@ -456,12 +456,25 @@ $aboutme=$row['aboutme'];
 	                            </select>
 			                </div>
 
+							<div class="shosurbari-biodata-field">
+		                        <label for="edit-name">Occupation Sector<span class="form-required" title="This field is required.">*</span></label>
+								<select name="occupation_sector" required onchange="showOccupationSector(this.value)">
+								<option hidden selected></option>
+								<option value="Student">Student Sector</option>
+								<option value="Common">Common Profession</option>
+								<option value="Health">Health Sector</option>
+								<option value="Engineer">Engineer Profession</option>
+								<option value="Teacher">Teacher Profession</option>
+								<option value="Defense">Defense Sector</option>
+								<option value="Foreigner">Foreigner</option>
+								<option value="Garments">Garments Sector</option>
+								<option value="Driver">Driver Profession</option>
+	                            </select>
+			                </div>
 
-		                    <div class="shosurbari-biodata-field">
-		                        <label for="edit-name">Occupation<span class="form-required" title="This field is required.">*</span></label>
-								<select name="occupation" class="selectsearch" required>
-
-								    <optgroup label="Students Sector">
+							<div class="shosurbari-biodata-field section" id="Student" style="display: none;">
+		                        <label for="edit-name">Occupation Level<span class="form-required" title="This field is required.">*</span></label>
+								<select name="occupation_level">
 									<option hidden selected></option>
 									<option value="Kawmi Madrasa Student">Kawmi Madrasa Student</option>
 									<option value="Dakhil Student">Dakhil Student</option> 
@@ -486,10 +499,15 @@ $aboutme=$row['aboutme'];
 	               		            <option value="Students of M.A.">M.Sc. Student</option>
 									<option value="Students of B.Com.">M.A. Student</option> 
 	               		            <option value="Students of M.Com.">M.Com. Student</option>
-									   <option value="Kamil Student">Kamil Student</option> 
-                                    </optgroup>
+									<option value="Kamil Student">Kamil Student</option> 
+								</select>
+							</div>
 									
-								     <optgroup label="Medical & Health Profession">
+
+							<div class="shosurbari-biodata-field section" id="Health" style="display: none;">
+		                        <label for="edit-name">Occupation Level<span class="form-required" title="This field is required.">*</span></label>
+								<select name="occupation_level">
+									<option hidden selected></option>
 	                                <option value="MBBS Doctor">MBBS Doctor</option>
 	                                <option value="Internship Doctor">Internship Doctor</option> 
 									<option value="Specialist Doctor">Specialist Doctor</option>
@@ -498,9 +516,14 @@ $aboutme=$row['aboutme'];
 	               		            <option value="Nurse">Nurse</option>
 									<option value="Midwife">Midwife</option>
 									<option value="Village Doctor">Village Doctor</option>
-                                    </optgroup>
+								</select>
+							</div>
 
-									<optgroup label="Engineer Profession">
+
+							<div class="shosurbari-biodata-field section" id="Engineer" style="display: none;">
+		                        <label for="edit-name">Occupation Level<span class="form-required" title="This field is required.">*</span></label>
+								<select name="occupation_level">
+									<option hidden selected></option>
 									<option value="Aerospace Engineer">Aerospace Engineer</option>
 									<option value="Agricultural Engineer">Agricultural Engineer</option>
 									<option value="Architectural Engineer">Architectural Engineer</option>
@@ -514,9 +537,14 @@ $aboutme=$row['aboutme'];
 									<option value="Robotics Engineer">Robotics Engineer</option>
 	                                <option value="Software Engineer">Software Engineer</option> 
 	               		            <option value="Textile Engineer">Textile Engineer</option>
-                                    </optgroup>
+								</select>
+							</div>
 
-									<optgroup label="Teacher Profession">
+
+							<div class="shosurbari-biodata-field section" id="Teacher" style="display: none;">
+		                        <label for="edit-name">Occupation Level<span class="form-required" title="This field is required.">*</span></label>
+								<select name="occupation_level">
+									<option hidden selected></option>
 									<option value="Kawmi Madrasa Teacher">Kawmi Madrasa Teacher</option>
 									<option value="Aliya Madrasa Teacher">Aliya Madrasa Teacher</option>  
 	                                <option value="Primary School Teacher">Primary School Teacher</option> 
@@ -526,9 +554,15 @@ $aboutme=$row['aboutme'];
 									<option value="Private University Professor">Private University Professor</option>
 									<option value="National University Professor">National University Professor</option>
 									<option value="Degree Professor">Degree Professor</option>
-                                    </optgroup>
+								</select>
+							</div>
 
-									<optgroup label="Defense Profession">
+
+
+							<div class="shosurbari-biodata-field section" id="Defense" style="display: none;">
+		                        <label for="edit-name">Occupation Level<span class="form-required" title="This field is required.">*</span></label>
+								<select name="occupation_level">
+									<option hidden selected></option>
 	                                <option value="Army">Army</option> 
 	               		            <option value="Air Force">Air Force</option>
 	                                <option value="Navy">Navy</option>
@@ -537,32 +571,52 @@ $aboutme=$row['aboutme'];
 									<option value="Fire Service">Fire Service</option> 
 	               		            <option value="RAB">RAB</option>
 	                                <option value="DB">DB</option>
-                                    </optgroup>
+								</select>
+							</div>
 
-									<optgroup label="Foreign Work/ Job /Business">
-	                                <option value="Middleast Work/ Job /Business">Middleast Work/ Job /Business</option> 
-	               		            <option value="Europ Work/ Job /Business">Europ Work/ Job /Business</option>
-	                                <option value="America Work/ Job /Business">America Work/ Job /Business</option>
-	                                <option value="Asia Work/ Job /Business">Asia Work/ Job /Business</option>
-									<option value="Africa Work/ Job /Business">Africa Work/ Job /Business</option>
-	               		            <option value="Oceania Work/ Job /Business">Oceania Work/ Job /Business</option>
-                                    </optgroup>
 
-									<optgroup label="Garments Sector">
+
+						<div class="shosurbari-biodata-field section" id="Foreigner" style="display: none;">
+		                    <label for="edit-name">Occupation Level<span class="form-required" title="This field is required.">*</span></label>
+							<select name="occupation_level">
+								<option hidden selected></option>
+								<option value="Job">Job</option>
+								<option value="Worker">Worker</option>
+								<option value="Business">Business</option>
+								<option value="Student">Student</option>
+							</select>
+						</div>
+
+
+							<div class="shosurbari-biodata-field section" id="Garments" style="display: none;">
+		                        <label for="edit-name">Occupation Level<span class="form-required" title="This field is required.">*</span></label>
+								<select name="occupation_level">
+									<option hidden selected></option>
 	                                <option value="Garments Worker">Garments Worker</option> 
 	               		            <option value="Managers of Garments">Garments Manager</option>
-                                    </optgroup>
+								</select>
+							</div>
 
-									<optgroup label="Driver Profession">
+
+							<div class="shosurbari-biodata-field section" id="Driver" style="display: none;">
+		                        <label for="edit-name">Occupation Level<span class="form-required" title="This field is required.">*</span></label>
+								<select name="occupation_level">
+									<option hidden selected></option>
 	                                <option value="Bus Driver">Bus Driver</option> 
 									<option value="Micro Driver">Micro Bus Driver</option> 
 	                                <option value="Car Driver">Car Driver</option> 
 	                                <option value="Truck Driver">Truck Driver</option>
 									<option value="CNG Driver">CNG Driver</option> 
 	                                <option value="Auto Driver">Auto Driver</option>
-                                    </optgroup>
+								</select>
+							</div>
 
-									<optgroup label="Common Profession">
+
+
+							<div class="shosurbari-biodata-field section" id="Common" style="display: none;">
+		                        <label for="edit-name">Occupation Level<span class="form-required" title="This field is required.">*</span></label>
+								<select name="occupation_level">
+									<option hidden selected></option>
 									<option value="Banker">Banker</option>
 									<option value="Lawyer">Lawyer</option> 
 									<option value="Business">Business</option> 
@@ -573,6 +627,23 @@ $aboutme=$row['aboutme'];
 	                                <option value="No Profession">No Profession</option>
 	                            </select>
 							</div>
+
+
+					<script>
+					function showOccupationSector(occupation) {
+					// Hide all district sections
+					var occupationLevelSections = document.getElementsByClassName("section");
+					for (var i = 0; i < occupationLevelSections.length; i++) {
+						occupationLevelSections[i].style.display = "none";
+					}
+					// Show the selected division's district section
+					var selectedOccupationSection = document.getElementById(occupation);
+					if (selectedOccupationSection) {
+						selectedOccupationSection.style.display = "block";
+					}
+					}
+					</script>
+							
 
 		                    <div class="shosurbari-biodata-field">
 		                        <label for="edit-name">Occupation Describe<span class="form-required" title="This field is required.">*</span></label>
@@ -603,6 +674,7 @@ $aboutme=$row['aboutme'];
     <input type="button" name="next" class="next action-button" value="Next" />
 </fieldset>
 <!-- 2 fieldsets end-->
+
 
 
 
@@ -1685,9 +1757,96 @@ $childhood=$row['childhood'];
 					</script>
 
 
+<script src="https://code.jquery.com/jquery-3.6.3.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/chosen/1.8.7/chosen.jquery.min.js"></script>
+
+						<div class="shosurbari-biodata-field">
+		                    <label for="edit-name">Present Address<span class="form-required" title="This field is required.">*</span></label>
+	                        <select name="present_address" required class="selectsearch">
+							<option hidden selected>Search Country</option>
+							<option value="Afghanistan">Afghanistan</option>
+	                            <option value="Argentina">Argentina</option>
+	                            <option value="Armenia">Armenia</option> 
+	               		        <option value="Australia">Australia</option>
+								<option value="Austria">Austria</option>
+								<option value="Bahrain">Bahrain</option> 
+								<option value="Bangladesh">Bangladesh</option> 
+								<option value="Belgium">Belgium</option>
+	                            <option value="Bhutan">Bhutan</option> 
+	               		        <option value="Brazil">Brazil</option>
+								<option value="Canada">Canada</option>
+	                            <option value="China">China</option> 
+	               		        <option value="Colombia">Colombia</option>
+								<option value="Denmark">Denmark</option> 
+								<option value="Egypt">Egypt</option>
+	                            <option value="Finland">Finland</option> 
+	               		        <option value="France">France</option>
+								<option value="Germany">Germany</option> 
+								<option value="Greece">Greece</option>
+	                            <option value="Hungary">Hungary</option> 
+	               		        <option value="India">India</option>
+								<option value="Indonesia">Indonesia</option> 
+								<option value="Iran">Iran</option>
+	                            <option value="Iraq">Iraq</option> 
+	               		        <option value="Ireland">Ireland</option>
+								<option value="Italy">Italy</option> 
+								<option value="Japan">Japan</option>
+	                            <option value="Jordan">Jordan</option> 
+								<option value="Kazakhstan">Kazakhstan</option> 
+								<option value="Korea, North">Korea, North</option>
+	                            <option value="Korea, South">Korea, South</option> 
+	               		        <option value="Kuwait">Kuwait</option>
+								<option value="Libya">Libya</option> 
+								<option value="Luxembourg">Luxembourg</option>
+	                            <option value="Malaysia">Malaysia</option> 
+								<option value="Maldives">Maldives</option> 
+								<option value="Mexico">Mexico</option>
+	                            <option value="Morocco">Morocco</option>
+								<option value="Myanmar">Myanmar</option>  
+	               		        <option value="Nepal">Nepal</option>
+								<option value="Netherlands">Netherlands</option> 
+								<option value="New Zealand	">New Zealand</option>
+	                            <option value="Norway">Norway</option> 
+								<option value="Oman">Oman</option> 
+								<option value="Pakistan">Pakistan</option>
+								<option value="Palestine">Palestine</option>
+								<option value="Paraguay">Paraguay</option>
+	                            <option value="Philippines">Philippines</option>
+								<option value="Poland">Poland</option>   
+	               		        <option value="Portugal">Portugal</option> 
+								<option value="Qatar">Qatar</option> 
+								<option value="Russia">Russia</option> 
+								<option value="Saudi Arabia">Saudi Arabia</option>
+	                            <option value="Singapore">Singapore</option>
+								<option value="South Africa">South Africa</option>  
+	               		        <option value="Spain">Spain</option>
+								<option value="Sri Lanka">Sri Lanka</option>
+								<option value="Sudan">Sudan</option> 
+								<option value="Sweden">Sweden</option>
+	                            <option value="Switzerland">Switzerland</option>
+								<option value="Syria">Syria</option> 
+								<option value="Taiwan">Taiwan</option>  
+								<option value="Tajikistan">Tajikistan</option>   
+								<option value="Thailand">Thailand</option> 
+								<option value="Turkey">Turkey</option>
+	                            <option value="Ukraine">Ukraine</option>
+								<option value="United Arab Emirates">United Arab Emirates</option>  
+	               		        <option value="United Kingdom">United Kingdom</option>
+								<option value="United States of America">United States of America</option> 
+								<option value="Uruguay">Uruguay</option>
+								<option value="Vietnam">Vietnam</option>
+	                            <option value="Yemen">Yemen</option>
+								<option value="Portugal">Others</option> 
+	                        </select>
+			            </div>
+
+					<script>
+						jQuery('.selectsearch').chosen();
+					</script>
+
 
 <div class="shosurbari-biodata-field">
-	<label for="edit-name">Present Address<span class="form-required" title="This field is required.">*</span></label>
+	<label for="edit-name">Present Location<span class="form-required" title="This field is required.">*</span></label>
 	<input type="text" id="edit-name" name="present_address" value="<?php echo $present_address; ?>" size="100" maxlength="100" class="form-text required" required>
 </div>
 
