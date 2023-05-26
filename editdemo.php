@@ -447,8 +447,8 @@ $aboutme=$row['aboutme'];
 
 						    <div class="sb-biodata-option">
 							<div class="shosurbari-biodata-field">
-		                        <label for="edit-name">Smoke or Drinks<span class="form-required" title="This field is required.">*</span></label>
-	                            <select name="smoke" required>
+		                        <label for="edit-name">Smoke or Drinks<span style="color: gray; font-size: 14px;" class="form-required" title="This field is required."> (Optional)</span></label>
+	                            <select name="smoke">
 								<option hidden selected></option>
 	                                <option value="No">No</option>
 	                                <option value="Yes">Yes</option> 
@@ -746,117 +746,6 @@ $maximum_education=$row['maximum_education'];
 
 						<!-- Madrasa ending -->
 	
-<script>
-	// Function to show or hide sections based on the selected value
-	function toggleSections() {
-		var selectedValue = document.getElementById("secondary_edu_method").value;
-
-		document.getElementById("dawra_pass_field").style.display = "none";
-		document.getElementById("dawra_passing_year_field").style.display = "none";
-		document.getElementById("current_edu_level_field").style.display = "none";
-
-		// Hide all sections by default
-		document.getElementById("hafez_field").style.display = "none";
-		document.getElementById("hafeza_field").style.display = "none";
-		document.getElementById("maxedu_qualification").style.display = "none";
-
-		document.getElementById("maxedu_qualification").style.display = "none";
-		document.getElementById("gnrl_mdrs_scnd_pass").style.display = "none";
-		document.getElementById("gnrl_mdrs_scnd_pass_year").style.display = "none";
-		document.getElementById("gnrl_mdrs_scnd_exam_year").style.display = "none";  
-		document.getElementById("gnrl_mdrs_running_stdn").style.display = "none";
-
-		document.getElementById("higher_seconday_edumethod").style.display = "none";
-		document.getElementById("gnrl_mdrs_hrscnd_pass").style.display = "none";
-		document.getElementById("gnrl_mdrs_hrscnd_pass_year").style.display = "none";
-		document.getElementById("gnrl_mdrs_hrscnd_exam_year").style.display = "none";
-		document.getElementById("higher_seconday_group").style.display = "none";
-
-		document.getElementById("doploma_hrscnd_pass").style.display = "none";
-		document.getElementById("doploma_hrscnd_pass_year").style.display = "none";
-		document.getElementById("doploma_hrscnd_subject").style.display = "none";
-		document.getElementById("doploma_hrscnd_exam_year").style.display = "none";
-		document.getElementById("university_edumethod").style.display = "none";
-
-		document.getElementById("varsity_pass").style.display = "none";
-		document.getElementById("varsity_pass_year").style.display = "none";
-		document.getElementById("varsity_subject").style.display = "none";
-		document.getElementById("varsity_exam_year").style.display = "none";
-		document.getElementById("varsity_name").style.display = "none";
-
-
-		// Show or hide sections based on the selected value
-		if (selectedValue === "কাওমী মাদ্রাসা") {
-			document.getElementById("hafez_field").style.display = "block";
-			document.getElementById("hafeza_field").style.display = "block";
-			document.getElementById("dawra_pass_field").style.display = "block";
-			document.getElementById("dawra_passing_year_field").style.display = "none";
-			document.getElementById("current_edu_level_field").style.display = "none";
-		}
-
-		// Show or hide sections based on the selected value
-		if (selectedValue === "অন্যান্য") {
-			document.getElementById("maxedu_qualification").style.display = "block";
-		}
-
-		// Show or hide sections based on the selected value
-		if (selectedValue === "জেনারেল") {
-			document.getElementById("gnrl_mdrs_scnd_pass").style.display = "block";
-		}
-
-        // Show or hide sections based on the selected value
-		if (selectedValue === "আলিয়া মাদ্রাসা") {
-   			document.getElementById("gnrl_mdrs_scnd_pass").style.display = "block";
-  		}
-
-		// Show or hide sections based on the selected value
-		if (selectedValue === "ভোকেশনাল") {
-    		document.getElementById("gnrl_mdrs_scnd_pass").style.display = "block";
-  		}
-
-    	// Show or hide sections based on the selected value
-		if (selectedValue === "মাধ্যমিক পড়িনাই") {
-    		document.getElementById("maxedu_qualification").style.display = "block";
-  		}
-	}
-
-
-	// Function to show or hide fields based on the selected value of dawra_pass_field
-	function toggleDawraFields() {
-		var selectedValue = document.getElementById("dawra_pass").value;
-
-		var dawraPassingYearField = document.getElementById("dawra_passing_year_field");
-		var currentEduLevelField = document.getElementById("current_edu_level_field");
-
-
-
-		// Show or hide fields based on the selected value
-		if (selectedValue === "হ্যাঁ") {
-			dawraPassingYearField.style.display = "block";
-			currentEduLevelField.style.display = "none"; // Hide the current_edu_level_field
-		}
-		
-		else if (selectedValue === "না, অধ্যায়নরত আছি") {
-			dawraPassingYearField.style.display = "none";
-			currentEduLevelField.style.display = "block";
-		}
-
-		else if (selectedValue === "না, বাদ দিয়েছি") {
-			dawraPassingYearField.style.display = "none";
-			currentEduLevelField.style.display = "none";
-		}
-	}
-
-
-// Attach the functions to the onchange events of the dropdowns
-document.getElementById("secondary_edu_method").onchange = toggleSections;
-document.getElementById("dawra_pass").onchange = toggleDawraFields;
-
-
-// Trigger the functions initially to set the initial state
-toggleSections();
-toggleDawraFields();
-</script>
 
 
 
@@ -908,12 +797,12 @@ toggleDawraFields();
 		                </div>
 
 						<div class="shosurbari-biodata-field" id="higher_seconday_edumethod">
-						   <label for="higher_seconday_edumethod">উচ্চমাধ্যমিক/ সমমান কোন মাদ্ধমে পড়েছেন?<span class="form-required" title="This field is required.">*</span></label>
-						   <select name="higher_secondary_edu_method" id="higher_seconday_edumethod">
+						   <label for="higherscndry_edumethod">উচ্চমাধ্যমিক/ সমমান কোন মাদ্ধমে পড়েছেন?<span class="form-required" title="This field is required.">*</span></label>
+						   <select name="higher_secondary_edu_method" id="higherscndry_edumethod">
 						   <option hidden selected></option>
 		                       <option value="জেনারেল">জেনারেল</option>
 		                       <option value="আলিয়া মাদ্রাসা">আলিয়া মাদ্রাসা</option>
-		                       <option value="ডিপ্লোমা / কারিগরি">ডিপ্লোমা / কারিগরি</option>
+		                       <option value="ডিপ্লোমা">ডিপ্লোমা</option>
 		                       <option value="কাওমী মাদ্রাসা">কাওমী মাদ্রাসা</option>
 							   <option value="অধ্যায়ন বাদ দিয়েছি">অধ্যায়ন বাদ দিয়েছি</option>
 							   <option value="অন্যান্য">অন্যান্য</option>
@@ -925,12 +814,12 @@ toggleDawraFields();
 
 						<!-- Ucchomaddhomik start -->
 						<div class="shosurbari-biodata-field" id="gnrl_mdrs_hrscnd_pass">
-						   <label for="gnrl_mdrs_hrscnd_pass">উচ্চমাধ্যমিক/সমমান পাশ করেছেন?<span class="form-required" title="This field is required.">*</span></label>
-	                        <select name="general_madrasa_highersecondary_pass" id="gnrl_mdrs_hrscnd_pass">
+						   <label for="hrsecondary_pass">উচ্চমাধ্যমিক/সমমান পাশ করেছেন?<span class="form-required" title="This field is required.">*</span></label>
+	                        <select name="general_madrasa_highersecondary_pass" id="hrsecondary_pass">
 							<option hidden selected></option>
 		                       <option value="হ্যাঁ">হ্যাঁ</option>
 							   <option value="না, পরীক্ষার্থী">না, পরীক্ষার্থী</option>
-		                       <option value="না">না, এখনো অধ্যায়নরত</option>
+		                       <option value="না, এখনো অধ্যায়নরত">না, এখনো অধ্যায়নরত</option>
 	                        </select>
 	                    </div>
 
@@ -969,13 +858,18 @@ toggleDawraFields();
 		                    <option value="ব্যবসা ও বাণিজ্য শাখা">ব্যবসা ও বাণিজ্য শাখা</option>
 	                    	</select>
 	                	</div>
+
+						<div class="shosurbari-biodata-field" id="hrgnrl_mdrs_running_stdn">
+		                    <label for="hrgnrl_mdrs_running_stdn">Uccho maddhomik oddhyayon roto achi<span class="form-required" title="This field is required.">*</span></label>
+		                    <input type="text" id="hrgnrl_mdrs_running_stdn" name="university_name" value="" size="250" maxlength="250" class="form-text required">
+		                </div>
 						<!--HSC  generale & dakhil end -->
 
 
 						<!--Diploma Start -->
 						<div class="shosurbari-biodata-field" id="doploma_hrscnd_pass">
-						   <label for="edu-method">ডিপ্লোমা পাশ করেছেন?<span class="form-required" title="This field is required.">*</span></label>
-	                        <select name="diploma_secondary_pass">
+						   <label for="doploma_hrscdmethod">ডিপ্লোমা পাশ করেছেন?<span class="form-required" title="This field is required.">*</span></label>
+	                        <select name="diploma_secondary_pass" id="doploma_hrscdmethod">
 							<option hidden selected></option>
 							   <option value="হ্যাঁ">হ্যাঁ</option>
 		                       <option value="না, অধ্যায়নরত আছি">না, অধ্যায়নরত আছি </option>
@@ -1008,13 +902,13 @@ toggleDawraFields();
 	                        </select>
 	                    </div>
 
-						<div class="shosurbari-biodata-field" id="university_edumethod">
-						   <label for="edu-method">স্নাতক/সমমান কোন মাদ্ধমে পড়েছেন?<span class="form-required" title="This field is required.">*</span></label>
-	                        <select name="varsity_edu_method">
+						<div class="shosurbari-biodata-field" id="varsity_edumethod">
+						   <label for="university_edumethod">স্নাতক/সমমান কোন মাদ্ধমে পড়েছেন?<span class="form-required" title="This field is required.">*</span></label>
+	                        <select name="varsity_edu_method" id="university_edumethod">
 							<option hidden selected></option>
 		                       <option value="জেনারেল">জেনারেল</option>
 		                       <option value="আলিয়া মাদ্রাসা">আলিয়া মাদ্রাসা</option>
-		                       <option value="ডিপ্লোমা / কারিগরি">ডিপ্লোমা/কারিগরি</option>
+		                       <option value="ডিপ্লোমা">ডিপ্লোমা</option>
 							   <option value="অধ্যায়ন বাদ দিয়েছি">অধ্যায়ন বাদ দিয়েছি</option>
 							   <option value="অন্যান্য">অন্যান্য</option>
 	                        </select>
@@ -1026,8 +920,8 @@ toggleDawraFields();
 
 						<!-- Esnatok Start -->
 						<div class="shosurbari-biodata-field" id="varsity_pass">
-						   <label for="edu-method">স্নাতক/সমমান পাশ করেছেন?<span class="form-required" title="This field is required.">*</span></label>
-	                        <select name="varsity_pass">
+						   <label for="university_pass">স্নাতক/সমমান পাশ করেছেন?<span class="form-required" title="This field is required.">*</span></label>
+	                        <select name="university_pass" id="university_pass">
 							<option hidden selected></option>
 							   <option value="হ্যাঁ">হ্যাঁ</option>
 		                       <option value="না, অধ্যায়নরত আছি">না, অধ্যায়নরত আছি </option>
@@ -1066,13 +960,387 @@ toggleDawraFields();
 		                </div>
 						<!-- Esnatok End -->
 
-
 						<div class="shosurbari-biodata-field">
-		                    <label for="edu-method">অন্যান্য শিক্ষাগত যোগ্যতা<span class="form-required" title="This field is required.">*</span></label>
+		                    <label for="edu-method">অন্যান্য শিক্ষাগত যোগ্যতা<span style="color: gray; font-size:14px;" class="form-required" title="This field is required."> (Optional)</span></label>
 							<textarea rows="4" id="others_edu_qualification" name="others_edu_qualification"  placeholder="Describe your others education qualifications" class="form-text-describe"></textarea>
 		                </div>
                     </div>
                 </div>
+
+				
+<script>
+	// Function to show or hide sections based on the selected value
+	function toggleSections() {
+		var selectedValue = document.getElementById("secondary_edu_method").value;
+
+		document.getElementById("dawra_pass_field").style.display = "none";
+		document.getElementById("dawra_passing_year_field").style.display = "none";
+		document.getElementById("current_edu_level_field").style.display = "none";
+
+		// Hide all sections by default
+		document.getElementById("hafez_field").style.display = "none";
+		document.getElementById("hafeza_field").style.display = "none";
+		document.getElementById("maxedu_qualification").style.display = "none";
+
+		document.getElementById("maxedu_qualification").style.display = "none";
+		document.getElementById("gnrl_mdrs_scnd_pass").style.display = "none";
+		document.getElementById("gnrl_mdrs_scnd_pass_year").style.display = "none";
+		document.getElementById("gnrl_mdrs_scnd_exam_year").style.display = "none";  
+		document.getElementById("gnrl_mdrs_running_stdn").style.display = "none";
+
+		document.getElementById("higher_seconday_edumethod").style.display = "none";
+		document.getElementById("gnrl_mdrs_hrscnd_pass").style.display = "none";
+		document.getElementById("gnrl_mdrs_hrscnd_pass_year").style.display = "none";
+		document.getElementById("gnrl_mdrs_hrscnd_exam_year").style.display = "none";
+		document.getElementById("higher_seconday_group").style.display = "none";
+		document.getElementById("hrgnrl_mdrs_running_stdn").style.display = "none";
+
+
+		document.getElementById("doploma_hrscnd_pass").style.display = "none";
+		document.getElementById("doploma_hrscnd_pass_year").style.display = "none";
+		document.getElementById("doploma_hrscnd_subject").style.display = "none";
+		document.getElementById("doploma_hrscnd_exam_year").style.display = "none";
+		document.getElementById("varsity_edumethod").style.display = "none";
+
+		document.getElementById("varsity_pass").style.display = "none";
+		document.getElementById("varsity_pass_year").style.display = "none";
+		document.getElementById("varsity_subject").style.display = "none";
+		document.getElementById("varsity_exam_year").style.display = "none";
+		document.getElementById("varsity_name").style.display = "none";
+
+		// Show or hide sections based on the selected value
+		if (selectedValue === "কাওমী মাদ্রাসা") {
+			document.getElementById("hafez_field").style.display = "block";
+			document.getElementById("hafeza_field").style.display = "block";
+			document.getElementById("dawra_pass_field").style.display = "block";
+			document.getElementById("dawra_passing_year_field").style.display = "none";
+			document.getElementById("current_edu_level_field").style.display = "none";
+		}
+
+		// Show or hide sections based on the selected value
+		if (selectedValue === "অন্যান্য") {
+			document.getElementById("maxedu_qualification").style.display = "block";
+		}
+
+		// Show or hide sections based on the selected value
+		if (selectedValue === "জেনারেল" || selectedValue === "আলিয়া মাদ্রাসা" || selectedValue === "ভোকেশনাল") {
+			document.getElementById("gnrl_mdrs_scnd_pass").style.display = "block";
+		}
+
+    	// Show or hide sections based on the selected value
+		if (selectedValue === "মাধ্যমিক পড়িনাই") {
+    		document.getElementById("maxedu_qualification").style.display = "block";
+  		}
+	}
+
+	// Function to show or hide fields based on the selected value of dawra_pass_field
+	function toggleDawraFields() {
+		var selectedValue = document.getElementById("dawra_pass").value;
+
+		var dawraPassingYearField = document.getElementById("dawra_passing_year_field");
+		var currentEduLevelField = document.getElementById("current_edu_level_field");
+
+		// Show or hide fields based on the selected value
+		if (selectedValue === "হ্যাঁ") {
+			dawraPassingYearField.style.display = "block";
+			currentEduLevelField.style.display = "none"; // Hide the current_edu_level_field
+		}
+		
+		else if (selectedValue === "না, অধ্যায়নরত আছি") {
+			dawraPassingYearField.style.display = "none";
+			currentEduLevelField.style.display = "block";
+		}
+
+		else if (selectedValue === "না, বাদ দিয়েছি") {
+			dawraPassingYearField.style.display = "none";
+			currentEduLevelField.style.display = "none";
+		}
+	}
+
+
+		// Function to show or hide fields based on the selected value of dawra_pass_field
+		function toggleSecondaryFields() {
+		var selectValue = document.getElementById("secondary_pass").value;
+
+		document.getElementById("gnrl_mdrs_scnd_pass_year").style.display = "none";
+		document.getElementById("gnrl_mdrs_scnd_exam_year").style.display = "none";
+		document.getElementById("gnrl_mdrs_running_stdn").style.display = "none";
+		document.getElementById("higher_seconday_edumethod").style.display = "none";
+
+		// Show or hide fields based on the selected value
+		if (selectValue === "হ্যাঁ") {
+			document.getElementById("gnrl_mdrs_scnd_pass_year").style.display = "block";
+		document.getElementById("gnrl_mdrs_scnd_exam_year").style.display = "none";
+		document.getElementById("gnrl_mdrs_running_stdn").style.display = "none";
+			document.getElementById("higher_seconday_edumethod").style.display = "block";
+		}
+		
+		else if (selectValue === "না, পরীক্ষার্থী") {
+
+
+			document.getElementById("gnrl_mdrs_scnd_pass_year").style.display = "none";
+		document.getElementById("gnrl_mdrs_scnd_exam_year").style.display = "block";
+		document.getElementById("gnrl_mdrs_running_stdn").style.display = "none";
+			document.getElementById("higher_seconday_edumethod").style.display = "none";
+		}
+
+		else if (selectValue === "না, অধ্যায়নরত আছি") {
+			document.getElementById("gnrl_mdrs_scnd_pass_year").style.display = "none";
+		document.getElementById("gnrl_mdrs_scnd_exam_year").style.display = "none";
+		document.getElementById("gnrl_mdrs_running_stdn").style.display = "block";
+			document.getElementById("higher_seconday_edumethod").style.display = "none";
+		}
+
+		else if (selectValue === "অধ্যায়ন বাদ দিয়েছি") {
+			document.getElementById("gnrl_mdrs_scnd_pass_year").style.display = "none";
+		document.getElementById("gnrl_mdrs_scnd_exam_year").style.display = "none";
+		document.getElementById("gnrl_mdrs_running_stdn").style.display = "none";
+			document.getElementById("higher_seconday_edumethod").style.display = "none";
+		}
+	}
+
+
+
+		// Function to show or hide fields based on the selected value of dawra_pass_field
+		function toggleHrsecondaryFields() {
+		var selecteValue = document.getElementById("higherscndry_edumethod").value;
+
+		document.getElementById("gnrl_mdrs_hrscnd_pass").style.display = "none";
+		document.getElementById("gnrl_mdrs_hrscnd_pass_year").style.display = "none";
+		document.getElementById("gnrl_mdrs_hrscnd_exam_year").style.display = "none";
+		document.getElementById("higher_seconday_group").style.display = "none";
+		document.getElementById("hrgnrl_mdrs_running_stdn").style.display = "none";
+
+		document.getElementById("doploma_hrscnd_pass").style.display = "none";
+		document.getElementById("doploma_hrscnd_pass_year").style.display = "none";
+		document.getElementById("doploma_hrscnd_subject").style.display = "none";
+		document.getElementById("doploma_hrscnd_exam_year").style.display = "none";
+
+
+		// Show or hide fields based on the selected value
+		if (selecteValue === "জেনারেল" || selecteValue === "আলিয়া মাদ্রাসা") {
+		document.getElementById("gnrl_mdrs_hrscnd_pass").style.display = "block";
+		document.getElementById("gnrl_mdrs_hrscnd_pass_year").style.display = "none";
+		document.getElementById("gnrl_mdrs_hrscnd_exam_year").style.display = "none";
+		document.getElementById("higher_seconday_group").style.display = "none";
+		document.getElementById("hrgnrl_mdrs_running_stdn").style.display = "none";
+
+		document.getElementById("doploma_hrscnd_pass").style.display = "none";
+		document.getElementById("doploma_hrscnd_pass_year").style.display = "none";
+		document.getElementById("doploma_hrscnd_subject").style.display = "none";
+		document.getElementById("doploma_hrscnd_exam_year").style.display = "none";
+		}
+
+		else if (selecteValue === "ডিপ্লোমা") {
+		document.getElementById("gnrl_mdrs_hrscnd_pass").style.display = "none";
+		document.getElementById("gnrl_mdrs_hrscnd_pass_year").style.display = "none";
+		document.getElementById("gnrl_mdrs_hrscnd_exam_year").style.display = "none";
+		document.getElementById("higher_seconday_group").style.display = "none";
+		document.getElementById("hrgnrl_mdrs_running_stdn").style.display = "none";
+
+		document.getElementById("doploma_hrscnd_pass").style.display = "block";
+		document.getElementById("doploma_hrscnd_pass_year").style.display = "none";
+		document.getElementById("doploma_hrscnd_subject").style.display = "none";
+		document.getElementById("doploma_hrscnd_exam_year").style.display = "none";
+		}
+
+		else if (selecteValue === "কাওমী মাদ্রাসা") {
+		document.getElementById("gnrl_mdrs_hrscnd_pass").style.display = "none";
+		document.getElementById("gnrl_mdrs_hrscnd_pass_year").style.display = "none";
+		document.getElementById("gnrl_mdrs_hrscnd_exam_year").style.display = "none";
+		document.getElementById("higher_seconday_group").style.display = "none";
+		document.getElementById("hrgnrl_mdrs_running_stdn").style.display = "none";
+
+		document.getElementById("doploma_hrscnd_pass").style.display = "none";
+		document.getElementById("doploma_hrscnd_pass_year").style.display = "none";
+		document.getElementById("doploma_hrscnd_subject").style.display = "none";
+		document.getElementById("doploma_hrscnd_exam_year").style.display = "none";
+		}
+
+		else if (selecteValue === "অধ্যায়ন বাদ দিয়েছি") {
+		document.getElementById("gnrl_mdrs_hrscnd_pass").style.display = "none";
+		document.getElementById("gnrl_mdrs_hrscnd_pass_year").style.display = "none";
+		document.getElementById("gnrl_mdrs_hrscnd_exam_year").style.display = "none";
+		document.getElementById("higher_seconday_group").style.display = "none";
+		document.getElementById("hrgnrl_mdrs_running_stdn").style.display = "none";
+
+		document.getElementById("doploma_hrscnd_pass").style.display = "none";
+		document.getElementById("doploma_hrscnd_pass_year").style.display = "none";
+		document.getElementById("doploma_hrscnd_subject").style.display = "none";
+		document.getElementById("doploma_hrscnd_exam_year").style.display = "none";
+		}
+
+		else if (selecteValue === "অন্যান্য") {
+		document.getElementById("gnrl_mdrs_hrscnd_pass").style.display = "none";
+		document.getElementById("gnrl_mdrs_hrscnd_pass_year").style.display = "none";
+		document.getElementById("gnrl_mdrs_hrscnd_exam_year").style.display = "none";
+		document.getElementById("higher_seconday_group").style.display = "none";
+		document.getElementById("hrgnrl_mdrs_running_stdn").style.display = "none";
+
+		document.getElementById("doploma_hrscnd_pass").style.display = "none";
+		document.getElementById("doploma_hrscnd_pass_year").style.display = "none";
+		document.getElementById("doploma_hrscnd_subject").style.display = "none";
+		document.getElementById("doploma_hrscnd_exam_year").style.display = "none";
+		}
+	}
+
+
+		// Function to show or hide fields based on the selected value of dawra_pass_field
+		function toggleHrgnrmdrsFields() {
+		var selecteValue = document.getElementById("hrsecondary_pass").value;
+
+		document.getElementById("gnrl_mdrs_hrscnd_pass_year").style.display = "none";
+		document.getElementById("gnrl_mdrs_hrscnd_exam_year").style.display = "none";
+		document.getElementById("higher_seconday_group").style.display = "none";
+		document.getElementById("hrgnrl_mdrs_running_stdn").style.display = "none";
+		document.getElementById("varsity_edumethod").style.display = "none";
+
+		// Show or hide fields based on the selected value
+		if (selecteValue === "হ্যাঁ") {
+		document.getElementById("gnrl_mdrs_hrscnd_pass_year").style.display = "block";
+		document.getElementById("gnrl_mdrs_hrscnd_exam_year").style.display = "none";
+		document.getElementById("higher_seconday_group").style.display = "block";
+		document.getElementById("hrgnrl_mdrs_running_stdn").style.display = "none";
+		document.getElementById("varsity_edumethod").style.display = "block";
+		}
+
+		else if (selecteValue === "না, পরীক্ষার্থী") {
+		document.getElementById("gnrl_mdrs_hrscnd_pass_year").style.display = "none";
+		document.getElementById("gnrl_mdrs_hrscnd_exam_year").style.display = "block";
+		document.getElementById("higher_seconday_group").style.display = "block";
+		document.getElementById("hrgnrl_mdrs_running_stdn").style.display = "none";
+		document.getElementById("varsity_edumethod").style.display = "none";
+		}
+
+		else if (selecteValue === "না, এখনো অধ্যায়নরত") {
+		document.getElementById("gnrl_mdrs_hrscnd_pass_year").style.display = "none";
+		document.getElementById("gnrl_mdrs_hrscnd_exam_year").style.display = "none";
+		document.getElementById("higher_seconday_group").style.display = "block";
+		document.getElementById("hrgnrl_mdrs_running_stdn").style.display = "block";
+		document.getElementById("varsity_edumethod").style.display = "none";
+		}
+	}
+
+
+
+		// Function to show or hide fields based on the selected value of dawra_pass_field
+		function toggleDiplomaFields() {
+		var selecteValue = document.getElementById("doploma_hrscdmethod").value;
+
+		document.getElementById("doploma_hrscnd_pass_year").style.display = "none";
+		document.getElementById("doploma_hrscnd_subject").style.display = "none";
+		document.getElementById("doploma_hrscnd_exam_year").style.display = "none";
+		document.getElementById("varsity_edumethod").style.display = "none";
+
+
+		// Show or hide fields based on the selected value
+		if (selecteValue === "হ্যাঁ") {
+		document.getElementById("doploma_hrscnd_pass_year").style.display = "block";
+		document.getElementById("doploma_hrscnd_subject").style.display = "block";
+		document.getElementById("doploma_hrscnd_exam_year").style.display = "none";
+		document.getElementById("varsity_edumethod").style.display = "block";
+		}
+
+		else if (selecteValue === "না, অধ্যায়নরত আছি") {
+		document.getElementById("doploma_hrscnd_pass_year").style.display = "none";
+		document.getElementById("doploma_hrscnd_subject").style.display = "block";
+		document.getElementById("doploma_hrscnd_exam_year").style.display = "block";
+		document.getElementById("varsity_edumethod").style.display = "none";
+		}
+	}
+
+
+
+
+
+		// Function to show or hide fields based on the selected value of dawra_pass_field
+		function toggleVarsityFields() {
+		var selecteValue = document.getElementById("university_edumethod").value;
+
+		document.getElementById("varsity_pass").style.display = "none";
+		document.getElementById("varsity_pass_year").style.display = "none";
+		document.getElementById("varsity_subject").style.display = "none";
+		document.getElementById("varsity_exam_year").style.display = "none";
+		document.getElementById("varsity_name").style.display = "none";
+
+
+		// Show or hide fields based on the selected value
+		if (selecteValue === "জেনারেল" || "আলিয়া মাদ্রাসা" || "ডিপ্লোমা") {
+		document.getElementById("varsity_pass").style.display = "block";
+		document.getElementById("varsity_pass_year").style.display = "none";
+		document.getElementById("varsity_subject").style.display = "none";
+		document.getElementById("varsity_exam_year").style.display = "none";
+		document.getElementById("varsity_name").style.display = "none";
+		}
+
+		else if (selecteValue === "অধ্যায়ন বাদ দিয়েছি") {
+		document.getElementById("varsity_pass").style.display = "none";
+		document.getElementById("varsity_pass_year").style.display = "none";
+		document.getElementById("varsity_subject").style.display = "none";
+		document.getElementById("varsity_exam_year").style.display = "none";
+		document.getElementById("varsity_name").style.display = "none";
+		}
+
+		else if (selecteValue === "অন্যান্য") {
+		document.getElementById("varsity_pass").style.display = "none";
+		document.getElementById("varsity_pass_year").style.display = "none";
+		document.getElementById("varsity_subject").style.display = "none";
+		document.getElementById("varsity_exam_year").style.display = "none";
+		document.getElementById("varsity_name").style.display = "none";
+		}
+	}
+
+
+
+
+		// Function to show or hide fields based on the selected value of dawra_pass_field
+		function toggleVarsityPassFields() {
+		var selecteValue = document.getElementById("university_pass").value;
+
+		document.getElementById("varsity_pass_year").style.display = "none";
+		document.getElementById("varsity_subject").style.display = "none";
+		document.getElementById("varsity_exam_year").style.display = "none";
+		document.getElementById("varsity_name").style.display = "none";
+
+
+		// Show or hide fields based on the selected value
+		if (selecteValue === "হ্যাঁ") {
+		document.getElementById("varsity_pass_year").style.display = "block";
+		document.getElementById("varsity_subject").style.display = "block";
+		document.getElementById("varsity_exam_year").style.display = "none";
+		document.getElementById("varsity_name").style.display = "block";
+		}
+
+		else if (selecteValue === "না, অধ্যায়নরত আছি") {
+		document.getElementById("varsity_pass_year").style.display = "none";
+		document.getElementById("varsity_subject").style.display = "block";
+		document.getElementById("varsity_exam_year").style.display = "block";
+		document.getElementById("varsity_name").style.display = "block";
+		}
+	}
+
+
+// Attach the functions to the onchange events of the dropdowns
+document.getElementById("secondary_edu_method").onchange = toggleSections;
+document.getElementById("dawra_pass").onchange = toggleDawraFields;
+document.getElementById("gnrl_mdrs_scnd_pass").onchange = toggleSecondaryFields;
+document.getElementById("higher_seconday_edumethod").onchange = toggleHrsecondaryFields; // Update the event assignment to toggleHrsecondaryFields
+document.getElementById("gnrl_mdrs_hrscnd_pass").onchange = toggleHrgnrmdrsFields; // Update the event assignment to toggleHrsecondaryFields
+document.getElementById("doploma_hrscnd_pass").onchange = toggleDiplomaFields; // Update the event assignment to toggleHrsecondaryFields
+document.getElementById("varsity_edumethod").onchange = toggleVarsityFields; // Update the event assignment to toggleHrsecondaryFields
+document.getElementById("varsity_pass").onchange = toggleVarsityPassFields; // Update the event assignment to toggleHrsecondaryFields
+
+
+	// Trigger the functions initially to set the initial state
+	toggleSections();
+	toggleDawraFields();
+	toggleSecondaryFields();
+	toggleHrsecondaryFields();
+	toggleHrgnrmdrsFields();
+	toggleDiplomaFields();
+	toggleVarsityFields();
+	toggleVarsityPassFields();
+</script>
 <!-- -- -- -- -- -- -- -- -- -- -- -- -- ---- -- --
 -- -- -- -- -- -- -- -- --- -- -- -- -- -- -- -- --
 --                   E   N   D                   --
