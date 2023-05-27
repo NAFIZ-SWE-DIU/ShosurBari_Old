@@ -101,7 +101,7 @@ $(document).ready(function(){
 
 	<div class="shosurbari-biodata">
 		<!-- multistep form -->
-		<form id="biodataForm">
+		<form action="" method="POST" id="biodataForm">
 			<!-- progressbar -->
 			<ul id="progressbar">
 				<li class="active" id="personalPhysical">Physical</li>
@@ -447,12 +447,12 @@ $(document).ready(function(){
 									
 						<div class="shosurbari-biodata-field section"  id="Other" style="display: none;">
 							<label>Other Occupation Sector <span class="form-required" title="This field is required.">*</span></label>
-							<input type="text"  name="other_occupation_sector" placeholder="Enter your Occupation Sector" value="<?php echo $weight; ?>" size="100" maxlength="100" class="form-text" required>
+							<input type="text"  name="other_occupation_sector" placeholder="Enter your Occupation Sector" value="<?php echo $weight; ?>" size="100" maxlength="100" class="form-text">
 						</div>
 
 						<div class="shosurbari-biodata-field section"  id="Business" style="display: none;">
 							<label >Business Level <span class="form-required" title="This field is required.">*</span></label>
-							<input type="text"  name="business_occupation_level" placeholder="Enter your Business name" value="<?php echo $weight; ?>" size="100" maxlength="100" class="form-text" required>
+							<input type="text"  name="business_occupation_level" placeholder="Enter your Business name" value="<?php echo $weight; ?>" size="100" maxlength="100" class="form-text">
 						</div>
 
 						<div class="shosurbari-biodata-field section" id="Student" style="display: none;">
@@ -650,7 +650,7 @@ $(document).ready(function(){
 
 						<div class="shosurbari-biodata-field" id="occupation_describe_field" style="display: none;">
 							<label>Occupation Describe<span class="form-required" title="This field is required.">*</span></label>
-							<textarea rows="5" name="occupation_describe" id="edit-name" placeholder="Describe your Occupation" class="form-text-describe" required><?php echo $occupation_describe; ?></textarea>
+							<textarea rows="5" name="occupation_describe" id="edit-name" placeholder="Describe your Occupation" class="form-text-describe" ><?php echo $occupation_describe; ?></textarea>
 						</div>
 
 						<div class="shosurbari-biodata-field">
@@ -2142,7 +2142,7 @@ $(document).ready(function(){
 						<div class="shosurbari-biodata-field" id="unmarried-section" style="display: none;">
 							<div class="shosurbari-biodata-field">
 								<label for="edit-name">Do your guardians agree to your marriage?<span class="form-required" title="This field is required.">*</span></label>
-								<input type="text" id="edit-name" name="guardians_agree"  value="<?php echo $guardians_agree_male; ?>"  size="100" maxlength="100" class="form-text" required>
+								<input type="text" id="edit-name" name="guardians_agree"  value="<?php echo $guardians_agree_male; ?>"  size="100" maxlength="100" class="form-text">
 							</div>
 						</div>
 
@@ -2178,7 +2178,7 @@ $(document).ready(function(){
 
 							<div class="shosurbari-biodata-field">
 								<label for="edit-name">Do your guardians agree to your marriage?<span class="form-required" title="This field is required.">*</span></label>
-								<input type="text" id="edit-name" name="guardians_agree"  value="<?php echo $guardians_agree_male; ?>"  size="100" maxlength="100" class="form-text" required>
+								<input type="text" id="edit-name" name="guardians_agree"  value="<?php echo $guardians_agree_male; ?>"  size="100" maxlength="100" class="form-text">
 							</div>
 						</div>
 						<!-- Divorce Section End -->
@@ -2214,7 +2214,7 @@ $(document).ready(function(){
 
 							<div class="shosurbari-biodata-field">
 								<label for="edit-name">Do your guardians agree to your marriage?<span class="form-required" title="This field is required.">*</span></label>
-								<input type="text" id="edit-name" name="guardians_agree"  value="<?php echo $guardians_agree_male; ?>"  size="100" maxlength="100" class="form-text" required>
+								<input type="text" id="edit-name" name="guardians_agree"  value="<?php echo $guardians_agree_male; ?>"  size="100" maxlength="100" class="form-text">
 							</div>
 						</div>
 						<!-- Widow Section End-->
@@ -2250,7 +2250,7 @@ $(document).ready(function(){
 
 							<div class="shosurbari-biodata-field">
 								<label for="edit-name">Do your guardians agree to your marriage?<span class="form-required" title="This field is required.">*</span></label>
-								<input type="text" id="edit-name" name="guardians_agree"  value="<?php echo $guardians_agree_male; ?>"  size="100" maxlength="100" class="form-text" required>
+								<input type="text" id="edit-name" name="guardians_agree"  value="<?php echo $guardians_agree_male; ?>"  size="100" maxlength="100" class="form-text">
 							</div>
 						</div>
 						<!-- Widower Section End-->
@@ -2300,32 +2300,32 @@ $(document).ready(function(){
 						<!-- Bellow Two Sections For Male or Female -->
 						<div class="shosurbari-biodata-field" id="male-allow-wife-job">
 							<label for="edit-name">Would you like to allow your wife to do any job after marriage?<span class="form-required" title="This field is required.">*</span></label>
-							<input type="text" id="edit-name" name="allowjob_aftermarriage"  value="<?php echo $allowjob_aftermarriage; ?>"  size="100" maxlength="100" class="form-text" required>
+							<input type="text" id="edit-name" name="allowjob_aftermarriage"  value="<?php echo $allowjob_aftermarriage; ?>"  size="100" maxlength="100" class="form-text">
 						</div>
 						<!--Top Male | OR | Bellow Female-->
 						<div class="shosurbari-biodata-field" id="female-job-after-marriage">
 							<label for="edit-name">Are you willing to do any job after marriage?<span class="form-required" title="This field is required.">*</span></label>
-							<input type="text" id="edit-name" name="anyjob_aftermarriage" value="<?php echo $anyjob_aftermarriage; ?>" size="100" maxlength="100" class="form-text" required>
+							<input type="text" id="edit-name" name="anyjob_aftermarriage" value="<?php echo $anyjob_aftermarriage; ?>" size="100" maxlength="100" class="form-text">
 						</div>
 
 						<div class="shosurbari-biodata-field" id="male-allow-wife-study">
 							<label for="edit-name">Would you like to allow your wife to study after marriage?<span class="form-required" title="This field is required.">*</span></label>
-							<input type="text" id="edit-name" name="allowstudy_aftermarriage" value="<?php echo $allowstudy_aftermarriage; ?>" size="100" maxlength="100" class="form-text" required>
+							<input type="text" id="edit-name" name="allowstudy_aftermarriage" value="<?php echo $allowstudy_aftermarriage; ?>" size="100" maxlength="100" class="form-text">
 						</div>
 						<!--Top Male | OR | Bellow Female-->
 						<div class="shosurbari-biodata-field" id="female-study-after-marriage">
 							<label for="edit-name">Would you like to continue your studies after marriage?<span class="form-required" title="This field is required.">*</span></label>
-							<input type="text" id="edit-name" name="studies_aftermarriage"   value="<?php echo $studies_aftermarriage; ?>"  size="200" maxlength="200" class="form-text" required>
+							<input type="text" id="edit-name" name="studies_aftermarriage"   value="<?php echo $studies_aftermarriage; ?>"  size="200" maxlength="200" class="form-text">
 						</div>
 						
 						<div class="shosurbari-biodata-field" id="male-live-with-wife">
 							<label for="edit-name">Where will you live with your wife after marriage?<span class="form-required" title="This field is required.">*</span></label>
-							<input type="text" id="edit-name" name="livewife_aftermarriage"  value="<?php echo $livewife_aftermarriage; ?>"  size="100" maxlength="100" class="form-text" required>
+							<input type="text" id="edit-name" name="livewife_aftermarriage"  value="<?php echo $livewife_aftermarriage; ?>"  size="100" maxlength="100" class="form-text">
 						</div>
 						<!--Top Male | OR | Bellow Female-->
 						<div class="shosurbari-biodata-field" id="female-agree-marriage-student">
 							<label for="edit-name">Are you agree Marriage to student?<span class="form-required" title="This field is required.">*</span></label>
-							<input type="text" id="edit-name" name="agree_marriage_student"   value="<?php echo $agree_marriage_student; ?>"size="200" maxlength="200" class="form-text" required>
+							<input type="text" id="edit-name" name="agree_marriage_student"   value="<?php echo $agree_marriage_student; ?>"size="200" maxlength="200" class="form-text">
 						</div>
 
 						<div class="shosurbari-biodata-field">
@@ -2654,7 +2654,9 @@ $(document).ready(function(){
 				</div>
 
         		<input type="button" name="previous" class="previous action-button" value="Previous" />
-        		<input type="submit" name="submit" class="submit action-button" value="Calculate" />
+				<div class="form-actions">
+			        <input type="submit" id="edit-submit" name="op" value="Submit Biodata" class="btn_1 submit">
+			    </div>
     		</fieldset> 
 			<!--Fieldsets end-->
 			<!-- -- -- -- -- -- -- -- -- -- -- -- -- ---- -- --
@@ -2665,19 +2667,351 @@ $(document).ready(function(){
 			-- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- ---
 			-- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -->
 		</form>
+
+
+		
+<!-- -- -- -- -- -- -- -- -- -- -- -- -- ---- -- --
+-- -- -- -- -- -- -- -- --- -- -- -- -- -- -- -- --
+--                S  T  A  R  T                  --
+--       Update & Store the data to Database     --
+--                                               --
+-- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- ---
+-- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -->
+<?php
+if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+    
+    //Biodata 1 
+	$biodatagender=$_POST['biodatagender'];
+	$day=$_POST['day'];
+	$month=$_POST['month'];
+	$year=$_POST['year'];
+	$dob=$day ."-" . $month . "-" .$year ;
+	$height=$_POST['height'];
+	$weight=$_POST['weight'];	
+	$physicalstatus=$_POST['physicalstatus'];
+	$Skin_tones = $_POST['Skin_tones'];
+	$bloodgroup=$_POST['bloodgroup'];
+
+	//Biodata 2
+	$smoke=$_POST['smoke'];
+	$occupation_sector=$_POST['occupation_sector'];
+	$other_occupation_sector=$_POST['other_occupation_sector'];
+	$business_occupation_level=$_POST['business_occupation_level'];
+	$occupation_level=$_POST['occupation_level'];
+	$occupation_describe=$_POST['occupation_describe'];
+	$dress_code=$_POST['dress_code'];
+	$aboutme=$_POST['aboutme'];		
+
+	//Biodata 3
+	$secondary_edu_method=$_POST['secondary_edu_method'];
+	$maxedu_qualification=$_POST['maxedu_qualification'];
+	$qawmi_madrasa_hafez=$_POST['qawmi_madrasa_hafez'];
+	$qawmimadrasa_dawrapass=$_POST['qawmimadrasa_dawrapass'];
+	$kowmi_dawrapas_year=$_POST['kowmi_dawrapas_year'];
+	$kowmi_current_edu_level=$_POST['kowmi_current_edu_level'];
+	$gnrl_mdrs_secondary_pass=$_POST['gnrl_mdrs_secondary_pass'];
+	$gnrl_mdrs_secondary_pass_year=$_POST['gnrl_mdrs_secondary_pass_year'];
+	$gnrl_mdrs_secondary_end_year=$_POST['gnrl_mdrs_secondary_end_year'];
+	$gnrlmdrs_secondary_running_std=$_POST['gnrlmdrs_secondary_running_std'];
+	$higher_secondary_edu_method=$_POST['higher_secondary_edu_method'];
+	$gnrlmdrs_hrsecondary_pass=$_POST['gnrlmdrs_hrsecondary_pass'];
+	$gnrlmdrs_hrsecondary_pass_year=$_POST['gnrlmdrs_hrsecondary_pass_year'];
+	$gnrlmdrs_hrsecondary_exam_year=$_POST['gnrlmdrs_hrsecondary_exam_year'];
+	$gnrlmdrs_hrsecondary_group=$_POST['gnrlmdrs_hrsecondary_group'];
+	$gnrlmdrs_hrsecondary_rningstd=$_POST['gnrlmdrs_hrsecondary_rningstd'];
+	$diploma_hrsecondary_pass=$_POST['diploma_hrsecondary_pass'];
+	$diploma_hrsecondary_ending_year=$_POST['diploma_hrsecondary_ending_year'];
+	$diploma_hrsecondary_sub=$_POST['diploma_hrsecondary_sub'];
+	$diploma_hrsecondary_endingyear=$_POST['diploma_hrsecondary_endingyear'];
+	$varsity_edu_method=$_POST['varsity_edu_method'];
+	$university_pass=$_POST['university_pass'];
+	$varsity_passing_year=$_POST['varsity_passing_year'];
+	$varsity_subject=$_POST['varsity_subject'];
+	$varsity_ending_year=$_POST['varsity_ending_year'];
+	$university_name=$_POST['university_name'];
+	$others_edu_qualification=$_POST['others_edu_qualification'];
+
+	//Biodata 4
+	$permanent_division=$_POST['permanent_division'];
+	$permanent_address=$_POST['permanent_address'];
+	$country_present_address=$_POST['country_present_address'];
+	$present_address_location=$_POST['present_address_location'];
+	$childhood=$_POST['childhood'];
+
+	//Biodata 5
+	$father_alive=$_POST['father_alive'];
+	$fatheroccupation=$_POST['fatheroccupation'];
+	$mother_alive=$_POST['mother_alive'];
+	$motheroccupation=$_POST['motheroccupation'];
+	$brosis_number=$_POST['brosis_number'];
+	$brosis_info=$_POST['brosis_info'];
+	$uncle_profession=$_POST['uncle_profession'];
+	$family_class=$_POST['family_class'];
+	$financial_condition=$_POST['financial_condition'];
+	$family_religious_condition=$_POST['family_religious_condition'];
+
+	// Marital Status - Biodata 6 & 7
+	$maritalstatus=$_POST['maritalstatus'];
+	// Divorce
+	$divorce_reason=$_POST['divorce_reason'];
+	$divorce_how_many_son=$_POST['divorce_how_many_son'];
+	$divorce_son_details=$_POST['divorce_son_details'];
+	// Widow
+	$how_widow=$_POST['how_widow'];
+	$widow_how_many_son=$_POST['widow_how_many_son'];
+	$widow_son_details=$_POST['widow_son_details'];
+	// Widower
+	$how_widower=$_POST['how_widower'];
+	$widower_how_many_son=$_POST['widower_how_many_son'];
+	$widower_son_details=$_POST['widower_son_details'];
+	// Married
+	$get_wife_permission=$_POST['get_wife_permission'];
+	$get_family_permission=$_POST['get_family_permission'];
+	$why_again_married=$_POST['why_again_married'];
+	$married_how_many_son=$_POST['married_how_many_son'];
+	$married_son_details=$_POST['married_son_details'];
+
+	//Biodata 6
+	$guardians_agree=$_POST['guardians_agree'];
+	$allowstudy_aftermarriage=$_POST['allowstudy_aftermarriage'];
+	$allowjob_aftermarriage=$_POST['allowjob_aftermarriage'];
+	$livewife_aftermarriage=$_POST['livewife_aftermarriage'];
+	$profileby=$_POST['profileby'];
+ 
+	//Biodata 7
+	$guardians_agree=$_POST['guardians_agree'];
+	$anyjob_aftermarriage=$_POST['anyjob_aftermarriage'];
+	$studies_aftermarriage=$_POST['studies_aftermarriage'];
+	$agree_marriage_student=$_POST['agree_marriage_student'];
+	$profileby=$_POST['profileby'];
+
+	//Biodata 8
+	$religion=$_POST['religion'];
+	$yourreligion_condition=$_POST['yourreligion_condition'];
+
+	//Biodata 9
+	$partner_religius=$_POST['partner_religius'];
+	$partner_district=$_POST['partner_district'];
+	$partner_maritialstatus=$_POST['partner_maritialstatus'];
+	$partner_age=$_POST['partner_age'];
+	$partner_skintones=$_POST['partner_skintones'];
+	$partner_height=$_POST['partner_height'];
+	$partner_education=$_POST['partner_education'];
+	$partner_profession=$_POST['partner_profession'];
+	$partner_financial=$_POST['partner_financial'];
+	$partner_attributes=$_POST['partner_attributes'];
+
+
+	// Set the default time zone to Bangladesh
+	date_default_timezone_set('Asia/Dhaka');
+	// Get the current date and time
+	$currentDate = date('j F Y, h:i:s A');
+
+
+    //Biodata 1 
+    insertData("1bd_personal_physical", [
+        'user_id' => $id,
+        'biodatagender' => $biodatagender,
+        'dateofbirth' => $dob,
+        'height' => $height,
+        'weight' => $weight,
+        'physicalstatus' => $physicalstatus,
+        'Skin_tones' => $Skin_tones,
+        'bloodgroup' => $bloodgroup,
+		'profilecreationdate' => $currentDate
+    ]);
+
+
+
+	//Biodata 2
+    insertData("2bd_personal_lifestyle", [
+        'user_id' => $id,
+        'smoke' => $smoke,
+        'occupation_sector' => $occupation_sector,
+        'other_occupation_sector' => $other_occupation_sector,
+        'business_occupation_level' => $business_occupation_level,
+        'occupation_level' => $occupation_level,
+		'occupation_describe' => $occupation_describe,
+        'dress_code' => $dress_code,
+        'aboutme' => $aboutme,
+		'profilecreationdate' => $currentDate
+    ]);
+    
+
+
+	//Biodata 3
+    insertData("3bd_educational_qualifications", [
+        'user_id' => $id,
+        'secondary_edu_method' => $secondary_edu_method,
+        'maxedu_qualification' => $maxedu_qualification,
+        'qawmi_madrasa_hafez' => $qawmi_madrasa_hafez,
+        'qawmimadrasa_dawrapass' => $qawmimadrasa_dawrapass,
+		'kowmi_dawrapas_year' => $kowmi_dawrapas_year,
+		'kowmi_current_edu_level' => $kowmi_current_edu_level,
+        'gnrl_mdrs_secondary_pass' => $gnrl_mdrs_secondary_pass,
+        'gnrl_mdrs_secondary_pass_year' => $gnrl_mdrs_secondary_pass_year,
+        'gnrl_mdrs_secondary_end_year' => $gnrl_mdrs_secondary_end_year,
+		'gnrlmdrs_secondary_running_std' => $gnrlmdrs_secondary_running_std,
+		'higher_secondary_edu_method' => $higher_secondary_edu_method,
+        'gnrlmdrs_hrsecondary_pass' => $gnrlmdrs_hrsecondary_pass,
+        'gnrlmdrs_hrsecondary_pass_year' => $gnrlmdrs_hrsecondary_pass_year,
+        'gnrlmdrs_hrsecondary_exam_year' => $gnrlmdrs_hrsecondary_exam_year,
+		'gnrlmdrs_hrsecondary_group' => $gnrlmdrs_hrsecondary_group,
+		'gnrlmdrs_hrsecondary_rningstd' => $gnrlmdrs_hrsecondary_rningstd,
+        'diploma_hrsecondary_pass' => $diploma_hrsecondary_pass,
+        'diploma_hrsecondary_ending_year' => $diploma_hrsecondary_ending_year,
+        'diploma_hrsecondary_sub' => $diploma_hrsecondary_sub,
+		'diploma_hrsecondary_endingyear' => $diploma_hrsecondary_endingyear,
+		'varsity_edu_method' => $varsity_edu_method,
+        'university_pass' => $university_pass,
+        'varsity_passing_year' => $varsity_passing_year,
+        'varsity_subject' => $varsity_subject,
+		'varsity_ending_year' => $varsity_ending_year,
+		'university_name' => $university_name,
+        'others_edu_qualification' => $others_edu_qualification,
+		'profilecreationdate' => $currentDate
+    ]);
+
+
+
+	//Biodata 4
+    insertData("4bd_address_details", [
+        'user_id' => $id,
+        'permanent_division' => $permanent_division,
+        'permanent_address' => $permanent_address,
+        'country_present_address' => $country_present_address,
+        'present_address_location' => $present_address_location,
+		'childhood' => $childhood,
+		'profilecreationdate' => $currentDate
+    ]);
+
+
+
+	//Biodata 5
+    insertData("5bd_family_information", [
+        'user_id' => $id,
+        'father_alive' => $father_alive,
+        'fatheroccupation' => $fatheroccupation,
+        'mother_alive' => $mother_alive,
+        'motheroccupation' => $motheroccupation,
+        'brosis_number' => $brosis_number,
+        'brosis_info' => $brosis_info,
+        'uncle_profession' => $uncle_profession,
+        'family_class' => $family_class,
+        'financial_condition' => $financial_condition,
+        'family_religious_condition' => $family_religious_condition,
+		'profilecreationdate' => $currentDate
+    ]);
+
+
+
+	// Marital Status 6 & 7
+	insertData("6bd_7bd_marital_status", [
+			'user_id' => $id,
+			'maritalstatus' => $maritalstatus,
+
+			'divorce_reason' => $divorce_reason,
+			'divorce_how_many_son' => $divorce_how_many_son,
+			'divorce_son_details' => $divorce_son_details,
+
+			'how_widow' => $how_widow,
+			'widow_how_many_son' => $widow_how_many_son,
+			'widow_son_details' => $widow_son_details,
+		
+			'how_widower' => $how_widower,
+			'widower_how_many_son' => $widower_how_many_son,
+			'widower_son_details' => $widower_son_details,
+
+			'get_wife_permission' => $get_wife_permission,
+			'get_family_permission' => $get_family_permission,
+			'why_again_married' => $why_again_married,
+			'married_how_many_son' => $married_how_many_son,
+			'married_son_details' => $married_son_details,
+			'profilecreationdate' => $profilecreationdate,
+			'profilecreationdate' => $currentDate
+		]);
+
+
+
+	//Biodata 6
+    insertData("6bd_marriage_related_qs_male", [
+        'user_id' => $id,
+        'guardians_agree' => $guardians_agree,
+        'allowstudy_aftermarriage' => $allowstudy_aftermarriage,
+        'allowjob_aftermarriage' => $allowjob_aftermarriage,
+        'livewife_aftermarriage' => $livewife_aftermarriage,
+        'profileby' => $profileby,
+		'profilecreationdate' => $currentDate
+    ]);
+
+
+
+	//Biodata 7
+    insertData("7bd_marriage_related_qs_female", [
+        'user_id' => $id,
+        'guardians_agree' => $guardians_agree,
+        'anyjob_aftermarriage' => $anyjob_aftermarriage,
+        'studies_aftermarriage' => $studies_aftermarriage,
+        'agree_marriage_student' => $agree_marriage_student,
+        'profileby' => $profileby,
+		'profilecreationdate' => $currentDate
+    ]);
+
+
+
+	//Biodata 8
+    insertData("8bd_religion_details", [
+        'user_id' => $id,
+        'religion' => $religion,
+        'yourreligion_condition' => $yourreligion_condition,
+		'profilecreationdate' => $currentDate
+    ]);
+
+
+
+	//Biodata 9
+    insertData("9bd_expected_life_partner", [
+        'user_id' => $id,
+        'partner_religius' => $partner_religius,
+        'partner_district' => $partner_district,
+        'partner_maritialstatus' => $partner_maritialstatus,
+        'partner_age' => $partner_age,
+        'partner_skintones' => $partner_skintones,
+        'partner_height' => $partner_height,
+        'partner_education' => $partner_education,
+        'partner_profession' => $partner_profession,
+        'partner_financial' => $partner_financial,
+        'partner_attributes' => $partner_attributes,
+		'profilecreationdate' => $currentDate
+    ]);
+
+	// Redirect to the desired page after inserting data
+	header("Location: view_profile.php?id={$id}");
+	exit();
+}
+?>
+<!-- -- -- -- -- -- -- -- -- -- -- -- -- ---- -- --
+-- -- -- -- -- -- -- -- --- -- -- -- -- -- -- -- --
+--                   E   N   D                   --
+--       Update & Store the data to Database     --
+--                                               --
+-- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- ---
+-- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -->
+
+
 	</div>
+
 
 	<?php include_once("footer.php");?>
 
 </body>
 </html>
 
-
-
 <!-- jQuery -->
 <script src="http://thecodeplayer.com/uploads/js/jquery-1.9.1.min.js" type="text/javascript"></script>
 <!-- jQuery easing plugin -->
 <script src="http://thecodeplayer.com/uploads/js/jquery.easing.min.js" type="text/javascript"></script>
+
 
 <style>
 	#height-error-message {
@@ -2795,6 +3129,7 @@ $(document).ready(function(){
     background: #27AE60;
     color: white;
 }
+
 .error-message-empty{
 	color: red;
 }
@@ -2902,269 +3237,3 @@ function validateFields(current_fs) {
 
 
 <!-- Bellow my database code -->
-
-<!-- -- -- -- -- -- -- -- -- -- -- -- -- ---- -- --
--- -- -- -- -- -- -- -- --- -- -- -- -- -- -- -- --
---                S  T  A  R  T                  --
---       Update & Store the data to Database     --
---                                               --
--- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- ---
--- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -->
-<?php
-if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-    
-    //Biodata 1 
-	$biodatagender=$_POST['biodatagender'];
-	$day=$_POST['day'];
-	$month=$_POST['month'];
-	$year=$_POST['year'];
-	$dob=$day ."-" . $month . "-" .$year ;
-	$height=$_POST['height'];
-	$weight=$_POST['weight'];	
-	$physicalstatus=$_POST['physicalstatus'];
-	$Skin_tones = $_POST['Skin_tones'];
-	$bloodgroup=$_POST['bloodgroup'];
-
-	//Biodata 2
-	$smoke=$_POST['smoke'];
-	$occupation=$_POST['occupation'];
-	$occupation_describe=$_POST['occupation_describe'];
-	$dress_code=$_POST['dress_code'];
-	$aboutme=$_POST['aboutme'];	
-
-	//Biodata 3
-	$education_method=$_POST['education_method'];
-	$sscpassyear=$_POST['sscpassyear'];
-	$current_education=$_POST['current_education'];
-	$maximum_education=$_POST['maximum_education'];
-
-	//Biodata 4
-	$permanent_division=$_POST['permanent_division'];
-	$present_address=$_POST['present_address'];
-	$permanent_address=$_POST['permanent_address'];
-	$childhood=$_POST['childhood'];
-
-	//Biodata 5
-	$father_alive=$_POST['father_alive'];
-	$fatheroccupation=$_POST['fatheroccupation'];
-	$mother_alive=$_POST['mother_alive'];
-	$motheroccupation=$_POST['motheroccupation'];
-	$brosis_number=$_POST['brosis_number'];
-	$brosis_info=$_POST['brosis_info'];
-	$uncle_profession=$_POST['uncle_profession'];
-	$family_class=$_POST['family_class'];
-	$financial_condition=$_POST['financial_condition'];
-	$family_religious=$_POST['family_religious'];
-
-	// Marital Status 6 & 7
-	$maritalstatus=$_POST['maritalstatus'];
-	// Divorce
-	$divorce_reason=$_POST['divorce_reason'];
-	$divorce_how_many_son=$_POST['divorce_how_many_son'];
-	$divorce_son_details=$_POST['divorce_son_details'];
-	// Widow
-	$how_widow=$_POST['how_widow'];
-	$widow_how_many_son=$_POST['widow_how_many_son'];
-	$widow_son_details=$_POST['widow_son_details'];
-	// Widower
-	$how_widower=$_POST['how_widower'];
-	$widower_how_many_son=$_POST['widower_how_many_son'];
-	$widower_son_details=$_POST['widower_son_details'];
-	// Married
-	$get_wife_permission=$_POST['get_wife_permission'];
-	$get_family_permission=$_POST['get_family_permission'];
-	$why_again_married=$_POST['why_again_married'];
-	$married_how_many_son=$_POST['married_how_many_son'];
-	$married_son_details=$_POST['married_son_details'];
-
-	//Biodata 6
-	$guardians_agree_male=$_POST['guardians_agree_male'];
-	$allowstudy_aftermarriage=$_POST['allowstudy_aftermarriage'];
-	$allowjob_aftermarriage=$_POST['allowjob_aftermarriage'];
-	$livewife_aftermarriage=$_POST['livewife_aftermarriage'];
-	$profileby=$_POST['profileby'];
- 
-	//Biodata 7
-	$guardians_agree_female=$_POST['guardians_agree_female'];
-	$anyjob_aftermarriage=$_POST['anyjob_aftermarriage'];
-	$studies_aftermarriage=$_POST['studies_aftermarriage'];
-	$agree_marriage_student=$_POST['agree_marriage_student'];
-	$profileby=$_POST['profileby'];
-
-	//Biodata 8
-	$religion=$_POST['religion'];
-	$yourreligion_condition=$_POST['yourreligion_condition'];
-
-	//Biodata 9
-	$partner_religius=$_POST['partner_religius'];
-	$partner_district=$_POST['partner_district'];
-	$partner_maritialstatus=$_POST['partner_maritialstatus'];
-	$partner_age=$_POST['partner_age'];
-	$partner_skintones=$_POST['partner_skintones'];
-	$partner_height=$_POST['partner_height'];
-	$partner_education=$_POST['partner_education'];
-	$partner_profession=$_POST['partner_profession'];
-	$partner_financial=$_POST['partner_financial'];
-	$partner_attributes=$_POST['partner_attributes'];
-
-
-	// Set the default time zone to Bangladesh
-	date_default_timezone_set('Asia/Dhaka');
-	// Get the current date and time
-	$currentDate = date('j F Y, h:i:s A');
-
-
-    //Biodata 1 
-    insertData("1bd_personal_physical", [
-        'user_id' => $id,
-        'biodatagender' => $biodatagender,
-        'dateofbirth' => $dob,
-        'height' => $height,
-        'weight' => $weight,
-        'physicalstatus' => $physicalstatus,
-        'Skin_tones' => $Skin_tones,
-        'bloodgroup' => $bloodgroup,
-		'profilecreationdate' => $currentDate
-
-    ]);
-
-
-
-	//Biodata 2
-    insertData("2bd_personal_lifestyle", [
-        'user_id' => $id,
-        'smoke' => $smoke,
-        'occupation' => $occupation,
-        'occupation_describe' => $occupation_describe,
-        'dress_code' => $dress_code,
-        'aboutme' => $aboutme
-    ]);
-    
-
-
-	//Biodata 3
-    insertData("3bd_educational_qualifications", [
-        'user_id' => $id,
-        'education_method' => $education_method,
-        'sscpassyear' => $sscpassyear,
-        'current_education' => $current_education,
-        'maximum_education' => $maximum_education
-    ]);
-
-
-
-	//Biodata 4
-    insertData("4bd_address_details", [
-        'user_id' => $id,
-        'permanent_division' => $permanent_division,
-        'present_address' => $present_address,
-        'permanent_address' => $permanent_address,
-        'childhood' => $childhood
-    ]);
-
-
-
-	//Biodata 5
-    insertData("5bd_family_information", [
-        'user_id' => $id,
-        'father_alive' => $father_alive,
-        'fatheroccupation' => $fatheroccupation,
-        'mother_alive' => $mother_alive,
-        'motheroccupation' => $motheroccupation,
-        'brosis_number' => $brosis_number,
-        'brosis_info' => $brosis_info,
-        'uncle_profession' => $uncle_profession,
-        'family_class' => $family_class,
-        'financial_condition' => $financial_condition,
-        'family_religious' => $family_religious
-    ]);
-
-
-
-	// Marital Status 6 & 7
-	insertData("6bd_7bd_marital_status", [
-			'user_id' => $id,
-			'maritalstatus' => $maritalstatus,
-
-			'divorce_reason' => $divorce_reason,
-			'divorce_how_many_son' => $divorce_how_many_son,
-			'divorce_son_details' => $divorce_son_details,
-
-			'how_widow' => $how_widow,
-			'widow_how_many_son' => $widow_how_many_son,
-			'widow_son_details' => $widow_son_details,
-		
-			'how_widower' => $how_widower,
-			'widower_how_many_son' => $widower_how_many_son,
-			'widower_son_details' => $widower_son_details,
-
-			'get_wife_permission' => $get_wife_permission,
-			'get_family_permission' => $get_family_permission,
-			'why_again_married' => $why_again_married,			'how_widower' => $how_widower,
-			'married_how_many_son' => $married_how_many_son,
-			'married_son_details' => $married_son_details,
-			'profilecreationdate' => $profilecreationdate,
-		]);
-
-
-
-	//Biodata 6
-    insertData("6bd_marriage_related_qs_male", [
-        'user_id' => $id,
-        'guardians_agree_male' => $guardians_agree_male,
-        'allowstudy_aftermarriage' => $allowstudy_aftermarriage,
-        'allowjob_aftermarriage' => $allowjob_aftermarriage,
-        'livewife_aftermarriage' => $livewife_aftermarriage,
-        'profileby' => $profileby
-    ]);
-
-
-
-	//Biodata 7
-    insertData("7bd_marriage_related_qs_female", [
-        'user_id' => $id,
-        'guardians_agree_female' => $guardians_agree_female,
-        'anyjob_aftermarriage' => $anyjob_aftermarriage,
-        'studies_aftermarriage' => $studies_aftermarriage,
-        'agree_marriage_student' => $agree_marriage_student,
-        'profileby' => $profileby
-    ]);
-
-
-
-	//Biodata 8
-    insertData("8bd_religion_details", [
-        'user_id' => $id,
-        'religion' => $religion,
-        'yourreligion_condition' => $yourreligion_condition
-    ]);
-
-
-
-	//Biodata 9
-    insertData("9bd_expected_life_partner", [
-        'user_id' => $id,
-        'partner_religius' => $partner_religius,
-        'partner_district' => $partner_district,
-        'partner_maritialstatus' => $partner_maritialstatus,
-        'partner_age' => $partner_age,
-        'partner_skintones' => $partner_skintones,
-        'partner_height' => $partner_height,
-        'partner_education' => $partner_education,
-        'partner_profession' => $partner_profession,
-        'partner_financial' => $partner_financial,
-        'partner_attributes' => $partner_attributes
-    ]);
-
-	// Redirect to the desired page after inserting data
-	header("Location: view_profile.php?id={$id}");
-	exit();
-}
-?>
-<!-- -- -- -- -- -- -- -- -- -- -- -- -- ---- -- --
--- -- -- -- -- -- -- -- --- -- -- -- -- -- -- -- --
---                   E   N   D                   --
---       Update & Store the data to Database     --
---                                               --
--- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- ---
--- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -->
