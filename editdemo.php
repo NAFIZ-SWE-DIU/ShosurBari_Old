@@ -360,13 +360,7 @@ $(document).ready(function(){
 
 
 
-
-
-
-
-
-
-
+			
 
 
 			<!-- -- -- -- -- -- -- -- -- -- -- -- -- ---- -- --
@@ -376,7 +370,6 @@ $(document).ready(function(){
 			--                                               --
 			-- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- ---
 			-- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -->
-
 			<?php
 				include("includes/dbconn.php");
 
@@ -390,7 +383,16 @@ $(document).ready(function(){
 				$smoke=$row['smoke'];
 				}
 				if($row){
-				$occupation=$row['occupation'];
+				$occupation_sector=$row['occupation_sector'];
+				}
+				if($row){
+				$other_occupation_sector=$row['other_occupation_sector'];
+				}
+				if($row){
+				$business_occupation_level=$row['business_occupation_level'];
+				}
+				if($row){
+				$occupation_level=$row['occupation_level'];
 				}
 				if($row){
 				$occupation_describe=$row['occupation_describe'];
@@ -424,7 +426,7 @@ $(document).ready(function(){
 						</div>
 
 						<div class="shosurbari-biodata-field">
-							<label for="edit-name">Occupation Sector<span class="form-required" title="This field is required.">*</span></label>
+							<label for="occupation_sector">Occupation Sector<span class="form-required" title="This field is required.">*</span></label>
 							<select name="occupation_sector" required onchange="showOccupationSector(this.value)">
 								<option hidden selected></option>
 								<option value="Business">Business</option>
@@ -444,17 +446,17 @@ $(document).ready(function(){
 						</div>
 									
 						<div class="shosurbari-biodata-field section"  id="Other" style="display: none;">
-							<label for="edit-name">Other Occupation Sector <span class="form-required" title="This field is required.">*</span></label>
-							<input type="text"  name="other" placeholder="Enter your Occupation Sector" value="<?php echo $weight; ?>" size="100" maxlength="100" class="form-text" required>
+							<label>Other Occupation Sector <span class="form-required" title="This field is required.">*</span></label>
+							<input type="text"  name="other_occupation_sector" placeholder="Enter your Occupation Sector" value="<?php echo $weight; ?>" size="100" maxlength="100" class="form-text" required>
 						</div>
 
 						<div class="shosurbari-biodata-field section"  id="Business" style="display: none;">
-							<label for="edit-name">Business Level <span class="form-required" title="This field is required.">*</span></label>
-							<input type="text"  name="business" placeholder="Enter your Business name" value="<?php echo $weight; ?>" size="100" maxlength="100" class="form-text" required>
+							<label >Business Level <span class="form-required" title="This field is required.">*</span></label>
+							<input type="text"  name="business_occupation_level" placeholder="Enter your Business name" value="<?php echo $weight; ?>" size="100" maxlength="100" class="form-text" required>
 						</div>
 
 						<div class="shosurbari-biodata-field section" id="Student" style="display: none;">
-							<label for="edit-name">Occupation Level<span class="form-required" title="This field is required.">*</span></label>
+							<label >Occupation Level<span class="form-required" title="This field is required.">*</span></label>
 							<select name="occupation_level">
 								<option hidden selected></option>
 								<option value="Kawmi Madrasa Student">Kawmi Madrasa Student</option>
@@ -485,7 +487,7 @@ $(document).ready(function(){
 						</div>			
 
 						<div class="shosurbari-biodata-field section" id="Health" style="display: none;">
-							<label for="edit-name">Occupation Level<span class="form-required" title="This field is required.">*</span></label>
+							<label>Occupation Level<span class="form-required" title="This field is required.">*</span></label>
 							<select name="occupation_level">
 								<option hidden selected></option>
 								<option value="MBBS Doctor">MBBS Doctor</option>
@@ -500,7 +502,7 @@ $(document).ready(function(){
 						</div>
 
 						<div class="shosurbari-biodata-field section" id="Engineer" style="display: none;">
-							<label for="edit-name">Occupation Level<span class="form-required" title="This field is required.">*</span></label>
+							<label>Occupation Level<span class="form-required" title="This field is required.">*</span></label>
 							<select name="occupation_level">
 								<option hidden selected></option>
 								<option value="Aerospace Engineer">Aerospace Engineer</option>
@@ -520,7 +522,7 @@ $(document).ready(function(){
 						</div>
 
 						<div class="shosurbari-biodata-field section" id="Teacher" style="display: none;">
-							<label for="edit-name">Occupation Level<span class="form-required" title="This field is required.">*</span></label>
+							<label>Occupation Level<span class="form-required" title="This field is required.">*</span></label>
 							<select name="occupation_level">
 								<option hidden selected></option>
 								<option value="Kawmi Madrasa Teacher">Kawmi Madrasa Teacher</option>
@@ -536,7 +538,7 @@ $(document).ready(function(){
 						</div>
 
 						<div class="shosurbari-biodata-field section" id="Defense" style="display: none;">
-							<label for="edit-name">Occupation Level<span class="form-required" title="This field is required.">*</span></label>
+							<label>Occupation Level<span class="form-required" title="This field is required.">*</span></label>
 							<select name="occupation_level">
 								<option hidden selected></option>
 								<option value="Army">Army</option> 
@@ -551,7 +553,7 @@ $(document).ready(function(){
 						</div>
 
 						<div class="shosurbari-biodata-field section" id="Foreigner" style="display: none;">
-							<label for="edit-name">Occupation Level<span class="form-required" title="This field is required.">*</span></label>
+							<label>Occupation Level<span class="form-required" title="This field is required.">*</span></label>
 							<select name="occupation_level">
 								<option hidden selected></option>
 								<option value="Job">Foreigne Job</option>
@@ -562,7 +564,7 @@ $(document).ready(function(){
 						</div>
 
 						<div class="shosurbari-biodata-field section" id="Garments" style="display: none;">
-							<label for="edit-name">Occupation Level<span class="form-required" title="This field is required.">*</span></label>
+							<label>Occupation Level<span class="form-required" title="This field is required.">*</span></label>
 							<select name="occupation_level">
 								<option hidden selected></option>
 								<option value="Garments Worker">Garments Worker</option> 
@@ -571,7 +573,7 @@ $(document).ready(function(){
 						</div>
 
 						<div class="shosurbari-biodata-field section" id="Driver" style="display: none;">
-							<label for="edit-name">Occupation Level<span class="form-required" title="This field is required.">*</span></label>
+							<label>Occupation Level<span class="form-required" title="This field is required.">*</span></label>
 							<select name="occupation_level">
 								<option hidden selected></option>
 								<option value="Bus Driver">Bus Driver</option> 
@@ -584,7 +586,7 @@ $(document).ready(function(){
 						</div>
 
 						<div class="shosurbari-biodata-field section" id="Common" style="display: none;">
-							<label for="edit-name">Occupation Level<span class="form-required" title="This field is required.">*</span></label>
+							<label>Occupation Level<span class="form-required" title="This field is required.">*</span></label>
 							<select name="occupation_level">
 								<option hidden selected></option>
 								<option value="HR">HR</option>
@@ -602,7 +604,7 @@ $(document).ready(function(){
 						</div>
 
 						<div class="shosurbari-biodata-field section" id="Mistri" style="display: none;">
-							<label for="edit-name">Occupation Level<span class="form-required" title="This field is required.">*</span></label>
+							<label>Occupation Level<span class="form-required" title="This field is required.">*</span></label>
 							<select name="occupation_level">
 							<option hidden selected></option>
 							<option value="ইলেকট্রিক মিস্ত্রি">ইলেকট্রিক মিস্ত্রি</option>
@@ -647,17 +649,17 @@ $(document).ready(function(){
 									
 
 						<div class="shosurbari-biodata-field" id="occupation_describe_field" style="display: none;">
-							<label for="edit-name">Occupation Describe<span class="form-required" title="This field is required.">*</span></label>
-							<textarea rows="5" id="edit-name" name="occupation_describe" placeholder="Describe your Occupation" class="form-text-describe" required><?php echo $occupation_describe; ?></textarea>
+							<label>Occupation Describe<span class="form-required" title="This field is required.">*</span></label>
+							<textarea rows="5" name="occupation_describe" id="edit-name" placeholder="Describe your Occupation" class="form-text-describe" required><?php echo $occupation_describe; ?></textarea>
 						</div>
 
 						<div class="shosurbari-biodata-field">
-							<label for="about me">Your Dress Code at Home or Out Side<span class="form-required" title="This field is required.">*</span></label>
+							<label>Your Dress Code at Home or Out Side<span class="form-required" title="This field is required.">*</span></label>
 							<textarea rows="5" name="dress_code" placeholder="Describe your Dress Code" class="form-text-describe" required><?php echo $dress_code; ?></textarea>
 						</div>
 
 						<div class="shosurbari-biodata-field">
-							<label for="about me">Write Something About You<span class="form-required" title="This field is required.">*</span></label>
+							<label>Write Something About You<span class="form-required" title="This field is required.">*</span></label>
 							<textarea rows="5" name="aboutme" placeholder="Write about you" class="form-text-describe" required><?php echo $aboutme; ?></textarea>
 						</div>
 
@@ -703,16 +705,85 @@ $(document).ready(function(){
 				if($result){
 				$row=mysqli_fetch_assoc($result);
 				if($row){
-				$education_method=$row['education_method'];
+				$secondary_edu_method=$row['secondary_edu_method'];
 				}
 				if($row){
-				$sscpassyear=$row['sscpassyear'];
+				$maxedu_qualification=$row['maxedu_qualification'];
 				}
 				if($row){
-				$current_education=$row['current_education'];
+				$qawmi_madrasa_hafez=$row['qawmi_madrasa_hafez'];
 				}
 				if($row){
-				$maximum_education=$row['maximum_education']; 
+				$qawmimadrasa_dawrapass=$row['qawmimadrasa_dawrapass']; 
+				}
+				if($row){
+				$kowmi_dawrapas_year=$row['kowmi_dawrapas_year'];
+				}
+				if($row){
+				$kowmi_current_edu_level=$row['kowmi_current_edu_level'];
+				}
+				if($row){
+				$gnrl_mdrs_secondary_pass=$row['gnrl_mdrs_secondary_pass'];
+				}
+				if($row){
+				$gnrl_mdrs_secondary_pass_year=$row['gnrl_mdrs_secondary_pass_year']; 
+				}
+				if($row){
+				$gnrl_mdrs_secondary_end_year=$row['gnrl_mdrs_secondary_end_year'];
+				}
+				if($row){
+				$gnrlmdrs_secondary_running_std=$row['gnrlmdrs_secondary_running_std'];
+				}
+				if($row){
+				$higher_secondary_edu_method=$row['higher_secondary_edu_method'];
+				}
+				if($row){
+				$gnrlmdrs_hrsecondary_pass=$row['gnrlmdrs_hrsecondary_pass']; 
+				}
+				if($row){
+				$gnrlmdrs_hrsecondary_pass_year=$row['gnrlmdrs_hrsecondary_pass_year'];
+				}
+				if($row){
+				$gnrlmdrs_hrsecondary_exam_year=$row['gnrlmdrs_hrsecondary_exam_year'];
+				}
+				if($row){
+				$gnrlmdrs_hrsecondary_group=$row['gnrlmdrs_hrsecondary_group'];
+				}
+				if($row){
+				$gnrlmdrs_hrsecondary_rningstd=$row['gnrlmdrs_hrsecondary_rningstd']; 
+				}
+				if($row){
+				$diploma_hrsecondary_pass=$row['diploma_hrsecondary_pass'];
+				}
+				if($row){
+				$diploma_hrsecondary_ending_year=$row['diploma_hrsecondary_ending_year'];
+				}
+				if($row){
+				$diploma_hrsecondary_sub=$row['diploma_hrsecondary_sub'];
+				}
+				if($row){
+				$diploma_hrsecondary_endingyear=$row['diploma_hrsecondary_endingyear']; 
+				}
+				if($row){
+				$varsity_edu_method=$row['varsity_edu_method'];
+				}
+				if($row){
+				$university_pass=$row['university_pass'];
+				}
+				if($row){
+				$varsity_passing_year=$row['varsity_passing_year'];
+				}
+				if($row){
+				$varsity_subject=$row['varsity_subject']; 
+				}
+				if($row){
+				$varsity_ending_year=$row['varsity_ending_year'];
+				}
+				if($row){
+				$university_name=$row['university_name'];
+				}
+				if($row){
+				$others_edu_qualification=$row['others_edu_qualification'];
 				}
 				}
 			?>
@@ -766,7 +837,7 @@ $(document).ready(function(){
 
 						<div class="shosurbari-biodata-field" id="dawra_passing_year_field">
 							<label for="dawra_passing_year">দাওরায়ে হাদিস কত সালে পাশ করেছেন?<span class="form-required" title="This field is required.">*</span></label>
-							<select name="qawmimadrasa_dawrapassing_year" id="dawra_passing_year">
+							<select name="kowmi_dawrapas_year" id="dawra_passing_year">
 								<option hidden selected></option>
 								<option value="2023">2023</option>
 								<option value="2022">2022</option>
@@ -779,7 +850,7 @@ $(document).ready(function(){
 
 						<div class="shosurbari-biodata-field" id="current_edu_level_field">
 							<label for="current_edu_level">বর্তমানে কোন জামাতে অধ্যায়নরত আছেন?<span class="form-required" title="This field is required.">*</span></label>
-							<select name="qawmimadrasa_current_edu_level" id="current_edu_level">
+							<select name="kowmi_current_edu_level" id="current_edu_level">
 								<option hidden selected></option>
 								<option value="জামাতে তাইসীর">জামাতে তাইসীর</option>
 								<option value="জামাতে মীযান">জামাতে মীযান</option>
@@ -798,7 +869,7 @@ $(document).ready(function(){
 						<!-- Secondary Education Start -->
 						<div class="shosurbari-biodata-field" id="gnrl_mdrs_scnd_pass">
 							<label for="secondary_pass">মাধ্যমিক/সমমান পাশ করেছেন?<span class="form-required" title="This field is required.">*</span></label>
-							<select name="general_madrasa_secondary_pass" id="secondary_pass">
+							<select name="gnrl_mdrs_secondary_pass" id="secondary_pass">
 								<option hidden selected></option>
 								<option value="হ্যাঁ">হ্যাঁ</option>
 								<option value="না, পরীক্ষার্থী">না, পরীক্ষার্থী</option>
@@ -809,7 +880,7 @@ $(document).ready(function(){
 
 						<div class="shosurbari-biodata-field" id="gnrl_mdrs_scnd_pass_year">
 							<label for="gnrl_mdrs_scnd_pass_year">কত সালে মাধ্যমিক/সমমান পাশ করেছেন?<span class="form-required" title="This field is required.">*</span></label>
-							<select name="generalmadrasa_secondary_passing_year" id="gnrl_mdrs_scnd_pass_year">
+							<select name="gnrl_mdrs_secondary_pass_year" id="gnrl_mdrs_scnd_pass_year">
 								<option hidden selected></option>
 								<option value="nonyear">None</option>
 								<option value="2024">SSC Candidet2024</option>
@@ -822,7 +893,7 @@ $(document).ready(function(){
 
 						<div class="shosurbari-biodata-field" id="gnrl_mdrs_scnd_exam_year">
 							<label for="gnrl_mdrs_scnd_exam_year">কত সালে মাধ্যমিক/সমমান পরীক্ষা দেবেন?<span class="form-required" title="This field is required.">*</span></label>
-							<select name="generalmadrasa_secondary_exam_year" id="gnrl_mdrs_scnd_exam_year">
+							<select name="gnrl_mdrs_secondary_end_year" id="gnrl_mdrs_scnd_exam_year">
 							<option hidden selected></option>
 							<option value="nonyear">None</option>
 							<option value="2024">SSC Candidet2024</option>
@@ -834,8 +905,8 @@ $(document).ready(function(){
 						</div>
 
 						<div class="shosurbari-biodata-field" id="gnrl_mdrs_running_stdn">
-							<label for="gnrl_mdrs_running_stdn">oddhyayon roto achi<span class="form-required" title="This field is required.">*</span></label>
-							<input type="text" id="gnrl_mdrs_running_stdn" name="university_name" value="" size="250" maxlength="250" class="form-text required">
+							<label for="gnrl_mdrs_running_stdn">Your Class<span class="form-required" title="This field is required.">*</span></label>
+							<input type="text" name="gnrlmdrs_secondary_running_std" id="gnrl_mdrs_running_stdn"  value="" size="250" maxlength="250" class="form-text required">
 						</div>
 
 						<div class="shosurbari-biodata-field" id="higher_seconday_edumethod">
@@ -856,7 +927,7 @@ $(document).ready(function(){
 						<!-- Higher Secondary start -->
 						<div class="shosurbari-biodata-field" id="gnrl_mdrs_hrscnd_pass">
 							<label for="hrsecondary_pass">উচ্চমাধ্যমিক/সমমান পাশ করেছেন?<span class="form-required" title="This field is required.">*</span></label>
-							<select name="general_madrasa_highersecondary_pass" id="hrsecondary_pass">
+							<select name="gnrlmdrs_hrsecondary_pass" id="hrsecondary_pass">
 								<option hidden selected></option>
 								<option value="হ্যাঁ">হ্যাঁ</option>
 								<option value="না, পরীক্ষার্থী">না, পরীক্ষার্থী</option>
@@ -866,7 +937,7 @@ $(document).ready(function(){
 
 						<div class="shosurbari-biodata-field" id="gnrl_mdrs_hrscnd_pass_year">
 							<label for="edu-method">কত সালে উচ্চমাধ্যমিক/সমমান পাশ করেছেন?<span class="form-required" title="This field is required.">*</span></label>
-							<select name="generalmadrasa_highersecondary_passing_year">
+							<select name="gnrlmdrs_hrsecondary_pass_year">
 								<option hidden selected></option>
 								<option value="nonyear">None</option>
 								<option value="2024">SSC Candidet2024</option>
@@ -879,7 +950,7 @@ $(document).ready(function(){
 
 						<div class="shosurbari-biodata-field" id="gnrl_mdrs_hrscnd_exam_year">
 							<label for="edu-method">কত সালে উচ্চমাধ্যমিক/সমমান পরীক্ষা দেবেন?<span class="form-required" title="This field is required.">*</span></label>
-							<select name="generalmadrasa_highersecondary_exam_year">
+							<select name="gnrlmdrs_hrsecondary_exam_year">
 								<option hidden selected></option>
 								<option value="nonyear">None</option>
 								<option value="2024">SSC Candidet2024</option>
@@ -892,7 +963,7 @@ $(document).ready(function(){
 
 						<div class="shosurbari-biodata-field" id="higher_seconday_group">
 							<label for="edu-method">উচ্চমাধ্যমিক/সমমানে আপনার গ্রুপ?<span class="form-required" title="This field is required.">*</span></label>
-							<select name="generalmadrasa_highersecondary_group">
+							<select name="gnrlmdrs_hrsecondary_group">
 								<option hidden selected></option>
 								<option value="বিজ্ঞান">বিজ্ঞান শাখা</option>
 								<option value="মানবিক শাখা">মানবিক শাখা</option>
@@ -901,8 +972,8 @@ $(document).ready(function(){
 						</div>
 
 						<div class="shosurbari-biodata-field" id="hrgnrl_mdrs_running_stdn">
-							<label for="hrgnrl_mdrs_running_stdn">Uccho maddhomik oddhyayon roto achi<span class="form-required" title="This field is required.">*</span></label>
-							<input type="text" id="hrgnrl_mdrs_running_stdn" name="university_name" value="" size="250" maxlength="250" class="form-text required">
+							<label for="hrgnrl_mdrs_running_stdn">Collage Year<span class="form-required" title="This field is required.">*</span></label>
+							<input type="text"  name="gnrlmdrs_hrsecondary_rningstd" id="hrgnrl_mdrs_running_stdn" value="" size="250" maxlength="250" class="form-text required">
 						</div>
 						<!--Higher Seconday Education End -->
 
@@ -910,7 +981,7 @@ $(document).ready(function(){
 						<!--Diploma Higher Seconday Start -->
 						<div class="shosurbari-biodata-field" id="doploma_hrscnd_pass">
 							<label for="doploma_hrscdmethod">ডিপ্লোমা পাশ করেছেন?<span class="form-required" title="This field is required.">*</span></label>
-							<select name="diploma_secondary_pass" id="doploma_hrscdmethod">
+							<select name="diploma_hrsecondary_pass" id="doploma_hrscdmethod">
 								<option hidden selected></option>
 								<option value="হ্যাঁ">হ্যাঁ</option>
 								<option value="না, অধ্যায়নরত আছি">না, অধ্যায়নরত আছি </option>
@@ -919,7 +990,7 @@ $(document).ready(function(){
 
 						<div class="shosurbari-biodata-field" id="doploma_hrscnd_pass_year">
 							<label for="doploma_hrscnd_pass_year">কত সালে ডিপ্লোমা পাশ করেছেন?<span class="form-required" title="This field is required.">*</span></label>
-							<select name="diploma_secondary_passing_year">
+							<select name="diploma_hrsecondary_ending_year">
 								<option hidden selected></option>
 								<option value="2022">2022</option>
 								<option value="2021">2021</option>
@@ -929,12 +1000,12 @@ $(document).ready(function(){
 
 						<div class="shosurbari-biodata-field" id="doploma_hrscnd_subject">
 							<label for="edu-method">ডিপ্লোমায় আপনার সাবজেক্ট কোনটি?<span class="form-required" title="This field is required.">*</span></label>
-							<input type="text" id="diploma_secondary_subject" name="diploma_secondary_subject"  size="250" maxlength="250" class="form-text required">
+							<input type="text" name="diploma_hrsecondary_sub" id="diploma_secondary_subject"   size="250" maxlength="250" class="form-text required">
 						</div>
 
 						<div class="shosurbari-biodata-field" id="doploma_hrscnd_exam_year">
 							<label for="edu-method">ডিপ্লোমা অধ্যায়ন কত সালে সম্পূর্ণ হবে?<span class="form-required" title="This field is required.">*</span></label>
-							<select name="diploma_secondary_studycomplete_year">
+							<select name="diploma_hrsecondary_endingyear">
 								<option hidden selected></option>
 								<option value="2023">2023</option>
 								<option value="2022">2022</option>
@@ -979,12 +1050,12 @@ $(document).ready(function(){
 
 						<div class="shosurbari-biodata-field" id="varsity_subject">
 							<label for="edu-method">স্নাতক/সমমানে আপনার সাবজেক্ট কোনটি?<span class="form-required" title="This field is required.">*</span></label>
-							<input type="text" id="varsity_subject" name="varsity_subject" value="" size="250" maxlength="250" class="form-text required">
+							<input type="text" name="varsity_subject" id="varsity_subject"  value="" size="250" maxlength="250" class="form-text required">
 						</div>
 
 						<div class="shosurbari-biodata-field" id="varsity_exam_year">
 							<label for="edu-method">স্নাতক/সমমান অধ্যায়ন কত সালে সম্পূর্ণ হবে?<span class="form-required" title="This field is required.">*</span></label>
-							<select name="varsity_studycomplete_year">
+							<select name="varsity_ending_year">
 								<option hidden selected></option>
 								<option value="2023">2023</option>
 								<option value="2022">2022</option>
@@ -995,13 +1066,13 @@ $(document).ready(function(){
 
 						<div class="shosurbari-biodata-field" id="varsity_name">
 							<label for="edu-method">স্নাতক/সমমানে আপনার প্রতিষ্ঠান?<span class="form-required" title="This field is required.">*</span></label>
-							<input type="text" id="university_name" name="university_name" value="" size="250" maxlength="250" class="form-text required">
+							<input type="text" name="university_name" id="university_name"  value="" size="250" maxlength="250" class="form-text required">
 						</div>
 						<!-- Higher Education End -->
 
 						<div class="shosurbari-biodata-field">
 							<label for="edu-method">অন্যান্য শিক্ষাগত যোগ্যতা<span style="color: gray; font-size:14px;" class="form-required" title="This field is required."> (Optional)</span></label>
-							<textarea rows="4" id="others_edu_qualification" name="others_edu_qualification"  placeholder="Describe your others education qualifications" class="form-text-describe"></textarea>
+							<textarea rows="4"  name="others_edu_qualification"  id="others_edu_qualification" placeholder="Describe your others education qualifications" class="form-text-describe"></textarea>
 						</div>
 					</div>
 				</div>
@@ -1507,10 +1578,13 @@ $(document).ready(function(){
 				$permanent_division=$row['permanent_division'];
 				}
 				if($row){
-				$present_address=$row['present_address'];
+				$permanent_address=$row['permanent_address'];
 				}
 				if($row){
-				$permanent_address=$row['permanent_address'];
+				$country_present_address=$row['country_present_address'];
+				}
+				if($row){
+				$present_address_location=$row['present_address_location'];
 				}
 				if($row){
 				$childhood=$row['childhood'];
@@ -1682,7 +1756,7 @@ $(document).ready(function(){
 
 						<div class="shosurbari-biodata-field">
 							<label for="edit-name">Present Address<span class="form-required" title="This field is required.">*</span></label>
-							<select name="present_address" required class="selectsearch">
+							<select name="country_present_address" required class="selectsearch">
 								<option hidden selected></option>
 								<option hidden disabled>Search Country</option>
 								<option value="Afghanistan">Afghanistan</option>
@@ -1767,7 +1841,7 @@ $(document).ready(function(){
 
 						<div class="shosurbari-biodata-field">
 							<label for="edit-name">Present Location<span class="form-required" title="This field is required.">*</span></label>
-							<input type="text" id="edit-name" name="present_address" value="<?php echo $present_address; ?>" size="100" maxlength="100" class="form-text required" required>
+							<input type="text" name="present_address_location" id="edit-name"  value="<?php echo $present_address; ?>" size="100" maxlength="100" class="form-text required" required>
 						</div>
 
 						<div class="shosurbari-biodata-field">
@@ -1840,7 +1914,7 @@ $(document).ready(function(){
 				$financial_condition=$row['financial_condition'];
 				}
 				if($row){
-				$family_religious=$row['family_religious'];
+				$family_religious_condition=$row['family_religious_condition'];
 				}
 				}
 			?>
@@ -1907,7 +1981,7 @@ $(document).ready(function(){
 
 						<div class="shosurbari-biodata-field">
 							<label for="about me">How is your family's religious condition?<span class="form-required" title="This field is required.">*</span></label>
-							<textarea rows="5" name="family_religious"  placeholder="Describe Your Family's Religious Condition" class="form-text-describe" required><?php echo $family_religious; ?></textarea>
+							<textarea rows="5" name="family_religious_condition"  placeholder="Describe Your Family's Religious Condition" class="form-text-describe" required><?php echo $family_religious; ?></textarea>
 						</div>
 					</div>
 				</div>
@@ -1947,7 +2021,7 @@ $(document).ready(function(){
 				if($result){
 					$row=mysqli_fetch_assoc($result);
 					if($row){
-						$guardians_agree_male=$row['guardians_agree_male'];
+						$guardians_agree=$row['guardians_agree'];
 					}
 					if($row){
 						$allowstudy_aftermarriage=$row['allowstudy_aftermarriage'];
@@ -1970,7 +2044,7 @@ $(document).ready(function(){
 				if($result){
 					$row=mysqli_fetch_assoc($result);
 					if($row){
-						$guardians_agree_female=$row['guardians_agree_female'];
+						$guardians_agree=$row['guardians_agree'];
 					}
 					if($row){
 						$anyjob_aftermarriage=$row['anyjob_aftermarriage'];
@@ -2068,7 +2142,7 @@ $(document).ready(function(){
 						<div class="shosurbari-biodata-field" id="unmarried-section" style="display: none;">
 							<div class="shosurbari-biodata-field">
 								<label for="edit-name">Do your guardians agree to your marriage?<span class="form-required" title="This field is required.">*</span></label>
-								<input type="text" id="edit-name" name="guardians_agree_male"  value="<?php echo $guardians_agree_male; ?>"  size="100" maxlength="100" class="form-text" required>
+								<input type="text" id="edit-name" name="guardians_agree"  value="<?php echo $guardians_agree_male; ?>"  size="100" maxlength="100" class="form-text" required>
 							</div>
 						</div>
 
@@ -2104,7 +2178,7 @@ $(document).ready(function(){
 
 							<div class="shosurbari-biodata-field">
 								<label for="edit-name">Do your guardians agree to your marriage?<span class="form-required" title="This field is required.">*</span></label>
-								<input type="text" id="edit-name" name="guardians_agree_male"  value="<?php echo $guardians_agree_male; ?>"  size="100" maxlength="100" class="form-text" required>
+								<input type="text" id="edit-name" name="guardians_agree"  value="<?php echo $guardians_agree_male; ?>"  size="100" maxlength="100" class="form-text" required>
 							</div>
 						</div>
 						<!-- Divorce Section End -->
@@ -2140,7 +2214,7 @@ $(document).ready(function(){
 
 							<div class="shosurbari-biodata-field">
 								<label for="edit-name">Do your guardians agree to your marriage?<span class="form-required" title="This field is required.">*</span></label>
-								<input type="text" id="edit-name" name="guardians_agree_male"  value="<?php echo $guardians_agree_male; ?>"  size="100" maxlength="100" class="form-text" required>
+								<input type="text" id="edit-name" name="guardians_agree"  value="<?php echo $guardians_agree_male; ?>"  size="100" maxlength="100" class="form-text" required>
 							</div>
 						</div>
 						<!-- Widow Section End-->
@@ -2176,7 +2250,7 @@ $(document).ready(function(){
 
 							<div class="shosurbari-biodata-field">
 								<label for="edit-name">Do your guardians agree to your marriage?<span class="form-required" title="This field is required.">*</span></label>
-								<input type="text" id="edit-name" name="guardians_agree_male"  value="<?php echo $guardians_agree_male; ?>"  size="100" maxlength="100" class="form-text" required>
+								<input type="text" id="edit-name" name="guardians_agree"  value="<?php echo $guardians_agree_male; ?>"  size="100" maxlength="100" class="form-text" required>
 							</div>
 						</div>
 						<!-- Widower Section End-->
@@ -2581,7 +2655,7 @@ $(document).ready(function(){
 
         		<input type="button" name="previous" class="previous action-button" value="Previous" />
         		<input type="submit" name="submit" class="submit action-button" value="Calculate" />
-    		</fieldset>
+    		</fieldset> 
 			<!--Fieldsets end-->
 			<!-- -- -- -- -- -- -- -- -- -- -- -- -- ---- -- --
 			-- -- -- -- -- -- -- -- --- -- -- -- -- -- -- -- --
@@ -2606,10 +2680,11 @@ $(document).ready(function(){
 <script src="http://thecodeplayer.com/uploads/js/jquery.easing.min.js" type="text/javascript"></script>
 
 <style>
-						#height-error-message {
-						color: red;
-						font-size: 12px;
-					}
+	#height-error-message {
+	color: red;
+	font-size: 12px;
+}
+
 /*form styles*/
 .sb-biodata{
     border: 1px solid #ccc;
@@ -2662,7 +2737,6 @@ $(document).ready(function(){
 #biodataForm .action-button:hover, #biodataForm .action-button:focus {
     box-shadow: 0 0 0 2px white, 0 0 0 3px #27AE60;
 }
-
 
 /*progressbar*/
 #progressbar {
@@ -2817,9 +2891,6 @@ function validateFields(current_fs) {
 
   return isValid;
 }
-
-
-
 </script>
 
 
@@ -2937,7 +3008,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 	$partner_attributes=$_POST['partner_attributes'];
 
 
-
 	// Set the default time zone to Bangladesh
 	date_default_timezone_set('Asia/Dhaka');
 	// Get the current date and time
@@ -2969,9 +3039,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         'dress_code' => $dress_code,
         'aboutme' => $aboutme
     ]);
-
-
     
+
 
 	//Biodata 3
     insertData("3bd_educational_qualifications", [
@@ -2994,6 +3063,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     ]);
 
 
+
 	//Biodata 5
     insertData("5bd_family_information", [
         'user_id' => $id,
@@ -3008,6 +3078,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         'financial_condition' => $financial_condition,
         'family_religious' => $family_religious
     ]);
+
 
 
 	// Marital Status 6 & 7
@@ -3036,6 +3107,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 		]);
 
 
+
 	//Biodata 6
     insertData("6bd_marriage_related_qs_male", [
         'user_id' => $id,
@@ -3045,6 +3117,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         'livewife_aftermarriage' => $livewife_aftermarriage,
         'profileby' => $profileby
     ]);
+
 
 
 	//Biodata 7
@@ -3058,12 +3131,14 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     ]);
 
 
+
 	//Biodata 8
     insertData("8bd_religion_details", [
         'user_id' => $id,
         'religion' => $religion,
         'yourreligion_condition' => $yourreligion_condition
     ]);
+
 
 
 	//Biodata 9
@@ -3081,9 +3156,9 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         'partner_attributes' => $partner_attributes
     ]);
 
-        // Redirect to the desired page after inserting data
-        header("Location: view_profile.php?id={$id}");
-        exit();
+	// Redirect to the desired page after inserting data
+	header("Location: view_profile.php?id={$id}");
+	exit();
 }
 ?>
 <!-- -- -- -- -- -- -- -- -- -- -- -- -- ---- -- --
