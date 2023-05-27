@@ -4,15 +4,15 @@
 require_once("functions.php");
 ?>
 
-
-
 <?php
 require_once("includes/dbconn.php");
 ?>
 
-
 <!DOCTYPE HTML>
 <html>
+
+
+
 <head>
 <title>Edit Biodata - ShosurBari</title>
 <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -47,160 +47,143 @@ $(document).ready(function(){
 });
 </script>
 </head>
+
+
+
 <body>
-<!-- ============================  Navigation Start =========================== -->
-<?php include_once("includes/navigation.php");?>
-<!-- ============================  Navigation End ============================ -->
-<div class="grid_3">
-  <div class="container">
-   <div class="breadcrumb1">
-     <ul>
-        <a href="index.php"><i class="fa fa-home home_1"></i></a>
-        <span class="divider">&nbsp;<|>&nbsp;</span>
-        <li class="current-page"><h4>Edit Biodata</h4></li>
-     </ul>
-	 <?php
-include("includes/dbconn.php");
-//getting profile details from db
-$sql="SELECT * FROM users WHERE id = $id";
-$result = mysqlexec($sql);
+	<!-- ============================  Navigation Start =========================== -->
+	<?php include_once("includes/navigation.php");?>
+	<!-- ============================  Navigation End ============================ -->
+	<div class="grid_3">
+		<div class="container">
+			<div class="breadcrumb1">
+				<ul>
+					<a href="index.php"><i class="fa fa-home home_1"></i></a>
+					<span class="divider">&nbsp;<|>&nbsp;</span>
+					<li class="current-page"><h4>Edit Biodata</h4></li>
+				</ul>
 
-if($result){
-$row=mysqli_fetch_assoc($result);
-if($row){
-$username=$row['username'];
-  }
- }
-?>
+				<?php
+					include("includes/dbconn.php");
+					//getting profile details from db
+					$sql="SELECT * FROM users WHERE id = $id";
+					$result = mysqlexec($sql);
 
-
-<div class="shosurbari-userhome-status">
-        <h3><?php echo "Welcome: $username"; ?></h3>
-      <!-- Display the account status -->
-      <h4 >Account Status:
-      <?php if ($deactivated == 0) {
-        echo '<span style="color: green;">Active</span>';
-    } else {
-        echo '<span style="color: red;">Deactivated</span> <br>';
-        echo '<span style="color: #0aa4ca; font-size: 14px;">Please Active your account, Go back UserHome page !</span>';
-    } ?>
-    </h4>
-
-</div>
+					if($result){
+					$row=mysqli_fetch_assoc($result);
+					if($row){
+					$username=$row['username'];
+					}
+					}
+				?>
 
 
+				<div class="shosurbari-userhome-status">
+					<h3><?php echo "Welcome: $username"; ?></h3>
+					<!-- Display the account status -->
+					<h4 >Account Status:
+					<?php if ($deactivated == 0) {
+						echo '<span style="color: green;">Active</span>';
+						} else {
+							echo '<span style="color: red;">Deactivated</span> <br>';
+							echo '<span style="color: #0aa4ca; font-size: 14px;">Please Active your account, Go back UserHome page !</span>';
+						} ?>
+					</h4>
+				</div>
 
-
-   </div>
-  </div>
-</div>
+			</div>
+		</div>
+	</div>
 
 
 
 
 
+	<div class="shosurbari-biodata">
+
+		<!-- multistep form -->
+		<form id="biodataForm">
+		<!-- progressbar -->
+		<ul id="progressbar">
+			<li class="active" id="personalPhysical">Physical</li>
+			<li id="personalLife">LifeStyle</li>
+			<li id="educationalQualifications">Education</li>
+			<li id="addressDetails">Address</li>
+			<li id="familyInfo">Family</li>
+			<li id="MarriageInfo">MarriageInfo</li>
+			<li id="religionDetails">Religion</li>
+			<li id="expectedPartner">LifePartner</li>
+		</ul>
 
 
 
 
 
+		<!-- -- -- -- -- -- -- -- -- -- -- -- -- ---- -- --
+		-- -- -- -- -- -- -- -- --- -- -- -- -- -- -- -- --
+		--                S  T  A  R  T                  --
+		--      Personal & Physical  / sb-biodata-1      --
+		--                                               --
+		-- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- ---
+		-- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -->
+		<?php
+			include("includes/dbconn.php");
 
+			//getting profile details from db
+			$sql="SELECT * FROM 1bd_personal_physical WHERE user_id = $id";
+			$result = mysqlexec($sql);
 
+			if($result){
+			$row=mysqli_fetch_assoc($result);
+			if($row){
+				$biodatagender=$row['biodatagender'];
+			}
+			if($row){
+				$day=$row['dateofbirth'];
+			}
+			if($row){
+				$month=$row['dateofbirth'];
+			}
+			if($row){
+				$year=$row['dateofbirth'];
+			}
+			if($row){
+				$height=$row['height'];
+			}
+			if($row){
+				$weight=$row['weight'];
+			}
+			if($row){
+				$physicalstatus=$row['physicalstatus'];
+			}
+			if($row){
+				$Skin_tones = $row['Skin_tones'];
+			}
+			if($row){
+				$bloodgroup=$row['bloodgroup']; 
+			}
+			}
+		?>
 
-<div class="shosurbari-biodata">
-
-<!-- multistep form -->
-<form id="biodataForm">
-  <!-- progressbar -->
-  <ul id="progressbar">
-    <li class="active" id="personalPhysical">Physical</li>
-    <li id="personalLife">LifeStyle</li>
-    <li id="educationalQualifications">Education</li>
-    <li id="addressDetails">Address</li>
-    <li id="familyInfo">Family</li>
-    <li id="MarriageInfo">MarriageInfo</li>
-    <li id="religionDetails">Religion</li>
-    <li id="expectedPartner">LifePartner</li>
-</ul>
-
-
-
-
-
-
-<!--1 fieldsets start-->
-<?php
-include("includes/dbconn.php");
-
-//$id=$_GET['user_id'];
-//bd_personal_physical_1($id);
-
-
-//getting profile details from db
-$sql="SELECT * FROM 1bd_personal_physical WHERE user_id = $id";
-$result = mysqlexec($sql);
-
-if($result){
-$row=mysqli_fetch_assoc($result);
-if($row){
-    $biodatagender=$row['biodatagender'];
-}
-if($row){
-	$day=$row['dateofbirth'];
-}
-if($row){
-	$month=$row['dateofbirth'];
-}
-if($row){
-	$year=$row['dateofbirth'];
-}
-if($row){
-	$height=$row['height'];
-}
-if($row){
-	$weight=$row['weight'];
-}
-if($row){
-	$physicalstatus=$row['physicalstatus'];
-}
-if($row){
-	$Skin_tones = $row['Skin_tones'];
-}
-if($row){
-	$bloodgroup=$row['bloodgroup']; 
-}
-}
-	//echo $biodatagender.' '.$dob.' '.$height.' '.	$weight.' '.$physicalstatus.' '.$Skin_tones.' '.$bloodgroup;
-?>
-<!-- -- -- -- -- -- -- -- -- -- -- -- -- ---- -- --
--- -- -- -- -- -- -- -- --- -- -- -- -- -- -- -- --
---                S  T  A  R  T                  --
---      Personal & Physical  / sb-biodata-1      --
---                                               --
--- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- ---
--- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -->
-<fieldset>
-
+		<!-- Start Fieldset -->
+		<fieldset>
             <div class="sb-biodata" id="personalPhysical">
-
                 <div class="sb-biodata-field">
 		            <h2>Personal & Physical</h2>
                 </div>
 
-			  <div class="sb-biodata-option">
+			  	<div class="sb-biodata-option">
+					<div class="shosurbari-biodata-field">
+						<label for="edit-name">Biodata Type<span class="form-required" title="This field is required.">*</span></label>
+						<select name="biodatagender" required onchange="toggleGenderSections(this.value)">
+							<option hidden selected></option>
+							<option value="Male">Male</option>
+							<option value="Female">Female</option> 
+						</select>
+					</div>
 
-		        <div class="shosurbari-biodata-field">
-		            <label for="edit-name">Biodata Type<span class="form-required" title="This field is required.">*</span></label>
-					<select name="biodatagender" required onchange="toggleGenderSections(this.value)">
-					    <option hidden selected></option>
-	                    <option value="Male">Male</option>
-	                    <option value="Female">Female</option> 
-	                </select>
-			    </div>
-
-
-	                <div class="shosurbari-biodata-field">
-					<label for="edit-pass">DOB-Date<span class="form-required" title="This field is required.">*</span></label>
+	            	<div class="shosurbari-biodata-field">
+						<label for="edit-pass">DOB-Date<span class="form-required" title="This field is required.">*</span></label>
 					    <select name="day" required>
 		                    <option hidden selected></option>
 		                    <option value="1">1</option>
@@ -257,7 +240,7 @@ if($row){
 	                </div>
 
 	                <div class="shosurbari-biodata-field">
-					<label for="edit-pass">DOB-Year<span class="form-required" title="This field is required.">*</span></label>
+						<label for="edit-pass">DOB-Year<span class="form-required" title="This field is required.">*</span></label>
 	                    <select name="year" required>
 		                    <option hidden selected></option>
 		                    <option value="1980">1980</option>
@@ -299,12 +282,12 @@ if($row){
 	                    </select>
 	                </div>
 
-<style>
-#height-error-message {
-    color: red;
-    font-size: 12px;
-}
-	</style>
+					<style>
+					#height-error-message {
+						color: red;
+						font-size: 12px;
+					}
+					</style>
 					<div class="shosurbari-biodata-field">
 		                <label for="edit-name">Height<span class="form-required" title="This field is required.">*</span></label>
 			            <input type="text" id="edit-name" name="height" value="<?php echo $height; ?>" size="100" maxlength="100"
@@ -457,20 +440,35 @@ $aboutme=$row['aboutme'];
 			                </div>
 
 							<div class="shosurbari-biodata-field">
-		                        <label for="edit-name">Occupation Sector<span class="form-required" title="This field is required.">*</span></label>
+								<label for="edit-name">Occupation Sector<span class="form-required" title="This field is required.">*</span></label>
 								<select name="occupation_sector" required onchange="showOccupationSector(this.value)">
 								<option hidden selected></option>
-								<option value="Student">Student Sector</option>
-								<option value="Common">Common Profession</option>
-								<option value="Health">Health Sector</option>
-								<option value="Engineer">Engineer Profession</option>
-								<option value="Teacher">Teacher Profession</option>
-								<option value="Defense">Defense Sector</option>
+								<option value="Business">Business</option>
+								<option value="Student">Student</option>
+								<option value="Common">Service/Internet/Finanace</option>
+								<option value="Health">Health</option>
+								<option value="Engineer">Engineer</option>
+								<option value="Teacher">Teacher</option>
+								<option value="Defense">Defense</option>
 								<option value="Foreigner">Foreigner</option>
-								<option value="Garments">Garments Sector</option>
-								<option value="Driver">Driver Profession</option>
+								<option value="Garments">Garments</option>
+								<option value="Mistri">কারিগর/মিস্ত্রি</option>
+								<option value="Driver">Driver</option>
+								<option value="Other">Others</option>
+								<option value="No Profession">No Occupation</option>
 	                            </select>
 			                </div>
+
+							
+								<div class="shosurbari-biodata-field section"  id="Other" style="display: none;">
+									<label for="edit-name">Other Occupation Sector <span class="form-required" title="This field is required.">*</span></label>
+									<input type="text"  name="other" placeholder="Enter your Occupation Sector" value="<?php echo $weight; ?>" size="100" maxlength="100" class="form-text" required>
+								</div>
+
+								<div class="shosurbari-biodata-field section"  id="Business" style="display: none;">
+									<label for="edit-name">Business Level <span class="form-required" title="This field is required.">*</span></label>
+									<input type="text"  name="business" placeholder="Enter your Business name" value="<?php echo $weight; ?>" size="100" maxlength="100" class="form-text" required>
+								</div>
 
 							<div class="shosurbari-biodata-field section" id="Student" style="display: none;">
 		                        <label for="edit-name">Occupation Level<span class="form-required" title="This field is required.">*</span></label>
@@ -580,10 +578,10 @@ $aboutme=$row['aboutme'];
 		                    <label for="edit-name">Occupation Level<span class="form-required" title="This field is required.">*</span></label>
 							<select name="occupation_level">
 								<option hidden selected></option>
-								<option value="Job">Job</option>
-								<option value="Worker">Worker</option>
-								<option value="Business">Business</option>
-								<option value="Student">Student</option>
+								<option value="Job">Foreigne Job</option>
+								<option value="Worker">Foreigne Worker</option>
+								<option value="Business">Foreigne Business</option>
+								<option value="Student">Foreigne Student</option>
 							</select>
 						</div>
 
@@ -617,38 +615,69 @@ $aboutme=$row['aboutme'];
 		                        <label for="edit-name">Occupation Level<span class="form-required" title="This field is required.">*</span></label>
 								<select name="occupation_level">
 									<option hidden selected></option>
+									<option value="HR">HR</option>
 									<option value="Banker">Banker</option>
 									<option value="Lawyer">Lawyer</option> 
-									<option value="Business">Business</option> 
 									<option value="Entrepreneur">Entrepreneur</option> 
 	                                <option value="Frelancer">Frelancer</option>
+									<option value="YouTuber">YouTuber</option>
+									<option value="Security">Security</option>
 									<option value="Graphics Desigener">Graphics Desigener</option>
-									<option value="Sales & Marketing (SR)">Sales & Marketing (SR)</option>  
-	                                <option value="No Profession">No Profession</option>
+									<option value="Sales & Marketing (SR)">Sales & Marketing (SR)</option>
+									<option value="আর্ট/দেয়াল লিখন">আর্ট/দেয়াল লিখন</option>
+									<option value="রোজ কামলা / শ্রমিক">রোজ কামলা / শ্রমিক</option>  
 	                            </select>
 							</div>
 
+							<div class="shosurbari-biodata-field section" id="Mistri" style="display: none;">
+		                        <label for="edit-name">Occupation Level<span class="form-required" title="This field is required.">*</span></label>
+								<select name="occupation_level">
+								<option hidden selected></option>
+								<option value="ইলেকট্রিক মিস্ত্রি">ইলেকট্রিক মিস্ত্রি</option>
+								<option value="স্যানিটারি মিস্ত্রি">স্যানিটারি মিস্ত্রি</option>
+								<option value="রড মিস্ত্রি">রড মিস্ত্রি</option>
+								<option value="রাজ মিস্ত্রি">রাজ মিস্ত্রি</option>
+								<option value="রং মিস্ত্রি">রং মিস্ত্রি</option>
+								<option value="ফ্রিজমিস্ত্রি">ফ্রিজমিস্ত্রি</option>
+								<option value="গ্যাস মিস্ত্রি">গ্যাস মিস্ত্রি</option>
+								<option value="এসি মিস্ত্রি">এসি মিস্ত্রি</option>
+								<option value="কাঠ মিস্ত্রি">কাঠ মিস্ত্রি</option>
+								<option value="সিসি ক্যামেরা মিস্ত্রি">সিসি ক্যামেরা মিস্ত্রি</option>
+								<option value="টাইলস ও মুজাইক মিস্ত্রি">টাইলস ও মুজাইক মিস্ত্রি</option>
+								<option value="থাই এলুমিনিয়াম ও গ্লাস মিস্ত্রি">থাই এলুমিনিয়াম ও গ্লাস মিস্ত্রি</option>
+								<option value="ওয়েলডিং / গ্রীল মিস্ত্রি">ওয়েলডিং / গ্রীল মিস্ত্রি</option>
+								</select>
+							</div>
 
-					<script>
-					function showOccupationSector(occupation) {
-					// Hide all district sections
-					var occupationLevelSections = document.getElementsByClassName("section");
-					for (var i = 0; i < occupationLevelSections.length; i++) {
-						occupationLevelSections[i].style.display = "none";
-					}
-					// Show the selected division's district section
-					var selectedOccupationSection = document.getElementById(occupation);
-					if (selectedOccupationSection) {
-						selectedOccupationSection.style.display = "block";
-					}
-					}
-					</script>
+							<script>
+								function showOccupationSector(occupation) {
+									// Hide the occupation_describe_field by default
+									var occupationDescribeField = document.getElementById("occupation_describe_field");
+									occupationDescribeField.style.display = "none";
+
+									// Hide all occupation sections
+									var occupationSections = document.getElementsByClassName("section");
+									for (var i = 0; i < occupationSections.length; i++) {
+										occupationSections[i].style.display = "none";
+									}
+
+									// Show the selected occupation section
+									var selectedOccupationSection = document.getElementById(occupation);
+									if (selectedOccupationSection) {
+										selectedOccupationSection.style.display = "block";
+										// Show the occupation_describe_field if occupation is not "No Profession"
+										if (occupation !== "No Profession") {
+											occupationDescribeField.style.display = "block";
+										}
+									}
+								}
+							</script>
 							
 
-		                    <div class="shosurbari-biodata-field">
-		                        <label for="edit-name">Occupation Describe<span class="form-required" title="This field is required.">*</span></label>
+							<div class="shosurbari-biodata-field" id="occupation_describe_field" style="display: none;">
+								<label for="edit-name">Occupation Describe<span class="form-required" title="This field is required.">*</span></label>
 								<textarea rows="5" id="edit-name" name="occupation_describe" placeholder="Describe your Occupation" class="form-text-describe" required><?php echo $occupation_describe; ?></textarea>
-		                    </div>
+							</div>
 
 							<div class="shosurbari-biodata-field">
 		    	               <label for="about me">Your Dress Code at Home or Out Side<span class="form-required" title="This field is required.">*</span></label>
@@ -760,17 +789,8 @@ $maximum_education=$row['maximum_education'];
 
 						<!-- For Kowmi Madrasa -->
 						<div class="shosurbari-biodata-field" id="hafez_field">
-  <label for="hafez">আপনি কি হাফেজ?<span class="form-required" title="This field is required.">*</span></label>
+  <label for="hafez">আপনি কি হাফেজ/হাফেজা?<span class="form-required" title="This field is required.">*</span></label>
   <select name="qawmi_madrasa_hafez" id="hafez">
-							<option hidden selected></option>
-		                       <option value="হ্যাঁ">হ্যাঁ</option>
-		                       <option value="না">না</option>
-	                        </select>
-	                    </div>
-
-						<div class="shosurbari-biodata-field" id="hafeza_field">
-  <label for="hafeza">আপনি কি হাফেজা?<span class="form-required" title="This field is required.">*</span></label>
-  <select name="qawmi_madrasa_hafeza" id="hafeza">
 							<option hidden selected></option>
 		                       <option value="হ্যাঁ">হ্যাঁ</option>
 		                       <option value="না">না</option>
@@ -1051,7 +1071,6 @@ $maximum_education=$row['maximum_education'];
 
 		// Hide all sections by default
 		document.getElementById("hafez_field").style.display = "none";
-		document.getElementById("hafeza_field").style.display = "none";
 		document.getElementById("maxedu_qualification").style.display = "none";
 
 		document.getElementById("maxedu_qualification").style.display = "none";
@@ -1082,7 +1101,6 @@ $maximum_education=$row['maximum_education'];
 		// Show or hide sections based on the selected value
 		if (selectedValue === "কাওমী মাদ্রাসা") {
 			document.getElementById("hafez_field").style.display = "block";
-			document.getElementById("hafeza_field").style.display = "block";
 			document.getElementById("dawra_pass_field").style.display = "block";
 			document.getElementById("dawra_passing_year_field").style.display = "none";
 			document.getElementById("current_edu_level_field").style.display = "none";
@@ -1763,7 +1781,8 @@ $childhood=$row['childhood'];
 						<div class="shosurbari-biodata-field">
 		                    <label for="edit-name">Present Address<span class="form-required" title="This field is required.">*</span></label>
 	                        <select name="present_address" required class="selectsearch">
-							<option hidden selected>Search Country</option>
+							<option hidden selected></option>
+							<option hidden disabled>Search Country</option>
 							<option value="Afghanistan">Afghanistan</option>
 	                            <option value="Argentina">Argentina</option>
 	                            <option value="Armenia">Armenia</option> 
@@ -2197,6 +2216,9 @@ if($result){
                 <option value="6 Son">6 Son</option>
                 <option value="7 Son">7 Son</option>
                 <option value="8 Son">8 Son</option>
+				<option value="8 Son">9 Son</option>
+                <option value="8 Son">10 Son</option>
+
             </select>
         </div>
 
