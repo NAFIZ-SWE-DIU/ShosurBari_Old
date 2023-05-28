@@ -145,12 +145,11 @@ form {
     transition: 0.3s;
     font-size: 16px;
     padding:5px;
-    width: auto;
+    display: block;
+    width: 50%;
     color: black;
     outline: none;
     height: 33px;
-    margin-top: 7px;
-    margin-bottom: 7px;
     background-color: #fff;
     background: linear-gradient(#fff 20%,#f6f6f6 50%,#eee 52%,#f4f4f4 100%);
     background-clip: padding-box;
@@ -162,8 +161,6 @@ form {
     display: block;
     width: 100%;
     height: 100px;
-    margin-top: 2px;
-    margin-bottom: 20px;
     padding: 6px 12px;
     font-size: 16px;
     line-height: 1.5;
@@ -223,6 +220,11 @@ select option:checked{
 .result-selected{
     background: #06b6d4;
     color: #fff;
+}
+
+.chosen-container{
+    display: block;
+    width: 50%;
 }
 
 .chosen-container-single .chosen-single {
@@ -1393,8 +1395,9 @@ span.m_3{
 }
 
 .profile-img img {
-    height: 168px;
-    width: 168px;
+    height: 175px;
+    width: 175px;
+    object-fit: cover;
     border: 5px solid #fff;
     position: relative;
     top: 35px;
@@ -2747,7 +2750,7 @@ ol li{
 }
 
 input[type=file] {
-    width: 200px;
+    width: 230px;
 }
 
 input[type=submit] {
@@ -2772,16 +2775,17 @@ input[type=submit] {
 }
 
 .update-image img {
-    height: 145px;
+    height: 175px;
     width: 175px;
     padding: 2px;
     background: #f5f2f2;
-    box-shadow: 0px 2px 7px 6px rgb(0 0 0 / 20%);
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
     margin-top: 20px;
-    margin-left: auto;
-    margin-right: auto;
-    margin-bottom: 0px;
-    border-radius: 4px;
+    margin-left: 90px;
+    margin-right: 90px;
+    margin-bottom: 10px;
+    border-radius: 50%;
+    object-fit: cover;
 }
 
 .update-image-input form{
@@ -2855,7 +2859,7 @@ input[type=submit] {
     position: relative;
     justify-content: center;
     align-items: center;
-    width: 50%;
+    width: 100%;
 }
 
 .update-image .camera-wrapper i {
@@ -2866,6 +2870,8 @@ input[type=submit] {
     background: #fff;
     padding: 8px;
     border-radius: 50%;
+    margin-top: 150px;
+    margin-left: 210px;
 }
 
 #file-input-wrapper {
@@ -3048,6 +3054,7 @@ i.icon_4{
 
 .shosurbari-biodata-field{
     padding: 10px 0px;
+    text-align: left;
 }
 /*-- -- -- -- -- -- -- -- -- -- -- -- -- ---- -- --
 -- -- -- -- -- -- -- -- --- -- -- -- -- -- -- -- --
@@ -3445,14 +3452,14 @@ input[type=submit]:hover {
 }
 
 label span {
-    color: black;
-    font-size: 13px;
+    color: red;
+    font-size: 17px;
     font-weight: 500;
 }
 
 label{
     color: #0aa4ca;
-    font-size: 14px;
+    font-size: 15px;
     cursor: pointer;
 }
 
