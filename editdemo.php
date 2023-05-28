@@ -756,7 +756,7 @@ $(document).ready(function(){
 				$diploma_hrsecondary_pass=$row['diploma_hrsecondary_pass'];
 				}
 				if($row){
-				$diploma_hrsecondary_ending_year=$row['diploma_hrsecondary_ending_year'];
+				$diploma_hrsecondary_pass_year=$row['diploma_hrsecondary_pass_year'];
 				}
 				if($row){
 				$diploma_hrsecondary_sub=$row['diploma_hrsecondary_sub'];
@@ -990,7 +990,7 @@ $(document).ready(function(){
 
 						<div class="shosurbari-biodata-field" id="doploma_hrscnd_pass_year">
 							<label for="doploma_hrscnd_pass_year">কত সালে ডিপ্লোমা পাশ করেছেন?<span class="form-required" title="This field is required.">*</span></label>
-							<select name="diploma_hrsecondary_ending_year">
+							<select name="diploma_hrsecondary_pass_year">
 								<option hidden selected></option>
 								<option value="2022">2022</option>
 								<option value="2021">2021</option>
@@ -2007,14 +2007,14 @@ $(document).ready(function(){
 			<!-- -- -- -- -- -- -- -- -- -- -- -- -- ---- -- --
 			-- -- -- -- -- -- -- -- --- -- -- -- -- -- -- -- --
 			--                S  T  A  R  T                  --
-			--  Male / Female Marriage Info / sb-biodata-6   --
-			--                                               --
+			--   Male Marriage related Info / sb-biodata-6   --
+			--  Female Marriage related Info / sb-biodata-7  --
 			-- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- ---
 			-- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -->
 			<?php
 				include("includes/dbconn.php");
 
-				//bd_marriage_related_qs_male_6($id);
+				//bd_marriage_related_qs_male_6;
 				//getting profile details from db
 				$sql="SELECT * FROM 6bd_marriage_related_qs_male WHERE user_id = $id";
 				$result = mysqlexec($sql);
@@ -2037,7 +2037,7 @@ $(document).ready(function(){
 					}
 				}
 
-				//bd_marriage_related_qs_female_7($id);
+				//bd_marriage_related_qs_female_7;
 				//getting profile details from db
 				$sql="SELECT * FROM 7bd_marriage_related_qs_female WHERE user_id = $id";
 				$result = mysqlexec($sql);
@@ -2047,10 +2047,10 @@ $(document).ready(function(){
 						$guardians_agree=$row['guardians_agree'];
 					}
 					if($row){
-						$anyjob_aftermarriage=$row['anyjob_aftermarriage'];
+						$studies_aftermarriage=$row['studies_aftermarriage'];
 					}
 					if($row){
-						$studies_aftermarriage=$row['studies_aftermarriage'];
+						$anyjob_aftermarriage=$row['anyjob_aftermarriage'];
 					}
 					if($row){
 						$agree_marriage_student=$row['agree_marriage_student'];
@@ -2060,7 +2060,7 @@ $(document).ready(function(){
 					}
 				}
 
-				//6bd_7bd_marital_status($id);
+				//6bd_7bd_marital_status;
 				//getting profile details from db
 				$sql="SELECT * FROM 6bd_7bd_marital_status WHERE user_id = $id";
 				$result = mysqlexec($sql);
@@ -2464,8 +2464,8 @@ $(document).ready(function(){
 			<!-- -- -- -- -- -- -- -- -- -- -- -- -- ---- -- --
 			-- -- -- -- -- -- -- -- --- -- -- -- -- -- -- -- --
 			--                   E   N   D                   --
-			--  Male / Female Marriage Info / sb-biodata-6   --
-			--                                               --
+			--   Male Marriage related Info / sb-biodata-6   --
+			--  Female Marriage related Info / sb-biodata-7  --
 			-- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- ---
 			-- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -->
 
@@ -2479,7 +2479,7 @@ $(document).ready(function(){
 			<!-- -- -- -- -- -- -- -- -- -- -- -- -- ---- -- --
 			-- -- -- -- -- -- -- -- --- -- -- -- -- -- -- -- --
 			--                S  T  A  R  T                  --
-			--        Religion Details / sb-biodata-7        --
+			--        Religion Details / sb-biodata-8        --
 			--                                               --
 			-- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- ---
 			-- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -->
@@ -2536,7 +2536,7 @@ $(document).ready(function(){
 			<!-- -- -- -- -- -- -- -- -- -- -- -- -- ---- -- --
 			-- -- -- -- -- -- -- -- --- -- -- -- -- -- -- -- --
 			--                   E   N   D                   --
-			--        Religion Details / sb-biodata-7        --
+			--        Religion Details / sb-biodata-8        --
 			--                                               --
 			-- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- ---
 			-- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -->
@@ -2547,7 +2547,7 @@ $(document).ready(function(){
 			<!-- -- -- -- -- -- -- -- -- -- -- -- -- ---- -- --
 			-- -- -- -- -- -- -- -- --- -- -- -- -- -- -- -- --
 			--                S  T  A  R  T                  --
-			--     Expected Life Partner / sb-biodata-8      --
+			--     Expected Life Partner / sb-biodata-9      --
 			--                                               --
 			-- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- ---
 			-- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -->
@@ -2654,15 +2654,13 @@ $(document).ready(function(){
 				</div>
 
         		<input type="button" name="previous" class="previous action-button" value="Previous" />
-				<div class="form-actions">
-			        <input type="submit" id="edit-submit" name="op" value="Submit Biodata" class="btn_1 submit">
-			    </div>
+			    <input type="submit"  name="op" class="action-button" id="edit-submit" value="Submit Biodata">
     		</fieldset> 
 			<!--Fieldsets end-->
 			<!-- -- -- -- -- -- -- -- -- -- -- -- -- ---- -- --
 			-- -- -- -- -- -- -- -- --- -- -- -- -- -- -- -- --
 			--                   E   N   D                   --
-			--     Expected Life Partner / sb-biodata-8      --
+			--     Expected Life Partner / sb-biodata-9      --
 			--                                               --
 			-- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- ---
 			-- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -->
@@ -2720,7 +2718,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 	$gnrlmdrs_hrsecondary_group=$_POST['gnrlmdrs_hrsecondary_group'];
 	$gnrlmdrs_hrsecondary_rningstd=$_POST['gnrlmdrs_hrsecondary_rningstd'];
 	$diploma_hrsecondary_pass=$_POST['diploma_hrsecondary_pass'];
-	$diploma_hrsecondary_ending_year=$_POST['diploma_hrsecondary_ending_year'];
+	$diploma_hrsecondary_pass_year=$_POST['diploma_hrsecondary_pass_year'];
 	$diploma_hrsecondary_sub=$_POST['diploma_hrsecondary_sub'];
 	$diploma_hrsecondary_endingyear=$_POST['diploma_hrsecondary_endingyear'];
 	$varsity_edu_method=$_POST['varsity_edu_method'];
@@ -2807,7 +2805,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 	// Get the current date and time
 	$currentDate = date('j F Y, h:i:s A');
 
-
     //Biodata 1 
     insertData("1bd_personal_physical", [
         'user_id' => $id,
@@ -2839,6 +2836,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     
 
 
+
 	//Biodata 3
     insertData("3bd_educational_qualifications", [
         'user_id' => $id,
@@ -2859,7 +2857,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 		'gnrlmdrs_hrsecondary_group' => $gnrlmdrs_hrsecondary_group,
 		'gnrlmdrs_hrsecondary_rningstd' => $gnrlmdrs_hrsecondary_rningstd,
         'diploma_hrsecondary_pass' => $diploma_hrsecondary_pass,
-        'diploma_hrsecondary_ending_year' => $diploma_hrsecondary_ending_year,
+        'diploma_hrsecondary_pass_year' => $diploma_hrsecondary_pass_year,
         'diploma_hrsecondary_sub' => $diploma_hrsecondary_sub,
 		'diploma_hrsecondary_endingyear' => $diploma_hrsecondary_endingyear,
 		'varsity_edu_method' => $varsity_edu_method,
@@ -2874,6 +2872,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
 
 
+
 	//Biodata 4
     insertData("4bd_address_details", [
         'user_id' => $id,
@@ -2884,6 +2883,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 		'childhood' => $childhood,
 		'profilecreationdate' => $currentDate
     ]);
+
 
 
 
@@ -2902,6 +2902,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         'family_religious_condition' => $family_religious_condition,
 		'profilecreationdate' => $currentDate
     ]);
+
 
 
 
@@ -2933,6 +2934,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
 
 
+
+
 	//Biodata 6
     insertData("6bd_marriage_related_qs_male", [
         'user_id' => $id,
@@ -2943,6 +2946,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         'profileby' => $profileby,
 		'profilecreationdate' => $currentDate
     ]);
+
 
 
 
@@ -2959,6 +2963,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
 
 
+
+
 	//Biodata 8
     insertData("8bd_religion_details", [
         'user_id' => $id,
@@ -2966,6 +2972,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         'yourreligion_condition' => $yourreligion_condition,
 		'profilecreationdate' => $currentDate
     ]);
+
+
 
 
 
@@ -3011,6 +3019,11 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 <script src="http://thecodeplayer.com/uploads/js/jquery-1.9.1.min.js" type="text/javascript"></script>
 <!-- jQuery easing plugin -->
 <script src="http://thecodeplayer.com/uploads/js/jquery.easing.min.js" type="text/javascript"></script>
+
+
+
+
+
 
 
 <style>
@@ -3177,11 +3190,6 @@ $(".previous").click(function() {
   // Smooth scroll to the top of the progress bar
   $('html, body').animate({ scrollTop: $('#progressbar').offset().top }, 800);
 });
-
-$(".submit").click(function() {
-  return false;
-});
-
 
 
 
