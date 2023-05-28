@@ -109,7 +109,7 @@ echo "<script>alert(\"Invalid Profile ID\")</script>";
 
 					//Biodata 4
 					if($row){
-					$present_address=$row['present_address'];
+					$permanent_address=$row['permanent_address'];
 					}
 
 					// Get profile creation date from 1bd_personal_physical table
@@ -132,8 +132,8 @@ echo "<script>alert(\"Invalid Profile ID\")</script>";
 				?>
 
 				<div class="address">
-					<?php if (!empty($present_address)) { ?>
-						<td class="day_value closed">Present Address: <?php echo $present_address; ?></td><br>
+					<?php if (!empty($permanent_address)) { ?>
+						<td class="day_value closed">Home District: <?php echo $permanent_address; ?></td><br>
 						<?php if (!empty($profilecreationdate)) { ?>
 							<td class="day_value closed">Profile Create: <?php echo $profilecreationdate; ?></td>
 						<?php } ?>
@@ -834,7 +834,16 @@ echo "<script>alert(\"Invalid Profile ID\")</script>";
 									$smoke=$row['smoke'];
 									}
 									if($row){
-									$occupation=$row['occupation'];
+									$occupation_sector=$row['occupation_sector'];
+									}
+									if($row){
+									$other_occupation_sector=$row['other_occupation_sector'];
+									}
+									if($row){
+									$business_occupation_level=$row['business_occupation_level'];
+									}
+									if($row){
+									$occupation_level=$row['occupation_level'];
 									}
 									if($row){
 									$occupation_describe=$row['occupation_describe'];
@@ -863,20 +872,47 @@ echo "<script>alert(\"Invalid Profile ID\")</script>";
 											</tr>
 
 											<tr class="opened">
-												<?php if (!empty ($occupation)) { ?>
-												<td class="day_label">Occupation</td>
+												<?php if (!empty ($occupation_sector)) { ?>
+												<td class="day_label">Occupation Sector</td>
 												<?php } ?>
-												<?php if (!empty ($occupation)) { ?>
-												<td class="day_value"><?php echo $occupation;?></td>
+												<?php if (!empty ($occupation_sector)) { ?>
+												<td class="day_value"><?php echo $occupation_sector;?></td>
 												<?php } ?>
 											</tr>
 											
+											<tr class="opened">
+												<?php if (!empty ($other_occupation_sector)) { ?>
+												<td class="day_label">Other Occupation</td>
+												<?php } ?>
+												<?php if (!empty ($other_occupation_sector)) { ?>
+												<td class="day_value"><?php echo $other_occupation_sector;?></td>
+												<?php } ?>
+											</tr>
+
+											<tr class="opened">
+												<?php if (!empty ($business_occupation_level)) { ?>
+												<td class="day_label">Business Occupation Level</td>
+												<?php } ?>
+												<?php if (!empty ($business_occupation_level)) { ?>
+												<td class="day_value closed"><span><?php echo $business_occupation_level;?></span></td>
+												<?php } ?>
+											</tr>
+
+											<tr class="opened">
+												<?php if (!empty ($occupation_level)) { ?>
+												<td class="day_label">Occupation Level</td>
+												<?php } ?>
+												<?php if (!empty ($occupation_level)) { ?>
+												<td class="day_value closed"><span><?php echo $occupation_level;?></span></td>
+												<?php } ?>
+											</tr>
+
 											<tr class="opened">
 												<?php if (!empty ($occupation_describe)) { ?>
 												<td class="day_label">Occupation Describe</td>
 												<?php } ?>
 												<?php if (!empty ($occupation_describe)) { ?>
-												<td class="day_value"><?php echo $occupation_describe;?></td>
+												<td class="day_value closed"><span><?php echo $occupation_describe;?></span></td>
 												<?php } ?>
 											</tr>
 
@@ -931,16 +967,85 @@ echo "<script>alert(\"Invalid Profile ID\")</script>";
 									$row= mysqli_fetch_assoc($result);
 
 									if($row){
-									$education_method=$row['education_method'];
+									$secondary_edu_method=$row['secondary_edu_method'];
 									}
 									if($row){
-									$sscpassyear=$row['sscpassyear'];
+									$maxedu_qualification=$row['maxedu_qualification'];
 									}
 									if($row){
-									$current_education=$row['current_education'];
+									$qawmi_madrasa_hafez=$row['qawmi_madrasa_hafez'];
 									}
 									if($row){
-									$maximum_education=$row['maximum_education'];
+									$qawmimadrasa_dawrapass=$row['qawmimadrasa_dawrapass']; 
+									}
+									if($row){
+									$kowmi_dawrapas_year=$row['kowmi_dawrapas_year'];
+									}
+									if($row){
+									$kowmi_current_edu_level=$row['kowmi_current_edu_level'];
+									}
+									if($row){
+									$gnrl_mdrs_secondary_pass=$row['gnrl_mdrs_secondary_pass'];
+									}
+									if($row){
+									$gnrl_mdrs_secondary_pass_year=$row['gnrl_mdrs_secondary_pass_year']; 
+									}
+									if($row){
+									$gnrl_mdrs_secondary_end_year=$row['gnrl_mdrs_secondary_end_year'];
+									}
+									if($row){
+									$gnrlmdrs_secondary_running_std=$row['gnrlmdrs_secondary_running_std'];
+									}
+									if($row){
+									$higher_secondary_edu_method=$row['higher_secondary_edu_method'];
+									}
+									if($row){
+									$gnrlmdrs_hrsecondary_pass=$row['gnrlmdrs_hrsecondary_pass']; 
+									}
+									if($row){
+									$gnrlmdrs_hrsecondary_pass_year=$row['gnrlmdrs_hrsecondary_pass_year'];
+									}
+									if($row){
+									$gnrlmdrs_hrsecondary_exam_year=$row['gnrlmdrs_hrsecondary_exam_year'];
+									}
+									if($row){
+									$gnrlmdrs_hrsecondary_group=$row['gnrlmdrs_hrsecondary_group'];
+									}
+									if($row){
+									$gnrlmdrs_hrsecondary_rningstd=$row['gnrlmdrs_hrsecondary_rningstd']; 
+									}
+									if($row){
+									$diploma_hrsecondary_pass=$row['diploma_hrsecondary_pass'];
+									}
+									if($row){
+									$diploma_hrsecondary_ending_year=$row['diploma_hrsecondary_ending_year'];
+									}
+									if($row){
+									$diploma_hrsecondary_sub=$row['diploma_hrsecondary_sub'];
+									}
+									if($row){
+									$diploma_hrsecondary_endingyear=$row['diploma_hrsecondary_endingyear']; 
+									}
+									if($row){
+									$varsity_edu_method=$row['varsity_edu_method'];
+									}
+									if($row){
+									$university_pass=$row['university_pass'];
+									}
+									if($row){
+									$varsity_passing_year=$row['varsity_passing_year'];
+									}
+									if($row){
+									$varsity_subject=$row['varsity_subject']; 
+									}
+									if($row){
+									$varsity_ending_year=$row['varsity_ending_year'];
+									}
+									if($row){
+									$university_name=$row['university_name'];
+									}
+									if($row){
+									$others_edu_qualification=$row['others_edu_qualification'];
 									}
 									}
 								?>
@@ -951,38 +1056,245 @@ echo "<script>alert(\"Invalid Profile ID\")</script>";
 										<tbody>
 
 											<tr class="opened">
-												<?php if (!empty ($education_method)) { ?>
-												<td class="day_label">Education Method</td>
+												<?php if (!empty ($secondary_edu_method)) { ?>
+												<td class="day_label">Secondary Education Method</td>
 												<?php } ?>
-												<?php if (!empty ($education_method)) { ?>
-												<td class="day_value"><?php echo $education_method; ?></td>
-												<?php } ?>
-											</tr>
-
-											<tr class="opened">
-												<?php if (!empty ($sscpassyear)) { ?>
-												<td class="day_label">SSC Passing Year</td>
-												<?php } ?>
-												<?php if (!empty ($sscpassyear)) { ?>
-												<td class="day_value"><?php echo $sscpassyear;?></td>
+												<?php if (!empty ($secondary_edu_method)) { ?>
+												<td class="day_value"><?php echo $secondary_edu_method; ?></td>
 												<?php } ?>
 											</tr>
 
 											<tr class="opened">
-												<?php if (!empty ($current_education)) { ?>
-												<td class="day_label">Current Education</td>
+												<?php if (!empty ($maxedu_qualification)) { ?>
+												<td class="day_label">Maximum Education Qualification</td>
 												<?php } ?>
-												<?php if (!empty ($current_education)) { ?>
-												<td class="day_value"><?php echo $current_education;?></td>
+												<?php if (!empty ($maxedu_qualification)) { ?>
+												<td class="day_value"><?php echo $maxedu_qualification; ?></td>
 												<?php } ?>
 											</tr>
-											
+
 											<tr class="opened">
-												<?php if (!empty ($maximum_education)) { ?>
-												<td class="day_label">Maximum Education</td>
+												<?php if (!empty ($qawmi_madrasa_hafez)) { ?>
+												<td class="day_label">Are you Hafeza/Hafeza?</td>
 												<?php } ?>
-												<?php if (!empty ($maximum_education)) { ?>
-												<td class="day_value"><?php echo $maximum_education; ?></td>
+												<?php if (!empty ($qawmi_madrasa_hafez)) { ?>
+												<td class="day_value"><?php echo $qawmi_madrasa_hafez; ?></td>
+												<?php } ?>
+											</tr>
+
+											<tr class="opened">
+												<?php if (!empty ($qawmimadrasa_dawrapass)) { ?>
+												<td class="day_label">Aye you Dawra Pass?</td>
+												<?php } ?>
+												<?php if (!empty ($qawmimadrasa_dawrapass)) { ?>
+												<td class="day_value"><?php echo $qawmimadrasa_dawrapass; ?></td>
+												<?php } ?>
+											</tr>
+
+											<tr class="opened">
+												<?php if (!empty ($kowmi_dawrapas_year)) { ?>
+												<td class="day_label">Dawra Pass Year?</td>
+												<?php } ?>
+												<?php if (!empty ($kowmi_dawrapas_year)) { ?>
+												<td class="day_value"><?php echo $kowmi_dawrapas_year; ?></td>
+												<?php } ?>
+											</tr>
+
+											<tr class="opened">
+												<?php if (!empty ($kowmi_current_edu_level)) { ?>
+												<td class="day_label">Current Jamat?</td>
+												<?php } ?>
+												<?php if (!empty ($kowmi_current_edu_level)) { ?>
+												<td class="day_value"><?php echo $kowmi_current_edu_level; ?></td>
+												<?php } ?>
+											</tr>
+
+											<tr class="opened">
+												<?php if (!empty ($gnrl_mdrs_secondary_pass)) { ?>
+												<td class="day_label">Secondary Pass korechen?</td>
+												<?php } ?>
+												<?php if (!empty ($gnrl_mdrs_secondary_pass)) { ?>
+												<td class="day_value"><?php echo $gnrl_mdrs_secondary_pass; ?></td>
+												<?php } ?>
+											</tr>
+
+											<tr class="opened">
+												<?php if (!empty ($gnrl_mdrs_secondary_pass_year)) { ?>
+												<td class="day_label">kot sale pash korechen?</td>
+												<?php } ?>
+												<?php if (!empty ($gnrl_mdrs_secondary_pass_year)) { ?>
+												<td class="day_value"><?php echo $gnrl_mdrs_secondary_pass_year; ?></td>
+												<?php } ?>
+											</tr>
+
+											<tr class="opened">
+												<?php if (!empty ($gnrl_mdrs_secondary_end_year)) { ?>
+												<td class="day_label">secondary pash korben kobe?</td>
+												<?php } ?>
+												<?php if (!empty ($gnrl_mdrs_secondary_end_year)) { ?>
+												<td class="day_value"><?php echo $gnrl_mdrs_secondary_end_year; ?></td>
+												<?php } ?>
+											</tr>
+
+											<tr class="opened">
+												<?php if (!empty ($gnrlmdrs_secondary_running_std)) { ?>
+												<td class="day_label">akhon kon cls a portechen?</td>
+												<?php } ?>
+												<?php if (!empty ($gnrlmdrs_secondary_running_std)) { ?>
+												<td class="day_value"><?php echo $gnrlmdrs_secondary_running_std; ?></td>
+												<?php } ?>
+											</tr>
+
+											<tr class="opened">
+												<?php if (!empty ($higher_secondary_edu_method)) { ?>
+												<td class="day_label">Higher Secondary Education method</td>
+												<?php } ?>
+												<?php if (!empty ($higher_secondary_edu_method)) { ?>
+												<td class="day_value"><?php echo $higher_secondary_edu_method; ?></td>
+												<?php } ?>
+											</tr>
+
+											<tr class="opened">
+												<?php if (!empty ($gnrlmdrs_hrsecondary_pass)) { ?>
+												<td class="day_label">Hr Scndry pass korechen?</td>
+												<?php } ?>
+												<?php if (!empty ($gnrlmdrs_hrsecondary_pass)) { ?>
+												<td class="day_value"><?php echo $gnrlmdrs_hrsecondary_pass; ?></td>
+												<?php } ?>
+											</tr>
+
+											<tr class="opened">
+												<?php if (!empty ($gnrlmdrs_hrsecondary_pass_year)) { ?>
+												<td class="day_label">koto sale hr scndry pass korechen?</td>
+												<?php } ?>
+												<?php if (!empty ($gnrlmdrs_hrsecondary_pass_year)) { ?>
+												<td class="day_value"><?php echo $gnrlmdrs_hrsecondary_pass_year; ?></td>
+												<?php } ?>
+											</tr>
+
+											<tr class="opened">
+												<?php if (!empty ($gnrlmdrs_hrsecondary_exam_year)) { ?>
+												<td class="day_label">koto sale hr scndry pass korbnen?</td>
+												<?php } ?>
+												<?php if (!empty ($gnrlmdrs_hrsecondary_exam_year)) { ?>
+												<td class="day_value"><?php echo $gnrlmdrs_hrsecondary_exam_year; ?></td>
+												<?php } ?>
+											</tr>
+
+											<tr class="opened">
+												<?php if (!empty ($gnrlmdrs_hrsecondary_group)) { ?>
+												<td class="day_label">hr scdry apnar group?</td>
+												<?php } ?>
+												<?php if (!empty ($gnrlmdrs_hrsecondary_group)) { ?>
+												<td class="day_value"><?php echo $gnrlmdrs_hrsecondary_group; ?></td>
+												<?php } ?>
+											</tr>
+
+											<tr class="opened">
+												<?php if (!empty ($gnrlmdrs_hrsecondary_rningstd)) { ?>
+												<td class="day_label">hr scdry akhon kon yeare achen?</td>
+												<?php } ?>
+												<?php if (!empty ($gnrlmdrs_hrsecondary_rningstd)) { ?>
+												<td class="day_value"><?php echo $gnrlmdrs_hrsecondary_rningstd; ?></td>
+												<?php } ?>
+											</tr>
+
+											<tr class="opened">
+												<?php if (!empty ($diploma_hrsecondary_pass)) { ?>
+												<td class="day_label">Diploma pass korchen?</td>
+												<?php } ?>
+												<?php if (!empty ($diploma_hrsecondary_pass)) { ?>
+												<td class="day_value"><?php echo $diploma_hrsecondary_pass; ?></td>
+												<?php } ?>
+											</tr>
+
+											<tr class="opened">
+												<?php if (!empty ($diploma_hrsecondary_pass_year)) { ?>
+												<td class="day_label">Diploma koto sale pass korechen?</td>
+												<?php } ?>
+												<?php if (!empty ($diploma_hrsecondary_pass_year)) { ?>
+												<td class="day_value"><?php echo $diploma_hrsecondary_pass_year; ?></td>
+												<?php } ?>
+											</tr>
+
+											<tr class="opened">
+												<?php if (!empty ($diploma_hrsecondary_sub)) { ?>
+												<td class="day_label">Diploma Subject</td>
+												<?php } ?>
+												<?php if (!empty ($diploma_hrsecondary_sub)) { ?>
+												<td class="day_value"><?php echo $diploma_hrsecondary_sub; ?></td>
+												<?php } ?>
+											</tr>
+
+											<tr class="opened">
+												<?php if (!empty ($diploma_hrsecondary_endingyear)) { ?>
+												<td class="day_label">Dilopma Ending year</td>
+												<?php } ?>
+												<?php if (!empty ($diploma_hrsecondary_endingyear)) { ?>
+												<td class="day_value"><?php echo $diploma_hrsecondary_endingyear; ?></td>
+												<?php } ?>
+											</tr>
+
+											<tr class="opened">
+												<?php if (!empty ($varsity_edu_method)) { ?>
+												<td class="day_label">Varsity Education Method</td>
+												<?php } ?>
+												<?php if (!empty ($varsity_edu_method)) { ?>
+												<td class="day_value"><?php echo $varsity_edu_method; ?></td>
+												<?php } ?>
+											</tr>
+
+											<tr class="opened">
+												<?php if (!empty ($university_pass)) { ?>
+												<td class="day_label">Varsity pass korechen?</td>
+												<?php } ?>
+												<?php if (!empty ($university_pass)) { ?>
+												<td class="day_value"><?php echo $university_pass; ?></td>
+												<?php } ?>
+											</tr>
+
+											<tr class="opened">
+												<?php if (!empty ($varsity_passing_year)) { ?>
+												<td class="day_label">koto sale Varsity pass korechen?</td>
+												<?php } ?>
+												<?php if (!empty ($varsity_passing_year)) { ?>
+												<td class="day_value"><?php echo $varsity_passing_year; ?></td>
+												<?php } ?>
+											</tr>
+
+											<tr class="opened">
+												<?php if (!empty ($varsity_subject)) { ?>
+												<td class="day_label">Varsity Subject</td>
+												<?php } ?>
+												<?php if (!empty ($varsity_subject)) { ?>
+												<td class="day_value"><?php echo $varsity_subject; ?></td>
+												<?php } ?>
+											</tr>
+
+											<tr class="opened">
+												<?php if (!empty ($varsity_ending_year)) { ?>
+												<td class="day_label">Varsity Ending Year?</td>
+												<?php } ?>
+												<?php if (!empty ($varsity_ending_year)) { ?>
+												<td class="day_value"><?php echo $varsity_ending_year; ?></td>
+												<?php } ?>
+											</tr>
+
+											<tr class="opened">
+												<?php if (!empty ($university_name)) { ?>
+												<td class="day_label">Varsity Name</td>
+												<?php } ?>
+												<?php if (!empty ($university_name)) { ?>
+												<td class="day_value"><?php echo $university_name; ?></td>
+												<?php } ?>
+											</tr>
+
+											<tr class="opened">
+												<?php if (!empty ($others_edu_qualification)) { ?>
+												<td class="day_label">Others Qualifications</td>
+												<?php } ?>
+												<?php if (!empty ($others_edu_qualification)) { ?>
+												<td class="day_value"><?php echo $others_edu_qualification; ?></td>
 												<?php } ?>
 											</tr>
 
@@ -1022,10 +1334,13 @@ echo "<script>alert(\"Invalid Profile ID\")</script>";
 									$permanent_division=$row['permanent_division'];
 									}
 									if($row){
-									$present_address=$row['present_address'];
+									$permanent_address=$row['permanent_address'];
 									}
 									if($row){
-									$permanent_address=$row['permanent_address'];
+									$country_present_address=$row['country_present_address'];
+									}
+									if($row){
+									$present_address_location=$row['present_address_location'];
 									}
 									if($row){
 									$childhood=$row['childhood'];
@@ -1057,11 +1372,20 @@ echo "<script>alert(\"Invalid Profile ID\")</script>";
 											</tr>
 
 											<tr class="opened">
-												<?php if (!empty ($present_address)) { ?>
-												<td class="day_label">Present Address</td>
+												<?php if (!empty ($country_present_address)) { ?>
+												<td class="day_label">Present Address Country</td>
 												<?php } ?>
-												<?php if (!empty ($present_address)) { ?>
-												<td class="day_value"><?php echo $present_address;?></td>
+												<?php if (!empty ($country_present_address)) { ?>
+												<td class="day_value"><?php echo $country_present_address;?></td>
+												<?php } ?>
+											</tr>
+
+											<tr class="opened">
+												<?php if (!empty ($present_address_location)) { ?>
+												<td class="day_label">Present Address Location</td>
+												<?php } ?>
+												<?php if (!empty ($present_address_location)) { ?>
+												<td class="day_value"><?php echo $present_address_location; ?></td>
 												<?php } ?>
 											</tr>
 
@@ -1093,6 +1417,7 @@ echo "<script>alert(\"Invalid Profile ID\")</script>";
 								-- -- -- -- -- -- -- -- --- -- -- -- -- -- -- -- --
 								--                S  T  A  R  T                  --
 								--   Male Marriage related Info / sb-biodata-6   --
+								--  Female Marriage related Info / sb-biodata-7  --
 								-- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- ---
 								-- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -->
 								<?php
@@ -1108,7 +1433,7 @@ echo "<script>alert(\"Invalid Profile ID\")</script>";
 									if($result){
 										$row=mysqli_fetch_assoc($result);
 										if($row){
-											$guardians_agree_male=$row['guardians_agree_male'];
+											$guardians_agree=$row['guardians_agree'];
 										}
 										if($row){
 											$allowstudy_aftermarriage=$row['allowstudy_aftermarriage'];
@@ -1133,7 +1458,7 @@ echo "<script>alert(\"Invalid Profile ID\")</script>";
 									if($result){
 										$row=mysqli_fetch_assoc($result);
 										if($row){
-											$guardians_agree_female=$row['guardians_agree_female'];
+											$guardians_agree=$row['guardians_agree'];
 										}
 										if($row){
 											$anyjob_aftermarriage=$row['anyjob_aftermarriage'];
@@ -1160,8 +1485,6 @@ echo "<script>alert(\"Invalid Profile ID\")</script>";
 										if($row){
 											$maritalstatus=$row['maritalstatus'];
 										}
-
-
 										if($row){
 											$divorce_reason=$row['divorce_reason'];
 										}
@@ -1171,8 +1494,6 @@ echo "<script>alert(\"Invalid Profile ID\")</script>";
 										if($row){
 											$divorce_son_details=$row['divorce_son_details'];
 										}
-
-
 										if($row){
 											$how_widow=$row['how_widow'];
 										}
@@ -1182,8 +1503,6 @@ echo "<script>alert(\"Invalid Profile ID\")</script>";
 										if($row){
 											$widow_son_details=$row['widow_son_details'];
 										}
-
-
 										if($row){
 											$how_widower=$row['how_widower'];
 										}
@@ -1193,8 +1512,6 @@ echo "<script>alert(\"Invalid Profile ID\")</script>";
 										if($row){
 											$widower_son_details=$row['widower_son_details'];
 										}
-
-
 										if($row){
 											$get_wife_permission=$row['get_wife_permission'];
 										}
@@ -1230,6 +1547,7 @@ echo "<script>alert(\"Invalid Profile ID\")</script>";
 												<td class="day_value"><?php echo $maritalstatus; ?></td>
 												<?php } ?>
 											</tr>
+
 
 											<!-- If Divorce -->
 											<tr class="opened">
@@ -1364,9 +1682,8 @@ echo "<script>alert(\"Invalid Profile ID\")</script>";
 											</tr>
 
 
-											
 
-										<!-- bd_marriage_related_qs_Male & Female($id); -->
+										<!-- This sections for All Maritial StatusShow just without Married -->
 											<tr class="opened">
 												<?php if (!empty ($guardians_agree_male)) { ?>
 												<td class="day_label">Guardians Agree</td>
@@ -1377,6 +1694,8 @@ echo "<script>alert(\"Invalid Profile ID\")</script>";
 											</tr>
 
 
+
+										<!-- bd_marriage_related_qs Male & Female -->
 											<tr class="opened">
 												<?php if (!empty ($allowstudy_aftermarriage)) { ?>
 												<td class="day_label">Allow Study After Marriage</td>
@@ -1452,53 +1771,12 @@ echo "<script>alert(\"Invalid Profile ID\")</script>";
 								-- -- -- -- -- -- -- -- --- -- -- -- -- -- -- -- --
 								--                   E   N   D                   --
 								--   Male Marriage related Info / sb-biodata-6   --
-								-- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- ---
-								-- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -->
-
-
-
-
-
-								<!-- -- -- -- -- -- -- -- -- -- -- -- -- ---- -- --
-								-- -- -- -- -- -- -- -- --- -- -- -- -- -- -- -- --
-								--                S  T  A  R  T                  --
 								--  Female Marriage related Info / sb-biodata-7  --
 								-- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- ---
 								-- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -->
-								<!-- <?php
-									// $id=$_GET['id'];
-									// $profileid=$id;
-									
-									// //getting profile details from db
-									// $sql = "SELECT * FROM 7bd_marriage_related_qs_female WHERE user_id = $id";
-									// $result = mysqlexec($sql);
 
-									// if($result){
-									// $row= mysqli_fetch_assoc($result);
 
-									// if($row){
-									// $guardians_agree_female=$row['guardians_agree_female'];
-									// }
-									// if($row){
-									// $anyjob_aftermarriage=$row['anyjob_aftermarriage'];
-									// }
-									// if($row){
-									// $studies_aftermarriage=$row['studies_aftermarriage'];
-									// }
-									// if($row){
-									// $agree_marriage_student=$row['agree_marriage_student'];
-									// }
-									// if($row){
-									// $profileby=$row['profileby'];
-									// }
-									// }
-								?> -->
-								<!-- -- -- -- -- -- -- -- -- -- -- -- -- ---- -- --
-								-- -- -- -- -- -- -- -- --- -- -- -- -- -- -- -- --
-								--                   E   N   D                   --
-								--  Female Marriage related Info / sb-biodata-7  --
-								-- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- ---
-								-- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -->
+
 
 
 
@@ -1572,7 +1850,7 @@ echo "<script>alert(\"Invalid Profile ID\")</script>";
 							<!-- -- -- -- -- -- -- -- -- -- -- -- -- ---- -- --
 							-- -- -- -- -- -- -- -- --- -- -- -- -- -- -- -- --
 							--                S  T  A  R  T                  --
-							--        Family Details  / sb-biodata-5         --
+							--     Family Information  / sb-biodata-5        --
 							-- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- ---
 							-- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -->
 							<?php
@@ -1614,7 +1892,7 @@ echo "<script>alert(\"Invalid Profile ID\")</script>";
 								$financial_condition=$row['financial_condition'];
 								}
 								if($row){
-								$family_religious=$row['family_religious'];
+								$family_religious_condition=$row['family_religious_condition'];
 								}
 								}
 							?>
@@ -1709,11 +1987,11 @@ echo "<script>alert(\"Invalid Profile ID\")</script>";
 											</tr>
 
 											<tr class="opened">
-												<?php if (!empty ($family_religious)) { ?>
+												<?php if (!empty ($family_religious_condition)) { ?>
 												<td class="day_label">Family Religious</td>
 												<?php } ?>
-												<?php if (!empty ($family_religious)) { ?>
-												<td class="day_value closed"><span><?php echo $family_religious;?></span></td>
+												<?php if (!empty ($family_religious_condition)) { ?>
+												<td class="day_value closed"><span><?php echo $family_religious_condition;?></span></td>
 												<?php } ?>
 											</tr>
 
@@ -1725,7 +2003,7 @@ echo "<script>alert(\"Invalid Profile ID\")</script>";
 							<!-- -- -- -- -- -- -- -- -- -- -- -- -- ---- -- --
 							-- -- -- -- -- -- -- -- --- -- -- -- -- -- -- -- --
 							--                   E   N   D                   --
-							--        Family Details  / sb-biodata-5         --
+							--     Family Information  / sb-biodata-5        --
 							-- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- ---
 							-- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -->
 
