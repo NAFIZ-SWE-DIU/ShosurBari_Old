@@ -432,8 +432,8 @@
 	$aboutme=$_POST['aboutme'];		
 
 	//Biodata 3
-	$secondary_edu_method=$_POST['secondary_edu_method'];
-	$maxedu_qualification=$_POST['maxedu_qualification'];
+	$scndry_edu_method=$_POST['scndry_edu_method'];
+	$maxedu_qulfctn=$_POST['maxedu_qulfctn'];
 	$qawmi_madrasa_hafez=$_POST['qawmi_madrasa_hafez'];
 	$qawmimadrasa_dawrapass=$_POST['qawmimadrasa_dawrapass'];
 	$kowmi_dawrapas_year=$_POST['kowmi_dawrapas_year'];
@@ -453,11 +453,11 @@
 	$diploma_hrsecondary_sub=$_POST['diploma_hrsecondary_sub'];
 	$diploma_hrsecondary_endingyear=$_POST['diploma_hrsecondary_endingyear'];
 	$varsity_edu_method=$_POST['varsity_edu_method'];
-	$university_pass=$_POST['university_pass'];
+	$uvarsity_pass=$_POST['uvarsity_pass'];
 	$varsity_passing_year=$_POST['varsity_passing_year'];
-	$varsity_subject=$_POST['varsity_subject'];
+	$university_subject=$_POST['university_subject'];
 	$varsity_ending_year=$_POST['varsity_ending_year'];
-	$university_name=$_POST['university_name'];
+	$uvarsity_name=$_POST['uvarsity_name'];
 	$others_edu_qualification=$_POST['others_edu_qualification'];
 
 	//Biodata 4
@@ -575,9 +575,9 @@
 --  Educational Qualifications  / sb-biodata-3   --
 -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- --*/
 $sql = "INSERT INTO 3bd_educational_qualifications
-(user_id, secondary_edu_method, maxedu_qualification, qawmi_madrasa_hafez, qawmimadrasa_dawrapass, kowmi_dawrapas_year, kowmi_current_edu_level, gnrl_mdrs_secondary_pass, gnrl_mdrs_secondary_pass_year, gnrl_mdrs_secondary_end_year, gnrlmdrs_secondary_running_std, higher_secondary_edu_method, gnrlmdrs_hrsecondary_pass, gnrlmdrs_hrsecondary_pass_year, gnrlmdrs_hrsecondary_exam_year, gnrlmdrs_hrsecondary_group, gnrlmdrs_hrsecondary_rningstd, diploma_hrsecondary_pass, diploma_hrsecondary_pass_year, diploma_hrsecondary_sub, diploma_hrsecondary_endingyear, varsity_edu_method, university_pass, varsity_passing_year, varsity_subject, varsity_ending_year, university_name, others_edu_qualification, profilecreationdate  ) 
+(user_id, scndry_edu_method, maxedu_qulfctn, qawmi_madrasa_hafez, qawmimadrasa_dawrapass, kowmi_dawrapas_year, kowmi_current_edu_level, gnrl_mdrs_secondary_pass, gnrl_mdrs_secondary_pass_year, gnrl_mdrs_secondary_end_year, gnrlmdrs_secondary_running_std, higher_secondary_edu_method, gnrlmdrs_hrsecondary_pass, gnrlmdrs_hrsecondary_pass_year, gnrlmdrs_hrsecondary_exam_year, gnrlmdrs_hrsecondary_group, gnrlmdrs_hrsecondary_rningstd, diploma_hrsecondary_pass, diploma_hrsecondary_pass_year, diploma_hrsecondary_sub, diploma_hrsecondary_endingyear, varsity_edu_method, uvarsity_pass, varsity_passing_year, university_subject, varsity_ending_year, uvarsity_name, others_edu_qualification, profilecreationdate  ) 
 VALUES
-('$id', '$secondary_edu_method', '$maxedu_qualification', '$qawmi_madrasa_hafez', '$qawmimadrasa_dawrapass', '$kowmi_dawrapas_year', '$kowmi_current_edu_level', '$gnrl_mdrs_secondary_pass', '$gnrl_mdrs_secondary_pass_year', '$gnrl_mdrs_secondary_end_year', '$gnrlmdrs_secondary_running_std', '$higher_secondary_edu_method', '$gnrlmdrs_hrsecondary_pass', '$gnrlmdrs_hrsecondary_pass_year', '$gnrlmdrs_hrsecondary_exam_year', '$gnrlmdrs_hrsecondary_group', '$gnrlmdrs_hrsecondary_rningstd', '$diploma_hrsecondary_pass', '$diploma_hrsecondary_pass_year', '$diploma_hrsecondary_sub', '$diploma_hrsecondary_endingyear', '$varsity_edu_method', '$university_pass', '$varsity_passing_year', '$varsity_subject', '$varsity_ending_year', '$university_name', '$others_edu_qualification', DATE_FORMAT(NOW(), '%e %M %Y, %h:%i:%s %p'))";
+('$id', '$scndry_edu_method', '$maxedu_qulfctn', '$qawmi_madrasa_hafez', '$qawmimadrasa_dawrapass', '$kowmi_dawrapas_year', '$kowmi_current_edu_level', '$gnrl_mdrs_secondary_pass', '$gnrl_mdrs_secondary_pass_year', '$gnrl_mdrs_secondary_end_year', '$gnrlmdrs_secondary_running_std', '$higher_secondary_edu_method', '$gnrlmdrs_hrsecondary_pass', '$gnrlmdrs_hrsecondary_pass_year', '$gnrlmdrs_hrsecondary_exam_year', '$gnrlmdrs_hrsecondary_group', '$gnrlmdrs_hrsecondary_rningstd', '$diploma_hrsecondary_pass', '$diploma_hrsecondary_pass_year', '$diploma_hrsecondary_sub', '$diploma_hrsecondary_endingyear', '$varsity_edu_method', '$uvarsity_pass', '$varsity_passing_year', '$university_subject', '$varsity_ending_year', '$uvarsity_name', '$others_edu_qualification', DATE_FORMAT(NOW(), '%e %M %Y, %h:%i:%s %p'))";
 if (mysqli_query($conn,$sql))
 {echo " ";}
 
