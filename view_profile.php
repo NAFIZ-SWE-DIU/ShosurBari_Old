@@ -97,7 +97,7 @@ echo "<script>alert(\"Invalid Profile ID\")</script>";
 
 			<div class="profile-nav-info">
 				<?php if (!empty($profileid)) { ?>
-					<h3>Biodata No : <span><?php echo $profileid;?></span></h3>
+					<h3>বায়োডাটা নং : <span><?php echo $profileid;?></span></h3>
 				<?php } ?>
 
 				<?php
@@ -156,31 +156,31 @@ echo "<script>alert(\"Invalid Profile ID\")</script>";
 
 				<div class="address">
 					<?php if (!empty($home_district_under_barishal)) { ?>
-						<td class="day_value closed">Home District: <?php echo $home_district_under_barishal; ?></td><br>
+						<td class="day_value closed">স্থায়ী ঠিকানা জেলা : <?php echo $home_district_under_barishal; ?></td><br>
 						<?php } ?>
 						<?php if (!empty($home_district_under_chattogram)) { ?>
-						<td class="day_value closed">Home District: <?php echo $home_district_under_chattogram; ?></td><br>
+						<td class="day_value closed">স্থায়ী ঠিকানা জেলা : <?php echo $home_district_under_chattogram; ?></td><br>
 						<?php } ?>
 						<?php if (!empty($home_district_under_dhaka)) { ?>
-						<td class="day_value closed">Home District: <?php echo $home_district_under_dhaka; ?></td><br>
+						<td class="day_value closed">স্থায়ী ঠিকানা জেলা : <?php echo $home_district_under_dhaka; ?></td><br>
 						<?php } ?>
 						<?php if (!empty($home_district_under_khulna)) { ?>
-						<td class="day_value closed">Home District: <?php echo $home_district_under_khulna; ?></td><br>
+						<td class="day_value closed">স্থায়ী ঠিকানা জেলা : <?php echo $home_district_under_khulna; ?></td><br>
 						<?php } ?>
 						<?php if (!empty($home_district_under_mymensingh)) { ?>
-						<td class="day_value closed">Home District: <?php echo $home_district_under_mymensingh; ?></td><br>
+						<td class="day_value closed">স্থায়ী ঠিকানা জেলা : <?php echo $home_district_under_mymensingh; ?></td><br>
 						<?php } ?>
 						<?php if (!empty($home_district_under_rajshahi)) { ?>
-						<td class="day_value closed">Home District: <?php echo $home_district_under_rajshahi; ?></td><br>
+						<td class="day_value closed">স্থায়ী ঠিকানা জেলা : <?php echo $home_district_under_rajshahi; ?></td><br>
 						<?php } ?>
 						<?php if (!empty($home_district_under_rangpur)) { ?>
-						<td class="day_value closed">Home District: <?php echo $home_district_under_rangpur; ?></td><br>
+						<td class="day_value closed">স্থায়ী ঠিকানা জেলা : <?php echo $home_district_under_rangpur; ?></td><br>
 						<?php } ?>
 						<?php if (!empty($home_district_under_sylhet)) { ?>
-						<td class="day_value closed">Home District: <?php echo $home_district_under_sylhet; ?></td><br>
+						<td class="day_value closed">স্থায়ী ঠিকানা জেলা : <?php echo $home_district_under_sylhet; ?></td><br>
 						<?php } ?>
 						<?php if (!empty($profilecreationdate)) { ?>
-							<td class="day_value closed">Profile Create: <?php echo $profilecreationdate; ?></td>
+							<td class="day_value closed">পোস্ট তারিখ : <?php echo $profilecreationdate; ?></td>
 						<?php } ?>
 				</div>
     		</div>
@@ -556,133 +556,133 @@ echo "<script>alert(\"Invalid Profile ID\")</script>";
 
 									<tr class="opened">
 										<?php if (!empty($biodatagender)) { ?>
-										<td class="day_label">Biodata Type</td>
+										<td class="day_label">বায়োডাটার ধরণ</td>
 										<td class="day_value"><?php echo $biodatagender;?></td>
 										<?php } ?>
 									</tr>
 										
 									<tr class="opened">
 										<?php if (!empty($dob)) { ?>
-										<td class="day_label">DOB</td>
+										<td class="day_label">জন্ম তারিখ (আসল)</td>
 										<td class="day_value"><?php echo $dob; ?></td>
 										<?php } ?>
 									</tr>
 
 									<tr class="opened">
 										<?php if (!empty($religion)) { ?>
-										<td class="day_label">Religion</td>
+										<td class="day_label">ধর্ম</td>
 										<td class="day_value"><?php echo $religion;?></td>
 										<?php } ?>
 									</tr>
 
 									<tr class="opened">
 										<?php if (!empty($maritalstatus)) { ?>
-										<td class="day_label">Marital Status</td>
+										<td class="day_label">বৈবাহিক অবস্থা</td>
 										<td class="day_value"><?php echo $maritalstatus;?></td>
 										<?php } ?>
 									</tr>
 
 									<tr class="opened">
 										<?php if (!empty($Skin_tones)) { ?>
-										<td class="day_label">Skin Tones</td>
+										<td class="day_label">শারীরিক বর্ণ</td>
 										<td class="day_value"><?php echo $Skin_tones;?></td>
 										<?php } ?>
 									</tr>
 
 									<tr class="closed">
 										<?php if (!empty ($height)) { ?>
-										<td class="day_label">Height</td>
+										<td class="day_label">উচ্চতা</td>
 										<td class="day_value closed"><?php echo $height;?></td>
 										<?php } ?>
 									</tr>
 
 									<tr class="closed">
 										<?php if (!empty ($weight)) { ?>
-										<td class="day_label">Weight</td>
+										<td class="day_label">ওজন</td>
 										<td class="day_value closed"><?php echo $weight;?></td>
 										<?php } ?>
 									</tr>
 
 									<tr class="closed">
 										<?php if (!empty ($business_occupation_level)) { ?>
-										<td class="day_label">Occupation</td>
+										<td class="day_label">পেশার অবস্থান</td>
 										<td class="day_value closed"><?php echo $business_occupation_level;?></td>
 										<?php } ?>
 									</tr>
 
 									<tr class="closed">
 										<?php if (!empty ($student_occupation_level)) { ?>
-										<td class="day_label">Occupation</td>
+										<td class="day_label">পেশা</td>
 										<td class="day_value closed"><?php echo $student_occupation_level;?></td>
 										<?php } ?>
 									</tr>
 
 									<tr class="closed">
 										<?php if (!empty ($health_occupation_level)) { ?>
-										<td class="day_label">Occupation</td>
+										<td class="day_label">পেশা</td>
 										<td class="day_value closed"><?php echo $health_occupation_level;?></td>
 										<?php } ?>
 									</tr>
 
 									<tr class="closed">
 										<?php if (!empty ($engineer_occupation_level)) { ?>
-										<td class="day_label">Occupation</td>
+										<td class="day_label">পেশা</td>
 										<td class="day_value closed"><?php echo $engineer_occupation_level;?></td>
 										<?php } ?>
 									</tr>
 
 									<tr class="closed">
 										<?php if (!empty ($teacher_occupation_level)) { ?>
-										<td class="day_label">Occupation</td>
+										<td class="day_label">পেশা</td>
 										<td class="day_value closed"><?php echo $teacher_occupation_level;?></td>
 										<?php } ?>
 									</tr>
 
 									<tr class="closed">
 										<?php if (!empty ($defense_occupation_level)) { ?>
-										<td class="day_label">Occupation</td>
+										<td class="day_label">পেশা</td>
 										<td class="day_value closed"><?php echo $defense_occupation_level;?></td>
 										<?php } ?>
 									</tr>
 
 									<tr class="closed">
 										<?php if (!empty ($foreigner_occupation_level)) { ?>
-										<td class="day_label">Occupation</td>
+										<td class="day_label">পেশা</td>
 										<td class="day_value closed"><?php echo $foreigner_occupation_level;?></td>
 										<?php } ?>
 									</tr>
 
 									<tr class="closed">
 										<?php if (!empty ($garments_occupation_level)) { ?>
-										<td class="day_label">Occupation</td>
+										<td class="day_label">পেশা</td>
 										<td class="day_value closed"><?php echo $garments_occupation_level;?></td>
 										<?php } ?>
 									</tr>
 
 									<tr class="closed">
 										<?php if (!empty ($driver_occupation_level)) { ?>
-										<td class="day_label">Occupation</td>
+										<td class="day_label">পেশা</td>
 										<td class="day_value closed"><?php echo $driver_occupation_level;?></td>
 										<?php } ?>
 									</tr>
 
 									<tr class="closed">
 										<?php if (!empty ($service_andcommon_occupation_level)) { ?>
-										<td class="day_label">Occupation</td>
+										<td class="day_label">পেশা</td>
 										<td class="day_value closed"><?php echo $service_andcommon_occupation_level;?></td>
 										<?php } ?>
 									</tr>
 
 									<tr class="closed">
 										<?php if (!empty ($mistri_occupation_level)) { ?>
-										<td class="day_label">Occupation</td>
+										<td class="day_label">পেশা</td>
 										<td class="day_value closed"><?php echo $mistri_occupation_level;?></td>
 										<?php } ?>
 									</tr>
 
 									<tr class="closed">
 										<?php if (!empty ($present_address_location)) { ?>
-										<td class="day_label">Present Address</td>
+										<td class="day_label">বর্তমান ঠিকানা</td>
 										<td class="day_value closed"><?php echo $present_address_location;?></td>
 										<?php } ?>
 									</tr>
@@ -857,54 +857,54 @@ echo "<script>alert(\"Invalid Profile ID\")</script>";
 							<div role="tabpanel" class="tab-pane fade in active" id="home" aria-labelledby="home-tab">
 								<div class="biodatavalue_list">
 									<table class="biodata_value_data">
-										<h3>Personal & Physical</h3>
+										<h3>শারীরিক তথ্য</h3>
 										<tbody>
 
 											<tr class="opened">
 												<?php if (!empty($biodatagender)) { ?>
-												<td class="day_label">Biodata Type</td>
+												<td class="day_label">বায়োডাটার ধরণ</td>
 												<td class="day_value"><?php echo $biodatagender; ?></td>
 												<?php } ?>
 											</tr>
 
 											<tr class="opened">
 												<?php if (!empty ($dob)) { ?>
-												<td class="day_label">DOB</td>
+												<td class="day_label">জন্ম তারিখ (আসল)</td>
 												<td class="day_value"><?php echo $dob;?></td>
 												<?php } ?>
 											</tr>
 
 											<tr class="opened">
 												<?php if (!empty ($height)) { ?>
-												<td class="day_label">Height</td>
+												<td class="day_label">উচ্চতা</td>
 												<td class="day_value"><?php echo $height;?></td>
 												<?php } ?>
 											</tr>
 											
 											<tr class="opened">
 												<?php if (!empty ($weight)) { ?>
-												<td class="day_label">Weight</td>
+												<td class="day_label">ওজন</td>
 												<td class="day_value"><?php echo $weight;?></td>
 												<?php } ?>
 											</tr>
 
 											<tr class="opened">
 												<?php if (!empty ($physicalstatus)) { ?>
-												<td class="day_label">Physical Status</td>
+												<td class="day_label">শারীরিক অবস্থা</td>
 												<td class="day_value closed"><span><?php echo $physicalstatus;?></span></td>
 												<?php } ?>
 											</tr>
 
 											<tr class="opened">
 												<?php if (!empty ($Skin_tones)) { ?>
-												<td class="day_label">Skin Tones</td>
+												<td class="day_label">শারীরিক বর্ণ</td>
 												<td class="day_value closed"><span><?php echo $Skin_tones;?></span></td>
 												<?php } ?>
 											</tr>
 
 											<tr class="opened">
 												<?php if (!empty ($bloodgroup)) { ?>
-												<td class="day_label">Blood Group</td>
+												<td class="day_label">রক্তের গ্রুপ</td>
 												<td class="day_value closed"><span><?php echo $bloodgroup;?></span></td>
 												<?php } ?>
 											</tr>
@@ -998,131 +998,124 @@ echo "<script>alert(\"Invalid Profile ID\")</script>";
 
 				    			<div class="biodatavalue_list">
 									<table class="biodata_value_data">
-										<h3>Personal & Life Style</h3>
+										<h3>ব্যক্তিগত তথ্য</h3>
 										<tbody>
 
 											<tr class="opened">
 												<?php if (!empty ($smoke)) { ?>
-												<td class="day_label">Smoke or Drinks</td>
+												<td class="day_label">ধূমপান করা হয়?</td>
 												<td class="day_value"><?php echo $smoke;?></td>
 												<?php } ?>
 											</tr>
 
 											<tr class="opened">
 												<?php if (!empty ($occupation_sector)) { ?>
-												<td class="day_label">Occupation Sector</td>
+												<td class="day_label">পেশা</td>
 												<td class="day_value"><?php echo $occupation_sector;?></td>
 												<?php } ?>
 											</tr>
 											
 											<tr class="opened">
 												<?php if (!empty ($other_occupation_sector)) { ?>
-												<td class="day_label">Other Occupation</td>
+												<td class="day_label">পেশা</td>
 												<td class="day_value"><?php echo $other_occupation_sector;?></td>
 												<?php } ?>
 											</tr>
 
 											<tr class="closed">
 												<?php if (!empty ($business_occupation_level)) { ?>
-												<td class="day_label">Occupation</td>
+												<td class="day_label">পেশার অবস্থান</td>
 												<td class="day_value closed"><?php echo $business_occupation_level;?></td>
 												<?php } ?>
 											</tr>
 
 											<tr class="closed">
 												<?php if (!empty ($student_occupation_level)) { ?>
-												<td class="day_label">Occupation</td>
+												<td class="day_label">পেশার অবস্থান</td>
 												<td class="day_value closed"><?php echo $student_occupation_level;?></td>
 												<?php } ?>
 											</tr>
 
 											<tr class="closed">
 												<?php if (!empty ($health_occupation_level)) { ?>
-												<td class="day_label">Occupation</td>
+												<td class="day_label">পেশার অবস্থান</td>
 												<td class="day_value closed"><?php echo $health_occupation_level;?></td>
 												<?php } ?>
 											</tr>
 
 											<tr class="closed">
 												<?php if (!empty ($engineer_occupation_level)) { ?>
-												<td class="day_label">Occupation</td>
+												<td class="day_label">পেশার অবস্থান</td>
 												<td class="day_value closed"><?php echo $engineer_occupation_level;?></td>
 												<?php } ?>
 											</tr>
 
 											<tr class="closed">
 												<?php if (!empty ($teacher_occupation_level)) { ?>
-												<td class="day_label">Occupation</td>
+												<td class="day_label">পেশার অবস্থান</td>
 												<td class="day_value closed"><?php echo $teacher_occupation_level;?></td>
 												<?php } ?>
 											</tr>
 
 											<tr class="closed">
 												<?php if (!empty ($defense_occupation_level)) { ?>
-												<td class="day_label">Occupation</td>
+												<td class="day_label">পেশার অবস্থান</td>
 												<td class="day_value closed"><?php echo $defense_occupation_level;?></td>
 												<?php } ?>
 											</tr>
 
 											<tr class="closed">
 												<?php if (!empty ($foreigner_occupation_level)) { ?>
-												<td class="day_label">Occupation</td>
+												<td class="day_label">পেশার অবস্থান</td>
 												<td class="day_value closed"><?php echo $foreigner_occupation_level;?></td>
 												<?php } ?>
 											</tr>
 
 											<tr class="closed">
 												<?php if (!empty ($garments_occupation_level)) { ?>
-												<td class="day_label">Occupation</td>
+												<td class="day_label">পেশার অবস্থান</td>
 												<td class="day_value closed"><?php echo $garments_occupation_level;?></td>
 												<?php } ?>
 											</tr>
 
 											<tr class="closed">
 												<?php if (!empty ($driver_occupation_level)) { ?>
-												<td class="day_label">Occupation</td>
+												<td class="day_label">পেশার অবস্থান</td>
 												<td class="day_value closed"><?php echo $driver_occupation_level;?></td>
 												<?php } ?>
 											</tr>
 
 											<tr class="closed">
 												<?php if (!empty ($service_andcommon_occupation_level)) { ?>
-												<td class="day_label">Occupation</td>
+												<td class="day_label">পেশার অবস্থান</td>
 												<td class="day_value closed"><?php echo $service_andcommon_occupation_level;?></td>
 												<?php } ?>
 											</tr>
 
 											<tr class="closed">
 												<?php if (!empty ($mistri_occupation_level)) { ?>
-												<td class="day_label">Occupation</td>
+												<td class="day_label">পেশার অবস্থান</td>
 												<td class="day_value closed"><?php echo $mistri_occupation_level;?></td>
 												<?php } ?>
 											</tr>
 
 											<tr class="opened">
-												<?php if (!empty ($occupation_level)) { ?>
-												<td class="day_label">Occupation Level</td>
-												<td class="day_value closed"><span><?php echo $occupation_level;?></span></td>
-												<?php } ?>
-											</tr>
-
-											<tr class="opened">
 												<?php if (!empty ($occupation_describe)) { ?>
-												<td class="day_label">Occupation Describe</td>
+												<td class="day_label">পেশার বিস্তারিত তথ্য</td>
 												<td class="day_value closed"><span><?php echo $occupation_describe;?></span></td>
 												<?php } ?>
 											</tr>
 
 											<tr class="opened">
 												<?php if (!empty ($dress_code)) { ?>
-												<td class="day_label">Dress Code</td>
+												<td class="day_label">ঘর ও ঘরের বাহিরে পোশাকের ধরন</td>
 												<td class="day_value closed"><span><?php echo $dress_code;?></span></td>
 												<?php } ?>
 											</tr>
 
 											<tr class="opened">
 												<?php if (!empty ($aboutme)) { ?>
-												<td class="day_label">About Me</td>
+												<td class="day_label">ভালো ও মন্দ বিষয়ে কিছু তথ্য</td>
 												<td class="day_value closed"><span><?php echo $aboutme;?></span></td>
 												<?php } ?>
 											</tr>
@@ -1284,194 +1277,194 @@ echo "<script>alert(\"Invalid Profile ID\")</script>";
 
 								<div class="biodatavalue_list">
 									<table class="biodata_value_data">
-										<h3>Educational Qualifications</h3>
+										<h3>শিক্ষাগত যোগ্যতা</h3>
 										<tbody>
 
 											<tr class="opened">
 												<?php if (!empty ($secondary_edu_method)) { ?>
-												<td class="day_label">Secondary Education Method</td>
+												<td class="day_label">মাধ্যমিক/সমমান শিক্ষার মাধ্যম</td>
 												<td class="day_value"><?php echo $secondary_edu_method; ?></td>
 												<?php } ?>
 											</tr>
 
 											<tr class="opened">
 												<?php if (!empty ($maxedu_qulfctn)) { ?>
-												<td class="day_label">Maximum Education Qualification</td>
+												<td class="day_label">সর্বোচ্চ শিক্ষাগত যোগ্যতা</td>
 												<td class="day_value"><?php echo $maxedu_qulfctn; ?></td>
 												<?php } ?>
 											</tr>
 
 											<tr class="opened">
 												<?php if (!empty ($qawmi_madrasa_hafez)) { ?>
-												<td class="day_label">Are you Hafeza/Hafeza?</td>
+												<td class="day_label">আপনি কি হাফেজ / হাফেজা?</td>
 												<td class="day_value"><?php echo $qawmi_madrasa_hafez; ?></td>
 												<?php } ?>
 											</tr>
 
 											<tr class="opened">
 												<?php if (!empty ($qawmimadrasa_dawrapass)) { ?>
-												<td class="day_label">Are you Dawra Pass?</td>
+												<td class="day_label">দাওরায়ে হাদিস পাস করেছেন? (মাস্টার্স)</td>
 												<td class="day_value"><?php echo $qawmimadrasa_dawrapass; ?></td>
 												<?php } ?>
 											</tr>
 
 											<tr class="opened">
 												<?php if (!empty ($kowmi_dawrapas_year)) { ?>
-												<td class="day_label">Dawra Pass Year?</td>
+												<td class="day_label">দাওরায়ে হাদিস পাসের বর্ষ</td>
 												<td class="day_value"><?php echo $kowmi_dawrapas_year; ?></td>
 												<?php } ?>
 											</tr>
 
 											<tr class="opened">
 												<?php if (!empty ($kowmi_current_edu_level)) { ?>
-												<td class="day_label">Current Jamat?</td>
+												<td class="day_label">মাদ্রাসায় বর্তমান অধ্যায়নরত জামাত</td>
 												<td class="day_value"><?php echo $kowmi_current_edu_level; ?></td>
 												<?php } ?>
 											</tr>
 
 											<tr class="opened">
 												<?php if (!empty ($gnrl_mdrs_secondary_pass)) { ?>
-												<td class="day_label">Secondary Pass korechen?</td>
+												<td class="day_label">মাধ্যমিক পাস করেছেন?</td>
 												<td class="day_value"><?php echo $gnrl_mdrs_secondary_pass; ?></td>
 												<?php } ?>
 											</tr>
 
 											<tr class="opened">
 												<?php if (!empty ($gnrl_mdrs_secondary_pass_year)) { ?>
-												<td class="day_label">kot sale pash korechen?</td>
+												<td class="day_label">মাধ্যমিক পাসের বর্ষ</td>
 												<td class="day_value"><?php echo $gnrl_mdrs_secondary_pass_year; ?></td>
 												<?php } ?>
 											</tr>
 
 											<tr class="opened">
 												<?php if (!empty ($gnrl_mdrs_secondary_end_year)) { ?>
-												<td class="day_label">secondary pash korben kobe?</td>
+												<td class="day_label">মাধ্যমিক বোর্ড পরীক্ষার বর্ষ</td>
 												<td class="day_value"><?php echo $gnrl_mdrs_secondary_end_year; ?></td>
 												<?php } ?>
 											</tr>
 
 											<tr class="opened">
 												<?php if (!empty ($gnrlmdrs_secondary_running_std)) { ?>
-												<td class="day_label">akhon kon cls a portechen?</td>
+												<td class="day_label">মাধ্যমিকে বর্তমান অধ্যায়নরত ক্লাস</td>
 												<td class="day_value"><?php echo $gnrlmdrs_secondary_running_std; ?></td>
 												<?php } ?>
 											</tr>
 
 											<tr class="opened">
 												<?php if (!empty ($higher_secondary_edu_method)) { ?>
-												<td class="day_label">Higher Secondary Education method</td>
+												<td class="day_label">উচ্চমাধ্যমিক/সমমান শিক্ষার মাধ্যম</td>
 												<td class="day_value"><?php echo $higher_secondary_edu_method; ?></td>
 												<?php } ?>
 											</tr>
 
 											<tr class="opened">
 												<?php if (!empty ($gnrlmdrs_hrsecondary_pass)) { ?>
-												<td class="day_label">Hr Scndry pass korechen?</td>
+												<td class="day_label">উচ্চমাধ্যমিক পাস করেছেন?</td>
 												<td class="day_value"><?php echo $gnrlmdrs_hrsecondary_pass; ?></td>
 												<?php } ?>
 											</tr>
 
 											<tr class="opened">
 												<?php if (!empty ($gnrlmdrs_hrsecondary_pass_year)) { ?>
-												<td class="day_label">koto sale hr scndry pass korechen?</td>
+												<td class="day_label">উচ্চমাধ্যমিক পাসের বর্ষ</td>
 												<td class="day_value"><?php echo $gnrlmdrs_hrsecondary_pass_year; ?></td>
 												<?php } ?>
 											</tr>
 
 											<tr class="opened">
 												<?php if (!empty ($gnrlmdrs_hrsecondary_exam_year)) { ?>
-												<td class="day_label">koto sale hr scndry pass korbnen?</td>
+												<td class="day_label">উচ্চমাধ্যমিক বোর্ড পরীক্ষার বর্ষ</td>
 												<td class="day_value"><?php echo $gnrlmdrs_hrsecondary_exam_year; ?></td>
 												<?php } ?>
 											</tr>
 
 											<tr class="opened">
 												<?php if (!empty ($gnrlmdrs_hrsecondary_group)) { ?>
-												<td class="day_label">hr scdry apnar group?</td>
+												<td class="day_label">উচ্চমাধ্যমিকে গ্রুপ</td>
 												<td class="day_value"><?php echo $gnrlmdrs_hrsecondary_group; ?></td>
 												<?php } ?>
 											</tr>
 
 											<tr class="opened">
 												<?php if (!empty ($gnrlmdrs_hrsecondary_rningstd)) { ?>
-												<td class="day_label">hr scdry akhon kon yeare achen?</td>
+												<td class="day_label">উচ্চমাধ্যমিকে বর্তমান অধ্যায়নরত ক্লাস</td>
 												<td class="day_value"><?php echo $gnrlmdrs_hrsecondary_rningstd; ?></td>
 												<?php } ?>
 											</tr>
 
 											<tr class="opened">
 												<?php if (!empty ($diploma_hrsecondary_pass)) { ?>
-												<td class="day_label">Diploma pass korchen?</td>
+												<td class="day_label">ডিপ্লোমা পাস করেছেন?</td>
 												<td class="day_value"><?php echo $diploma_hrsecondary_pass; ?></td>
 												<?php } ?>
 											</tr>
 
 											<tr class="opened">
 												<?php if (!empty ($diploma_hrsecondary_pass_year)) { ?>
-												<td class="day_label">Diploma koto sale pass korechen?</td>
+												<td class="day_label">ডিপ্লোমা পাসের বর্ষ</td>
 												<td class="day_value"><?php echo $diploma_hrsecondary_pass_year; ?></td>
 												<?php } ?>
 											</tr>
 
 											<tr class="opened">
 												<?php if (!empty ($diploma_hrsecondary_sub)) { ?>
-												<td class="day_label">Diploma Subject</td>
+												<td class="day_label">ডিপ্লোমায় সাবজেক্ট</td>
 												<td class="day_value"><?php echo $diploma_hrsecondary_sub; ?></td>
 												<?php } ?>
 											</tr>
 
 											<tr class="opened">
 												<?php if (!empty ($diploma_hrsecondary_endingyear)) { ?>
-												<td class="day_label">Dilopma Ending year</td>
+												<td class="day_label">ডিপ্লোমা সম্পন্ন হবে</td>
 												<td class="day_value"><?php echo $diploma_hrsecondary_endingyear; ?></td>
 												<?php } ?>
 											</tr>
 
 											<tr class="opened">
 												<?php if (!empty ($varsity_edu_method)) { ?>
-												<td class="day_label">Varsity Education Method</td>
+												<td class="day_label">স্নাতক/সমমান শিক্ষার মাধ্যম</td>
 												<td class="day_value"><?php echo $varsity_edu_method; ?></td>
 												<?php } ?>
 											</tr>
 
 											<tr class="opened">
 												<?php if (!empty ($uvarsity_pass)) { ?>
-												<td class="day_label">Varsity pass korechen?</td>
+												<td class="day_label">স্নাতক/সমমান পাস করেছেন?</td>
 												<td class="day_value"><?php echo $uvarsity_pass; ?></td>
 												<?php } ?>
 											</tr>
 
 											<tr class="opened">
 												<?php if (!empty ($varsity_passing_year)) { ?>
-												<td class="day_label">koto sale Varsity pass korechen?</td>
+												<td class="day_label">স্নাতক/সমমান পাসের বর্ষ</td>
 												<td class="day_value"><?php echo $varsity_passing_year; ?></td>
 												<?php } ?>
 											</tr>
 
 											<tr class="opened">
 												<?php if (!empty ($university_subject)) { ?>
-												<td class="day_label">Varsity Subject</td>
+												<td class="day_label">স্নাতকে/সমমানে সাবজেক্ট</td>
 												<td class="day_value"><?php echo $university_subject; ?></td>
 												<?php } ?>
 											</tr>
 
 											<tr class="opened">
 												<?php if (!empty ($varsity_ending_year)) { ?>
-												<td class="day_label">Varsity Ending Year?</td>
+												<td class="day_label">স্নাতক/সমমান সম্পন্ন হবে</td>
 												<td class="day_value"><?php echo $varsity_ending_year; ?></td>
 												<?php } ?>
 											</tr>
 
 											<tr class="opened">
 												<?php if (!empty ($uvarsity_name)) { ?>
-												<td class="day_label">Varsity Name</td>
+												<td class="day_label">স্নাতকে/সমমানে শিক্ষা প্রতিষ্ঠান</td>
 												<td class="day_value"><?php echo $uvarsity_name; ?></td>
 												<?php } ?>
 											</tr>
 
 											<tr class="opened">
 												<?php if (!empty ($others_edu_qualification)) { ?>
-												<td class="day_label">Others Qualifications</td>
+												<td class="day_label">অন্যান্য শিক্ষাগত যোগ্যতা</td>
 												<td class="day_value"><?php echo $others_edu_qualification; ?></td>
 												<?php } ?>
 											</tr>
@@ -1549,89 +1542,89 @@ echo "<script>alert(\"Invalid Profile ID\")</script>";
 
 				    			<div class="biodatavalue_list">
 									<table class="biodata_value_data">
-										<h3>Address Details</h3>
+										<h3>বর্তমান এবং স্থায়ী ঠিকানা</h3>
 										<tbody>
 
 											<tr class="opened">
 												<?php if (!empty ($permanent_division)) { ?>
-												<td class="day_label">Permanent Address Division</td>
+												<td class="day_label">স্থায়ী ঠিকানার বিভাগ</td>
 												<td class="day_value"><?php echo $permanent_division; ?></td>
 												<?php } ?>
 											</tr>
 
 											<tr class="closed">
 												<?php if (!empty ($home_district_under_barishal)) { ?>
-												<td class="day_label">Home District</td>
+												<td class="day_label">স্থায়ী ঠিকানার জেলা</td>
 												<td class="day_value closed"><?php echo $home_district_under_barishal;?></td>
 												<?php } ?>
 											</tr>
 
 											<tr class="closed">
 												<?php if (!empty ($home_district_under_chattogram)) { ?>
-												<td class="day_label">Home District</td>
+												<td class="day_label">স্থায়ী ঠিকানার জেলা</td>
 												<td class="day_value closed"><?php echo $home_district_under_chattogram;?></td>
 												<?php } ?>
 											</tr>
 
 											<tr class="closed">
 												<?php if (!empty ($home_district_under_dhaka)) { ?>
-												<td class="day_label">Home District</td>
+												<td class="day_label">স্থায়ী ঠিকানার জেলা</td>
 												<td class="day_value closed"><?php echo $home_district_under_dhaka;?></td>
 												<?php } ?>
 											</tr>
 
 											<tr class="closed">
 												<?php if (!empty ($home_district_under_khulna)) { ?>
-												<td class="day_label">Home District</td>
+												<td class="day_label">স্থায়ী ঠিকানার জেলা</td>
 												<td class="day_value closed"><?php echo $home_district_under_khulna;?></td>
 												<?php } ?>
 											</tr>
 
 											<tr class="closed">
 												<?php if (!empty ($home_district_under_mymensingh)) { ?>
-												<td class="day_label">Home District</td>
+												<td class="day_label">স্থায়ী ঠিকানার জেলা</td>
 												<td class="day_value closed"><?php echo $home_district_under_mymensingh;?></td>
 												<?php } ?>
 											</tr>
 
 											<tr class="closed">
 												<?php if (!empty ($home_district_under_rajshahi)) { ?>
-												<td class="day_label">Home District</td>
+												<td class="day_label">স্থায়ী ঠিকানার জেলা</td>
 												<td class="day_value closed"><?php echo $home_district_under_rajshahi;?></td>
 												<?php } ?>
 											</tr>
 
 											<tr class="closed">
 												<?php if (!empty ($home_district_under_rangpur)) { ?>
-												<td class="day_label">Home District</td>
+												<td class="day_label">স্থায়ী ঠিকানার জেলা</td>
 												<td class="day_value closed"><?php echo $home_district_under_rangpur;?></td>
 												<?php } ?>
 											</tr>
 
 											<tr class="closed">
 												<?php if (!empty ($home_district_under_sylhet)) { ?>
-												<td class="day_label">Home District</td>
+												<td class="day_label">স্থায়ী ঠিকানার জেলা</td>
 												<td class="day_value closed"><?php echo $home_district_under_sylhet;?></td>
 												<?php } ?>
 											</tr>
 
 											<tr class="opened">
 												<?php if (!empty ($country_present_address)) { ?>
-												<td class="day_label">Present Address Country</td>
+												<td class="day_label">বর্তমানে যে দেশে আছেন</td>
 												<td class="day_value"><?php echo $country_present_address;?></td>
 												<?php } ?>
 											</tr>
 
 											<tr class="opened">
 												<?php if (!empty ($present_address_location)) { ?>
-												<td class="day_label">Present Address Location</td>
+												<td class="day_label">বর্তমান বসবাসের ঠিকানা</td>
 												<td class="day_value"><?php echo $present_address_location; ?></td>
 												<?php } ?>
 											</tr>
 
 											<tr class="opened">
 												<?php if (!empty ($childhood)) { ?>
-												<td class="day_label">Childhood</td>
+												<td class="day_label">বাল্যকালে কোথায় থেকেছেন?</td>
 												<td class="day_value"><?php echo $childhood; ?></td>
 												<?php } ?>
 											</tr>
@@ -1773,13 +1766,13 @@ echo "<script>alert(\"Invalid Profile ID\")</script>";
 
 				    			<div class="biodatavalue_list">
 									<table class="biodata_value_data">
-										<h3>Marriage related Information</h3>
+										<h3>বিবাহ সম্পর্কিত তথ্য</h3>
 										<tbody>
 
 										<!-- Marital Status 6 & 7 -->
 											<tr class="opened">
 												<?php if (!empty ($maritalstatus)) { ?>
-												<td class="day_label">Marital Status</td>
+												<td class="day_label">বৈবাহিক অবস্থা</td>
 												<td class="day_value"><?php echo $maritalstatus; ?></td>
 												<?php } ?>
 											</tr>
@@ -1788,21 +1781,21 @@ echo "<script>alert(\"Invalid Profile ID\")</script>";
 											<!-- If Divorce -->
 											<tr class="opened">
 												<?php if (!empty ($divorce_reason)) { ?>
-												<td class="day_label">Reason of Divorce?</td>
+												<td class="day_label">ডিভোর্সের কারণ</td>
 												<td class="day_value"><?php echo $divorce_reason; ?></td>
 												<?php } ?>
 											</tr>
 
 											<tr class="opened">
 												<?php if (!empty ($divorce_how_many_son)) { ?>
-												<td class="day_label">How many sons?</td>
+												<td class="day_label">কয়টি সন্তান আছে</td>
 												<td class="day_value"><?php echo $divorce_how_many_son; ?></td>
 												<?php } ?>
 											</tr>
 
 											<tr class="opened">
 												<?php if (!empty ($divorce_son_details)) { ?>
-												<td class="day_label">Son Details?</td>
+												<td class="day_label">সন্তান সম্পর্কিত তথ্য</td>
 												<td class="day_value"><?php echo $divorce_son_details; ?></td>
 												<?php } ?>
 											</tr>
@@ -1811,21 +1804,21 @@ echo "<script>alert(\"Invalid Profile ID\")</script>";
 											<!-- If Widow -->
 											<tr class="opened">
 												<?php if (!empty ($how_widow)) { ?>
-												<td class="day_label">How to Widow?</td>
+												<td class="day_label">স্বামী যেভাবে মারা গেছেন</td>
 												<td class="day_value"><?php echo $how_widow; ?></td>
 												<?php } ?>
 											</tr>
 
 											<tr class="opened">
 												<?php if (!empty ($widow_how_many_son)) { ?>
-												<td class="day_label">How many sons?</td>
+												<td class="day_label">কয়টি সন্তান আছে</td>
 												<td class="day_value"><?php echo $widow_how_many_son; ?></td>
 												<?php } ?>
 											</tr>
 
 											<tr class="opened">
 												<?php if (!empty ($widow_son_details)) { ?>
-												<td class="day_label">Son Details?</td>
+												<td class="day_label">সন্তান সম্পর্কিত তথ্য</td>
 												<td class="day_value"><?php echo $widow_son_details; ?></td>
 												<?php } ?>
 											</tr>
@@ -1833,21 +1826,21 @@ echo "<script>alert(\"Invalid Profile ID\")</script>";
 											<!-- If Widower -->
 											<tr class="opened">
 												<?php if (!empty ($how_widower)) { ?>
-												<td class="day_label">How to Widower?</td>
+												<td class="day_label">স্ত্রী যেভাবে মারা গেছেন</td>
 												<td class="day_value"><?php echo $how_widower; ?></td>
 												<?php } ?>
 											</tr>
 
 											<tr class="opened">
 												<?php if (!empty ($widower_how_many_son)) { ?>
-												<td class="day_label">How many sons?</td>
+												<td class="day_label">কয়টি সন্তান আছে</td>
 												<td class="day_value"><?php echo $widower_how_many_son; ?></td>
 												<?php } ?>
 											</tr>
 
 											<tr class="opened">
 												<?php if (!empty ($widower_son_details)) { ?>
-												<td class="day_label">Son Details?</td>
+												<td class="day_label">সন্তান সম্পর্কিত তথ্য</td>
 												<td class="day_value"><?php echo $widower_son_details; ?></td>
 												<?php } ?>
 											</tr>
@@ -1856,35 +1849,35 @@ echo "<script>alert(\"Invalid Profile ID\")</script>";
 											<!-- If Married -->
 											<tr class="opened">
 												<?php if (!empty ($get_wife_permission)) { ?>
-												<td class="day_label">Get permission from your present Wife?</td>
+												<td class="day_label">বর্তমান স্ত্রীর অনুমতি নিয়েছেন?</td>
 												<td class="day_value"><?php echo $get_wife_permission; ?></td>
 												<?php } ?>
 											</tr>
 
 											<tr class="opened">
 												<?php if (!empty ($get_family_permission)) { ?>
-												<td class="day_label">Get permission from your Family & Wife's Family?</td>
+												<td class="day_label">স্ত্রীর ও আপনার পরিবারের অনুমতি নিয়েছেন?</td>
 												<td class="day_value"><?php echo $get_family_permission; ?></td>
 												<?php } ?>
 											</tr>
 
 											<tr class="opened">
 												<?php if (!empty ($why_again_married)) { ?>
-												<td class="day_label">Why again Married?</td>
+												<td class="day_label">আবার বিয়ে করার কারণ</td>
 												<td class="day_value"><?php echo $why_again_married; ?></td>
 												<?php } ?>
 											</tr>
 
 											<tr class="opened">
 												<?php if (!empty ($married_how_many_son)) { ?>
-												<td class="day_label">How many sons?</td>
+												<td class="day_label">কয়টি সন্তান আছে</td>
 												<td class="day_value"><?php echo $married_how_many_son; ?></td>
 												<?php } ?>
 											</tr>
 
 											<tr class="opened">
 												<?php if (!empty ($married_son_details)) { ?>
-												<td class="day_label">Son Details?</td>
+												<td class="day_label">সন্তান সম্পর্কিত তথ্য</td>
 												<td class="day_value"><?php echo $married_son_details; ?></td>
 												<?php } ?>
 											</tr>
@@ -1894,7 +1887,7 @@ echo "<script>alert(\"Invalid Profile ID\")</script>";
 										<!-- This sections for All Maritial StatusShow just without Married -->
 											<tr class="opened">
 												<?php if (!empty ($guardians_agree)) { ?>
-												<td class="day_label">Guardians Agree</td>
+												<td class="day_label">পরিবারের অনুমতি নিয়েছেন?</td>
 												<td class="day_value"><?php echo $guardians_agree; ?></td>
 												<?php } ?>
 											</tr>
@@ -1904,14 +1897,14 @@ echo "<script>alert(\"Invalid Profile ID\")</script>";
 										<!-- bd_marriage_related_qs Male & Female -->
 											<tr class="opened">
 												<?php if (!empty ($allowstudy_aftermarriage)) { ?>
-												<td class="day_label">Allow Study After Marriage</td>
+												<td class="day_label">স্ত্রীকে প্রাতিষ্ঠানিক পড়ালেখা করতে দিতে ইচ্ছুক?</td>
 												<td class="day_value"><?php echo $allowstudy_aftermarriage;?></td>
 												<?php } ?>
 											</tr>
 											<!-- Top Male |OR| Bellow Female -->
 											<tr class="opened">
 												<?php if (!empty ($studies_aftermarriage)) { ?>
-												<td class="day_label">Studies After Marriage</td>
+												<td class="day_label">বিয়ের পর পড়াশোনা চালিয়ে যেতে চান?</td>
 												<td class="day_value"><?php echo $studies_aftermarriage;?></td>
 												<?php } ?>
 											</tr>
@@ -1919,14 +1912,14 @@ echo "<script>alert(\"Invalid Profile ID\")</script>";
 
 											<tr class="opened">
 												<?php if (!empty ($allowjob_aftermarriage)) { ?>
-												<td class="day_label">Allow Job After Marriage</td>
+												<td class="day_label">স্ত্রীকে চাকরি করতে দিতে ইচ্ছুক?</td>
 												<td class="day_value"><?php echo $allowjob_aftermarriage;?></td>
 												<?php } ?>
 											</tr>
 											<!-- Top Male |OR| Bellow Female -->
 											<tr class="opened">
 												<?php if (!empty ($anyjob_aftermarriage)) { ?>
-												<td class="day_label">Any Job After Marriage</td>
+												<td class="day_label">বিয়ের পর চাকরি করতে চান?</td>
 												<td class="day_value"><?php echo $anyjob_aftermarriage;?></td>
 												<?php } ?>
 											</tr>
@@ -1934,26 +1927,31 @@ echo "<script>alert(\"Invalid Profile ID\")</script>";
 											
 											<tr class="opened">
 												<?php if (!empty ($livewife_aftermarriage)) { ?>
-												<td class="day_label">Live Wife After Marriage</td>
+												<td class="day_label">বিয়ের পর স্ত্রীকে নিয়ে কোথায় থাকবেন?</td>
 												<td class="day_value"><?php echo $livewife_aftermarriage; ?></td>
 												<?php } ?>
 											</tr>
 											<!-- Top Male |OR| Bellow Female -->
 											<tr class="opened">
 												<?php if (!empty ($agree_marriage_student)) { ?>
-												<td class="day_label">Agree Marriage Student</td>
+												<td class="day_label">শিক্ষার্থী বিয়ে করতে রাজি আছেন?</td>
 												<td class="day_value"><?php echo $agree_marriage_student; ?></td>
 												<?php } ?>
 											</tr>
 
 
 
-											<tr class="opened">
-												<?php if (!empty ($profileby)) { ?>
-												<td class="day_label">Profile By</td>
-												<td  class="day_value closed"><span><?php echo $profileby;?></span></td>
-												<?php } ?>
-											</tr>
+											<?php
+											$loggedInUserId = "user_id"; // Replace "YourUserId" with the ID of the currently logged-in user
+											$profileOwnerId = $profileid; // Assuming $profileid contains the user_id or main registration ID of the profile owner
+
+											if (!empty($profileby) && $profileby == $profileOwnerId && $profileOwnerId == $loggedInUserId) {
+											?>
+												<tr class="opened">
+													<td class="day_label">বায়োডাটা পোস্ট করেছেন</td>
+													<td class="day_value closed"><span><?php echo $profileby; ?></span></td>
+												</tr>
+											<?php } ?>
 
 										</tbody>
 									</table>
@@ -2002,19 +2000,19 @@ echo "<script>alert(\"Invalid Profile ID\")</script>";
 
 								<div class="biodatavalue_list">
 									<table class="biodata_value_data">
-										<h3>Religion Details</h3>
+										<h3>ধর্মীয় বিষয়</h3>
 				        				<tbody>
 
 											<tr class="opened">
 												<?php if (!empty ($religion)) { ?>
-												<td class="day_label">Religion</td>
+												<td class="day_label">ধর্ম</td>
 												<td class="day_value"><?php echo $religion; ?></td>
 												<?php } ?>
 											</tr>
 
 											<tr class="opened">
 												<?php if (!empty ($yourreligion_condition)) { ?>
-												<td class="day_label">Your Religion Condition</td>
+												<td class="day_label">ধর্মীয় বিষয়াবলি</td>
 												<td class="day_value"><?php echo $yourreligion_condition;?></td>
 												<?php } ?>
 											</tr>
@@ -2089,47 +2087,47 @@ echo "<script>alert(\"Invalid Profile ID\")</script>";
 							<div role="tabpanel" class="tab-pane fade" id="profile" aria-labelledby="profile-tab">
 								<div class="biodatavalue_list">
 									<table class="biodata_value_data">
-										<h3>Family Details</h3>
+										<h3>পারিবারিক ও সামাজিক তথ্য</h3>
 										<tbody>
 
 											<tr class="opened">
 												<?php if (!empty ($father_alive)) { ?>
-												<td class="day_label">Father Alive</td>
+												<td class="day_label">বাবা বেঁচে আছেন?</td>
 												<td class="day_value"><?php echo $father_alive;?></td>
 												<?php } ?>
 											</tr>
 
 											<tr class="opened">
 												<?php if (!empty ($fatheroccupation)) { ?>
-												<td class="day_label">Father Occupation</td>
+												<td class="day_label">বাবার পেশা</td>
 												<td class="day_value"><?php echo $fatheroccupation;?></td>
 												<?php } ?>
 											</tr>
 
 											<tr class="opened">
 												<?php if (!empty ($mother_alive)) { ?>
-												<td class="day_label">Mother Alive</td>
+												<td class="day_label">মা বেঁচে আছেন?</td>
 												<td class="day_value closed"><span><?php echo $mother_alive;?></span></td>
 												<?php } ?>
 											</tr>
 
 											<tr class="opened">
 												<?php if (!empty ($motheroccupation)) { ?>
-												<td class="day_label">Mother Occupation</td>
+												<td class="day_label">মায়ের পেশা</td>
 												<td class="day_value closed"><span><?php echo $motheroccupation;?></span></td>
 												<?php } ?>
 											</tr>
 
 											<tr class="opened">
 												<?php if (!empty ($brosis_number)) { ?>
-												<td class="day_label">Bro Sis Number</td>
+												<td class="day_label">ভাইবোন কয়জন</td>
 												<td class="day_value closed"><span><?php echo $brosis_number;?></span></td>
 												<?php } ?>
 											</tr>
 
 											<tr class="opened">
 												<?php if (!empty ($brosis_info)) { ?>
-												<td class="day_label">Bro Sis Info</td>
+												<td class="day_label">ভাইবোন সম্পর্কিত তথ্য</td>
 												<td class="day_value closed"><span><?php echo $brosis_info;?></span></td>
 												<?php } ?>
 											</tr>
@@ -2137,28 +2135,28 @@ echo "<script>alert(\"Invalid Profile ID\")</script>";
 											
 											<tr class="opened">
 												<?php if (!empty ($uncle_profession)) { ?>
-												<td class="day_label">Uncle Profession</td>
+												<td class="day_label">চাচা/মামাদের পেশা</td>
 												<td class="day_value closed"><span><?php echo $uncle_profession;?></span></td>
 												<?php } ?>
 											</tr>
 
 											<tr class="opened">
 												<?php if (!empty ($family_class)) { ?>
-												<td class="day_label">Family Class</td>
+												<td class="day_label">পারিবারিক শ্রেণী</td>
 												<td class="day_value closed"><span><?php echo $family_class;?></span></td>
 												<?php } ?>
 											</tr>
 
 											<tr class="opened">
 												<?php if (!empty ($financial_condition)) { ?>
-												<td class="day_label">Financial Condition</td>
+												<td class="day_label">পরিবারের অর্থনৈতিক অবস্থা</td>
 												<td class="day_value closed"><span><?php echo $financial_condition;?></span></td>
 												<?php } ?>
 											</tr>
 
 											<tr class="opened">
 												<?php if (!empty ($family_religious_condition)) { ?>
-												<td class="day_label">Family Religious</td>
+												<td class="day_label">পারিবারিক ধর্মীয় ও সামাজিক অবস্থা</td>
 												<td class="day_value closed"><span><?php echo $family_religious_condition;?></span></td>
 												<?php } ?>
 											</tr>
@@ -2232,74 +2230,74 @@ echo "<script>alert(\"Invalid Profile ID\")</script>";
 							<div role="tabpanel" class="tab-pane fade" id="profile1" aria-labelledby="profile-tab1">
 								<div class="biodatavalue_list">
 									<table class="biodata_value_data">
-										<h3>Expected Partner</h3>
+										<h3>প্রত্যাশিত জীবনসঙ্গীর বিবরণ</h3>
 										<tbody>
 											<tr class="opened">
 												<?php if (!empty ($partner_religius)) { ?>
-												<td class="day_label">Partner Religius</td>
+												<td class="day_label">ধর্মীয় বিষয়</td>
 												<td class="day_value"><?php echo $partner_religius;?></td>
 												<?php } ?>
 											</tr>
 
 											<tr class="opened">
 												<?php if (!empty ($partner_district)) { ?>
-												<td class="day_label">Partner District</td>
+												<td class="day_label">জেলা</td>
 												<td class="day_value"><?php echo $partner_district;?></td>
 												<?php } ?>
 											</tr>
 
 											<tr class="opened">
 												<?php if (!empty ($partner_maritialstatus)) { ?>
-												<td class="day_label">Partner Maritial Status</td>
+												<td class="day_label">বৈবাহিক অবস্থা</td>
 												<td class="day_value closed"><span><?php echo $partner_maritialstatus;?></span></td>
 												<?php } ?>
 											</tr>
 
 											<tr class="opened">
 												<?php if (!empty ($partner_age)) { ?>
-												<td class="day_label">Partner Age</td>
+												<td class="day_label">বয়স</td>
 												<td class="day_value closed"><span><?php echo $partner_age;?></span></td>
 												<?php } ?>
 											</tr>
 
 											<tr class="opened">
 												<?php if (!empty ($partner_skintones)) { ?>
-												<td class="day_label">Partner Skin Tones</td>
+												<td class="day_label">শারীরিক বর্ণ</td>
 												<td class="day_value closed"><span><?php echo $partner_skintones;?></span></td>
 												<?php } ?>
 											</tr>
 
 											<tr class="opened">
 												<?php if (!empty ($partner_height)) { ?>
-												<td class="day_label">Partner Height</td>
+												<td class="day_label">উচ্চতা</td>
 												<td class="day_value closed"><span><?php echo $partner_height;?></span></td>
 												<?php } ?>
 											</tr>
 
 											<tr class="opened">
 												<?php if (!empty ($partner_education)) { ?>
-												<td class="day_label">Partner Education</td>
+												<td class="day_label">শিক্ষাগত যোগ্যতা</td>
 												<td class="day_value closed"><span><?php echo $partner_education;?></span></td>
 												<?php } ?>
 											</tr>
 
 											<tr class="opened">
 												<?php if (!empty ($partner_profession)) { ?>
-												<td class="day_label">Partner Profession</td>
+												<td class="day_label">পেশা</td>
 												<td class="day_value closed"><span><?php echo $partner_profession;?></span></td>
 												<?php } ?>
 											</tr>
 
 											<tr class="opened">
 												<?php if (!empty ($partner_financial)) { ?>
-												<td class="day_label">Partner Financial</td>
+												<td class="day_label">অর্থনৈতিক অবস্থা</td>
 												<td class="day_value closed"><span><?php echo $partner_financial;?></span></td>
 												<?php } ?>
 											</tr>
 
 											<tr class="opened">
 												<?php if (!empty ($partner_attributes)) { ?>
-												<td class="day_label">Partner Attributes</td>
+												<td class="day_label">জীবনসঙ্গীর যেই গুনাবলী আশা করেন</td>
 												<td class="day_value closed"><span><?php echo $partner_attributes;?></span></td>
 												<?php } ?>
 											</tr>
