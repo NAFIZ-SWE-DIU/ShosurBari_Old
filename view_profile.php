@@ -1204,10 +1204,10 @@ echo "<script>alert(\"Invalid Profile ID\")</script>";
 									$row= mysqli_fetch_assoc($result);
 
 									if($row){
-									$secondary_edu_method=$row['secondary_edu_method'];
+									$scndry_edu_method=$row['scndry_edu_method'];
 									}
 									if($row){
-									$maxedu_qualification=$row['maxedu_qualification'];
+									$maxedu_qulfctn=$row['maxedu_qulfctn'];
 									}
 									if($row){
 									$qawmi_madrasa_hafez=$row['qawmi_madrasa_hafez'];
@@ -1255,7 +1255,7 @@ echo "<script>alert(\"Invalid Profile ID\")</script>";
 									$diploma_hrsecondary_pass=$row['diploma_hrsecondary_pass'];
 									}
 									if($row){
-									$diploma_hrsecondary_ending_year=$row['diploma_hrsecondary_ending_year'];
+									$diploma_hrsecondary_pass_year=$row['diploma_hrsecondary_pass_year'];
 									}
 									if($row){
 									$diploma_hrsecondary_sub=$row['diploma_hrsecondary_sub'];
@@ -1267,19 +1267,19 @@ echo "<script>alert(\"Invalid Profile ID\")</script>";
 									$varsity_edu_method=$row['varsity_edu_method'];
 									}
 									if($row){
-									$university_pass=$row['university_pass'];
+									$uvarsity_pass=$row['uvarsity_pass'];
 									}
 									if($row){
 									$varsity_passing_year=$row['varsity_passing_year'];
 									}
 									if($row){
-									$varsity_subject=$row['varsity_subject']; 
+									$university_subject=$row['university_subject']; 
 									}
 									if($row){
 									$varsity_ending_year=$row['varsity_ending_year'];
 									}
 									if($row){
-									$university_name=$row['university_name'];
+									$uvarsity_name=$row['uvarsity_name'];
 									}
 									if($row){
 									$others_edu_qualification=$row['others_edu_qualification'];
@@ -1295,26 +1295,20 @@ echo "<script>alert(\"Invalid Profile ID\")</script>";
 											<tr class="opened">
 												<?php if (!empty ($secondary_edu_method)) { ?>
 												<td class="day_label">Secondary Education Method</td>
-												<?php } ?>
-												<?php if (!empty ($secondary_edu_method)) { ?>
 												<td class="day_value"><?php echo $secondary_edu_method; ?></td>
 												<?php } ?>
 											</tr>
 
 											<tr class="opened">
-												<?php if (!empty ($maxedu_qualification)) { ?>
+												<?php if (!empty ($maxedu_qulfctn)) { ?>
 												<td class="day_label">Maximum Education Qualification</td>
-												<?php } ?>
-												<?php if (!empty ($maxedu_qualification)) { ?>
-												<td class="day_value"><?php echo $maxedu_qualification; ?></td>
+												<td class="day_value"><?php echo $maxedu_qulfctn; ?></td>
 												<?php } ?>
 											</tr>
 
 											<tr class="opened">
 												<?php if (!empty ($qawmi_madrasa_hafez)) { ?>
 												<td class="day_label">Are you Hafeza/Hafeza?</td>
-												<?php } ?>
-												<?php if (!empty ($qawmi_madrasa_hafez)) { ?>
 												<td class="day_value"><?php echo $qawmi_madrasa_hafez; ?></td>
 												<?php } ?>
 											</tr>
@@ -1322,8 +1316,6 @@ echo "<script>alert(\"Invalid Profile ID\")</script>";
 											<tr class="opened">
 												<?php if (!empty ($qawmimadrasa_dawrapass)) { ?>
 												<td class="day_label">Are you Dawra Pass?</td>
-												<?php } ?>
-												<?php if (!empty ($qawmimadrasa_dawrapass)) { ?>
 												<td class="day_value"><?php echo $qawmimadrasa_dawrapass; ?></td>
 												<?php } ?>
 											</tr>
@@ -1331,8 +1323,6 @@ echo "<script>alert(\"Invalid Profile ID\")</script>";
 											<tr class="opened">
 												<?php if (!empty ($kowmi_dawrapas_year)) { ?>
 												<td class="day_label">Dawra Pass Year?</td>
-												<?php } ?>
-												<?php if (!empty ($kowmi_dawrapas_year)) { ?>
 												<td class="day_value"><?php echo $kowmi_dawrapas_year; ?></td>
 												<?php } ?>
 											</tr>
@@ -1340,8 +1330,6 @@ echo "<script>alert(\"Invalid Profile ID\")</script>";
 											<tr class="opened">
 												<?php if (!empty ($kowmi_current_edu_level)) { ?>
 												<td class="day_label">Current Jamat?</td>
-												<?php } ?>
-												<?php if (!empty ($kowmi_current_edu_level)) { ?>
 												<td class="day_value"><?php echo $kowmi_current_edu_level; ?></td>
 												<?php } ?>
 											</tr>
@@ -1349,8 +1337,6 @@ echo "<script>alert(\"Invalid Profile ID\")</script>";
 											<tr class="opened">
 												<?php if (!empty ($gnrl_mdrs_secondary_pass)) { ?>
 												<td class="day_label">Secondary Pass korechen?</td>
-												<?php } ?>
-												<?php if (!empty ($gnrl_mdrs_secondary_pass)) { ?>
 												<td class="day_value"><?php echo $gnrl_mdrs_secondary_pass; ?></td>
 												<?php } ?>
 											</tr>
@@ -1358,8 +1344,6 @@ echo "<script>alert(\"Invalid Profile ID\")</script>";
 											<tr class="opened">
 												<?php if (!empty ($gnrl_mdrs_secondary_pass_year)) { ?>
 												<td class="day_label">kot sale pash korechen?</td>
-												<?php } ?>
-												<?php if (!empty ($gnrl_mdrs_secondary_pass_year)) { ?>
 												<td class="day_value"><?php echo $gnrl_mdrs_secondary_pass_year; ?></td>
 												<?php } ?>
 											</tr>
@@ -1367,8 +1351,6 @@ echo "<script>alert(\"Invalid Profile ID\")</script>";
 											<tr class="opened">
 												<?php if (!empty ($gnrl_mdrs_secondary_end_year)) { ?>
 												<td class="day_label">secondary pash korben kobe?</td>
-												<?php } ?>
-												<?php if (!empty ($gnrl_mdrs_secondary_end_year)) { ?>
 												<td class="day_value"><?php echo $gnrl_mdrs_secondary_end_year; ?></td>
 												<?php } ?>
 											</tr>
@@ -1376,8 +1358,6 @@ echo "<script>alert(\"Invalid Profile ID\")</script>";
 											<tr class="opened">
 												<?php if (!empty ($gnrlmdrs_secondary_running_std)) { ?>
 												<td class="day_label">akhon kon cls a portechen?</td>
-												<?php } ?>
-												<?php if (!empty ($gnrlmdrs_secondary_running_std)) { ?>
 												<td class="day_value"><?php echo $gnrlmdrs_secondary_running_std; ?></td>
 												<?php } ?>
 											</tr>
@@ -1385,8 +1365,6 @@ echo "<script>alert(\"Invalid Profile ID\")</script>";
 											<tr class="opened">
 												<?php if (!empty ($higher_secondary_edu_method)) { ?>
 												<td class="day_label">Higher Secondary Education method</td>
-												<?php } ?>
-												<?php if (!empty ($higher_secondary_edu_method)) { ?>
 												<td class="day_value"><?php echo $higher_secondary_edu_method; ?></td>
 												<?php } ?>
 											</tr>
@@ -1394,8 +1372,6 @@ echo "<script>alert(\"Invalid Profile ID\")</script>";
 											<tr class="opened">
 												<?php if (!empty ($gnrlmdrs_hrsecondary_pass)) { ?>
 												<td class="day_label">Hr Scndry pass korechen?</td>
-												<?php } ?>
-												<?php if (!empty ($gnrlmdrs_hrsecondary_pass)) { ?>
 												<td class="day_value"><?php echo $gnrlmdrs_hrsecondary_pass; ?></td>
 												<?php } ?>
 											</tr>
@@ -1403,8 +1379,6 @@ echo "<script>alert(\"Invalid Profile ID\")</script>";
 											<tr class="opened">
 												<?php if (!empty ($gnrlmdrs_hrsecondary_pass_year)) { ?>
 												<td class="day_label">koto sale hr scndry pass korechen?</td>
-												<?php } ?>
-												<?php if (!empty ($gnrlmdrs_hrsecondary_pass_year)) { ?>
 												<td class="day_value"><?php echo $gnrlmdrs_hrsecondary_pass_year; ?></td>
 												<?php } ?>
 											</tr>
@@ -1412,8 +1386,6 @@ echo "<script>alert(\"Invalid Profile ID\")</script>";
 											<tr class="opened">
 												<?php if (!empty ($gnrlmdrs_hrsecondary_exam_year)) { ?>
 												<td class="day_label">koto sale hr scndry pass korbnen?</td>
-												<?php } ?>
-												<?php if (!empty ($gnrlmdrs_hrsecondary_exam_year)) { ?>
 												<td class="day_value"><?php echo $gnrlmdrs_hrsecondary_exam_year; ?></td>
 												<?php } ?>
 											</tr>
@@ -1421,8 +1393,6 @@ echo "<script>alert(\"Invalid Profile ID\")</script>";
 											<tr class="opened">
 												<?php if (!empty ($gnrlmdrs_hrsecondary_group)) { ?>
 												<td class="day_label">hr scdry apnar group?</td>
-												<?php } ?>
-												<?php if (!empty ($gnrlmdrs_hrsecondary_group)) { ?>
 												<td class="day_value"><?php echo $gnrlmdrs_hrsecondary_group; ?></td>
 												<?php } ?>
 											</tr>
@@ -1430,8 +1400,6 @@ echo "<script>alert(\"Invalid Profile ID\")</script>";
 											<tr class="opened">
 												<?php if (!empty ($gnrlmdrs_hrsecondary_rningstd)) { ?>
 												<td class="day_label">hr scdry akhon kon yeare achen?</td>
-												<?php } ?>
-												<?php if (!empty ($gnrlmdrs_hrsecondary_rningstd)) { ?>
 												<td class="day_value"><?php echo $gnrlmdrs_hrsecondary_rningstd; ?></td>
 												<?php } ?>
 											</tr>
@@ -1439,8 +1407,6 @@ echo "<script>alert(\"Invalid Profile ID\")</script>";
 											<tr class="opened">
 												<?php if (!empty ($diploma_hrsecondary_pass)) { ?>
 												<td class="day_label">Diploma pass korchen?</td>
-												<?php } ?>
-												<?php if (!empty ($diploma_hrsecondary_pass)) { ?>
 												<td class="day_value"><?php echo $diploma_hrsecondary_pass; ?></td>
 												<?php } ?>
 											</tr>
@@ -1448,8 +1414,6 @@ echo "<script>alert(\"Invalid Profile ID\")</script>";
 											<tr class="opened">
 												<?php if (!empty ($diploma_hrsecondary_pass_year)) { ?>
 												<td class="day_label">Diploma koto sale pass korechen?</td>
-												<?php } ?>
-												<?php if (!empty ($diploma_hrsecondary_pass_year)) { ?>
 												<td class="day_value"><?php echo $diploma_hrsecondary_pass_year; ?></td>
 												<?php } ?>
 											</tr>
@@ -1457,8 +1421,6 @@ echo "<script>alert(\"Invalid Profile ID\")</script>";
 											<tr class="opened">
 												<?php if (!empty ($diploma_hrsecondary_sub)) { ?>
 												<td class="day_label">Diploma Subject</td>
-												<?php } ?>
-												<?php if (!empty ($diploma_hrsecondary_sub)) { ?>
 												<td class="day_value"><?php echo $diploma_hrsecondary_sub; ?></td>
 												<?php } ?>
 											</tr>
@@ -1466,8 +1428,6 @@ echo "<script>alert(\"Invalid Profile ID\")</script>";
 											<tr class="opened">
 												<?php if (!empty ($diploma_hrsecondary_endingyear)) { ?>
 												<td class="day_label">Dilopma Ending year</td>
-												<?php } ?>
-												<?php if (!empty ($diploma_hrsecondary_endingyear)) { ?>
 												<td class="day_value"><?php echo $diploma_hrsecondary_endingyear; ?></td>
 												<?php } ?>
 											</tr>
@@ -1475,62 +1435,48 @@ echo "<script>alert(\"Invalid Profile ID\")</script>";
 											<tr class="opened">
 												<?php if (!empty ($varsity_edu_method)) { ?>
 												<td class="day_label">Varsity Education Method</td>
-												<?php } ?>
-												<?php if (!empty ($varsity_edu_method)) { ?>
 												<td class="day_value"><?php echo $varsity_edu_method; ?></td>
 												<?php } ?>
 											</tr>
 
 											<tr class="opened">
-												<?php if (!empty ($university_pass)) { ?>
+												<?php if (!empty ($uvarsity_pass)) { ?>
 												<td class="day_label">Varsity pass korechen?</td>
-												<?php } ?>
-												<?php if (!empty ($university_pass)) { ?>
-												<td class="day_value"><?php echo $university_pass; ?></td>
+												<td class="day_value"><?php echo $uvarsity_pass; ?></td>
 												<?php } ?>
 											</tr>
 
 											<tr class="opened">
 												<?php if (!empty ($varsity_passing_year)) { ?>
 												<td class="day_label">koto sale Varsity pass korechen?</td>
-												<?php } ?>
-												<?php if (!empty ($varsity_passing_year)) { ?>
 												<td class="day_value"><?php echo $varsity_passing_year; ?></td>
 												<?php } ?>
 											</tr>
 
 											<tr class="opened">
-												<?php if (!empty ($varsity_subject)) { ?>
+												<?php if (!empty ($university_subject)) { ?>
 												<td class="day_label">Varsity Subject</td>
-												<?php } ?>
-												<?php if (!empty ($varsity_subject)) { ?>
-												<td class="day_value"><?php echo $varsity_subject; ?></td>
+												<td class="day_value"><?php echo $university_subject; ?></td>
 												<?php } ?>
 											</tr>
 
 											<tr class="opened">
 												<?php if (!empty ($varsity_ending_year)) { ?>
 												<td class="day_label">Varsity Ending Year?</td>
-												<?php } ?>
-												<?php if (!empty ($varsity_ending_year)) { ?>
 												<td class="day_value"><?php echo $varsity_ending_year; ?></td>
 												<?php } ?>
 											</tr>
 
 											<tr class="opened">
-												<?php if (!empty ($university_name)) { ?>
+												<?php if (!empty ($uvarsity_name)) { ?>
 												<td class="day_label">Varsity Name</td>
-												<?php } ?>
-												<?php if (!empty ($university_name)) { ?>
-												<td class="day_value"><?php echo $university_name; ?></td>
+												<td class="day_value"><?php echo $uvarsity_name; ?></td>
 												<?php } ?>
 											</tr>
 
 											<tr class="opened">
 												<?php if (!empty ($others_edu_qualification)) { ?>
 												<td class="day_label">Others Qualifications</td>
-												<?php } ?>
-												<?php if (!empty ($others_edu_qualification)) { ?>
 												<td class="day_value"><?php echo $others_edu_qualification; ?></td>
 												<?php } ?>
 											</tr>
