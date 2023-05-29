@@ -557,8 +557,6 @@ echo "<script>alert(\"Invalid Profile ID\")</script>";
 									<tr class="opened">
 										<?php if (!empty($biodatagender)) { ?>
 										<td class="day_label">Biodata Type</td>
-										<?php } ?>
-										<?php if (!empty($biodatagender)) { ?>
 										<td class="day_value"><?php echo $biodatagender;?></td>
 										<?php } ?>
 									</tr>
@@ -566,8 +564,6 @@ echo "<script>alert(\"Invalid Profile ID\")</script>";
 									<tr class="opened">
 										<?php if (!empty($dob)) { ?>
 										<td class="day_label">DOB</td>
-										<?php } ?>
-										<?php if (!empty($dob)) { ?>
 										<td class="day_value"><?php echo $dob; ?></td>
 										<?php } ?>
 									</tr>
@@ -575,8 +571,6 @@ echo "<script>alert(\"Invalid Profile ID\")</script>";
 									<tr class="opened">
 										<?php if (!empty($religion)) { ?>
 										<td class="day_label">Religion</td>
-										<?php } ?>
-										<?php if (!empty($religion)) { ?>
 										<td class="day_value"><?php echo $religion;?></td>
 										<?php } ?>
 									</tr>
@@ -584,8 +578,6 @@ echo "<script>alert(\"Invalid Profile ID\")</script>";
 									<tr class="opened">
 										<?php if (!empty($maritalstatus)) { ?>
 										<td class="day_label">Marital Status</td>
-										<?php } ?>
-										<?php if (!empty($maritalstatus)) { ?>
 										<td class="day_value"><?php echo $maritalstatus;?></td>
 										<?php } ?>
 									</tr>
@@ -593,8 +585,6 @@ echo "<script>alert(\"Invalid Profile ID\")</script>";
 									<tr class="opened">
 										<?php if (!empty($Skin_tones)) { ?>
 										<td class="day_label">Skin Tones</td>
-										<?php } ?>
-										<?php if (!empty($Skin_tones)) { ?>
 										<td class="day_value"><?php echo $Skin_tones;?></td>
 										<?php } ?>
 									</tr>
@@ -602,8 +592,6 @@ echo "<script>alert(\"Invalid Profile ID\")</script>";
 									<tr class="closed">
 										<?php if (!empty ($height)) { ?>
 										<td class="day_label">Height</td>
-										<?php } ?>
-										<?php if (!empty ($height)) { ?>
 										<td class="day_value closed"><?php echo $height;?></td>
 										<?php } ?>
 									</tr>
@@ -611,8 +599,6 @@ echo "<script>alert(\"Invalid Profile ID\")</script>";
 									<tr class="closed">
 										<?php if (!empty ($weight)) { ?>
 										<td class="day_label">Weight</td>
-										<?php } ?>
-										<?php if (!empty ($weight)) { ?>
 										<td class="day_value closed"><?php echo $weight;?></td>
 										<?php } ?>
 									</tr>
@@ -697,8 +683,6 @@ echo "<script>alert(\"Invalid Profile ID\")</script>";
 									<tr class="closed">
 										<?php if (!empty ($present_address_location)) { ?>
 										<td class="day_label">Present Address</td>
-										<?php } ?>
-										<?php if (!empty ($present_address_location)) { ?>
 										<td class="day_value closed"><?php echo $present_address_location;?></td>
 										<?php } ?>
 									</tr>
@@ -879,62 +863,48 @@ echo "<script>alert(\"Invalid Profile ID\")</script>";
 											<tr class="opened">
 												<?php if (!empty($biodatagender)) { ?>
 												<td class="day_label">Biodata Type</td>
-												<?php } ?>
-												<?php if (!empty($biodatagender)) { ?>
 												<td class="day_value"><?php echo $biodatagender; ?></td>
 												<?php } ?>
 											</tr>
 
 											<tr class="opened">
-											<?php if (!empty ($dob)) { ?>
-												<td class="day_label">DOB</td>
-												<?php } ?>
 												<?php if (!empty ($dob)) { ?>
+												<td class="day_label">DOB</td>
 												<td class="day_value"><?php echo $dob;?></td>
 												<?php } ?>
 											</tr>
 
 											<tr class="opened">
-											<?php if (!empty ($height)) { ?>
-												<td class="day_label">Height</td>
-												<?php } ?>
 												<?php if (!empty ($height)) { ?>
+												<td class="day_label">Height</td>
 												<td class="day_value"><?php echo $height;?></td>
 												<?php } ?>
 											</tr>
 											
 											<tr class="opened">
-											<?php if (!empty ($weight)) { ?>
-												<td class="day_label">Weight</td>
-												<?php } ?>
 												<?php if (!empty ($weight)) { ?>
+												<td class="day_label">Weight</td>
 												<td class="day_value"><?php echo $weight;?></td>
 												<?php } ?>
 											</tr>
 
 											<tr class="opened">
-											<?php if (!empty ($physicalstatus)) { ?>
-												<td class="day_label">Physical Status</td>
-												<?php } ?>
 												<?php if (!empty ($physicalstatus)) { ?>
+												<td class="day_label">Physical Status</td>
 												<td class="day_value closed"><span><?php echo $physicalstatus;?></span></td>
 												<?php } ?>
 											</tr>
 
 											<tr class="opened">
-											<?php if (!empty ($Skin_tones)) { ?>
-												<td class="day_label">Skin Tones</td>
-												<?php } ?>
 												<?php if (!empty ($Skin_tones)) { ?>
+												<td class="day_label">Skin Tones</td>
 												<td class="day_value closed"><span><?php echo $Skin_tones;?></span></td>
 												<?php } ?>
 											</tr>
 
 											<tr class="opened">
-											<?php if (!empty ($bloodgroup)) { ?>
-												<td class="day_label">Blood Group</td>
-												<?php } ?>
 												<?php if (!empty ($bloodgroup)) { ?>
+												<td class="day_label">Blood Group</td>
 												<td class="day_value closed"><span><?php echo $bloodgroup;?></span></td>
 												<?php } ?>
 											</tr>
@@ -1034,8 +1004,6 @@ echo "<script>alert(\"Invalid Profile ID\")</script>";
 											<tr class="opened">
 												<?php if (!empty ($smoke)) { ?>
 												<td class="day_label">Smoke or Drinks</td>
-												<?php } ?>
-												<?php if (!empty ($smoke)) { ?>
 												<td class="day_value"><?php echo $smoke;?></td>
 												<?php } ?>
 											</tr>
@@ -1043,8 +1011,6 @@ echo "<script>alert(\"Invalid Profile ID\")</script>";
 											<tr class="opened">
 												<?php if (!empty ($occupation_sector)) { ?>
 												<td class="day_label">Occupation Sector</td>
-												<?php } ?>
-												<?php if (!empty ($occupation_sector)) { ?>
 												<td class="day_value"><?php echo $occupation_sector;?></td>
 												<?php } ?>
 											</tr>
@@ -1052,8 +1018,6 @@ echo "<script>alert(\"Invalid Profile ID\")</script>";
 											<tr class="opened">
 												<?php if (!empty ($other_occupation_sector)) { ?>
 												<td class="day_label">Other Occupation</td>
-												<?php } ?>
-												<?php if (!empty ($other_occupation_sector)) { ?>
 												<td class="day_value"><?php echo $other_occupation_sector;?></td>
 												<?php } ?>
 											</tr>
@@ -1138,8 +1102,6 @@ echo "<script>alert(\"Invalid Profile ID\")</script>";
 											<tr class="opened">
 												<?php if (!empty ($occupation_level)) { ?>
 												<td class="day_label">Occupation Level</td>
-												<?php } ?>
-												<?php if (!empty ($occupation_level)) { ?>
 												<td class="day_value closed"><span><?php echo $occupation_level;?></span></td>
 												<?php } ?>
 											</tr>
@@ -1147,8 +1109,6 @@ echo "<script>alert(\"Invalid Profile ID\")</script>";
 											<tr class="opened">
 												<?php if (!empty ($occupation_describe)) { ?>
 												<td class="day_label">Occupation Describe</td>
-												<?php } ?>
-												<?php if (!empty ($occupation_describe)) { ?>
 												<td class="day_value closed"><span><?php echo $occupation_describe;?></span></td>
 												<?php } ?>
 											</tr>
@@ -1156,8 +1116,6 @@ echo "<script>alert(\"Invalid Profile ID\")</script>";
 											<tr class="opened">
 												<?php if (!empty ($dress_code)) { ?>
 												<td class="day_label">Dress Code</td>
-												<?php } ?>
-												<?php if (!empty ($dress_code)) { ?>
 												<td class="day_value closed"><span><?php echo $dress_code;?></span></td>
 												<?php } ?>
 											</tr>
@@ -1165,8 +1123,6 @@ echo "<script>alert(\"Invalid Profile ID\")</script>";
 											<tr class="opened">
 												<?php if (!empty ($aboutme)) { ?>
 												<td class="day_label">About Me</td>
-												<?php } ?>
-												<?php if (!empty ($aboutme)) { ?>
 												<td class="day_value closed"><span><?php echo $aboutme;?></span></td>
 												<?php } ?>
 											</tr>
@@ -1197,93 +1153,132 @@ echo "<script>alert(\"Invalid Profile ID\")</script>";
 									$profileid=$id;
 									
 									//getting profile details from db
-									$sql = "SELECT * FROM 3bd_educational_qualifications WHERE user_id = $id";
+									$sql="SELECT * FROM 3bd_secondaryedu_method WHERE user_id = $id";
 									$result = mysqlexec($sql);
 
 									if($result){
-									$row= mysqli_fetch_assoc($result);
+										$row=mysqli_fetch_assoc($result);
+										
+										if($row){
+										$scndry_edu_method=$row['scndry_edu_method'];
+										}
+										if($row){
+										$maxedu_qulfctn=$row['maxedu_qulfctn'];
+										}
+										if($row){
+										$gnrl_mdrs_secondary_pass=$row['gnrl_mdrs_secondary_pass'];
+										}
+										if($row){
+										$gnrl_mdrs_secondary_pass_year=$row['gnrl_mdrs_secondary_pass_year']; 
+										}
+										if($row){
+										$gnrl_mdrs_secondary_end_year=$row['gnrl_mdrs_secondary_end_year'];
+										}
+										if($row){
+										$gnrlmdrs_secondary_running_std=$row['gnrlmdrs_secondary_running_std'];
+										}
+									}
 
-									if($row){
-									$scndry_edu_method=$row['scndry_edu_method'];
+
+
+
+									//getting profile details from db
+									$sql="SELECT * FROM 3bd_kowmi_madrasaedu_method WHERE user_id = $id";
+									$result = mysqlexec($sql);
+
+									if($result){
+										$row=mysqli_fetch_assoc($result);
+
+										if($row){
+										$qawmi_madrasa_hafez=$row['qawmi_madrasa_hafez'];
+										}
+										if($row){
+										$qawmimadrasa_dawrapass=$row['qawmimadrasa_dawrapass']; 
+										}
+										if($row){
+										$kowmi_dawrapas_year=$row['kowmi_dawrapas_year'];
+										}
+										if($row){
+										$kowmi_current_edu_level=$row['kowmi_current_edu_level'];
+										}
 									}
-									if($row){
-									$maxedu_qulfctn=$row['maxedu_qulfctn'];
+
+
+
+
+
+
+									//getting profile details from db
+									$sql="SELECT * FROM 3bd_higher_secondaryedu_method WHERE user_id = $id";
+									$result = mysqlexec($sql);
+
+									if($result){
+										$row=mysqli_fetch_assoc($result);
+
+										if($row){
+										$higher_secondary_edu_method=$row['higher_secondary_edu_method'];
+										}
+										if($row){
+										$gnrlmdrs_hrsecondary_pass=$row['gnrlmdrs_hrsecondary_pass']; 
+										}
+										if($row){
+										$gnrlmdrs_hrsecondary_pass_year=$row['gnrlmdrs_hrsecondary_pass_year'];
+										}
+										if($row){
+										$gnrlmdrs_hrsecondary_exam_year=$row['gnrlmdrs_hrsecondary_exam_year'];
+										}
+										if($row){
+										$gnrlmdrs_hrsecondary_group=$row['gnrlmdrs_hrsecondary_group'];
+										}
+										if($row){
+										$gnrlmdrs_hrsecondary_rningstd=$row['gnrlmdrs_hrsecondary_rningstd']; 
+										}
+										if($row){
+										$diploma_hrsecondary_pass=$row['diploma_hrsecondary_pass'];
+										}
+										if($row){
+										$diploma_hrsecondary_pass_year=$row['diploma_hrsecondary_pass_year'];
+										}
+										if($row){
+										$diploma_hrsecondary_sub=$row['diploma_hrsecondary_sub'];
+										}
+										if($row){
+										$diploma_hrsecondary_endingyear=$row['diploma_hrsecondary_endingyear']; 
+										}
 									}
-									if($row){
-									$qawmi_madrasa_hafez=$row['qawmi_madrasa_hafez'];
-									}
-									if($row){
-									$qawmimadrasa_dawrapass=$row['qawmimadrasa_dawrapass']; 
-									}
-									if($row){
-									$kowmi_dawrapas_year=$row['kowmi_dawrapas_year'];
-									}
-									if($row){
-									$kowmi_current_edu_level=$row['kowmi_current_edu_level'];
-									}
-									if($row){
-									$gnrl_mdrs_secondary_pass=$row['gnrl_mdrs_secondary_pass'];
-									}
-									if($row){
-									$gnrl_mdrs_secondary_pass_year=$row['gnrl_mdrs_secondary_pass_year']; 
-									}
-									if($row){
-									$gnrl_mdrs_secondary_end_year=$row['gnrl_mdrs_secondary_end_year'];
-									}
-									if($row){
-									$gnrlmdrs_secondary_running_std=$row['gnrlmdrs_secondary_running_std'];
-									}
-									if($row){
-									$higher_secondary_edu_method=$row['higher_secondary_edu_method'];
-									}
-									if($row){
-									$gnrlmdrs_hrsecondary_pass=$row['gnrlmdrs_hrsecondary_pass']; 
-									}
-									if($row){
-									$gnrlmdrs_hrsecondary_pass_year=$row['gnrlmdrs_hrsecondary_pass_year'];
-									}
-									if($row){
-									$gnrlmdrs_hrsecondary_exam_year=$row['gnrlmdrs_hrsecondary_exam_year'];
-									}
-									if($row){
-									$gnrlmdrs_hrsecondary_group=$row['gnrlmdrs_hrsecondary_group'];
-									}
-									if($row){
-									$gnrlmdrs_hrsecondary_rningstd=$row['gnrlmdrs_hrsecondary_rningstd']; 
-									}
-									if($row){
-									$diploma_hrsecondary_pass=$row['diploma_hrsecondary_pass'];
-									}
-									if($row){
-									$diploma_hrsecondary_pass_year=$row['diploma_hrsecondary_pass_year'];
-									}
-									if($row){
-									$diploma_hrsecondary_sub=$row['diploma_hrsecondary_sub'];
-									}
-									if($row){
-									$diploma_hrsecondary_endingyear=$row['diploma_hrsecondary_endingyear']; 
-									}
-									if($row){
-									$varsity_edu_method=$row['varsity_edu_method'];
-									}
-									if($row){
-									$uvarsity_pass=$row['uvarsity_pass'];
-									}
-									if($row){
-									$varsity_passing_year=$row['varsity_passing_year'];
-									}
-									if($row){
-									$university_subject=$row['university_subject']; 
-									}
-									if($row){
-									$varsity_ending_year=$row['varsity_ending_year'];
-									}
-									if($row){
-									$uvarsity_name=$row['uvarsity_name'];
-									}
-									if($row){
-									$others_edu_qualification=$row['others_edu_qualification'];
-									}
+
+
+
+
+
+									//getting profile details from db
+									$sql="SELECT * FROM 3bd_universityedu_method WHERE user_id = $id";
+									$result = mysqlexec($sql);
+
+									if($result){
+										$row=mysqli_fetch_assoc($result);
+
+										if($row){
+										$varsity_edu_method=$row['varsity_edu_method'];
+										}
+										if($row){
+										$uvarsity_pass=$row['uvarsity_pass'];
+										}
+										if($row){
+										$varsity_passing_year=$row['varsity_passing_year'];
+										}
+										if($row){
+										$university_subject=$row['university_subject']; 
+										}
+										if($row){
+										$varsity_ending_year=$row['varsity_ending_year'];
+										}
+										if($row){
+										$uvarsity_name=$row['uvarsity_name'];
+										}
+										if($row){
+										$others_edu_qualification=$row['others_edu_qualification'];
+										}
 									}
 								?>
 
@@ -1560,8 +1555,6 @@ echo "<script>alert(\"Invalid Profile ID\")</script>";
 											<tr class="opened">
 												<?php if (!empty ($permanent_division)) { ?>
 												<td class="day_label">Permanent Address Division</td>
-												<?php } ?>
-												<?php if (!empty ($permanent_division)) { ?>
 												<td class="day_value"><?php echo $permanent_division; ?></td>
 												<?php } ?>
 											</tr>
@@ -1569,8 +1562,6 @@ echo "<script>alert(\"Invalid Profile ID\")</script>";
 											<tr class="closed">
 												<?php if (!empty ($home_district_under_barishal)) { ?>
 												<td class="day_label">Home District</td>
-												<?php } ?>
-												<?php if (!empty ($home_district_under_barishal)) { ?>
 												<td class="day_value closed"><?php echo $home_district_under_barishal;?></td>
 												<?php } ?>
 											</tr>
@@ -1627,8 +1618,6 @@ echo "<script>alert(\"Invalid Profile ID\")</script>";
 											<tr class="opened">
 												<?php if (!empty ($country_present_address)) { ?>
 												<td class="day_label">Present Address Country</td>
-												<?php } ?>
-												<?php if (!empty ($country_present_address)) { ?>
 												<td class="day_value"><?php echo $country_present_address;?></td>
 												<?php } ?>
 											</tr>
@@ -1636,8 +1625,6 @@ echo "<script>alert(\"Invalid Profile ID\")</script>";
 											<tr class="opened">
 												<?php if (!empty ($present_address_location)) { ?>
 												<td class="day_label">Present Address Location</td>
-												<?php } ?>
-												<?php if (!empty ($present_address_location)) { ?>
 												<td class="day_value"><?php echo $present_address_location; ?></td>
 												<?php } ?>
 											</tr>
@@ -1645,8 +1632,6 @@ echo "<script>alert(\"Invalid Profile ID\")</script>";
 											<tr class="opened">
 												<?php if (!empty ($childhood)) { ?>
 												<td class="day_label">Childhood</td>
-												<?php } ?>
-												<?php if (!empty ($childhood)) { ?>
 												<td class="day_value"><?php echo $childhood; ?></td>
 												<?php } ?>
 											</tr>
@@ -1795,8 +1780,6 @@ echo "<script>alert(\"Invalid Profile ID\")</script>";
 											<tr class="opened">
 												<?php if (!empty ($maritalstatus)) { ?>
 												<td class="day_label">Marital Status</td>
-												<?php } ?>
-												<?php if (!empty ($maritalstatus)) { ?>
 												<td class="day_value"><?php echo $maritalstatus; ?></td>
 												<?php } ?>
 											</tr>
@@ -1806,8 +1789,6 @@ echo "<script>alert(\"Invalid Profile ID\")</script>";
 											<tr class="opened">
 												<?php if (!empty ($divorce_reason)) { ?>
 												<td class="day_label">Reason of Divorce?</td>
-												<?php } ?>
-												<?php if (!empty ($divorce_reason)) { ?>
 												<td class="day_value"><?php echo $divorce_reason; ?></td>
 												<?php } ?>
 											</tr>
@@ -1815,8 +1796,6 @@ echo "<script>alert(\"Invalid Profile ID\")</script>";
 											<tr class="opened">
 												<?php if (!empty ($divorce_how_many_son)) { ?>
 												<td class="day_label">How many sons?</td>
-												<?php } ?>
-												<?php if (!empty ($divorce_how_many_son)) { ?>
 												<td class="day_value"><?php echo $divorce_how_many_son; ?></td>
 												<?php } ?>
 											</tr>
@@ -1824,8 +1803,6 @@ echo "<script>alert(\"Invalid Profile ID\")</script>";
 											<tr class="opened">
 												<?php if (!empty ($divorce_son_details)) { ?>
 												<td class="day_label">Son Details?</td>
-												<?php } ?>
-												<?php if (!empty ($divorce_son_details)) { ?>
 												<td class="day_value"><?php echo $divorce_son_details; ?></td>
 												<?php } ?>
 											</tr>
@@ -1835,8 +1812,6 @@ echo "<script>alert(\"Invalid Profile ID\")</script>";
 											<tr class="opened">
 												<?php if (!empty ($how_widow)) { ?>
 												<td class="day_label">How to Widow?</td>
-												<?php } ?>
-												<?php if (!empty ($how_widow)) { ?>
 												<td class="day_value"><?php echo $how_widow; ?></td>
 												<?php } ?>
 											</tr>
@@ -1844,8 +1819,6 @@ echo "<script>alert(\"Invalid Profile ID\")</script>";
 											<tr class="opened">
 												<?php if (!empty ($widow_how_many_son)) { ?>
 												<td class="day_label">How many sons?</td>
-												<?php } ?>
-												<?php if (!empty ($widow_how_many_son)) { ?>
 												<td class="day_value"><?php echo $widow_how_many_son; ?></td>
 												<?php } ?>
 											</tr>
@@ -1853,8 +1826,6 @@ echo "<script>alert(\"Invalid Profile ID\")</script>";
 											<tr class="opened">
 												<?php if (!empty ($widow_son_details)) { ?>
 												<td class="day_label">Son Details?</td>
-												<?php } ?>
-												<?php if (!empty ($widow_son_details)) { ?>
 												<td class="day_value"><?php echo $widow_son_details; ?></td>
 												<?php } ?>
 											</tr>
@@ -1863,8 +1834,6 @@ echo "<script>alert(\"Invalid Profile ID\")</script>";
 											<tr class="opened">
 												<?php if (!empty ($how_widower)) { ?>
 												<td class="day_label">How to Widower?</td>
-												<?php } ?>
-												<?php if (!empty ($how_widower)) { ?>
 												<td class="day_value"><?php echo $how_widower; ?></td>
 												<?php } ?>
 											</tr>
@@ -1872,8 +1841,6 @@ echo "<script>alert(\"Invalid Profile ID\")</script>";
 											<tr class="opened">
 												<?php if (!empty ($widower_how_many_son)) { ?>
 												<td class="day_label">How many sons?</td>
-												<?php } ?>
-												<?php if (!empty ($widower_how_many_son)) { ?>
 												<td class="day_value"><?php echo $widower_how_many_son; ?></td>
 												<?php } ?>
 											</tr>
@@ -1881,8 +1848,6 @@ echo "<script>alert(\"Invalid Profile ID\")</script>";
 											<tr class="opened">
 												<?php if (!empty ($widower_son_details)) { ?>
 												<td class="day_label">Son Details?</td>
-												<?php } ?>
-												<?php if (!empty ($widower_son_details)) { ?>
 												<td class="day_value"><?php echo $widower_son_details; ?></td>
 												<?php } ?>
 											</tr>
@@ -1892,8 +1857,6 @@ echo "<script>alert(\"Invalid Profile ID\")</script>";
 											<tr class="opened">
 												<?php if (!empty ($get_wife_permission)) { ?>
 												<td class="day_label">Get permission from your present Wife?</td>
-												<?php } ?>
-												<?php if (!empty ($get_wife_permission)) { ?>
 												<td class="day_value"><?php echo $get_wife_permission; ?></td>
 												<?php } ?>
 											</tr>
@@ -1901,8 +1864,6 @@ echo "<script>alert(\"Invalid Profile ID\")</script>";
 											<tr class="opened">
 												<?php if (!empty ($get_family_permission)) { ?>
 												<td class="day_label">Get permission from your Family & Wife's Family?</td>
-												<?php } ?>
-												<?php if (!empty ($get_family_permission)) { ?>
 												<td class="day_value"><?php echo $get_family_permission; ?></td>
 												<?php } ?>
 											</tr>
@@ -1910,8 +1871,6 @@ echo "<script>alert(\"Invalid Profile ID\")</script>";
 											<tr class="opened">
 												<?php if (!empty ($why_again_married)) { ?>
 												<td class="day_label">Why again Married?</td>
-												<?php } ?>
-												<?php if (!empty ($why_again_married)) { ?>
 												<td class="day_value"><?php echo $why_again_married; ?></td>
 												<?php } ?>
 											</tr>
@@ -1919,8 +1878,6 @@ echo "<script>alert(\"Invalid Profile ID\")</script>";
 											<tr class="opened">
 												<?php if (!empty ($married_how_many_son)) { ?>
 												<td class="day_label">How many sons?</td>
-												<?php } ?>
-												<?php if (!empty ($married_how_many_son)) { ?>
 												<td class="day_value"><?php echo $married_how_many_son; ?></td>
 												<?php } ?>
 											</tr>
@@ -1928,8 +1885,6 @@ echo "<script>alert(\"Invalid Profile ID\")</script>";
 											<tr class="opened">
 												<?php if (!empty ($married_son_details)) { ?>
 												<td class="day_label">Son Details?</td>
-												<?php } ?>
-												<?php if (!empty ($married_son_details)) { ?>
 												<td class="day_value"><?php echo $married_son_details; ?></td>
 												<?php } ?>
 											</tr>
@@ -1940,8 +1895,6 @@ echo "<script>alert(\"Invalid Profile ID\")</script>";
 											<tr class="opened">
 												<?php if (!empty ($guardians_agree)) { ?>
 												<td class="day_label">Guardians Agree</td>
-												<?php } ?>
-												<?php if (!empty ($guardians_agree)) { ?>
 												<td class="day_value"><?php echo $guardians_agree; ?></td>
 												<?php } ?>
 											</tr>
@@ -1952,8 +1905,6 @@ echo "<script>alert(\"Invalid Profile ID\")</script>";
 											<tr class="opened">
 												<?php if (!empty ($allowstudy_aftermarriage)) { ?>
 												<td class="day_label">Allow Study After Marriage</td>
-												<?php } ?>
-												<?php if (!empty ($allowstudy_aftermarriage)) { ?>
 												<td class="day_value"><?php echo $allowstudy_aftermarriage;?></td>
 												<?php } ?>
 											</tr>
@@ -1961,8 +1912,6 @@ echo "<script>alert(\"Invalid Profile ID\")</script>";
 											<tr class="opened">
 												<?php if (!empty ($studies_aftermarriage)) { ?>
 												<td class="day_label">Studies After Marriage</td>
-												<?php } ?>
-												<?php if (!empty ($studies_aftermarriage)) { ?>
 												<td class="day_value"><?php echo $studies_aftermarriage;?></td>
 												<?php } ?>
 											</tr>
@@ -1971,8 +1920,6 @@ echo "<script>alert(\"Invalid Profile ID\")</script>";
 											<tr class="opened">
 												<?php if (!empty ($allowjob_aftermarriage)) { ?>
 												<td class="day_label">Allow Job After Marriage</td>
-												<?php } ?>
-												<?php if (!empty ($allowjob_aftermarriage)) { ?>
 												<td class="day_value"><?php echo $allowjob_aftermarriage;?></td>
 												<?php } ?>
 											</tr>
@@ -1980,8 +1927,6 @@ echo "<script>alert(\"Invalid Profile ID\")</script>";
 											<tr class="opened">
 												<?php if (!empty ($anyjob_aftermarriage)) { ?>
 												<td class="day_label">Any Job After Marriage</td>
-												<?php } ?>
-												<?php if (!empty ($anyjob_aftermarriage)) { ?>
 												<td class="day_value"><?php echo $anyjob_aftermarriage;?></td>
 												<?php } ?>
 											</tr>
@@ -1990,8 +1935,6 @@ echo "<script>alert(\"Invalid Profile ID\")</script>";
 											<tr class="opened">
 												<?php if (!empty ($livewife_aftermarriage)) { ?>
 												<td class="day_label">Live Wife After Marriage</td>
-												<?php } ?>
-												<?php if (!empty ($livewife_aftermarriage)) { ?>
 												<td class="day_value"><?php echo $livewife_aftermarriage; ?></td>
 												<?php } ?>
 											</tr>
@@ -1999,8 +1942,6 @@ echo "<script>alert(\"Invalid Profile ID\")</script>";
 											<tr class="opened">
 												<?php if (!empty ($agree_marriage_student)) { ?>
 												<td class="day_label">Agree Marriage Student</td>
-												<?php } ?>
-												<?php if (!empty ($agree_marriage_student)) { ?>
 												<td class="day_value"><?php echo $agree_marriage_student; ?></td>
 												<?php } ?>
 											</tr>
@@ -2010,8 +1951,6 @@ echo "<script>alert(\"Invalid Profile ID\")</script>";
 											<tr class="opened">
 												<?php if (!empty ($profileby)) { ?>
 												<td class="day_label">Profile By</td>
-												<?php } ?>
-												<?php if (!empty ($profileby)) { ?>
 												<td  class="day_value closed"><span><?php echo $profileby;?></span></td>
 												<?php } ?>
 											</tr>
@@ -2069,8 +2008,6 @@ echo "<script>alert(\"Invalid Profile ID\")</script>";
 											<tr class="opened">
 												<?php if (!empty ($religion)) { ?>
 												<td class="day_label">Religion</td>
-												<?php } ?>
-												<?php if (!empty ($religion)) { ?>
 												<td class="day_value"><?php echo $religion; ?></td>
 												<?php } ?>
 											</tr>
@@ -2078,8 +2015,6 @@ echo "<script>alert(\"Invalid Profile ID\")</script>";
 											<tr class="opened">
 												<?php if (!empty ($yourreligion_condition)) { ?>
 												<td class="day_label">Your Religion Condition</td>
-												<?php } ?>
-												<?php if (!empty ($yourreligion_condition)) { ?>
 												<td class="day_value"><?php echo $yourreligion_condition;?></td>
 												<?php } ?>
 											</tr>
@@ -2160,8 +2095,6 @@ echo "<script>alert(\"Invalid Profile ID\")</script>";
 											<tr class="opened">
 												<?php if (!empty ($father_alive)) { ?>
 												<td class="day_label">Father Alive</td>
-												<?php } ?>
-												<?php if (!empty ($father_alive)) { ?>
 												<td class="day_value"><?php echo $father_alive;?></td>
 												<?php } ?>
 											</tr>
@@ -2169,8 +2102,6 @@ echo "<script>alert(\"Invalid Profile ID\")</script>";
 											<tr class="opened">
 												<?php if (!empty ($fatheroccupation)) { ?>
 												<td class="day_label">Father Occupation</td>
-												<?php } ?>
-												<?php if (!empty ($fatheroccupation)) { ?>
 												<td class="day_value"><?php echo $fatheroccupation;?></td>
 												<?php } ?>
 											</tr>
@@ -2178,8 +2109,6 @@ echo "<script>alert(\"Invalid Profile ID\")</script>";
 											<tr class="opened">
 												<?php if (!empty ($mother_alive)) { ?>
 												<td class="day_label">Mother Alive</td>
-												<?php } ?>
-												<?php if (!empty ($mother_alive)) { ?>
 												<td class="day_value closed"><span><?php echo $mother_alive;?></span></td>
 												<?php } ?>
 											</tr>
@@ -2187,8 +2116,6 @@ echo "<script>alert(\"Invalid Profile ID\")</script>";
 											<tr class="opened">
 												<?php if (!empty ($motheroccupation)) { ?>
 												<td class="day_label">Mother Occupation</td>
-												<?php } ?>
-												<?php if (!empty ($motheroccupation)) { ?>
 												<td class="day_value closed"><span><?php echo $motheroccupation;?></span></td>
 												<?php } ?>
 											</tr>
@@ -2196,8 +2123,6 @@ echo "<script>alert(\"Invalid Profile ID\")</script>";
 											<tr class="opened">
 												<?php if (!empty ($brosis_number)) { ?>
 												<td class="day_label">Bro Sis Number</td>
-												<?php } ?>
-												<?php if (!empty ($brosis_number)) { ?>
 												<td class="day_value closed"><span><?php echo $brosis_number;?></span></td>
 												<?php } ?>
 											</tr>
@@ -2205,8 +2130,6 @@ echo "<script>alert(\"Invalid Profile ID\")</script>";
 											<tr class="opened">
 												<?php if (!empty ($brosis_info)) { ?>
 												<td class="day_label">Bro Sis Info</td>
-												<?php } ?>
-												<?php if (!empty ($brosis_info)) { ?>
 												<td class="day_value closed"><span><?php echo $brosis_info;?></span></td>
 												<?php } ?>
 											</tr>
@@ -2215,8 +2138,6 @@ echo "<script>alert(\"Invalid Profile ID\")</script>";
 											<tr class="opened">
 												<?php if (!empty ($uncle_profession)) { ?>
 												<td class="day_label">Uncle Profession</td>
-												<?php } ?>
-												<?php if (!empty ($uncle_profession)) { ?>
 												<td class="day_value closed"><span><?php echo $uncle_profession;?></span></td>
 												<?php } ?>
 											</tr>
@@ -2224,8 +2145,6 @@ echo "<script>alert(\"Invalid Profile ID\")</script>";
 											<tr class="opened">
 												<?php if (!empty ($family_class)) { ?>
 												<td class="day_label">Family Class</td>
-												<?php } ?>
-												<?php if (!empty ($family_class)) { ?>
 												<td class="day_value closed"><span><?php echo $family_class;?></span></td>
 												<?php } ?>
 											</tr>
@@ -2233,8 +2152,6 @@ echo "<script>alert(\"Invalid Profile ID\")</script>";
 											<tr class="opened">
 												<?php if (!empty ($financial_condition)) { ?>
 												<td class="day_label">Financial Condition</td>
-												<?php } ?>
-												<?php if (!empty ($financial_condition)) { ?>
 												<td class="day_value closed"><span><?php echo $financial_condition;?></span></td>
 												<?php } ?>
 											</tr>
@@ -2242,8 +2159,6 @@ echo "<script>alert(\"Invalid Profile ID\")</script>";
 											<tr class="opened">
 												<?php if (!empty ($family_religious_condition)) { ?>
 												<td class="day_label">Family Religious</td>
-												<?php } ?>
-												<?php if (!empty ($family_religious_condition)) { ?>
 												<td class="day_value closed"><span><?php echo $family_religious_condition;?></span></td>
 												<?php } ?>
 											</tr>
@@ -2322,8 +2237,6 @@ echo "<script>alert(\"Invalid Profile ID\")</script>";
 											<tr class="opened">
 												<?php if (!empty ($partner_religius)) { ?>
 												<td class="day_label">Partner Religius</td>
-												<?php } ?>
-												<?php if (!empty ($partner_religius)) { ?>
 												<td class="day_value"><?php echo $partner_religius;?></td>
 												<?php } ?>
 											</tr>
@@ -2331,8 +2244,6 @@ echo "<script>alert(\"Invalid Profile ID\")</script>";
 											<tr class="opened">
 												<?php if (!empty ($partner_district)) { ?>
 												<td class="day_label">Partner District</td>
-												<?php } ?>
-												<?php if (!empty ($partner_district)) { ?>
 												<td class="day_value"><?php echo $partner_district;?></td>
 												<?php } ?>
 											</tr>
@@ -2340,8 +2251,6 @@ echo "<script>alert(\"Invalid Profile ID\")</script>";
 											<tr class="opened">
 												<?php if (!empty ($partner_maritialstatus)) { ?>
 												<td class="day_label">Partner Maritial Status</td>
-												<?php } ?>
-												<?php if (!empty ($partner_maritialstatus)) { ?>
 												<td class="day_value closed"><span><?php echo $partner_maritialstatus;?></span></td>
 												<?php } ?>
 											</tr>
@@ -2349,8 +2258,6 @@ echo "<script>alert(\"Invalid Profile ID\")</script>";
 											<tr class="opened">
 												<?php if (!empty ($partner_age)) { ?>
 												<td class="day_label">Partner Age</td>
-												<?php } ?>
-												<?php if (!empty ($partner_age)) { ?>
 												<td class="day_value closed"><span><?php echo $partner_age;?></span></td>
 												<?php } ?>
 											</tr>
@@ -2358,8 +2265,6 @@ echo "<script>alert(\"Invalid Profile ID\")</script>";
 											<tr class="opened">
 												<?php if (!empty ($partner_skintones)) { ?>
 												<td class="day_label">Partner Skin Tones</td>
-												<?php } ?>
-												<?php if (!empty ($partner_skintones)) { ?>
 												<td class="day_value closed"><span><?php echo $partner_skintones;?></span></td>
 												<?php } ?>
 											</tr>
@@ -2367,8 +2272,6 @@ echo "<script>alert(\"Invalid Profile ID\")</script>";
 											<tr class="opened">
 												<?php if (!empty ($partner_height)) { ?>
 												<td class="day_label">Partner Height</td>
-												<?php } ?>
-												<?php if (!empty ($partner_height)) { ?>
 												<td class="day_value closed"><span><?php echo $partner_height;?></span></td>
 												<?php } ?>
 											</tr>
@@ -2376,8 +2279,6 @@ echo "<script>alert(\"Invalid Profile ID\")</script>";
 											<tr class="opened">
 												<?php if (!empty ($partner_education)) { ?>
 												<td class="day_label">Partner Education</td>
-												<?php } ?>
-												<?php if (!empty ($partner_education)) { ?>
 												<td class="day_value closed"><span><?php echo $partner_education;?></span></td>
 												<?php } ?>
 											</tr>
@@ -2385,8 +2286,6 @@ echo "<script>alert(\"Invalid Profile ID\")</script>";
 											<tr class="opened">
 												<?php if (!empty ($partner_profession)) { ?>
 												<td class="day_label">Partner Profession</td>
-												<?php } ?>
-												<?php if (!empty ($partner_profession)) { ?>
 												<td class="day_value closed"><span><?php echo $partner_profession;?></span></td>
 												<?php } ?>
 											</tr>
@@ -2394,8 +2293,6 @@ echo "<script>alert(\"Invalid Profile ID\")</script>";
 											<tr class="opened">
 												<?php if (!empty ($partner_financial)) { ?>
 												<td class="day_label">Partner Financial</td>
-												<?php } ?>
-												<?php if (!empty ($partner_financial)) { ?>
 												<td class="day_value closed"><span><?php echo $partner_financial;?></span></td>
 												<?php } ?>
 											</tr>
@@ -2403,8 +2300,6 @@ echo "<script>alert(\"Invalid Profile ID\")</script>";
 											<tr class="opened">
 												<?php if (!empty ($partner_attributes)) { ?>
 												<td class="day_label">Partner Attributes</td>
-												<?php } ?>
-												<?php if (!empty ($partner_attributes)) { ?>
 												<td class="day_value closed"><span><?php echo $partner_attributes;?></span></td>
 												<?php } ?>
 											</tr>
