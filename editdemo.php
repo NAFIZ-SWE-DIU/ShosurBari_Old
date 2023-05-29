@@ -742,10 +742,10 @@ $(document).ready(function(){
 				if($result){
 				$row=mysqli_fetch_assoc($result);
 				if($row){
-				$secondary_edu_method=$row['secondary_edu_method'];
+				$scndry_edu_method=$row['scndry_edu_method'];
 				}
 				if($row){
-				$maxedu_qualification=$row['maxedu_qualification'];
+				$maxedu_qulfctn=$row['maxedu_qulfctn'];
 				}
 				if($row){
 				$qawmi_madrasa_hafez=$row['qawmi_madrasa_hafez'];
@@ -805,19 +805,19 @@ $(document).ready(function(){
 				$varsity_edu_method=$row['varsity_edu_method'];
 				}
 				if($row){
-				$university_pass=$row['university_pass'];
+				$uvarsity_pass=$row['uvarsity_pass'];
 				}
 				if($row){
 				$varsity_passing_year=$row['varsity_passing_year'];
 				}
 				if($row){
-				$varsity_subject=$row['varsity_subject']; 
+				$university_subject=$row['university_subject']; 
 				}
 				if($row){
 				$varsity_ending_year=$row['varsity_ending_year'];
 				}
 				if($row){
-				$university_name=$row['university_name'];
+				$uvarsity_name=$row['uvarsity_name'];
 				}
 				if($row){
 				$others_edu_qualification=$row['others_edu_qualification'];
@@ -836,7 +836,7 @@ $(document).ready(function(){
 					<div class="sb-biodata-option">
 						<div class="shosurbari-biodata-field">
 							<label for="edu-method">মাধ্যমিক/ সমমান কোন মাদ্ধমে পড়েছেন?<span class="form-required" title="This field is required.">*</span></label>
-							<select name="secondary_edu_method" id="secondary_edu_method" required>
+							<select name="scndry_edu_method" id="secondary_edu_method" required>
 								<option hidden selected></option>
 								<option value="জেনারেল">জেনারেল</option>
 								<option value="আলিয়া মাদ্রাসা">আলিয়া মাদ্রাসা</option>
@@ -849,7 +849,7 @@ $(document).ready(function(){
 
 						<div class="shosurbari-biodata-field"  id="maxedu_qualification">
 							<label for="highest_qualification">আপনার সর্বোচ্চ শিক্ষাগত যোগ্যতা?<span class="form-required" title="This field is required.">*</span></label>
-							<input type="text" id="maxedu_qualification" name="maxedu_qualification" size="250" maxlength="250" class="form-text required">
+							<input type="text" id="maxedu_qualification" name="maxedu_qulfctn" size="250" maxlength="250" class="form-text required">
 						</div>
 
 						<!-- For Kowmi Madrasa -->
@@ -1068,7 +1068,7 @@ $(document).ready(function(){
 						<!-- Higher Education Start -->
 						<div class="shosurbari-biodata-field" id="varsity_pass">
 							<label for="university_pass">স্নাতক/সমমান পাশ করেছেন?<span class="form-required" title="This field is required.">*</span></label>
-							<select name="university_pass" id="university_pass">
+							<select name="uvarsity_pass" id="university_pass">
 								<option hidden selected></option>
 								<option value="হ্যাঁ">হ্যাঁ</option>
 								<option value="না, অধ্যায়নরত আছি">না, অধ্যায়নরত আছি </option>
@@ -1087,7 +1087,7 @@ $(document).ready(function(){
 
 						<div class="shosurbari-biodata-field" id="varsity_subject">
 							<label for="edu-method">স্নাতক/সমমানে আপনার সাবজেক্ট কোনটি?<span class="form-required" title="This field is required.">*</span></label>
-							<input type="text" name="varsity_subject" id="varsity_subject"  value="" size="250" maxlength="250" class="form-text required">
+							<input type="text" name="university_subject" id="varsity_subject"  value="" size="250" maxlength="250" class="form-text required">
 						</div>
 
 						<div class="shosurbari-biodata-field" id="varsity_exam_year">
@@ -1103,7 +1103,7 @@ $(document).ready(function(){
 
 						<div class="shosurbari-biodata-field" id="varsity_name">
 							<label for="edu-method">স্নাতক/সমমানে আপনার প্রতিষ্ঠান?<span class="form-required" title="This field is required.">*</span></label>
-							<input type="text" name="university_name" id="university_name"  value="" size="250" maxlength="250" class="form-text required">
+							<input type="text" name="uvarsity_name" id="university_name"  value="" size="250" maxlength="250" class="form-text required">
 						</div>
 						<!-- Higher Education End -->
 
