@@ -736,28 +736,17 @@ $(document).ready(function(){
 				include("includes/dbconn.php");
 
 				//getting profile details from db
-				$sql="SELECT * FROM 3bd_educational_qualifications WHERE user_id = $id";
+				$sql="SELECT * FROM 3bd_secondaryedu_method WHERE user_id = $id";
 				$result = mysqlexec($sql);
 
 				if($result){
 				$row=mysqli_fetch_assoc($result);
+				
 				if($row){
 				$scndry_edu_method=$row['scndry_edu_method'];
 				}
 				if($row){
 				$maxedu_qulfctn=$row['maxedu_qulfctn'];
-				}
-				if($row){
-				$qawmi_madrasa_hafez=$row['qawmi_madrasa_hafez'];
-				}
-				if($row){
-				$qawmimadrasa_dawrapass=$row['qawmimadrasa_dawrapass']; 
-				}
-				if($row){
-				$kowmi_dawrapas_year=$row['kowmi_dawrapas_year'];
-				}
-				if($row){
-				$kowmi_current_edu_level=$row['kowmi_current_edu_level'];
 				}
 				if($row){
 				$gnrl_mdrs_secondary_pass=$row['gnrl_mdrs_secondary_pass'];
@@ -771,6 +760,44 @@ $(document).ready(function(){
 				if($row){
 				$gnrlmdrs_secondary_running_std=$row['gnrlmdrs_secondary_running_std'];
 				}
+			}
+
+
+
+
+				//getting profile details from db
+				$sql="SELECT * FROM 3bd_kowmi_madrasaedu_method WHERE user_id = $id";
+				$result = mysqlexec($sql);
+
+				if($result){
+				$row=mysqli_fetch_assoc($result);
+
+				if($row){
+				$qawmi_madrasa_hafez=$row['qawmi_madrasa_hafez'];
+				}
+				if($row){
+				$qawmimadrasa_dawrapass=$row['qawmimadrasa_dawrapass']; 
+				}
+				if($row){
+				$kowmi_dawrapas_year=$row['kowmi_dawrapas_year'];
+				}
+				if($row){
+				$kowmi_current_edu_level=$row['kowmi_current_edu_level'];
+				}
+			}
+
+
+
+
+
+
+				//getting profile details from db
+				$sql="SELECT * FROM 3bd_higher_secondaryedu_method WHERE user_id = $id";
+				$result = mysqlexec($sql);
+
+				if($result){
+				$row=mysqli_fetch_assoc($result);
+
 				if($row){
 				$higher_secondary_edu_method=$row['higher_secondary_edu_method'];
 				}
@@ -801,6 +828,19 @@ $(document).ready(function(){
 				if($row){
 				$diploma_hrsecondary_endingyear=$row['diploma_hrsecondary_endingyear']; 
 				}
+			}
+
+
+
+
+
+				//getting profile details from db
+				$sql="SELECT * FROM 3bd_universityedu_method WHERE user_id = $id";
+				$result = mysqlexec($sql);
+
+				if($result){
+				$row=mysqli_fetch_assoc($result);
+
 				if($row){
 				$varsity_edu_method=$row['varsity_edu_method'];
 				}
