@@ -1,11 +1,21 @@
 <?php include_once("includes/basic_includes.php");?>
 <?php include_once("functions.php"); ?>
+
 <?php
-require_once("functions.php");
+$id=$_SESSION['id'];
+if ($_SERVER['REQUEST_METHOD'] == 'POST') {
+	post_biodata($id);
+		//processprofile_form
+}
 ?>
 
 <?php
-require_once("includes/dbconn.php");
+// $id=$_GET['id'];
+if(isloggedin()){
+ //do nothing stay here
+} else{
+   header("location:login.php");
+}
 ?>
 
 <!DOCTYPE HTML>
@@ -392,7 +402,34 @@ $(document).ready(function(){
 				$business_occupation_level=$row['business_occupation_level'];
 				}
 				if($row){
-				$occupation_level=$row['occupation_level'];
+				$student_occupation_level=$row['student_occupation_level'];
+				}
+				if($row){
+				$health_occupation_level=$row['health_occupation_level'];
+				}
+				if($row){
+				$engineer_occupation_level=$row['engineer_occupation_level'];
+				}
+				if($row){
+				$teacher_occupation_level=$row['teacher_occupation_level'];
+				}
+				if($row){
+				$defense_occupation_level=$row['defense_occupation_level'];
+				}
+				if($row){
+				$foreigner_occupation_level=$row['foreigner_occupation_level'];
+				}
+				if($row){
+				$garments_occupation_level=$row['garments_occupation_level'];
+				}
+				if($row){
+				$driver_occupation_level=$row['driver_occupation_level'];
+				}
+				if($row){
+				$service_common_occupation_level=$row['service_common_occupation_level'];
+				}
+				if($row){
+				$mistri_occupation_level=$row['mistri_occupation_level'];
 				}
 				if($row){
 				$occupation_describe=$row['occupation_describe'];
@@ -457,7 +494,7 @@ $(document).ready(function(){
 
 						<div class="shosurbari-biodata-field section" id="Student" style="display: none;">
 							<label >Occupation Level<span class="form-required" title="This field is required.">*</span></label>
-							<select name="occupation_level">
+							<select name="student_occupation_level">
 								<option hidden selected></option>
 								<option value="Kawmi Madrasa Student">Kawmi Madrasa Student</option>
 								<option value="Dakhil Student">Dakhil Student</option> 
@@ -488,7 +525,7 @@ $(document).ready(function(){
 
 						<div class="shosurbari-biodata-field section" id="Health" style="display: none;">
 							<label>Occupation Level<span class="form-required" title="This field is required.">*</span></label>
-							<select name="occupation_level">
+							<select name="health_occupation_level">
 								<option hidden selected></option>
 								<option value="MBBS Doctor">MBBS Doctor</option>
 								<option value="Internship Doctor">Internship Doctor</option> 
@@ -503,7 +540,7 @@ $(document).ready(function(){
 
 						<div class="shosurbari-biodata-field section" id="Engineer" style="display: none;">
 							<label>Occupation Level<span class="form-required" title="This field is required.">*</span></label>
-							<select name="occupation_level">
+							<select name="engineer_occupation_level">
 								<option hidden selected></option>
 								<option value="Aerospace Engineer">Aerospace Engineer</option>
 								<option value="Agricultural Engineer">Agricultural Engineer</option>
@@ -523,7 +560,7 @@ $(document).ready(function(){
 
 						<div class="shosurbari-biodata-field section" id="Teacher" style="display: none;">
 							<label>Occupation Level<span class="form-required" title="This field is required.">*</span></label>
-							<select name="occupation_level">
+							<select name="teacher_occupation_level">
 								<option hidden selected></option>
 								<option value="Kawmi Madrasa Teacher">Kawmi Madrasa Teacher</option>
 								<option value="Aliya Madrasa Teacher">Aliya Madrasa Teacher</option>  
@@ -539,7 +576,7 @@ $(document).ready(function(){
 
 						<div class="shosurbari-biodata-field section" id="Defense" style="display: none;">
 							<label>Occupation Level<span class="form-required" title="This field is required.">*</span></label>
-							<select name="occupation_level">
+							<select name="defense_occupation_level">
 								<option hidden selected></option>
 								<option value="Army">Army</option> 
 								<option value="Air Force">Air Force</option>
@@ -554,7 +591,7 @@ $(document).ready(function(){
 
 						<div class="shosurbari-biodata-field section" id="Foreigner" style="display: none;">
 							<label>Occupation Level<span class="form-required" title="This field is required.">*</span></label>
-							<select name="occupation_level">
+							<select name="foreigner_occupation_level">
 								<option hidden selected></option>
 								<option value="Job">Foreigne Job</option>
 								<option value="Worker">Foreigne Worker</option>
@@ -565,7 +602,7 @@ $(document).ready(function(){
 
 						<div class="shosurbari-biodata-field section" id="Garments" style="display: none;">
 							<label>Occupation Level<span class="form-required" title="This field is required.">*</span></label>
-							<select name="occupation_level">
+							<select name="garments_occupation_level">
 								<option hidden selected></option>
 								<option value="Garments Worker">Garments Worker</option> 
 								<option value="Managers of Garments">Garments Manager</option>
@@ -574,7 +611,7 @@ $(document).ready(function(){
 
 						<div class="shosurbari-biodata-field section" id="Driver" style="display: none;">
 							<label>Occupation Level<span class="form-required" title="This field is required.">*</span></label>
-							<select name="occupation_level">
+							<select name="driver_occupation_level">
 								<option hidden selected></option>
 								<option value="Bus Driver">Bus Driver</option> 
 								<option value="Micro Driver">Micro Bus Driver</option> 
@@ -587,7 +624,7 @@ $(document).ready(function(){
 
 						<div class="shosurbari-biodata-field section" id="Common" style="display: none;">
 							<label>Occupation Level<span class="form-required" title="This field is required.">*</span></label>
-							<select name="occupation_level">
+							<select name="service_common_occupation_level">
 								<option hidden selected></option>
 								<option value="HR">HR</option>
 								<option value="Banker">Banker</option>
@@ -605,7 +642,7 @@ $(document).ready(function(){
 
 						<div class="shosurbari-biodata-field section" id="Mistri" style="display: none;">
 							<label>Occupation Level<span class="form-required" title="This field is required.">*</span></label>
-							<select name="occupation_level">
+							<select name="mistri_occupation_level">
 							<option hidden selected></option>
 							<option value="ইলেকট্রিক মিস্ত্রি">ইলেকট্রিক মিস্ত্রি</option>
 							<option value="স্যানিটারি মিস্ত্রি">স্যানিটারি মিস্ত্রি</option>
@@ -1089,7 +1126,6 @@ $(document).ready(function(){
 
 						// Hide all sections by default
 						document.getElementById("hafez_field").style.display = "none";
-						document.getElementById("maxedu_qualification").style.display = "none";
 
 						document.getElementById("maxedu_qualification").style.display = "none";
 						document.getElementById("gnrl_mdrs_scnd_pass").style.display = "none";
@@ -1125,17 +1161,17 @@ $(document).ready(function(){
 						}
 
 						// Show or hide sections based on the selected value
-						if (selectedValue === "অন্যান্য") {
+						else if (selectedValue === "অন্যান্য") {
 							document.getElementById("maxedu_qualification").style.display = "block";
 						}
 
 						// Show or hide sections based on the selected value
-						if (selectedValue === "জেনারেল" || selectedValue === "আলিয়া মাদ্রাসা" || selectedValue === "ভোকেশনাল") {
+						else if (selectedValue === "জেনারেল" || selectedValue === "আলিয়া মাদ্রাসা" || selectedValue === "ভোকেশনাল") {
 							document.getElementById("gnrl_mdrs_scnd_pass").style.display = "block";
 						}
 
 						// Show or hide sections based on the selected value
-						if (selectedValue === "মাধ্যমিক পড়িনাই") {
+						else if (selectedValue === "মাধ্যমিক পড়িনাই") {
 							document.getElementById("maxedu_qualification").style.display = "block";
 						}
 					}
@@ -1187,7 +1223,6 @@ $(document).ready(function(){
 						document.getElementById("gnrl_mdrs_running_stdn").style.display = "none";
 						document.getElementById("higher_seconday_edumethod").style.display = "none";
 
-						document.getElementById("higher_seconday_edumethod").style.display = "none";
 						document.getElementById("gnrl_mdrs_hrscnd_pass").style.display = "none";
 						document.getElementById("gnrl_mdrs_hrscnd_pass_year").style.display = "none";
 						document.getElementById("gnrl_mdrs_hrscnd_exam_year").style.display = "none";
@@ -1211,7 +1246,6 @@ $(document).ready(function(){
 						document.getElementById("gnrl_mdrs_scnd_pass_year").style.display = "none";
 						document.getElementById("gnrl_mdrs_scnd_exam_year").style.display = "none";
 						document.getElementById("gnrl_mdrs_running_stdn").style.display = "block";
-						document.getElementById("higher_seconday_edumethod").style.display = "none";
 
 						document.getElementById("higher_seconday_edumethod").style.display = "none";
 						document.getElementById("gnrl_mdrs_hrscnd_pass").style.display = "none";
@@ -1237,7 +1271,6 @@ $(document).ready(function(){
 						document.getElementById("gnrl_mdrs_scnd_pass_year").style.display = "none";
 						document.getElementById("gnrl_mdrs_scnd_exam_year").style.display = "none";
 						document.getElementById("gnrl_mdrs_running_stdn").style.display = "none";
-						document.getElementById("higher_seconday_edumethod").style.display = "none";
 
 						document.getElementById("higher_seconday_edumethod").style.display = "none";
 						document.getElementById("gnrl_mdrs_hrscnd_pass").style.display = "none";
@@ -1578,7 +1611,28 @@ $(document).ready(function(){
 				$permanent_division=$row['permanent_division'];
 				}
 				if($row){
-				$permanent_address=$row['permanent_address'];
+				$home_district_under_barishal=$row['home_district_under_barishal'];
+				}
+				if($row){
+				$home_district_under_chattogram=$row['home_district_under_chattogram'];
+				}
+				if($row){
+				$home_district_under_dhaka=$row['home_district_under_dhaka'];
+				}
+				if($row){
+				$home_district_under_khulna=$row['home_district_under_khulna'];
+				}
+				if($row){
+				$home_district_under_mymensingh=$row['home_district_under_mymensingh'];
+				}
+				if($row){
+				$home_district_under_rajshahi=$row['home_district_under_rajshahi'];
+				}
+				if($row){
+				$home_district_under_rangpur=$row['home_district_under_rangpur'];
+				}
+				if($row){
+				$home_district_under_sylhet=$row['home_district_under_sylhet'];
 				}
 				if($row){
 				$country_present_address=$row['country_present_address'];
@@ -1617,7 +1671,7 @@ $(document).ready(function(){
 
 						<div class="shosurbari-biodata-field section" id="barishal" style="display: none;">
 							<label>District of Permanent Address<span class="form-required" title="This field is required.">*</span></label>
-							<select name="permanent_address">
+							<select name="home_district_under_barishal">
 								<option hidden selected></option>
 								<option value="Barguna">Barguna</option>
 								<option value="Barishal">Barishal</option> 
@@ -1630,7 +1684,7 @@ $(document).ready(function(){
 
 						<div class="shosurbari-biodata-field section" id="chattogram" style="display: none;">
 							<label>District of Permanent Address<span class="form-required" title="This field is required.">*</span></label>
-							<select name="permanent_address">
+							<select name="home_district_under_chattogram">
 								<option hidden selected></option>
 								<option value="Bandarban">Bandarban</option>
 								<option value="Brahmanbaria">Brahmanbaria</option> 
@@ -1648,7 +1702,7 @@ $(document).ready(function(){
 
 						<div class="shosurbari-biodata-field section" id="dhaka" style="display: none;">
 							<label>District of Permanent Address<span class="form-required" title="This field is required.">*</span></label>
-							<select name="permanent_address">
+							<select name="home_district_under_dhaka">
 								<option hidden selected></option>
 								<option value="Dhaka">Dhaka</option>
 								<option value="Faridpur">Faridpur</option>
@@ -1668,7 +1722,7 @@ $(document).ready(function(){
 
 						<div class="shosurbari-biodata-field section" id="khulna" style="display: none;">
 							<label>District of Permanent Address<span class="form-required" title="This field is required.">*</span></label>
-							<select name="permanent_address">
+							<select name="home_district_under_khulna">
 								<option hidden selected></option>
 								<option value="Bagerhat">Bagerhat</option>
 								<option value="Chuadanga">Chuadanga</option>
@@ -1685,7 +1739,7 @@ $(document).ready(function(){
 
 						<div class="shosurbari-biodata-field section" id="mymensingh" style="display: none;">
 							<label>District of Permanent Address<span class="form-required" title="This field is required.">*</span></label>
-							<select name="permanent_address">
+							<select name="home_district_under_mymensingh">
 								<option hidden selected></option>
 								<option value="Jamalpur">Jamalpur</option>
 								<option value="Mymensingh">Mymensingh</option> 
@@ -1696,7 +1750,7 @@ $(document).ready(function(){
 
 						<div class="shosurbari-biodata-field section" id="rajshahi" style="display: none;">
 							<label>District of Permanent Address<span class="form-required" title="This field is required.">*</span></label>
-							<select name="permanent_address">
+							<select name="home_district_under_rajshahi">
 								<option hidden selected></option>
 								<option value="Bogura">Bogura</option>
 								<option value="Chapai Nawabganj">Chapai Nawabganj</option> 
@@ -1711,7 +1765,7 @@ $(document).ready(function(){
 
 						<div class="shosurbari-biodata-field section" id="rangpur" style="display: none;">
 							<label>District of Permanent Address<span class="form-required" title="This field is required.">*</span></label>
-							<select name="permanent_address">
+							<select name="home_district_under_rangpur">
 								<option hidden selected></option>
 								<option value="Dinajpur">Dinajpur</option>
 								<option value="Gaibandha">Gaibandha</option>
@@ -1726,7 +1780,7 @@ $(document).ready(function(){
 
 						<div class="shosurbari-biodata-field section" id="sylhet" style="display: none;">
 							<label>District of Permanent Address<span class="form-required" title="This field is required.">*</span></label>
-							<select name="permanent_address">
+							<select name="home_district_under_sylhet">
 								<option hidden selected></option>
 								<option value="Habiganj">Habiganj</option> 
 								<option value="Moulvibazar">Moulvibazar</option>
@@ -2138,8 +2192,8 @@ $(document).ready(function(){
 							</select>
 						</div>
 
-						<!-- Unmarried Sections -->
-						<div class="shosurbari-biodata-field" id="unmarried-section" style="display: none;">
+						<!-- Gurdians Aggress and Unmarried Sections -->
+						<div class="shosurbari-biodata-field" id="gurdian-aggress-section" style="display: none;">
 							<div class="shosurbari-biodata-field">
 								<label for="edit-name">Do your guardians agree to your marriage?<span class="form-required" title="This field is required.">*</span></label>
 								<input type="text" id="edit-name" name="guardians_agree"  value="<?php echo $guardians_agree_male; ?>"  size="100" maxlength="100" class="form-text">
@@ -2175,11 +2229,6 @@ $(document).ready(function(){
 								<label for="edit-name">Son Details?<span class="form-required" title="This field is required.">*</span></label>
 								<textarea rows="5" name="divorce_son_details" placeholder="Describe Your Son Details" class="form-text-describe"></textarea>
 							</div>
-
-							<div class="shosurbari-biodata-field">
-								<label for="edit-name">Do your guardians agree to your marriage?<span class="form-required" title="This field is required.">*</span></label>
-								<input type="text" id="edit-name" name="guardians_agree"  value="<?php echo $guardians_agree_male; ?>"  size="100" maxlength="100" class="form-text">
-							</div>
 						</div>
 						<!-- Divorce Section End -->
 
@@ -2211,11 +2260,6 @@ $(document).ready(function(){
 								<label for="edit-name">Son Details?<span class="form-required" title="This field is required.">*</span></label>
 								<textarea rows="5" name="widow_son_details" placeholder="Describe Your Son Details" class="form-text-describe"></textarea>
 							</div>
-
-							<div class="shosurbari-biodata-field">
-								<label for="edit-name">Do your guardians agree to your marriage?<span class="form-required" title="This field is required.">*</span></label>
-								<input type="text" id="edit-name" name="guardians_agree"  value="<?php echo $guardians_agree_male; ?>"  size="100" maxlength="100" class="form-text">
-							</div>
 						</div>
 						<!-- Widow Section End-->
 
@@ -2246,11 +2290,6 @@ $(document).ready(function(){
 							<div class="shosurbari-biodata-field" id="widower-son-details" style="display: none;">
 								<label for="edit-name">Son Details?<span class="form-required" title="This field is required.">*</span></label>
 								<textarea rows="5" name="widower_son_details" placeholder="Describe Your Son Details" class="form-text-describe"></textarea>
-							</div>
-
-							<div class="shosurbari-biodata-field">
-								<label for="edit-name">Do your guardians agree to your marriage?<span class="form-required" title="This field is required.">*</span></label>
-								<input type="text" id="edit-name" name="guardians_agree"  value="<?php echo $guardians_agree_male; ?>"  size="100" maxlength="100" class="form-text">
 							</div>
 						</div>
 						<!-- Widower Section End-->
@@ -2393,27 +2432,30 @@ $(document).ready(function(){
 					}
 
 					function toggleMaritalStatus(selectedStatus) {
-						var unmarriedSection = document.getElementById('unmarried-section');
+						var gurdianAggressSection = document.getElementById('gurdian-aggress-section');
 						var divorceSection = document.getElementById('divorce-section');
 						var widowSection = document.getElementById('widow-section');
 						var widowerSection = document.getElementById('widower-section');
 						var marriedSection = document.getElementById('married-section');
 
 						// Hide all sections initially
-						unmarriedSection.style.display = 'none';
+						gurdianAggressSection.style.display = 'none';
 						divorceSection.style.display = 'none';
 						widowSection.style.display = 'none';
 						widowerSection.style.display = 'none';
 						marriedSection.style.display = 'none';
 
 						if (selectedStatus === 'Unmarried') {
-							unmarriedSection.style.display = 'block';
+							gurdianAggressSection.style.display = 'block';
 						} else if (selectedStatus === 'Divorced') {
 							divorceSection.style.display = 'block';
+							gurdianAggressSection.style.display = 'block';
 						} else if (selectedStatus === 'Widow') {
 							widowSection.style.display = 'block';
+							gurdianAggressSection.style.display = 'block';
 						} else if (selectedStatus === 'Widower') {
 							widowerSection.style.display = 'block';
+							gurdianAggressSection.style.display = 'block';
 						} else if (selectedStatus === 'Married') {
 							marriedSection.style.display = 'block';
 						}
@@ -2675,329 +2717,7 @@ $(document).ready(function(){
 --                                               --
 -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- ---
 -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -->
-<?php
-if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-    
-    //Biodata 1 
-	$biodatagender=$_POST['biodatagender'];
-	$day=$_POST['day'];
-	$month=$_POST['month'];
-	$year=$_POST['year'];
-	$dob=$day ."-" . $month . "-" .$year ;
-	$height=$_POST['height'];
-	$weight=$_POST['weight'];	
-	$physicalstatus=$_POST['physicalstatus'];
-	$Skin_tones = $_POST['Skin_tones'];
-	$bloodgroup=$_POST['bloodgroup'];
 
-	//Biodata 2
-	$smoke=$_POST['smoke'];
-	$occupation_sector=$_POST['occupation_sector'];
-	$other_occupation_sector=$_POST['other_occupation_sector'];
-	$business_occupation_level=$_POST['business_occupation_level'];
-	$occupation_level=$_POST['occupation_level'];
-	$occupation_describe=$_POST['occupation_describe'];
-	$dress_code=$_POST['dress_code'];
-	$aboutme=$_POST['aboutme'];		
-
-	//Biodata 3
-	$secondary_edu_method=$_POST['secondary_edu_method'];
-	$maxedu_qualification=$_POST['maxedu_qualification'];
-	$qawmi_madrasa_hafez=$_POST['qawmi_madrasa_hafez'];
-	$qawmimadrasa_dawrapass=$_POST['qawmimadrasa_dawrapass'];
-	$kowmi_dawrapas_year=$_POST['kowmi_dawrapas_year'];
-	$kowmi_current_edu_level=$_POST['kowmi_current_edu_level'];
-	$gnrl_mdrs_secondary_pass=$_POST['gnrl_mdrs_secondary_pass'];
-	$gnrl_mdrs_secondary_pass_year=$_POST['gnrl_mdrs_secondary_pass_year'];
-	$gnrl_mdrs_secondary_end_year=$_POST['gnrl_mdrs_secondary_end_year'];
-	$gnrlmdrs_secondary_running_std=$_POST['gnrlmdrs_secondary_running_std'];
-	$higher_secondary_edu_method=$_POST['higher_secondary_edu_method'];
-	$gnrlmdrs_hrsecondary_pass=$_POST['gnrlmdrs_hrsecondary_pass'];
-	$gnrlmdrs_hrsecondary_pass_year=$_POST['gnrlmdrs_hrsecondary_pass_year'];
-	$gnrlmdrs_hrsecondary_exam_year=$_POST['gnrlmdrs_hrsecondary_exam_year'];
-	$gnrlmdrs_hrsecondary_group=$_POST['gnrlmdrs_hrsecondary_group'];
-	$gnrlmdrs_hrsecondary_rningstd=$_POST['gnrlmdrs_hrsecondary_rningstd'];
-	$diploma_hrsecondary_pass=$_POST['diploma_hrsecondary_pass'];
-	$diploma_hrsecondary_pass_year=$_POST['diploma_hrsecondary_pass_year'];
-	$diploma_hrsecondary_sub=$_POST['diploma_hrsecondary_sub'];
-	$diploma_hrsecondary_endingyear=$_POST['diploma_hrsecondary_endingyear'];
-	$varsity_edu_method=$_POST['varsity_edu_method'];
-	$university_pass=$_POST['university_pass'];
-	$varsity_passing_year=$_POST['varsity_passing_year'];
-	$varsity_subject=$_POST['varsity_subject'];
-	$varsity_ending_year=$_POST['varsity_ending_year'];
-	$university_name=$_POST['university_name'];
-	$others_edu_qualification=$_POST['others_edu_qualification'];
-
-	//Biodata 4
-	$permanent_division=$_POST['permanent_division'];
-	$permanent_address=$_POST['permanent_address'];
-	$country_present_address=$_POST['country_present_address'];
-	$present_address_location=$_POST['present_address_location'];
-	$childhood=$_POST['childhood'];
-
-	//Biodata 5
-	$father_alive=$_POST['father_alive'];
-	$fatheroccupation=$_POST['fatheroccupation'];
-	$mother_alive=$_POST['mother_alive'];
-	$motheroccupation=$_POST['motheroccupation'];
-	$brosis_number=$_POST['brosis_number'];
-	$brosis_info=$_POST['brosis_info'];
-	$uncle_profession=$_POST['uncle_profession'];
-	$family_class=$_POST['family_class'];
-	$financial_condition=$_POST['financial_condition'];
-	$family_religious_condition=$_POST['family_religious_condition'];
-
-	// Marital Status - Biodata 6 & 7
-	$maritalstatus=$_POST['maritalstatus'];
-	// Divorce
-	$divorce_reason=$_POST['divorce_reason'];
-	$divorce_how_many_son=$_POST['divorce_how_many_son'];
-	$divorce_son_details=$_POST['divorce_son_details'];
-	// Widow
-	$how_widow=$_POST['how_widow'];
-	$widow_how_many_son=$_POST['widow_how_many_son'];
-	$widow_son_details=$_POST['widow_son_details'];
-	// Widower
-	$how_widower=$_POST['how_widower'];
-	$widower_how_many_son=$_POST['widower_how_many_son'];
-	$widower_son_details=$_POST['widower_son_details'];
-	// Married
-	$get_wife_permission=$_POST['get_wife_permission'];
-	$get_family_permission=$_POST['get_family_permission'];
-	$why_again_married=$_POST['why_again_married'];
-	$married_how_many_son=$_POST['married_how_many_son'];
-	$married_son_details=$_POST['married_son_details'];
-
-	//Biodata 6
-	$guardians_agree=$_POST['guardians_agree'];
-	$allowstudy_aftermarriage=$_POST['allowstudy_aftermarriage'];
-	$allowjob_aftermarriage=$_POST['allowjob_aftermarriage'];
-	$livewife_aftermarriage=$_POST['livewife_aftermarriage'];
-	$profileby=$_POST['profileby'];
- 
-	//Biodata 7
-	$guardians_agree=$_POST['guardians_agree'];
-	$anyjob_aftermarriage=$_POST['anyjob_aftermarriage'];
-	$studies_aftermarriage=$_POST['studies_aftermarriage'];
-	$agree_marriage_student=$_POST['agree_marriage_student'];
-	$profileby=$_POST['profileby'];
-
-	//Biodata 8
-	$religion=$_POST['religion'];
-	$yourreligion_condition=$_POST['yourreligion_condition'];
-
-	//Biodata 9
-	$partner_religius=$_POST['partner_religius'];
-	$partner_district=$_POST['partner_district'];
-	$partner_maritialstatus=$_POST['partner_maritialstatus'];
-	$partner_age=$_POST['partner_age'];
-	$partner_skintones=$_POST['partner_skintones'];
-	$partner_height=$_POST['partner_height'];
-	$partner_education=$_POST['partner_education'];
-	$partner_profession=$_POST['partner_profession'];
-	$partner_financial=$_POST['partner_financial'];
-	$partner_attributes=$_POST['partner_attributes'];
-
-
-	// Set the default time zone to Bangladesh
-	date_default_timezone_set('Asia/Dhaka');
-	// Get the current date and time
-	$currentDate = date('j F Y, h:i:s A');
-
-    //Biodata 1 
-    insertData("1bd_personal_physical", [
-        'user_id' => $id,
-        'biodatagender' => $biodatagender,
-        'dateofbirth' => $dob,
-        'height' => $height,
-        'weight' => $weight,
-        'physicalstatus' => $physicalstatus,
-        'Skin_tones' => $Skin_tones,
-        'bloodgroup' => $bloodgroup,
-		'profilecreationdate' => $currentDate
-    ]);
-
-
-
-	//Biodata 2
-    insertData("2bd_personal_lifestyle", [
-        'user_id' => $id,
-        'smoke' => $smoke,
-        'occupation_sector' => $occupation_sector,
-        'other_occupation_sector' => $other_occupation_sector,
-        'business_occupation_level' => $business_occupation_level,
-        'occupation_level' => $occupation_level,
-		'occupation_describe' => $occupation_describe,
-        'dress_code' => $dress_code,
-        'aboutme' => $aboutme,
-		'profilecreationdate' => $currentDate
-    ]);
-    
-
-
-
-	//Biodata 3
-    insertData("3bd_educational_qualifications", [
-        'user_id' => $id,
-        'secondary_edu_method' => $secondary_edu_method,
-        'maxedu_qualification' => $maxedu_qualification,
-        'qawmi_madrasa_hafez' => $qawmi_madrasa_hafez,
-        'qawmimadrasa_dawrapass' => $qawmimadrasa_dawrapass,
-		'kowmi_dawrapas_year' => $kowmi_dawrapas_year,
-		'kowmi_current_edu_level' => $kowmi_current_edu_level,
-        'gnrl_mdrs_secondary_pass' => $gnrl_mdrs_secondary_pass,
-        'gnrl_mdrs_secondary_pass_year' => $gnrl_mdrs_secondary_pass_year,
-        'gnrl_mdrs_secondary_end_year' => $gnrl_mdrs_secondary_end_year,
-		'gnrlmdrs_secondary_running_std' => $gnrlmdrs_secondary_running_std,
-		'higher_secondary_edu_method' => $higher_secondary_edu_method,
-        'gnrlmdrs_hrsecondary_pass' => $gnrlmdrs_hrsecondary_pass,
-        'gnrlmdrs_hrsecondary_pass_year' => $gnrlmdrs_hrsecondary_pass_year,
-        'gnrlmdrs_hrsecondary_exam_year' => $gnrlmdrs_hrsecondary_exam_year,
-		'gnrlmdrs_hrsecondary_group' => $gnrlmdrs_hrsecondary_group,
-		'gnrlmdrs_hrsecondary_rningstd' => $gnrlmdrs_hrsecondary_rningstd,
-        'diploma_hrsecondary_pass' => $diploma_hrsecondary_pass,
-        'diploma_hrsecondary_pass_year' => $diploma_hrsecondary_pass_year,
-        'diploma_hrsecondary_sub' => $diploma_hrsecondary_sub,
-		'diploma_hrsecondary_endingyear' => $diploma_hrsecondary_endingyear,
-		'varsity_edu_method' => $varsity_edu_method,
-        'university_pass' => $university_pass,
-        'varsity_passing_year' => $varsity_passing_year,
-        'varsity_subject' => $varsity_subject,
-		'varsity_ending_year' => $varsity_ending_year,
-		'university_name' => $university_name,
-        'others_edu_qualification' => $others_edu_qualification,
-		'profilecreationdate' => $currentDate
-    ]);
-
-
-
-
-	//Biodata 4
-    insertData("4bd_address_details", [
-        'user_id' => $id,
-        'permanent_division' => $permanent_division,
-        'permanent_address' => $permanent_address,
-        'country_present_address' => $country_present_address,
-        'present_address_location' => $present_address_location,
-		'childhood' => $childhood,
-		'profilecreationdate' => $currentDate
-    ]);
-
-
-
-
-	//Biodata 5
-    insertData("5bd_family_information", [
-        'user_id' => $id,
-        'father_alive' => $father_alive,
-        'fatheroccupation' => $fatheroccupation,
-        'mother_alive' => $mother_alive,
-        'motheroccupation' => $motheroccupation,
-        'brosis_number' => $brosis_number,
-        'brosis_info' => $brosis_info,
-        'uncle_profession' => $uncle_profession,
-        'family_class' => $family_class,
-        'financial_condition' => $financial_condition,
-        'family_religious_condition' => $family_religious_condition,
-		'profilecreationdate' => $currentDate
-    ]);
-
-
-
-
-	// Marital Status 6 & 7
-	insertData("6bd_7bd_marital_status", [
-			'user_id' => $id,
-			'maritalstatus' => $maritalstatus,
-
-			'divorce_reason' => $divorce_reason,
-			'divorce_how_many_son' => $divorce_how_many_son,
-			'divorce_son_details' => $divorce_son_details,
-
-			'how_widow' => $how_widow,
-			'widow_how_many_son' => $widow_how_many_son,
-			'widow_son_details' => $widow_son_details,
-		
-			'how_widower' => $how_widower,
-			'widower_how_many_son' => $widower_how_many_son,
-			'widower_son_details' => $widower_son_details,
-
-			'get_wife_permission' => $get_wife_permission,
-			'get_family_permission' => $get_family_permission,
-			'why_again_married' => $why_again_married,
-			'married_how_many_son' => $married_how_many_son,
-			'married_son_details' => $married_son_details,
-			'profilecreationdate' => $profilecreationdate,
-			'profilecreationdate' => $currentDate
-		]);
-
-
-
-
-
-	//Biodata 6
-    insertData("6bd_marriage_related_qs_male", [
-        'user_id' => $id,
-        'guardians_agree' => $guardians_agree,
-        'allowstudy_aftermarriage' => $allowstudy_aftermarriage,
-        'allowjob_aftermarriage' => $allowjob_aftermarriage,
-        'livewife_aftermarriage' => $livewife_aftermarriage,
-        'profileby' => $profileby,
-		'profilecreationdate' => $currentDate
-    ]);
-
-
-
-
-	//Biodata 7
-    insertData("7bd_marriage_related_qs_female", [
-        'user_id' => $id,
-        'guardians_agree' => $guardians_agree,
-        'anyjob_aftermarriage' => $anyjob_aftermarriage,
-        'studies_aftermarriage' => $studies_aftermarriage,
-        'agree_marriage_student' => $agree_marriage_student,
-        'profileby' => $profileby,
-		'profilecreationdate' => $currentDate
-    ]);
-
-
-
-
-
-	//Biodata 8
-    insertData("8bd_religion_details", [
-        'user_id' => $id,
-        'religion' => $religion,
-        'yourreligion_condition' => $yourreligion_condition,
-		'profilecreationdate' => $currentDate
-    ]);
-
-
-
-
-
-	//Biodata 9
-    insertData("9bd_expected_life_partner", [
-        'user_id' => $id,
-        'partner_religius' => $partner_religius,
-        'partner_district' => $partner_district,
-        'partner_maritialstatus' => $partner_maritialstatus,
-        'partner_age' => $partner_age,
-        'partner_skintones' => $partner_skintones,
-        'partner_height' => $partner_height,
-        'partner_education' => $partner_education,
-        'partner_profession' => $partner_profession,
-        'partner_financial' => $partner_financial,
-        'partner_attributes' => $partner_attributes,
-		'profilecreationdate' => $currentDate
-    ]);
-
-	// Redirect to the desired page after inserting data
-	header("Location: view_profile.php?id={$id}");
-	exit();
-}
-?>
 <!-- -- -- -- -- -- -- -- -- -- -- -- -- ---- -- --
 -- -- -- -- -- -- -- -- --- -- -- -- -- -- -- -- --
 --                   E   N   D                   --
