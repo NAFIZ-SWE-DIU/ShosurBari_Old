@@ -431,6 +431,7 @@
 	$dress_code=$_POST['dress_code'];
 	$aboutme=$_POST['aboutme'];		
 
+
 	//Biodata 3
 	$scndry_edu_method=$_POST['scndry_edu_method'];
 	$maxedu_qulfctn=$_POST['maxedu_qulfctn'];
@@ -459,6 +460,7 @@
 	$varsity_ending_year=$_POST['varsity_ending_year'];
 	$uvarsity_name=$_POST['uvarsity_name'];
 	$others_edu_qualification=$_POST['others_edu_qualification'];
+
 
 	//Biodata 4
 	$permanent_division=$_POST['permanent_division'];
@@ -574,10 +576,48 @@
 /*-- -- -- -- -- -- -- -- -- -- -- -- -- ---- -- --
 --  Educational Qualifications  / sb-biodata-3   --
 -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- --*/
-$sql = "INSERT INTO 3bd_educational_qualifications
-(user_id, scndry_edu_method, maxedu_qulfctn, qawmi_madrasa_hafez, qawmimadrasa_dawrapass, kowmi_dawrapas_year, kowmi_current_edu_level, gnrl_mdrs_secondary_pass, gnrl_mdrs_secondary_pass_year, gnrl_mdrs_secondary_end_year, gnrlmdrs_secondary_running_std, higher_secondary_edu_method, gnrlmdrs_hrsecondary_pass, gnrlmdrs_hrsecondary_pass_year, gnrlmdrs_hrsecondary_exam_year, gnrlmdrs_hrsecondary_group, gnrlmdrs_hrsecondary_rningstd, diploma_hrsecondary_pass, diploma_hrsecondary_pass_year, diploma_hrsecondary_sub, diploma_hrsecondary_endingyear, varsity_edu_method, uvarsity_pass, varsity_passing_year, university_subject, varsity_ending_year, uvarsity_name, others_edu_qualification, profilecreationdate  ) 
+$sql = "INSERT INTO 3bd_secondaryedu_method
+(user_id, scndry_edu_method, maxedu_qulfctn, gnrl_mdrs_secondary_pass, gnrl_mdrs_secondary_pass_year, gnrl_mdrs_secondary_end_year, gnrlmdrs_secondary_running_std, profilecreationdate  ) 
 VALUES
-('$id', '$scndry_edu_method', '$maxedu_qulfctn', '$qawmi_madrasa_hafez', '$qawmimadrasa_dawrapass', '$kowmi_dawrapas_year', '$kowmi_current_edu_level', '$gnrl_mdrs_secondary_pass', '$gnrl_mdrs_secondary_pass_year', '$gnrl_mdrs_secondary_end_year', '$gnrlmdrs_secondary_running_std', '$higher_secondary_edu_method', '$gnrlmdrs_hrsecondary_pass', '$gnrlmdrs_hrsecondary_pass_year', '$gnrlmdrs_hrsecondary_exam_year', '$gnrlmdrs_hrsecondary_group', '$gnrlmdrs_hrsecondary_rningstd', '$diploma_hrsecondary_pass', '$diploma_hrsecondary_pass_year', '$diploma_hrsecondary_sub', '$diploma_hrsecondary_endingyear', '$varsity_edu_method', '$uvarsity_pass', '$varsity_passing_year', '$university_subject', '$varsity_ending_year', '$uvarsity_name', '$others_edu_qualification', DATE_FORMAT(NOW(), '%e %M %Y, %h:%i:%s %p'))";
+('$id', '$scndry_edu_method', '$maxedu_qulfctn', '$gnrl_mdrs_secondary_pass', '$gnrl_mdrs_secondary_pass_year', '$gnrl_mdrs_secondary_end_year', '$gnrlmdrs_secondary_running_std', DATE_FORMAT(NOW(), '%e %M %Y, %h:%i:%s %p'))";
+if (mysqli_query($conn,$sql))
+{echo " ";}
+
+
+//Update & Store the data to Database
+/*-- -- -- -- -- -- -- -- -- -- -- -- -- ---- -- --
+--  Educational Qualifications  / sb-biodata-3   --
+-- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- --*/
+$sql = "INSERT INTO 3bd_kowmi_madrasaedu_method
+(user_id, qawmi_madrasa_hafez, qawmimadrasa_dawrapass, kowmi_dawrapas_year, kowmi_current_edu_level, profilecreationdate  ) 
+VALUES
+('$id', '$qawmi_madrasa_hafez', '$qawmimadrasa_dawrapass', '$kowmi_dawrapas_year', '$kowmi_current_edu_level', DATE_FORMAT(NOW(), '%e %M %Y, %h:%i:%s %p'))";
+if (mysqli_query($conn,$sql))
+{echo " ";}
+
+
+
+//Update & Store the data to Database
+/*-- -- -- -- -- -- -- -- -- -- -- -- -- ---- -- --
+--  Educational Qualifications  / sb-biodata-3   --
+-- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- --*/
+$sql = "INSERT INTO 3bd_higher_secondaryedu_method
+(user_id, higher_secondary_edu_method, gnrlmdrs_hrsecondary_pass, gnrlmdrs_hrsecondary_pass_year, gnrlmdrs_hrsecondary_exam_year, gnrlmdrs_hrsecondary_group, gnrlmdrs_hrsecondary_rningstd, diploma_hrsecondary_pass, diploma_hrsecondary_pass_year, diploma_hrsecondary_sub, diploma_hrsecondary_endingyear, profilecreationdate  ) 
+VALUES
+('$id', '$higher_secondary_edu_method', '$gnrlmdrs_hrsecondary_pass', '$gnrlmdrs_hrsecondary_pass_year', '$gnrlmdrs_hrsecondary_exam_year', '$gnrlmdrs_hrsecondary_group', '$gnrlmdrs_hrsecondary_rningstd', '$diploma_hrsecondary_pass', '$diploma_hrsecondary_pass_year', '$diploma_hrsecondary_sub', '$diploma_hrsecondary_endingyear', DATE_FORMAT(NOW(), '%e %M %Y, %h:%i:%s %p'))";
+if (mysqli_query($conn,$sql))
+{echo " ";}
+
+
+
+//Update & Store the data to Database
+/*-- -- -- -- -- -- -- -- -- -- -- -- -- ---- -- --
+--  Educational Qualifications  / sb-biodata-3   --
+-- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- --*/
+$sql = "INSERT INTO 3bd_universityedu_method
+(user_id, varsity_edu_method, uvarsity_pass, varsity_passing_year, university_subject, varsity_ending_year, uvarsity_name, others_edu_qualification, profilecreationdate  ) 
+VALUES
+('$id', '$varsity_edu_method', '$uvarsity_pass', '$varsity_passing_year', '$university_subject', '$varsity_ending_year', '$uvarsity_name', '$others_edu_qualification', DATE_FORMAT(NOW(), '%e %M %Y, %h:%i:%s %p'))";
 if (mysqli_query($conn,$sql))
 {echo " ";}
 
@@ -592,12 +632,12 @@ if (mysqli_query($conn,$sql))
 --                                               --
 -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- ---
 -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -*/
-    $sql = "INSERT INTO 4bd_address_details
-    (user_id, permanent_division, home_district_under_barishal, home_district_under_chattogram, home_district_under_dhaka, home_district_under_khulna, home_district_under_mymensingh, home_district_under_rajshahi, home_district_under_rangpur, home_district_under_sylhet, country_present_address, present_address_location, childhood, profilecreationdate  ) 
-    VALUES
-	('$id', '$permanent_division', '$home_district_under_barishal', '$home_district_under_chattogram', '$home_district_under_dhaka', '$home_district_under_khulna', '$home_district_under_mymensingh', '$home_district_under_rajshahi', '$home_district_under_rangpur', '$home_district_under_sylhet', '$country_present_address', '$present_address_location', '$childhood', DATE_FORMAT(NOW(), '%e %M %Y, %h:%i:%s %p'))";
-    if (mysqli_query($conn,$sql))
-	{echo " ";}
+$sql = "INSERT INTO 4bd_address_details
+(user_id, permanent_division, home_district_under_barishal, home_district_under_chattogram, home_district_under_dhaka, home_district_under_khulna, home_district_under_mymensingh, home_district_under_rajshahi, home_district_under_rangpur, home_district_under_sylhet, country_present_address, present_address_location, childhood, profilecreationdate  ) 
+VALUES
+('$id', '$permanent_division', '$home_district_under_barishal', '$home_district_under_chattogram', '$home_district_under_dhaka', '$home_district_under_khulna', '$home_district_under_mymensingh', '$home_district_under_rajshahi', '$home_district_under_rangpur', '$home_district_under_sylhet', '$country_present_address', '$present_address_location', '$childhood', DATE_FORMAT(NOW(), '%e %M %Y, %h:%i:%s %p'))";
+if (mysqli_query($conn,$sql))
+{echo " ";}
 
 
 
@@ -640,12 +680,12 @@ if (mysqli_query($conn,$sql))
 /*-- -- -- -- -- -- -- -- -- -- -- -- -- ---- -- --
 --   Male Marriage related Info / sb-biodata-6   --
 -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -*/
-    $sql = "INSERT INTO 6bd_marriage_related_qs_male
-	(user_id, guardians_agree, allowstudy_aftermarriage, allowjob_aftermarriage, livewife_aftermarriage, profileby, profilecreationdate  ) 
-    VALUES
-	('$id', '$guardians_agree', '$allowstudy_aftermarriage', '$allowjob_aftermarriage', '$livewife_aftermarriage', '$profileby',  DATE_FORMAT(NOW(), '%e %M %Y, %h:%i:%s %p'))";
-    if (mysqli_query($conn,$sql))
-	{ echo " ";}
+$sql = "INSERT INTO 6bd_marriage_related_qs_male
+(user_id, guardians_agree, allowstudy_aftermarriage, allowjob_aftermarriage, livewife_aftermarriage, profileby, profilecreationdate  ) 
+VALUES
+('$id', '$guardians_agree', '$allowstudy_aftermarriage', '$allowjob_aftermarriage', '$livewife_aftermarriage', '$profileby',  DATE_FORMAT(NOW(), '%e %M %Y, %h:%i:%s %p'))";
+if (mysqli_query($conn,$sql))
+{ echo " ";}
 
 
 
@@ -668,12 +708,12 @@ if (mysqli_query($conn,$sql))
 /*-- -- -- -- -- -- -- -- -- -- -- -- -- ---- -- --
 --        Religion Details / sb-biodata-8        --
 -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -*/
-    $sql = "INSERT INTO 8bd_religion_details
-    (user_id, religion, yourreligion_condition, profilecreationdate  ) 
-    VALUES
-    ('$id', '$religion', '$yourreligion_condition', DATE_FORMAT(NOW(), '%e %M %Y, %h:%i:%s %p'))";
-    if (mysqli_query($conn,$sql))
-	{echo " ";}
+$sql = "INSERT INTO 8bd_religion_details
+(user_id, religion, yourreligion_condition, profilecreationdate  ) 
+VALUES
+('$id', '$religion', '$yourreligion_condition', DATE_FORMAT(NOW(), '%e %M %Y, %h:%i:%s %p'))";
+if (mysqli_query($conn,$sql))
+{echo " ";}
 
 
 
