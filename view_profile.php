@@ -1,6 +1,8 @@
 <?php include_once("includes/basic_includes.php");?>
 <?php include_once("functions.php"); ?>
 <?php require_once("includes/dbconn.php");?>
+
+
 <?php
 error_reporting(0);
 $id=$_GET['id'];
@@ -109,7 +111,28 @@ echo "<script>alert(\"Invalid Profile ID\")</script>";
 
 					//Biodata 4
 					if($row){
-					$permanent_address=$row['permanent_address'];
+					$home_district_under_barishal=$row['home_district_under_barishal'];
+					}
+					if($row){
+					$home_district_under_chattogram=$row['home_district_under_chattogram'];
+					}
+					if($row){
+					$home_district_under_dhaka=$row['home_district_under_dhaka'];
+					}
+					if($row){
+					$home_district_under_khulna=$row['home_district_under_khulna'];
+					}
+					if($row){
+					$home_district_under_mymensingh=$row['home_district_under_mymensingh'];
+					}
+					if($row){
+					$home_district_under_rajshahi=$row['home_district_under_rajshahi'];
+					}
+					if($row){
+					$home_district_under_rangpur=$row['home_district_under_rangpur'];
+					}
+					if($row){
+					$home_district_under_sylhet=$row['home_district_under_sylhet'];
 					}
 
 					// Get profile creation date from 1bd_personal_physical table
@@ -132,12 +155,33 @@ echo "<script>alert(\"Invalid Profile ID\")</script>";
 				?>
 
 				<div class="address">
-					<?php if (!empty($permanent_address)) { ?>
-						<td class="day_value closed">Home District: <?php echo $permanent_address; ?></td><br>
+					<?php if (!empty($home_district_under_barishal)) { ?>
+						<td class="day_value closed">Home District: <?php echo $home_district_under_barishal; ?></td><br>
+						<?php } ?>
+						<?php if (!empty($home_district_under_chattogram)) { ?>
+						<td class="day_value closed">Home District: <?php echo $home_district_under_chattogram; ?></td><br>
+						<?php } ?>
+						<?php if (!empty($home_district_under_dhaka)) { ?>
+						<td class="day_value closed">Home District: <?php echo $home_district_under_dhaka; ?></td><br>
+						<?php } ?>
+						<?php if (!empty($home_district_under_khulna)) { ?>
+						<td class="day_value closed">Home District: <?php echo $home_district_under_khulna; ?></td><br>
+						<?php } ?>
+						<?php if (!empty($home_district_under_mymensingh)) { ?>
+						<td class="day_value closed">Home District: <?php echo $home_district_under_mymensingh; ?></td><br>
+						<?php } ?>
+						<?php if (!empty($home_district_under_rajshahi)) { ?>
+						<td class="day_value closed">Home District: <?php echo $home_district_under_rajshahi; ?></td><br>
+						<?php } ?>
+						<?php if (!empty($home_district_under_rangpur)) { ?>
+						<td class="day_value closed">Home District: <?php echo $home_district_under_rangpur; ?></td><br>
+						<?php } ?>
+						<?php if (!empty($home_district_under_sylhet)) { ?>
+						<td class="day_value closed">Home District: <?php echo $home_district_under_sylhet; ?></td><br>
+						<?php } ?>
 						<?php if (!empty($profilecreationdate)) { ?>
 							<td class="day_value closed">Profile Create: <?php echo $profilecreationdate; ?></td>
 						<?php } ?>
-					<?php } ?>
 				</div>
     		</div>
 
@@ -413,7 +457,37 @@ echo "<script>alert(\"Invalid Profile ID\")</script>";
 
 							//Biodata 2
 							if($row){
-							$occupation = $row['occupation'];
+							$business_occupation_level=$row['business_occupation_level'];
+							}
+							if($row){
+							$student_occupation_level=$row['student_occupation_level'];
+							}
+							if($row){
+							$health_occupation_level=$row['health_occupation_level'];
+							}
+							if($row){
+							$engineer_occupation_level=$row['engineer_occupation_level'];
+							}
+							if($row){
+							$teacher_occupation_level=$row['teacher_occupation_level'];
+							}
+							if($row){
+							$defense_occupation_level=$row['defense_occupation_level'];
+							}
+							if($row){
+							$foreigner_occupation_level=$row['foreigner_occupation_level'];
+							}
+							if($row){
+							$garments_occupation_level=$row['garments_occupation_level'];
+							}
+							if($row){
+							$driver_occupation_level=$row['driver_occupation_level'];
+							}
+							if($row){
+							$service_common_occupation_level=$row['service_common_occupation_level'];
+							}
+							if($row){
+							$mistri_occupation_level=$row['mistri_occupation_level'];
 							}
 						?>
 
@@ -432,7 +506,7 @@ echo "<script>alert(\"Invalid Profile ID\")</script>";
 
 							//Biodata 4
 							if($row){
-							$permanent_address=$row['permanent_address'];
+							$present_address_location=$row['present_address_location'];
 							}
 						?>
 
@@ -544,20 +618,88 @@ echo "<script>alert(\"Invalid Profile ID\")</script>";
 									</tr>
 
 									<tr class="closed">
-										<?php if (!empty ($occupation)) { ?>
+										<?php if (!empty ($business_occupation_level)) { ?>
 										<td class="day_label">Occupation</td>
-										<?php } ?>
-										<?php if (!empty ($occupation)) { ?>
-										<td class="day_value closed"><?php echo $occupation;?></td>
+										<td class="day_value closed"><?php echo $business_occupation_level;?></td>
 										<?php } ?>
 									</tr>
 
 									<tr class="closed">
-										<?php if (!empty ($permanent_address)) { ?>
-										<td class="day_label">Permanent Address</td>
+										<?php if (!empty ($student_occupation_level)) { ?>
+										<td class="day_label">Occupation</td>
+										<td class="day_value closed"><?php echo $student_occupation_level;?></td>
 										<?php } ?>
-										<?php if (!empty ($permanent_address)) { ?>
-										<td class="day_value closed"><?php echo $permanent_address;?></td>
+									</tr>
+
+									<tr class="closed">
+										<?php if (!empty ($health_occupation_level)) { ?>
+										<td class="day_label">Occupation</td>
+										<td class="day_value closed"><?php echo $health_occupation_level;?></td>
+										<?php } ?>
+									</tr>
+
+									<tr class="closed">
+										<?php if (!empty ($engineer_occupation_level)) { ?>
+										<td class="day_label">Occupation</td>
+										<td class="day_value closed"><?php echo $engineer_occupation_level;?></td>
+										<?php } ?>
+									</tr>
+
+									<tr class="closed">
+										<?php if (!empty ($teacher_occupation_level)) { ?>
+										<td class="day_label">Occupation</td>
+										<td class="day_value closed"><?php echo $teacher_occupation_level;?></td>
+										<?php } ?>
+									</tr>
+
+									<tr class="closed">
+										<?php if (!empty ($defense_occupation_level)) { ?>
+										<td class="day_label">Occupation</td>
+										<td class="day_value closed"><?php echo $defense_occupation_level;?></td>
+										<?php } ?>
+									</tr>
+
+									<tr class="closed">
+										<?php if (!empty ($foreigner_occupation_level)) { ?>
+										<td class="day_label">Occupation</td>
+										<td class="day_value closed"><?php echo $foreigner_occupation_level;?></td>
+										<?php } ?>
+									</tr>
+
+									<tr class="closed">
+										<?php if (!empty ($garments_occupation_level)) { ?>
+										<td class="day_label">Occupation</td>
+										<td class="day_value closed"><?php echo $garments_occupation_level;?></td>
+										<?php } ?>
+									</tr>
+
+									<tr class="closed">
+										<?php if (!empty ($driver_occupation_level)) { ?>
+										<td class="day_label">Occupation</td>
+										<td class="day_value closed"><?php echo $driver_occupation_level;?></td>
+										<?php } ?>
+									</tr>
+
+									<tr class="closed">
+										<?php if (!empty ($service_andcommon_occupation_level)) { ?>
+										<td class="day_label">Occupation</td>
+										<td class="day_value closed"><?php echo $service_andcommon_occupation_level;?></td>
+										<?php } ?>
+									</tr>
+
+									<tr class="closed">
+										<?php if (!empty ($mistri_occupation_level)) { ?>
+										<td class="day_label">Occupation</td>
+										<td class="day_value closed"><?php echo $mistri_occupation_level;?></td>
+										<?php } ?>
+									</tr>
+
+									<tr class="closed">
+										<?php if (!empty ($present_address_location)) { ?>
+										<td class="day_label">Present Address</td>
+										<?php } ?>
+										<?php if (!empty ($present_address_location)) { ?>
+										<td class="day_value closed"><?php echo $present_address_location;?></td>
 										<?php } ?>
 									</tr>
 
@@ -628,7 +770,7 @@ echo "<script>alert(\"Invalid Profile ID\")</script>";
 						$result3=mysqlexec($sql3);
 						if($result3)
 						while($row3=mysqli_fetch_assoc($result3))
-						$occupation_recentview1=$row3['occupation'];
+						$occupation_recentview1=$row3['occupation_level'];
 
 						$sql4="SELECT * FROM 4bd_address_details WHERE user_id=$profid";		
 						$result4=mysqlexec($sql4);
@@ -843,7 +985,34 @@ echo "<script>alert(\"Invalid Profile ID\")</script>";
 									$business_occupation_level=$row['business_occupation_level'];
 									}
 									if($row){
-									$occupation_level=$row['occupation_level'];
+									$student_occupation_level=$row['student_occupation_level'];
+									}
+									if($row){
+									$health_occupation_level=$row['health_occupation_level'];
+									}
+									if($row){
+									$engineer_occupation_level=$row['engineer_occupation_level'];
+									}
+									if($row){
+									$teacher_occupation_level=$row['teacher_occupation_level'];
+									}
+									if($row){
+									$defense_occupation_level=$row['defense_occupation_level'];
+									}
+									if($row){
+									$foreigner_occupation_level=$row['foreigner_occupation_level'];
+									}
+									if($row){
+									$garments_occupation_level=$row['garments_occupation_level'];
+									}
+									if($row){
+									$driver_occupation_level=$row['driver_occupation_level'];
+									}
+									if($row){
+									$service_common_occupation_level=$row['service_common_occupation_level'];
+									}
+									if($row){
+									$mistri_occupation_level=$row['mistri_occupation_level'];
 									}
 									if($row){
 									$occupation_describe=$row['occupation_describe'];
@@ -889,12 +1058,80 @@ echo "<script>alert(\"Invalid Profile ID\")</script>";
 												<?php } ?>
 											</tr>
 
-											<tr class="opened">
+											<tr class="closed">
 												<?php if (!empty ($business_occupation_level)) { ?>
-												<td class="day_label">Business Occupation Level</td>
+												<td class="day_label">Occupation</td>
+												<td class="day_value closed"><?php echo $business_occupation_level;?></td>
 												<?php } ?>
-												<?php if (!empty ($business_occupation_level)) { ?>
-												<td class="day_value closed"><span><?php echo $business_occupation_level;?></span></td>
+											</tr>
+
+											<tr class="closed">
+												<?php if (!empty ($student_occupation_level)) { ?>
+												<td class="day_label">Occupation</td>
+												<td class="day_value closed"><?php echo $student_occupation_level;?></td>
+												<?php } ?>
+											</tr>
+
+											<tr class="closed">
+												<?php if (!empty ($health_occupation_level)) { ?>
+												<td class="day_label">Occupation</td>
+												<td class="day_value closed"><?php echo $health_occupation_level;?></td>
+												<?php } ?>
+											</tr>
+
+											<tr class="closed">
+												<?php if (!empty ($engineer_occupation_level)) { ?>
+												<td class="day_label">Occupation</td>
+												<td class="day_value closed"><?php echo $engineer_occupation_level;?></td>
+												<?php } ?>
+											</tr>
+
+											<tr class="closed">
+												<?php if (!empty ($teacher_occupation_level)) { ?>
+												<td class="day_label">Occupation</td>
+												<td class="day_value closed"><?php echo $teacher_occupation_level;?></td>
+												<?php } ?>
+											</tr>
+
+											<tr class="closed">
+												<?php if (!empty ($defense_occupation_level)) { ?>
+												<td class="day_label">Occupation</td>
+												<td class="day_value closed"><?php echo $defense_occupation_level;?></td>
+												<?php } ?>
+											</tr>
+
+											<tr class="closed">
+												<?php if (!empty ($foreigner_occupation_level)) { ?>
+												<td class="day_label">Occupation</td>
+												<td class="day_value closed"><?php echo $foreigner_occupation_level;?></td>
+												<?php } ?>
+											</tr>
+
+											<tr class="closed">
+												<?php if (!empty ($garments_occupation_level)) { ?>
+												<td class="day_label">Occupation</td>
+												<td class="day_value closed"><?php echo $garments_occupation_level;?></td>
+												<?php } ?>
+											</tr>
+
+											<tr class="closed">
+												<?php if (!empty ($driver_occupation_level)) { ?>
+												<td class="day_label">Occupation</td>
+												<td class="day_value closed"><?php echo $driver_occupation_level;?></td>
+												<?php } ?>
+											</tr>
+
+											<tr class="closed">
+												<?php if (!empty ($service_andcommon_occupation_level)) { ?>
+												<td class="day_label">Occupation</td>
+												<td class="day_value closed"><?php echo $service_andcommon_occupation_level;?></td>
+												<?php } ?>
+											</tr>
+
+											<tr class="closed">
+												<?php if (!empty ($mistri_occupation_level)) { ?>
+												<td class="day_label">Occupation</td>
+												<td class="day_value closed"><?php echo $mistri_occupation_level;?></td>
 												<?php } ?>
 											</tr>
 
@@ -1084,7 +1321,7 @@ echo "<script>alert(\"Invalid Profile ID\")</script>";
 
 											<tr class="opened">
 												<?php if (!empty ($qawmimadrasa_dawrapass)) { ?>
-												<td class="day_label">Aye you Dawra Pass?</td>
+												<td class="day_label">Are you Dawra Pass?</td>
 												<?php } ?>
 												<?php if (!empty ($qawmimadrasa_dawrapass)) { ?>
 												<td class="day_value"><?php echo $qawmimadrasa_dawrapass; ?></td>
@@ -1334,7 +1571,28 @@ echo "<script>alert(\"Invalid Profile ID\")</script>";
 									$permanent_division=$row['permanent_division'];
 									}
 									if($row){
-									$permanent_address=$row['permanent_address'];
+									$home_district_under_barishal=$row['home_district_under_barishal'];
+									}
+									if($row){
+									$home_district_under_chattogram=$row['home_district_under_chattogram'];
+									}
+									if($row){
+									$home_district_under_dhaka=$row['home_district_under_dhaka'];
+									}
+									if($row){
+									$home_district_under_khulna=$row['home_district_under_khulna'];
+									}
+									if($row){
+									$home_district_under_mymensingh=$row['home_district_under_mymensingh'];
+									}
+									if($row){
+									$home_district_under_rajshahi=$row['home_district_under_rajshahi'];
+									}
+									if($row){
+									$home_district_under_rangpur=$row['home_district_under_rangpur'];
+									}
+									if($row){
+									$home_district_under_sylhet=$row['home_district_under_sylhet'];
 									}
 									if($row){
 									$country_present_address=$row['country_present_address'];
@@ -1362,12 +1620,61 @@ echo "<script>alert(\"Invalid Profile ID\")</script>";
 												<?php } ?>
 											</tr>
 
-											<tr class="opened">
-												<?php if (!empty ($permanent_address)) { ?>
-												<td class="day_label">Permanent Address District</td>
+											<tr class="closed">
+												<?php if (!empty ($home_district_under_barishal)) { ?>
+												<td class="day_label">Home District</td>
 												<?php } ?>
-												<?php if (!empty ($permanent_address)) { ?>
-												<td class="day_value"><?php echo $permanent_address;?></td>
+												<?php if (!empty ($home_district_under_barishal)) { ?>
+												<td class="day_value closed"><?php echo $home_district_under_barishal;?></td>
+												<?php } ?>
+											</tr>
+
+											<tr class="closed">
+												<?php if (!empty ($home_district_under_chattogram)) { ?>
+												<td class="day_label">Home District</td>
+												<td class="day_value closed"><?php echo $home_district_under_chattogram;?></td>
+												<?php } ?>
+											</tr>
+
+											<tr class="closed">
+												<?php if (!empty ($home_district_under_dhaka)) { ?>
+												<td class="day_label">Home District</td>
+												<td class="day_value closed"><?php echo $home_district_under_dhaka;?></td>
+												<?php } ?>
+											</tr>
+
+											<tr class="closed">
+												<?php if (!empty ($home_district_under_khulna)) { ?>
+												<td class="day_label">Home District</td>
+												<td class="day_value closed"><?php echo $home_district_under_khulna;?></td>
+												<?php } ?>
+											</tr>
+
+											<tr class="closed">
+												<?php if (!empty ($home_district_under_mymensingh)) { ?>
+												<td class="day_label">Home District</td>
+												<td class="day_value closed"><?php echo $home_district_under_mymensingh;?></td>
+												<?php } ?>
+											</tr>
+
+											<tr class="closed">
+												<?php if (!empty ($home_district_under_rajshahi)) { ?>
+												<td class="day_label">Home District</td>
+												<td class="day_value closed"><?php echo $home_district_under_rajshahi;?></td>
+												<?php } ?>
+											</tr>
+
+											<tr class="closed">
+												<?php if (!empty ($home_district_under_rangpur)) { ?>
+												<td class="day_label">Home District</td>
+												<td class="day_value closed"><?php echo $home_district_under_rangpur;?></td>
+												<?php } ?>
+											</tr>
+
+											<tr class="closed">
+												<?php if (!empty ($home_district_under_sylhet)) { ?>
+												<td class="day_label">Home District</td>
+												<td class="day_value closed"><?php echo $home_district_under_sylhet;?></td>
 												<?php } ?>
 											</tr>
 
@@ -1685,11 +1992,11 @@ echo "<script>alert(\"Invalid Profile ID\")</script>";
 
 										<!-- This sections for All Maritial StatusShow just without Married -->
 											<tr class="opened">
-												<?php if (!empty ($guardians_agree_male)) { ?>
+												<?php if (!empty ($guardians_agree)) { ?>
 												<td class="day_label">Guardians Agree</td>
 												<?php } ?>
-												<?php if (!empty ($guardians_agree_male)) { ?>
-												<td class="day_value"><?php echo $guardians_agree_male; ?></td>
+												<?php if (!empty ($guardians_agree)) { ?>
+												<td class="day_value"><?php echo $guardians_agree; ?></td>
 												<?php } ?>
 											</tr>
 
@@ -2230,7 +2537,7 @@ echo "<script>alert(\"Invalid Profile ID\")</script>";
 			$result3=mysqlexec($sql3);
 			if($result3)
 			while($row3=mysqli_fetch_assoc($result3))
-			$occupation_recentview2=$row3['occupation'];
+			$occupation_recentview2=$row3['occupation_level'];
 
 			$sql4="SELECT * FROM 4bd_address_details WHERE user_id=$profid";		
 			$result4=mysqlexec($sql4);
