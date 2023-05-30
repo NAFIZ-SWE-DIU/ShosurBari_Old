@@ -114,14 +114,14 @@ $(document).ready(function(){
 		<form action="" method="POST" id="biodataForm">
 			<!-- progressbar -->
 			<ul id="progressbar">
-				<li class="active" id="personalPhysical">Physical</li>
-				<li id="personalLife">LifeStyle</li>
-				<li id="educationalQualifications">Education</li>
-				<li id="addressDetails">Address</li>
-				<li id="familyInfo">Family</li>
-				<li id="MarriageInfo">MarriageInfo</li>
-				<li id="religionDetails">Religion</li>
-				<li id="expectedPartner">LifePartner</li>
+				<li class="active" id="personalPhysical">শারীরিক</li>
+				<li id="personalLife">ব্যক্তিগত</li>
+				<li id="educationalQualifications">শিক্ষাগত</li>
+				<li id="addressDetails">ঠিকানা</li>
+				<li id="familyInfo">পারিবার</li>
+				<li id="MarriageInfo">বিবাহ-সম্পর্কিত</li>
+				<li id="religionDetails">ধর্মীয়</li>
+				<li id="expectedPartner">জীবনসঙ্গীর-বিবরণ</li>
 			</ul>
 
 
@@ -178,122 +178,127 @@ $(document).ready(function(){
 			<fieldset>
 				<div class="sb-biodata" id="personalPhysical">
 					<div class="sb-biodata-field">
-						<h2>Personal & Physical</h2>
+						<h2>শারীরিক তথ্য</h2>
 					</div>
 
 					<div class="sb-biodata-option">
 						<div class="shosurbari-biodata-field">
-							<label for="edit-name">Biodata Type<span class="form-required" title="This field is required.">*</span></label>
+							<label for="edit-name">বায়োডাটার ধরণ<span class="form-required" title="This field is required.">*</span></label>
 							<select name="biodatagender" required onchange="toggleGenderSections(this.value)">
 								<option hidden selected></option>
-								<option value="Male">Male</option>
-								<option value="Female">Female</option> 
+								<option value="পাত্রের বায়োডাটা">পাত্রের বায়োডাটা</option>
+								<option value="পাত্রীর বায়োডাটা">পাত্রীর বায়োডাটা</option> 
 							</select>
 						</div>
 
 						<div class="shosurbari-biodata-field">
-							<label for="edit-pass">DOB-Date<span class="form-required" title="This field is required.">*</span></label>
+							<label for="edit-pass">জন্ম তারিখ<span class="form-required" title="This field is required.">*</span></label>
 							<select name="day" required>
 								<option hidden selected></option>
-								<option value="1">1</option>
-								<option value="2">2</option>
-								<option value="3">3</option>
-								<option value="4">4</option>
-								<option value="5">5</option>
-								<option value="6">6</option>
-								<option value="7">7</option>
-								<option value="8">8</option>
-								<option value="9">9</option>
-								<option value="10">10</option>
-								<option value="11">11</option>
-								<option value="12">12</option>
-								<option value="13">13</option>
-								<option value="14">14</option>
-								<option value="15">15</option>
-								<option value="16">16</option>
-								<option value="17">17</option>
-								<option value="18">18</option>
-								<option value="19">19</option>
-								<option value="20">20</option>
-								<option value="21">21</option>
-								<option value="22">22</option>
-								<option value="23">23</option>
-								<option value="24">24</option>
-								<option value="25">25</option>
-								<option value="26">26</option>
-								<option value="27">27</option>
-								<option value="28">28</option>
-								<option value="29">29</option>
-								<option value="30">30</option>
-								<option value="31">31</option>
+								<option value="০১">০১</option>
+								<option value="০২">০২</option>
+								<option value="০৩">০৩</option>
+								<option value="০৪">০৪</option>
+								<option value="০৫">০৫</option>
+								<option value="০৬">০৬</option>
+								<option value="০৭">০৭</option>
+								<option value="০৮">০৮</option>
+								<option value="০৯">০৯</option>
+								<option value="১০">১০</option>
+								<option value="১১">১১</option>
+								<option value="১২">১২</option>
+								<option value="১৩">১৩</option>
+								<option value="১৪">১৪</option>
+								<option value="১৫">১৫</option>
+								<option value="১৬">১৬</option>
+								<option value="১৭">১৭</option>
+								<option value="১৮">১৮</option>
+								<option value="১৯">১৯</option>
+								<option value="২০">২০</option>
+								<option value="২১">২১</option>
+								<option value="২২">২২</option>
+								<option value="২৩">২৩</option>
+								<option value="২৪">২৪</option>
+								<option value="২৫">২৫</option>
+								<option value="২৬">২৬</option>
+								<option value="২৭">২৭</option>
+								<option value="২৮">২৮</option>
+								<option value="২৯">২৯</option>
+								<option value="৩০">৩০</option>
+								<option value="৩১">৩১</option>
 							</select>
 						</div>
 
 						<div class="shosurbari-biodata-field">
-							<label for="edit-pass">DOB-Month<span class="form-required" title="This field is required.">*</span></label>
+							<label for="edit-pass">জন্ম তারিখ<span class="form-required" title="This field is required.">*</span></label>
 							<select name="month" required>
 								<option hidden selected></option>
-								<option value="January">January</option>
-								<option value="February">February</option>
-								<option value="March">March</option>
-								<option value="April">April</option>
-								<option value="May">May</option>
-								<option value="June">June</option>
-								<option value="July">July</option>
-								<option value="August">August</option>
-								<option value="September">September</option>
-								<option value="October">October</option>
-								<option value="November">November</option>
-								<option value="December">December</option>
+								<option value="জানুয়ারি">জানুয়ারি</option>
+								<option value="ফেব্রুয়ারি">ফেব্রুয়ারি</option>
+								<option value="মার্চ">মার্চ</option>
+								<option value="এপ্রিল">এপ্রিল</option>
+								<option value="মে">মে</option>
+								<option value="জুন">জুন</option>
+								<option value="জুলাই">জুলাই</option>
+								<option value="আগস্ট">আগস্ট</option>
+								<option value="সেপ্টেম্বর">সেপ্টেম্বর</option>
+								<option value="অক্টোবর">অক্টোবর</option>
+								<option value="নভেম্বর">নভেম্বর</option>
+								<option value="ডিসেম্বর">ডিসেম্বর</option>
 							</select>
 						</div>
 
 						<div class="shosurbari-biodata-field">
-							<label for="edit-pass">DOB-Year<span class="form-required" title="This field is required.">*</span></label>
+							<label for="edit-pass">জন্ম তারিখ<span class="form-required" title="This field is required.">*</span></label>
 							<select name="year" required>
 								<option hidden selected></option>
-								<option value="1980">1980</option>
-								<option value="1981">1981</option>
-								<option value="1981">1981</option>
-								<option value="1983">1983</option>
-								<option value="1984">1984</option>
-								<option value="1985">1985</option>
-								<option value="1986">1986</option>
-								<option value="1987">1987</option>
-								<option value="1988">1988</option>
-								<option value="1989">1989</option>
-								<option value="1990">1990</option>
-								<option value="1991">1991</option>
-								<option value="1992">1992</option>
-								<option value="1993">1993</option>
-								<option value="1994">1994</option>
-								<option value="1995">1995</option>
-								<option value="1996">1996</option>
-								<option value="1997">1997</option>
-								<option value="1998">1998</option>
-								<option value="1999">1999</option>
-								<option value="2000">2000</option>
-								<option value="2001">2001</option>
-								<option value="2002">2002</option>
-								<option value="2003">2003</option>
-								<option value="2004">2004</option>
-								<option value="2005">2005</option>
-								<option value="2006">2006</option>
-								<option value="2007">2007</option>
-								<option value="2008">2008</option>
-								<option value="2009">2009</option>
-								<option value="2010">2010</option>
-								<option value="2011">2011</option>
-								<option value="2012">2012</option>
-								<option value="2013">2013</option>
-								<option value="2014">2014</option>
-								<option value="2015">2015</option>
+								<option value="২০১৫">২০১৫</option>
+								<option value="২০১৪">২০১৪</option>
+								<option value="২০১৩">২০১৩</option>
+								<option value="২০১২">২০১২</option>
+								<option value="২০১১">২০১১</option>
+								<option value="২০১০">২০১০</option>
+								<option value="২০০৯">২০০৯</option>
+								<option value="২০০৮">২০০৮</option>
+								<option value="২০০৭">২০০৭</option>
+								<option value="২০০৬">২০০৬</option>
+								<option value="২০০৫">২০০৫</option>
+								<option value="২০০৪">২০০৪</option>
+								<option value="২০০৩">২০০৩</option>
+								<option value="২০০২">২০০২</option>
+								<option value="২০০১">২০০১</option>
+								<option value="২০০০">২০০০</option>
+								<option value="১৯৯৯">১৯৯৯</option>
+								<option value="১৯৯৮">১৯৯৮</option>
+								<option value="১৯৯৭">১৯৯৭</option>
+								<option value="১৯৯৬">১৯৯৬</option>
+								<option value="১৯৯৫">১৯৯৫</option>
+								<option value="১৯৯৪">১৯৯৪</option>
+								<option value="১৯৯৩">১৯৯৩</option>
+								<option value="১৯৯২">১৯৯২</option>
+								<option value="১৯৯১">১৯৯১</option>
+								<option value="১৯৯০">১৯৯০</option>
+								<option value="১৯৮৯">১৯৮৯</option>
+								<option value="১৯৮৮">১৯৮৮</option>
+								<option value="১৯৮৭">১৯৮৭</option>
+								<option value="১৯৮৬">১৯৮৬</option>
+								<option value="১৯৮৫">১৯৮৫</option>
+								<option value="১৯৮৪">১৯৮৪</option>
+								<option value="১৯৮৩">১৯৮৩</option>
+								<option value="১৯৮২">১৯৮২</option>
+								<option value="১৯৮১">১৯৮১</option>
+								<option value="১৯৮০">১৯৮০</option>
+								<option value="১৯৭৯">১৯৭৯</option>
+								<option value="১৯৭৮">১৯৭৮</option>
+								<option value="১৯৭৭">১৯৭৭</option>
+								<option value="১৯৭৬">১৯৭৬</option>
+								<option value="১৯৭৫">১৯৭৫</option>
 							</select>
 						</div>
 
 
 						<div class="shosurbari-biodata-field">
-							<label for="edit-name">Height<span class="form-required" title="This field is required.">*</span></label>
+							<label for="edit-name">উচ্চতা<span class="form-required" title="This field is required.">*</span></label>
 							<input type="text" id="edit-name" name="height" value="<?php echo $height; ?>" size="100" maxlength="100"
 							class="form-text" placeholder="Please enter your height" oninput="checkInput(this)" required>
 							<span style="color: red; font-size: 13px;" class="error-message" id="height-error-message"></span>
@@ -314,33 +319,41 @@ $(document).ready(function(){
 						</script>
 					
 						<div class="shosurbari-biodata-field">
-							<label for="edit-name">Weight <span class="form-required" title="This field is required.">*</span></label>
+							<label for="edit-name">ওজন <span class="form-required" title="This field is required.">*</span></label>
 							<input type="text" id="edit-name" name="weight" value="<?php echo $weight; ?>" size="100" maxlength="100" class="form-text" required>
 						</div>
 
 						<div class="shosurbari-biodata-field">
-							<label for="edit-name">Physical Status<span class="form-required" title="This field is required.">*</span></label>
+							<label for="edit-name">শারীরিক সমস্যা আছে কি?<span class="form-required" title="This field is required.">*</span></label>
 							<select name="physicalstatus" required>
 								<option hidden selected></option>
-								<option value="No Problem">No Problem</option>
-								<option value="Blind">Blind</option> 
-								<option value="Deaf">Deaf</option> 
+								<option value="সমস্যা নেই">সমস্যা নেই</option>
+								<option value="অন্ধ">অন্ধ</option> 
+								<option value="বধির">বধির</option> 
+								<option value="বোবা">বোবা</option>
+								<option value="ন্যাংড়া">ন্যাংড়া</option>
+								<option value="হাত ভাঙ্গা">হাত ভাঙ্গা</option> 
+								<option value="হাত কাটা">হাত কাটা</option>  
+								<option value="পা ভাঙ্গা">পা ভাঙ্গা</option> 
+								<option value="পা কাটা">পা কাটা</option> 
+ 
 							</select>
 						</div>
 
 						<div class="shosurbari-biodata-field">
-							<label for="edit-name">Skin Tones<span class="form-required" title="This field is required.">*</span></label>
+							<label for="edit-name">শারীরিক বর্ণ<span class="form-required" title="This field is required.">*</span></label>
 							<select name="Skin_tones" required>
 								<option hidden selected></option>
-								<option value="Light">Light</option>
-								<option value="Fair">Fair</option> 
-								<option value="Medium">Medium</option>
-								<option value="Dark">Dark</option>
+								<option value="উজ্জ্বল ফর্সা">উজ্জ্বল ফর্সা</option>
+								<option value="ফর্সা">ফর্সা</option> 
+								<option value="উজ্জ্বল শ্যামবর্ণ">উজ্জ্বল শ্যামবর্ণ</option>
+								<option value="শ্যামবর্ণ">শ্যামবর্ণ</option>
+								<option value="কালো">কালো</option>
 							</select>
 						</div>
 
 						<div class="shosurbari-biodata-field">
-							<label for="edit-name">Blood Group<span class="form-required" title="This field is required.">*</span></label>
+							<label for="edit-name">রক্তের গ্রুপ<span class="form-required" title="This field is required.">*</span></label>
 							<select name="bloodgroup" required>
 								<option hidden selected></option>
 								<option value="A+">A+</option>
@@ -448,22 +461,22 @@ $(document).ready(function(){
 			<fieldset>
 				<div class="sb-biodata" id="personalLife">
 					<div class="sb-biodata-field">
-						<h2>Personal & Life Style</h2>
+						<h2>ব্যক্তিগত তথ্য</h2>
 					</div>
 
 					<div class="sb-biodata-option">
 						<div class="shosurbari-biodata-field">
-							<label for="edit-name">Smoke or Drinks<span style="color: gray; font-size: 14px;" class="form-required" title="This field is required."> (Optional)</span></label>
+							<label for="edit-name">ধূমপান করা হয়?<span style="color: gray; font-size: 14px;" class="form-required" title="This field is required."> (Optional)</span></label>
 							<select name="smoke">
 								<option hidden selected></option>
-								<option value="No">No</option>
-								<option value="Yes">Yes</option> 
-								<option value="Sometimes">Sometimes</option>
+								<option value="না">না</option>
+								<option value="হ্যাঁ">হ্যাঁ</option> 
+								<option value="মাঝে মাঝে করা হয়">মাঝে মাঝে করা হয়</option>
 							</select>
 						</div>
 
 						<div class="shosurbari-biodata-field">
-							<label for="occupation_sector">Occupation Sector<span class="form-required" title="This field is required.">*</span></label>
+							<label for="occupation_sector">পেশা<span class="form-required" title="This field is required.">*</span></label>
 							<select name="occupation_sector" required onchange="showOccupationSector(this.value)">
 								<option hidden selected></option>
 								<option value="Business">Business</option>
@@ -483,176 +496,176 @@ $(document).ready(function(){
 						</div>
 									
 						<div class="shosurbari-biodata-field section"  id="Other" style="display: none;">
-							<label>Other Occupation Sector <span class="form-required" title="This field is required.">*</span></label>
+							<label>পেশা<span class="form-required" title="This field is required.">*</span></label>
 							<input type="text"  name="other_occupation_sector" placeholder="Enter your Occupation Sector" value="<?php echo $weight; ?>" size="100" maxlength="100" class="form-text">
 						</div>
 
 						<div class="shosurbari-biodata-field section"  id="Business" style="display: none;">
-							<label >Business Level <span class="form-required" title="This field is required.">*</span></label>
+							<label>পেশার অবস্থান<span class="form-required" title="This field is required.">*</span></label>
 							<input type="text"  name="business_occupation_level" placeholder="Enter your Business name" value="<?php echo $weight; ?>" size="100" maxlength="100" class="form-text">
 						</div>
 
 						<div class="shosurbari-biodata-field section" id="Student" style="display: none;">
-							<label >Occupation Level<span class="form-required" title="This field is required.">*</span></label>
+							<label >পেশার অবস্থান<span class="form-required" title="This field is required.">*</span></label>
 							<select name="student_occupation_level">
 								<option hidden selected></option>
-								<option value="Kawmi Madrasa Student">Kawmi Madrasa Student</option>
-								<option value="Dakhil Student">Dakhil Student</option> 
-								<option value="High School Student">High School Student</option>
+								<option value="কওমি মাদরাসার শিক্ষার্থী">কওমি মাদ্রাসার শিক্ষার্থী</option>
+								<option value="আলিয়া মাদ্রাসার দাখিল শিক্ষার্থী">আলিয়া মাদ্রাসার দাখিল শিক্ষার্থী</option> 
+								<option value="মাধ্যমিক শিক্ষার্থী">মাধ্যমিক শিক্ষার্থী</option>
 
-								<option value="College Student">College Student</option>
-								<option value="Alim Student">Alim Student</option> 
-								<option value="Politechnical Student">Politechnical Student</option>
-								<option value="Nursing Student">Nursing Student</option>
-								<option value="Midwifary Student">Midwifary Student</option>
-								<option value="Politechnical Student">Peramedical Student</option>
+								<option value="কলেজ শিক্ষার্থী">কলেজ শিক্ষার্থী</option>
+								<option value="আলিয়া মাদ্রাসার আলিম শিক্ষার্থী">আলিয়া মাদ্রাসার আলিম শিক্ষার্থী</option> 
+								<option value="পলিটেকনিক্যাল শিক্ষার্থী">পলিটেকনিক্যাল শিক্ষার্থী</option>
+								<option value="নার্সিং শিক্ষার্থী">নার্সিং শিক্ষার্থী</option>
+								<option value="মিডউইফারী শিক্ষার্থী">মিডউইফারী শিক্ষার্থী</option>
+								<option value="পেরামেডিক্যাল শিক্ষার্থী">পেরামেডিক্যাল শিক্ষার্থী</option>
 
-								<option value="Medical Student">Medical Student</option>
-								<option value="Pharmacy Student">Pharmacy Student</option> 
-								<option value="B.Sc. Engineering Student">B.Sc. Engineering Student</option>
+								<option value="মেডিকেল শিক্ষার্থী">মেডিকেল শিক্ষার্থী</option>
+								<option value="ফার্মেসী শিক্ষার্থী">ফার্মেসী শিক্ষার্থী</option> 
+								<option value="বি.এসসি. ইঞ্জিনিয়ারিং শিক্ষার্থী">বি.এসসি. ইঞ্জিনিয়ারিং শিক্ষার্থী</option>
+								<option value="বি.বি.এ. শিক্ষার্থী">বি.বি.এ. শিক্ষার্থী</option> 
 
-								<option value="B.Sc. Student.">B.Sc. Student</option>
-								<option value="B.A. Student">B.A. Student</option>
-								<option value="B.Com. Student">B.Com. Student</option> 
-								<option value="Fazil Student">Fazil Student</option> 
 
-								<option value="Students of M.A.">M.Sc. Student</option>
-								<option value="Students of B.Com.">M.A. Student</option> 
-								<option value="Students of M.Com.">M.Com. Student</option>
-								<option value="Kamil Student">Kamil Student</option> 
+								<option value="বি.এসসি. শিক্ষার্থী">বি.এসসি. শিক্ষার্থী</option>
+								<option value="বি.এ. শিক্ষার্থী">বি.এ. শিক্ষার্থী</option>
+								<option value="বি.কম. শিক্ষার্থী">বি.কম. শিক্ষার্থী</option> 
+								<option value="আলিয়া মাদ্রাসার ফাজিল শিক্ষার্থী">আলিয়া মাদ্রাসার ফাজিল শিক্ষার্থী</option> 
+
+								<option value="এম.এসসি. শিক্ষার্থী">এম.এসসি. শিক্ষার্থী</option>
+								<option value="এম.এ. শিক্ষার্থী">এম.এ. শিক্ষার্থী</option> 
+								<option value="এম.কম. শিক্ষার্থী">এম.কম. শিক্ষার্থী</option>
+								<option value="কামিল শিক্ষার্থী">কামিল শিক্ষার্থী</option> 
 							</select>
 						</div>			
 
 						<div class="shosurbari-biodata-field section" id="Health" style="display: none;">
-							<label>Occupation Level<span class="form-required" title="This field is required.">*</span></label>
+							<label>পেশার অবস্থান<span class="form-required" title="This field is required.">*</span></label>
 							<select name="health_occupation_level">
 								<option hidden selected></option>
-								<option value="MBBS Doctor">MBBS Doctor</option>
-								<option value="Internship Doctor">Internship Doctor</option> 
-								<option value="Specialist Doctor">Specialist Doctor</option>
-								<option value="Pharmacist">Pharmacist</option>
-								<option value="Diploma Doctor">Diploma Doctor</option>
-								<option value="Nurse">Nurse</option>
-								<option value="Midwife">Midwife</option>
-								<option value="Village Doctor">Village Doctor</option>
+								<option value="এম.বি.বিএস. ডাক্তার">এম.বি.বিএস. ডাক্তার</option>
+								<option value="ইন্টার্নশীপ ডাক্তার">ইন্টার্নশীপ ডাক্তার</option> 
+								<option value="পশু চিকিৎসক">পশু চিকিৎসক</option>
+								<option value="ফার্মাসিস্ট">ফার্মাসিস্ট</option>
+								<option value="ডিপ্লোমা ডাক্তার">ডিপ্লোমা ডাক্তার</option>
+								<option value="নার্স">নার্স</option>
+								<option value="মিডউইফারী">মিডউইফারী</option>
+								<option value="পল্লী চিকিৎসক">পল্লী চিকিৎসক</option>
 							</select>
 						</div>
 
 						<div class="shosurbari-biodata-field section" id="Engineer" style="display: none;">
-							<label>Occupation Level<span class="form-required" title="This field is required.">*</span></label>
+							<label>পেশার অবস্থান<span class="form-required" title="This field is required.">*</span></label>
 							<select name="engineer_occupation_level">
 								<option hidden selected></option>
-								<option value="Aerospace Engineer">Aerospace Engineer</option>
-								<option value="Agricultural Engineer">Agricultural Engineer</option>
-								<option value="Architectural Engineer">Architectural Engineer</option>
-								<option value="Biomedical Engineer">Biomedical Engineer</option>
-								<option value="Chemical Engineer">Chemical Engineer</option>
-								<option value="Civil Engineer">Civil Engineer</option>
-								<option value="Electrical Engineer">Electrical Engineer</option>
-								<option value="Marine Engineer">Marine Engineer</option> 
-								<option value="Mechanical Engineer">Mechanical Engineer</option>
-								<option value="Network Engineer">Network Engineer</option> 
-								<option value="Robotics Engineer">Robotics Engineer</option>
-								<option value="Software Engineer">Software Engineer</option> 
-								<option value="Textile Engineer">Textile Engineer</option>
+								<option value="সফটওয়্যার ইঞ্জিনিয়ার">সফটওয়্যার ইঞ্জিনিয়ার</option> 
+								<option value="টেক্সটাইল ইঞ্জিনিয়ার">টেক্সটাইল ইঞ্জিনিয়ার</option>
+								<option value="সিভিল ইঞ্জিনিয়ার">সিভিল ইঞ্জিনিয়ার</option>
+								<option value="ইলেকট্রিকাল ইঞ্জিনিয়ার">ইলেকট্রিকাল ইঞ্জিনিয়ার</option>
+								<option value="মেরিন ইঞ্জিনিয়ার">মেরিন ইঞ্জিনিয়ার</option> 
+								<option value="নেটওয়ার্ক ইঞ্জিনিয়ার">নেটওয়ার্ক ইঞ্জিনিয়ার</option> 
+								<option value="রোবোটিক্স ইঞ্জিনিয়ার">রোবোটিক্স ইঞ্জিনিয়ার</option>
+								<option value="এগ্রিকালচার ইঞ্জিনিয়ার">এগ্রিকালচার ইঞ্জিনিয়ার</option>
+								<option value="আর্কিটেকচার ইঞ্জিনিয়ার">আর্কিটেকচার ইঞ্জিনিয়ার</option>
+								<option value="মেকানিক্যাল ইঞ্জিনিয়ার">মেকানিক্যাল ইঞ্জিনিয়ার</option>
+								<option value="কেমিক্যাল ইঞ্জিনিয়ার">কেমিক্যাল ইঞ্জিনিয়ার</option>
+								<option value="বিয়োমেডিক্যাল ইঞ্জিনিয়ার">বিয়োমেডিক্যাল ইঞ্জিনিয়ার</option>
+								<option value="এরোস্পেস ইঞ্জিনিয়ারিং">এরোস্পেস ইঞ্জিনিয়ারিং</option>
 							</select>
 						</div>
 
 						<div class="shosurbari-biodata-field section" id="Teacher" style="display: none;">
-							<label>Occupation Level<span class="form-required" title="This field is required.">*</span></label>
+							<label>পেশার অবস্থান<span class="form-required" title="This field is required.">*</span></label>
 							<select name="teacher_occupation_level">
 								<option hidden selected></option>
-								<option value="Kawmi Madrasa Teacher">Kawmi Madrasa Teacher</option>
-								<option value="Aliya Madrasa Teacher">Aliya Madrasa Teacher</option>  
-								<option value="Primary School Teacher">Primary School Teacher</option> 
-								<option value="High School Teacher">High School Teacher</option>
-								<option value="College Professor">College Professor</option>
-								<option value="Public University Professor">Public University Professor</option>
-								<option value="Private University Professor">Private University Professor</option>
-								<option value="National University Professor">National University Professor</option>
-								<option value="Degree Professor">Degree Professor</option>
+								<option value="কওমি মাদ্রাসার শিক্ষক">কওমি মাদ্রাসার শিক্ষক</option>
+								<option value="আলিয়া মাদ্রাসার শিক্ষক">আলিয়া মাদ্রাসার শিক্ষক</option>  
+								<option value="স্কুল শিক্ষক">স্কুল শিক্ষক</option> 
+								<option value="কলেজ শিক্ষক">কলেজ শিক্ষক</option>
+								<option value="বিশ্ববিদ্যালয় প্রফেসর">বিশ্ববিদ্যালয় প্রফেসর</option>
+								<option value="ডিগ্রির প্রফেসর">ডিগ্রির প্রফেসর</option>
 							</select>
 						</div>
 
 						<div class="shosurbari-biodata-field section" id="Defense" style="display: none;">
-							<label>Occupation Level<span class="form-required" title="This field is required.">*</span></label>
+							<label>পেশার অবস্থান<span class="form-required" title="This field is required.">*</span></label>
 							<select name="defense_occupation_level">
 								<option hidden selected></option>
-								<option value="Army">Army</option> 
-								<option value="Air Force">Air Force</option>
-								<option value="Navy">Navy</option>
-								<option value="Police">Police</option>
-								<option value="Ansar">Ansar</option>
-								<option value="Fire Service">Fire Service</option> 
-								<option value="RAB">RAB</option>
-								<option value="DB">DB</option>
+								<option value="সেনাবাহিনী">সেনাবাহিনী</option> 
+								<option value="বিমানবাহিনী">বিমানবাহিনী</option>
+								<option value="নৌবাহিনী">নৌবাহিনী</option>
+								<option value="পুলিশ">পুলিশ</option>
+								<option value="ফায়ার সার্ভিস">ফায়ার সার্ভিস</option> 
+								<option value="ডিবি">ডিবি</option>
+								<option value="আনসার">আনসার</option>
 							</select>
 						</div>
 
 						<div class="shosurbari-biodata-field section" id="Foreigner" style="display: none;">
-							<label>Occupation Level<span class="form-required" title="This field is required.">*</span></label>
+							<label>পেশার অবস্থান<span class="form-required" title="This field is required.">*</span></label>
 							<select name="foreigner_occupation_level">
 								<option hidden selected></option>
-								<option value="Job">Foreigne Job</option>
-								<option value="Worker">Foreigne Worker</option>
-								<option value="Business">Foreigne Business</option>
-								<option value="Student">Foreigne Student</option>
+								<option value="বিদেশে চাকরি করি">বিদেশে চাকরি করি</option>
+								<option value="বিদেশে কাজ করি">বিদেশে কাজ করি</option>
+								<option value="বিদেশে ব্যবসা করি">বিদেশে ব্যবসা করি</option>
+								<option value="বিদেশে পড়াশোনা করি">বিদেশে পড়াশোনা করি</option>
 							</select>
 						</div>
 
 						<div class="shosurbari-biodata-field section" id="Garments" style="display: none;">
-							<label>Occupation Level<span class="form-required" title="This field is required.">*</span></label>
+							<label>পেশার অবস্থান<span class="form-required" title="This field is required.">*</span></label>
 							<select name="garments_occupation_level">
 								<option hidden selected></option>
-								<option value="Garments Worker">Garments Worker</option> 
-								<option value="Managers of Garments">Garments Manager</option>
+								<option value="গার্মেন্টস ম্যানেজার">গার্মেন্টস ম্যানেজার</option>
+								<option value="গার্মেন্টস বায়িং হাউস">গার্মেন্টস বায়িং হাউস</option>
+								<option value="গার্মেন্টস শ্রমিক">গার্মেন্টস শ্রমিক</option> 
 							</select>
 						</div>
 
 						<div class="shosurbari-biodata-field section" id="Driver" style="display: none;">
-							<label>Occupation Level<span class="form-required" title="This field is required.">*</span></label>
+							<label>পেশার অবস্থান<span class="form-required" title="This field is required.">*</span></label>
 							<select name="driver_occupation_level">
 								<option hidden selected></option>
-								<option value="Bus Driver">Bus Driver</option> 
-								<option value="Micro Driver">Micro Bus Driver</option> 
-								<option value="Car Driver">Car Driver</option> 
-								<option value="Truck Driver">Truck Driver</option>
-								<option value="CNG Driver">CNG Driver</option> 
-								<option value="Auto Driver">Auto Driver</option>
+								<option value="বাস ড্রাইভার">বাস ড্রাইভার</option> 
+								<option value="মাইক্রো বাস ড্রাইভার">মাইক্রো বাস ড্রাইভার</option> 
+								<option value="কার ড্রাইভার">কার ড্রাইভার</option> 
+								<option value="ট্রাক ড্রাইভার">ট্রাক ড্রাইভার</option>
+								<option value="CNG চালক">CNG চালক</option> 
+								<option value="অটো চালক">অটো চালক</option>
+								<option value="রিক্সা চালক">রিক্সা চালক</option>
 							</select>
 						</div>
 
 						<div class="shosurbari-biodata-field section" id="Common" style="display: none;">
-							<label>Occupation Level<span class="form-required" title="This field is required.">*</span></label>
+							<label>পেশার অবস্থান<span class="form-required" title="This field is required.">*</span></label>
 							<select name="service_common_occupation_level">
 								<option hidden selected></option>
 								<option value="HR">HR</option>
-								<option value="Banker">Banker</option>
-								<option value="Lawyer">Lawyer</option> 
-								<option value="Entrepreneur">Entrepreneur</option> 
-								<option value="Frelancer">Frelancer</option>
-								<option value="YouTuber">YouTuber</option>
-								<option value="Security">Security</option>
-								<option value="Graphics Desigener">Graphics Desigener</option>
-								<option value="Sales & Marketing (SR)">Sales & Marketing (SR)</option>
+								<option value="ব্যাংকার">ব্যাংকার</option>
+								<option value="আইনজীবী">আইনজীবী</option> 
+								<option value="উদ্যোক্তা">উদ্যোক্তা</option> 
+								<option value="ফ্রীলান্সার">ফ্রীলান্সার</option>
+								<option value="ইউটিউবার">ইউটিউবার</option>
+								<option value="গ্রাফিক্স ডিজাইনার">গ্রাফিক্স ডিজাইনার</option>
+								<option value="সেলস & মার্কেটিং(SR)">সেলস & মার্কেটিং(SR)</option>
 								<option value="আর্ট/দেয়াল লিখন">আর্ট/দেয়াল লিখন</option>
+								<option value="নিরাপত্তারক্ষী">নিরাপত্তারক্ষী</option>
 								<option value="রোজ কামলা / শ্রমিক">রোজ কামলা / শ্রমিক</option>  
 							</select>
 						</div>
 
 						<div class="shosurbari-biodata-field section" id="Mistri" style="display: none;">
-							<label>Occupation Level<span class="form-required" title="This field is required.">*</span></label>
+							<label>পেশার অবস্থান<span class="form-required" title="This field is required.">*</span></label>
 							<select name="mistri_occupation_level">
 							<option hidden selected></option>
+							<option value="রাজ মিস্ত্রি">রাজ মিস্ত্রি</option>
+							<option value="কাঠ মিস্ত্রি">কাঠ মিস্ত্রি</option>
 							<option value="ইলেকট্রিক মিস্ত্রি">ইলেকট্রিক মিস্ত্রি</option>
 							<option value="স্যানিটারি মিস্ত্রি">স্যানিটারি মিস্ত্রি</option>
 							<option value="রড মিস্ত্রি">রড মিস্ত্রি</option>
-							<option value="রাজ মিস্ত্রি">রাজ মিস্ত্রি</option>
 							<option value="রং মিস্ত্রি">রং মিস্ত্রি</option>
 							<option value="ফ্রিজমিস্ত্রি">ফ্রিজমিস্ত্রি</option>
 							<option value="গ্যাস মিস্ত্রি">গ্যাস মিস্ত্রি</option>
 							<option value="এসি মিস্ত্রি">এসি মিস্ত্রি</option>
-							<option value="কাঠ মিস্ত্রি">কাঠ মিস্ত্রি</option>
 							<option value="সিসি ক্যামেরা মিস্ত্রি">সিসি ক্যামেরা মিস্ত্রি</option>
 							<option value="টাইলস ও মুজাইক মিস্ত্রি">টাইলস ও মুজাইক মিস্ত্রি</option>
 							<option value="থাই এলুমিনিয়াম ও গ্লাস মিস্ত্রি">থাই এলুমিনিয়াম ও গ্লাস মিস্ত্রি</option>
@@ -686,17 +699,17 @@ $(document).ready(function(){
 									
 
 						<div class="shosurbari-biodata-field" id="occupation_describe_field" style="display: none;">
-							<label>Occupation Describe<span class="form-required" title="This field is required.">*</span></label>
+							<label>পেশার বিস্তারিত তথ্য<span class="form-required" title="This field is required.">*</span></label>
 							<textarea rows="5" name="occupation_describe" id="edit-name" placeholder="Describe your Occupation" class="form-text-describe" ><?php echo $occupation_describe; ?></textarea>
 						</div>
 
 						<div class="shosurbari-biodata-field">
-							<label>Your Dress Code at Home or Out Side<span class="form-required" title="This field is required.">*</span></label>
+							<label>ঘর ও ঘরের বাহিরে কেমন ধরণের পোশাক পরেন?<span class="form-required" title="This field is required.">*</span></label>
 							<textarea rows="5" name="dress_code" placeholder="Describe your Dress Code" class="form-text-describe" required><?php echo $dress_code; ?></textarea>
 						</div>
 
 						<div class="shosurbari-biodata-field">
-							<label>Write Something About You<span class="form-required" title="This field is required.">*</span></label>
+							<label>আপনার সম্পর্কে কিছু লিখুন<span class="form-required" title="This field is required.">*</span></label>
 							<textarea rows="5" name="aboutme" placeholder="Write about you" class="form-text-describe" required><?php echo $aboutme; ?></textarea>
 						</div>
 
@@ -870,7 +883,7 @@ $(document).ready(function(){
 			<fieldset>
 				<div class="sb-biodata" id="educationalQualifications">
 					<div class="sb-biodata-field">
-						<h2>Educational Qualifications</h2>
+						<h2>শিক্ষাগত যোগ্যতা</h2>
 					</div>
 
 					<div class="sb-biodata-option">
@@ -903,7 +916,7 @@ $(document).ready(function(){
 						</div>
 
 						<div class="shosurbari-biodata-field" id="dawra_pass_field">
-							<label for="dawra_pass">দাওরায়ে হাদিস পাস করেছেন?<span class="form-required" title="This field is required.">*</span></label>
+							<label for="dawra_pass">দাওরায়ে হাদিস পাস করেছেন? (মাস্টার্স)<span class="form-required" title="This field is required.">*</span></label>
 							<select name="qawmimadrasa_dawrapass" id="dawra_pass">
 								<option hidden selected></option>
 								<option value="হ্যাঁ">হ্যাঁ</option>
@@ -913,20 +926,39 @@ $(document).ready(function(){
 						</div>
 
 						<div class="shosurbari-biodata-field" id="dawra_passing_year_field">
-							<label for="dawra_passing_year">দাওরায়ে হাদিস কত সালে পাশ করেছেন?<span class="form-required" title="This field is required.">*</span></label>
+							<label for="dawra_passing_year">দাওরায়ে হাদিস পাসের বর্ষ<span class="form-required" title="This field is required.">*</span></label>
 							<select name="kowmi_dawrapas_year" id="dawra_passing_year">
 								<option hidden selected></option>
-								<option value="2023">2023</option>
-								<option value="2022">2022</option>
-								<option value="2021">2021</option>
-								<option value="2020">2020</option>
-								<option value="2019">2019</option>
-								<option value="2018">2018</option>
+								<option value="২০২৪">২০২৪</option>
+								<option value="২০২৩">২০২৩</option>
+								<option value="২০২২">২০২২</option>
+								<option value="২০২১">২০২১</option>
+								<option value="২০২০">২০২০</option>
+								<option value="২০১৯">২০১৯</option>
+								<option value="২০১৮">২০১৮</option>
+								<option value="২০১৭">২০১৭</option>
+								<option value="২০১৬">২০১৬</option>
+								<option value="২০১৫">২০১৫</option>
+								<option value="২০১৪">২০১৪</option>
+								<option value="২০১৩">২০১৩</option>
+								<option value="২০১২">২০১২</option>
+								<option value="২০১১">২০১১</option>
+								<option value="২০১০">২০১০</option>
+								<option value="২০০৯">২০০৯</option>
+								<option value="২০০৮">২০০৮</option>
+								<option value="২০০৭">২০০৭</option>
+								<option value="২০০৬">২০০৬</option>
+								<option value="২০০৫">২০০৫</option>
+								<option value="২০০৪">২০০৪</option>
+								<option value="২০০৩">২০০৩</option>
+								<option value="২০০২">২০০২</option>
+								<option value="২০০১">২০০১</option>
+								<option value="২০০০">২০০০</option>
 							</select>
 						</div>
 
 						<div class="shosurbari-biodata-field" id="current_edu_level_field">
-							<label for="current_edu_level">বর্তমানে কোন জামাতে অধ্যায়নরত আছেন?<span class="form-required" title="This field is required.">*</span></label>
+							<label for="current_edu_level">মাদ্রাসায় বর্তমান অধ্যায়নরত জামাত<span class="form-required" title="This field is required.">*</span></label>
 							<select name="kowmi_current_edu_level" id="current_edu_level">
 								<option hidden selected></option>
 								<option value="জামাতে তাইসীর">জামাতে তাইসীর</option>
@@ -956,40 +988,61 @@ $(document).ready(function(){
 						</div>
 
 						<div class="shosurbari-biodata-field" id="gnrl_mdrs_scnd_pass_year">
-							<label for="gnrl_mdrs_scnd_pass_year">কত সালে মাধ্যমিক/সমমান পাশ করেছেন?<span class="form-required" title="This field is required.">*</span></label>
+							<label for="gnrl_mdrs_scnd_pass_year">মাধ্যমিক/সমমান পাসের বর্ষ<span class="form-required" title="This field is required.">*</span></label>
 							<select name="gnrl_mdrs_secondary_pass_year" id="gnrl_mdrs_scnd_pass_year">
 								<option hidden selected></option>
-								<option value="nonyear">None</option>
-								<option value="2024">SSC Candidet2024</option>
-								<option value="2023">2023</option>
-								<option value="2022">2022</option>
-								<option value="2021">2021</option>
-								<option value="2020">2020</option>
+								<option value="২০২৪">২০২৪</option>
+								<option value="২০২৩">২০২৩</option>
+								<option value="২০২২">২০২২</option>
+								<option value="২০২১">২০২১</option>
+								<option value="২০২০">২০২০</option>
+								<option value="২০১৯">২০১৯</option>
+								<option value="২০১৮">২০১৮</option>
+								<option value="২০১৭">২০১৭</option>
+								<option value="২০১৬">২০১৬</option>
+								<option value="২০১৫">২০১৫</option>
+								<option value="২০১৪">২০১৪</option>
+								<option value="২০১৩">২০১৩</option>
+								<option value="২০১২">২০১২</option>
+								<option value="২০১১">২০১১</option>
+								<option value="২০১০">২০১০</option>
+								<option value="২০০৯">২০০৯</option>
+								<option value="২০০৮">২০০৮</option>
+								<option value="২০০৭">২০০৭</option>
+								<option value="২০০৬">২০০৬</option>
+								<option value="২০০৫">২০০৫</option>
+								<option value="২০০৪">২০০৪</option>
+								<option value="২০০৩">২০০৩</option>
+								<option value="২০০২">২০০২</option>
+								<option value="২০০১">২০০১</option>
+								<option value="২০০০">২০০০</option>
 							</select>
 						</div>
 
 						<div class="shosurbari-biodata-field" id="gnrl_mdrs_scnd_exam_year">
-							<label for="gnrl_mdrs_scnd_exam_year">কত সালে মাধ্যমিক/সমমান পরীক্ষা দেবেন?<span class="form-required" title="This field is required.">*</span></label>
+							<label for="gnrl_mdrs_scnd_exam_year">মাধ্যমিক/সমমান বোর্ড পরীক্ষার বর্ষ<span class="form-required" title="This field is required.">*</span></label>
 							<select name="gnrl_mdrs_secondary_end_year" id="gnrl_mdrs_scnd_exam_year">
-							<option hidden selected></option>
-							<option value="nonyear">None</option>
-							<option value="2024">SSC Candidet2024</option>
-							<option value="2023">2023</option>
-							<option value="2022">2022</option>
-							<option value="2021">2021</option>
-							<option value="2020">2020</option>
+								<option hidden selected></option>
+								<option value="২০৩০">২০৩০</option>
+								<option value="২০২৯">২০২৯</option>
+								<option value="২০২৮">২০২৮</option>
+								<option value="২০২৭">২০২৭</option>
+								<option value="২০২৬">২০২৬</option>
+								<option value="২০২৫">২০২৫</option>
+								<option value="২০২৪">২০২৪</option>
+								<option value="২০২৩">২০২৩</option>
 							</select>
 						</div>
 
 						<div class="shosurbari-biodata-field" id="gnrl_mdrs_running_stdn">
-							<label for="gnrl_mdrs_running_stdn">Your Class<span class="form-required" title="This field is required.">*</span></label>
+							<label for="gnrl_mdrs_running_stdn">মাধ্যমিক/সমমান বর্তমান অধ্যায়নরত ক্লাস<span class="form-required" title="This field is required.">*</span></label>
 							<input type="text" name="gnrlmdrs_secondary_running_std" id="gnrl_mdrs_running_stdn"  value="" size="250" maxlength="250" class="form-text required">
 						</div>
 
 						<div class="shosurbari-biodata-field" id="higher_seconday_edumethod">
-							<label for="higherscndry_edumethod">উচ্চমাধ্যমিক/ সমমান কোন মাদ্ধমে পড়েছেন?<span class="form-required" title="This field is required.">*</span></label>
+							<label for="higherscndry_edumethod">উচ্চমাধ্যমিক/সমমান শিক্ষার মাধ্যম<span class="form-required" title="This field is required.">*</span></label>
 							<select name="higher_secondary_edu_method" id="higherscndry_edumethod">
-							<option hidden selected></option>
+								<option hidden selected></option>
 								<option value="জেনারেল">জেনারেল</option>
 								<option value="আলিয়া মাদ্রাসা">আলিয়া মাদ্রাসা</option>
 								<option value="ডিপ্লোমা">ডিপ্লোমা</option>
@@ -1003,7 +1056,7 @@ $(document).ready(function(){
 
 						<!-- Higher Secondary start -->
 						<div class="shosurbari-biodata-field" id="gnrl_mdrs_hrscnd_pass">
-							<label for="hrsecondary_pass">উচ্চমাধ্যমিক/সমমান পাশ করেছেন?<span class="form-required" title="This field is required.">*</span></label>
+							<label for="hrsecondary_pass">উচ্চমাধ্যমিক/সমমান পাস করেছেন?<span class="form-required" title="This field is required.">*</span></label>
 							<select name="gnrlmdrs_hrsecondary_pass" id="hrsecondary_pass">
 								<option hidden selected></option>
 								<option value="হ্যাঁ">হ্যাঁ</option>
@@ -1013,33 +1066,54 @@ $(document).ready(function(){
 						</div>
 
 						<div class="shosurbari-biodata-field" id="gnrl_mdrs_hrscnd_pass_year">
-							<label for="edu-method">কত সালে উচ্চমাধ্যমিক/সমমান পাশ করেছেন?<span class="form-required" title="This field is required.">*</span></label>
+							<label for="edu-method">উচ্চমাধ্যমিক/সমমান পাসের বর্ষ<span class="form-required" title="This field is required.">*</span></label>
 							<select name="gnrlmdrs_hrsecondary_pass_year">
 								<option hidden selected></option>
-								<option value="nonyear">None</option>
-								<option value="2024">SSC Candidet2024</option>
-								<option value="2023">2023</option>
-								<option value="2022">2022</option>
-								<option value="2021">2021</option>
-								<option value="2020">2020</option>
+								<option value="২০২৪">২০২৪</option>
+								<option value="২০২৩">২০২৩</option>
+								<option value="২০২২">২০২২</option>
+								<option value="২০২১">২০২১</option>
+								<option value="২০২০">২০২০</option>
+								<option value="২০১৯">২০১৯</option>
+								<option value="২০১৮">২০১৮</option>
+								<option value="২০১৭">২০১৭</option>
+								<option value="২০১৬">২০১৬</option>
+								<option value="২০১৫">২০১৫</option>
+								<option value="২০১৪">২০১৪</option>
+								<option value="২০১৩">২০১৩</option>
+								<option value="২০১২">২০১২</option>
+								<option value="২০১১">২০১১</option>
+								<option value="২০১০">২০১০</option>
+								<option value="২০০৯">২০০৯</option>
+								<option value="২০০৮">২০০৮</option>
+								<option value="২০০৭">২০০৭</option>
+								<option value="২০০৬">২০০৬</option>
+								<option value="২০০৫">২০০৫</option>
+								<option value="২০০৪">২০০৪</option>
+								<option value="২০০৩">২০০৩</option>
+								<option value="২০০২">২০০২</option>
+								<option value="২০০১">২০০১</option>
+								<option value="২০০০">২০০০</option>
 							</select>
 						</div>
 
 						<div class="shosurbari-biodata-field" id="gnrl_mdrs_hrscnd_exam_year">
-							<label for="edu-method">কত সালে উচ্চমাধ্যমিক/সমমান পরীক্ষা দেবেন?<span class="form-required" title="This field is required.">*</span></label>
+							<label for="edu-method">উচ্চমাধ্যমিক/সমমান বোর্ড পরীক্ষার বর্ষ<span class="form-required" title="This field is required.">*</span></label>
 							<select name="gnrlmdrs_hrsecondary_exam_year">
 								<option hidden selected></option>
-								<option value="nonyear">None</option>
-								<option value="2024">SSC Candidet2024</option>
-								<option value="2023">2023</option>
-								<option value="2022">2022</option>
-								<option value="2021">2021</option>
-								<option value="2020">2020</option>
+								<option value="২০৩০">২০৩০</option>
+								<option value="২০২৯">২০২৯</option>
+								<option value="২০২৮">২০২৮</option>
+								<option value="২০২৭">২০২৭</option>
+								<option value="২০২৬">২০২৬</option>
+								<option value="২০২৫">২০২৫</option>
+								<option value="২০২৪">২০২৪</option>
+								<option value="২০২৩">২০২৩</option>
 							</select>
 						</div>
 
 						<div class="shosurbari-biodata-field" id="higher_seconday_group">
-							<label for="edu-method">উচ্চমাধ্যমিক/সমমানে আপনার গ্রুপ?<span class="form-required" title="This field is required.">*</span></label>
+							<label for="edu-method">উচ্চমাধ্যমিক/সমমানে গ্রুপ?<span class="form-required" title="This field is required.">*</span></label>
 							<select name="gnrlmdrs_hrsecondary_group">
 								<option hidden selected></option>
 								<option value="বিজ্ঞান">বিজ্ঞান শাখা</option>
@@ -1049,7 +1123,7 @@ $(document).ready(function(){
 						</div>
 
 						<div class="shosurbari-biodata-field" id="hrgnrl_mdrs_running_stdn">
-							<label for="hrgnrl_mdrs_running_stdn">Collage Year<span class="form-required" title="This field is required.">*</span></label>
+							<label for="hrgnrl_mdrs_running_stdn">উচ্চমাধ্যমিক/সমমানে বর্তমান অধ্যায়নরত ক্লাস<span class="form-required" title="This field is required.">*</span></label>
 							<input type="text"  name="gnrlmdrs_hrsecondary_rningstd" id="hrgnrl_mdrs_running_stdn" value="" size="250" maxlength="250" class="form-text required">
 						</div>
 						<!--Higher Seconday Education End -->
@@ -1066,33 +1140,59 @@ $(document).ready(function(){
 						</div>
 
 						<div class="shosurbari-biodata-field" id="doploma_hrscnd_pass_year">
-							<label for="doploma_hrscnd_pass_year">কত সালে ডিপ্লোমা পাশ করেছেন?<span class="form-required" title="This field is required.">*</span></label>
+							<label for="doploma_hrscnd_pass_year">ডিপ্লোমা পাসের বর্ষ<span class="form-required" title="This field is required.">*</span></label>
 							<select name="diploma_hrsecondary_pass_year">
 								<option hidden selected></option>
-								<option value="2022">2022</option>
-								<option value="2021">2021</option>
-								<option value="2020">2020</option>
+								<option value="২০২৪">২০২৪</option>
+								<option value="২০২৩">২০২৩</option>
+								<option value="২০২২">২০২২</option>
+								<option value="২০২১">২০২১</option>
+								<option value="২০২০">২০২০</option>
+								<option value="২০১৯">২০১৯</option>
+								<option value="২০১৮">২০১৮</option>
+								<option value="২০১৭">২০১৭</option>
+								<option value="২০১৬">২০১৬</option>
+								<option value="২০১৫">২০১৫</option>
+								<option value="২০১৪">২০১৪</option>
+								<option value="২০১৩">২০১৩</option>
+								<option value="২০১২">২০১২</option>
+								<option value="২০১১">২০১১</option>
+								<option value="২০১০">২০১০</option>
+								<option value="২০০৯">২০০৯</option>
+								<option value="২০০৮">২০০৮</option>
+								<option value="২০০৭">২০০৭</option>
+								<option value="২০০৬">২০০৬</option>
+								<option value="২০০৫">২০০৫</option>
+								<option value="২০০৪">২০০৪</option>
+								<option value="২০০৩">২০০৩</option>
+								<option value="২০০২">২০০২</option>
+								<option value="২০০১">২০০১</option>
+								<option value="২০০০">২০০০</option>
 							</select>
 						</div>
 
 						<div class="shosurbari-biodata-field" id="doploma_hrscnd_subject">
-							<label for="edu-method">ডিপ্লোমায় আপনার সাবজেক্ট কোনটি?<span class="form-required" title="This field is required.">*</span></label>
+							<label for="edu-method">ডিপ্লোমায় আপনার সাবজেক্ট<span class="form-required" title="This field is required.">*</span></label>
 							<input type="text" name="diploma_hrsecondary_sub" id="diploma_secondary_subject"   size="250" maxlength="250" class="form-text required">
 						</div>
 
 						<div class="shosurbari-biodata-field" id="doploma_hrscnd_exam_year">
-							<label for="edu-method">ডিপ্লোমা অধ্যায়ন কত সালে সম্পূর্ণ হবে?<span class="form-required" title="This field is required.">*</span></label>
+							<label for="edu-method">ডিপ্লোমা অধ্যায়ন সম্পন্ন হবে<span class="form-required" title="This field is required.">*</span></label>
 							<select name="diploma_hrsecondary_endingyear">
 								<option hidden selected></option>
-								<option value="2023">2023</option>
-								<option value="2022">2022</option>
-								<option value="2021">2021</option>
-								<option value="2020">2020</option>
+								<option value="২০৩০">২০৩০</option>
+								<option value="২০২৯">২০২৯</option>
+								<option value="২০২৮">২০২৮</option>
+								<option value="২০২৭">২০২৭</option>
+								<option value="২০২৬">২০২৬</option>
+								<option value="২০২৫">২০২৫</option>
+								<option value="২০২৪">২০২৪</option>
+								<option value="২০২৩">২০২৩</option>
 							</select>
 						</div>
 
 						<div class="shosurbari-biodata-field" id="varsity_edumethod">
-							<label for="university_edumethod">স্নাতক/সমমান কোন মাদ্ধমে পড়েছেন?<span class="form-required" title="This field is required.">*</span></label>
+							<label for="university_edumethod">স্নাতক/সমমান শিক্ষার মাধ্যম<span class="form-required" title="This field is required.">*</span></label>
 							<select name="varsity_edu_method" id="university_edumethod">
 								<option hidden selected></option>
 								<option value="জেনারেল">জেনারেল</option>
@@ -1116,33 +1216,58 @@ $(document).ready(function(){
 						</div>
 
 						<div class="shosurbari-biodata-field" id="varsity_pass_year">
-							<label for="edu-method">কত সালে স্নাতক/সমমান পাশ করেছেন?<span class="form-required" title="This field is required.">*</span></label>
+							<label for="edu-method">স্নাতক/সমমান পাসের বর্ষ<span class="form-required" title="This field is required.">*</span></label>
 							<select name="varsity_passing_year">
 								<option hidden selected></option>
-								<option value="2022">2022</option>
-								<option value="2021">2021</option>
-								<option value="2020">2020</option>
+								<option value="২০২৪">২০২৪</option>
+								<option value="২০২৩">২০২৩</option>
+								<option value="২০২২">২০২২</option>
+								<option value="২০২১">২০২১</option>
+								<option value="২০২০">২০২০</option>
+								<option value="২০১৯">২০১৯</option>
+								<option value="২০১৮">২০১৮</option>
+								<option value="২০১৭">২০১৭</option>
+								<option value="২০১৬">২০১৬</option>
+								<option value="২০১৫">২০১৫</option>
+								<option value="২০১৪">২০১৪</option>
+								<option value="২০১৩">২০১৩</option>
+								<option value="২০১২">২০১২</option>
+								<option value="২০১১">২০১১</option>
+								<option value="২০১০">২০১০</option>
+								<option value="২০০৯">২০০৯</option>
+								<option value="২০০৮">২০০৮</option>
+								<option value="২০০৭">২০০৭</option>
+								<option value="২০০৬">২০০৬</option>
+								<option value="২০০৫">২০০৫</option>
+								<option value="২০০৪">২০০৪</option>
+								<option value="২০০৩">২০০৩</option>
+								<option value="২০০২">২০০২</option>
+								<option value="২০০১">২০০১</option>
+								<option value="২০০০">২০০০</option>
 							</select>
 						</div>
 
 						<div class="shosurbari-biodata-field" id="varsity_subject">
-							<label for="edu-method">স্নাতক/সমমানে আপনার সাবজেক্ট কোনটি?<span class="form-required" title="This field is required.">*</span></label>
+							<label for="edu-method">স্নাতক/সমমানে আপনার সাবজেক্ট<span class="form-required" title="This field is required.">*</span></label>
 							<input type="text" name="university_subject" id="varsity_subject"  value="" size="250" maxlength="250" class="form-text required">
 						</div>
 
 						<div class="shosurbari-biodata-field" id="varsity_exam_year">
-							<label for="edu-method">স্নাতক/সমমান অধ্যায়ন কত সালে সম্পূর্ণ হবে?<span class="form-required" title="This field is required.">*</span></label>
+							<label for="edu-method">স্নাতক/সমমান অধ্যায়ন সম্পন্ন হবে<span class="form-required" title="This field is required.">*</span></label>
 							<select name="varsity_ending_year">
-								<option hidden selected></option>
-								<option value="2023">2023</option>
-								<option value="2022">2022</option>
-								<option value="2021">2021</option>
-								<option value="2020">2020</option>
+								<option value="২০৩০">২০৩০</option>
+								<option value="২০২৯">২০২৯</option>
+								<option value="২০২৮">২০২৮</option>
+								<option value="২০২৭">২০২৭</option>
+								<option value="২০২৬">২০২৬</option>
+								<option value="২০২৫">২০২৫</option>
+								<option value="২০২৪">২০২৪</option>
+								<option value="২০২৩">২০২৩</option>
 							</select>
 						</div>
 
 						<div class="shosurbari-biodata-field" id="varsity_name">
-							<label for="edu-method">স্নাতক/সমমানে আপনার প্রতিষ্ঠান?<span class="form-required" title="This field is required.">*</span></label>
+							<label for="edu-method">স্নাতকে/সমমানে শিক্ষা প্রতিষ্ঠান<span class="form-required" title="This field is required.">*</span></label>
 							<input type="text" name="uvarsity_name" id="university_name"  value="" size="250" maxlength="250" class="form-text required">
 						</div>
 						<!-- Higher Education End -->
@@ -1690,142 +1815,142 @@ $(document).ready(function(){
 			<fieldset>
 				<div class="sb-biodata" id="addressDetails">			
 					<div class="sb-biodata-field">
-						<h2>Address Details</h2>
+						<h2>বর্তমান এবং স্থায়ী ঠিকানা</h2>
 					</div>
 
 					<div class="sb-biodata-option">
 						<div class="shosurbari-biodata-field">
-							<label>Division of Permanent Address<span class="form-required" title="This field is required.">*</span></label>
+							<label>স্থায়ী ঠিকানার বিভাগ<span class="form-required" title="This field is required.">*</span></label>
 							<select name="permanent_division" required onchange="showSection(this.value)">
 								<option hidden selected></option>
-								<option value="barishal">Barishal</option>
-								<option value="chattogram">Chattogram</option>
-								<option value="dhaka">Dhaka</option>
-								<option value="khulna">Khulna</option>
-								<option value="mymensingh">Mymensingh</option>
-								<option value="rajshahi">Rajshahi</option>
-								<option value="rangpur">Rangpur</option>
-								<option value="sylhet">Sylhet</option>
+								<option value="বরিশাল">বরিশাল</option>
+								<option value="চট্টগ্রাম">চট্টগ্রাম</option>
+								<option value="ঢাকা">ঢাকা</option>
+								<option value="খুলনা">খুলনা</option>
+								<option value="ময়মনসিংহ">ময়মনসিংহ</option>
+								<option value="রাজশাহী">রাজশাহী</option>
+								<option value="রংপুর">রংপুর</option>
+								<option value="সিলেট">সিলেট</option>
 							</select>
 						</div>
 
-						<div class="shosurbari-biodata-field section" id="barishal" style="display: none;">
-							<label>District of Permanent Address<span class="form-required" title="This field is required.">*</span></label>
+						<div class="shosurbari-biodata-field section" id="বরিশাল" style="display: none;">
+							<label>স্থায়ী ঠিকানার জেলা<span class="form-required" title="This field is required.">*</span></label>
 							<select name="home_district_under_barishal">
 								<option hidden selected></option>
-								<option value="Barguna">Barguna</option>
-								<option value="Barishal">Barishal</option> 
-								<option value="Bhola">Bhola</option>
-								<option value="Jhalokati">Jhalokati</option>
-								<option value="Patuakhali">Patuakhali</option> 
-								<option value="Pirojpur">Pirojpur</option>
+								<option value="ঝালকাঠী">ঝালকাঠী</option>
+								<option value="পটুয়াখালী">পটুয়াখালী</option> 
+								<option value="পিরোজপুর">পিরোজপুর</option>
+								<option value="বরিশাল">বরিশাল</option> 
+								<option value="বরগুনা">বরগুনা</option>
+								<option value="ভোলা">ভোলা</option>
 							</select>
 						</div>
 
-						<div class="shosurbari-biodata-field section" id="chattogram" style="display: none;">
-							<label>District of Permanent Address<span class="form-required" title="This field is required.">*</span></label>
+						<div class="shosurbari-biodata-field section" id="চট্টগ্রাম" style="display: none;">
+							<label>স্থায়ী ঠিকানার জেলা<span class="form-required" title="This field is required.">*</span></label>
 							<select name="home_district_under_chattogram">
 								<option hidden selected></option>
-								<option value="Bandarban">Bandarban</option>
-								<option value="Brahmanbaria">Brahmanbaria</option> 
-								<option value="Chandpur">Chandpur</option>
-								<option value="Chattogram">Chattogram</option>
-								<option value="Cumilla">Cumilla</option>
-								<option value="Coxbazar">Cox's Bazar</option>  
-								<option value="Feni">Feni</option>
-								<option value="Khagrachhari">Khagrachhari</option>
-								<option value="Lakshmipur">Lakshmipur</option>
-								<option value="Noakhali">Noakhali</option>
-								<option value="Rangamati">Rangamati</option>
+								<option value="কুমিল্লা">কুমিল্লা</option>
+								<option value="কক্সবাজার">কক্সবাজার</option>  
+								<option value="খাগড়াছড়ি">খাগড়াছড়ি</option>
+								<option value="চট্টগ্রাম">চট্টগ্রাম</option>
+								<option value="চাঁদপুর">চাঁদপুর</option>
+								<option value="নোয়াখালী">নোয়াখালী</option>
+								<option value="ফেনী">ফেনী</option>
+								<option value="বান্দরবান">বান্দরবান</option>
+								<option value="ব্রাহ্মনবাড়ীয়া">ব্রাহ্মনবাড়ীয়া</option> 
+								<option value="লক্ষীপুর">লক্ষীপুর</option>
+								<option value="রাঙ্গামাটি">রাঙ্গামাটি</option>
 							</select>
 						</div>
 
-						<div class="shosurbari-biodata-field section" id="dhaka" style="display: none;">
-							<label>District of Permanent Address<span class="form-required" title="This field is required.">*</span></label>
+						<div class="shosurbari-biodata-field section" id="ঢাকা" style="display: none;">
+							<label>স্থায়ী ঠিকানার জেলা<span class="form-required" title="This field is required.">*</span></label>
 							<select name="home_district_under_dhaka">
-								<option hidden selected></option>
-								<option value="Dhaka">Dhaka</option>
-								<option value="Faridpur">Faridpur</option>
-								<option value="Gazipur">Gazipur</option> 
-								<option value="Gopalganj">Gopalganj</option>
-								<option value="Kishoreganj">Kishoreganj</option>
-								<option value="Madaripur">Madaripur</option>
-								<option value="Manikganj">Manikganj</option> 
-								<option value="Munshiganj">Munshiganj</option>
-								<option value="Narayanganj">Narayanganj</option>
-								<option value="Narsingdi">Narsingdi</option> 
-								<option value="Rajbari">Rajbari</option>
-								<option value="Shariatpur">Shariatpur</option>
-								<option value="Tangail">Tangail</option>
+							<option hidden selected></option>
+							<option value="কিশোরগঞ্জ">কিশোরগঞ্জ</option>
+							<option value="গাজীপুর">গাজীপুর</option>
+							<option value="গোপালগঞ্জ">গোপালগঞ্জ</option>
+							<option value="টাঙ্গাইল">টাঙ্গাইল</option>
+							<option value="ঢাকা">ঢাকা</option>
+							<option value="নরসিংদী">নরসিংদী</option>
+							<option value="নারায়ণগঞ্জ">নারায়ণগঞ্জ</option>
+							<option value="ফরিদপুর">ফরিদপুর</option>
+							<option value="মাদারীপুর">মাদারীপুর</option>
+							<option value="মানিকগঞ্জ">মানিকগঞ্জ</option>
+							<option value="মুন্সীগঞ্জ">মুন্সীগঞ্জ</option>
+							<option value="রাজবাড়ী">রাজবাড়ী</option>
+							<option value="শরীয়তপুর">শরীয়তপুর</option>
 							</select>
 						</div>
 
-						<div class="shosurbari-biodata-field section" id="khulna" style="display: none;">
-							<label>District of Permanent Address<span class="form-required" title="This field is required.">*</span></label>
+						<div class="shosurbari-biodata-field section" id="খুলনা" style="display: none;">
+							<label>স্থায়ী ঠিকানার জেলা<span class="form-required" title="This field is required.">*</span></label>
 							<select name="home_district_under_khulna">
 								<option hidden selected></option>
-								<option value="Bagerhat">Bagerhat</option>
-								<option value="Chuadanga">Chuadanga</option>
-								<option value="Jashore">Jashore</option>
-								<option value="Jhenaidah">Jhenaidah</option>  
-								<option value="Khulna">Khulna</option>
-								<option value="Kushtia">Kushtia</option>
-								<option value="Magura">Magura</option>
-								<option value="Meherpur">Meherpur</option>
-								<option value="Narail">Narail</option> 
-								<option value="Satkhira">Satkhira</option>
+								<option value="কুষ্টিয়া">কুষ্টিয়া</option>
+								<option value="খুলনা">খুলনা</option>
+								<option value="চুয়াডাঙ্গা">চুয়াডাঙ্গা</option>
+								<option value="ঝিনাইদহ">ঝিনাইদহ</option>
+								<option value="নড়াইল">নড়াইল</option>
+								<option value="বাগেরহাট">বাগেরহাট</option>
+								<option value="মাগুরা">মাগুরা</option>
+								<option value="মেহেরপুর">মেহেরপুর</option>
+								<option value="যশোর">যশোর</option>
+								<option value="সাতক্ষীরা">সাতক্ষীরা</option>
 							</select>
 						</div>
 
-						<div class="shosurbari-biodata-field section" id="mymensingh" style="display: none;">
-							<label>District of Permanent Address<span class="form-required" title="This field is required.">*</span></label>
+						<div class="shosurbari-biodata-field section" id="ময়মনসিংহ" style="display: none;">
+							<label>স্থায়ী ঠিকানার জেলা<span class="form-required" title="This field is required.">*</span></label>
 							<select name="home_district_under_mymensingh">
 								<option hidden selected></option>
-								<option value="Jamalpur">Jamalpur</option>
-								<option value="Mymensingh">Mymensingh</option> 
-								<option value="Netrokona">Netrokona</option>
-								<option value="Sherpur">Sherpur</option>
+								<option value="জামালপুর">জামালপুর</option>
+								<option value="নেত্রকোনা">নেত্রকোনা</option>
+								<option value="ময়মনসিংহ">ময়মনসিংহ</option> 
+								<option value="শেরপুর">শেরপুর</option>
 							</select>
 						</div>
 
-						<div class="shosurbari-biodata-field section" id="rajshahi" style="display: none;">
-							<label>District of Permanent Address<span class="form-required" title="This field is required.">*</span></label>
+						<div class="shosurbari-biodata-field section" id="রাজশাহী" style="display: none;">
+							<label>স্থায়ী ঠিকানার জেলা<span class="form-required" title="This field is required.">*</span></label>
 							<select name="home_district_under_rajshahi">
 								<option hidden selected></option>
-								<option value="Bogura">Bogura</option>
-								<option value="Chapai Nawabganj">Chapai Nawabganj</option> 
-								<option value="Joypurhat">Joypurhat</option> 
-								<option value="Naogaon">Naogaon</option>
-								<option value="Natore">Natore</option>
-								<option value="Pabna">Pabna</option>
-								<option value="Rajshahi">Rajshahi</option>
-								<option value="Sirajganj">Sirajganj</option>
+								<option value="চাঁপাই-নবাবগঞ্জ">চাঁপাই-নবাবগঞ্জ</option>
+								<option value="জয়পুরহাট">জয়পুরহাট</option>
+								<option value="নওগাঁ">নওগাঁ</option>
+								<option value="নাটোর">নাটোর</option>
+								<option value="পাবনা">পাবনা</option>
+								<option value="বগুড়া">বগুড়া</option>
+								<option value="রাজশাহী">রাজশাহী</option>
+								<option value="সিরাজগঞ্জ">সিরাজগঞ্জ</option>
 							</select>
 						</div>
 
-						<div class="shosurbari-biodata-field section" id="rangpur" style="display: none;">
-							<label>District of Permanent Address<span class="form-required" title="This field is required.">*</span></label>
+						<div class="shosurbari-biodata-field section" id="রংপুর" style="display: none;">
+							<label>স্থায়ী ঠিকানার জেলা<span class="form-required" title="This field is required.">*</span></label>
 							<select name="home_district_under_rangpur">
 								<option hidden selected></option>
-								<option value="Dinajpur">Dinajpur</option>
-								<option value="Gaibandha">Gaibandha</option>
-								<option value="Kurigram">Kurigram</option>
-								<option value="Lalmonirhat">Lalmonirhat</option>  
-								<option value="Nilphamari">Nilphamari</option>
-								<option value="Panchagarh">Panchagarh</option>
-								<option value="Rangpur">Rangpur</option>
-								<option value="Thakurgaon">Thakurgaon</option>
+								<option value="কুড়িগ্রাম">কুড়িগ্রাম</option>
+								<option value="গাইবান্ধা">গাইবান্ধা</option>
+								<option value="ঠাকুরগাঁও">ঠাকুরগাঁও</option>
+								<option value="দিনাজপুর">দিনাজপুর</option>
+								<option value="নীলফামারী">নীলফামারী</option>
+								<option value="পঞ্চগড়">পঞ্চগড়</option>
+								<option value="রংপুর">রংপুর</option>
+								<option value="লালমনিরহাট">লালমনিরহাট</option>
 							</select>
 						</div>
 
-						<div class="shosurbari-biodata-field section" id="sylhet" style="display: none;">
-							<label>District of Permanent Address<span class="form-required" title="This field is required.">*</span></label>
+						<div class="shosurbari-biodata-field section" id="সিলেট" style="display: none;">
+							<label>স্থায়ী ঠিকানার জেলা<span class="form-required" title="This field is required.">*</span></label>
 							<select name="home_district_under_sylhet">
 								<option hidden selected></option>
-								<option value="Habiganj">Habiganj</option> 
-								<option value="Moulvibazar">Moulvibazar</option>
-								<option value="Sunamganj">Sunamganj</option>
-								<option value="Sylhet">Sylhet</option>
+								<option value="সিলেট">সিলেট</option>
+								<option value="মৌলভীবাজার">মৌলভীবাজার</option>
+								<option value="সুনামগঞ্জ">সুনামগঞ্জ</option>
+								<option value="হবিগঞ্জ">হবিগঞ্জ</option> 
 							</select>
 						</div>
 
@@ -1849,7 +1974,7 @@ $(document).ready(function(){
 						<script src="https://cdnjs.cloudflare.com/ajax/libs/chosen/1.8.7/chosen.jquery.min.js"></script>
 
 						<div class="shosurbari-biodata-field">
-							<label for="edit-name">Present Address<span class="form-required" title="This field is required.">*</span></label>
+							<label for="edit-name">যে দেশে বসবাস করেন<span class="form-required" title="This field is required.">*</span></label>
 							<select name="country_present_address" required class="selectsearch">
 								<option hidden selected></option>
 								<option hidden disabled>Search Country</option>
@@ -1934,12 +2059,12 @@ $(document).ready(function(){
 						</script>
 
 						<div class="shosurbari-biodata-field">
-							<label for="edit-name">Present Location<span class="form-required" title="This field is required.">*</span></label>
+							<label for="edit-name">বর্তমান বসবাসের ঠিকানা<span class="form-required" title="This field is required.">*</span></label>
 							<input type="text" name="present_address_location" id="edit-name"  value="<?php echo $present_address; ?>" size="100" maxlength="100" class="form-text required" required>
 						</div>
 
 						<div class="shosurbari-biodata-field">
-							<label for="edit-name">Where did you grow up?<span class="form-required" title="This field is required.">*</span></label>
+							<label for="edit-name">বাল্যকালে কোথায় থেকেছেন?<span class="form-required" title="This field is required.">*</span></label>
 							<input type="text" id="edit-name" name="childhood" value="<?php echo $childhood; ?>" size="100" maxlength="100" class="form-text required" required>
 						</div>
 					</div>
@@ -2017,64 +2142,64 @@ $(document).ready(function(){
 			<fieldset>
 				<div class="sb-biodata" id="familyInfo">
 					<div class="sb-biodata-field">
-						<h2>Family Information</h2>
+						<h2>পারিবারিক ও সামাজিক তথ্য</h2>
 					</div>
 
 					<div class="sb-biodata-option">
 						<div class="shosurbari-biodata-field">
-							<label for="edit-name">Is your Father alive?<span class="form-required" title="This field is required.">*</span></label>
-							<input type="text" id="edit-name" name="father_alive" value="<?php echo $father_alive; ?>" size="100" maxlength="100" class="form-text" required>
+							<label>বাবা বেঁচে আছেন?<span class="form-required" title="This field is required.">*</span></label>
+							<input type="text"  name="father_alive" value="<?php echo $father_alive; ?>" size="100" maxlength="100" class="form-text" required>
 						</div>
 
 						<div class="shosurbari-biodata-field">
-							<label for="edit-name">Fathers Occupation<span class="form-required" title="This field is required.">*</span></label>
-							<input type="text" id="edit-name" name="fatheroccupation" value="<?php echo $fatheroccupation; ?>" size="200" maxlength="200" class="form-text" required>
+							<label>বাবার পেশা<span class="form-required" title="This field is required.">*</span></label>
+							<input type="text"  name="fatheroccupation" value="<?php echo $fatheroccupation; ?>" size="200" maxlength="200" class="form-text" required>
 						</div>
 
 						<div class="shosurbari-biodata-field">
-							<label for="edit-name">Is your Mother alive?<span class="form-required" title="This field is required.">*</span></label>
-							<input type="text" id="edit-name" name="mother_alive"  value="<?php echo $mother_alive; ?>"  size="100" maxlength="100" class="form-text" required>
+							<label>মা বেঁচে আছেন?<span class="form-required" title="This field is required.">*</span></label>
+							<input type="text"  name="mother_alive"  value="<?php echo $mother_alive; ?>"  size="100" maxlength="100" class="form-text" required>
 						</div>
 
 						<div class="shosurbari-biodata-field">
-							<label for="edit-name">Mothers Occupation<span class="form-required" title="This field is required.">*</span></label>
-							<input type="text" id="edit-name" name="motheroccupation"  value="<?php echo $motheroccupation; ?>"  size="200" maxlength="200" class="form-text" required>
+							<label>মায়ের পেশা<span class="form-required" title="This field is required.">*</span></label>
+							<input type="text"  name="motheroccupation"  value="<?php echo $motheroccupation; ?>"  size="200" maxlength="200" class="form-text" required>
 						</div>
 
 						<div class="shosurbari-biodata-field">
-							<label for="edit-name">How many Sisters & Brothers do you have?<span class="form-required" title="This field is required.">*</span></label>
-							<input type="text" id="edit-name" name="brosis_number"  value="<?php echo $brosis_number; ?>"  size="100" maxlength="100" class="form-text" required>
+							<label>ভাইবোন কয়জন<span class="form-required" title="This field is required.">*</span></label>
+							<input type="text"  name="brosis_number"  value="<?php echo $brosis_number; ?>"  size="100" maxlength="100" class="form-text" required>
 						</div>
 
 						<div class="shosurbari-biodata-field">
-							<label for="edit-name">Sisters & Brothers information<span class="form-required" title="This field is required.">*</span></label>
-							<textarea rows="8" id="edit-name" name="brosis_info"   placeholder="Discribe Your Sisters & Brothers information" class="form-text-describe" required><?php echo $brosis_info; ?></textarea>
+							<label>ভাইবোন সম্পর্কিত তথ্য<span class="form-required" title="This field is required.">*</span></label>
+							<textarea rows="8" name="brosis_info"   placeholder="Discribe Your Sisters & Brothers information" class="form-text-describe" required><?php echo $brosis_info; ?></textarea>
 						</div>
 
 						<div class="shosurbari-biodata-field">
-							<label for="edit-name">Profession of uncles<span class="form-required" title="This field is required.">*</span></label>
-							<textarea rows="8" id="edit-name" name="uncle_profession"  placeholder="Describe Profession of Your Uncles" class="form-text-describe" required><?php echo $uncle_profession; ?></textarea>
+							<label>মামা/চাচাদের পেশা<span class="form-required" title="This field is required.">*</span></label>
+							<textarea rows="8" name="uncle_profession"  placeholder="Describe Profession of Your Uncles" class="form-text-describe" required><?php echo $uncle_profession; ?></textarea>
 						</div>
 
 						<div class="shosurbari-biodata-field">
-							<label for="edit-name">Family financial status<span class="form-required" title="This field is required.">*</span></label>
+							<label>পারিবারিক শ্রেণী<span class="form-required" title="This field is required.">*</span></label>
 							<select name="family_class" required>
 								<option hidden selected></option>
-								<option value="Higher Class">Higher Class</option>
-								<option value="Higher Middle Class">Higher Middle Class</option> 
-								<option value="Middle Class">Middle Class</option>
-								<option value="Lower Middle Class">Lower Middle Class</option>
-								<option value="Lower Class">Lower Class</option>  
+								<option value="উচ্চ শ্রেণী">উচ্চ শ্রেণী</option>
+								<option value="উচ্চ মধ্যম শ্রেণী">উচ্চ মধ্যম শ্রেণী</option> 
+								<option value="মধ্যম শ্রেণী">মধ্যম শ্রেণী</option>
+								<option value="নিম্নমধ্যম শ্রেণী">নিম্নমধ্যম শ্রেণী</option>
+								<option value="নিম্ন শ্রেণী">নিম্ন শ্রেণী</option>  
 							</select>
 						</div>
 
 						<div class="shosurbari-biodata-field">
-							<label for="edit-name">Describe of financial condition<span class="form-required" title="This field is required.">*</span></label>
-							<textarea rows="5" id="edit-name" name="financial_condition" placeholder="Describe Your Financial Condition" class="form-text-describe" required><?php echo $financial_condition; ?></textarea>
+							<label>পরিবারের অর্থনৈতিক অবস্থা কেমন?<span class="form-required" title="This field is required.">*</span></label>
+							<textarea rows="5" name="financial_condition" placeholder="Describe Your Financial Condition" class="form-text-describe" required><?php echo $financial_condition; ?></textarea>
 						</div>
 
 						<div class="shosurbari-biodata-field">
-							<label for="about me">How is your family's religious condition?<span class="form-required" title="This field is required.">*</span></label>
+							<label>পারিবারিক ধর্মীয় ও সামাজিক অবস্থা কেমন?<span class="form-required" title="This field is required.">*</span></label>
 							<textarea rows="5" name="family_religious_condition"  placeholder="Describe Your Family's Religious Condition" class="form-text-describe" required><?php echo $family_religious; ?></textarea>
 						</div>
 					</div>
@@ -2216,26 +2341,26 @@ $(document).ready(function(){
 			<fieldset>
 				<div class="sb-biodata" id="maleMarriageInfo">
 					<div class="sb-biodata-field">
-						<h2>Marriage related Information</h2>
+						<h2>বিবাহ সম্পর্কিত তথ্য</h2>
 					</div>
 
 					<div class="sb-biodata-option">
 						<div class="shosurbari-biodata-field">
-							<label for="edit-name">Marital status<span class="form-required" title="This field is required.">*</span></label>
+							<label for="edit-name">বৈবাহিক অবস্থা<span class="form-required" title="This field is required.">*</span></label>
 							<select name="maritalstatus" required onchange="toggleMaritalStatus(this.value)">
 								<option hidden selected></option>
-								<option value="Unmarried">Unmarried</option>
-								<option value="Divorced">Divorced</option>
-								<option value="Widow">Widow</option>
-								<option value="Widower">Widower</option>
-								<option value="Married">Married</option>
+								<option value="অবিবাহিত">অবিবাহিত</option>
+								<option value="ডিভোর্স">ডিভোর্স</option>
+								<option value="বিধবা">বিধবা</option>
+								<option value="বিপত্নীক">বিপত্নীক</option>
+								<option value="বিবাহিত">বিবাহিত</option>
 							</select>
 						</div>
 
-						<!-- Gurdians Aggress and Unmarried Sections -->
+						<!-- Gurdians Aggress Without Married Sections -->
 						<div class="shosurbari-biodata-field" id="gurdian-aggress-section" style="display: none;">
 							<div class="shosurbari-biodata-field">
-								<label for="edit-name">Do your guardians agree to your marriage?<span class="form-required" title="This field is required.">*</span></label>
+								<label for="edit-name">পরিবারের অনুমতি নিয়ে বায়োডাটা পোস্ট করতেছেন?<span class="form-required" title="This field is required.">*</span></label>
 								<input type="text" id="edit-name" name="guardians_agree"  value="<?php echo $guardians_agree_male; ?>"  size="100" maxlength="100" class="form-text">
 							</div>
 						</div>
@@ -2243,30 +2368,30 @@ $(document).ready(function(){
 						<!-- Divorce Section Start -->
 						<div class="shosurbari-biodata-field" id="divorce-section" style="display: none;">
 							<div class="shosurbari-biodata-field">
-								<label for="edit-name">Reason of Divorce?<span class="form-required" title="This field is required.">*</span></label>
+								<label for="edit-name">ডিভোর্সের কারণ বর্ণনা করুন এবং কতদিন সংসার করেছেন?<span class="form-required" title="This field is required.">*</span></label>
 								<textarea rows="5" name="divorce_reason" placeholder="Describe Your Divorce Reason" class="form-text-describe"></textarea>
 							</div>
 
 							<div class="shosurbari-biodata-field">
-								<label for="edit-name">How many sons?<span class="form-required" title="This field is required.">*</span></label>
+								<label for="edit-name">কয়টি সন্তান আছে<span class="form-required" title="This field is required.">*</span></label>
 								<select name="divorce_how_many_son" onchange="toggleDivorceSonDetails(this.value)">
 									<option hidden selected></option>
-									<option value="No Son">No Son</option>
-									<option value="1 Son">1 Son</option>
-									<option value="2 Son">2 Son</option>
-									<option value="3 Son">3 Son</option>
-									<option value="4 Son">4 Son</option>
-									<option value="5 Son">5 Son</option>
-									<option value="6 Son">6 Son</option>
-									<option value="7 Son">7 Son</option>
-									<option value="8 Son">8 Son</option>
-									<option value="8 Son">9 Son</option>
-									<option value="8 Son">10 Son</option>
+									<option value="কোনো সন্তান নেই">কোনো সন্তান নেই</option>
+									<option value="১টি সন্তান">১টি সন্তান</option>
+									<option value="২টি সন্তান">২টি সন্তান</option>
+									<option value="৩টি সন্তান">৩টি সন্তান</option>
+									<option value="৪টি সন্তান">৪টি সন্তান</option>
+									<option value="৫টি সন্তান">৫টি সন্তান</option>
+									<option value="৬টি সন্তান">৬টি সন্তান</option>
+									<option value="৭টি সন্তান">৭টি সন্তান</option>
+									<option value="৮টি সন্তান">৮টি সন্তান</option>
+									<option value="৯টি সন্তান">৯টি সন্তান</option>
+									<option value="১০টি সন্তান">১০টি সন্তান</option>
 								</select>
 							</div>
 
 							<div class="shosurbari-biodata-field" id="divorce-son-details" style="display: none;">
-								<label for="edit-name">Son Details?<span class="form-required" title="This field is required.">*</span></label>
+								<label for="edit-name">সন্তান সম্পর্কিত তথ্য<span class="form-required" title="This field is required.">*</span></label>
 								<textarea rows="5" name="divorce_son_details" placeholder="Describe Your Son Details" class="form-text-describe"></textarea>
 							</div>
 						</div>
@@ -2276,28 +2401,30 @@ $(document).ready(function(){
 						<!-- Widow Section Start-->
 						<div class="shosurbari-biodata-field" id="widow-section" style="display: none;">
 							<div class="shosurbari-biodata-field">
-								<label for="edit-name">How to Widow?<span class="form-required" title="This field is required.">*</span></label>
+								<label for="edit-name">স্বামী যেভাবে মারা গেছেন এবং কতদিন সংসার করেছেন?<span class="form-required" title="This field is required.">*</span></label>
 								<textarea rows="5" name="how_widow" placeholder="Describe How You Became a Widow" class="form-text-describe"></textarea>
 							</div>
 
 							<div class="shosurbari-biodata-field">
-								<label for="edit-name">How many sons?<span class="form-required" title="This field is required.">*</span></label>
+								<label for="edit-name">কয়টি সন্তান আছে<span class="form-required" title="This field is required.">*</span></label>
 								<select name="widow_how_many_son" onchange="toggleWidowSonDetails(this.value)">
 									<option hidden selected></option>
-									<option value="No Son">No Son</option>
-									<option value="1 Son">1 Son</option>
-									<option value="2 Son">2 Son</option>
-									<option value="3 Son">3 Son</option>
-									<option value="4 Son">4 Son</option>
-									<option value="5 Son">5 Son</option>
-									<option value="6 Son">6 Son</option>
-									<option value="7 Son">7 Son</option>
-									<option value="8 Son">8 Son</option>
+									<option value="কোনো সন্তান নেই">কোনো সন্তান নেই</option>
+									<option value="১টি সন্তান">১টি সন্তান</option>
+									<option value="২টি সন্তান">২টি সন্তান</option>
+									<option value="৩টি সন্তান">৩টি সন্তান</option>
+									<option value="৪টি সন্তান">৪টি সন্তান</option>
+									<option value="৫টি সন্তান">৫টি সন্তান</option>
+									<option value="৬টি সন্তান">৬টি সন্তান</option>
+									<option value="৭টি সন্তান">৭টি সন্তান</option>
+									<option value="৮টি সন্তান">৮টি সন্তান</option>
+									<option value="৯টি সন্তান">৯টি সন্তান</option>
+									<option value="১০টি সন্তান">১০টি সন্তান</option>
 								</select>
 							</div>
 
 							<div class="shosurbari-biodata-field" id="widow-son-details" style="display: none;">
-								<label for="edit-name">Son Details?<span class="form-required" title="This field is required.">*</span></label>
+								<label for="edit-name">সন্তান সম্পর্কিত তথ্য<span class="form-required" title="This field is required.">*</span></label>
 								<textarea rows="5" name="widow_son_details" placeholder="Describe Your Son Details" class="form-text-describe"></textarea>
 							</div>
 						</div>
@@ -2307,28 +2434,30 @@ $(document).ready(function(){
 						<!-- Widower Section Start-->
 						<div class="shosurbari-biodata-field" id="widower-section" style="display: none;">
 							<div class="shosurbari-biodata-field">
-								<label for="edit-name">How to Widower?<span class="form-required" title="This field is required.">*</span></label>
+								<label for="edit-name">স্ত্রী যেভাবে মারা গেছেন এবং কতদিন সংসার করেছেন?<span class="form-required" title="This field is required.">*</span></label>
 								<textarea rows="5" name="how_widower" placeholder="Describe How You Became a Widower" class="form-text-describe"></textarea>
 							</div>
 
 							<div class="shosurbari-biodata-field">
-								<label for="edit-name">How many sons?<span class="form-required" title="This field is required.">*</span></label>
+								<label for="edit-name">কয়টি সন্তান আছে<span class="form-required" title="This field is required.">*</span></label>
 								<select name="widower_how_many_son" onchange="toggleWidowerSonDetails(this.value)">
 									<option hidden selected></option>
-									<option value="No Son">No Son</option>
-									<option value="1 Son">1 Son</option>
-									<option value="2 Son">2 Son</option>
-									<option value="3 Son">3 Son</option>
-									<option value="4 Son">4 Son</option>
-									<option value="5 Son">5 Son</option>
-									<option value="6 Son">6 Son</option>
-									<option value="7 Son">7 Son</option>
-									<option value="8 Son">8 Son</option>
+									<option value="কোনো সন্তান নেই">কোনো সন্তান নেই</option>
+									<option value="১টি সন্তান">১টি সন্তান</option>
+									<option value="২টি সন্তান">২টি সন্তান</option>
+									<option value="৩টি সন্তান">৩টি সন্তান</option>
+									<option value="৪টি সন্তান">৪টি সন্তান</option>
+									<option value="৫টি সন্তান">৫টি সন্তান</option>
+									<option value="৬টি সন্তান">৬টি সন্তান</option>
+									<option value="৭টি সন্তান">৭টি সন্তান</option>
+									<option value="৮টি সন্তান">৮টি সন্তান</option>
+									<option value="৯টি সন্তান">৯টি সন্তান</option>
+									<option value="১০টি সন্তান">১০টি সন্তান</option>
 								</select>
 							</div>
 
 							<div class="shosurbari-biodata-field" id="widower-son-details" style="display: none;">
-								<label for="edit-name">Son Details?<span class="form-required" title="This field is required.">*</span></label>
+								<label for="edit-name">সন্তান সম্পর্কিত তথ্য<span class="form-required" title="This field is required.">*</span></label>
 								<textarea rows="5" name="widower_son_details" placeholder="Describe Your Son Details" class="form-text-describe"></textarea>
 							</div>
 						</div>
@@ -2338,38 +2467,39 @@ $(document).ready(function(){
 						<!-- Married Section Start-->
 						<div class="shosurbari-biodata-field" id="married-section" style="display: none;">
 							<div class="shosurbari-biodata-field">
-								<label for="edit-name">Get permission from your present Wife?<span class="form-required" title="This field is required.">*</span></label>
+								<label for="edit-name">বর্তমান স্ত্রীর অনুমতি নিয়েছেন?<span class="form-required" title="This field is required.">*</span></label>
 								<input type="text" id="edit-name" name="get_wife_permission"  value="<?php echo $get_wife_permission; ?>"  size="100" maxlength="100" class="form-text">
 							</div>
 
 							<div class="shosurbari-biodata-field">
-								<label for="edit-name">Get permission from your Family & Wife's Family?<span class="form-required" title="This field is required.">*</span></label>
+								<label for="edit-name">আপনার ও বর্তমান স্ত্রীর পরিবার থেকে অনুমতি নিয়েছেন?<span class="form-required" title="This field is required.">*</span></label>
 								<input type="text" id="edit-name" name="get_family_permission"  value="<?php echo $get_family_permission; ?>"  size="100" maxlength="100" class="form-text">
 							</div>
 
 							<div class="shosurbari-biodata-field">
-								<label for="edit-name">Why again Married?<span class="form-required" title="This field is required.">*</span></label>
+								<label for="edit-name">আবার বিয়ে করার কারণ<span class="form-required" title="This field is required.">*</span></label>
 								<textarea rows="5" name="why_again_married" placeholder="Describe How You Became a Widower" class="form-text-describe"></textarea>
 							</div>
 
 							<div class="shosurbari-biodata-field">
-								<label for="edit-name">How many sons?<span class="form-required" title="This field is required.">*</span></label>
+								<label for="edit-name">কয়টি সন্তান আছে<span class="form-required" title="This field is required.">*</span></label>
 								<select name="married_how_many_son" onchange="toggleMarriedSonDetails(this.value)">
-									<option hidden selected></option>
-									<option value="No Son">No Son</option>
-									<option value="1 Son">1 Son</option>
-									<option value="2 Son">2 Son</option>
-									<option value="3 Son">3 Son</option>
-									<option value="4 Son">4 Son</option>
-									<option value="5 Son">5 Son</option>
-									<option value="6 Son">6 Son</option>
-									<option value="7 Son">7 Son</option>
-									<option value="8 Son">8 Son</option>
+									<option value="কোনো সন্তান নেই">কোনো সন্তান নেই</option>
+									<option value="১টি সন্তান">১টি সন্তান</option>
+									<option value="২টি সন্তান">২টি সন্তান</option>
+									<option value="৩টি সন্তান">৩টি সন্তান</option>
+									<option value="৪টি সন্তান">৪টি সন্তান</option>
+									<option value="৫টি সন্তান">৫টি সন্তান</option>
+									<option value="৬টি সন্তান">৬টি সন্তান</option>
+									<option value="৭টি সন্তান">৭টি সন্তান</option>
+									<option value="৮টি সন্তান">৮টি সন্তান</option>
+									<option value="৯টি সন্তান">৯টি সন্তান</option>
+									<option value="১০টি সন্তান">১০টি সন্তান</option>
 								</select>
 							</div>
 
 							<div class="shosurbari-biodata-field" id="married-son-details" style="display: none;">
-								<label for="edit-name">Son Details?<span class="form-required" title="This field is required.">*</span></label>
+								<label for="edit-name">সন্তান সম্পর্কিত তথ্য<span class="form-required" title="This field is required.">*</span></label>
 								<textarea rows="5" name="married_son_details" placeholder="Describe Your Son Details" class="form-text-describe"></textarea>
 							</div>
 						</div>
@@ -2378,49 +2508,49 @@ $(document).ready(function(){
 
 						<!-- Bellow Two Sections For Male or Female -->
 						<div class="shosurbari-biodata-field" id="male-allow-wife-job">
-							<label for="edit-name">Would you like to allow your wife to do any job after marriage?<span class="form-required" title="This field is required.">*</span></label>
+							<label for="edit-name">স্ত্রীকে চাকরি করতে দিতে ইচ্ছুক?<span class="form-required" title="This field is required.">*</span></label>
 							<input type="text" id="edit-name" name="allowjob_aftermarriage"  value="<?php echo $allowjob_aftermarriage; ?>"  size="100" maxlength="100" class="form-text">
 						</div>
 						<!--Top Male | OR | Bellow Female-->
 						<div class="shosurbari-biodata-field" id="female-job-after-marriage">
-							<label for="edit-name">Are you willing to do any job after marriage?<span class="form-required" title="This field is required.">*</span></label>
+							<label for="edit-name">বিয়ের পর চাকরি করতে চান?<span class="form-required" title="This field is required.">*</span></label>
 							<input type="text" id="edit-name" name="anyjob_aftermarriage" value="<?php echo $anyjob_aftermarriage; ?>" size="100" maxlength="100" class="form-text">
 						</div>
 
 						<div class="shosurbari-biodata-field" id="male-allow-wife-study">
-							<label for="edit-name">Would you like to allow your wife to study after marriage?<span class="form-required" title="This field is required.">*</span></label>
+							<label for="edit-name">স্ত্রীকে প্রাতিষ্ঠানিক পড়ালেখা করতে দিতে ইচ্ছুক?<span class="form-required" title="This field is required.">*</span></label>
 							<input type="text" id="edit-name" name="allowstudy_aftermarriage" value="<?php echo $allowstudy_aftermarriage; ?>" size="100" maxlength="100" class="form-text">
 						</div>
 						<!--Top Male | OR | Bellow Female-->
 						<div class="shosurbari-biodata-field" id="female-study-after-marriage">
-							<label for="edit-name">Would you like to continue your studies after marriage?<span class="form-required" title="This field is required.">*</span></label>
+							<label for="edit-name">বিয়ের পর পড়াশোনা চালিয়ে যেতে চান?<span class="form-required" title="This field is required.">*</span></label>
 							<input type="text" id="edit-name" name="studies_aftermarriage"   value="<?php echo $studies_aftermarriage; ?>"  size="200" maxlength="200" class="form-text">
 						</div>
 						
 						<div class="shosurbari-biodata-field" id="male-live-with-wife">
-							<label for="edit-name">Where will you live with your wife after marriage?<span class="form-required" title="This field is required.">*</span></label>
+							<label for="edit-name">বিয়ের পর স্ত্রীকে নিয়ে কোথায় থাকবেন?<span class="form-required" title="This field is required.">*</span></label>
 							<input type="text" id="edit-name" name="livewife_aftermarriage"  value="<?php echo $livewife_aftermarriage; ?>"  size="100" maxlength="100" class="form-text">
 						</div>
 						<!--Top Male | OR | Bellow Female-->
 						<div class="shosurbari-biodata-field" id="female-agree-marriage-student">
-							<label for="edit-name">Are you agree Marriage to student?<span class="form-required" title="This field is required.">*</span></label>
+							<label for="edit-name">শিক্ষার্থী বিয়ে করতে রাজি আছেন?<span class="form-required" title="This field is required.">*</span></label>
 							<input type="text" id="edit-name" name="agree_marriage_student"   value="<?php echo $agree_marriage_student; ?>"size="200" maxlength="200" class="form-text">
 						</div>
 
 						<div class="shosurbari-biodata-field">
-							<label for="edit-name">Profile Created by<span class="form-required" title="This field is required.">*</span></label>
+							<label for="edit-name">বায়োডাটা টি যার জন্য পোস্ট করতেছেন, তার আপনি কে হন?<span class="form-required" title="This field is required.">*</span></label>
 							<select name="profileby" required>
 								<option hidden selected></option>
-								<option value="Self">Self</option>
-								<option value="Father">Father</option>
-								<option value="Mother">Mother</option>
-								<option value="Brother">Brother</option>
-								<option value="Sister">Sister</option>
-								<option value="Uncle">Uncle</option> 
-								<option value="Aunty">Aunty</option>
-								<option value="Grandfather">Grandfather</option> 
-								<option value="Grandmother">Grandmother</option> 
-								<option value="Other">Other</option> 
+								<option value="নিজের জন্য">নিজের জন্য</option>
+								<option value="বাবা হই">বাবা হই</option>
+								<option value="মা হই">মা হই</option>
+								<option value="ভাই হই">ভাই হই</option>
+								<option value="বোন হই">বোন হই</option>
+								<option value="চাচা/মামা হই">চাচা/মামা হই</option> 
+								<option value="চাচী/মামী হই">চাচী/মামী হই</option>
+								<option value="নানা/দাদা হই">নানা/দাদা হই</option> 
+								<option value="নানী/দাদী হই">নানী/দাদী হই</option> 
+								<option value="অন্যান্য">অন্যান্য</option> 
 							</select>
 						</div>
 					</div>    
@@ -2440,7 +2570,7 @@ $(document).ready(function(){
 						var maleliveWithwife = document.getElementById('male-live-with-wife');
 						var femaleagreeMarriagestudent = document.getElementById('female-agree-marriage-student');						
 
-						if (selectedGender === 'Male') {
+						if (selectedGender === 'পাত্রের বায়োডাটা') {
 							maleallowJobwife.style.display = 'block';
 							femaleJobSection.style.display = 'none';
 
@@ -2450,7 +2580,7 @@ $(document).ready(function(){
 							maleliveWithwife.style.display = 'block';
 							femaleagreeMarriagestudent.style.display = 'none';
 
-						} else if (selectedGender === 'Female') {
+						} else if (selectedGender === 'পাত্রীর বায়োডাটা') {
 							maleallowJobwife.style.display = 'none';
 							femaleJobSection.style.display = 'block';
 
@@ -2485,18 +2615,18 @@ $(document).ready(function(){
 						widowerSection.style.display = 'none';
 						marriedSection.style.display = 'none';
 
-						if (selectedStatus === 'Unmarried') {
+						if (selectedStatus === 'অবিবাহিত') {
 							gurdianAggressSection.style.display = 'block';
-						} else if (selectedStatus === 'Divorced') {
+						} else if (selectedStatus === 'ডিভোর্স') {
 							divorceSection.style.display = 'block';
 							gurdianAggressSection.style.display = 'block';
-						} else if (selectedStatus === 'Widow') {
+						} else if (selectedStatus === 'বিধবা') {
 							widowSection.style.display = 'block';
 							gurdianAggressSection.style.display = 'block';
-						} else if (selectedStatus === 'Widower') {
+						} else if (selectedStatus === 'বিপত্নীক') {
 							widowerSection.style.display = 'block';
 							gurdianAggressSection.style.display = 'block';
-						} else if (selectedStatus === 'Married') {
+						} else if (selectedStatus === 'বিবাহিত') {
 							marriedSection.style.display = 'block';
 						}
 					}
@@ -2504,7 +2634,7 @@ $(document).ready(function(){
 					function toggleDivorceSonDetails(selectedDivorceSonCount) {
 						var divorceSonDetailsSection = document.getElementById('divorce-son-details');
 
-						if (selectedDivorceSonCount !== 'No Son') {
+						if (selectedDivorceSonCount !== 'কোনো সন্তান নেই') {
 							divorceSonDetailsSection.style.display = 'block';
 						} else {
 							divorceSonDetailsSection.style.display = 'none';
@@ -2514,7 +2644,7 @@ $(document).ready(function(){
 					function toggleWidowSonDetails(selectedWidowSonCount) {
 						var widowSonDetailsSection = document.getElementById('widow-son-details');
 
-						if (selectedWidowSonCount !== 'No Son') {
+						if (selectedWidowSonCount !== 'কোনো সন্তান নেই') {
 							widowSonDetailsSection.style.display = 'block';
 						} else {
 							widowSonDetailsSection.style.display = 'none';
@@ -2524,7 +2654,7 @@ $(document).ready(function(){
 					function toggleWidowerSonDetails(selectedWidowerSonCount) {
 						var widowerSonDetailsSection = document.getElementById('widower-son-details');
 
-						if (selectedWidowerSonCount !== 'No Son') {
+						if (selectedWidowerSonCount !== 'কোনো সন্তান নেই') {
 							widowerSonDetailsSection.style.display = 'block';
 						} else {
 							widowerSonDetailsSection.style.display = 'none';
@@ -2534,7 +2664,7 @@ $(document).ready(function(){
 					function toggleMarriedSonDetails(selectedMarriedSonCount) {
 						var marriedSonDetailsSection = document.getElementById('married-son-details');
 
-						if (selectedMarriedSonCount !== 'No Son') {
+						if (selectedMarriedSonCount !== 'কোনো সন্তান নেই') {
 							marriedSonDetailsSection.style.display = 'block';
 						} else {
 							marriedSonDetailsSection.style.display = 'none';
@@ -2588,24 +2718,24 @@ $(document).ready(function(){
 			<fieldset>
 				<div class="sb-biodata" id="religionDetails">
 					<div class="sb-biodata-field">
-						<h2>Religion Details</h2>
+						<h2>ধর্মীয় বিষয়</h2>
 					</div>
 
 					<div class="sb-biodata-option">
 						<div class="shosurbari-biodata-field">
-							<label for="edit-pass">Religion<span class="form-required" title="This field is required.">*</span></label>
+							<label for="edit-pass">ধর্ম<span class="form-required" title="This field is required.">*</span></label>
 							<select name="religion" required>
 								<option hidden selected></option>
-								<option value="Muslim">Muslim</option>
-								<option value="Hindu">Hindu</option>
-								<option value="Christian">Christian</option>
-								<option value="Budhism">Budhism</option>
-								<option value="Others">Others</option>
+								<option value="ইসলাম ধর্ম">ইসলাম ধর্ম</option>
+								<option value="হিন্দু ধর্ম">হিন্দু ধর্ম</option>
+								<option value="খ্রিস্টান ধর্ম">খ্রিস্টান ধর্ম</option>
+								<option value="বৌদ্ধ ধর্ম">বৌদ্ধ ধর্ম</option>
+								<option value="অন্যান্য">অন্যান্য</option>
 							</select>
 						</div>
 
 						<div class="shosurbari-biodata-field">
-							<label for="about me">How is your religious condition?<span class="form-required" title="This field is required.">*</span></label>
+							<label for="about me">ধর্মীয় বিধিনিষেধ কতটুকু অনুসরণ করেন?<span class="form-required" title="This field is required.">*</span></label>
 							<textarea rows="5" name="yourreligion_condition" placeholder="Describe Your Religious Condition" class="form-text-describe" required><?php echo $yourreligion_condition; ?></textarea>
 						</div>
 					</div>
@@ -2679,57 +2809,57 @@ $(document).ready(function(){
 			<fieldset>
 				<div class="sb-biodata" id="expectedPartner">
 					<div class="sb-biodata-field">
-						<h2>Expected Life Partner</h2>
+						<h2>প্রত্যাশিত জীবনসঙ্গীর বিবরণ</h2>
 					</div>
 
 					<div class="sb-biodata-option">
 						<div class="shosurbari-biodata-field">
-							<label for="edit-name">Religius Status<span class="form-required" title="This field is required.">*</span></label>
+							<label for="edit-name">জীবনসঙ্গীর ধর্মীয় বিষয়াবলী যেমনটা আশা করেন<span class="form-required" title="This field is required.">*</span></label>
 							<input type="text" id="edit-name" name="partner_religius"  value="<?php echo $partner_religius; ?>"  size="200" maxlength="200" class="form-text" required>
 						</div>
 
 						<div class="shosurbari-biodata-field">
-							<label for="edit-name">District<span class="form-required" title="This field is required.">*</span></label>
+							<label for="edit-name">জীবনসঙ্গী যেই <span style="color: black; font-size: 15px;">জেলার</span> আশা করেন<span class="form-required" title="This field is required.">*</span></label>
 							<input type="text" id="edit-name" name="partner_district" value="<?php echo $partner_district; ?>"  size="100" maxlength="100" class="form-text" required>
 						</div>
 
 						<div class="shosurbari-biodata-field">
-							<label for="edit-name">Marital Status<span class="form-required" title="This field is required.">*</span></label>
+							<label for="edit-name">জীবনসঙ্গীর <span style="color: black; font-size: 15px;">বৈবাহিক অবস্থা</span> যেমনটা আশা করেন<span class="form-required" title="This field is required.">*</span></label>
 							<input type="text" id="edit-name" name="partner_maritialstatus"  value="<?php echo $partner_maritialstatus; ?>"  size="100" maxlength="100" class="form-text" required>
 						</div>
 
 						<div class="shosurbari-biodata-field">
-							<label for="edit-name">Age<span class="form-required" title="This field is required.">*</span></label>
+							<label for="edit-name">জীবনসঙ্গীর <span style="color: black; font-size: 15px;">বয়স</span> যেমনটা আশা করেন<span class="form-required" title="This field is required.">*</span></label>
 							<input type="text" id="edit-name" name="partner_age" value="<?php echo $partner_age; ?>"  size="100" maxlength="100" class="form-text" required>
 						</div>
 
 						<div class="shosurbari-biodata-field">
-							<label for="edit-name">Skin Tones<span class="form-required" title="This field is required.">*</span></label>
+							<label for="edit-name">জীবনসঙ্গীর <span style="color: black; font-size: 15px;">শারীরিক বর্ণ</span> যেমনটা আশা করেন<span class="form-required" title="This field is required.">*</span></label>
 							<input type="text" id="edit-name" name="partner_skintones"  value="<?php echo $partner_skintones; ?>" size="100" maxlength="100" class="form-text" required>
 						</div>
 
 						<div class="shosurbari-biodata-field">
-							<label for="edit-name">Height<span class="form-required" title="This field is required.">*</span></label>
+							<label for="edit-name">জীবনসঙ্গীর <span style="color: black; font-size: 15px;">উচ্চতা</span> যেমনটা আশা করেন<span class="form-required" title="This field is required.">*</span></label>
 							<input type="text" id="edit-name" name="partner_height"  value="<?php echo $partner_height; ?>"  size="100" maxlength="100" class="form-text" required>
 						</div>
 
 						<div class="shosurbari-biodata-field">
-							<label for="edit-name">Educational Qualification<span class="form-required" title="This field is required.">*</span></label>
+							<label for="edit-name">জীবনসঙ্গীর <span style="color: black; font-size: 15px;">শিক্ষাগত যোগ্যতা</span> যেমনটা আশা করেন<span class="form-required" title="This field is required.">*</span></label>
 							<input type="text" id="edit-name" name="partner_education"  value="<?php echo $partner_education; ?>"  size="100" maxlength="100" class="form-text" required>
 						</div>
 
 						<div class="shosurbari-biodata-field">
-							<label for="edit-name">Profession<span class="form-required" title="This field is required.">*</span></label>
+							<label for="edit-name">জীবনসঙ্গীর <span style="color: black; font-size: 15px;">পেশা</span> যেমনটা আশা করেন<span class="form-required" title="This field is required.">*</span></label>
 							<input type="text" id="edit-name" name="partner_profession"  value="<?php echo $partner_profession; ?>"  size="200" maxlength="200" class="form-text" required>
 						</div>
 
 						<div class="shosurbari-biodata-field">
-							<label for="edit-name">Financial condition<span class="form-required" title="This field is required.">*</span></label>
+							<label for="edit-name">জীবনসঙ্গীর <span style="color: black; font-size: 15px;">অর্থনৈতিক অবস্থা</span> যেমনটা আশা করেন<span class="form-required" title="This field is required.">*</span></label>
 							<input type="text" id="edit-name" name="partner_financial"  value="<?php echo $partner_financial; ?>"  size="100" maxlength="100" class="form-text" required>
 						</div>
 
 						<div class="shosurbari-biodata-field">
-							<label for="edit-name">Expected qualities or attributes of your life partner<span class="form-required" title="This field is required.">*</span></label>
+							<label for="edit-name">জীবনসঙ্গীর <span style="color: black; font-size: 15px;">বৈশিষ্ঠ ও গুণাবলী</span> যেমনটা আশা করেন<span class="form-required" title="This field is required.">*</span></label>
 							<textarea rows="8" id="edit-name" name="partner_attributes" placeholder="Describe Expected Qualities or Attributes of Your Life Partner" class="form-text-describe" required><?php echo $partner_attributes; ?></textarea>
 						</div>
 					</div>
