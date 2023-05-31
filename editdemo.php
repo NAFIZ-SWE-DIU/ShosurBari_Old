@@ -304,7 +304,7 @@ $(document).ready(function(){
 							<span style="color: red; font-size: 13px;" class="error-message" id="height-error-message"></span>
 						</div>
 
-						<script>
+						<!-- <script>
 							function checkInput(input) {
 								let value = input.value;
 								// Allow only numbers and spaces
@@ -316,7 +316,7 @@ $(document).ready(function(){
 									document.getElementById('height-error-message').innerHTML = '';
 								}
 							}
-						</script>
+						</script> -->
 					
 						<div class="shosurbari-biodata-field">
 							<label for="edit-name">ওজন <span class="form-required" title="This field is required.">*</span></label>
@@ -509,7 +509,7 @@ $(document).ready(function(){
 							<label >পেশার অবস্থান<span class="form-required" title="This field is required.">*</span></label>
 							<select name="student_occupation_level">
 								<option hidden selected></option>
-								<option value="কওমি মাদরাসার শিক্ষার্থী">কওমি মাদ্রাসার শিক্ষার্থী</option>
+								<option value="কওমি মাদ্রাসার শিক্ষার্থী">কওমি মাদ্রাসার শিক্ষার্থী</option>
 								<option value="আলিয়া মাদ্রাসার দাখিল শিক্ষার্থী">আলিয়া মাদ্রাসার দাখিল শিক্ষার্থী</option> 
 								<option value="মাধ্যমিক শিক্ষার্থী">মাধ্যমিক শিক্ষার্থী</option>
 
@@ -542,7 +542,7 @@ $(document).ready(function(){
 							<label>পেশার অবস্থান<span class="form-required" title="This field is required.">*</span></label>
 							<select name="health_occupation_level">
 								<option hidden selected></option>
-								<option value="এম.বি.বিএস. ডাক্তার">এম.বি.বিএস. ডাক্তার</option>
+								<option value="এম.বি.বি.এস. ডাক্তার">এম.বি.বি.এস. ডাক্তার</option>
 								<option value="ইন্টার্নশীপ ডাক্তার">ইন্টার্নশীপ ডাক্তার</option> 
 								<option value="পশু চিকিৎসক">পশু চিকিৎসক</option>
 								<option value="ফার্মাসিস্ট">ফার্মাসিস্ট</option>
@@ -560,7 +560,7 @@ $(document).ready(function(){
 								<option value="সফটওয়্যার ইঞ্জিনিয়ার">সফটওয়্যার ইঞ্জিনিয়ার</option> 
 								<option value="টেক্সটাইল ইঞ্জিনিয়ার">টেক্সটাইল ইঞ্জিনিয়ার</option>
 								<option value="সিভিল ইঞ্জিনিয়ার">সিভিল ইঞ্জিনিয়ার</option>
-								<option value="ইলেকট্রিকাল ইঞ্জিনিয়ার">ইলেকট্রিকাল ইঞ্জিনিয়ার</option>
+								<option value="ইলেকট্রিক্যাল ইঞ্জিনিয়ার">ইলেকট্রিক্যাল ইঞ্জিনিয়ার</option>
 								<option value="মেরিন ইঞ্জিনিয়ার">মেরিন ইঞ্জিনিয়ার</option> 
 								<option value="নেটওয়ার্ক ইঞ্জিনিয়ার">নেটওয়ার্ক ইঞ্জিনিয়ার</option> 
 								<option value="রোবোটিক্স ইঞ্জিনিয়ার">রোবোটিক্স ইঞ্জিনিয়ার</option>
@@ -629,6 +629,7 @@ $(document).ready(function(){
 								<option value="মাইক্রো বাস ড্রাইভার">মাইক্রো বাস ড্রাইভার</option> 
 								<option value="কার ড্রাইভার">কার ড্রাইভার</option> 
 								<option value="ট্রাক ড্রাইভার">ট্রাক ড্রাইভার</option>
+								<option value="পাঠাও/উবার রাইডার">পাঠাও/উবার রাইডার</option>
 								<option value="CNG চালক">CNG চালক</option> 
 								<option value="অটো চালক">অটো চালক</option>
 								<option value="রিক্সা চালক">রিক্সা চালক</option>
@@ -649,7 +650,7 @@ $(document).ready(function(){
 								<option value="সেলস & মার্কেটিং(SR)">সেলস & মার্কেটিং(SR)</option>
 								<option value="আর্ট/দেয়াল লিখন">আর্ট/দেয়াল লিখন</option>
 								<option value="নিরাপত্তারক্ষী">নিরাপত্তারক্ষী</option>
-								<option value="রোজ কামলা / শ্রমিক">রোজ কামলা / শ্রমিক</option>  
+								<option value="রোজ কামলা/শ্রমিক">রোজ কামলা / শ্রমিক</option>  
 							</select>
 						</div>
 
@@ -663,13 +664,13 @@ $(document).ready(function(){
 							<option value="স্যানিটারি মিস্ত্রি">স্যানিটারি মিস্ত্রি</option>
 							<option value="রড মিস্ত্রি">রড মিস্ত্রি</option>
 							<option value="রং মিস্ত্রি">রং মিস্ত্রি</option>
-							<option value="ফ্রিজমিস্ত্রি">ফ্রিজমিস্ত্রি</option>
+							<option value="ফ্রিজ মিস্ত্রি">ফ্রিজমিস্ত্রি</option>
 							<option value="গ্যাস মিস্ত্রি">গ্যাস মিস্ত্রি</option>
 							<option value="এসি মিস্ত্রি">এসি মিস্ত্রি</option>
 							<option value="সিসি ক্যামেরা মিস্ত্রি">সিসি ক্যামেরা মিস্ত্রি</option>
 							<option value="টাইলস ও মুজাইক মিস্ত্রি">টাইলস ও মুজাইক মিস্ত্রি</option>
 							<option value="থাই এলুমিনিয়াম ও গ্লাস মিস্ত্রি">থাই এলুমিনিয়াম ও গ্লাস মিস্ত্রি</option>
-							<option value="ওয়েলডিং / গ্রীল মিস্ত্রি">ওয়েলডিং / গ্রীল মিস্ত্রি</option>
+							<option value="ওয়েলডিং/গ্রীল মিস্ত্রি">ওয়েলডিং / গ্রীল মিস্ত্রি</option>
 							</select>
 						</div>
 
@@ -894,7 +895,7 @@ $(document).ready(function(){
 								<option value="জেনারেল">জেনারেল</option>
 								<option value="আলিয়া মাদ্রাসা">আলিয়া মাদ্রাসা</option>
 								<option value="ভোকেশনাল">ভোকেশনাল</option>
-								<option value="কাওমী মাদ্রাসা">কাওমী মাদ্রাসা</option>
+								<option value="কওমি মাদ্রাসা">কওমি মাদ্রাসা</option>
 								<option value="মাধ্যমিক পড়িনাই">মাধ্যমিক পড়িনাই</option>
 								<option value="অন্যান্য">অন্যান্য</option>
 							</select>
@@ -1046,7 +1047,6 @@ $(document).ready(function(){
 								<option value="জেনারেল">জেনারেল</option>
 								<option value="আলিয়া মাদ্রাসা">আলিয়া মাদ্রাসা</option>
 								<option value="ডিপ্লোমা">ডিপ্লোমা</option>
-								<option value="কাওমী মাদ্রাসা">কাওমী মাদ্রাসা</option>
 								<option value="অধ্যায়ন বাদ দিয়েছি">অধ্যায়ন বাদ দিয়েছি</option>
 								<option value="অন্যান্য">অন্যান্য</option>
 							</select>
@@ -1318,7 +1318,7 @@ $(document).ready(function(){
 						document.getElementById("varsity_name").style.display = "none";
 
 						// Show or hide sections based on the selected value
-						if (selectedValue === "কাওমী মাদ্রাসা") {
+						if (selectedValue === "কওমি মাদ্রাসা") {
 							document.getElementById("hafez_field").style.display = "block";
 							document.getElementById("dawra_pass_field").style.display = "block";
 							document.getElementById("dawra_passing_year_field").style.display = "none";
@@ -1502,26 +1502,6 @@ $(document).ready(function(){
 						document.getElementById("hrgnrl_mdrs_running_stdn").style.display = "none";
 
 						document.getElementById("doploma_hrscnd_pass").style.display = "block";
-						document.getElementById("doploma_hrscnd_pass_year").style.display = "none";
-						document.getElementById("doploma_hrscnd_subject").style.display = "none";
-						document.getElementById("doploma_hrscnd_exam_year").style.display = "none";
-
-						document.getElementById("varsity_edumethod").style.display = "none";
-						document.getElementById("varsity_pass").style.display = "none";
-						document.getElementById("varsity_pass_year").style.display = "none";
-						document.getElementById("varsity_subject").style.display = "none";
-						document.getElementById("varsity_exam_year").style.display = "none";
-						document.getElementById("varsity_name").style.display = "none";
-						}
-
-						else if (selecteValue === "কাওমী মাদ্রাসা") {
-						document.getElementById("gnrl_mdrs_hrscnd_pass").style.display = "none";
-						document.getElementById("gnrl_mdrs_hrscnd_pass_year").style.display = "none";
-						document.getElementById("gnrl_mdrs_hrscnd_exam_year").style.display = "none";
-						document.getElementById("higher_seconday_group").style.display = "none";
-						document.getElementById("hrgnrl_mdrs_running_stdn").style.display = "none";
-
-						document.getElementById("doploma_hrscnd_pass").style.display = "none";
 						document.getElementById("doploma_hrscnd_pass_year").style.display = "none";
 						document.getElementById("doploma_hrscnd_subject").style.display = "none";
 						document.getElementById("doploma_hrscnd_exam_year").style.display = "none";
@@ -1851,8 +1831,8 @@ $(document).ready(function(){
 							<label>স্থায়ী ঠিকানার জেলা<span class="form-required" title="This field is required.">*</span></label>
 							<select name="home_district_under_chattogram">
 								<option hidden selected></option>
-								<option value="কুমিল্লা">কুমিল্লা</option>
 								<option value="কক্সবাজার">কক্সবাজার</option>  
+								<option value="কুমিল্লা">কুমিল্লা</option>
 								<option value="খাগড়াছড়ি">খাগড়াছড়ি</option>
 								<option value="চট্টগ্রাম">চট্টগ্রাম</option>
 								<option value="চাঁদপুর">চাঁদপুর</option>
@@ -1947,9 +1927,9 @@ $(document).ready(function(){
 							<label>স্থায়ী ঠিকানার জেলা<span class="form-required" title="This field is required.">*</span></label>
 							<select name="home_district_under_sylhet">
 								<option hidden selected></option>
-								<option value="সিলেট">সিলেট</option>
 								<option value="মৌলভীবাজার">মৌলভীবাজার</option>
 								<option value="সুনামগঞ্জ">সুনামগঞ্জ</option>
+								<option value="সিলেট">সিলেট</option>
 								<option value="হবিগঞ্জ">হবিগঞ্জ</option> 
 							</select>
 						</div>
@@ -2019,14 +1999,14 @@ $(document).ready(function(){
 								<option value="Myanmar">Myanmar</option>  
 								<option value="Nepal">Nepal</option>
 								<option value="Netherlands">Netherlands</option> 
-								<option value="New Zealand	">New Zealand</option>
+								<option value="New Zealand">New Zealand</option>
 								<option value="Norway">Norway</option> 
 								<option value="Oman">Oman</option> 
 								<option value="Pakistan">Pakistan</option>
 								<option value="Palestine">Palestine</option>
 								<option value="Paraguay">Paraguay</option>
 								<option value="Philippines">Philippines</option>
-								<option value="Poland">Poland</option>   
+								<option value="Poland">Poland</option>
 								<option value="Portugal">Portugal</option> 
 								<option value="Qatar">Qatar</option> 
 								<option value="Russia">Russia</option> 
@@ -2050,7 +2030,7 @@ $(document).ready(function(){
 								<option value="Uruguay">Uruguay</option>
 								<option value="Vietnam">Vietnam</option>
 								<option value="Yemen">Yemen</option>
-								<option value="Portugal">Others</option> 
+								<option value="Others">Others</option>    
 							</select>
 						</div>
 
