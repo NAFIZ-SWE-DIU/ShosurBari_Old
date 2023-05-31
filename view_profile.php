@@ -563,7 +563,7 @@ echo "<script>alert(\"Invalid Profile ID\")</script>";
 										
 									<tr class="opened">
 										<?php if (!empty($dob)) { ?>
-										<td class="day_label">জন্ম তারিখ (আসল)</td>
+										<td class="day_label">জন্ম সন (আসল)</td>
 										<td class="day_value"><?php echo $dob; ?></td>
 										<?php } ?>
 									</tr>
@@ -605,7 +605,7 @@ echo "<script>alert(\"Invalid Profile ID\")</script>";
 
 									<tr class="closed">
 										<?php if (!empty ($business_occupation_level)) { ?>
-										<td class="day_label">পেশার অবস্থান</td>
+										<td class="day_label">পেশা</td>
 										<td class="day_value closed"><?php echo $business_occupation_level;?></td>
 										<?php } ?>
 									</tr>
@@ -890,7 +890,7 @@ echo "<script>alert(\"Invalid Profile ID\")</script>";
 
 											<tr class="opened">
 												<?php if (!empty ($physicalstatus)) { ?>
-												<td class="day_label">শারীরিক অবস্থা</td>
+												<td class="day_label">শারীরিক সমস্যা আছে কি?</td>
 												<td class="day_value closed"><span><?php echo $physicalstatus;?></span></td>
 												<?php } ?>
 											</tr>
@@ -945,9 +945,9 @@ echo "<script>alert(\"Invalid Profile ID\")</script>";
 									if($row){
 									$smoke=$row['smoke'];
 									}
-									if($row){
-									$occupation_sector=$row['occupation_sector'];
-									}
+									// if($row){
+									// $occupation_sector=$row['occupation_sector'];
+									// }
 									if($row){
 									$other_occupation_sector=$row['other_occupation_sector'];
 									}
@@ -1008,12 +1008,12 @@ echo "<script>alert(\"Invalid Profile ID\")</script>";
 												<?php } ?>
 											</tr>
 
-											<tr class="opened">
-												<?php if (!empty ($occupation_sector)) { ?>
+											<!-- <tr class="opened">
+												<?php //if (!empty ($occupation_sector)) { ?>
 												<td class="day_label">পেশা</td>
-												<td class="day_value"><?php echo $occupation_sector;?></td>
-												<?php } ?>
-											</tr>
+												<td class="day_value"><?php //echo $occupation_sector;?></td>
+												<?php //} ?>
+											</tr> -->
 											
 											<tr class="opened">
 												<?php if (!empty ($other_occupation_sector)) { ?>
@@ -1024,77 +1024,77 @@ echo "<script>alert(\"Invalid Profile ID\")</script>";
 
 											<tr class="closed">
 												<?php if (!empty ($business_occupation_level)) { ?>
-												<td class="day_label">পেশার অবস্থান</td>
+												<td class="day_label">পেশা</td>
 												<td class="day_value closed"><?php echo $business_occupation_level;?></td>
 												<?php } ?>
 											</tr>
 
 											<tr class="closed">
 												<?php if (!empty ($student_occupation_level)) { ?>
-												<td class="day_label">পেশার অবস্থান</td>
+												<td class="day_label">পেশা</td>
 												<td class="day_value closed"><?php echo $student_occupation_level;?></td>
 												<?php } ?>
 											</tr>
 
 											<tr class="closed">
 												<?php if (!empty ($health_occupation_level)) { ?>
-												<td class="day_label">পেশার অবস্থান</td>
+												<td class="day_label">পেশা</td>
 												<td class="day_value closed"><?php echo $health_occupation_level;?></td>
 												<?php } ?>
 											</tr>
 
 											<tr class="closed">
 												<?php if (!empty ($engineer_occupation_level)) { ?>
-												<td class="day_label">পেশার অবস্থান</td>
+												<td class="day_label">পেশা</td>
 												<td class="day_value closed"><?php echo $engineer_occupation_level;?></td>
 												<?php } ?>
 											</tr>
 
 											<tr class="closed">
 												<?php if (!empty ($teacher_occupation_level)) { ?>
-												<td class="day_label">পেশার অবস্থান</td>
+												<td class="day_label">পেশা</td>
 												<td class="day_value closed"><?php echo $teacher_occupation_level;?></td>
 												<?php } ?>
 											</tr>
 
 											<tr class="closed">
 												<?php if (!empty ($defense_occupation_level)) { ?>
-												<td class="day_label">পেশার অবস্থান</td>
+												<td class="day_label">পেশা</td>
 												<td class="day_value closed"><?php echo $defense_occupation_level;?></td>
 												<?php } ?>
 											</tr>
 
 											<tr class="closed">
 												<?php if (!empty ($foreigner_occupation_level)) { ?>
-												<td class="day_label">পেশার অবস্থান</td>
+												<td class="day_label">পেশা</td>
 												<td class="day_value closed"><?php echo $foreigner_occupation_level;?></td>
 												<?php } ?>
 											</tr>
 
 											<tr class="closed">
 												<?php if (!empty ($garments_occupation_level)) { ?>
-												<td class="day_label">পেশার অবস্থান</td>
+												<td class="day_label">পেশা</td>
 												<td class="day_value closed"><?php echo $garments_occupation_level;?></td>
 												<?php } ?>
 											</tr>
 
 											<tr class="closed">
 												<?php if (!empty ($driver_occupation_level)) { ?>
-												<td class="day_label">পেশার অবস্থান</td>
+												<td class="day_label">পেশা</td>
 												<td class="day_value closed"><?php echo $driver_occupation_level;?></td>
 												<?php } ?>
 											</tr>
 
 											<tr class="closed">
 												<?php if (!empty ($service_andcommon_occupation_level)) { ?>
-												<td class="day_label">পেশার অবস্থান</td>
+												<td class="day_label">পেশা</td>
 												<td class="day_value closed"><?php echo $service_andcommon_occupation_level;?></td>
 												<?php } ?>
 											</tr>
 
 											<tr class="closed">
 												<?php if (!empty ($mistri_occupation_level)) { ?>
-												<td class="day_label">পেশার অবস্থান</td>
+												<td class="day_label">পেশা</td>
 												<td class="day_value closed"><?php echo $mistri_occupation_level;?></td>
 												<?php } ?>
 											</tr>
@@ -1281,9 +1281,9 @@ echo "<script>alert(\"Invalid Profile ID\")</script>";
 										<tbody>
 
 											<tr class="opened">
-												<?php if (!empty ($secondary_edu_method)) { ?>
+												<?php if (!empty ($scndry_edu_method)) { ?>
 												<td class="day_label">মাধ্যমিক/সমমান শিক্ষার মাধ্যম</td>
-												<td class="day_value"><?php echo $secondary_edu_method; ?></td>
+												<td class="day_value"><?php echo $scndry_edu_method; ?></td>
 												<?php } ?>
 											</tr>
 
@@ -1324,28 +1324,28 @@ echo "<script>alert(\"Invalid Profile ID\")</script>";
 
 											<tr class="opened">
 												<?php if (!empty ($gnrl_mdrs_secondary_pass)) { ?>
-												<td class="day_label">মাধ্যমিক পাস করেছেন?</td>
+												<td class="day_label">মাধ্যমিক/সমমান পাস করেছেন?</td>
 												<td class="day_value"><?php echo $gnrl_mdrs_secondary_pass; ?></td>
 												<?php } ?>
 											</tr>
 
 											<tr class="opened">
 												<?php if (!empty ($gnrl_mdrs_secondary_pass_year)) { ?>
-												<td class="day_label">মাধ্যমিক পাসের বর্ষ</td>
+												<td class="day_label">মাধ্যমিক/সমমান পাসের বর্ষ</td>
 												<td class="day_value"><?php echo $gnrl_mdrs_secondary_pass_year; ?></td>
 												<?php } ?>
 											</tr>
 
 											<tr class="opened">
 												<?php if (!empty ($gnrl_mdrs_secondary_end_year)) { ?>
-												<td class="day_label">মাধ্যমিক বোর্ড পরীক্ষার বর্ষ</td>
+												<td class="day_label">মাধ্যমিক/সমমান বোর্ড পরীক্ষার বর্ষ</td>
 												<td class="day_value"><?php echo $gnrl_mdrs_secondary_end_year; ?></td>
 												<?php } ?>
 											</tr>
 
 											<tr class="opened">
 												<?php if (!empty ($gnrlmdrs_secondary_running_std)) { ?>
-												<td class="day_label">মাধ্যমিকে বর্তমান অধ্যায়নরত ক্লাস</td>
+												<td class="day_label">মাধ্যমিক/সমমানে বর্তমান অধ্যায়নরত ক্লাস</td>
 												<td class="day_value"><?php echo $gnrlmdrs_secondary_running_std; ?></td>
 												<?php } ?>
 											</tr>
@@ -1359,35 +1359,35 @@ echo "<script>alert(\"Invalid Profile ID\")</script>";
 
 											<tr class="opened">
 												<?php if (!empty ($gnrlmdrs_hrsecondary_pass)) { ?>
-												<td class="day_label">উচ্চমাধ্যমিক পাস করেছেন?</td>
+												<td class="day_label">উচ্চমাধ্যমিক/সমমান পাস করেছেন?</td>
 												<td class="day_value"><?php echo $gnrlmdrs_hrsecondary_pass; ?></td>
 												<?php } ?>
 											</tr>
 
 											<tr class="opened">
 												<?php if (!empty ($gnrlmdrs_hrsecondary_pass_year)) { ?>
-												<td class="day_label">উচ্চমাধ্যমিক পাসের বর্ষ</td>
+												<td class="day_label">উচ্চমাধ্যমিক/সমমান পাসের বর্ষ</td>
 												<td class="day_value"><?php echo $gnrlmdrs_hrsecondary_pass_year; ?></td>
 												<?php } ?>
 											</tr>
 
 											<tr class="opened">
 												<?php if (!empty ($gnrlmdrs_hrsecondary_exam_year)) { ?>
-												<td class="day_label">উচ্চমাধ্যমিক বোর্ড পরীক্ষার বর্ষ</td>
+												<td class="day_label">উচ্চমাধ্যমিক/সমমান বোর্ড পরীক্ষার বর্ষ</td>
 												<td class="day_value"><?php echo $gnrlmdrs_hrsecondary_exam_year; ?></td>
 												<?php } ?>
 											</tr>
 
 											<tr class="opened">
 												<?php if (!empty ($gnrlmdrs_hrsecondary_group)) { ?>
-												<td class="day_label">উচ্চমাধ্যমিকে গ্রুপ</td>
+												<td class="day_label">উচ্চমাধ্যমিক/সমমানে গ্রুপ</td>
 												<td class="day_value"><?php echo $gnrlmdrs_hrsecondary_group; ?></td>
 												<?php } ?>
 											</tr>
 
 											<tr class="opened">
 												<?php if (!empty ($gnrlmdrs_hrsecondary_rningstd)) { ?>
-												<td class="day_label">উচ্চমাধ্যমিকে বর্তমান অধ্যায়নরত ক্লাস</td>
+												<td class="day_label">উচ্চমাধ্যমিক/সমমানে বর্তমান অধ্যায়নরত ক্লাস</td>
 												<td class="day_value"><?php echo $gnrlmdrs_hrsecondary_rningstd; ?></td>
 												<?php } ?>
 											</tr>
@@ -1415,7 +1415,7 @@ echo "<script>alert(\"Invalid Profile ID\")</script>";
 
 											<tr class="opened">
 												<?php if (!empty ($diploma_hrsecondary_endingyear)) { ?>
-												<td class="day_label">ডিপ্লোমা সম্পন্ন হবে</td>
+												<td class="day_label">ডিপ্লোমা অধ্যায়ন সম্পন্ন হবে</td>
 												<td class="day_value"><?php echo $diploma_hrsecondary_endingyear; ?></td>
 												<?php } ?>
 											</tr>
@@ -1429,7 +1429,7 @@ echo "<script>alert(\"Invalid Profile ID\")</script>";
 
 											<tr class="opened">
 												<?php if (!empty ($uvarsity_pass)) { ?>
-												<td class="day_label">স্নাতক/সমমান পাস করেছেন?</td>
+												<td class="day_label">স্নাতক/সমমান পাশ c?</td>
 												<td class="day_value"><?php echo $uvarsity_pass; ?></td>
 												<?php } ?>
 											</tr>
@@ -1450,7 +1450,7 @@ echo "<script>alert(\"Invalid Profile ID\")</script>";
 
 											<tr class="opened">
 												<?php if (!empty ($varsity_ending_year)) { ?>
-												<td class="day_label">স্নাতক/সমমান সম্পন্ন হবে</td>
+												<td class="day_label">স্নাতক/সমমান অধ্যায়ন সম্পন্ন হবে</td>
 												<td class="day_value"><?php echo $varsity_ending_year; ?></td>
 												<?php } ?>
 											</tr>
@@ -1887,7 +1887,7 @@ echo "<script>alert(\"Invalid Profile ID\")</script>";
 										<!-- This sections for All Maritial StatusShow just without Married -->
 											<tr class="opened">
 												<?php if (!empty ($guardians_agree)) { ?>
-												<td class="day_label">পরিবারের অনুমতি নিয়েছেন?</td>
+												<td class="day_label">পরিবারের অনুমতি নিয়ে বায়োডাটা পোস্ট করেছেন?</td>
 												<td class="day_value"><?php echo $guardians_agree; ?></td>
 												<?php } ?>
 											</tr>
@@ -1942,8 +1942,8 @@ echo "<script>alert(\"Invalid Profile ID\")</script>";
 
 
 											<?php
-											$loggedInUserId = "user_id"; // Replace "YourUserId" with the ID of the currently logged-in user
-											$profileOwnerId = $profileid; // Assuming $profileid contains the user_id or main registration ID of the profile owner
+											$loggedInUserId = "user_id"; 
+											$profileOwnerId = $profileid; 
 
 											if (!empty($profileby) && $profileby == $profileOwnerId && $profileOwnerId == $loggedInUserId) {
 											?>
@@ -2135,7 +2135,7 @@ echo "<script>alert(\"Invalid Profile ID\")</script>";
 											
 											<tr class="opened">
 												<?php if (!empty ($uncle_profession)) { ?>
-												<td class="day_label">চাচা/মামাদের পেশা</td>
+												<td class="day_label">মামা/চাচাদের পেশা</td>
 												<td class="day_value closed"><span><?php echo $uncle_profession;?></span></td>
 												<?php } ?>
 											</tr>
