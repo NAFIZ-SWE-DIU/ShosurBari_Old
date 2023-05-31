@@ -1512,7 +1512,7 @@ a#profile-tab, a#home-tab, a#profile-tab1{
     margin-top: 25px;
     background: #fff;
     border-radius: 4px;
-    padding: 10px;
+    padding: 7px;
     border-top: 3px solid #06b6d4;
     border-bottom: 1px solid #ccc;
     border-left: 1px solid #ccc;
@@ -1773,7 +1773,7 @@ button.copylink i {
 
 .sb_user_recentview{
     text-align: center;
-    padding: 7px 7px 7px;
+    padding: 7px;
     border-bottom-left-radius: 5px;
     border-bottom-right-radius: 5px;
 }
@@ -1867,7 +1867,7 @@ td.day_label {
     font-weight: 450;
     border: 1px #ccc;
     border-style: groove;
-    width: 40%;
+    width: 45%;
     position: inherit;
 }
 
@@ -1877,7 +1877,7 @@ td.day_value {
     font-weight: 400;
     border: 1px #ccc;
     border-style: groove;
-    width: 60%;
+    width: 55%;
 }
 /*Biodata Table Form / Data show End*/
 /*-- -- -- -- -- -- -- -- -- -- -- -- -- ---- -- --
@@ -3015,7 +3015,7 @@ i.icon_4{
 }
 
 .sb-biodata-field{
-    padding: 7px;
+    padding: 10px 5px 5px 5px;
     width: 100%;
     margin-bottom: 25px;
     margin-top: 0px;
@@ -3306,6 +3306,7 @@ i.icon_4{
     border: 1px solid #ccc;
     border-radius: 4px;
     height: 35px;
+    margin-top: 10px;
 }
     
 .sb_singlebio_search input:focus {
@@ -3331,6 +3332,19 @@ i.icon_4{
 
 
 /* Multiple Biodata Search Start*/
+.search-options{
+    color: black;
+    font-size: 15px;
+    line-height: 27px;
+}
+
+.label-search-options{
+    color: #0aa4ca;
+    font-size: 15px;
+    font-weight: 500;
+    margin-top: 25px;
+}
+
 .sbbiodata-search form{
     width: 90%;
     padding: 10px;
@@ -3474,6 +3488,8 @@ label{
     font-size: 17px;
     font-weight: 600;
     text-align: center;
+    line-height: 27px;
+    margin: auto;
 }
 
 .fa-female:before {
@@ -4121,7 +4137,7 @@ ul.nav_1 li {
 @media (max-width:930px){
 
     .biodatavalue_list {
-        padding: 8px;
+        padding: 5px;
     }
 
     .sbbiodata_profile_recentview{
