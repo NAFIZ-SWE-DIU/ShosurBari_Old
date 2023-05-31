@@ -1908,7 +1908,7 @@ $(document).ready(function(){
                   <br>
 
                   
-                    <input type="checkbox" name="country_present_address" value="Brazil" class="SelectBox" />
+                    <input type="checkbox" name="country_present_address" value="Brazil" class="SelectBox val" />
                     <span class="search-options">Brazil</span>
                   <br>
 
@@ -2637,15 +2637,6 @@ $(document).ready(function(){
       </div>
 
 
-<style>
-  .label-search-options{
-    color: #0aa4ca;
-    font-size: 15px;
-    font-weight: 500;
-    margin-top: 25px;
-}
-/* 1111 aaaa */
-  </style>
 
             <!--Biodata Occupation Option -->
             <div class="wrapper">
