@@ -58,17 +58,17 @@
             $biodatagender = isset($_POST['biodatagender']) ? $_POST['biodatagender'] : '';
             $Skin_tones = isset($_POST['Skin_tones']) ? $_POST['Skin_tones'] : '';
             $maritalstatus = isset($_POST['maritalstatus']) ? $_POST['maritalstatus'] : '';
-            $education_method = isset($_POST['education_method']) ? $_POST['education_method'] : '';
+            $scndry_edu_method = isset($_POST['scndry_edu_method']) ? $_POST['scndry_edu_method'] : '';
 
             // Check if any option is not selected
-            if (empty($biodatagender) || empty($Skin_tones) || empty($maritalstatus) || empty($education_method)) {
+            if (empty($biodatagender) || empty($Skin_tones) || empty($maritalstatus) || empty($scndry_edu_method)) {
                 // If any option is not selected, return the page
                 return;
             }
 
             $sql = "SELECT * FROM 1bd_personal_physical 
-            LEFT JOIN 2bd_personal_lifestyle ON 1bd_personal_physical.user_id = 2bd_personal_lifestyle.user_id
-            LEFT JOIN 3bd_educational_qualifications ON 1bd_personal_physical.user_id = 3bd_educational_qualifications.user_id
+            LEFT JOIN 6bd_7bd_marital_status ON 1bd_personal_physical.user_id = 6bd_7bd_marital_status.user_id
+            LEFT JOIN 3bd_secondaryedu_method ON 1bd_personal_physical.user_id = 3bd_secondaryedu_method.user_id
             WHERE 1=1";
 
             if (!empty($biodatagender)) {
@@ -101,11 +101,11 @@
                 }
             }
 
-            if (!empty($education_method)) {
-                if (!is_array($education_method)) {
-                    $educationMethodArray = explode(',', $education_method);
+            if (!empty($scndry_edu_method)) {
+                if (!is_array($scndry_edu_method)) {
+                    $educationMethodArray = explode(',', $scndry_edu_method);
                     $educationMethodCondition = implode("','", $educationMethodArray);
-                    $sql .= " AND education_method IN ('$educationMethodCondition')";
+                    $sql .= " AND scndry_edu_method IN ('$educationMethodCondition')";
                 }
             }
 
@@ -594,6 +594,7 @@ VALUES
 ('$id', '$qawmi_madrasa_hafez', '$qawmimadrasa_dawrapass', '$kowmi_dawrapas_year', '$kowmi_current_edu_level', DATE_FORMAT(NOW(), '%e %M %Y, %h:%i:%s %p'))";
 if (mysqli_query($conn,$sql))
 {echo " ";}
+
 
 
 
