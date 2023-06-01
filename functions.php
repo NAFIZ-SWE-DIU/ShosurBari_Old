@@ -399,6 +399,7 @@
     -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -*/
 
     function post_biodata($id){
+        if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
     //Biodata 1 
 	$biodatagender=$_POST['biodatagender'];
@@ -435,14 +436,17 @@
 	//Biodata 3
 	$scndry_edu_method=$_POST['scndry_edu_method'];
 	$maxedu_qulfctn=$_POST['maxedu_qulfctn'];
+
 	$qawmi_madrasa_hafez=$_POST['qawmi_madrasa_hafez'];
 	$qawmimadrasa_dawrapass=$_POST['qawmimadrasa_dawrapass'];
 	$kowmi_dawrapas_year=$_POST['kowmi_dawrapas_year'];
 	$kowmi_current_edu_level=$_POST['kowmi_current_edu_level'];
+
 	$gnrl_mdrs_secondary_pass=$_POST['gnrl_mdrs_secondary_pass'];
 	$gnrl_mdrs_secondary_pass_year=$_POST['gnrl_mdrs_secondary_pass_year'];
 	$gnrl_mdrs_secondary_end_year=$_POST['gnrl_mdrs_secondary_end_year'];
 	$gnrlmdrs_secondary_running_std=$_POST['gnrlmdrs_secondary_running_std'];
+
 	$higher_secondary_edu_method=$_POST['higher_secondary_edu_method'];
 	$gnrlmdrs_hrsecondary_pass=$_POST['gnrlmdrs_hrsecondary_pass'];
 	$gnrlmdrs_hrsecondary_pass_year=$_POST['gnrlmdrs_hrsecondary_pass_year'];
@@ -453,6 +457,7 @@
 	$diploma_hrsecondary_pass_year=$_POST['diploma_hrsecondary_pass_year'];
 	$diploma_hrsecondary_sub=$_POST['diploma_hrsecondary_sub'];
 	$diploma_hrsecondary_endingyear=$_POST['diploma_hrsecondary_endingyear'];
+
 	$varsity_edu_method=$_POST['varsity_edu_method'];
 	$uvarsity_pass=$_POST['uvarsity_pass'];
 	$varsity_passing_year=$_POST['varsity_passing_year'];
@@ -493,22 +498,17 @@
 	$maritalstatus=$_POST['maritalstatus'];
 	// Divorce
 	$divorce_reason=$_POST['divorce_reason'];
-	$divorce_how_many_son=$_POST['divorce_how_many_son'];
-	$divorce_son_details=$_POST['divorce_son_details'];
 	// Widow
 	$how_widow=$_POST['how_widow'];
-	$widow_how_many_son=$_POST['widow_how_many_son'];
-	$widow_son_details=$_POST['widow_son_details'];
 	// Widower
 	$how_widower=$_POST['how_widower'];
-	$widower_how_many_son=$_POST['widower_how_many_son'];
-	$widower_son_details=$_POST['widower_son_details'];
 	// Married
 	$get_wife_permission=$_POST['get_wife_permission'];
 	$get_family_permission=$_POST['get_family_permission'];
 	$why_again_married=$_POST['why_again_married'];
-	$married_how_many_son=$_POST['married_how_many_son'];
-	$married_son_details=$_POST['married_son_details'];
+
+	$how_many_son=$_POST['how_many_son'];
+	$son_details=$_POST['son_details'];
 
 	//Biodata 6
 	$guardians_agree=$_POST['guardians_agree'];
@@ -549,7 +549,7 @@
     $sql = "INSERT 
 	INTO
 	1bd_personal_physical
-	(user_id, biodatagender, dateofbirth, height, weight, physicalstatus, Skin_tones, bloodgroup, profilecreationdate  ) 
+	(user_id, biodatagender, dateofbirth, height, weight, physicalstatus, Skin_tones, bloodgroup, profilecreationdate) 
 	VALUES
 	('$id', '$biodatagender', '$dob', '$height', '$weight', '$physicalstatus', '$Skin_tones', '$bloodgroup', DATE_FORMAT(NOW(), '%e %M %Y, %h:%i:%s %p'))";
     if (mysqli_query($conn,$sql))
@@ -616,9 +616,9 @@ if (mysqli_query($conn,$sql))
 --  Educational Qualifications  / sb-biodata-3   --
 -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- --*/
 $sql = "INSERT INTO 3bd_universityedu_method
-(user_id, varsity_edu_method, uvarsity_pass, varsity_passing_year, university_subject, varsity_ending_year, uvarsity_name, others_edu_qualification, profilecreationdate  ) 
+(user_id, scndry_edu_method, higher_secondary_edu_method, varsity_edu_method, uvarsity_pass, varsity_passing_year, university_subject, varsity_ending_year, uvarsity_name, others_edu_qualification, profilecreationdate ) 
 VALUES
-('$id', '$varsity_edu_method', '$uvarsity_pass', '$varsity_passing_year', '$university_subject', '$varsity_ending_year', '$uvarsity_name', '$others_edu_qualification', DATE_FORMAT(NOW(), '%e %M %Y, %h:%i:%s %p'))";
+('$id', '$scndry_edu_method', '$higher_secondary_edu_method', '$varsity_edu_method', '$uvarsity_pass', '$varsity_passing_year', '$university_subject', '$varsity_ending_year', '$uvarsity_name', '$others_edu_qualification', DATE_FORMAT(NOW(), '%e %M %Y, %h:%i:%s %p'))";
 if (mysqli_query($conn,$sql))
 {echo " ";}
 
@@ -668,9 +668,9 @@ if (mysqli_query($conn,$sql))
 --                                               --
 -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -*/
 $sql = "INSERT INTO 6bd_7bd_marital_status
-(user_id, maritalstatus, divorce_reason, divorce_how_many_son, divorce_son_details, how_widow, widow_how_many_son, widow_son_details, how_widower, widower_how_many_son, widower_son_details, get_wife_permission, get_family_permission, why_again_married, married_how_many_son, married_son_details, profilecreationdate  ) 
+(user_id, maritalstatus, divorce_reason, how_widow, how_widower, get_wife_permission, get_family_permission, why_again_married, how_many_son, son_details, profilecreationdate  ) 
 VALUES
-('$id', '$maritalstatus', '$divorce_reason', '$divorce_how_many_son', '$divorce_son_details', '$how_widow', '$widow_how_many_son', '$widow_son_details', '$how_widower', '$widower_how_many_son', '$widower_son_details', '$get_wife_permission', '$get_family_permission', '$why_again_married', '$married_how_many_son', '$married_son_details',  DATE_FORMAT(NOW(), '%e %M %Y, %h:%i:%s %p'))";
+('$id', '$maritalstatus', '$divorce_reason', '$how_widow', '$how_widower', '$get_wife_permission', '$get_family_permission', '$why_again_married', '$how_many_son', '$son_details',  DATE_FORMAT(NOW(), '%e %M %Y, %h:%i:%s %p'))";
 if (mysqli_query($conn,$sql))
 {echo " ";}
 
@@ -738,6 +738,7 @@ if (mysqli_query($conn,$sql))
     header("Location: view_profile.php?id={$id}");
 }
 }
+    }
     /*-- -- -- -- -- -- -- -- -- -- -- -- -- ---- -- --
     -- -- -- -- -- -- -- -- --- -- -- -- -- -- -- -- --
     --                   E   N   D                   --
