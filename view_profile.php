@@ -820,15 +820,15 @@ echo "<script>alert(\"Invalid Profile ID\")</script>";
 										echo "</a>";
 										// End of Default photo Show
 
-										echo "<div class=\"sbbio_number_recentview\"><span class=\"sb_biodatanumber_recentview\"> {$profid} <br> Biodata Number </span> </div>";
+										echo "<div class=\"sbbio_number_recentview\"><span class=\"sb_biodatanumber_recentview\"> {$profid} <br> বায়োডাটা নং </span> </div>";
 										echo "</div>";
 										echo "<div class=\"sb_user_recentview\">";
-										echo "<span class=\"sb_single_data_recentview\"> <span class=\"sb_value_recentview\"> Skin Tones </span>  <span class=\"sb_data_recentview\">{$Skin_tones_recentview1}</span></span>";
-										echo "<span class=\"sb_single_data_recentview\"> <span class=\"sb_value_recentview\"> Height </span>  <span class=\"sb_data_recentview\">{$height_recentview1}</span></span>";
-										echo "<span class=\"sb_single_data_recentview\"> <span class=\"sb_value_recentview\"> Occupation </span>      <span class=\"sb_data_recentview\"> {$occupation_value}</span></span>";
-										echo "<span class=\"sb_single_data_recentview\"> <span class=\"sb_value_recentview\"> Home District </span>      <span class=\"sb_data_recentview\"> {$home_district}</span></span>";
-										echo "<span class=\"sb_single_data_recentview\"> <span class=\"sb_value_recentview\"> Birth Year</span>        <span class=\"sb_data_recentview\"> {$dateofbirth_recentview1}</span></span>";
-										echo "<a href=\"view_profile.php?id={$profid}\" target=\"_blank\"><button class=\"view_sb_profile_recentview\"> View Full Profile</button> </a>";
+										echo "<span class=\"sb_single_data_recentview\"> <span class=\"sb_value_recentview\"> শারীরিক বর্ণ </span>  <span class=\"sb_data_recentview\">{$Skin_tones_recentview1}</span></span>";
+										echo "<span class=\"sb_single_data_recentview\"> <span class=\"sb_value_recentview\"> উচ্চতা </span>  <span class=\"sb_data_recentview\">{$height_recentview1}</span></span>";
+										echo "<span class=\"sb_single_data_recentview\"> <span class=\"sb_value_recentview\"> পেশা </span>      <span class=\"sb_data_recentview\"> {$occupation_value}</span></span>";
+										echo "<span class=\"sb_single_data_recentview\"> <span class=\"sb_value_recentview\"> জেলা </span>      <span class=\"sb_data_recentview\"> {$home_district}</span></span>";
+										echo "<span class=\"sb_single_data_recentview\"> <span class=\"sb_value_recentview\"> জন্ম সন </span>        <span class=\"sb_data_recentview\"> {$dateofbirth_recentview1}</span></span>";
+										echo "<a href=\"view_profile.php?id={$profid}\" target=\"_blank\"><button class=\"view_sb_profile_recentview\">সম্পূর্ণ প্রোফাইল</button> </a>";
 										echo "</div></div>";
 										$count++;
 									}
@@ -1159,7 +1159,7 @@ echo "<script>alert(\"Invalid Profile ID\")</script>";
 
 											<tr class="opened">
 												<?php if (!empty ($aboutme)) { ?>
-												<td class="day_label">ভালো ও মন্দ বিষয়ে কিছু তথ্য</td>
+												<td class="day_label">নিজের সম্পর্ক</td>
 												<td class="day_value closed"><span><?php echo $aboutme;?></span></td>
 												<?php } ?>
 											</tr>
@@ -1473,7 +1473,7 @@ echo "<script>alert(\"Invalid Profile ID\")</script>";
 
 											<tr class="opened">
 												<?php if (!empty ($uvarsity_pass)) { ?>
-												<td class="day_label">স্নাতক/সমমান পাশ c?</td>
+												<td class="day_label">স্নাতক/সমমান পাস করেছেন?</td>
 												<td class="day_value"><?php echo $uvarsity_pass; ?></td>
 												<?php } ?>
 											</tr>
@@ -1764,28 +1764,10 @@ echo "<script>alert(\"Invalid Profile ID\")</script>";
 											$divorce_reason=$row['divorce_reason'];
 										}
 										if($row){
-											$divorce_how_many_son=$row['divorce_how_many_son'];
-										}
-										if($row){
-											$divorce_son_details=$row['divorce_son_details'];
-										}
-										if($row){
 											$how_widow=$row['how_widow'];
 										}
 										if($row){
-											$widow_how_many_son=$row['widow_how_many_son'];
-										}
-										if($row){
-											$widow_son_details=$row['widow_son_details'];
-										}
-										if($row){
 											$how_widower=$row['how_widower'];
-										}
-										if($row){
-											$widower_how_many_son=$row['widower_how_many_son'];
-										}
-										if($row){
-											$widower_son_details=$row['widower_son_details'];
 										}
 										if($row){
 											$get_wife_permission=$row['get_wife_permission'];
@@ -1797,10 +1779,10 @@ echo "<script>alert(\"Invalid Profile ID\")</script>";
 											$why_again_married=$row['why_again_married'];
 										}
 										if($row){
-											$married_how_many_son=$row['married_how_many_son'];
+											$how_many_son=$row['how_many_son'];
 										}
 										if($row){
-											$married_son_details=$row['married_son_details'];
+											$son_details=$row['son_details'];
 										}
 										if($row){
 											$profilecreationdate=$row['profilecreationdate'];
@@ -1830,20 +1812,6 @@ echo "<script>alert(\"Invalid Profile ID\")</script>";
 												<?php } ?>
 											</tr>
 
-											<tr class="opened">
-												<?php if (!empty ($divorce_how_many_son)) { ?>
-												<td class="day_label">কয়টি সন্তান আছে</td>
-												<td class="day_value"><?php echo $divorce_how_many_son; ?></td>
-												<?php } ?>
-											</tr>
-
-											<tr class="opened">
-												<?php if (!empty ($divorce_son_details)) { ?>
-												<td class="day_label">সন্তান সম্পর্কিত তথ্য</td>
-												<td class="day_value"><?php echo $divorce_son_details; ?></td>
-												<?php } ?>
-											</tr>
-
 
 											<!-- If Widow -->
 											<tr class="opened">
@@ -1853,39 +1821,12 @@ echo "<script>alert(\"Invalid Profile ID\")</script>";
 												<?php } ?>
 											</tr>
 
-											<tr class="opened">
-												<?php if (!empty ($widow_how_many_son)) { ?>
-												<td class="day_label">কয়টি সন্তান আছে</td>
-												<td class="day_value"><?php echo $widow_how_many_son; ?></td>
-												<?php } ?>
-											</tr>
-
-											<tr class="opened">
-												<?php if (!empty ($widow_son_details)) { ?>
-												<td class="day_label">সন্তান সম্পর্কিত তথ্য</td>
-												<td class="day_value"><?php echo $widow_son_details; ?></td>
-												<?php } ?>
-											</tr>
 
 											<!-- If Widower -->
 											<tr class="opened">
 												<?php if (!empty ($how_widower)) { ?>
 												<td class="day_label">স্ত্রী যেভাবে মারা গেছেন</td>
 												<td class="day_value"><?php echo $how_widower; ?></td>
-												<?php } ?>
-											</tr>
-
-											<tr class="opened">
-												<?php if (!empty ($widower_how_many_son)) { ?>
-												<td class="day_label">কয়টি সন্তান আছে</td>
-												<td class="day_value"><?php echo $widower_how_many_son; ?></td>
-												<?php } ?>
-											</tr>
-
-											<tr class="opened">
-												<?php if (!empty ($widower_son_details)) { ?>
-												<td class="day_label">সন্তান সম্পর্কিত তথ্য</td>
-												<td class="day_value"><?php echo $widower_son_details; ?></td>
 												<?php } ?>
 											</tr>
 
@@ -1913,16 +1854,16 @@ echo "<script>alert(\"Invalid Profile ID\")</script>";
 											</tr>
 
 											<tr class="opened">
-												<?php if (!empty ($married_how_many_son)) { ?>
+												<?php if (!empty ($how_many_son)) { ?>
 												<td class="day_label">কয়টি সন্তান আছে</td>
-												<td class="day_value"><?php echo $married_how_many_son; ?></td>
+												<td class="day_value"><?php echo $how_many_son; ?></td>
 												<?php } ?>
 											</tr>
 
 											<tr class="opened">
-												<?php if (!empty ($married_son_details)) { ?>
+												<?php if (!empty ($son_details)) { ?>
 												<td class="day_label">সন্তান সম্পর্কিত তথ্য</td>
-												<td class="day_value"><?php echo $married_son_details; ?></td>
+												<td class="day_value"><?php echo $son_details; ?></td>
 												<?php } ?>
 											</tr>
 
@@ -2447,7 +2388,7 @@ echo "<script>alert(\"Invalid Profile ID\")</script>";
 			echo "</a>";
 			// End of Default photo Show
 
-			echo "<div class=\"sbbio_number_recentview\"><span class=\"sb_biodatanumber_recentview\"> {$profid} <br> Biodata Number </span> </div>";
+			echo "<div class=\"sbbio_number_recentview\"><span class=\"sb_biodatanumber_recentview\"> {$profid} <br> বায়োডাটা নং </span> </div>";
 			echo "</div>";
 			echo "<div class=\"sb_user_recentview\">
 			<span class=\"sb_single_data_recentview\"> <span class=\"sb_value_recentview\"> Skin Tones </span>  	<span class=\"sb_data_recentview\">{$Skin_tones_recentview2}</span></span>
@@ -2455,7 +2396,7 @@ echo "<script>alert(\"Invalid Profile ID\")</script>";
 			<span class=\"sb_single_data_recentview\"> <span class=\"sb_value_recentview\"> Occupation </span>      <span class=\"sb_data_recentview\"> {$occupation_recentview2}</span></span>
 			<span class=\"sb_single_data_recentview\"> <span class=\"sb_value_recentview\"> Address </span>      	<span class=\"sb_data_recentview\"> {$permanent_address_recentview2}</span></span>
 			<span class=\"sb_single_data_recentview\"> <span class=\"sb_value_recentview\"> Birth Year</span>       <span class=\"sb_data_recentview\"> {$dateofbirth_recentview2}</span></span>
-			<a href=\"view_profile.php?id={$profid}\" target=\"_blank\"><button class=\"view_sb_profile_recentview\"> View Full Profile</button> </a>
+			<a href=\"view_profile.php?id={$profid}\" target=\"_blank\"><button class=\"view_sb_profile_recentview\">সম্পূর্ণ প্রোফাইল</button> </a>
 			</div></div>";
 			$count++;
         	}
