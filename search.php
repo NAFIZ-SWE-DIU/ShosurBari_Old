@@ -3242,7 +3242,6 @@ if (isset($_POST['search'])) {
     while ($row = mysqli_fetch_assoc($result)) {
         // 1bd_personal_physical
         $profid = $row['user_id'];
-        $biodatagender = $row['biodatagender'];
         $Skin_tones = $row['Skin_tones'];
         $height = $row['height'];
         $dateofbirth = $row['dateofbirth'];
@@ -3264,7 +3263,7 @@ if (isset($_POST['search'])) {
 
 
         // 3bd_educational_qualifications
-        $sql8="SELECT * FROM 3bd_secondaryedu_method WHERE user_id=$profid";		
+        $sql8="SELECT * FROM 5bd_family_information WHERE user_id=$profid";		
         $result8=mysqlexec($sql8);
         if($result8)
         while($row8=mysqli_fetch_assoc($result8))
@@ -3351,7 +3350,7 @@ if (isset($_POST['search'])) {
                 echo "<div class=\"sb_bio_number\"><span class=\"sb_biodatanumber\"> {$profid} <br> বায়োডাটা নং </span> </div>";
                 echo "</div>";
                 echo "<div class=\"sb_user\">";
-                echo "<span class=\"sb_single_data\"> <span class=\"sb_value\"> বায়োডাটা </span> <span class=\"sb_data\"> {$biodatagender}</span></span>";
+                echo "<span class=\"sb_single_data\"> <span class=\"sb_value\"> ধর্ম </span> <span class=\"sb_data\"> {$religion}</span></span>";
                 echo "<span class=\"sb_single_data\"> <span class=\"sb_value\"> শারীরিক বর্ণ </span> <span class=\"sb_data\">{$Skin_tones}</span></span>";
                 echo "<span class=\"sb_single_data\"> <span class=\"sb_value\"> উচ্চতা </span> <span class=\"sb_data\">{$height}</span></span>";
                 echo "<span class=\"sb_single_data\"> <span class=\"sb_value\"> পেশা </span> <span class=\"sb_data\"> {$occupation_value}</span></span>";
