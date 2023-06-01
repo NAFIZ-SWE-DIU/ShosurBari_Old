@@ -769,53 +769,54 @@ i.fa1:hover {
     font-size: 15px;
 }
 
-.shosurbari-copy-right p a{
-    animation: textAnimationDeveloped 10s linear infinite;
+.shosurbari-copy-right p img{
+    animation: backgroundAnimationDeveloped 10s linear infinite;
     font-size: 15px;
-    transition: transform 0.3s;
+    transition: transform 0.4s;
+    padding: 2px;
 }
 
-@keyframes textAnimationDeveloped {
+@keyframes backgroundAnimationDeveloped {
     0% {
-    color: #fdf4ff;
+    background: green;
     }
 
     14.28% {
-    color: blue;
+        background: blue;
     }
 
     28.56% {
-    color: #991b1b;
+        background: red;
     }
 
     42.84% {
-    color: black;
+        background: #fdf4ff;
     }
 
     57.12% {
-    color: blue;
+        background: blue;
     }
 
     71.4% {
-    color:  #991b1b;
+        background:  red;
     }
 
     85.68% {
-    color: black;
+        background: #fdf4ff;
     }
 
     100% {
-    color: #fdf4ff;
+        background: green;
     }
 }
 
-.shosurbari-copy-right p a:hover{
+.shosurbari-copy-right p img:hover{
 	text-decoration:none;
-    padding: 4px;
+    padding: 2px;
     border-radius: 3px;
     background: #0aa4ca;
     color: #fff;
-    transform: scale(1.1);
+    transform: scale(1.5);
 }
 
 #scroll-up-btn {
@@ -1749,7 +1750,7 @@ button.copylink i {
 .sbbio_header_recent_view{
     background: #06b6d4;
     margin: 0px;
-    padding-top: 10px;
+    padding-top: 5px;
     border: 1px solid #0aa4ca;
     border-radius: 5px 5px 0px 0px;
 }
@@ -1769,11 +1770,12 @@ button.copylink i {
     font-size: 17px;
     color: #fff;
     font-weight: 500;
+    line-height: 22px;;
 }
 
 .sb_user_recentview{
     text-align: center;
-    padding: 7px;
+    padding: 3px;
     border-bottom-left-radius: 5px;
     border-bottom-right-radius: 5px;
 }
@@ -3704,10 +3706,10 @@ td.day_value {
     }
 
     .sb_user_recentview .sb_value_recentview {
-        font-size: 14px;
+        font-size: 13px;
     }
     .sb_user_recentview .sb_data_recentview {
-        font-size: 14px;
+        font-size: 13px;
     }
 
     .biodatarecent_viewlist {
@@ -4202,14 +4204,6 @@ ul.nav_1 li {
         margin-left: auto;
         margin-right: auto;
         border-top: 3px solid #06b6d4;
-    }
-
-    .sb_user_recentview .sb_value_recentview {
-        font-size: 13px;
-    }
-
-    .sb_user_recentview .sb_data_recentview {
-        font-size: 13px;
     }
 
     .biodatarecent_viewlist {
@@ -4772,11 +4766,9 @@ i.icon_4 {
 }
 
 .sb_user_recentview .sb_value_recentview {
-    font-size: 14px;
 	width: 44%;
 }
 .sb_user_recentview .sb_data_recentview {
-    font-size: 14px;
 	width: 56%;
 }
 
@@ -5684,11 +5676,9 @@ ul.profile_item{
 }
 
 .sb_user_recentview .sb_value_recentview {
-    font-size: 13px;
 	width: 44%;
 }
 .sb_user_recentview .sb_data_recentview {
-    font-size: 13px;
 	width: 56%;
 }
 .sbbiodata_profile_recentview-mobile{
