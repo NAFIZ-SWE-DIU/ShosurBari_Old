@@ -36,8 +36,13 @@
 
     	<div class="clearfix"> </div>
     		<div class="shosurbari-copy-right">
-		      <p>Copyright © 2022-23 ShosurBari.com | All Rights Reserved  | Developed By - <a href="https://www.facebook.com/NAFIZ.SWE.DIU/" target="_blank">Nafiz Noyon</a></p>
-	        </div>
+				<p>
+					Copyright © 2022-23 ShosurBari.com | All Rights Reserved | Developed By -
+					<a href="https://www.facebook.com/NAFIZ.SWE.DIU/" target="_blank">
+					<img src="images/noyon.png" alt="Nafiz Noyon" style="width: 40px; height: 40px; border-radius: 50%; object-fit: cover;">
+					</a>
+				</p>
+			</div>
     	</div>
 	</div>
 
