@@ -299,9 +299,7 @@ $(document).ready(function(){
 
 						<div class="shosurbari-biodata-field">
 							<label for="edit-name">উচ্চতা<span class="form-required" title="This field is required.">*</span></label>
-							<input type="text" id="edit-name" name="height" value="<?php echo $height; ?>" size="100" maxlength="100"
-							class="form-text" placeholder="Please enter your height" oninput="checkInput(this)" required>
-							<span style="color: red; font-size: 13px;" class="error-message" id="height-error-message"></span>
+							<input type="text" id="edit-name" name="height" value="<?php echo $height; ?>" size="100" maxlength="100" class="form-text" placeholder="Please enter your height" required>
 						</div>
 
 						<!-- <script>
@@ -479,18 +477,18 @@ $(document).ready(function(){
 							<label for="occupation_sector">পেশা<span class="form-required" title="This field is required.">*</span></label>
 							<select name="occupation_sector" required onchange="showOccupationSector(this.value)">
 								<option hidden selected></option>
-								<option value="Business">Business</option>
-								<option value="Student">Student</option>
-								<option value="Common">Service/Internet/Finanace</option>
-								<option value="Health">Health</option>
-								<option value="Engineer">Engineer</option>
-								<option value="Teacher">Teacher</option>
-								<option value="Defense">Defense</option>
-								<option value="Foreigner">Foreigner</option>
-								<option value="Garments">Garments</option>
+								<option value="Business">ব্যবসা</option>
+								<option value="Student">শিক্ষার্থী</option>
+								<option value="Common">সার্ভিস/ইন্টারনেট/ফাইন্যান্স</option>
+								<option value="Health">চিকিৎসা/স্বাস্থ্য</option>
+								<option value="Engineer">ইঞ্জিনিয়ার</option>
+								<option value="Teacher">শিক্ষক/প্রফেসর</option>
+								<option value="Defense">প্রতিরক্ষা বাহিনী</option>
+								<option value="Foreigner">বিদেশে</option>
+								<option value="Garments">গার্মেন্টস</option>
 								<option value="Mistri">কারিগর/মিস্ত্রি</option>
-								<option value="Driver">Driver</option>
-								<option value="Other">Others</option>
+								<option value="Driver">ড্রাইভার/চালক</option>
+								<option value="Other">অন্যান্য</option>
 								<option value="No Profession">No Occupation</option>
 							</select>
 						</div>
@@ -846,14 +844,19 @@ $(document).ready(function(){
 
 
 
-
-
 				//getting profile details from db
 				$sql="SELECT * FROM 3bd_universityedu_method WHERE user_id = $id";
 				$result = mysqlexec($sql);
 
 				if($result){
 				$row=mysqli_fetch_assoc($result);
+
+				if($row){
+					$scndry_edu_method=$row['scndry_edu_method'];
+				}
+				if($row){
+					$higher_secondary_edu_method=$row['higher_secondary_edu_method'];
+				}
 
 				if($row){
 				$varsity_edu_method=$row['varsity_edu_method'];
@@ -978,7 +981,7 @@ $(document).ready(function(){
 
 						<!-- Secondary Education Start -->
 						<div class="shosurbari-biodata-field" id="gnrl_mdrs_scnd_pass">
-							<label for="secondary_pass">মাধ্যমিক/সমমান পাশ করেছেন?<span class="form-required" title="This field is required.">*</span></label>
+							<label for="secondary_pass">মাধ্যমিক/সমমান পাস করেছেন?<span class="form-required" title="This field is required.">*</span></label>
 							<select name="gnrl_mdrs_secondary_pass" id="secondary_pass">
 								<option hidden selected></option>
 								<option value="হ্যাঁ">হ্যাঁ</option>
@@ -1131,7 +1134,7 @@ $(document).ready(function(){
 
 						<!--Diploma Higher Seconday Start -->
 						<div class="shosurbari-biodata-field" id="doploma_hrscnd_pass">
-							<label for="doploma_hrscdmethod">ডিপ্লোমা পাশ করেছেন?<span class="form-required" title="This field is required.">*</span></label>
+							<label for="doploma_hrscdmethod">ডিপ্লোমা পাস করেছেন?<span class="form-required" title="This field is required.">*</span></label>
 							<select name="diploma_hrsecondary_pass" id="doploma_hrscdmethod">
 								<option hidden selected></option>
 								<option value="হ্যাঁ">হ্যাঁ</option>
@@ -1207,7 +1210,7 @@ $(document).ready(function(){
 
 						<!-- Higher Education Start -->
 						<div class="shosurbari-biodata-field" id="varsity_pass">
-							<label for="university_pass">স্নাতক/সমমান পাশ করেছেন?<span class="form-required" title="This field is required.">*</span></label>
+							<label for="university_pass">স্নাতক/সমমান পাস করেছেন?<span class="form-required" title="This field is required.">*</span></label>
 							<select name="uvarsity_pass" id="university_pass">
 								<option hidden selected></option>
 								<option value="হ্যাঁ">হ্যাঁ</option>
@@ -1255,6 +1258,7 @@ $(document).ready(function(){
 						<div class="shosurbari-biodata-field" id="varsity_exam_year">
 							<label for="edu-method">স্নাতক/সমমান অধ্যায়ন সম্পন্ন হবে<span class="form-required" title="This field is required.">*</span></label>
 							<select name="varsity_ending_year">
+								<option hidden selected></option>
 								<option value="২০৩০">২০৩০</option>
 								<option value="২০২৯">২০২৯</option>
 								<option value="২০২৮">২০২৮</option>
@@ -2268,6 +2272,7 @@ $(document).ready(function(){
 					if($row){
 						$maritalstatus=$row['maritalstatus'];
 					}
+
 					if($row){
 						$divorce_reason=$row['divorce_reason'];
 					}
@@ -2277,6 +2282,7 @@ $(document).ready(function(){
 					if($row){
 						$divorce_son_details=$row['divorce_son_details'];
 					}
+
 					if($row){
 						$how_widow=$row['how_widow'];
 					}
@@ -2286,6 +2292,7 @@ $(document).ready(function(){
 					if($row){
 						$widow_son_details=$row['widow_son_details'];
 					}
+
 					if($row){
 						$how_widower=$row['how_widower'];
 					}
@@ -2295,6 +2302,7 @@ $(document).ready(function(){
 					if($row){
 						$widower_son_details=$row['widower_son_details'];
 					}
+
 					if($row){
 						$get_wife_permission=$row['get_wife_permission'];
 					}
@@ -2310,6 +2318,7 @@ $(document).ready(function(){
 					if($row){
 						$married_son_details=$row['married_son_details'];
 					}
+
 					if($row){
 						$profilecreationdate=$row['profilecreationdate'];
 					}
@@ -2351,29 +2360,6 @@ $(document).ready(function(){
 								<label for="edit-name">ডিভোর্সের কারণ বর্ণনা করুন এবং কতদিন সংসার করেছেন?<span class="form-required" title="This field is required.">*</span></label>
 								<textarea rows="5" name="divorce_reason" placeholder="Describe Your Divorce Reason" class="form-text-describe"></textarea>
 							</div>
-
-							<div class="shosurbari-biodata-field">
-								<label for="edit-name">কয়টি সন্তান আছে<span class="form-required" title="This field is required.">*</span></label>
-								<select name="divorce_how_many_son" onchange="toggleDivorceSonDetails(this.value)">
-									<option hidden selected></option>
-									<option value="কোনো সন্তান নেই">কোনো সন্তান নেই</option>
-									<option value="১টি সন্তান">১টি সন্তান</option>
-									<option value="২টি সন্তান">২টি সন্তান</option>
-									<option value="৩টি সন্তান">৩টি সন্তান</option>
-									<option value="৪টি সন্তান">৪টি সন্তান</option>
-									<option value="৫টি সন্তান">৫টি সন্তান</option>
-									<option value="৬টি সন্তান">৬টি সন্তান</option>
-									<option value="৭টি সন্তান">৭টি সন্তান</option>
-									<option value="৮টি সন্তান">৮টি সন্তান</option>
-									<option value="৯টি সন্তান">৯টি সন্তান</option>
-									<option value="১০টি সন্তান">১০টি সন্তান</option>
-								</select>
-							</div>
-
-							<div class="shosurbari-biodata-field" id="divorce-son-details" style="display: none;">
-								<label for="edit-name">সন্তান সম্পর্কিত তথ্য<span class="form-required" title="This field is required.">*</span></label>
-								<textarea rows="5" name="divorce_son_details" placeholder="Describe Your Son Details" class="form-text-describe"></textarea>
-							</div>
 						</div>
 						<!-- Divorce Section End -->
 
@@ -2384,29 +2370,6 @@ $(document).ready(function(){
 								<label for="edit-name">স্বামী যেভাবে মারা গেছেন এবং কতদিন সংসার করেছেন?<span class="form-required" title="This field is required.">*</span></label>
 								<textarea rows="5" name="how_widow" placeholder="Describe How You Became a Widow" class="form-text-describe"></textarea>
 							</div>
-
-							<div class="shosurbari-biodata-field">
-								<label for="edit-name">কয়টি সন্তান আছে<span class="form-required" title="This field is required.">*</span></label>
-								<select name="widow_how_many_son" onchange="toggleWidowSonDetails(this.value)">
-									<option hidden selected></option>
-									<option value="কোনো সন্তান নেই">কোনো সন্তান নেই</option>
-									<option value="১টি সন্তান">১টি সন্তান</option>
-									<option value="২টি সন্তান">২টি সন্তান</option>
-									<option value="৩টি সন্তান">৩টি সন্তান</option>
-									<option value="৪টি সন্তান">৪টি সন্তান</option>
-									<option value="৫টি সন্তান">৫টি সন্তান</option>
-									<option value="৬টি সন্তান">৬টি সন্তান</option>
-									<option value="৭টি সন্তান">৭টি সন্তান</option>
-									<option value="৮টি সন্তান">৮টি সন্তান</option>
-									<option value="৯টি সন্তান">৯টি সন্তান</option>
-									<option value="১০টি সন্তান">১০টি সন্তান</option>
-								</select>
-							</div>
-
-							<div class="shosurbari-biodata-field" id="widow-son-details" style="display: none;">
-								<label for="edit-name">সন্তান সম্পর্কিত তথ্য<span class="form-required" title="This field is required.">*</span></label>
-								<textarea rows="5" name="widow_son_details" placeholder="Describe Your Son Details" class="form-text-describe"></textarea>
-							</div>
 						</div>
 						<!-- Widow Section End-->
 
@@ -2416,29 +2379,6 @@ $(document).ready(function(){
 							<div class="shosurbari-biodata-field">
 								<label for="edit-name">স্ত্রী যেভাবে মারা গেছেন এবং কতদিন সংসার করেছেন?<span class="form-required" title="This field is required.">*</span></label>
 								<textarea rows="5" name="how_widower" placeholder="Describe How You Became a Widower" class="form-text-describe"></textarea>
-							</div>
-
-							<div class="shosurbari-biodata-field">
-								<label for="edit-name">কয়টি সন্তান আছে<span class="form-required" title="This field is required.">*</span></label>
-								<select name="widower_how_many_son" onchange="toggleWidowerSonDetails(this.value)">
-									<option hidden selected></option>
-									<option value="কোনো সন্তান নেই">কোনো সন্তান নেই</option>
-									<option value="১টি সন্তান">১টি সন্তান</option>
-									<option value="২টি সন্তান">২টি সন্তান</option>
-									<option value="৩টি সন্তান">৩টি সন্তান</option>
-									<option value="৪টি সন্তান">৪টি সন্তান</option>
-									<option value="৫টি সন্তান">৫টি সন্তান</option>
-									<option value="৬টি সন্তান">৬টি সন্তান</option>
-									<option value="৭টি সন্তান">৭টি সন্তান</option>
-									<option value="৮টি সন্তান">৮টি সন্তান</option>
-									<option value="৯টি সন্তান">৯টি সন্তান</option>
-									<option value="১০টি সন্তান">১০টি সন্তান</option>
-								</select>
-							</div>
-
-							<div class="shosurbari-biodata-field" id="widower-son-details" style="display: none;">
-								<label for="edit-name">সন্তান সম্পর্কিত তথ্য<span class="form-required" title="This field is required.">*</span></label>
-								<textarea rows="5" name="widower_son_details" placeholder="Describe Your Son Details" class="form-text-describe"></textarea>
 							</div>
 						</div>
 						<!-- Widower Section End-->
@@ -2460,10 +2400,15 @@ $(document).ready(function(){
 								<label for="edit-name">আবার বিয়ে করার কারণ<span class="form-required" title="This field is required.">*</span></label>
 								<textarea rows="5" name="why_again_married" placeholder="Describe How You Became a Widower" class="form-text-describe"></textarea>
 							</div>
+						</div>
+						<!-- Married Section End-->
 
+
+						<div class="shosurbari-biodata-field" id="son-section" style="display: none;">
 							<div class="shosurbari-biodata-field">
 								<label for="edit-name">কয়টি সন্তান আছে<span class="form-required" title="This field is required.">*</span></label>
-								<select name="married_how_many_son" onchange="toggleMarriedSonDetails(this.value)">
+								<select name="how_many_son" onchange="toggleSonDetails(this.value)">
+									<option hidden selected></option>
 									<option value="কোনো সন্তান নেই">কোনো সন্তান নেই</option>
 									<option value="১টি সন্তান">১টি সন্তান</option>
 									<option value="২টি সন্তান">২টি সন্তান</option>
@@ -2478,12 +2423,11 @@ $(document).ready(function(){
 								</select>
 							</div>
 
-							<div class="shosurbari-biodata-field" id="married-son-details" style="display: none;">
+							<div class="shosurbari-biodata-field" id="son-details" style="display: none;">
 								<label for="edit-name">সন্তান সম্পর্কিত তথ্য<span class="form-required" title="This field is required.">*</span></label>
-								<textarea rows="5" name="married_son_details" placeholder="Describe Your Son Details" class="form-text-describe"></textarea>
+								<textarea rows="5" name="son_details" placeholder="Describe Your Son Details" class="form-text-describe"></textarea>
 							</div>
 						</div>
-						<!-- Married Section End-->
 
 
 						<!-- Bellow Two Sections For Male or Female -->
@@ -2540,117 +2484,109 @@ $(document).ready(function(){
 				<input type="button" name="next" class="next action-button" value="Next" />
 
 				<script>
-					function toggleGenderSections(selectedGender) {
-						var maleallowJobwife = document.getElementById('male-allow-wife-job');
-						var femaleJobSection = document.getElementById('female-job-after-marriage');
-												
-						var maleallowStudywife = document.getElementById('male-allow-wife-study');
-						var femaleStudySection = document.getElementById('female-study-after-marriage');
+	function toggleGenderSections(selectedGender) {
+		var maleallowJobwife = document.getElementById('male-allow-wife-job');
+		var femaleJobSection = document.getElementById('female-job-after-marriage');
+		var maleallowStudywife = document.getElementById('male-allow-wife-study');
+		var femaleStudySection = document.getElementById('female-study-after-marriage');
+		var maleliveWithwife = document.getElementById('male-live-with-wife');
+		var femaleagreeMarriagestudent = document.getElementById('female-agree-marriage-student');
 
-						var maleliveWithwife = document.getElementById('male-live-with-wife');
-						var femaleagreeMarriagestudent = document.getElementById('female-agree-marriage-student');						
+		if (selectedGender === 'পাত্রের বায়োডাটা') {
+			maleallowJobwife.style.display = 'block';
+			femaleJobSection.style.display = 'none';
 
-						if (selectedGender === 'পাত্রের বায়োডাটা') {
-							maleallowJobwife.style.display = 'block';
-							femaleJobSection.style.display = 'none';
+			maleallowStudywife.style.display = 'block';
+			femaleStudySection.style.display = 'none';
 
-							maleallowStudywife.style.display = 'block';
-							femaleStudySection.style.display = 'none';
+			maleliveWithwife.style.display = 'block';
+			femaleagreeMarriagestudent.style.display = 'none';
 
-							maleliveWithwife.style.display = 'block';
-							femaleagreeMarriagestudent.style.display = 'none';
+			// Hide বিধবা option
+			var maritalStatusSelect = document.getElementsByName('maritalstatus')[0];
+			var optionWidow = maritalStatusSelect.querySelector('option[value="বিধবা"]');
+			optionWidow.style.display = 'none';
+		} else if (selectedGender === 'পাত্রীর বায়োডাটা') {
+			maleallowJobwife.style.display = 'none';
+			femaleJobSection.style.display = 'block';
 
-						} else if (selectedGender === 'পাত্রীর বায়োডাটা') {
-							maleallowJobwife.style.display = 'none';
-							femaleJobSection.style.display = 'block';
+			maleallowStudywife.style.display = 'none';
+			femaleStudySection.style.display = 'block';
 
-							maleallowStudywife.style.display = 'none';
-							femaleStudySection.style.display = 'block';
+			maleliveWithwife.style.display = 'none';
+			femaleagreeMarriagestudent.style.display = 'block';
 
-							maleliveWithwife.style.display = 'none';
-							femaleagreeMarriagestudent.style.display = 'block';
-						} else {
-							maleallowJobwife.style.display = 'none';
-							femaleJobSection.style.display = 'none';
+			// Hide বিপত্নীক option
+			var maritalStatusSelect = document.getElementsByName('maritalstatus')[0];
+			var optionWidower = maritalStatusSelect.querySelector('option[value="বিপত্নীক"]');
+			optionWidower.style.display = 'none';
+		} else {
+			maleallowJobwife.style.display = 'none';
+			femaleJobSection.style.display = 'none';
 
-							maleallowStudywife.style.display = 'none';
-							femaleStudySection.style.display = 'none';
+			maleallowStudywife.style.display = 'none';
+			femaleStudySection.style.display = 'none';
 
-							maleliveWithwife.style.display = 'none';
-							femaleagreeMarriagestudent.style.display = 'none';
-						}
-					}
+			maleliveWithwife.style.display = 'none';
+			femaleagreeMarriagestudent.style.display = 'none';
 
-					function toggleMaritalStatus(selectedStatus) {
-						var gurdianAggressSection = document.getElementById('gurdian-aggress-section');
-						var divorceSection = document.getElementById('divorce-section');
-						var widowSection = document.getElementById('widow-section');
-						var widowerSection = document.getElementById('widower-section');
-						var marriedSection = document.getElementById('married-section');
+			// Show all options
+			var maritalStatusSelect = document.getElementsByName('maritalstatus')[0];
+			var options = maritalStatusSelect.querySelectorAll('option');
+			options.forEach(function(option) {
+				option.style.display = 'block';
+			});
+		}
+	}
 
-						// Hide all sections initially
-						gurdianAggressSection.style.display = 'none';
-						divorceSection.style.display = 'none';
-						widowSection.style.display = 'none';
-						widowerSection.style.display = 'none';
-						marriedSection.style.display = 'none';
+	function toggleMaritalStatus(selectedStatus) {
+		var gurdianAggressSection = document.getElementById('gurdian-aggress-section');
+		var sonDetailsSection = document.getElementById('son-section');
+		var divorceSection = document.getElementById('divorce-section');
+		var widowSection = document.getElementById('widow-section');
+		var widowerSection = document.getElementById('widower-section');
+		var marriedSection = document.getElementById('married-section');
 
-						if (selectedStatus === 'অবিবাহিত') {
-							gurdianAggressSection.style.display = 'block';
-						} else if (selectedStatus === 'ডিভোর্স') {
-							divorceSection.style.display = 'block';
-							gurdianAggressSection.style.display = 'block';
-						} else if (selectedStatus === 'বিধবা') {
-							widowSection.style.display = 'block';
-							gurdianAggressSection.style.display = 'block';
-						} else if (selectedStatus === 'বিপত্নীক') {
-							widowerSection.style.display = 'block';
-							gurdianAggressSection.style.display = 'block';
-						} else if (selectedStatus === 'বিবাহিত') {
-							marriedSection.style.display = 'block';
-						}
-					}
+		// Hide all sections initially
+		gurdianAggressSection.style.display = 'none';
+		sonDetailsSection.style.display = 'none';
+		divorceSection.style.display = 'none';
+		widowSection.style.display = 'none';
+		widowerSection.style.display = 'none';
+		marriedSection.style.display = 'none';
 
-					function toggleDivorceSonDetails(selectedDivorceSonCount) {
-						var divorceSonDetailsSection = document.getElementById('divorce-son-details');
+		if (selectedStatus === 'অবিবাহিত') {
+			gurdianAggressSection.style.display = 'block';
+			sonDetailsSection.style.display = 'none';
+		} else if (selectedStatus === 'ডিভোর্স') {
+			divorceSection.style.display = 'block';
+			gurdianAggressSection.style.display = 'block';
+			sonDetailsSection.style.display = 'block';
+		} else if (selectedStatus === 'বিধবা') {
+			widowSection.style.display = 'block';
+			sonDetailsSection.style.display = 'block';
+			gurdianAggressSection.style.display = 'block';
+		} else if (selectedStatus === 'বিপত্নীক') {
+			widowerSection.style.display = 'block';
+			gurdianAggressSection.style.display = 'block';
+			sonDetailsSection.style.display = 'block';
+		} else if (selectedStatus === 'বিবাহিত') {
+			marriedSection.style.display = 'block';
+			sonDetailsSection.style.display = 'block';
+		}
+	}
 
-						if (selectedDivorceSonCount !== 'কোনো সন্তান নেই') {
-							divorceSonDetailsSection.style.display = 'block';
-						} else {
-							divorceSonDetailsSection.style.display = 'none';
-						}
-					}
+	function toggleSonDetails(selectedSonCount) {
+		var sonAboutSection = document.getElementById('son-details');
 
-					function toggleWidowSonDetails(selectedWidowSonCount) {
-						var widowSonDetailsSection = document.getElementById('widow-son-details');
+		if (selectedSonCount !== 'কোনো সন্তান নেই') {
+				sonAboutSection.style.display = 'block';
+			} else {
+				sonAboutSection.style.display = 'none';
+			}
+		}
+</script>
 
-						if (selectedWidowSonCount !== 'কোনো সন্তান নেই') {
-							widowSonDetailsSection.style.display = 'block';
-						} else {
-							widowSonDetailsSection.style.display = 'none';
-						}
-					}
-
-					function toggleWidowerSonDetails(selectedWidowerSonCount) {
-						var widowerSonDetailsSection = document.getElementById('widower-son-details');
-
-						if (selectedWidowerSonCount !== 'কোনো সন্তান নেই') {
-							widowerSonDetailsSection.style.display = 'block';
-						} else {
-							widowerSonDetailsSection.style.display = 'none';
-						}
-					}
-
-					function toggleMarriedSonDetails(selectedMarriedSonCount) {
-						var marriedSonDetailsSection = document.getElementById('married-son-details');
-
-						if (selectedMarriedSonCount !== 'কোনো সন্তান নেই') {
-							marriedSonDetailsSection.style.display = 'block';
-						} else {
-							marriedSonDetailsSection.style.display = 'none';
-						}
-					}
-				</script>
 			</fieldset>
 			<!--Fieldsets end-->
 			<!-- -- -- -- -- -- -- -- -- -- -- -- -- ---- -- --
