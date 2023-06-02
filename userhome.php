@@ -122,25 +122,30 @@ $(document).ready(function(){
 
     <div class="collapse_userprofile navbar-collapseprofile" id="bs-megadropdown-tabs">
       <ul class="nav navbar-nav nav_1">
-        <li><a href="view_profile.php?id=<?php echo $id;?>">View Profile</a></li>
+        <li><a href="view_profile.php?id=<?php echo $id;?>">সম্পূর্ণ প্রোফাইল</a></li>
 
         <li class="dropdown">
-          <a href="#" class="dropdown-toggle" data-toggle="dropdown">Biodata <span class="caret"></span> </a>
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown">বায়োডাটা/ছবি পোস্ট<span class="caret"></span> </a>
           <ul class="dropdown-menu" role="menu">
-            <li><a href="editbiodata.php?id=<?php echo $id;?>">Biodata Post</a></li>
-            <li><a href="photoupdate.php?id=<?php echo $id;?>">Photo Upload/Delete</a></li>
+            <li><a href="biodata_post.php?id=<?php echo $id;?>">বায়োডাটা পোস্ট</a></li>
+            <li><a href="photoupdate.php?id=<?php echo $id;?>">ছবি আপলোড/ডিলেট</a></li>
           </ul>
         </li>
 
         <li class="dropdown">
-          <a href="#" class="dropdown-toggle" data-toggle="dropdown">Update <span class="caret"></span> </a>
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown">বায়োডাটা আপডেট<span class="caret"></span> </a>
           <ul class="dropdown-menu" role="menu">
-            <li><a href="editbiodata.php?id=<?php echo $id;?>">Biodata Update</a></li>
-            <li><a href="accountupdate.php?id=<?php echo $id;?>">Account Update</a></li>
+            <li><a href="physical_marital.php?id=<?php echo $id;?>">শারীরিক/বৈবাহিক তথ্য</a></li>
+            <li><a href="personal_info.php?id=<?php echo $id;?>">ব্যক্তিগত তথ্য</a></li>
+            <li><a href="education.php?id=<?php echo $id;?>">শিক্ষাগত তথ্য</a></li>
+            <li><a href="address.php?id=<?php echo $id;?>">ঠিকানা</a></li>
+            <li><a href="family.php?id=<?php echo $id;?>">পারিবারিক/সামাজিক</a></li>
+            <li><a href="religion.php?id=<?php echo $id;?>">ধর্মীয় বিষয়</a></li>
+            <li><a href="partner.php?id=<?php echo $id;?>">জীবনসঙ্গীর-বিবরণ</a></li>
           </ul>
         </li>
 
-        <li><a href="search.php">Search Biodata</a></li>
+        <li><a href="accountupdate.php?id=<?php echo $id;?>">একাউন্ট</a></li>
       </ul>
     </div>
   </div>
