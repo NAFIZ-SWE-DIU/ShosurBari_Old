@@ -128,7 +128,7 @@ $(document).ready(function(){
           </div>
 
           <div class="form-actions">
-            <button type="submit" id="edit-submit" name="op" class="btn_4 submit">Submit</button>
+            <button type="submit" id="edit-submit" name="op" class="btn_1 submit">Submit</button>
           </div>
 
           <!-- Popup message -->
