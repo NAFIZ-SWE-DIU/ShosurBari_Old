@@ -755,6 +755,84 @@ if (mysqli_query($conn,$sql))
 
 
 
+    /*-- -- -- -- -- -- -- -- -- -- -- -- -- ---- -- --
+    -- -- -- -- -- -- -- -- --- -- -- -- -- -- -- -- --
+    --                  S  T  A  R  T                --
+    --             2bd_personal_lifestyle            --
+    --       User Bio Data Update to Database        --
+    -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- ---
+    -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -*/
+
+    function personal_info_update($id){
+
+        if ($_SERVER['REQUEST_METHOD'] == 'POST') {
+        // Call the function to update the personal info
+        $smoke=$_POST['smoke'];
+        $occupation_sector=$_POST['occupation_sector'];
+        $other_occupation_sector=$_POST['other_occupation_sector'];
+        $business_occupation_level=$_POST['business_occupation_level'];
+        $student_occupation_level=$_POST['student_occupation_level'];
+        $health_occupation_level=$_POST['health_occupation_level'];
+        $engineer_occupation_level=$_POST['engineer_occupation_level'];
+        $teacher_occupation_level=$_POST['teacher_occupation_level'];
+        $defense_occupation_level=$_POST['defense_occupation_level'];
+        $foreigner_occupation_level=$_POST['foreigner_occupation_level'];
+        $garments_occupation_level=$_POST['garments_occupation_level'];
+        $driver_occupation_level=$_POST['driver_occupation_level'];
+        $service_andcommon_occupation_level=$_POST['service_andcommon_occupation_level'];
+        $mistri_occupation_level=$_POST['mistri_occupation_level'];
+        $occupation_describe=$_POST['occupation_describe'];
+        $dress_code=$_POST['dress_code'];
+        $aboutme=$_POST['aboutme'];		
+    
+
+        require_once("includes/dbconn.php");
+        $sql="SELECT user_id FROM 2bd_personal_lifestyle WHERE user_id=$id";
+        $result=mysqlexec($sql);
+
+
+        // Update query
+        if(mysqli_num_rows($result)>=1){
+        $sql = "UPDATE 2bd_personal_lifestyle SET 
+                    smoke = '$smoke',
+                    occupation_sector = '$occupation_sector',
+                    other_occupation_sector = '$other_occupation_sector',
+                    business_occupation_level = '$business_occupation_level',
+                    student_occupation_level = '$student_occupation_level',
+                    health_occupation_level = '$health_occupation_level',
+                    engineer_occupation_level = '$engineer_occupation_level',
+                    teacher_occupation_level = '$teacher_occupation_level',
+                    defense_occupation_level = '$defense_occupation_level',
+                    foreigner_occupation_level = '$foreigner_occupation_level',
+                    garments_occupation_level = '$garments_occupation_level',
+                    driver_occupation_level = '$driver_occupation_level',
+                    service_andcommon_occupation_level = '$service_andcommon_occupation_level',
+                    mistri_occupation_level = '$mistri_occupation_level',
+                    occupation_describe = '$occupation_describe',
+                    dress_code = '$dress_code',
+                    aboutme = '$aboutme',
+                    profilecreationdate = DATE_FORMAT(NOW(), '%e %M %Y, %h:%i:%s %p')
+                WHERE user_id = '$id'";
+
+$result=mysqlexec($sql);
+	if ($result)
+	{    echo "Thanks! Successfully Uploaded New Biodata!";
+        header("Location: view_profile.php?id={$id}");}
+    }
+}
+}
+    /*-- -- -- -- -- -- -- -- -- -- -- -- -- ---- -- --
+    -- -- -- -- -- -- -- -- --- -- -- -- -- -- -- -- --
+    --                   E   N   D                   --
+    --             2bd_personal_lifestyle            --
+    --       User Bio Data Update to Database        --
+    -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- ---
+    -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -*/
+
+
+
+
+
 
     /*-- -- -- -- -- -- -- -- -- -- -- -- -- ---- -- --
     -- -- -- -- -- -- -- -- --- -- -- -- -- -- -- -- --
