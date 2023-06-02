@@ -89,7 +89,7 @@ $(document).ready(function(){
           </div>
 
 		      <div class="form-actions">
-            <button  type="submit" id="edit-submit" name="op"  class="btn_2 submit"  > <span> </span> Login Your Account</button>
+            <button  type="submit" id="edit-submit" name="op"  class="btn_1 submit"  > <span> </span> Login Your Account</button>
           </div>
 
 		      <div class="or">
@@ -98,7 +98,7 @@ $(document).ready(function(){
 
           <div class="form-actions">
             <p>Don't have an account?</p>
-            <a class="btn_5 submit" href="register.php">Create New Account</a>
+            <a href="register.php">Create New Account</a>
           </div>
 
         </div>
