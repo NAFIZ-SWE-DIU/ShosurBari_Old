@@ -205,23 +205,7 @@ $(document).ready(function(){
         	while($row=mysqli_fetch_assoc($result)){
         		$profid=$row['user_id'];
         		$biodatagender=$row['biodatagender'];
-            $Skin_tones=$row['Skin_tones'];
-            $height=$row['height'];
             $dateofbirth=$row['dateofbirth'];
-
-
-            $sql3="SELECT * FROM 2bd_personal_lifestyle WHERE user_id=$profid";		
-            $result3=mysqlexec($sql3);
-            if($result3)
-            while($row3=mysqli_fetch_assoc($result3))
-            $occupation=$row3['occupation'];
-				
-						
-            $sql4="SELECT * FROM 4bd_address_details WHERE user_id=$profid";
-            $result4=mysqlexec($sql4);
-            if($result4)
-            while($row4=mysqli_fetch_assoc($result4))
-            $permanent_address=$row4['permanent_address'];
 							    
 
 						$sql5="SELECT * FROM 8bd_religion_details WHERE user_id=$profid";
@@ -240,9 +224,39 @@ $(document).ready(function(){
 						$pic1=$row2['pic1'];
 						}
 
+
+                    // 2bd_personal_lifestyle
+        $sql3 = "SELECT * FROM 2bd_personal_lifestyle WHERE user_id=$profid";
+        $result3 = mysqlexec($sql3);
+        if ($result3 && mysqli_num_rows($result3) > 0) {
+            $row3 = mysqli_fetch_assoc($result3);
+            $other_occupation_sector=$row3['other_occupation_sector'];
+
+            $occupation_levels = array(
+                'business_occupation_level' => $row3['business_occupation_level'],
+                'student_occupation_level' => $row3['student_occupation_level'],
+                'health_occupation_level' => $row3['health_occupation_level'],
+                'engineer_occupation_level' => $row3['engineer_occupation_level'],
+                'teacher_occupation_level' => $row3['teacher_occupation_level'],
+                'defense_occupation_level' => $row3['defense_occupation_level'],
+                'foreigner_occupation_level' => $row3['foreigner_occupation_level'],
+                'garments_occupation_level' => $row3['garments_occupation_level'],
+                'driver_occupation_level' => $row3['driver_occupation_level'],
+                'service_andcommon_occupation_level' => $row3['service_andcommon_occupation_level'],
+                'mistri_occupation_level' => $row3['mistri_occupation_level'],
+            );
+            $occupation_levels = array_filter($occupation_levels); // Remove empty values
+            $occupation_count = count($occupation_levels);
+
+            if ($occupation_count > 0) {
+                $occupation_label = array_keys($occupation_levels)[0];
+                $occupation_value = $occupation_levels[$occupation_label];
+
+
+
 					  //PRINTING THE PROFILE
             echo "<li class=\"sb_newbiodata\">";
-            echo "<div class=\"sb_featured_profiles\">";
+            echo "<div class=\"sb_featured_profile_head\">";
             echo "<div class=\"sbbio_header_recent_view\">";
 
             // Start for Default Photo Show
@@ -255,18 +269,20 @@ $(document).ready(function(){
             echo "</a>";
             // End for Default photo Show
 
-
-            echo "<div class=\"sbbio_number_recentview\"><span class=\"sb_biodatanumber_recentview\"> {$profid} <br> Biodata Number </span> </div>";
+            echo "<div class=\"sbbio_number_recentview\"><span class=\"sb_biodatanumber_recentview\"> {$profid} <br> বায়োডাটা নং </span> </div>";
             echo "</div>";
-            echo "<div class=\"sb_user_recentview\">
-            <span class=\"sb_single_data_recentview\"> <span class=\"sb_value_recentview\"> Gender </span>  <span class=\"sb_data_recentview\">{$biodatagender}</span></span>
-            <span class=\"sb_single_data_recentview\"> <span class=\"sb_value_recentview\"> Religion </span>  <span class=\"sb_data_recentview\">{$religion}</span></span>
-            <span class=\"sb_single_data_recentview\"> <span class=\"sb_value_recentview\"> Birth Year</span>        <span class=\"sb_data_recentview\"> {$dateofbirth}</span></span>
-            <a href=\"view_profile.php?id={$profid}\" target=\"_blank\"><button class=\"view_sb_profile_recentview\"> View Full Profile</button> </a>
-            </div></div>";
+            echo "<div class=\"sb_user_recentview\">";
+            echo "<span class=\"sb_single_data_recentview\"> <span class=\"sb_value_recentview\"> বায়োডাটা </span>  <span class=\"sb_data_recentview\">{$biodatagender}</span></span>";
+            echo "<span class=\"sb_single_data_recentview\"> <span class=\"sb_value_recentview\"> ধর্ম </span>  <span class=\"sb_data_recentview\">{$religion}</span></span>";
+            echo "<span class=\"sb_single_data_recentview\"> <span class=\"sb_value_recentview\"> পেশা </span>  <span class=\"sb_data_recentview\">{$occupation_value}</span></span>";
+            echo "<span class=\"sb_single_data_recentview\"> <span class=\"sb_value_recentview\"> জন্ম সন</span>        <span class=\"sb_data_recentview\"> {$dateofbirth}</span></span>";
+            echo "<a href=\"view_profile.php?id={$profid}\" target=\"_blank\"><button class=\"view_sb_profile_recentview\">সম্পূর্ণ প্রোফাইল</button> </a>";
+            echo "</div></div>";
             echo "</li>";
         	}
 		      }
+        }
+      }
         ?>
       </ul>
 
