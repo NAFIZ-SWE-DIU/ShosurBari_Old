@@ -112,7 +112,6 @@ $(document).ready(function(){
 	<div class="shosurbari-biodata">
 		<!-- multistep form -->
 		<form action="" method="POST" id="biodataForm">
-
 		<!-- -- -- -- -- -- -- -- -- -- -- -- -- ---- -- --
 			-- -- -- -- -- -- -- -- --- -- -- -- -- -- -- -- --
 			--                S  T  A  R  T                  --
@@ -229,7 +228,7 @@ $(document).ready(function(){
 					</div>
 				</div>
 
-			    <input type="submit"  name="op" class="action-button" id="edit-submit" value="Submit Biodata">
+				<button type="submit" id="edit-submit" name="op" class="biodata-submit"><span></span> Submit</button>			
 			</fieldset>
 			<!--Fieldsets end-->
 			<!-- -- -- -- -- -- -- -- -- -- -- -- -- ---- -- --
@@ -240,35 +239,9 @@ $(document).ready(function(){
 			-- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- ---
 			-- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -->
 
-
-
-
 		</form>
-
-
-		
-<!-- -- -- -- -- -- -- -- -- -- -- -- -- ---- -- --
--- -- -- -- -- -- -- -- --- -- -- -- -- -- -- -- --
---                S  T  A  R  T                  --
---       Update & Store the data to Database     --
---                                               --
--- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- ---
--- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -->
-
-<!-- -- -- -- -- -- -- -- -- -- -- -- -- ---- -- --
--- -- -- -- -- -- -- -- --- -- -- -- -- -- -- -- --
---                   E   N   D                   --
---       Update & Store the data to Database     --
---                                               --
--- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- ---
--- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -->
-
-
 	</div>
-
-
 	<?php include_once("footer.php");?>
-
 </body>
 </html>
 
@@ -280,225 +253,87 @@ $(document).ready(function(){
 
 
 
-
-
-
-<style>
-	#height-error-message {
-	color: red;
-	font-size: 12px;
-}
-
-/*form styles*/
-.sb-biodata{
-    border: 1px solid #ccc;
-    border-radius: 6px;
-    width: 85%;
-    gap: 1.5rem;
-    padding: 20px;
-    margin-left: auto;
-    margin-right: auto;
-    margin-bottom: 40px;
-    margin-top: 20px;
-    background: white;
-   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-}
-
-#biodataForm {
-    width: 80%;
-    margin: 0px auto;
-    text-align: center;
-}
-
-#biodataForm fieldset {
-    background: white;
-    border: 0 none;
-    border-radius: 3px;
-    padding: 10px;
-    box-sizing: border-box;
-    width: 550px;
-    margin: auto;
-}
-
-/*Hide all except first fieldset*/
-#biodataForm fieldset:not(:first-of-type) {
-    display: none;
-}
-
-/*buttons*/
-#biodataForm .action-button {
-    width: 100px;
-    background: #27AE60;
-    font-weight: bold;
-    color: white;
-    border: 0 none;
-    border-radius: 1px;
-    cursor: pointer;
-    padding: 10px 5px;
-    margin: 10px 5px;
-}
-
-#biodataForm .action-button:hover, #biodataForm .action-button:focus {
-    box-shadow: 0 0 0 2px white, 0 0 0 3px #27AE60;
-}
-
-/*progressbar*/
-#progressbar {
-    background: #fff;
-    margin-bottom: 30px;
-    overflow: hidden;
-    /*CSS counters to number the steps*/
-    counter-reset: step;
-    padding: 70px 0px 10px 0px;
-}
-
-#progressbar li {
-    list-style-type: none;
-    color: #000;
-    font-size: 15px;
-    width: 12%;
-    float: left;
-    position: relative;
-    z-index: 2; /* Ensure the list items appear above the connectors */
-}
-
-#progressbar li:before {
-    content: counter(step);
-    counter-increment: step;
-    width: 34px;
-    line-height: 31px;
-    display: block;
-    font-size: 10px;
-    color: #fff;
-    background: #06b6d4;
-    border-radius: 50%;
-    margin: -5px 0px 10px 65px;
-	font-size: 14px;
-}
-
-#progressbar li:after {
-    content: '';
-    width: 100%;
-    height: 4px;
-    border-radius: 0px;
-    background: #06b6d4;
-    position: absolute;
-    left: -20%;
-    top: 9px;
-    z-index: -1; /* Ensure the connectors appear behind the list items */
-}
-
-#progressbar li:first-child:after {
-    /*connector not needed before the first step*/
-    content: none; 
-}
-
-/*marking active/completed steps green*/
-/*The number of the step and the connector before it = green*/
-#progressbar li.active:before,  #progressbar li.active:after{
-    background: #27AE60;
-    color: white;
-}
-
-.error-message-empty{
-	color: red;
-}
-</style>
- 
-
 <script>
-// jQuery time
-var current_fs, next_fs, previous_fs; // fieldsets
+	// jQuery time
+	var current_fs, next_fs, previous_fs; // fieldsets
 
-$(".next").click(function() {
-  current_fs = $(this).closest("fieldset");
-  next_fs = current_fs.next("fieldset");
+	$(".next").click(function() {
+		current_fs = $(this).closest("fieldset");
+		next_fs = current_fs.next("fieldset");
 
-  // Validate fields in the current fieldset
-  if (!validateFields(current_fs)) {
-    return; // Stop execution if fields are empty
-  }
+		// Validate fields in the current fieldset
+		if (!validateFields(current_fs)) {
+			return; // Stop execution if fields are empty
+		}
 
-  // Activate next step on progressbar
-  $("#progressbar li").eq($("fieldset").index(next_fs)).addClass("active");
+		// Activate next step on progressbar
+		$("#progressbar li").eq($("fieldset").index(next_fs)).addClass("active");
 
-  // Show the next fieldset
-  next_fs.show();
-  // Hide the current fieldset
-  current_fs.hide();
+		// Show the next fieldset
+		next_fs.show();
+		// Hide the current fieldset
+		current_fs.hide();
 
-  // Smooth scroll to the top of the progress bar
-  $('html, body').animate({ scrollTop: $('#progressbar').offset().top }, 800);
-});
-
-
-$(".previous").click(function() {
-  current_fs = $(this).closest("fieldset");
-  previous_fs = current_fs.prev("fieldset");
-
-  // Show the previous fieldset
-  previous_fs.show();
-  // Hide the current fieldset
-  current_fs.hide();
-
-  // De-activate current step on progressbar
-  $("#progressbar li").eq($("fieldset").index(current_fs)).removeClass("active");
-
-  // Smooth scroll to the top of the progress bar
-  $('html, body').animate({ scrollTop: $('#progressbar').offset().top }, 800);
-});
+		// Smooth scroll to the top of the progress bar
+		$('html, body').animate({ scrollTop: $('#progressbar').offset().top }, 800);
+	});
 
 
 
+	$(".previous").click(function() {
+		current_fs = $(this).closest("fieldset");
+		previous_fs = current_fs.prev("fieldset");
+
+		// Show the previous fieldset
+		previous_fs.show();
+		// Hide the current fieldset
+		current_fs.hide();
+
+		// De-activate current step on progressbar
+		$("#progressbar li").eq($("fieldset").index(current_fs)).removeClass("active");
+
+		// Smooth scroll to the top of the progress bar
+		$('html, body').animate({ scrollTop: $('#progressbar').offset().top }, 800);
+	});
 
 
 
-// Validate the fields in the current fieldset
-function validateFields(current_fs) {
-  var isValid = true;
+	// Validate the fields in the current fieldset
+	function validateFields(current_fs) {
+		var isValid = true;
 
-  // Get all required input fields within the current fieldset
-  var inputs = current_fs.find(":input[required]");
+		// Get all required input fields within the current fieldset
+		var inputs = current_fs.find(":input[required]");
 
-  // Remove previous error messages
-  current_fs.find(".error-message-empty").remove();
+		// Remove previous error messages
+		current_fs.find(".error-message-empty").remove();
 
-  // Loop through each input field and check if it's empty
-  inputs.each(function() {
-    if ($(this).val().trim() === "") {
-      $(this).addClass("error"); // Add error class to highlight the empty field
-      isValid = false;
+		// Loop through each input field and check if it's empty
+		inputs.each(function() {
+			if ($(this).val().trim() === "") {
+			$(this).addClass("error"); // Add error class to highlight the empty field
+			isValid = false;
 
-      // Show error message
-      var errorMessage = "<span class='error-message-empty'>This field is required.</span>";
-      $(this).after(errorMessage);
-    } else {
-      $(this).removeClass("error"); // Remove error class if the field is not empty
-    }
-  });
+			// Show error message
+			var errorMessage = "<span class='error-message-empty'>This field is required.</span>";
+			$(this).after(errorMessage);
+			} else {
+			$(this).removeClass("error"); // Remove error class if the field is not empty
+			}
+		});
 
-  // Scroll to the first empty input field
-  if (!isValid) {
-    var firstEmptyField = current_fs.find(".error").first();
-    var windowHeight = $(window).height();
-    var fieldTop = firstEmptyField.offset().top;
-    var fieldHeight = firstEmptyField.outerHeight();
-    var middleOffset = (windowHeight / 2) - (fieldHeight / 2);
-    var scrollTo = fieldTop - middleOffset;
 
-    $('html, body').animate({ scrollTop: scrollTo }, 800);
-  }
+		// Scroll to the first empty input field
+		if (!isValid) {
+			var firstEmptyField = current_fs.find(".error").first();
+			var windowHeight = $(window).height();
+			var fieldTop = firstEmptyField.offset().top;
+			var fieldHeight = firstEmptyField.outerHeight();
+			var middleOffset = (windowHeight / 2) - (fieldHeight / 2);
+			var scrollTo = fieldTop - middleOffset;
 
-  return isValid;
-}
+			$('html, body').animate({ scrollTop: scrollTo }, 800);
+		}
+		return isValid;
+	}
 </script>
-
-
-
-
-
-
-
-
-
-<!-- Bellow my database code -->
