@@ -582,7 +582,7 @@ ul.nav_1{
 
 .collapse_userprofile{  /*Include UserHome Page*/
     margin-top: 20px;
-    width: 100%;
+    width: auto;
 }
 
 .UserProfile {
@@ -596,7 +596,7 @@ ul.nav_1{
 
 .navigationpro ul{
     background: #fff;
-    width: 543px;
+    width: auto;
     padding: 5px;
     border-radius: 2px;
     border: 1px solid #ccc;
@@ -2353,7 +2353,7 @@ ol li{
 
 .shosurbari-userhome-status{
     padding: 20px 0px;
-    margin-top: 0px;
+    margin-top: -2px;
     width:  250px;
 }
 
@@ -3836,13 +3836,6 @@ ul.profile_item{
 }
 
 
-@media(max-width: 992px){
-    .navigationpro {
-        width: 715px;
-    }
-}
-
-
 @media (min-width:1280px){
 
     .shosurbari-about-contact,
@@ -3918,26 +3911,30 @@ ul.profile_item{
         height: 168px;
         width: 168px;
         top: 30px;
-      }
+    }
     
-      .nav>li>a {
+    .nav>li>a {
         position: relative;
         display: block;
         padding: 10px 10px;
     }
     
-      .nav-tabs1>li.active>a, .nav-tabs1>li.active>a:focus, .nav-tabs1>li.active>a:hover {
+    .nav-tabs1>li.active>a, .nav-tabs1>li.active>a:focus, .nav-tabs1>li.active>a:hover {
         padding: 6px;
     }
-      .profile-nav-info {
+
+    .profile-nav-info {
         width: 24%;
     }
-      .profile-nav-info h3 {
+
+    .profile-nav-info h3 {
         font-size: 24px;
     }
+
     .profile-nav-info .address {
         font-size: 13px;
     }
+
     .nav-tabs1 {
         font-size: 14px;
     }
@@ -3993,10 +3990,6 @@ ul.profile_item{
     .banner_info p {
         font-size: .7em;
     }
-
-.navigationpro ul {
-    width: 495px;
-}
 
 .hvr-shutter-out-horizontal {
     padding: 8px 25px;
@@ -4108,6 +4101,11 @@ ul.nav_1 li {
 .navbar-nav > li > a {
     padding: 10px;
 }
+
+.navigationpro ul {
+    width: 618px;
+    margin: auto;
+}
 }
 /*-- -- -- -- -- -- -- -- -- -- -- -- -- ---- -- --
 --           max-width:1024px / E  N  D          --
@@ -4117,11 +4115,20 @@ ul.nav_1 li {
 
 
 @media (min-width: 992px){
-
 .col-md-2 {
     width: 21.666667%;
 }
 }
+
+@media (max-width: 992px){
+    .navigationpro {
+        display: block;
+        margin-top: -50px;
+        width: 720px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+    }
 
 
 @media only screen and (min-width: 930px) {
@@ -4460,8 +4467,8 @@ ul.profile_item{
         display: block;
         margin-top: -50px;
         width: auto;
-        margin-left: 25px;
-        margin-right: 25px
+        margin-left: 15px;
+        margin-right: 15px;
       }
 
     .shosurbari-faq {
