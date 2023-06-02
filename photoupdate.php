@@ -261,13 +261,11 @@ $(document).ready(function(){
 
 
             <div class="update-image-input" id="file-input-wrapper">
-
                 <form action="" method="POST" enctype="multipart/form-data">
                     <label for="file-upload" class="file-upload-btn upload-button">Choose Photo</label>
-                    <input type="file" id="file-upload" name="pic1" class="form-file" required/>
+                    <input type="file" id="file-upload" name="pic1" class="form-file" accept=".jpg, .png" required/>
                     <input type="submit" id="edit-submit" name="update_photo" value="Upload" class="update_photo-btn submit-button" />
                 </form>
-
             </div>
         </div>
     </div>
