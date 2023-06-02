@@ -748,14 +748,15 @@ i.fa1 {
     height: 26px;
     color: #06b6d4;
     line-height: 26px;
-    border-radius: 20px;
+    border-radius: 4px;
     transition: transform .3s;
+    margin: 3px;
 }
 
 i.fa1:hover {
     background: #0aa4ca;
     color: #fff;
-    transform: scale(1.1);
+    transform: scale(1.4);
 }
 
 .shosurbari-copy-right{
@@ -1197,12 +1198,12 @@ i.fa1:hover {
     width: 75px;
     height: 70px;
     border-radius: 50%;
-    padding: 2px;
+    padding: 0px;
     margin-left: auto;
     margin-right: auto;
     margin-bottom: auto;
     margin-top: 0px;
-    border: 1px solid #ccc;
+    border: 2px solid #fff;
 }
 
 #flexiselDemo3{
@@ -1399,7 +1400,7 @@ span.m_3{
     height: 175px;
     width: 175px;
     object-fit: cover;
-    border: 5px solid #fff;
+    border: 4px solid #fff;
     position: relative;
     top: 35px;
     z-index: 5;
@@ -1739,12 +1740,12 @@ button.copylink i {
     width: 75px;
     height: 70px;
     border-radius: 50%;
-    padding: 2px;
+    padding: 0px;
     margin-left: auto;
     margin-right: auto;
     margin-bottom: auto;
     margin-top: 0px;
-    border: 1px solid #ccc;
+    border: 2px solid #fff;
 }
 
 .sbbio_header_recent_view{
@@ -2165,7 +2166,7 @@ small.testi-meta1{
     left: 50%;
     transform: translate(-50%, -50%);
     background-color: #c5ffc5;
-    border: 2px solid green;
+    border: 1px solid green;
     border-radius: 4px;
     padding: 20px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
@@ -2515,7 +2516,7 @@ ol li{
 	margin-top: 3px;
     border-radius: 4px;
     color: red;
-    font-size: 13px;
+    font-size: 15px;
 }
 
 .success {
@@ -2998,7 +2999,7 @@ i.icon_4{
 .sb-biodata{
     border: 1px solid #ccc;
     border-radius: 6px;
-    width: 45%;
+    width: 95%;
     gap: 1.5rem;
     padding: 20px;
     margin-left: auto;
@@ -3007,13 +3008,6 @@ i.icon_4{
     margin-top: 20px;
     background: white;
    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-}
-
-.shosurbari-biodata .shosurbari-biodata-edit{
-    text-align: center;
-    width: 100%;
-    margin-bottom: 0px;
-    margin-top: -20px;
 }
 
 .sb-biodata-field{
@@ -3058,6 +3052,127 @@ i.icon_4{
 .shosurbari-biodata-field{
     padding: 10px 0px;
     text-align: left;
+}
+
+#progressbar {
+    background: #fff;
+    margin: auto;
+    overflow: hidden;
+    counter-reset: step;
+    padding: 10px 0px;
+    display: flex;
+    justify-content: center;
+    position: relative;
+}
+  
+#progressbar li:before {
+    content: counter(step);
+    counter-increment: step;
+    width: 34px;
+    line-height: 31px;
+    display: block;
+    font-size: 10px;
+    color: #fff;
+    background: #06b6d4;
+    border-radius: 50%;
+    margin: 10px auto;
+    font-size: 14px;
+    position: relative;
+    z-index: 2;
+}
+  
+#progressbar li:after {
+    content: '';
+    width: calc(50% + 23px);
+    height: 4px;
+    border-radius: 0px;
+    background: #06b6d4;
+    position: absolute;
+    left: -39px;
+    top: 24px;
+    z-index: 1;
+}
+  
+/*marking active/completed steps green*/
+/*The number of the step and the connector before it = green*/
+#progressbar li.active:before,
+#progressbar li.active:after {
+    background: #27ae60;
+    color: white;
+    z-index: 3;
+}
+
+#progressbar li {
+    list-style-type: none;
+    color: #000;
+    font-size: 15px;
+    width: 112px;
+    float: left;
+    position: relative;
+    z-index: 2;
+}
+
+/* Progressbar color */
+#progressbar li:not(.active):after {
+    background: #ccc;
+}
+
+#height-error-message {
+    color: red;
+    font-size: 12px;
+}
+
+#biodataForm {
+    width: 100%;
+    margin: 0px auto;
+    text-align: center;
+}
+
+#biodataForm fieldset {
+    background: white;
+    border: 0 none;
+    border-radius: 3px;
+    padding: 10px;
+    box-sizing: border-box;
+    margin: auto;
+}
+  
+/*Hide all except first fieldset*/
+#biodataForm fieldset:not(:first-of-type) {
+    display: none;
+}
+  
+/*buttons*/
+#biodataForm .action-button,
+#biodataForm .biodata-submit {
+    width: 120px;
+    color: white;
+    background: #06b6d4;
+    border-radius: 2px;
+    border: 1px solid #f0f0f0;
+    cursor: pointer;
+    padding: 7px;
+    margin: 10px 5px;
+    text-transform: uppercase;
+    font-size: 20px;
+    transition: transform 0.3s;
+    box-shadow: 1px 1px 4px #888;
+}
+
+#biodataForm .action-button:hover,
+#biodataForm .biodata-submit:hover {
+    background: #0aa4ca;
+    color: #fff;
+    transform: scale(1.1);
+}
+  
+#progressbar li:first-child:after {
+    /*connector not needed before the first step*/
+    content: none; 
+}
+  
+.error-message-empty{
+    color: red;
 }
 /*-- -- -- -- -- -- -- -- -- -- -- -- -- ---- -- --
 -- -- -- -- -- -- -- -- --- -- -- -- -- -- -- -- --
@@ -3195,7 +3310,7 @@ i.icon_4{
     width: 110px;
     height: 110px;
     border-radius: 50%;
-    padding: 2px;
+    padding: 0px;
     margin-left: auto;
     margin-right: auto;
     margin-bottom: auto;
@@ -3680,7 +3795,7 @@ td.day_value {
 
 
     .profile-nav-info h3 {
-        font-size: 26px;
+        font-size: 24px;
         text-align: left;
     }
 
@@ -3928,7 +4043,7 @@ ul.profile_item{
     }
 
     .profile-nav-info h3 {
-        font-size: 24px;
+        font-size: 22px;
     }
 
     .profile-nav-info .address {
@@ -4103,9 +4218,14 @@ ul.nav_1 li {
 }
 
 .navigationpro ul {
-    width: 618px;
+    width: 607px;
     margin: auto;
 }
+
+.navigationpro .dropdown{
+    margin: 3px;
+}
+
 }
 /*-- -- -- -- -- -- -- -- -- -- -- -- -- ---- -- --
 --           max-width:1024px / E  N  D          --
@@ -4463,6 +4583,9 @@ ul.profile_item{
 -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -*/
 @media (max-width: 768px){
 
+    .navigationpro .dropdown{
+        margin: 5px;
+    }
     .navigationpro {
         display: block;
         margin-top: -50px;
@@ -4819,10 +4942,6 @@ i.icon_4 {
 -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -*/
 @media (max-width: 765px) {
 
-.sb-biodata{
-    width: 80%;
-}
-
 .sb_biodata_profile {
     display: flex;
     flex-wrap: wrap;
@@ -5121,10 +5240,6 @@ ul.profile_item{
     font-size: 27px;
 }
 
-.sb-biodata{
-    width: 80%;
-}
-
 .sb_biodata_profile{
     display: flex;
     flex-wrap: wrap;
@@ -5217,7 +5332,11 @@ ul.profile_item{
 
 
 
-
+@media (min-width: 600px){
+    #biodataForm fieldset {
+        width: 550px;
+    }
+}
 
 
 
@@ -5325,6 +5444,10 @@ ul.profile_item{
 
 .payment-form {
     width: 350px;
+}
+
+#biodataForm fieldset {
+    width: 470px;
 }
 }
 /*-- -- -- -- -- -- -- -- -- -- -- -- -- ---- -- --
@@ -5695,6 +5818,10 @@ ul.profile_item{
 .biodatarecent_viewlist {
     width: 85%;
 }
+
+#biodataForm fieldset {
+    width: 404px;
+}
 }
 /*-- -- -- -- -- -- -- -- -- -- -- -- -- ---- -- --
 --           max-width:480px / E  N  D           --
@@ -6019,6 +6146,10 @@ ul.profile_item{
 .navigationpro ul {
     width: 245px;
 }
+
+#biodataForm fieldset {
+    width: 374px;
+}
 }
 /*-- -- -- -- -- -- -- -- -- -- -- -- -- ---- -- --
 --            max-width:414px / E  N  D          --
@@ -6301,6 +6432,10 @@ ul.profile_item{
 .sb-profile-gender {
     font-size: 12px;
 }
+
+#biodataForm fieldset {
+    width: 340px;
+}
 }
 /*-- -- -- -- -- -- -- -- -- -- -- -- -- ---- -- --
 --            max-width:384px / E  N  D          --
@@ -6316,9 +6451,6 @@ ul.profile_item{
 --      Media Responsive / Phone Responsive      --
 -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -*/
 @media (max-width: 350px) {
-.sb-biodata{
-    width: 80%;
-}
 
 .sb_biodata_profile{
     display: flex;
@@ -6373,6 +6505,10 @@ ul.profile_item{
 
 .navigationpro ul {
     width: 235px;
+}
+
+#biodataForm fieldset {
+    width: 310px;
 }
 }
 /*-- -- -- -- -- -- -- -- -- -- -- -- -- ---- -- --
@@ -6750,6 +6886,10 @@ ul.profile_item{
 .payment-form {
     width: 263px;
 }
+
+#biodataForm fieldset {
+    width: 290px;
+}
 }
 /*-- -- -- -- -- -- -- -- -- -- -- -- -- ---- -- --
 --           max-width:320px / E  N  D           --
@@ -6764,5 +6904,4 @@ ul.profile_item{
 --                                               --
 -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- ---
 -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -*/
-
 
