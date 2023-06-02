@@ -484,7 +484,7 @@ echo "<script>alert(\"Invalid Profile ID\")</script>";
 							$driver_occupation_level=$row['driver_occupation_level'];
 							}
 							if($row){
-							$service_common_occupation_level=$row['service_common_occupation_level'];
+							$service_andcommon_occupation_level=$row['service_andcommon_occupation_level'];
 							}
 							if($row){
 							$mistri_occupation_level=$row['mistri_occupation_level'];
@@ -1023,7 +1023,7 @@ echo "<script>alert(\"Invalid Profile ID\")</script>";
 									$driver_occupation_level=$row['driver_occupation_level'];
 									}
 									if($row){
-									$service_common_occupation_level=$row['service_common_occupation_level'];
+									$service_andcommon_occupation_level=$row['service_andcommon_occupation_level'];
 									}
 									if($row){
 									$mistri_occupation_level=$row['mistri_occupation_level'];
