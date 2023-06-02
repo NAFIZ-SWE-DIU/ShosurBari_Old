@@ -112,7 +112,7 @@ $(document).ready(function(){
 	<div class="shosurbari-biodata">
 		<!-- multistep form -->
 		<form action="" method="POST" id="biodataForm">
-            			<!-- progressbar -->
+            <!-- progressbar -->
 			<ul id="progressbar">
 				<li class="active" id="personalPhysical">শারীরিক</li>
 				<li id="MarriageInfo">বিবাহ-সম্পর্কিত</li>
@@ -293,19 +293,6 @@ $(document).ready(function(){
 							<input type="text" id="edit-name" name="height" value="<?php echo $height; ?>" size="100" maxlength="100" class="form-text" placeholder="Please enter your height" required>
 						</div>
 
-						<!-- <script>
-							function checkInput(input) {
-								let value = input.value;
-								// Allow only numbers and spaces
-								let regex = /^[A-Za-z0-9-.'" ]+$/;
-								if (!regex.test(value)) {
-									document.getElementById('height-error-message').innerHTML = "Please follow the instruction. Ex: 5 ft 7 in.";
-									input.value = '';
-								} else {
-									document.getElementById('height-error-message').innerHTML = '';
-								}
-							}
-						</script> -->
 					
 						<div class="shosurbari-biodata-field">
 							<label for="edit-name">ওজন <span class="form-required" title="This field is required.">*</span></label>
@@ -378,7 +365,7 @@ $(document).ready(function(){
 
 
 
-            		<!-- -- -- -- -- -- -- -- -- -- -- -- -- ---- -- --
+            <!-- -- -- -- -- -- -- -- -- -- -- -- -- ---- -- --
 			-- -- -- -- -- -- -- -- --- -- -- -- -- -- -- -- --
 			--                S  T  A  R  T                  --
 			--   Male Marriage related Info / sb-biodata-6   --
@@ -635,110 +622,112 @@ $(document).ready(function(){
 				</div>
 
 				<input type="button" name="previous" class="previous action-button" value="Previous" />
-			    <input type="submit"  name="op" class="action-button" id="edit-submit" value="Submit Biodata">
+				<button type="submit" id="edit-submit" name="op" class="biodata-submit"><span></span> Submit</button>			
+			
+
 				<script>
-	function toggleGenderSections(selectedGender) {
-		var maleallowJobwife = document.getElementById('male-allow-wife-job');
-		var femaleJobSection = document.getElementById('female-job-after-marriage');
-		var maleallowStudywife = document.getElementById('male-allow-wife-study');
-		var femaleStudySection = document.getElementById('female-study-after-marriage');
-		var maleliveWithwife = document.getElementById('male-live-with-wife');
-		var femaleagreeMarriagestudent = document.getElementById('female-agree-marriage-student');
+					function toggleGenderSections(selectedGender) {
+						var maleallowJobwife = document.getElementById('male-allow-wife-job');
+						var femaleJobSection = document.getElementById('female-job-after-marriage');
+						var maleallowStudywife = document.getElementById('male-allow-wife-study');
+						var femaleStudySection = document.getElementById('female-study-after-marriage');
+						var maleliveWithwife = document.getElementById('male-live-with-wife');
+						var femaleagreeMarriagestudent = document.getElementById('female-agree-marriage-student');
 
-		if (selectedGender === 'পাত্রের বায়োডাটা') {
-			maleallowJobwife.style.display = 'block';
-			femaleJobSection.style.display = 'none';
+						if (selectedGender === 'পাত্রের বায়োডাটা') {
+							maleallowJobwife.style.display = 'block';
+							femaleJobSection.style.display = 'none';
 
-			maleallowStudywife.style.display = 'block';
-			femaleStudySection.style.display = 'none';
+							maleallowStudywife.style.display = 'block';
+							femaleStudySection.style.display = 'none';
 
-			maleliveWithwife.style.display = 'block';
-			femaleagreeMarriagestudent.style.display = 'none';
+							maleliveWithwife.style.display = 'block';
+							femaleagreeMarriagestudent.style.display = 'none';
 
-			// Hide বিধবা option
-			var maritalStatusSelect = document.getElementsByName('maritalstatus')[0];
-			var optionWidow = maritalStatusSelect.querySelector('option[value="বিধবা"]');
-			optionWidow.style.display = 'none';
-		} else if (selectedGender === 'পাত্রীর বায়োডাটা') {
-			maleallowJobwife.style.display = 'none';
-			femaleJobSection.style.display = 'block';
+							// Hide বিধবা option
+							var maritalStatusSelect = document.getElementsByName('maritalstatus')[0];
+							var optionWidow = maritalStatusSelect.querySelector('option[value="বিধবা"]');
+							optionWidow.style.display = 'none';
+						} else if (selectedGender === 'পাত্রীর বায়োডাটা') {
+							maleallowJobwife.style.display = 'none';
+							femaleJobSection.style.display = 'block';
 
-			maleallowStudywife.style.display = 'none';
-			femaleStudySection.style.display = 'block';
+							maleallowStudywife.style.display = 'none';
+							femaleStudySection.style.display = 'block';
 
-			maleliveWithwife.style.display = 'none';
-			femaleagreeMarriagestudent.style.display = 'block';
+							maleliveWithwife.style.display = 'none';
+							femaleagreeMarriagestudent.style.display = 'block';
 
-			// Hide বিপত্নীক option
-			var maritalStatusSelect = document.getElementsByName('maritalstatus')[0];
-			var optionWidower = maritalStatusSelect.querySelector('option[value="বিপত্নীক"]');
-			optionWidower.style.display = 'none';
-		} else {
-			maleallowJobwife.style.display = 'none';
-			femaleJobSection.style.display = 'none';
+							// Hide বিপত্নীক option
+							var maritalStatusSelect = document.getElementsByName('maritalstatus')[0];
+							var optionWidower = maritalStatusSelect.querySelector('option[value="বিপত্নীক"]');
+							optionWidower.style.display = 'none';
+						} else {
+							maleallowJobwife.style.display = 'none';
+							femaleJobSection.style.display = 'none';
 
-			maleallowStudywife.style.display = 'none';
-			femaleStudySection.style.display = 'none';
+							maleallowStudywife.style.display = 'none';
+							femaleStudySection.style.display = 'none';
 
-			maleliveWithwife.style.display = 'none';
-			femaleagreeMarriagestudent.style.display = 'none';
+							maleliveWithwife.style.display = 'none';
+							femaleagreeMarriagestudent.style.display = 'none';
 
-			// Show all options
-			var maritalStatusSelect = document.getElementsByName('maritalstatus')[0];
-			var options = maritalStatusSelect.querySelectorAll('option');
-			options.forEach(function(option) {
-				option.style.display = 'block';
-			});
-		}
-	}
+							// Show all options
+							var maritalStatusSelect = document.getElementsByName('maritalstatus')[0];
+							var options = maritalStatusSelect.querySelectorAll('option');
+							options.forEach(function(option) {
+								option.style.display = 'block';
+							});
+						}
+					}
 
-	function toggleMaritalStatus(selectedStatus) {
-		var gurdianAggressSection = document.getElementById('gurdian-aggress-section');
-		var sonDetailsSection = document.getElementById('son-section');
-		var divorceSection = document.getElementById('divorce-section');
-		var widowSection = document.getElementById('widow-section');
-		var widowerSection = document.getElementById('widower-section');
-		var marriedSection = document.getElementById('married-section');
+					function toggleMaritalStatus(selectedStatus) {
+						var gurdianAggressSection = document.getElementById('gurdian-aggress-section');
+						var sonDetailsSection = document.getElementById('son-section');
+						var divorceSection = document.getElementById('divorce-section');
+						var widowSection = document.getElementById('widow-section');
+						var widowerSection = document.getElementById('widower-section');
+						var marriedSection = document.getElementById('married-section');
 
-		// Hide all sections initially
-		gurdianAggressSection.style.display = 'none';
-		sonDetailsSection.style.display = 'none';
-		divorceSection.style.display = 'none';
-		widowSection.style.display = 'none';
-		widowerSection.style.display = 'none';
-		marriedSection.style.display = 'none';
+						// Hide all sections initially
+						gurdianAggressSection.style.display = 'none';
+						sonDetailsSection.style.display = 'none';
+						divorceSection.style.display = 'none';
+						widowSection.style.display = 'none';
+						widowerSection.style.display = 'none';
+						marriedSection.style.display = 'none';
 
-		if (selectedStatus === 'অবিবাহিত') {
-			gurdianAggressSection.style.display = 'block';
-			sonDetailsSection.style.display = 'none';
-		} else if (selectedStatus === 'ডিভোর্স') {
-			divorceSection.style.display = 'block';
-			gurdianAggressSection.style.display = 'block';
-			sonDetailsSection.style.display = 'block';
-		} else if (selectedStatus === 'বিধবা') {
-			widowSection.style.display = 'block';
-			sonDetailsSection.style.display = 'block';
-			gurdianAggressSection.style.display = 'block';
-		} else if (selectedStatus === 'বিপত্নীক') {
-			widowerSection.style.display = 'block';
-			gurdianAggressSection.style.display = 'block';
-			sonDetailsSection.style.display = 'block';
-		} else if (selectedStatus === 'বিবাহিত') {
-			marriedSection.style.display = 'block';
-			sonDetailsSection.style.display = 'block';
-		}
-	}
+						if (selectedStatus === 'অবিবাহিত') {
+							gurdianAggressSection.style.display = 'block';
+							sonDetailsSection.style.display = 'none';
+						} else if (selectedStatus === 'ডিভোর্স') {
+							divorceSection.style.display = 'block';
+							gurdianAggressSection.style.display = 'block';
+							sonDetailsSection.style.display = 'block';
+						} else if (selectedStatus === 'বিধবা') {
+							widowSection.style.display = 'block';
+							sonDetailsSection.style.display = 'block';
+							gurdianAggressSection.style.display = 'block';
+						} else if (selectedStatus === 'বিপত্নীক') {
+							widowerSection.style.display = 'block';
+							gurdianAggressSection.style.display = 'block';
+							sonDetailsSection.style.display = 'block';
+						} else if (selectedStatus === 'বিবাহিত') {
+							marriedSection.style.display = 'block';
+							sonDetailsSection.style.display = 'block';
+						}
+					}
 
-	function toggleSonDetails(selectedSonCount) {
-		var sonAboutSection = document.getElementById('son-details');
+					function toggleSonDetails(selectedSonCount) {
+						var sonAboutSection = document.getElementById('son-details');
 
-		if (selectedSonCount !== 'কোনো সন্তান নেই') {
-				sonAboutSection.style.display = 'block';
-			} else {
-				sonAboutSection.style.display = 'none';
-			}
-		}
-</script>
+						if (selectedSonCount !== 'কোনো সন্তান নেই') {
+							sonAboutSection.style.display = 'block';
+						} else {
+							sonAboutSection.style.display = 'none';
+						}
+					}
+				</script>
 
 			</fieldset>
 			<!--Fieldsets end-->
@@ -749,36 +738,9 @@ $(document).ready(function(){
 			--  Female Marriage related Info / sb-biodata-7  --
 			-- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- ---
 			-- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -->
-
-
-
-
 		</form>
-
-
-		
-<!-- -- -- -- -- -- -- -- -- -- -- -- -- ---- -- --
--- -- -- -- -- -- -- -- --- -- -- -- -- -- -- -- --
---                S  T  A  R  T                  --
---       Update & Store the data to Database     --
---                                               --
--- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- ---
--- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -->
-
-<!-- -- -- -- -- -- -- -- -- -- -- -- -- ---- -- --
--- -- -- -- -- -- -- -- --- -- -- -- -- -- -- -- --
---                   E   N   D                   --
---       Update & Store the data to Database     --
---                                               --
--- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- ---
--- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -->
-
-
 	</div>
-
-
 	<?php include_once("footer.php");?>
-
 </body>
 </html>
 
@@ -789,226 +751,97 @@ $(document).ready(function(){
 
 
 
-
-
-
-
-<style>
-	#height-error-message {
-	color: red;
-	font-size: 12px;
-}
-
-/*form styles*/
-.sb-biodata{
-    border: 1px solid #ccc;
-    border-radius: 6px;
-    width: 85%;
-    gap: 1.5rem;
-    padding: 20px;
-    margin-left: auto;
-    margin-right: auto;
-    margin-bottom: 40px;
-    margin-top: 20px;
-    background: white;
-   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-}
-
-#biodataForm {
-    width: 80%;
-    margin: 0px auto;
-    text-align: center;
-}
-
-#biodataForm fieldset {
-    background: white;
-    border: 0 none;
-    border-radius: 3px;
-    padding: 10px;
-    box-sizing: border-box;
-    width: 550px;
-    margin: auto;
-}
-
-/*Hide all except first fieldset*/
-#biodataForm fieldset:not(:first-of-type) {
-    display: none;
-}
-
-/*buttons*/
-#biodataForm .action-button {
-    width: 100px;
-    background: #27AE60;
-    font-weight: bold;
-    color: white;
-    border: 0 none;
-    border-radius: 1px;
-    cursor: pointer;
-    padding: 10px 5px;
-    margin: 10px 5px;
-}
-
-#biodataForm .action-button:hover, #biodataForm .action-button:focus {
-    box-shadow: 0 0 0 2px white, 0 0 0 3px #27AE60;
-}
-
-/*progressbar*/
-#progressbar {
-    background: #fff;
-    margin-bottom: 30px;
-    overflow: hidden;
-    /*CSS counters to number the steps*/
-    counter-reset: step;
-    padding: 70px 0px 10px 0px;
-}
-
-#progressbar li {
-    list-style-type: none;
-    color: #000;
-    font-size: 15px;
-    width: 12%;
-    float: left;
-    position: relative;
-    z-index: 2; /* Ensure the list items appear above the connectors */
-}
-
-#progressbar li:before {
-    content: counter(step);
-    counter-increment: step;
-    width: 34px;
-    line-height: 31px;
-    display: block;
-    font-size: 10px;
-    color: #fff;
-    background: #06b6d4;
-    border-radius: 50%;
-    margin: -5px 0px 10px 65px;
-	font-size: 14px;
-}
-
-#progressbar li:after {
-    content: '';
-    width: 100%;
-    height: 4px;
-    border-radius: 0px;
-    background: #06b6d4;
-    position: absolute;
-    left: -20%;
-    top: 9px;
-    z-index: -1; /* Ensure the connectors appear behind the list items */
-}
-
-#progressbar li:first-child:after {
-    /*connector not needed before the first step*/
-    content: none; 
-}
-
-/*marking active/completed steps green*/
-/*The number of the step and the connector before it = green*/
-#progressbar li.active:before,  #progressbar li.active:after{
-    background: #27AE60;
-    color: white;
-}
-
-.error-message-empty{
-	color: red;
-}
-</style>
- 
-
 <script>
-// jQuery time
-var current_fs, next_fs, previous_fs; // fieldsets
+	// jQuery time
+	var current_fs, next_fs, previous_fs; // fieldsets
 
-$(".next").click(function() {
-  current_fs = $(this).closest("fieldset");
-  next_fs = current_fs.next("fieldset");
+	$(".next").click(function() {
+		current_fs = $(this).closest("fieldset");
+		next_fs = current_fs.next("fieldset");
 
-  // Validate fields in the current fieldset
-  if (!validateFields(current_fs)) {
-    return; // Stop execution if fields are empty
-  }
+		// Validate fields in the current fieldset
+		if (!validateFields(current_fs)) {
+			return; // Stop execution if fields are empty
+		}
 
-  // Activate next step on progressbar
-  $("#progressbar li").eq($("fieldset").index(next_fs)).addClass("active");
+		// Activate next step on progressbar
+		$("#progressbar li").eq($("fieldset").index(next_fs)).addClass("active");
 
-  // Show the next fieldset
-  next_fs.show();
-  // Hide the current fieldset
-  current_fs.hide();
+		// Show the next fieldset
+		next_fs.show();
+		// Hide the current fieldset
+		current_fs.hide();
 
-  // Smooth scroll to the top of the progress bar
-  $('html, body').animate({ scrollTop: $('#progressbar').offset().top }, 800);
-});
+		// Smooth scroll to the top of the progress bar
+		var progressBarHeight = $('#progressbar').outerHeight();
+		var windowHeight = $(window).height();
+		var marginTop = (windowHeight - progressBarHeight) / 15;
+		var topMargin = 50;
 
-
-$(".previous").click(function() {
-  current_fs = $(this).closest("fieldset");
-  previous_fs = current_fs.prev("fieldset");
-
-  // Show the previous fieldset
-  previous_fs.show();
-  // Hide the current fieldset
-  current_fs.hide();
-
-  // De-activate current step on progressbar
-  $("#progressbar li").eq($("fieldset").index(current_fs)).removeClass("active");
-
-  // Smooth scroll to the top of the progress bar
-  $('html, body').animate({ scrollTop: $('#progressbar').offset().top }, 800);
-});
+		$('html, body').animate({ scrollTop: $('#progressbar').offset().top - marginTop - topMargin }, 800);
+	});
 
 
 
+	$(".previous").click(function() {
+		current_fs = $(this).closest("fieldset");
+		previous_fs = current_fs.prev("fieldset");
+
+		// Show the previous fieldset
+		previous_fs.show();
+		// Hide the current fieldset
+		current_fs.hide();
+
+		// De-activate current step on progressbar
+		$("#progressbar li").eq($("fieldset").index(current_fs)).removeClass("active");
+
+		// Smooth scroll to the top of the progress bar
+		var progressBarHeight = $('#progressbar').outerHeight();
+		var windowHeight = $(window).height();
+		var marginTop = (windowHeight - progressBarHeight) / 15;
+		var topMargin = 50;
+
+		$('html, body').animate({ scrollTop: $('#progressbar').offset().top - marginTop - topMargin }, 800);
+	});
 
 
 
-// Validate the fields in the current fieldset
-function validateFields(current_fs) {
-  var isValid = true;
+	// Validate the fields in the current fieldset
+	function validateFields(current_fs) {
+		var isValid = true;
 
-  // Get all required input fields within the current fieldset
-  var inputs = current_fs.find(":input[required]");
+		// Get all required input fields within the current fieldset
+		var inputs = current_fs.find(":input[required]");
 
-  // Remove previous error messages
-  current_fs.find(".error-message-empty").remove();
+		// Remove previous error messages
+		current_fs.find(".error-message-empty").remove();
 
-  // Loop through each input field and check if it's empty
-  inputs.each(function() {
-    if ($(this).val().trim() === "") {
-      $(this).addClass("error"); // Add error class to highlight the empty field
-      isValid = false;
+		// Loop through each input field and check if it's empty
+		inputs.each(function() {
+			if ($(this).val().trim() === "") {
+			$(this).addClass("error"); // Add error class to highlight the empty field
+			isValid = false;
 
-      // Show error message
-      var errorMessage = "<span class='error-message-empty'>This field is required.</span>";
-      $(this).after(errorMessage);
-    } else {
-      $(this).removeClass("error"); // Remove error class if the field is not empty
-    }
-  });
+			// Show error message
+			var errorMessage = "<span class='error-message-empty'>This field is required.</span>";
+			$(this).after(errorMessage);
+			} else {
+			$(this).removeClass("error"); // Remove error class if the field is not empty
+			}
+		});
 
-  // Scroll to the first empty input field
-  if (!isValid) {
-    var firstEmptyField = current_fs.find(".error").first();
-    var windowHeight = $(window).height();
-    var fieldTop = firstEmptyField.offset().top;
-    var fieldHeight = firstEmptyField.outerHeight();
-    var middleOffset = (windowHeight / 2) - (fieldHeight / 2);
-    var scrollTo = fieldTop - middleOffset;
 
-    $('html, body').animate({ scrollTop: scrollTo }, 800);
-  }
+		// Scroll to the first empty input field
+		if (!isValid) {
+			var firstEmptyField = current_fs.find(".error").first();
+			var windowHeight = $(window).height();
+			var fieldTop = firstEmptyField.offset().top;
+			var fieldHeight = firstEmptyField.outerHeight();
+			var middleOffset = (windowHeight / 2) - (fieldHeight / 2);
+			var scrollTo = fieldTop - middleOffset;
 
-  return isValid;
-}
+			$('html, body').animate({ scrollTop: scrollTo }, 800);
+		}
+		return isValid;
+	}
 </script>
-
-
-
-
-
-
-
-
-
-<!-- Bellow my database code -->
