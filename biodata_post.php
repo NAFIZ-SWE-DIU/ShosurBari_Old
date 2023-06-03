@@ -1952,7 +1952,6 @@ $(document).ready(function(){
 						<div class="shosurbari-biodata-field">
 							<label for="edit-name">যে দেশে বসবাস করেন<span class="form-required" title="This field is required.">*</span></label>
 							<select name="country_present_address" required class="selectsearch">
-								<option hidden selected></option>
 								<option hidden disabled>Search Country</option>
 								<option value="Afghanistan">Afghanistan</option>
 								<option value="Argentina">Argentina</option>
@@ -2807,7 +2806,12 @@ $(document).ready(function(){
 		var marginTop = (windowHeight - progressBarHeight) / 15;
 		var topMargin = 50;
 
-		$('html, body').animate({ scrollTop: $('#progressbar').offset().top - marginTop - topMargin }, 800);
+
+		if ($(window).width() <= 735) {
+    	topMargin = 85; // Update the scroll top value for screens under 735px
+  		}
+
+		  $('html, body').animate({ scrollTop: $('#progressbar').offset().top - marginTop - topMargin }, 800);
 	});
 
 
@@ -2830,7 +2834,11 @@ $(document).ready(function(){
 		var marginTop = (windowHeight - progressBarHeight) / 15;
 		var topMargin = 50;
 
-		$('html, body').animate({ scrollTop: $('#progressbar').offset().top - marginTop - topMargin }, 800);
+		if ($(window).width() <= 735) {
+		topMargin = 85; // Update the scroll top value for screens under 735px
+		}
+
+  		$('html, body').animate({ scrollTop: $('#progressbar').offset().top - marginTop - topMargin }, 800);
 	});
 
 
