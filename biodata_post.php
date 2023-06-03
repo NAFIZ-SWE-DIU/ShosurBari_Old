@@ -291,7 +291,7 @@ $(document).ready(function(){
 
 						<div class="shosurbari-biodata-field">
 							<label for="edit-name">উচ্চতা<span class="form-required" title="This field is required.">*</span></label>
-							<input type="text" id="edit-name" name="height" value="" size="100" maxlength="100" class="form-text" placeholder="Please enter your height" required>
+							<input type="text" id="edit-name" name="height" value="" size="100" maxlength="100" class="form-text" required>
 						</div>
 
 						<!-- <script>
@@ -1945,14 +1945,10 @@ $(document).ready(function(){
 							}
 						</script>
 
-						<!-- Link for Select Field Search Option -->
-						<script src="https://code.jquery.com/jquery-3.6.3.min.js"></script>
-						<script src="https://cdnjs.cloudflare.com/ajax/libs/chosen/1.8.7/chosen.jquery.min.js"></script>
-
 						<div class="shosurbari-biodata-field">
 							<label for="edit-name">যে দেশে বসবাস করেন<span class="form-required" title="This field is required.">*</span></label>
 							<select name="country_present_address" required class="selectsearch">
-								<option hidden disabled>Search Country</option>
+								<option></option>
 								<option value="Afghanistan">Afghanistan</option>
 								<option value="Argentina">Argentina</option>
 								<option value="Armenia">Armenia</option> 
@@ -2028,10 +2024,6 @@ $(document).ready(function(){
 								<option value="Others">Others</option>    
 							</select>
 						</div>
-
-						<script>
-							jQuery('.selectsearch').chosen();
-						</script>
 
 						<div class="shosurbari-biodata-field">
 							<label for="edit-name">বর্তমান বসবাসের ঠিকানা<span class="form-required" title="This field is required.">*</span></label>
