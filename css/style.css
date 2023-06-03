@@ -3064,6 +3064,16 @@ i.icon_4{
     justify-content: center;
     position: relative;
 }
+
+#progressbar li {
+    list-style-type: none;
+    color: #000;
+    font-size: 15px;
+    width: 112px;
+    float: left;
+    position: relative;
+    z-index: 2;
+}
   
 #progressbar li:before {
     content: counter(step);
@@ -3102,16 +3112,6 @@ i.icon_4{
     z-index: 3;
 }
 
-#progressbar li {
-    list-style-type: none;
-    color: #000;
-    font-size: 15px;
-    width: 112px;
-    float: left;
-    position: relative;
-    z-index: 2;
-}
-
 /* Progressbar color */
 #progressbar li:not(.active):after {
     background: #ccc;
@@ -3136,12 +3136,12 @@ i.icon_4{
     box-sizing: border-box;
     margin: auto;
 }
-  
+
 /*Hide all except first fieldset*/
 #biodataForm fieldset:not(:first-of-type) {
     display: none;
 }
-  
+
 /*buttons*/
 #biodataForm .action-button,
 #biodataForm .biodata-submit {
@@ -3180,6 +3180,7 @@ i.icon_4{
 --   SHOSUR BARI BIODATA POST PAGE / FORM LIST   --
 -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- ---
 -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -*/
+
 
 
 
@@ -4265,6 +4266,16 @@ ul.nav_1 li {
 -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -*/
 @media (max-width:930px){
 
+    #progressbar li {
+        font-size: 15px;
+        width: 80px;
+    }
+
+    #progressbar li:after {
+        width: calc(30% + 23px);
+        left: -23px;
+    }
+
     .biodatavalue_list {
         padding: 5px;
     }
@@ -4989,6 +5000,21 @@ i.icon_4 {
 -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -*/
 @media (max-width: 736px){
 
+    #progressbar li:before{
+        width: 30px;
+        line-height: 28px;
+    }
+
+    #progressbar li {
+        font-size: 14px;
+        width: 65px;
+    }
+
+    #progressbar li:after {
+        width: calc(20% + 23px);
+        left: -18px;
+    }
+
     .left-side {
         width: 350px;
     }
@@ -5348,6 +5374,23 @@ ul.profile_item{
 -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -*/
 @media (max-width: 600px){
 
+    #progressbar li:before{
+        width: 25px;
+        line-height: 24px;
+        font-size: 13px;
+    }
+
+    #progressbar li {
+        font-size: 13px;
+        width: 55px;
+    }
+
+    #progressbar li:after {
+        width: calc(15% + 23px);
+        left: -15px;
+        top: 21px;
+    }
+
     .navigationpro {
         display: block;
         margin-top: -50px;
@@ -5532,6 +5575,36 @@ ul.profile_item{
 --      Media Responsive / Phone Responsive      --
 -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -*/
 @media (max-width:480px){
+
+    #progressbar {
+        flex-wrap: wrap;
+        justify-content: flex-start;
+        width: 300px;
+      }
+    
+      #progressbar li:after {
+        left: -28px;
+        top: 25px;
+        width: calc(40% + 23px);
+      }
+    
+      #progressbar li:nth-child(4):before {
+        margin-bottom: 10px;
+      }
+    
+      #progressbar li:nth-child(5) {
+        clear: left;
+      }
+    
+      #progressbar li {
+        width: 70px;
+        font-size: 14px;
+        float: left;
+        text-align: center;
+        padding: 5px;
+        margin-left: calc((40px - 35px) / 2);
+        margin-right: calc((40px - 35px) / 2);
+      }
 
 .update-image .camera-wrapper i{
     font-size: 20px;
@@ -6510,6 +6583,29 @@ ul.profile_item{
 #biodataForm fieldset {
     width: 310px;
 }
+
+
+#progressbar {
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    width: 260px;
+  }
+
+  #progressbar li:after {
+    left: -18px;
+    top: 25px;
+    width: calc(25% + 23px);
+  }
+
+  #progressbar li {
+    width: 70px;
+    font-size: 14px;
+    float: left;
+    text-align: center;
+    padding: 5px;
+    margin-left: calc((30px - 35px) / 2);
+    margin-right: calc((30px - 35px) / 2);
+  }
 }
 /*-- -- -- -- -- -- -- -- -- -- -- -- -- ---- -- --
 --            max-width:350px / E  N  D          --
