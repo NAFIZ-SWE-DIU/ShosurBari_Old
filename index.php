@@ -64,10 +64,10 @@ $(document).ready(function(){
     <div class="banner_info">
 
       <h3 id="banner_text">Thousands of verified Members here</h3>
-      <h1>বাংলাদেশী  ম্যাট্রিমনি শশুরবাড়ি ডট কম</h1>
+      <!-- <h1>বাংলাদেশী  ম্যাট্রিমনি<br>শশুরবাড়ি ডট কম</h1> -->
 
       <div class="shosurbari-title">
-        <h4>“সকল ধর্ম, বর্ণ, জেলা, পেশার দেশি ও প্রবাসী বাঙালি পাত্র পাত্রী <br> খুঁজে পাওয়ার সহজ মাধ্যম।”</h4>
+        <h4>“সকল ধর্ম, বর্ণ, জেলা, পেশার দেশি ও প্রবাসী বাঙালি পাত্র পাত্রী  খুঁজে পাওয়ার সহজ মাধ্যম।”</h4>
       </div>
 
 
@@ -100,17 +100,14 @@ $(document).ready(function(){
     </script>
 
 
-    <body onLoad="initClock()">
+    <!-- <body onLoad="initClock()">
     <div class="clock" id="timedate">
       <h4>Today</h4>
-      <p>Day    : <a id="day"> </a></p>
-      <p>Date   : <a id="date"> </a></p>
+      <p>Day: <a id="day"> </a></p>
+      <p>Date: <a id="date"> </a> <a id="month"> <a id="year">  </a> </p>
 
-      <p>Month  : <a id="month"> </a></p>
-      <p>Year   : <a id="year">  </a><br></p>
-
-      <p>Time   : <a id="time">  </a> </p>
-    </div>
+      <p>Time: <a id="time">  </a> </p>
+    </div> -->
   </div> 
 
 
@@ -168,12 +165,24 @@ $(document).ready(function(){
   -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -->
   <div class="sb-search-page">
     <h2>Find your perfect Partner</h2>
-    <p>  মনের মতন জীবন সঙ্গী খুঁজে পেতে নিচের সার্চ বাটনে ক্লিক করুন</p>
-    <div class="sb-search-btn">
-      <a href="search.php"><button > Search Biodata </button></a>
+
+    <div class="sb-search-logo-btn">
+
+      <div class="sb-search-logo">
+        <img src="images/find.png">
+        <div class="sb-search-btn">
+          <p>  মনের মতন জীবন সঙ্গী খুঁজে পেতে সার্চ বাটনে ক্লিক করুন</p>
+          <a href="search.php"><button > Search Biodata </button></a>
+        </div>
+      </div>
+
     </div>
+
   </div>
 
+  <style>
+
+    </style>
 
 
 
