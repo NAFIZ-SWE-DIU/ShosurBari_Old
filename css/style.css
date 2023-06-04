@@ -701,7 +701,7 @@ ul.nav_1{
 
 .col_2 p {
     color: white;
-	font-size:0.85em;
+	font-size:14px;
 	line-height:1.8em;
     text-align: center;
 }
@@ -714,7 +714,7 @@ ul.footer_links {
 }
 
 ul.footer_links li{
-	font-size:0.85em;
+	font-size:14px;
 	line-height:1.8em;
 }
 
@@ -766,8 +766,7 @@ i.fa1:hover {
 
 .shosurbari-copy-right p{
 	color:#fff;
-	font-size:0.85em;
-    font-size: 15px;
+    font-size: 13px;
 }
 
 .shosurbari-copy-right p img{
@@ -870,16 +869,15 @@ i.fa1:hover {
     -webkit-background-size: cover;
     -moz-background-size: cover;
     -o-background-size: cover;
-    height: 90vh; /* Set height to 90% of the viewport height */
-    margin-top: 22px;
+    height: 700px; /* Set height to 90% of the viewport height */
+    margin-top: 0px;
     display: flex;
     justify-content: space-between;
     align-items: center;
     /* Add additional CSS design properties below */
-    border: 1px solid #ccc;
     border-radius: none;
     padding: 20px;
-    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+    /* box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1); */
 
 }
 
@@ -913,13 +911,13 @@ i.fa1:hover {
 }
 
 .shosurbari-title{
-    border: 2px solid;
+    border: 1px solid;
     border-radius: 10px;
     animation: colorAnimation 10s linear infinite;
     padding: 20px 10px;
     width: 80%;
     margin: 60px auto;
-    background: #ecfeff;
+    background: #cffafea1;
 }
 
 .shosurbari-title h4 {
@@ -927,13 +925,13 @@ i.fa1:hover {
     font-family: 'Oswald', sans-serif;
     text-align: center;
     margin-top: 10px;
-    line-height: 30px;
+    line-height: 45px;
 }
 
 
 @keyframes colorAnimation {
     0% {
-    border-color: red;
+    border-color: #3EA055;
     }
 
     25% {
@@ -1024,6 +1022,7 @@ i.fa1:hover {
     font-size: 14px;
     color: #000;
     padding-left: 5px;
+    text-decoration: none;
 }
 /*Banner Clock  End*/
 /*Banner Section End*/
@@ -1039,7 +1038,8 @@ i.fa1:hover {
 
 .sb-search-page h2 {
     font-size: 3em;
-    animation: textAnimation 10s linear infinite;
+    /* animation: textAnimation 10s linear infinite; */
+    color: #f6b105;
     margin-bottom: 20px;
 }
   
@@ -3706,7 +3706,10 @@ label{
 -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -*/
 
 @media (min-width:1600px){
-
+    .sb-search-page{
+        width: 1200px;
+    }
+    
 .contact-bio,
 .copy-sbbio-link {
     width: 50%;
@@ -3740,7 +3743,9 @@ td.day_value {
 }
     
 @media (max-width:1600px){
-
+    .sb-search-page{
+        width: 1200px;
+    }
 
 td.day_label {
     font-size: 15px;
@@ -3794,6 +3799,9 @@ td.day_value {
 -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -*/
 @media (max-width:1280px){
 
+    .sb-search-page{
+        width: 1000px;
+    }
 
     .profile-nav-info h3 {
         font-size: 24px;
@@ -3904,7 +3912,7 @@ ul.profile_item{
 }
 
 .banner_info h1 {
-    font-size: 3.5em;
+    font-size: 55px;
 }
 
 .banner_info h3 {
@@ -3922,10 +3930,6 @@ ul.profile_item{
 
 .banner_info p {
     font-size: 1em;
-}
-
-.sb-search-page h2 {
-    margin-top: 100px;
 }
 
 .profile-nav-info .address {
@@ -4022,7 +4026,9 @@ ul.profile_item{
 --      Media Responsive / Phone Responsive      --
 -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -*/
 @media (max-width:1024px){
-
+    .sb-search-page {
+        width: 900px;
+    }
     .profile-img img {
         height: 168px;
         width: 168px;
@@ -4265,6 +4271,14 @@ ul.nav_1 li {
 --      Media Responsive / Phone Responsive      --
 -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -*/
 @media (max-width:930px){
+
+    .banner_info h1 {
+        font-size: 45px;
+    }
+
+    .sb-search-page {
+        width: 700px;
+    }
 
     #progressbar li {
         font-size: 15px;
@@ -4593,7 +4607,72 @@ ul.profile_item{
 --      Media Responsive / Phone Responsive      --
 -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -*/
 @media (max-width: 768px){
+    .sb-featured-profiles {
+        margin: 102px auto 0px auto;
+    }
 
+    .shosurbari-title {
+        margin: 20px auto;
+    }
+
+    .sb-search-page {
+        width: 700px;
+        margin-top: -950px;
+    }
+
+    .shosurbari-title h4 {
+        font-size: 23px;
+        line-height: 40px;
+        font-weight: 550;
+    }
+    
+    .banner_info {
+        margin: -71em 0 0 0;
+    }
+
+    .banner_info h3 {
+        font-size:48px;
+        margin-bottom: 20px;
+        line-height: 60px;
+    }	
+
+    .sb-search-page h2{
+        margin-top: 25px;
+    }
+
+    .sb-search-page p{
+        font-size: 24px;
+    }
+    
+    .banner {
+        min-height: 1655px; 
+    }
+
+    .banner{
+        background:url(../images/sosurbari-mobile-logo4.png)no-repeat center top;
+        background-size: cover;
+        -webkit-background-size: cover;
+        -moz-background-size: cover;
+        -o-background-size: cover;
+        margin-top: 0px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        /* Add additional CSS design properties below */
+        border-radius: none;
+        padding: 10px;
+        /* box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1); */
+    
+    }
+
+    .banner_info h1 {
+        font-size: 35px;
+        line-height: 55px;
+    }
+
+    #biodataForm{
+        margin: -30px auto;
+    }
     .navigationpro .dropdown{
         margin: 5px;
     }
@@ -4618,22 +4697,17 @@ ul.profile_item{
         width: 540px;
     }
 
-ul.nav_1 li {
-    margin: 5px;
-}
+    ul.nav_1 li {
+        margin: 5px;
+    }
 
-.banner_info h3 {
-    font-size: 2.5em;
-}	
+
 
 .hvr-shutter-out-horizontal {
     padding: 6px 15px;
     font-size: 16px;
 }
 
-.banner_info {
-    margin: 5em 0 0 0;
-}
 
 .profile_search {
     margin: 5em 0 0 0;
@@ -4647,12 +4721,9 @@ label.gender_1 {
     margin-right: 0px;
 }   
 
-.banner {
-    min-height: 309px; 
-}
 
 .grid_1 {
-    padding: 3em 0;
+    padding: 0;
 }
 
 .footer {
@@ -4999,6 +5070,10 @@ i.icon_4 {
 --      Media Responsive / Phone Responsive      --
 -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -*/
 @media (max-width: 736px){
+
+    .sb-search-page {
+        width: 580px;
+    }
 
     #progressbar li:before{
         width: 30px;
@@ -5374,6 +5449,14 @@ ul.profile_item{
 -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -*/
 @media (max-width: 600px){
 
+    .banner_info h1 {
+        font-size: 25px;
+    }
+
+    .sb-search-page {
+        width: 450px;
+    }
+
     #progressbar li:before{
         width: 25px;
         line-height: 24px;
@@ -5575,6 +5658,82 @@ ul.profile_item{
 --      Media Responsive / Phone Responsive      --
 -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -*/
 @media (max-width:480px){
+    .btn_1 {
+        font-size: 17px;
+    }
+
+    .sb-biodata-field h2 {
+        font-size: 26px;
+    }
+
+    .banner {
+        min-height: 1030px;
+        margin-top: 55px;
+    }
+
+    .sb-search-page .sb-search-btn {
+        margin-top: 0px;
+    }
+
+    .sb-search-logo {
+        margin: auto;
+    }
+
+    .sb-search-page {
+        width: 380px;
+        margin-top: -610px;
+    }
+
+    .sb-search-page p {
+        font-size: 19px;
+    }
+
+    .banner_info h1 {
+        font-size: 25px;
+        line-height: 37px;
+    }
+
+    .banner_info h3 {
+        font-size: 27px;
+        line-height: 30px;
+    }	
+
+    .shosurbari-title {
+        border: 1px solid;
+        border-radius: 6px;
+        padding: 5px 3px;
+        width: 100%;
+        margin: 0px auto 0 auto;
+        background: #cffafea1;
+    }
+
+    .shosurbari-title h4 {
+        font-size: 16px;
+        line-height: 30px;
+        font-weight: 550;
+    }
+
+    
+.banner_info {
+    margin: -42em 0 0 0;
+}
+    .sb-search-page h2 {
+        font-size: 25px;
+        margin-bottom: 20px;
+    }
+
+    .sb-home-reg button {
+        font-size: 16px;
+        width: 160px;
+        padding: 5px;
+        margin-top: 30px;
+    }
+
+    .sb-search-btn button {
+        padding: 5px;
+        font-size: 16px;
+        width: 160px;
+    }
 
     #progressbar {
         flex-wrap: wrap;
@@ -5635,18 +5794,10 @@ ul.profile_item{
     width: 300px;
 }
 
-.banner_info h3 {
-    font-size: 1.5em;
-    margin-bottom: 15px;
-}	
-
 .hvr-shutter-out-horizontal {
     font-size: 13px;
 }
 
-.banner_info {
-    margin: 2em 0 0 0;
-}
 
 .profile_search {
     margin: 2em 0 0 0;
@@ -5672,10 +5823,6 @@ input#submit-btn {
 
 .inline-block {
     margin-bottom: 5px;
-}
-
-.banner {
-    min-height: 195px;
 }
 
 .heart-divider {
@@ -5846,11 +5993,6 @@ ul.profile_item{
     margin-left: auto;
     margin-right: 25px;
 }
-.sb-search-btn button {
-    padding: 8px;
-    font-size: 17px;
-    width: 200px;
-}
 
 .sb-register-login{
     width: 300px;
@@ -5916,14 +6058,42 @@ ul.profile_item{
 --      Media Responsive / Phone Responsive      --
 -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -*/
 @media (max-width:414px){
+    .shosurbari-title h4 {
+        font-size: 14px;
+        line-height: 25px;
+    }
+
+    .sb-search-page {
+        width: 380px;
+        margin-top: -565px;
+    }
+
+    .sb-search-page p {
+        font-size: 18px;
+    }
+
+    .banner_info h1 {
+        font-size: 25px;
+        line-height: 35px;
+    }
+
+    .banner_info {
+        margin: -36em 0 0 0;
+    }
+
+    .banner_info h3 {
+        font-size: 24px;
+        line-height: 30px;
+        margin-bottom: 10px;
+    }
+    
+
+    .sb-featured-profiles {
+        margin: -70px auto 0px auto;
+    }
 
 .wrap_1 {
     width: 375px;
-}
-
-.banner_info h3 {
-    font-size: 1.2em;
-    margin-bottom: 10px;
 }
 
 .hvr-shutter-out-horizontal {
@@ -5931,17 +6101,14 @@ ul.profile_item{
     font-size: 11px;
 }	
 
-.banner_info {
-    margin: 1em 0 0 0;
-}
-
 .profile_search {
     margin: 1em 0 0 0;
     padding:5px;
 }
 
 .banner {
-    min-height: 180px;
+    min-height: 935px;
+    margin-top: 50px;
 }
 
 .navigation {
@@ -6245,6 +6412,41 @@ ul.profile_item{
 -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -*/
 @media (max-width:384px){
 
+    .banner {
+        min-height: 860px;
+        zoom: .9;
+    }
+
+    .shosurbari-title h4 {
+        font-size: 14px;
+        line-height: 25px;
+    }
+
+    .sb-search-page {
+        width: 300px;
+        margin-top: -465px;
+    }
+
+    .sb-search-page p {
+        font-size: 15px;
+    }
+
+    .banner_info h1 {
+        font-size: 25px;
+        line-height: 35px;
+    }
+
+    .banner_info {
+        margin: -31em 0 0 0;
+    }
+
+    .banner_info h3 {
+        font-size: 24px;
+        line-height: 30px;
+        margin-bottom: 10px;
+    }
+    
+
     #terms-checkbox {
         width: 36px;
     }
@@ -6285,10 +6487,6 @@ a.brand img {
     margin-top: -6px;
 }
 
-.banner {
-    min-height: 155px;
-    zoom: .9;
-}
 
 .grid_1 {
     padding: 2em 0;
@@ -6524,6 +6722,39 @@ ul.profile_item{
 --      Media Responsive / Phone Responsive      --
 -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -*/
 @media (max-width: 350px) {
+    .banner {
+        min-height: 860px;
+        zoom: .9;
+    }
+
+    .shosurbari-title h4 {
+        font-size: 13px;
+        line-height: 25px;
+    }
+
+    .sb-search-page {
+        width: 300px;
+        margin-top: -465px;
+    }
+
+    .sb-search-page p {
+        font-size: 15px;
+    }
+
+    .banner_info h1 {
+        font-size: 24px;
+        line-height: 35px;
+    }
+
+    .banner_info {
+        margin: -31em 0 0 0;
+    }
+
+    .banner_info h3 {
+        font-size: 22px;
+        line-height: 30px;
+        margin-bottom: 10px;
+    }
 
 .sb_biodata_profile{
     display: flex;
@@ -6624,6 +6855,54 @@ ul.profile_item{
 --      Media Responsive / Phone Responsive      --
 -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -*/
 @media (max-width:320px){
+
+    .banner {
+        min-height: 860px;
+        zoom: .9;
+    }
+
+    .shosurbari-title {
+        padding: 0px 3px;
+    }
+
+    .shosurbari-title h4 {
+        font-size: 15px;
+        line-height: 24px;
+    }
+
+    .sb-search-page {
+        width: 300px;
+        margin-top: -465px;
+    }
+
+    .sb-search-page p {
+        font-size: 13px;
+    }
+
+    .banner_info h1 {
+        font-size: 24px;
+        line-height: 35px;
+    }
+
+    .banner_info {
+        margin: -29em 0 0 0;
+    }
+
+    .sb-search-btn button {
+        padding: 5px;
+        font-size: 15px;
+        width: 135px;
+    }
+
+    .banner_info h3 {
+        font-size: 21px;
+        line-height: 30px;
+        margin-bottom: 10px;
+    }
+
+    .sb-search-page h2 {
+        font-size: 21px;
+    }
 
     a#profile-tab, a#home-tab, a#profile-tab1 {
         font-size: 14px;
@@ -6961,12 +7240,6 @@ ul.profile_item{
     font-size: 13px;
 }
 
-.sb-search-btn button {
-    padding: 8px;
-    font-size: 16px;
-    width: 165px;
-}
-
 .navigationpro ul {
     width: 180px;
 }
@@ -7001,3 +7274,31 @@ ul.profile_item{
 -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- ---
 -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -*/
 
+.sb-search-logo-btn{
+    display: flex;
+    margin: auto;
+  }
+  .sb-search-logo{
+    width: 100%;
+    display: flex;
+    margin: auto;
+  }
+
+  .sb-search-logo img{
+   width: 40%;
+   height: 40%;
+   right: 0;
+  }
+
+  .sb-search-btn{
+    margin-bottom: 150px;
+  }
+
+  .sb-search-page .sb-search-btn {
+  /* margin-top: 125px; */
+  margin-left: auto;
+  margin-right: auto;
+  border-radius: 4px;
+  color: #fff;
+  text-align: center;
+}
