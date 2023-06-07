@@ -81,8 +81,6 @@ echo "<script>alert(\"Invalid Profile ID\")</script>";
 
 
 
-
-
 	<div class="UserProfile">  <!-- UserProfile -->
 		<div class="profile-header">
 
