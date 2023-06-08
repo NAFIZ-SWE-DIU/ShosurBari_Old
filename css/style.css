@@ -1824,7 +1824,7 @@ button.copylink i {
 .view_sb_profile_recentview{
     text-align: center;
     border: 1px solid #d5d5d5;
-    padding: 2px;
+    padding: 4px;
     margin-top: 7px;
     margin-bottom: 5px;
     border-radius: 5px;
@@ -5510,6 +5510,10 @@ ul.profile_item{
 -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -*/
 @media (max-width: 600px){
 
+    .sb_featured_profile_head {
+        width: 94%;
+    }
+
     .form-actions a{
         font-size: 14px;
     }
@@ -5861,7 +5865,7 @@ ul.profile_item{
     }
 
     .sb-search-page p {
-        font-size: 19px;
+        font-size: 17px;
     }
 
     .sb-search-page h2 {
@@ -5872,8 +5876,8 @@ ul.profile_item{
     
     .sb-search-btn button {
         padding: 5px;
-        font-size: 16px;
-        width: 160px;
+        font-size: 14px;
+        width: 170px;
     }
 
     .banner_info h1 {
@@ -5905,8 +5909,8 @@ ul.profile_item{
 
 
     .sb-home-reg button {
-        font-size: 16px;
-        width: 160px;
+        font-size: 14px;
+        width: 170px;
         padding: 5px;
         margin-top: 30px;
     }
@@ -5960,7 +5964,7 @@ ul.profile_item{
 }
 
 .sb_featured_profile_head {
-    width: 75%;
+    width: 90%;
 }
 
 .shosurbari-user-account {
@@ -6246,7 +6250,7 @@ ul.profile_item{
     }
 
     .sb-search-page p {
-        font-size: 18px;
+        font-size: 16px;
     }
 
     .banner_info h1 {
