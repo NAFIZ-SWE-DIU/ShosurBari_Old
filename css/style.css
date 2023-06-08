@@ -115,7 +115,7 @@ i.home_1{
 }
 
 .current-page h4{
-    font-size: 25px;
+    font-size: 23px;
 }
 
 span.divider {
@@ -293,7 +293,7 @@ input#submit-btn {
     outline: none;
     border: none;
     margin: 0px;
-    font-size: 0.60em;
+    font-size: 17px;
     transition: background-color 0.3s, color 0.3s;
 }
 
@@ -308,7 +308,7 @@ input#submit-btn {
 }
 
 .form-actions a{
-    font-size: 16px;
+    font-size: 15px;
     color: black;
     text-decoration: underline;
     white-space: nowrap;
@@ -1909,7 +1909,7 @@ td.day_value {
 
 .shosurbari-details {
     width: 100%;
-    margin: 50px auto;
+    margin: -10px auto;
     padding: 10px
 }
 
@@ -1924,7 +1924,7 @@ td.day_value {
 .shosurbari-details h2,
 .shosurbari-details h3,
 .shosurbari-details h4 {
-    margin-top: 50px;
+    margin-top: 0px;
     margin-bottom: 0px;
     margin-left: auto;
     margin-right: auto;
@@ -2244,7 +2244,7 @@ small.testi-meta1{
 
 .shosurbari-security {
     width: 100%;
-    margin: 50px auto;
+    margin: -10px auto;
     padding: 10px
 }
 
@@ -3013,7 +3013,7 @@ i.icon_4{
 }
 
 .sb-biodata-field{
-    padding: 10px 5px 5px 5px;
+    padding: 10px 5px;
     width: 100%;
     margin-bottom: 25px;
     margin-top: 0px;
@@ -3025,6 +3025,7 @@ i.icon_4{
     text-align: center;
     color: #fff;
     margin: auto;
+    font-size: 28px;
 }
 
 .sb-biodata-field h2 span{
@@ -4609,6 +4610,15 @@ ul.profile_item{
 --      Media Responsive / Phone Responsive      --
 -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -*/
 @media (max-width: 768px){
+
+    .shosurbari-details {
+        margin: -50px auto;
+    }
+
+    .shosurbari-security {
+        margin: -50px auto;
+    }
+
     .sb-featured-profiles {
         margin: 102px auto 0px auto;
     }
@@ -5351,10 +5361,6 @@ label {
     font-size: 13px;
 } 
 
-.btn_1 {
-    padding: 6px 20px;
-}
-
 .sharing li {
     margin-bottom: 10px;
 }
@@ -5503,6 +5509,36 @@ ul.profile_item{
 --      Media Responsive / Phone Responsive      --
 -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -*/
 @media (max-width: 600px){
+
+    .form-actions a{
+        font-size: 14px;
+    }
+
+    .show-password i{
+        font-size: 16px;
+        top: 2px;
+    }
+
+    i .fa{
+        font-size: 15px;
+        top: 2px;
+    }
+
+    .shosurbari-details h1 {
+        font-size: 29px;
+    }
+
+    .btn_1 {
+        font-size: 15px;
+    }
+
+    .sb-biodata-field h2{
+        font-size: 25px;
+    }
+
+    .current-page h4 {
+        font-size: 21px;
+    }
 
     .banner {
         min-height: 1030px;
@@ -5766,12 +5802,44 @@ ul.profile_item{
 --      Media Responsive / Phone Responsive      --
 -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -*/
 @media (max-width:480px){
-    .btn_1 {
-        font-size: 17px;
+
+    .form-actions p {
+        font-size: 13px;
     }
 
-    .sb-biodata-field h2 {
+    .shosurbari-details h1,
+    .shosurbari-details h2,
+    .shosurbari-details h3,
+    .shosurbari-details h4 {
         font-size: 26px;
+    }
+
+    .shosurbari-details p {
+        font-size: 15px;
+    }
+
+    .remember-forgot label {
+        font-size: 13px;
+    }
+
+    .remember-forgot a {
+        font-size: 13px;
+    }
+
+    .btn_1 {
+        font-size: 14px;
+    }
+
+    .sb-biodata-field h2{
+        font-size: 23px;
+    }
+
+    .current-page h4 {
+        font-size: 20px;
+    }
+
+    i.home_1 {
+        font-size: 25px;
     }
 
     .banner {
@@ -6520,6 +6588,33 @@ ul.profile_item{
 --      Media Responsive / Phone Responsive      --
 -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -*/
 @media (max-width:384px){
+
+    .shosurbari-details h1,
+    .shosurbari-details h2,
+    .shosurbari-details h3,
+    .shosurbari-details h4 {
+        font-size: 24px;
+    }
+
+    .shosurbari-details p {
+        font-size: 14px;
+    }
+
+    .btn_1 {
+        font-size: 13px;
+    }
+
+    .sb-biodata-field h2{
+        font-size: 21px;
+    }
+
+    .current-page h4 {
+        font-size: 19px;
+    }
+
+    i.home_1 {
+        font-size: 24px;
+    }
 
     .banner {
         min-height: 860px;
