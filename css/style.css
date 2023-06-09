@@ -1399,8 +1399,8 @@ span.m_3{
 }
 
 .profile-img img {
-    height: 175px;
-    width: 175px;
+    height: 168px;
+    width: 168px;
     object-fit: cover;
     border: 4px solid #fff;
     position: relative;
@@ -2780,12 +2780,12 @@ input[type=submit] {
 }
 
 .update-image img {
-    height: 175px;
-    width: 175px;
+    height: 168px;
+    width: 168px;
     padding: 2px;
     background: #f5f2f2;
     box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
-    margin-top: 20px;
+    margin-top: 0px;
     margin-left: auto;
     margin-right: auto;
     margin-bottom: 20px;
@@ -2852,8 +2852,9 @@ input[type=submit] {
 }
 
 .image-wrapper{
-    width: 175px;
+    width: 150px;
     margin: 20px auto;
+    height: 150px;
 }
 
 .update-image .image-wrapper img {
@@ -2884,7 +2885,7 @@ input[type=submit] {
     display: none;
 }
 
-.deleteimage{
+.deleteimage {
     padding: 10px;
     margin-top:-10px; 
     margin-left: 10px;
@@ -3677,6 +3678,7 @@ label{
     position: absolute; 
     right: 10px;
     top: 19px;
+    font-size: 12px;
 }
 
 .toggle-next span i {
@@ -5038,6 +5040,13 @@ i.icon_4 {
 -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -*/
 @media (max-width: 765px) {
 
+    .navbar-toggle1 {
+        height: 40px;
+        margin: 0px 15px 0 0px;
+        color: #fff;
+        padding:0px;
+    }
+    
 .sb_biodata_profile {
     display: flex;
     flex-wrap: wrap;
@@ -5277,13 +5286,6 @@ input#submit-btn {
     border-color:#2f374c;
     background-color:#2f374c;
     border-radius: 2px;
-}
-
-.navbar-toggle1 {
-    height: 30px;
-    margin: 0px 15px 0 0px;
-    color: #fff;
-    padding: 4px 0 0 0;
 }
 
 .dropdown-menu>li>a {
@@ -5807,6 +5809,13 @@ ul.profile_item{
 -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -*/
 @media (max-width:480px){
 
+    .update-image .camera-wrapper i {
+        font-size: 18px;
+        padding: 7px;
+        margin-top: 110px;
+        margin-left: 90px;
+    }
+
     .form-actions p {
         font-size: 13px;
     }
@@ -5945,10 +5954,6 @@ ul.profile_item{
         margin-left: calc((40px - 35px) / 2);
         margin-right: calc((40px - 35px) / 2);
       }
-
-.update-image .camera-wrapper i{
-    font-size: 20px;
-}
 
 #terms-checkbox {
     width: 32px;
@@ -6126,8 +6131,8 @@ ul.profile_item{
 }
 
 .update-image img {
-    height: 100%;
-    width: 100%;
+    height: 148px;
+    width: 148px;
 }
 
 .sb_biodata_profile{
@@ -6498,11 +6503,6 @@ ul.profile_item{
     width: 85%;
 }
 
-.update-image img {
-    height: 100%;
-    width: 100%;
-}
-
 .sb_biodata_profile{
     display: flex;
     flex-wrap: wrap;
@@ -6592,6 +6592,13 @@ ul.profile_item{
 --      Media Responsive / Phone Responsive      --
 -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -*/
 @media (max-width:384px){
+
+    .update-image .camera-wrapper i {
+        font-size: 17px;
+        padding: 6px;
+        margin-top: 101px;
+        margin-left: 77px;
+    }
 
     .shosurbari-details h1,
     .shosurbari-details h2,
@@ -6850,11 +6857,6 @@ ul.profile_item{
     width: 85%;
 }
 
-.update-image img {
-    height: 100%;
-    width: 100%;
-}
-
 .sb_biodata_profile{
     display: flex;
     flex-wrap: wrap;
@@ -6895,8 +6897,8 @@ ul.profile_item{
     margin-right: auto;
 }
 
-.sb_mobilesearch  #search-button {
-    width: 111px;
+.sb_mobilesearch #search-button {
+    width: 114px;
     margin-left: auto;
     margin-right: 15px;
 }
@@ -7392,11 +7394,6 @@ ul.profile_item{
     width: 85%;
 }
 
-.update-image img {
-    height: 100%;
-    width: 100%;
-}
-
 .sb_biodata_profile{
     display: flex;
     flex-wrap: wrap;
@@ -7439,7 +7436,7 @@ ul.profile_item{
 }
 
 .sb_mobilesearch #search-button {
-    width: 94px;
+    width: 96px;
     font-size: 13px;
 }
 
