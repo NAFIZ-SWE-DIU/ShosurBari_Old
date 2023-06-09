@@ -38,7 +38,8 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST'){ uploadphoto($id); }
 
 
 <head>
-<title>Update Account - ShosurBari</title>
+<title>Update Account | ShosurBari</title>
+<link rel="icon" href="images/shosurbari-icon.png" type="image/png">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); } </script>
@@ -55,20 +56,6 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST'){ uploadphoto($id); }
 <!--font-Awesome-->
 <link href="css/font-awesome.css" rel="stylesheet"> 
 <!--font-Awesome-->
-<script>
-$(document).ready(function(){
-    $(".dropdown").hover(            
-        function() {
-            $('.dropdown-menu', this).stop( true, true ).slideDown("fast");
-            $(this).toggleClass('open');        
-        },
-        function() {
-            $('.dropdown-menu', this).stop( true, true ).slideUp("fast");
-            $(this).toggleClass('open');       
-        }
-    );
-});
-</script>
 
 <!-- Country Code with Flag for Number input field -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
@@ -236,7 +223,7 @@ $(document).ready(function(){
 
                     <?php if (!empty($pic1)): ?>
                         <button type="submit" name="delete_photo" value="Delete" class="delete_photo-btn delete-button">Delete Photo</button>
-                        <p>আপনি যদি আপনার বর্তমান ছবি পরিবর্তন বা <br>আপডেট করতে চান, প্রথমে আপনার প্রোফাইল <br>থেকে বর্তমান ছবি ডিলিট করুন। তারপর <br>নতুন ছবি আপলোড করুন।</p>
+                        <p>আপনি যদি আপনার বর্তমান ছবি <br> পরিবর্তন বা  আপডেট করতে চান, <br> প্রথমে আপনার প্রোফাইল থেকে <br> বর্তমান ছবি ডিলিট করুন। তারপর <br>নতুন ছবি আপলোড করুন।</p>
                     <?php endif; ?>
 
                     <?php
