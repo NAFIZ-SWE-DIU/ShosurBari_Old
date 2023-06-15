@@ -38,7 +38,8 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST'){ uploadphoto($id); }
 
 
 <head>
-<title>Update Account - ShosurBari</title>
+<title>Account | ShosurBari</title>
+<link rel="icon" href="images/shosurbari-icon.png" type="image/png">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); } </script>
@@ -55,20 +56,6 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST'){ uploadphoto($id); }
 <!--font-Awesome-->
 <link href="css/font-awesome.css" rel="stylesheet"> 
 <!--font-Awesome-->
-<script>
-$(document).ready(function(){
-    $(".dropdown").hover(            
-        function() {
-            $('.dropdown-menu', this).stop( true, true ).slideDown("fast");
-            $(this).toggleClass('open');        
-        },
-        function() {
-            $('.dropdown-menu', this).stop( true, true ).slideUp("fast");
-            $(this).toggleClass('open');       
-        }
-    );
-});
-</script>
 
 <!-- Country Code with Flag for Number input field -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
@@ -112,6 +99,9 @@ $(document).ready(function(){
                     if($result){
                     $row=mysqli_fetch_assoc($result);
                     if($row){
+                        $fullname=$row['fullname'];
+                        }
+                    if($row){
                     $username=$row['username'];
                     }
                     if($row){
@@ -122,9 +112,23 @@ $(document).ready(function(){
                     }
                     if($row){
                         $pnumber=$row['number'];
+                    }
+                    if($row){
+                        $gender=$row['gender'];
                         }
                     if($row){
                         $id=$row['id'];
+                    }
+                    }
+
+                    //6bd_7bd_marital_status;
+                    //getting profile details from db
+                    $sql="SELECT * FROM 7bd_marriage_related_qs_female WHERE user_id = $id";
+                    $result = mysqlexec($sql);
+                    if($result){
+                    $row=mysqli_fetch_assoc($result);
+                    if($row){
+                        $profileby=$row['profileby'];
                     }
                     }
                 ?>
@@ -160,47 +164,74 @@ $(document).ready(function(){
     <div class="shosurbari-user-account">
 
         <div class="sb-biodata-field">
-            <h2>Upadate Your Account</h2>
+            <h2>Your Account</h2>
         </div>
 
         <form action="" method="POST" name="myForm" onsubmit="return validateForm()">
 
             <div class="form-group">
-                <label>Username</label>
+                <label>Full Name <span style="color: #ccc; font-size:12px;">(Changeable)</span></label>
+                <input type="text" name="fullname" class="form-text" value="<?php echo $fullname; ?>" />
+            </div>
+
+            <div class="form-group">
+                <label>Username <span style="color: #ccc; font-size:12px;">(Fixed)</span> </label>
                 <input type="text" name="uname" style="background: #ecfeff" class="form-text" value="<?php echo $username; ?>" disabled />
             </div>
 
-
             <div class="form-group">
-                <label>Email Address</label>
+                <label>Email Address <span style="color: #ccc; font-size:12px;">(Fixed)</span> </label>
                 <input type="text" name="email" style="background: #ecfeff" class="form-text" value="<?php echo $email; ?>" disabled />
             </div>
             
-
             <div class="form-group">
-                <label>Phone Number</label><br>
+                <label>Phone Number <span style="color: #ccc; font-size:12px;">(Fixed)</span></label><br>
                 <input type="text" id="pnumber" name="pnumber" style="background: #ecfeff" value="<?php echo $pnumber; ?>" size="60" minlength="10" maxlength="15" class="form-text" disabled>
             </div>
 
-
             <div class="form-group">
-                <label for="edit-name">Current Password</label>
-                <input type="text" id="edit-pass" name="current_password" style="background: #ecfeff" value="<?php echo $password; ?>" class="form-text" disabled/>
-                <span class="show-password" style="display: none; color: #0aa4ca; font-size: 18px; top: 24px;"><i style="color: black; font-size: 18px;" class="fa fa-eye-slash"></i></span> 
+            <label>Gender<span style="color: #ccc; font-size:12px;">(Changeable)</span> </label>
+                <select name="gender">
+                    <option hidden selected><?php echo $gender; ?></option>
+                    <option value="Male">Male</option>
+                    <option value="Female">Female</option> 
+                </select>
             </div>
 
             <div class="form-group">
-                <label>Change Password</label>
+            <label>Profiled By<span style="color: #ccc; font-size:12px;">(Changeable)</span> </label>
+                <select name="profileby" required>
+                    <option hidden selected><?php echo $profileby; ?></option>
+                    <option value="নিজের জন্য">নিজের জন্য</option>
+                    <option value="বাবা হই">বাবা হই</option>
+                    <option value="মা হই">মা হই</option>
+                    <option value="ভাই হই">ভাই হই</option>
+                    <option value="বোন হই">বোন হই</option>
+                    <option value="চাচা/মামা হই">চাচা/মামা হই</option> 
+                    <option value="চাচী/মামী হই">চাচী/মামী হই</option>
+                    <option value="নানা/দাদা হই">নানা/দাদা হই</option> 
+                    <option value="নানী/দাদী হই">নানী/দাদী হই</option> 
+                    <option value="অন্যান্য">অন্যান্য</option> 
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label for="edit-name">Current Password <span style="color: #ccc; font-size:12px;">(Fixed)</span> </label>
+                <input type="text" id="edit-pass" name="current_password" style="background: #ecfeff" value="<?php echo $password; ?>" class="form-text" disabled/>
+                <span class="show-password" style="display: none; color: #0aa4ca; font-size: 15px; top: 26px;"><i style="color: black; font-size: 15px;" class="fa fa-eye-slash"></i></span> 
+            </div>
+
+            <div class="form-group">
+                <label>Change Password <span style="color: #ccc; font-size:12px;">(Changeable)</span> </label>
                 <input type="password" id="pass_1" name="pass_1" class="form-text" />
-                <span class="show-password" style="color:#0aa4ca;  font-size:18px; top:24px;"><i style="color:black;  font-size:18px;" class="fa fa-eye" aria-hidden="true"></i></span> 
+                <span class="show-password" style="color:#0aa4ca;  font-size:15px; top:26px;"><i style="color:black;  font-size:15px;" class="fa fa-eye" aria-hidden="true"></i></span> 
                 <span  id="pass_1_error" style="font-size:16px; margin-top: 0px; background: #ffddee; border-radius: 1px 2px 4px 4px; text-align: center; display: none;"></span>
             </div>
 
-
             <div class="form-group">
-                <label>Confirm Password</label>
+                <label>Confirm Password <span style="color: #ccc; font-size:12px;">(Changeable)</span> </label>
                 <input type="password" id="pass_2" name="pass_2" class="form-text" />
-                <span class="show-password" style="color:#0aa4ca;  font-size:18px; top:24px;"><i style="color:black;  font-size:18px;" class="fa fa-eye" aria-hidden="true"></i></span> 
+                <span class="show-password" style="color:#0aa4ca;  font-size:15px; top:26px;"><i style="color:black;  font-size:15px;" class="fa fa-eye" aria-hidden="true"></i></span> 
                 <span  id="pass_2_error" style="font-size:16px; margin-top: 0px; background: #ffddee; border-radius: 1px 2px 4px 4px; text-align: center; display: none;"></span>
             </div>
 
