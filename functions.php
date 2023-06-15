@@ -1,15 +1,23 @@
 <?php
     function mysqlexec($sql){
-        $host="localhost"; // Host name
-        $username="root"; // Mysql username
-        $password=""; // Mysql password
-        $db_name="matrimony"; // Database name
+          $host="localhost"; // Host name
+          $username="root"; // Mysql username
+          $password=""; // Mysql password
+          $db_name="matrimony"; // Database name
+
+        //  $host="sql211.infinityfree.com"; // Host name 
+        //  $username="if0_34380678"; // Mysql username 
+        //  $password="AJFC2H7KllI"; // Mysql password 
+        //  $db_name="if0_34380678_matrimony"; // Database name 
+
         error_reporting(0);
 
     // Connect to server and select databse.
         $conn=mysqli_connect("$host", "$username", "$password")or die("cannot connect");
 
         mysqli_select_db($conn,"$db_name")or die("cannot select DB");
+        mysqli_set_charset($conn, "utf8mb4"); //Bangla font show from database.
+
 
         if($result = mysqli_query($conn, $sql)){
             return $result;
@@ -17,7 +25,6 @@
         else{
             echo mysqli_error($conn);
         }
-
     }
 
 
@@ -1357,6 +1364,58 @@ if (mysqli_query($conn,$sql))
                 {    echo "Thanks! Successfully Uploaded New Biodata!";
                     header("Location: view_profile.php?id={$id}");}
                 }
+}
+}
+
+
+
+
+
+
+
+
+
+function account_details($id){
+
+    if ($_SERVER['REQUEST_METHOD'] == 'POST') {
+      //Biodata 9
+    $fullname=$_POST['fullname'];
+    $gender=$_POST['gender'];
+    $profileby=$_POST['profileby'];
+
+    require_once("includes/dbconn.php");
+
+
+    $sql="SELECT id FROM users WHERE id=$id";
+    $result=mysqlexec($sql);
+    // Update query
+    if(mysqli_num_rows($result)>=1){
+    $sql = "UPDATE users SET 
+                fullname = '$fullname',
+                gender = '$gender',
+            WHERE user_id = '$id'";
+
+            $result=mysqlexec($sql);
+            if ($result)
+            {    echo "Thanks! Successfully Uploaded New Biodata!";
+            }
+            }
+
+
+            $sql="SELECT id FROM 7bd_marriage_related_qs_female WHERE id=$id";
+            $result=mysqlexec($sql);
+            // Update query
+            if(mysqli_num_rows($result)>=1){
+            $sql = "UPDATE 7bd_marriage_related_qs_female SET 
+                        profileby = '$profileby',
+                    WHERE user_id = '$id'";
+        
+                    $result=mysqlexec($sql);
+                    if ($result)
+                    {    echo "Thanks! Successfully";
+                    }
+                    }
+
 }
 }
     /*-- -- -- -- -- -- -- -- -- -- -- -- -- ---- -- --
