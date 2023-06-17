@@ -9,6 +9,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 }
 ?>
 
+	
 <?php
 // $id=$_GET['id'];
 if(isloggedin()){
