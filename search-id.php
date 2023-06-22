@@ -1,6 +1,7 @@
 <?php include_once("includes/basic_includes.php");?>
 <?php include_once("functions.php"); ?>
 
+
 <!DOCTYPE HTML>
 <html>
 <head>
