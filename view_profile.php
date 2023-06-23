@@ -3,7 +3,6 @@
 <?php require_once("includes/dbconn.php");?>
 
 
-
 <?php
 error_reporting(0);
 $id=$_GET['id'];
