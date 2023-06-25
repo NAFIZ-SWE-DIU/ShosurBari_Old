@@ -9,6 +9,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 		//processprofile_form
 }
 ?>
+	
 
 <?php
 // $id=$_GET['id'];
