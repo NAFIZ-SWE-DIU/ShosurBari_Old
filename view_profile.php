@@ -885,16 +885,19 @@ $totalMatch = $skinToneMatch + $religionMatch;
     newMessage.appendChild(messageDetails);
     newMessage.appendChild(messageOptions);
 
-    // Check if there's a reply container and insert the new message after it
-    var replyContainers = document.getElementsByClassName("reply-container");
-    if (replyContainers.length > 0) {
-      var lastReplyContainer = replyContainers[replyContainers.length - 1];
-      lastReplyContainer.parentNode.insertBefore(newMessage, lastReplyContainer.nextSibling);
-      message.replyTo = lastReplyContainer.dataset.messageId; // Set the replied-to message ID
-    } else {
-      messageBody.appendChild(newMessage);
-    }
+  // Check if there's a reply container and insert the new message after it
+  var replyContainers = document.getElementsByClassName("reply-container");
+  if (replyContainers.length > 0) {
+    var lastReplyContainer = replyContainers[replyContainers.length - 1];
+    lastReplyContainer.parentNode.insertBefore(newMessage, lastReplyContainer.nextSibling);
+    message.replyTo = lastReplyContainer.dataset.messageId; // Set the replied-to message ID
+  } else {
+    messageBody.appendChild(newMessage);
   }
+
+  // Scroll to the last message
+  messageBody.scrollTop = messageBody.scrollHeight;
+}
 
   function createReactButtons(messageElement, reacts) {
     var reactButtonsContainer = document.createElement("div");
