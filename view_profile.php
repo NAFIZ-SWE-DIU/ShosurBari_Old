@@ -469,18 +469,22 @@ p {
 }
 
 .message-footer button {
-  padding: 10px 10px;
-  border: none;
-  border-radius: 4px;
-  background: #fff;
-  width: auto;
-  margin-left: -41px;
+	padding: 23.8px 10px;
+    border-top: 1px solid #0aa4ca;
+	border-bottom: 1px solid #0aa4ca;
+    border-right: 1px solid #0aa4ca;
+    border-left: 0px solid #0aa4ca;
+    border-radius: 0px 5px 5px 0px;
+    background: #fff;
+    width: auto;
+    margin-left: -20px;
 }
 
 .message-footer button:hover {
-	background: #0aa4ca;
-  	color: #fff;
-	padding: 10px 10px;
+	/* background: #0aa4ca; */
+  	color: #0aa4ca;
+	background: #fff;
+  	padding: 23.8px 10px;
 }
 
 /* Styling for sender and received messages */
@@ -677,16 +681,24 @@ input[type="text"]:focus {
 
   #messageInput {
     flex: 1;
-    resize: none;
-    overflow: hidden;
-    min-height: 48px;
+    resize: none; 
+    /* overflow: hidden; */
+    min-height: 40px;
     max-height: 120px;
-    padding: 10px 38px 10px 10px;
-	border: 1px solid #ccc;
+    padding: 10px 20px 10px 10px;
+	border: 1px solid #0aa4ca;
     border-radius: 5px;
 	font-size: 17px;
     line-height: 25px;
+	text-align: justify;
   }
+
+
+  textarea:focus {
+  border: 1px solid #0aa4ca;
+  outline: none; /*This line removes the default focus outline */
+}
+
 </style>
 
 
@@ -778,7 +790,7 @@ $totalMatch = $skinToneMatch + $religionMatch;
   </div>
 
   <div class="message-footer">
-    <textarea rows="1" id="messageInput" placeholder="Type your message"></textarea>
+    <textarea rows="2" id="messageInput" placeholder="Type your message..."></textarea>
     <button type="button" onclick="sendMessage()"><i style="font-size:19px;" class="fa">&#xf1d9;</i></button>
   </div>
 </div>
