@@ -39,7 +39,8 @@ echo "<script>alert(\"Invalid Profile ID\")</script>";
 <html>
 
 <head>
-	<title>View Profile - ShosurBari</title>
+	<title>View Profile | ShosurBari</title>
+	<link rel="icon" href="images/shosurbari-icon.png" type="image/png">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 	<script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); } </script>
@@ -55,20 +56,9 @@ echo "<script>alert(\"Invalid Profile ID\")</script>";
 	<!--font-Awesome-->
 	<link href="css/font-awesome.css" rel="stylesheet"> 
 	<!--font-Awesome-->
-	<script>
-	$(document).ready(function(){
-		$(".dropdown").hover(            
-			function() {
-				$('.dropdown-menu', this).stop( true, true ).slideDown("fast");
-				$(this).toggleClass('open');        
-			},
-			function() {
-				$('.dropdown-menu', this).stop( true, true ).slideUp("fast");
-				$(this).toggleClass('open');       
-			}
-		);
-	});
-	</script>
+
+	<!-- Emoji Picker -->
+	<script src="https://cdn.jsdelivr.net/npm/emojipickerjs@1.0.7/dist/js/emojiPicker.min.js"></script>
 </head>
 
 
@@ -77,6 +67,8 @@ echo "<script>alert(\"Invalid Profile ID\")</script>";
 	<!-- ============================  Navigation Start ========================== -->
 	<?php include_once("includes/navigation.php");?>
 	<!-- ============================  Navigation End ============================ -->
+
+
 
 
 
@@ -91,7 +83,6 @@ echo "<script>alert(\"Invalid Profile ID\")</script>";
 					<img src="images/shosurbari-male-icon.jpg" />
 				<?php endif; ?>
 		    </div>
-
 
 			<div class="profile-nav-info">
 				<?php if (!empty($profileid)) { ?>
@@ -178,7 +169,7 @@ echo "<script>alert(\"Invalid Profile ID\")</script>";
 						<td class="day_value closed">স্থায়ী ঠিকানা জেলা : <?php echo $home_district_under_sylhet; ?></td><br>
 						<?php } ?>
 						<?php if (!empty($profilecreationdate)) { ?>
-							<td class="day_value closed">পোস্ট তারিখ : <?php echo $profilecreationdate; ?></td>
+						<td class="day_value closed">পোস্ট তারিখ : <?php echo $profilecreationdate; ?></td>
 						<?php } ?>
 				</div>
     		</div>
@@ -390,20 +381,694 @@ echo "<script>alert(\"Invalid Profile ID\")</script>";
 			}
 			}
 			/*View Profile Details NavBar Sticky End*/
-		</style>
 
 
-		<div class="main-bd"> <!-- Main BioData-->
-    		<div class="left-side">
-      			<div class="profile-side">
-		
 
-					<!-- -- -- -- -- -- -- -- -- -- -- -- -- ---- -- --
-					-- -- -- -- -- -- -- -- --- -- -- -- -- -- -- -- --
-					--               S  T  A  R  T                   --
-					--   Heading Section  / SB Short Biodata    --
-					-- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- ---
-					-- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -->
+			.match-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.match-section {
+    width: 80%;
+    margin-bottom: 20px;
+}
+
+.progress-bar {
+    width: 100%;
+    height: 20px;
+    background-color: #ccc;
+}
+
+.progress {
+    height: 100%;
+    background-color: #4caf50;
+}
+
+p {
+    margin-top: 5px;
+    text-align: center;
+}
+
+
+/* Start Message sent */
+.message-container {
+  width: 100%;
+  padding: 10px;
+  font-family: "Bree Serif", serif;
+  z-index: 99;
+  background: #00bbff22;
+  border-radius: 4px;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 50px;
+  border: 1px solid #06b6d4;
+}
+
+.message-sent-details {
+  color: gray;
+  font-size: 12px;
+  margin-top: 5px;
+}
+
+.message-header {
+  background-color: #f0f0f0;
+  padding: 10px;
+  border-radius: 5px 5px 0px 0px;
+}
+
+.message-header h3{
+  text-align: center;
+  margin: 0px;
+}
+
+.message-body {
+  height: 280px;
+  overflow-y: scroll;
+  padding: 10px;
+  border-top: 0px;
+  border-bottom: 10px solid #f0f0f0;
+  border-left: 1px solid #ccc;
+  border-right: 1px solid #ccc;
+  background: #fff;
+  border-radius: 0px 0px 5px 5px;
+}
+
+.message-footer {
+  margin-top: 10px;
+  text-align: center;
+}
+
+.message-footer input[type="text"] {
+  padding: 5px;
+  width: 83%;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-shadow: 0px 5px 7px 0px rgba(0, 0, 0, 0.3);
+}
+
+.message-footer button {
+  padding: 10px 10px;
+  border: none;
+  border-radius: 4px;
+  background: #fff;
+  width: auto;
+  margin-left: -41px;
+}
+
+.message-footer button:hover {
+	background: #0aa4ca;
+  	color: #fff;
+	padding: 10px 10px;
+}
+
+/* Styling for sender and received messages */
+.message-sent {
+  text-align: right;
+	margin-right: 0;
+}
+
+.message-received {
+  text-align: left;
+  margin-left: 0;
+}
+
+.message-sent .message-content,
+.message-received .message-content {
+  display: inline-block;
+  padding: 4px 7px;
+  border-radius: 3px;
+  width: 100%;
+}
+
+.message-sent .message-content {
+  background: #06b6d4;
+  color: #fff;
+}
+
+.message-received .message-content {
+  background: #67e8f9 ;
+  color: black;
+}
+
+.message-details {
+    color: #777;
+    font-size: 12px;
+	margin-top: 2px;
+    margin-bottom: -2px;
+  }
+
+/* Search area start*/
+.search-area {
+  padding: 10px;
+  background-color: #f0f0f0;
+  border-bottom: 1px solid #ccc;
+  text-align: center;
+}
+
+.search-area input[type="text"] {
+  padding:2px 5px;
+  width: 70%;
+  height: 25px;
+  border: 1px solid #ccc;
+  border-radius: 3px;
+}
+
+.search-area button {
+  padding: 0px 5px;
+  margin-left: 10px;
+  height: 25px;
+  border: 1px solid #ccc;
+  border-radius: 3px;
+}
+/* Input field border focus color */
+input[type="text"]:focus {
+    border-color: #0aa4ca;
+}
+
+
+/* Message Reove Start */
+.message {
+    position: relative;
+    padding: 5px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background-color: #f5f5f5;
+	text-align: left;
+	margin-left: auto;
+	margin-right: 0;
+	width: 75%;
+	text-align: justify;
+  }
+
+  .message:hover .message-options {
+    display: block;
+  }
+
+  .message-options {
+    display: none;
+    position: absolute;
+    top: auto;
+    left: 0;
+    padding: 0px;
+    background-color: #fff;
+    border-radius: 4px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+	z-index: 999;
+  }
+
+  .message-options button {
+    display: block;
+    margin-bottom: 2px;
+    padding: 2px 4px;
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+  }
+
+  .message-options button:hover {
+    background: #0aa4ca;
+	color: #fff;
+	border-radius: 3px;
+  }
+
+  /* Reaction / React / Emoji Start */
+  .react-buttons-container {
+  display: flex;
+  justify-content: flex-end;
+  margin-bottom: 0px;
+}
+
+.react-button {
+  padding: 5px;
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  font-size: 18px;
+}
+
+.react-button:hover {
+  color: #333;
+}
+
+.reacted {
+  color: #333;
+}
+
+/* Reply Message area Start */
+.reply-container {
+  /* background: #ddd;
+  border: 1px solid #ccc;
+  padding: 10px;
+  margin-top: 10px; */
+
+    position: relative;
+    padding: 0px 4px;
+    margin-bottom: 0px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background-color: #f5f5f5;
+	text-align: left;
+	margin-left: auto;
+	margin-right: auto;
+	width: 75%;
+	text-align: justify;
+}
+
+.reply-container button {
+  background-color: #ffffff;
+  border: 1px solid #000000;
+  color: #000000;
+  padding: 5px 10px;
+  margin-top: 5px;
+  cursor: pointer;
+}
+
+.reply-container button:hover {
+  background-color: #000000;
+  color: #ffffff;
+}
+
+
+/* Emoji Start */
+.emoji-button{
+	padding: 2px 5px;
+	margin: 10px auto 0px auto;
+	border-radius: 3px;
+	border: 1px solid #ccc;
+}
+
+.emoji-button:hover{
+	border-radius: 3px;
+}
+
+.emoji-container{
+	text-align: center;
+}
+
+.message-footer {
+    display: flex;
+    align-items: center;
+    padding: 10px;
+    border-top: 1px solid #ccc;
+  }
+
+  #messageInput {
+    flex: 1;
+    resize: none;
+    overflow: hidden;
+    min-height: 48px;
+    max-height: 120px;
+    padding: 10px 38px 10px 10px;
+	border: 1px solid #ccc;
+    border-radius: 5px;
+	font-size: 17px;
+    line-height: 25px;
+  }
+</style>
+
+
+<div class="main-bd"> <!-- Main BioData-->
+	<div class="left-side">
+<div class="profile-side">
+
+
+<?php
+// Retrieve data from your database
+// $myProfileSkinTone = ""; // Retrieve skin tone value from your database
+// $myProfileReligion = ""; // Retrieve religion value from your database
+
+// Retrieve current page user's data
+// $userSkinTone = ""; // Retrieve user's skin tone value from your database
+// $userReligion = ""; // Retrieve user's religion value from your database
+
+// Calculate matching percentage for skin tone section
+if ($myProfileSkinTone === $userSkinTone) {
+    $skinToneMatch = 20;
+} elseif ($myProfileSkinTone === "উজ্জ্বল ফর্সা" && $userSkinTone === "উজ্জ্বল ফর্সা") {
+    $skinToneMatch = 20;
+} elseif ($myProfileSkinTone === "ফর্সা" && $userSkinTone === "ফর্সা") {
+    $skinToneMatch = 20;
+} elseif ($myProfileSkinTone === "উজ্জ্বল শ্যামবর্ণ" && $userSkinTone === "উজ্জ্বল শ্যামবর্ণ") {
+    $skinToneMatch = 20;
+} elseif ($myProfileSkinTone === "শ্যামবর্ণ" && $userSkinTone === "শ্যামবর্ণ") {
+    $skinToneMatch = 20;
+}
+
+// Calculate matching percentage for religion section
+if ($myProfileReligion === $userReligion) {
+    $religionMatch = 20;
+} elseif ($myProfileReligion === "ইসলাম ধর্ম" && $userReligion === "ইসলাম ধর্ম") {
+    $religionMatch = 20;
+} elseif ($myProfileReligion === "হিন্দু ধর্ম" && $userReligion === "হিন্দু ধর্ম") {
+    $religionMatch = 20;
+} elseif ($myProfileReligion === "খ্রিস্টান ধর্ম" && $userReligion === "খ্রিস্টান ধর্ম") {
+    $religionMatch = 20;
+} elseif ($myProfileReligion === "বৌদ্ধ ধর্ম" && $userReligion === "বৌদ্ধ ধর্ম") {
+    $religionMatch = 20;
+} elseif ($myProfileReligion === "অন্যান্য" && $userReligion === "অন্যান্য") {
+    $religionMatch = 20;
+}
+
+// Calculate total matching percentage
+$totalMatch = $skinToneMatch + $religionMatch;
+?>
+
+<div class="match-container">
+    <?php if ($totalMatch > 0) { ?>
+        <div class="total-match">
+            <h3>Total Matching</h3>
+            <div class="progress-bar">
+                <div class="progress" style="width: <?php echo $totalMatch; ?>%;"></div>
+            </div>
+            <p><?php echo $totalMatch; ?>% Match</p>
+        </div>
+    <?php } ?>
+</div>
+
+
+
+
+
+<div class="message-container">
+  <div class="message-header">
+    <h3>Chat Box</h3>
+  </div>
+  <div class="search-area">
+    <input type="text" id="searchInput" placeholder="Find Message">
+    <button type="button" onclick="searchMessages()">Search</button>
+  </div>
+
+  <div class="message-body" id="messageBody">
+    <!-- Messages will be displayed here -->
+  </div>
+
+  <div class="emoji-container">
+    <button class="emoji-button" onclick="addEmoji('😊')">😊</button>
+    <button class="emoji-button" onclick="addEmoji('🥰')">🥰</button>
+    <button class="emoji-button" onclick="addEmoji('😍')">😍</button>
+    <button class="emoji-button" onclick="addEmoji('❤️')">❤️</button>
+    <button class="emoji-button" onclick="addEmoji('😢')">😢</button>
+    <button class="emoji-button" onclick="addEmoji('😆')">😆</button>
+    <button class="emoji-button" onclick="addEmoji('😡')">😡</button>
+    <!-- <button class="emoji-button" onclick="addEmoji('👍')">👍</button> -->
+    <button class="emoji-button" onclick="addEmoji('👨‍👩‍👧‍👦')">👨‍👩‍👧‍👦</button>
+  </div>
+
+  <div class="message-footer">
+    <textarea rows="1" id="messageInput" placeholder="Type your message"></textarea>
+    <button type="button" onclick="sendMessage()"><i style="font-size:19px;" class="fa">&#xf1d9;</i></button>
+  </div>
+</div>
+
+
+
+
+<script>
+  var messages = [];
+  var replyContainer = null;
+
+  function sendMessage() {
+    var messageInput = document.getElementById("messageInput");
+    var message = messageInput.value;
+
+    // Clear the input field
+    messageInput.value = "";
+
+    // Get the current date and time
+    var currentDate = new Date();
+    var sentTime = currentDate.toLocaleTimeString([], {
+      hour: "2-digit",
+      minute: "2-digit",
+    });
+    var sentDate = currentDate.toLocaleDateString([], {
+      day: "numeric",
+      month: "short",
+      year: "numeric",
+    });
+    var sentDay = currentDate.toLocaleDateString([], {
+      weekday: "short",
+    });
+
+    // Create the message object with the content and sent details
+    var newMessage = {
+      content: message,
+      sentTime: sentTime,
+      sentDate: sentDate,
+      sentDay: sentDay,
+      reacts: [],
+      replyTo: null, // Track the message ID being replied to
+    };
+
+    // Add the message to the messages array
+    messages.push(newMessage);
+
+    // Display the message
+    displayMessage(newMessage);
+  }
+
+
+
+
+  function displayMessage(message) {
+    var messageBody = document.getElementById("messageBody");
+
+    var newMessage = document.createElement("div");
+    newMessage.classList.add("message", "message-sent");
+    newMessage.dataset.messageId = generateMessageId();
+
+    var messageContent = document.createElement("div");
+    messageContent.classList.add("message-content");
+    messageContent.innerText = message.content;
+
+    var messageDetails = document.createElement("div");
+    messageDetails.classList.add("message-details");
+    messageDetails.innerText =
+      message.sentTime + " | " + message.sentDate + " (" + message.sentDay + ")";
+
+    var messageOptions = document.createElement("div");
+    messageOptions.classList.add("message-options");
+
+    var replyButton = document.createElement("button");
+    replyButton.innerText = "Reply";
+    replyButton.addEventListener("click", function () {
+      displayReplyMessage(newMessage, message.content);
+    });
+
+    var reactButtons = createReactButtons(newMessage, message.reacts);
+
+    var removeButton = document.createElement("button");
+    removeButton.innerText = "Remove";
+    removeButton.addEventListener("click", function () {
+      removeMessage(newMessage);
+    });
+
+    messageOptions.appendChild(reactButtons);
+    messageOptions.appendChild(removeButton);
+    messageOptions.appendChild(replyButton);
+
+    newMessage.appendChild(messageContent);
+    newMessage.appendChild(messageDetails);
+    newMessage.appendChild(messageOptions);
+
+    // Check if there's a reply container and insert the new message after it
+    var replyContainers = document.getElementsByClassName("reply-container");
+    if (replyContainers.length > 0) {
+      var lastReplyContainer = replyContainers[replyContainers.length - 1];
+      lastReplyContainer.parentNode.insertBefore(newMessage, lastReplyContainer.nextSibling);
+      message.replyTo = lastReplyContainer.dataset.messageId; // Set the replied-to message ID
+    } else {
+      messageBody.appendChild(newMessage);
+    }
+  }
+
+  function createReactButtons(messageElement, reacts) {
+    var reactButtonsContainer = document.createElement("div");
+    reactButtonsContainer.classList.add("react-buttons-container");
+
+    var reactButtons = [
+      { name: "love", emoji: "❤️" },
+      { name: "sad", emoji: "😢" },
+      { name: "haha", emoji: "😆" },
+      { name: "angry", emoji: "😡" },
+      { name: "like", emoji: "👍" },
+    ];
+
+    reactButtons.forEach(function (react) {
+      var reactButton = document.createElement("button");
+      reactButton.classList.add("react-button");
+      reactButton.innerHTML = react.emoji;
+
+      if (reacts.includes(react.name)) {
+        reactButton.classList.add("reacted");
+      }
+
+      reactButton.addEventListener("click", function () {
+        toggleReact(messageElement, react.name);
+      });
+
+      reactButtonsContainer.appendChild(reactButton);
+    });
+
+    return reactButtonsContainer;
+  }
+
+  function toggleReact(messageElement, reactName) {
+    var messageId = messageElement.dataset.messageId;
+    var message = messages.find(function (message) {
+      return message.dataset.messageId === messageId;
+    });
+
+    var reacts = message.reacts;
+
+    if (reacts.includes(reactName)) {
+      // Remove the react
+      var index = reacts.indexOf(reactName);
+      reacts.splice(index, 1);
+      messageElement.getElementsByClassName("react-button")[index].classList.remove("reacted");
+    } else {
+      // Add the react
+      reacts.push(reactName);
+      messageElement.getElementsByClassName("react-button")[reacts.length - 1].classList.add("reacted");
+    }
+
+    // Save the messages array back to local storage
+    saveMessages();
+  }
+
+  function saveMessages() {
+    // Save the messages array to local storage
+    localStorage.setItem("messages", JSON.stringify(messages));
+  }
+
+  function loadMessages() {
+    // Load the messages array from local storage
+    var storedMessages = localStorage.getItem("messages");
+
+    if (storedMessages) {
+      messages = JSON.parse(storedMessages);
+      messages.forEach(function (message) {
+        displayMessage(message);
+      });
+    }
+  }
+
+  function displayReplyMessage(parentMessage, parentContent) {
+    // Remove any existing reply container
+    removeReplyContainer();
+
+    var messageBody = document.getElementById("messageBody");
+
+    replyContainer = document.createElement("div");
+    replyContainer.classList.add("reply-container");
+    replyContainer.dataset.messageId = generateMessageId(); // Set a unique ID for the reply container
+
+    var replyMessage = document.createElement("div");
+    replyMessage.classList.add("reply-message");
+    replyMessage.innerText = "Replying to: " + parentContent;
+
+    var cancelReplyLink = document.createElement("a");
+    cancelReplyLink.innerText = "Cancel";
+    cancelReplyLink.style.textDecoration = "underline";
+    cancelReplyLink.style.color = "red";
+    cancelReplyLink.addEventListener("click", function () {
+      removeReplyContainer(replyContainer.dataset.messageId);
+    });
+
+    replyContainer.appendChild(replyMessage);
+    replyContainer.appendChild(cancelReplyLink);
+
+    // Set the background color of the reply container
+    replyContainer.style.backgroundColor = "#ddd";
+
+    // Insert the reply container below the message box area
+    messageBody.appendChild(replyContainer);
+
+    // Save the messages array back to local storage
+    saveMessages();
+  }
+
+  function removeReplyContainer(replyToMessageId) {
+    if (replyContainer && replyContainer.dataset.messageId === replyToMessageId) {
+      var messageBody = document.getElementById("messageBody");
+      messageBody.removeChild(replyContainer);
+      replyContainer = null;
+
+      // Save the messages array back to local storage
+      saveMessages();
+    }
+  }
+
+  function removeMessage(messageElement) {
+    var messageBody = document.getElementById("messageBody");
+    messageBody.removeChild(messageElement);
+
+    // Remove the message from the messages array
+    var messageId = messageElement.dataset.messageId;
+    var index = messages.findIndex(function (message) {
+      return message.dataset.messageId === messageId;
+    });
+
+    if (index !== -1) {
+      messages.splice(index, 1);
+    }
+
+    // Save the messages array back to local storage
+    saveMessages();
+  }
+
+  function addEmoji(emoji) {
+    var messageInput = document.getElementById("messageInput");
+    messageInput.value += emoji;
+  }
+
+  function searchMessages() {
+    var searchInput = document.getElementById("searchInput");
+    var searchText = searchInput.value.toLowerCase();
+
+    // Clear the input field
+    searchInput.value = "";
+
+    var searchResults = messages.filter(function (message) {
+      return message.content.toLowerCase().includes(searchText);
+    });
+
+    displaySearchResults(searchResults);
+  }
+
+  function displaySearchResults(results) {
+    var messageBody = document.getElementById("messageBody");
+    messageBody.innerHTML = ""; // Clear previous messages
+
+    if (results.length === 0) {
+      var noResultsMessage = document.createElement("p");
+      noResultsMessage.innerText = "No matching messages found.";
+      messageBody.appendChild(noResultsMessage);
+    } else {
+      results.forEach(function (message) {
+        displayMessage(message);
+      });
+    }
+  }
+
+  function generateMessageId() {
+    // Replace with your own logic to generate a unique ID for each message
+    return "_" + Math.random().toString(36).substr(2, 9);
+  }
+
+  // Load messages from local storage on page load
+  loadMessages();
+</script>
+
+
+<!-- -- -- -- -- -- -- -- -- -- -- -- -- ---- -- --
+-- -- -- -- -- -- -- -- --- -- -- -- -- -- -- -- --
+--               S  T  A  R  T                   --
+--   Heading Section  / SB Short Biodata    --
+-- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- ---
+-- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -->
 
 					<div class="user-bio">
 
@@ -738,7 +1403,7 @@ echo "<script>alert(\"Invalid Profile ID\")</script>";
 					<h3>Profiles Recent View</h3>
 
 					<?php
-						$sql = "SELECT * FROM 1bd_personal_physical ORDER BY profilecreationdate DESC LIMIT 20";
+						$sql = "SELECT * FROM 1bd_personal_physical ORDER BY profilecreationdate DESC LIMIT 8";
 						$result = mysqlexec($sql);
 						$count = 1;
 
