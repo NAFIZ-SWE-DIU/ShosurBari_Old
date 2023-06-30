@@ -1,3 +1,6 @@
+
+
+
 <!-- ============================  Navigation Start =========================== -->
  <div class="navbar navbar-inverse-blue navbar">
     <!--<div class="navbar navbar-inverse-blue navbar-fixed-top">-->
@@ -96,8 +99,7 @@ function myFunction(x) {
 	
 
 
-
-<li>
+					<li>
   <?php 
   if (isloggedin()) {
     $id = $_SESSION['id'];
@@ -115,20 +117,20 @@ function myFunction(x) {
 
     echo "<li class=\"login-navbar-img\"><a href=\"userhome.php?id=$id\">";
     if (!empty($pic1)) {
-      echo "<img src=\"$pic1\" alt=\"User Image\">";
-	  echo "<img class=\"img-responsive\" src=\"profile/{$profid}/{$pic1}\" style=\"width: 30px; height: 30px; border-radius: 50%;\"/>"; 
+      echo "<img class=\"img-responsive\" src=\"profile/{$id}/{$pic1}\"/>";
     } else {
-		echo "<img class=\"img-responsive\" src=\"images/shosurbari-male-icon.jpg\" />";
+      echo "<img class=\"img-responsive\" src=\"images/shosurbari-male-icon.jpg\" />";
     }
     echo "</a></li>";
     
-    echo "<li class=\"login-navbar-icon\"><a href=\"logout.php\"><i class=\"fa fa-sign-out\"></i> Logout</a></li>";
+    echo "<li class=\"login-navbar-icon\"><a href=\"logout.php\"><i class=\"fa fa-sign-out\" ></i></a></li>";
   } else {
     echo "<li><a href=\"login.php\">Login</a></li>";
     echo "<li><a href=\"register.php\">Register</a></li>";
   }
   ?> 
 </li>
+
 
 
 
