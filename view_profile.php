@@ -2,6 +2,7 @@
 <?php include_once("functions.php"); ?>
 <?php require_once("includes/dbconn.php");?>
 
+
 <?php
 error_reporting(0);
 $id=$_GET['id'];
@@ -457,7 +458,24 @@ p {
 .message-footer {
   margin-top: 10px;
   text-align: center;
+  position: relative;
 }
+
+.message-footer p{
+  color: #000;
+}
+
+.login-alert {
+    position: absolute;
+    top: 100%; /* Position the login alert below the message footer */
+    left: 0;
+    width: 100%;
+    background: rgb(255, 221, 238);;
+    border: 1px solid #ddd;
+    padding: 0px;
+	border-radius: 4px;
+    text-align: center;
+  }
 
 .message-footer input[type="text"] {
   padding: 5px;
@@ -761,320 +779,10 @@ $totalMatch = $skinToneMatch + $religionMatch;
 
 
 
+	<!-- ============================  Navigation Start ========================== -->
+	<?php include_once("save_message.php");?>
+	<!-- ============================  Navigation End ============================ -->
 
-
-<div class="message-container">
-  <div class="message-header">
-    <h3>Chat Box</h3>
-  </div>
-  <div class="search-area">
-    <input type="text" id="searchInput" placeholder="Find Message">
-    <button type="button" onclick="searchMessages()">Search</button>
-  </div>
-
-  <div class="message-body" id="messageBody">
-    <!-- Messages will be displayed here -->
-  </div>
-
-  <div class="emoji-container">
-    <button class="emoji-button" onclick="addEmoji('😊')">😊</button>
-    <button class="emoji-button" onclick="addEmoji('🥰')">🥰</button>
-    <button class="emoji-button" onclick="addEmoji('😍')">😍</button>
-    <button class="emoji-button" onclick="addEmoji('❤️')">❤️</button>
-    <button class="emoji-button" onclick="addEmoji('😢')">😢</button>
-    <button class="emoji-button" onclick="addEmoji('😆')">😆</button>
-    <button class="emoji-button" onclick="addEmoji('😡')">😡</button>
-    <!-- <button class="emoji-button" onclick="addEmoji('👍')">👍</button> -->
-    <button class="emoji-button" onclick="addEmoji('👨‍👩‍👧‍👦')">👨‍👩‍👧‍👦</button>
-  </div>
-
-  <div class="message-footer">
-    <textarea rows="2" id="messageInput" placeholder="Type your message..."></textarea>
-    <button type="button" onclick="sendMessage()"><i style="font-size:19px;" class="fa">&#xf1d9;</i></button>
-  </div>
-</div>
-
-
-
-
-<script>
-  var messages = [];
-  var replyContainer = null;
-
-  function sendMessage() {
-    var messageInput = document.getElementById("messageInput");
-    var message = messageInput.value;
-
-    // Clear the input field
-    messageInput.value = "";
-
-    // Get the current date and time
-    var currentDate = new Date();
-    var sentTime = currentDate.toLocaleTimeString([], {
-      hour: "2-digit",
-      minute: "2-digit",
-    });
-    var sentDate = currentDate.toLocaleDateString([], {
-      day: "numeric",
-      month: "short",
-      year: "numeric",
-    });
-    var sentDay = currentDate.toLocaleDateString([], {
-      weekday: "short",
-    });
-
-    // Create the message object with the content and sent details
-    var newMessage = {
-      content: message,
-      sentTime: sentTime,
-      sentDate: sentDate,
-      sentDay: sentDay,
-      reacts: [],
-      replyTo: null, // Track the message ID being replied to
-    };
-
-    // Add the message to the messages array
-    messages.push(newMessage);
-
-    // Display the message
-    displayMessage(newMessage);
-  }
-
-
-
-
-  function displayMessage(message) {
-    var messageBody = document.getElementById("messageBody");
-
-    var newMessage = document.createElement("div");
-    newMessage.classList.add("message", "message-sent");
-    newMessage.dataset.messageId = generateMessageId();
-
-    var messageContent = document.createElement("div");
-    messageContent.classList.add("message-content");
-    messageContent.innerText = message.content;
-
-    var messageDetails = document.createElement("div");
-    messageDetails.classList.add("message-details");
-    messageDetails.innerText =
-      message.sentTime + " | " + message.sentDate + " (" + message.sentDay + ")";
-
-    var messageOptions = document.createElement("div");
-    messageOptions.classList.add("message-options");
-
-    var replyButton = document.createElement("button");
-    replyButton.innerText = "Reply";
-    replyButton.addEventListener("click", function () {
-      displayReplyMessage(newMessage, message.content);
-    });
-
-    var reactButtons = createReactButtons(newMessage, message.reacts);
-
-    var removeButton = document.createElement("button");
-    removeButton.innerText = "Remove";
-    removeButton.addEventListener("click", function () {
-      removeMessage(newMessage);
-    });
-
-    messageOptions.appendChild(reactButtons);
-    messageOptions.appendChild(removeButton);
-    messageOptions.appendChild(replyButton);
-
-    newMessage.appendChild(messageContent);
-    newMessage.appendChild(messageDetails);
-    newMessage.appendChild(messageOptions);
-
-  // Check if there's a reply container and insert the new message after it
-  var replyContainers = document.getElementsByClassName("reply-container");
-  if (replyContainers.length > 0) {
-    var lastReplyContainer = replyContainers[replyContainers.length - 1];
-    lastReplyContainer.parentNode.insertBefore(newMessage, lastReplyContainer.nextSibling);
-    message.replyTo = lastReplyContainer.dataset.messageId; // Set the replied-to message ID
-  } else {
-    messageBody.appendChild(newMessage);
-  }
-
-  // Scroll to the last message
-  messageBody.scrollTop = messageBody.scrollHeight;
-}
-
-  function createReactButtons(messageElement, reacts) {
-    var reactButtonsContainer = document.createElement("div");
-    reactButtonsContainer.classList.add("react-buttons-container");
-
-    var reactButtons = [
-      { name: "love", emoji: "❤️" },
-      { name: "sad", emoji: "😢" },
-      { name: "haha", emoji: "😆" },
-      { name: "angry", emoji: "😡" },
-      { name: "like", emoji: "👍" },
-    ];
-
-    reactButtons.forEach(function (react) {
-      var reactButton = document.createElement("button");
-      reactButton.classList.add("react-button");
-      reactButton.innerHTML = react.emoji;
-
-      if (reacts.includes(react.name)) {
-        reactButton.classList.add("reacted");
-      }
-
-      reactButton.addEventListener("click", function () {
-        toggleReact(messageElement, react.name);
-      });
-
-      reactButtonsContainer.appendChild(reactButton);
-    });
-
-    return reactButtonsContainer;
-  }
-
-  function toggleReact(messageElement, reactName) {
-    var messageId = messageElement.dataset.messageId;
-    var message = messages.find(function (message) {
-      return message.dataset.messageId === messageId;
-    });
-
-    var reacts = message.reacts;
-
-    if (reacts.includes(reactName)) {
-      // Remove the react
-      var index = reacts.indexOf(reactName);
-      reacts.splice(index, 1);
-      messageElement.getElementsByClassName("react-button")[index].classList.remove("reacted");
-    } else {
-      // Add the react
-      reacts.push(reactName);
-      messageElement.getElementsByClassName("react-button")[reacts.length - 1].classList.add("reacted");
-    }
-
-    // Save the messages array back to local storage
-    saveMessages();
-  }
-
-  function saveMessages() {
-    // Save the messages array to local storage
-    localStorage.setItem("messages", JSON.stringify(messages));
-  }
-
-  function loadMessages() {
-    // Load the messages array from local storage
-    var storedMessages = localStorage.getItem("messages");
-
-    if (storedMessages) {
-      messages = JSON.parse(storedMessages);
-      messages.forEach(function (message) {
-        displayMessage(message);
-      });
-    }
-  }
-
-  function displayReplyMessage(parentMessage, parentContent) {
-    // Remove any existing reply container
-    removeReplyContainer();
-
-    var messageBody = document.getElementById("messageBody");
-
-    replyContainer = document.createElement("div");
-    replyContainer.classList.add("reply-container");
-    replyContainer.dataset.messageId = generateMessageId(); // Set a unique ID for the reply container
-
-    var replyMessage = document.createElement("div");
-    replyMessage.classList.add("reply-message");
-    replyMessage.innerText = "Replying to: " + parentContent;
-
-    var cancelReplyLink = document.createElement("a");
-    cancelReplyLink.innerText = "Cancel";
-    cancelReplyLink.style.textDecoration = "underline";
-    cancelReplyLink.style.color = "red";
-    cancelReplyLink.addEventListener("click", function () {
-      removeReplyContainer(replyContainer.dataset.messageId);
-    });
-
-    replyContainer.appendChild(replyMessage);
-    replyContainer.appendChild(cancelReplyLink);
-
-    // Set the background color of the reply container
-    replyContainer.style.backgroundColor = "#ddd";
-
-    // Insert the reply container below the message box area
-    messageBody.appendChild(replyContainer);
-
-    // Save the messages array back to local storage
-    saveMessages();
-  }
-
-  function removeReplyContainer(replyToMessageId) {
-    if (replyContainer && replyContainer.dataset.messageId === replyToMessageId) {
-      var messageBody = document.getElementById("messageBody");
-      messageBody.removeChild(replyContainer);
-      replyContainer = null;
-
-      // Save the messages array back to local storage
-      saveMessages();
-    }
-  }
-
-  function removeMessage(messageElement) {
-    var messageBody = document.getElementById("messageBody");
-    messageBody.removeChild(messageElement);
-
-    // Remove the message from the messages array
-    var messageId = messageElement.dataset.messageId;
-    var index = messages.findIndex(function (message) {
-      return message.dataset.messageId === messageId;
-    });
-
-    if (index !== -1) {
-      messages.splice(index, 1);
-    }
-
-    // Save the messages array back to local storage
-    saveMessages();
-  }
-
-  function addEmoji(emoji) {
-    var messageInput = document.getElementById("messageInput");
-    messageInput.value += emoji;
-  }
-
-  function searchMessages() {
-    var searchInput = document.getElementById("searchInput");
-    var searchText = searchInput.value.toLowerCase();
-
-    // Clear the input field
-    searchInput.value = "";
-
-    var searchResults = messages.filter(function (message) {
-      return message.content.toLowerCase().includes(searchText);
-    });
-
-    displaySearchResults(searchResults);
-  }
-
-  function displaySearchResults(results) {
-    var messageBody = document.getElementById("messageBody");
-    messageBody.innerHTML = ""; // Clear previous messages
-
-    if (results.length === 0) {
-      var noResultsMessage = document.createElement("p");
-      noResultsMessage.innerText = "No matching messages found.";
-      messageBody.appendChild(noResultsMessage);
-    } else {
-      results.forEach(function (message) {
-        displayMessage(message);
-      });
-    }
-  }
-
-  function generateMessageId() {
-    // Replace with your own logic to generate a unique ID for each message
-    return "_" + Math.random().toString(36).substr(2, 9);
-  }
-
-  // Load messages from local storage on page load
-  loadMessages();
-</script>
 
 
 <!-- -- -- -- -- -- -- -- -- -- -- -- -- ---- -- --
