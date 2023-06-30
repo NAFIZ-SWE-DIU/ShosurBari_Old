@@ -559,6 +559,23 @@ ul.nav_1 li.last{
     color: #fff;
     transform: scale(1.1); /*When Hover Navbar Item Zoom in Animation*/
 }
+
+.login-navbar-img .img-responsive {
+    width: 38px;
+    height: 38px;
+    border-radius: 4px;
+    border: 2px solid #fff;
+    margin: -8px;
+}
+
+.login-navbar-icon a{
+    margin: 2px;
+    width: auto;
+    height: 38px;
+    padding: 6px;
+    border-radius: 4px;
+    border: 2px solid #fff;
+}
 /*-- -- -- -- -- -- -- -- -- -- -- -- -- ---- -- --
 -- -- -- -- -- -- -- -- --- -- -- -- -- -- -- -- --
 --                   E   N   D                   --
@@ -3711,6 +3728,7 @@ label{
 -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -*/
 
 @media (min-width:1600px){
+
     .sb-search-page{
         width: 1200px;
     }
@@ -3748,6 +3766,7 @@ td.day_value {
 }
     
 @media (max-width:1600px){
+
     .sb-search-page{
         width: 1200px;
     }
@@ -4612,6 +4631,15 @@ ul.profile_item{
 --      Media Responsive / Phone Responsive      --
 -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -*/
 @media (max-width: 768px){
+
+    .login-navbar-img .img-responsive {
+        margin: auto; /* This centers the image */
+    }
+
+    .login-navbar-icon a{
+        width: 105px;
+        margin: auto;
+    }
 
     .shosurbari-details {
         margin: -50px auto;
@@ -6244,6 +6272,11 @@ ul.profile_item{
 --      Media Responsive / Phone Responsive      --
 -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -*/
 @media (max-width:414px){
+
+    .message-footer p {
+        font-size: 16px;
+    }
+
     .shosurbari-title h4 {
         font-size: 14px;
         line-height: 25px;
@@ -6932,6 +6965,10 @@ ul.profile_item{
 --      Media Responsive / Phone Responsive      --
 -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -*/
 @media (max-width: 350px) {
+    .message-footer p {
+        font-size: 15px;
+    }
+
     .banner {
         min-height: 860px;
         zoom: .9;
@@ -7065,6 +7102,9 @@ ul.profile_item{
 --      Media Responsive / Phone Responsive      --
 -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -*/
 @media (max-width:320px){
+    .message-footer p {
+        font-size: 14px;
+    }
 
     .banner {
         min-height: 860px;
