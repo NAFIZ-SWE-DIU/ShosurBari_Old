@@ -62,18 +62,22 @@ function myFunction(x) {
 }
 </script>
 
-<style>
-@media (max-width: 765px){
-.navbar-toggle1 {
-    height: 40px;
-    margin: 0px 15px 0 0px;
-    color: #fff;
-    padding:0px;
-}
-}
-</style>
 
 
+			<script>
+			$(document).ready(function(){
+				$(".dropdown").hover(            
+					function() {
+						$('.dropdown-menu', this).stop( true, true ).slideDown("fast");
+						$(this).toggleClass('open');        
+					},
+					function() {
+						$('.dropdown-menu', this).stop( true, true ).slideUp("fast");
+						$(this).toggleClass('open');       
+					}
+				);
+			});
+			</script>
 
 		   <!-- Collect the nav links, forms, and other content for toggling -->
 		    <div class="collapse navbar-collapse" id="bs-megadropdown-tabs">
@@ -89,28 +93,44 @@ function myFunction(x) {
 		            </li>
 					<li><a href="about.php">About</a></li>
 		            <li class="last"><a href="contact.php">Contacts</a></li>
-			<li>
-			  <?php 
-				  if(isloggedin()){
-				  	$id=$_SESSION['id'];
-				  	echo "<li><a href=\"userhome.php?id=$id\">Profile</a></li>";
-					
+	
 
-					/*  If(isset($_SESSION['username'])) {
-						Echo "User : " . $_SESSION ['username'];
-						} else {
-						Echo "<a href=\”/login.php\”>Login</a>";
-						} */
 
-				  	echo "<li><a href=\"logout.php\">Logout</a></li>";
-				  }
 
-				  else{
-				  	echo "<li><a href=\"login.php\">Login</a></li>";
-				  	echo "<li><a href=\"register.php\">Register</a></li>";
-				  }
-			    ?> 
-			</li>
+<li>
+  <?php 
+  if (isloggedin()) {
+    $id = $_SESSION['id'];
+    $pic1 = ""; // Assuming you have fetched the user's image path from the database and stored it in $pic1
+
+    // Getting image filenames from db
+    $sql2 = "SELECT * FROM photos WHERE user_id = $id";
+    $result2 = mysqlexec($sql2);
+    if ($result2) {
+      $row2 = mysqli_fetch_array($result2);
+      if ($row2) {
+        $pic1 = $row2['pic1'];
+      }
+    }
+
+    echo "<li class=\"login-navbar-img\"><a href=\"userhome.php?id=$id\">";
+    if (!empty($pic1)) {
+      echo "<img src=\"$pic1\" alt=\"User Image\">";
+	  echo "<img class=\"img-responsive\" src=\"profile/{$profid}/{$pic1}\" style=\"width: 30px; height: 30px; border-radius: 50%;\"/>"; 
+    } else {
+		echo "<img class=\"img-responsive\" src=\"images/shosurbari-male-icon.jpg\" />";
+    }
+    echo "</a></li>";
+    
+    echo "<li class=\"login-navbar-icon\"><a href=\"logout.php\"><i class=\"fa fa-sign-out\"></i> Logout</a></li>";
+  } else {
+    echo "<li><a href=\"login.php\">Login</a></li>";
+    echo "<li><a href=\"register.php\">Register</a></li>";
+  }
+  ?> 
+</li>
+
+
 
 
 
@@ -136,3 +156,4 @@ function myFunction(x) {
 
 document.addEventListener('scroll', updateProgressBar);
 </script>
+
