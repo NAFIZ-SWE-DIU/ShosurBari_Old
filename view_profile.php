@@ -3,37 +3,6 @@
 <?php require_once("includes/dbconn.php");?>
 
 
-<?php
-error_reporting(0);
-$id=$_GET['id'];
-//Safty purpose copy the get id
-$profileid=$id;
-
-//Getting profile details from db
-$sql = "SELECT * FROM 1bd_personal_physical  WHERE user_id = $id";
-$result = mysqlexec($sql);
-if($result){
-$row=mysqli_fetch_assoc($result);
-//End of getting profile detils
-
-$pic1="";
-
-//Getting image filenames from db
-$sql2="SELECT * FROM photos WHERE user_id = $profileid";
-$result2 = mysqlexec($sql2);
-if($result2){
-	$row2=mysqli_fetch_array($result2);
-	if($row2){
-	$pic1=$row2['pic1'];
-	}
-}
-}else{
-echo "<script>alert(\"Invalid Profile ID\")</script>";
-}
-?>
-
-
-
 
 <!DOCTYPE HTML>
 <html>
@@ -76,13 +45,50 @@ echo "<script>alert(\"Invalid Profile ID\")</script>";
 	<div class="UserProfile">  <!-- UserProfile -->
 		<div class="profile-header">
 
-            <div class="profile-img">
-				<?php if (!empty($pic1)): ?>
-					<img src="profile/<?php echo $profileid; ?>/<?php echo $pic1; ?>" />
-					<?php else: ?>
-					<img src="images/shosurbari-male-icon.jpg" />
-				<?php endif; ?>
-		    </div>
+			<?php
+			error_reporting(0);
+			$profileid = $_GET['id'];
+
+			//Safety measure: Ensure the $profileid is a valid integer value
+			if (!filter_var($profileid, FILTER_VALIDATE_INT)) {
+			echo "<script>alert(\"Invalid Profile ID\")</script>";
+			// Optionally, you can redirect the user to an error page or the homepage.
+			exit;
+			}
+
+			// Getting profile details from the database
+			$sql = "SELECT * FROM 1bd_personal_physical WHERE user_id = $profileid";
+			$result = mysqlexec($sql);
+
+			if ($result) {
+			$row = mysqli_fetch_assoc($result);
+			// End of getting profile details
+
+			$pic1 = "";
+
+			// Getting image filenames from the database
+			$sql2 = "SELECT * FROM photos WHERE user_id = $profileid";
+			$result2 = mysqlexec($sql2);
+
+			if ($result2) {
+				$row2 = mysqli_fetch_array($result2);
+				if ($row2) {
+				$pic1 = $row2['pic1'];
+				}
+			}
+			} else {
+			echo "<script>alert(\"Invalid Profile ID\")</script>";
+			}
+			?>
+
+			<div class="profile-img">
+			<?php if (!empty($pic1)): ?>
+				<img src="profile/<?php echo $profileid; ?>/<?php echo $pic1; ?>" />
+			<?php else: ?>
+				<img src="images/shosurbari-male-icon.jpg" />
+			<?php endif; ?>
+			</div>
+
 
 			<div class="profile-nav-info">
 				<?php if (!empty($profileid)) { ?>
@@ -518,8 +524,8 @@ p {
 .message-sent .message-content,
 .message-received .message-content {
   display: inline-block;
-  padding: 4px 7px;
-  border-radius: 3px;
+  padding: 8px;
+  border-radius: 20px 20px 0px 20px;
   width: 100%;
 }
 
@@ -538,6 +544,7 @@ p {
     font-size: 12px;
 	margin-top: 2px;
     margin-bottom: -2px;
+	text-align: right;
   }
 
 /* Search area start*/
@@ -572,10 +579,10 @@ input[type="text"]:focus {
 /* Message Reove Start */
 .message {
     position: relative;
-    padding: 5px;
-    margin-bottom: 10px;
+    padding: 3px;
+    margin-bottom: 7px;
     border: 1px solid #ccc;
-    border-radius: 5px;
+    border-radius: 20px 20px 0px 40px;
     background-color: #f5f5f5;
 	text-align: left;
 	margin-left: auto;
