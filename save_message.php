@@ -1,57 +1,40 @@
-
 <?php
-// Include necessary files
-include_once("includes/basic_includes.php");
-include_once("functions.php");
+// save_message.php
+
 require_once("includes/dbconn.php");
 
-// Start the session
-session_start();
+if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+  $incoming_id = mysqli_real_escape_string($conn, $_POST['incoming_id']);
+  $outgoing_id = mysqli_real_escape_string($conn, $_POST['outgoing_id']);
+  $message = mysqli_real_escape_string($conn, $_POST['message']);
 
-// Check if the request is a POST request
-if ($_SERVER["REQUEST_METHOD"] === "POST") {
-  // Check if user is logged in
-  if (!isset($_SESSION["id"])) {
-    http_response_code(401); // Unauthorized
-    exit();
-  }
+  // Get the sender's ID from the session or wherever you store it
+  session_start(); // Start the session (you may already have this line in your code)
 
-  // Get the message data from the AJAX request
-  $msg_id = $_POST["msg_id"];
-  $incoming_msg_user_id = $_POST["incoming_msg_user_id"];
-  $outgoing_msg_user_id = $_POST["outgoing_msg_user_id"];
-  $message = $_POST["message"];
-  $msg_date = $_POST["msg_date"];
-
-  // Perform any necessary validation on the data here
-
-  // Connect to the database
-  $conn = new mysqli($servername, $username, $password, $dbname);
-
-  // Check connection
-  if ($conn->connect_error) {
-    die("Connection failed: " . $conn->connect_error);
-  }
-
-  // Prepare the SQL statement to insert the message data into the "message" table
-  $sql = "INSERT INTO message (msg_id, incoming_msg_user_id, outgoing_msg_user_id, message, msg_date)
-          VALUES ('$msg_id', '$incoming_msg_user_id', '$outgoing_msg_user_id', '$message', '$msg_date')";
-
-  if ($conn->query($sql) === TRUE) {
-    // Message saved successfully
-    http_response_code(200);
+  if (isset($_SESSION['id'])) {
+    $outgoing_id = $_SESSION['id']; // Replace 'user_id' with the actual session variable storing the sender's ID
   } else {
-    // Error saving message
-    http_response_code(500);
+    // If the user ID is not available in the session, handle it as per your application's logic.
+    echo json_encode(array('success' => false, 'error' => 'User ID not found in session'));
+    exit;
   }
 
-  // Close the database connection
-  $conn->close();
-} else {
-  // Handle non-POST requests (if applicable)
-  http_response_code(405);
+  $query = "INSERT INTO messages (incoming_msg_user_id, outgoing_msg_user_id, message, msg_date) VALUES ('$incoming_id', '$outgoing_id', '$message', DATE_FORMAT(NOW(), '%e %M %Y, %h:%i:%s %p'))";
+  $result = mysqli_query($conn, $query);
+
+  if ($result) {
+    // If the message is saved successfully
+    echo json_encode(array('success' => true));
+  } else {
+    // If there was an error saving the message
+    echo json_encode(array('success' => false, 'error' => 'Failed to save message'));
+  }
 }
 ?>
+
+
+
+
 
 <!-- HTML content for the chat interface -->
 <div class="message-container">
@@ -79,8 +62,19 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
     <button class="emoji-button" onclick="addEmoji('👨‍👩‍👧‍👦')">👨‍👩‍👧‍👦</button>
   </div>
 
-  <div class="message-footer">
-  <textarea rows="2" id="messageInput" placeholder="Type your message..." <?php echo isset($_SESSION["id"]) ? "" : "readonly"; ?>></textarea>
+<!-- <div class="message-footer">
+  <form action="#" class="typing-area"> 
+    <input type="text" class="incoming_id" name="incoming_id" value="<?php echo $id; ?>" hidden>
+   <input type="text" name="message" id="messageInput" class="input-field" placeholder="Type a message here..." autocomplete="off"> 
+    <textarea type="text" name="message" id="messageInput" class="input-field" placeholder="Type a message here..." autocomplete="off"></textarea>
+    <button type="button" id="sendMessageButton" onclick="sendMessage()" ><i style="font-size:19px;" class="fa">&#xf1d9;</i></button> <br>
+   </form> 
+</div> -->
+
+<div class="message-footer">
+  <input type="text" class="incoming_id" name="incoming_id" value="<?php echo $id; ?>" hidden>
+
+  <textarea type="text" rows="2" id="messageInput" name="message" class="input-field" placeholder="Type your message..." <?php echo isset($_SESSION["id"]) ? "" : "readonly"; ?>></textarea>
   <button type="button" onclick="sendMessage()" id="sendMessageButton" <?php echo isset($_SESSION["id"]) ? "" : "disabled"; ?>><i style="font-size:19px;" class="fa">&#xf1d9;</i></button> <br>
   <?php if (!isset($_SESSION["id"])) { ?>
     <div class="login-alert">
@@ -88,64 +82,103 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
     </div>
   <?php } ?>
 </div>
-
-
 </div>
 
+
 <script>
-  // Function to enable/disable the send message button based on login status
-  function toggleSendMessageButton() {
-    const sendMessageButton = document.getElementById('sendMessageButton');
-    const messageInput = document.getElementById('messageInput');
+  var messages = [];
 
-    if (isLoggedIn) {
-      sendMessageButton.disabled = false;
-      messageInput.removeAttribute('readonly');
-      messageInput.placeholder = "Type your message...";
-    } else {
-      sendMessageButton.disabled = true;
-      messageInput.setAttribute('readonly', 'readonly');
-      messageInput.placeholder = "Please log in to send messages.";
+  function sendMessage() {
+    const incoming_id = document.querySelector(".incoming_id").value;
+    const messageInput = document.getElementById("messageInput");
+    const message = messageInput.value.trim();
+
+    if (!message) {
+      return; // Don't send empty messages
     }
+
+    // Clear the input field
+    messageInput.value = "";
+
+    // Create a new XMLHttpRequest object
+    const xhr = new XMLHttpRequest();
+
+    // Configure the request
+    xhr.open("POST", "save_message.php", true);
+    xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
+
+    // Define the callback function when the request completes
+    xhr.onload = function () {
+      if (xhr.status === 200) {
+        const response = JSON.parse(xhr.responseText);
+        if (response.success) {
+          // Message saved successfully, update the chat interface as needed
+          // For example, you can display the new message in the chat window
+          console.log("Message sent and saved successfully!");
+          // Display the message in the chat window
+          displaySentMessage(message);
+        } else {
+          console.error("Failed to save the message:", response.error);
+        }
+      } else {
+        console.error("Request failed with status:", xhr.status);
+      }
+    };
+
+    // Handle network errors
+    xhr.onerror = function () {
+      console.error("Network error occurred");
+    };
+
+    // Send the request with the message data
+    xhr.send("incoming_id=" + encodeURIComponent(incoming_id) + "&message=" + encodeURIComponent(message));
+
+    // Get the current date and time
+    var currentDate = new Date();
+    var sentTime = currentDate.toLocaleTimeString([], { hour: "2-digit", minute: "2-digit" });
+    var sentDate = currentDate.toLocaleDateString([], { day: "numeric", month: "short", year: "numeric" });
+    var sentDay = currentDate.toLocaleDateString([], { weekday: "short" });
+
+    var newMessage = {
+      content: message,
+      sentTime: sentTime,
+      sentDate: sentDate,
+      sentDay: sentDay,
+      reactions: [],
+      emojis: [], // Add the extracted emojis to the message object
+    };
+
+    // Add the message to the messages array
+    messages.push(newMessage);
+
+    // Display the message
+    displayMessage(newMessage);
+
+    // Save the message to the server/database (Replace 'save_message.php' with your server endpoint)
+    saveMessageToServer(newMessage);
   }
 
+  function displaySentMessage(message) {
+    // Create a new message object
+    var currentDate = new Date();
+    var sentTime = currentDate.toLocaleTimeString([], { hour: "2-digit", minute: "2-digit" });
+    var sentDate = currentDate.toLocaleDateString([], { day: "numeric", month: "short", year: "numeric" });
+    var sentDay = currentDate.toLocaleDateString([], { weekday: "short" });
 
-  // Function to show a message to log in if the user is not logged in
-  function showLoginMessage() {
-    const messageFooter = document.querySelector('.message-footer');
-    const loginMessage = document.createElement('p');
-    loginMessage.textContent = "Please log in to send messages.";
-    messageFooter.appendChild(loginMessage);
-  }
+    var newMessage = {
+      content: message,
+      sentTime: sentTime,
+      sentDate: sentDate,
+      sentDay: sentDay,
+      reactions: [],
+      emojis: [], // Add the extracted emojis to the message object
+    };
 
-  // Call the function initially to set the button state
-  toggleSendMessageButton();
+    // Add the message to the messages array
+    messages.push(newMessage);
 
-  // Function to handle the login status changes
-  function handleLoginStatus(isLoggedIn) {
-    toggleSendMessageButton();
-
-    // Remove the login message if it exists
-    const loginMessage = document.querySelector('.message-footer p');
-    if (loginMessage) {
-      loginMessage.remove();
-    }
-    
-    // Show login message if user is logged out
-    if (!isLoggedIn) {
-      showLoginMessage();
-    }
-  }
-
-  // Event listener to handle login status changes
-  window.addEventListener('load', function () {
-    handleLoginStatus(isLoggedIn);
-  });
-
-  // Sample function to simulate login/logout status change (for testing purposes)
-  function simulateLoginStatusChange(loggedIn) {
-    isLoggedIn = loggedIn;
-    handleLoginStatus(isLoggedIn);
+    // Display the message
+    displayMessage(newMessage);
   }
 </script>
 
@@ -153,57 +186,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
 
 
 <script>
-    var messages = [];
-    var replyContainer = null;
-
-    function sendMessage() {
-	  var messageInput = document.getElementById("messageInput");
-      var message = messageInput.value;
-
-
-      // Clear the input field
-      messageInput.value = "";
-
-      // Get the current date and time
-      var currentDate = new Date();
-      var sentTime = currentDate.toLocaleTimeString([], {
-        hour: "2-digit",
-        minute: "2-digit",
-      });
-      var sentDate = currentDate.toLocaleDateString([], {
-        day: "numeric",
-        month: "short",
-        year: "numeric",
-      });
-      var sentDay = currentDate.toLocaleDateString([], {
-        weekday: "short",
-      });
-
-
-	  var emojis = message.match(/([\uD800-\uDBFF][\uDC00-\uDFFF])/g) || []; // Extract emojis from the message
-
-// Create the message object with the content and sent details
-var newMessage = {
-  content: message,
-  sentTime: sentTime,
-  sentDate: sentDate,
-  sentDay: sentDay,
-  replyTo: null,
-  reactions: [],
-  emojis: emojis, // Add the extracted emojis to the message object
-};
-
-  // Add the message to the messages array
-  messages.push(newMessage);
-
-  // Display the message
-  displayMessage(newMessage);
-
-  // Save the message to the database
-  saveMessageToDatabase(newMessage);
-}
-
-    function displayMessage(message) {
+function displayMessage(message) {
       var messageBody = document.getElementById("messageBody");
 
       var newMessage = document.createElement("div");
@@ -279,6 +262,148 @@ var newMessage = {
       messageBody.scrollTop = messageBody.scrollHeight;
     }
 
+
+    function saveMessageToServer(message) {
+    const xhr = new XMLHttpRequest();
+    xhr.open("POST", "save_message.php", true);
+    xhr.setRequestHeader("Content-Type", "application/json");
+
+    xhr.onreadystatechange = function () {
+      if (xhr.readyState === XMLHttpRequest.DONE) {
+        if (xhr.status === 200) {
+          console.log("Message saved to database successfully!");
+        } else {
+          console.error("Failed to save message to database!");
+        }
+      }
+    };
+  }
+
+    function loadMessages() {
+      // Load the messages array from local storage
+      var storedMessages = localStorage.getItem("messages");
+
+      if (storedMessages) {
+        messages = JSON.parse(storedMessages);
+        messages.forEach(function (message) {
+          displayMessage(message);
+        });
+      }
+    }
+
+    function saveMessages() {
+    // Save the messages array to local storage
+    localStorage.setItem("messages", JSON.stringify(messages));
+  }
+  
+//here start
+
+
+
+    function displayReplyMessage(parentMessage, parentContent) {
+      // Remove any existing reply container
+      removeReplyContainer();
+
+      var messageBody = document.getElementById("messageBody");
+
+      replyContainer = document.createElement("div");
+      replyContainer.classList.add("reply-container");
+      replyContainer.dataset.messageId = generateMessageId(); // Set a unique ID for the reply container
+
+      var replyMessage = document.createElement("div");
+      replyMessage.classList.add("reply-message");
+      replyMessage.innerText = "Replying to: " + parentContent;
+
+      var cancelReplyLink = document.createElement("a");
+      cancelReplyLink.innerText = "Cancel";
+      cancelReplyLink.style.textDecoration = "underline";
+      cancelReplyLink.style.color = "red";
+      cancelReplyLink.addEventListener("click", function () {
+        removeReplyContainer(replyContainer.dataset.messageId);
+      });
+
+      replyContainer.appendChild(replyMessage);
+      replyContainer.appendChild(cancelReplyLink);
+
+      // Set the background color of the reply container
+      replyContainer.style.backgroundColor = "#ddd";
+
+      // Insert the reply container below the message box area
+      messageBody.appendChild(replyContainer);
+
+      // Save the messages array back to local storage
+      saveMessages();
+    }
+
+
+
+    function removeReplyContainer(replyToMessageId) {
+      if (replyContainer && replyContainer.dataset.messageId === replyToMessageId) {
+        var messageBody = document.getElementById("messageBody");
+        messageBody.removeChild(replyContainer);
+        replyContainer = null;
+
+        // Save the messages array back to local storage
+        saveMessages();
+      }
+    }
+
+
+
+    function removeMessage(messageElement) {
+      var messageBody = document.getElementById("messageBody");
+      messageBody.removeChild(messageElement);
+
+      // Remove the message from the messages array
+      var messageId = messageElement.dataset.messageId;
+      var index = messages.findIndex(function (message) {
+        return message.dataset.messageId === messageId;
+      });
+
+      if (index !== -1) {
+        messages.splice(index, 1);
+      }
+
+      // Save the messages array back to local storage
+      saveMessages();
+    }
+
+    function addEmoji(emoji) {
+      var messageInput = document.getElementById("messageInput");
+      messageInput.value += emoji;
+    }
+
+
+
+    function searchMessages() {
+      var searchInput = document.getElementById("searchInput");
+      var searchText = searchInput.value.toLowerCase();
+
+      // Clear the input field
+      searchInput.value = "";
+
+      var searchResults = messages.filter(function (message) {
+        return message.content.toLowerCase().includes(searchText);
+      });
+
+      displaySearchResults(searchResults);
+    }
+
+    function displaySearchResults(results) {
+      var messageBody = document.getElementById("messageBody");
+      messageBody.innerHTML = "";
+
+      results.forEach(function (message) {
+        displayMessage(message);
+      });
+    }
+
+    function generateMessageId() {
+      return Math.random().toString(36).substr(2, 9);
+    }
+
+
+
     function addReaction(messageElement, emoji) {
       // Check if the message already has a reaction from the user
       var existingReaction = messageElement.querySelector(".reaction");
@@ -349,140 +474,6 @@ var newMessage = {
       }
     }
 
-
-	function saveMessageToDatabase(message) {
-    var xhr = new XMLHttpRequest();
-    xhr.open("POST", "save_message.php", true);
-    xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
-    xhr.onreadystatechange = function () {
-      if (xhr.readyState === XMLHttpRequest.DONE) {
-        if (xhr.status === 200) {
-          console.log("Message saved to database successfully!");
-        } else {
-          console.error("Failed to save message to database!");
-        }
-      }
-    };
-
-    // Construct the message data to send to the server
-    var formData = new FormData();
-    formData.append("msg_id", generateMessageId());
-    formData.append("incoming_msg_user_id", "<?php echo $receiver_user_id; ?>"); // Replace with the recipient's user ID
-    formData.append("outgoing_msg_user_id", "<?php echo $sender_user_id; ?>"); // Replace with the sender's user ID
-    formData.append("message", message.content);
-    formData.append("msg_date", new Date().toISOString());
-
-    xhr.send(formData);
-  }
-
-
-    function loadMessages() {
-      // Load the messages array from local storage
-      var storedMessages = localStorage.getItem("messages");
-
-      if (storedMessages) {
-        messages = JSON.parse(storedMessages);
-        messages.forEach(function (message) {
-          displayMessage(message);
-        });
-      }
-    }
-
-    function displayReplyMessage(parentMessage, parentContent) {
-      // Remove any existing reply container
-      removeReplyContainer();
-
-      var messageBody = document.getElementById("messageBody");
-
-      replyContainer = document.createElement("div");
-      replyContainer.classList.add("reply-container");
-      replyContainer.dataset.messageId = generateMessageId(); // Set a unique ID for the reply container
-
-      var replyMessage = document.createElement("div");
-      replyMessage.classList.add("reply-message");
-      replyMessage.innerText = "Replying to: " + parentContent;
-
-      var cancelReplyLink = document.createElement("a");
-      cancelReplyLink.innerText = "Cancel";
-      cancelReplyLink.style.textDecoration = "underline";
-      cancelReplyLink.style.color = "red";
-      cancelReplyLink.addEventListener("click", function () {
-        removeReplyContainer(replyContainer.dataset.messageId);
-      });
-
-      replyContainer.appendChild(replyMessage);
-      replyContainer.appendChild(cancelReplyLink);
-
-      // Set the background color of the reply container
-      replyContainer.style.backgroundColor = "#ddd";
-
-      // Insert the reply container below the message box area
-      messageBody.appendChild(replyContainer);
-
-      // Save the messages array back to local storage
-      saveMessages();
-    }
-
-    function removeReplyContainer(replyToMessageId) {
-      if (replyContainer && replyContainer.dataset.messageId === replyToMessageId) {
-        var messageBody = document.getElementById("messageBody");
-        messageBody.removeChild(replyContainer);
-        replyContainer = null;
-
-        // Save the messages array back to local storage
-        saveMessages();
-      }
-    }
-
-    function removeMessage(messageElement) {
-      var messageBody = document.getElementById("messageBody");
-      messageBody.removeChild(messageElement);
-
-      // Remove the message from the messages array
-      var messageId = messageElement.dataset.messageId;
-      var index = messages.findIndex(function (message) {
-        return message.dataset.messageId === messageId;
-      });
-
-      if (index !== -1) {
-        messages.splice(index, 1);
-      }
-
-      // Save the messages array back to local storage
-      saveMessages();
-    }
-
-    function addEmoji(emoji) {
-      var messageInput = document.getElementById("messageInput");
-      messageInput.value += emoji;
-    }
-
-    function searchMessages() {
-      var searchInput = document.getElementById("searchInput");
-      var searchText = searchInput.value.toLowerCase();
-
-      // Clear the input field
-      searchInput.value = "";
-
-      var searchResults = messages.filter(function (message) {
-        return message.content.toLowerCase().includes(searchText);
-      });
-
-      displaySearchResults(searchResults);
-    }
-
-    function displaySearchResults(results) {
-      var messageBody = document.getElementById("messageBody");
-      messageBody.innerHTML = "";
-
-      results.forEach(function (message) {
-        displayMessage(message);
-      });
-    }
-
-    function generateMessageId() {
-      return Math.random().toString(36).substr(2, 9);
-    }
 
     // Load the messages from local storage when the page is loaded
     loadMessages();
