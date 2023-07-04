@@ -24,7 +24,8 @@ if(isloggedin()){
 
 
 <head>
-<title>Edit Biodata - ShosurBari</title>
+<title>Edit Biodata | ShosurBari</title>
+<link rel="icon" href="images/shosurbari-icon.png" type="image/png">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); } </script>
@@ -42,20 +43,6 @@ if(isloggedin()){
 <!--font-Awesome-->
 <link href="css/font-awesome.css" rel="stylesheet"> 
 <!--font-Awesome-->
-<script>
-$(document).ready(function(){
-    $(".dropdown").hover(            
-        function() {
-            $('.dropdown-menu', this).stop( true, true ).slideDown("fast");
-            $(this).toggleClass('open');        
-        },
-        function() {
-            $('.dropdown-menu', this).stop( true, true ).slideUp("fast");
-            $(this).toggleClass('open');       
-        }
-    );
-});
-</script>
 </head>
 
 
@@ -662,7 +649,7 @@ $(document).ready(function(){
 						<!-- Higher Education End -->
 
 						<div class="shosurbari-biodata-field">
-							<label for="edu-method">অন্যান্য শিক্ষাগত যোগ্যতা<span style="color: gray; font-size:14px;" class="form-required" title="This field is required."> (Optional)</span></label>
+							<label for="edu-method">অন্যান্য শিক্ষাগত যোগ্যতা<span style="color: gray; font-size:14px;" class="form-required" title="This field is required."> (বাধ্যতামূলক নয়)</span></label>
 							<textarea rows="4"  name="others_edu_qualification" value="<?php echo $others_edu_qualification;?>"  id="others_edu_qualification" placeholder="Describe your others education qualifications" class="form-text-describe"></textarea>
 						</div>
 					</div>
