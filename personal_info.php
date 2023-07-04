@@ -24,7 +24,8 @@ if(isloggedin()){
 
 
 <head>
-<title>Edit Biodata - ShosurBari</title>
+<title>Edit Biodata | ShosurBari</title>
+<link rel="icon" href="images/shosurbari-icon.png" type="image/png">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); } </script>
@@ -42,20 +43,6 @@ if(isloggedin()){
 <!--font-Awesome-->
 <link href="css/font-awesome.css" rel="stylesheet"> 
 <!--font-Awesome-->
-<script>
-$(document).ready(function(){
-    $(".dropdown").hover(            
-        function() {
-            $('.dropdown-menu', this).stop( true, true ).slideDown("fast");
-            $(this).toggleClass('open');        
-        },
-        function() {
-            $('.dropdown-menu', this).stop( true, true ).slideUp("fast");
-            $(this).toggleClass('open');       
-        }
-    );
-});
-</script>
 </head>
 
 
@@ -193,7 +180,7 @@ $(document).ready(function(){
 
 					<div class="sb-biodata-option">
 						<div class="shosurbari-biodata-field">
-							<label for="edit-name">ধূমপান করা হয়?<span style="color: gray; font-size: 14px;" class="form-required" title="This field is required."> (Optional)</span></label>
+							<label for="edit-name">ধূমপান করা হয়?<span style="color: gray; font-size: 14px;" class="form-required" title="This field is required."> (বাধ্যতামূলক নয়)</span></label>
 							<select name="smoke">
 								<option hidden selected><?php echo $smoke;?></option>
 								<option value="না">না</option>
@@ -448,6 +435,27 @@ $(document).ready(function(){
 						<div class="shosurbari-biodata-field">
 							<label>আপনার সম্পর্কে কিছু লিখুন<span class="form-required" title="This field is required.">*</span></label>
 							<textarea rows="5" name="aboutme" placeholder="Write about you" class="form-text-describe" required><?php echo $aboutme; ?></textarea>
+						</div>
+
+						
+						<div class="shosurbari-biodata-field">
+							<label for="edit-name">পাত্র/পাত্রীর ইমেইল<span class="form-required" title="This field is required.">*</span><span style="color: gray; font-size: 14px;" class="form-required" title="This field is required.">(এই অপশন লুকায়িত থাকবে)</span></label>
+							<input type="text" id="edit-name" name="groom_bride__email" value="" size="100" maxlength="100" class="form-text" required>
+						</div>
+
+						<div class="shosurbari-biodata-field">
+							<label for="edit-name">পাত্র/পাত্রীর মোবাইল নাম্বার <span class="form-required" title="This field is required.">*</span><span style="color: gray; font-size: 14px;" class="form-required" title="This field is required.">(এই অপশন লুকায়িত থাকবে)</span></label>
+							<input type="text" id="edit-name" name="groom_bride__number" value="" size="100" maxlength="100" class="form-text" required>
+						</div>
+
+						<div class="shosurbari-biodata-field">
+							<label for="edit-name">পিতামাতা/আত্মীয়র মোবাইল নাম্বার<span class="form-required" title="This field is required.">*</span><span style="color: gray; font-size: 14px;" class="form-required" title="This field is required.">(এই অপশন লুকায়িত থাকবে)</span></label>
+							<input type="text" id="edit-name" name="parent_number" value="" size="100" maxlength="100" class="form-text" required>
+						</div>
+
+						<div class="shosurbari-biodata-field">
+							<label for="edit-name">পিতামাতা/আত্মীয়র অপশনে মোবাইল নাম্বার টি যার, তার সাথে পাত্রপাত্রীর কি সম্পর্ক<span class="form-required" title="This field is required.">*</span> <span style="color: gray; font-size: 14px;" class="form-required" title="This field is required.">(এই অপশন লুকায়িত থাকবে)</span></label>
+							<input type="text" id="edit-name" name="groombride_relational_number" value="" size="100" maxlength="100" class="form-text" required>
 						</div>
 
 					</div>
