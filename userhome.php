@@ -1,3 +1,4 @@
+
 <?php include_once("includes/basic_includes.php");?>
 <?php include_once("functions.php"); ?>
 <?php
@@ -29,7 +30,8 @@ $deactivated = $row['deactivated'];
 <html>
 
 <head>
-<title>User Home - ShosurBari</title>
+<title>User Home | ShosurBari</title>
+<link rel="icon" href="images/shosurbari-icon.png" type="image/png">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 
@@ -45,20 +47,6 @@ $deactivated = $row['deactivated'];
 <!--font-Awesome-->
 <link href="css/font-awesome.css" rel="stylesheet"> 
 <!--font-Awesome-->
-<script>
-$(document).ready(function(){
-    $(".dropdown").hover(            
-        function() {
-            $('.dropdown-menu', this).stop( true, true ).slideDown("fast");
-            $(this).toggleClass('open');        
-        },
-        function() {
-            $('.dropdown-menu', this).stop( true, true ).slideUp("fast");
-            $(this).toggleClass('open');       
-        }
-    );
-});
-</script>
 </head>
 
 
@@ -146,11 +134,12 @@ $(document).ready(function(){
         </li>
 
         <li><a href="accountupdate.php?id=<?php echo $id;?>">একাউন্ট</a></li>
+        <li><a href="message.php?id=<?php echo $id;?>">মেসেজ</a></li>
+        <li><a href="message_list.php?id=<?php echo $id;?>">মেসেজ List</a></li>
       </ul>
     </div>
   </div>
 
-            
 
   <?php include_once("footer.php")?>
   <!-- FlexSlider -->
