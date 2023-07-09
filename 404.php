@@ -12,7 +12,8 @@ $result=search();
 </head>
 <body>
 
-  
+
+	
     <!-- 404 Page area Start-->
     <div class="error-page-area">
         <div class="error-page-wrap">
