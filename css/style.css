@@ -123,17 +123,17 @@ span.divider {
     color: #ccc;
 }
 
-
 /*Form Type Start*/
 form {
     max-width: 1100px;
     width: 100%;
-    margin-left: auto;
+    margin-left: 0;
     margin-right: auto;
     margin-bottom: auto;
     margin-top: 0px;
     padding-top: 20px;
-    background: url(../images/shosurbari-big-heart-gif.gif);
+    background: #fff;
+    /* background: url(../images/shosurbari-big-heart-gif.gif); */
     /* background: url(https://bestanimations.com/media/many-hearts/260842010many-little-heart-make-big-heart-gif.gif); */
     border-radius: 4px;
 }
@@ -1538,7 +1538,7 @@ a#profile-tab, a#home-tab, a#profile-tab1{
     margin-top: 25px;
     background: #fff;
     border-radius: 4px;
-    padding: 7px;
+    padding: 3px;
     border-top: 3px solid #06b6d4;
     border-bottom: 1px solid #ccc;
     border-left: 1px solid #ccc;
@@ -1713,7 +1713,16 @@ button.copylink i {
 .short_biodata_value tbody tr td{
     border-radius: 5px;
     text-align: left;
+    width: 30%;
 }
+
+/* .short_biodata_value .day_label{
+    width: 50%;
+}
+
+.short_biodata_value .day_value{
+    width: 50%;
+} */
 /*Profile Short Heading End*/
 
 
@@ -2379,7 +2388,7 @@ ol li{
 .shosurbari-userhome-status{
     padding: 20px 0px;
     margin-top: -2px;
-    width:  250px;
+    width:  213px;
 }
 
 .shosurbari-userhome-status h3,
@@ -2899,8 +2908,8 @@ input[type=submit] {
     background: #fff;
     padding: 8px;
     border-radius: 50%;
-    margin-top: 145px;
-    margin-left: 120px;
+    margin-top: 120px;
+    margin-left: 115px;
 }
 
 #file-input-wrapper {
@@ -3058,7 +3067,6 @@ i.icon_4{
 .shosurbari-biodata{
     display: flex;
     flex-wrap: wrap;
-    margin-top: -50px;
 }
 
 .flex-container{
@@ -4254,7 +4262,7 @@ ul.nav_1 li {
 }
 
 .navigationpro ul {
-    width: 610px;
+    width: 655px;
     margin: auto;
 }
 
@@ -4317,10 +4325,6 @@ ul.nav_1 li {
     #progressbar li:after {
         width: calc(30% + 23px);
         left: -23px;
-    }
-
-    .biodatavalue_list {
-        padding: 5px;
     }
 
     .sbbiodata_profile_recentview{
@@ -5850,7 +5854,7 @@ ul.profile_item{
         font-size: 18px;
         padding: 7px;
         margin-top: 110px;
-        margin-left: 90px;
+        margin-left: 100px;
     }
 
     .form-actions p {
@@ -6638,8 +6642,8 @@ ul.profile_item{
     .update-image .camera-wrapper i {
         font-size: 17px;
         padding: 6px;
-        margin-top: 101px;
-        margin-left: 77px;
+        margin-top: 115px;
+        margin-left: 100px;
     }
 
     .shosurbari-details h1,
