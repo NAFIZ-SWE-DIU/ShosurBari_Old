@@ -8,7 +8,8 @@ error_reporting(0);
 
 
 <head>
-<title>Register - ShosurBari</title>
+<title>Register | ShosurBari</title>
+<link rel="icon" href="images/shosurbari-icon.png" type="image/png">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); } </script>
@@ -32,20 +33,6 @@ error_reporting(0);
 <!--font-Awesome-->
 <link href="css/font-awesome.css" rel="stylesheet"> 
 <!--font-Awesome-->
-<script>
-$(document).ready(function(){
-    $(".dropdown").hover(            
-        function() {
-            $('.dropdown-menu', this).stop( true, true ).slideDown("fast");
-            $(this).toggleClass('open');        
-        },
-        function() {
-            $('.dropdown-menu', this).stop( true, true ).slideUp("fast");
-            $(this).toggleClass('open');       
-        }
-    );
-});
-</script>
 </head>
 
 
@@ -68,7 +55,59 @@ $(document).ready(function(){
 
 
 
-  <div class="shosurbari-biodata">
+  <style>
+.shosurbari-biodata-form {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  width: 1400px;
+  margin: auto;
+}
+
+.soshurbari-animation-icon,
+.shosurbari-animation-form {
+  flex-basis: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.soshurbari-animation-icon img{
+  justify-content: flex-end;
+  margin: auto;
+}
+
+@media (max-width: 1400px){
+  .shosurbari-biodata-form{
+    width: 1000px;
+  }
+}
+
+@media (max-width: 1024px) {
+  .soshurbari-animation-icon {
+    display: none;
+  }
+
+  .shosurbari-animation-form {
+    flex-basis: 100%;
+    justify-content: center;
+  }
+
+  .shosurbari-biodata-form {
+    width: auto;
+}
+}
+</style>
+
+  <div class="shosurbari-biodata-form">
+
+  <div class="soshurbari-animation-icon">
+    <div class="sb-icon-laptop">
+      <img src="images/shosurbari-registration.png">
+    </div>
+  </div>
+
+  <div class="shosurbari-animation-form">
     <form action="" method="POST" name="myForm" onsubmit="return validateForm()">
       <div class="flex-container">
         <div class="sb-register-login">
@@ -101,21 +140,17 @@ $(document).ready(function(){
             <span id="pnumber_error" style="font-size:16px; margin-top: 0px; background: #ffddee; border-radius: 1px 2px 4px 4px; text-align: center; display: none;"></span>
           </div>
 
-
-
-
-
           <div class="form-group">
             <!-- <label for="edit-pass">Password<span class="form-required" title="This field is required.">*</span></label> -->
             <input type="password" id="pass_1" placeholder="New Password" name="pass_1" size="60" maxlength="128" class="form-text required">
-            <span class="show-password" style="color:#0aa4ca;  font-size:18px; top:0px;"> <i style="color:black;  font-size:18px;" class="fa fa-eye" aria-hidden="true"></i></span> 
+            <span class="show-password" style="color:#0aa4ca;  font-size:15px; top:2px;"> <i style="color:black;  font-size:15px;" class="fa fa-eye" aria-hidden="true"></i></span> 
             <span  id="pass_1_error" style="font-size:16px; margin-top: 0px; background: #ffddee; border-radius: 1px 2px 4px 4px; text-align: center; display: none;"></span>
           </div>
 
           <div class="form-group">
             <!-- <label for="edit-pass">Confirm Password<span class="form-required" title="This field is required.">*</span></label> -->
             <input type="password" id="pass_2" placeholder="Confirm Password" name="pass_2" size="60" maxlength="128" class="form-text required">
-            <span class="show-password" style="color:#0aa4ca;  font-size:18px; top:0px;"> <i style="color:black;  font-size:18px;" class="fa fa-eye" aria-hidden="true"></i></span> 
+            <span class="show-password" style="color:#0aa4ca;  font-size:15px; top:2px;"> <i style="color:black;  font-size:15px;" class="fa fa-eye" aria-hidden="true"></i></span> 
             <span  id="pass_2_error" style="font-size:16px; margin-top: 0px; background: #ffddee; border-radius: 1px 2px 4px 4px; text-align: center; display: none;"></span>
           </div>
 
@@ -137,14 +172,12 @@ $(document).ready(function(){
 		        <span style="font-size:16px; margin-top: 0px; background: #ffddee; border-radius: 1px 2px 4px 4px; text-align: center; display: none;" id="gender-error" class="error"></span>
           </div>
 
-
-
           <div class="form-actions">
             <?php if(isset($_COOKIE['username'])) { ?>
               <input type="hidden" id="edit-remember" name="remember" value="1">
               <?php } else { ?>
 
-              <div class="form-group">
+              <div class="form-group" style="display: none;">
                 <label><input type="checkbox" id="edit-remember" name="remember" value="1" checked> Remember me</label>
               </div>
 
@@ -155,22 +188,25 @@ $(document).ready(function(){
               <label class="checkbox-label" for="terms-checkbox">I agree to the <a target="_blank" href="terms.php">Terms and Conditions</a> and have read the <a target="_blank" href="privacy.php">Privacy Policy.</a></label>
             </div>
 
-            <button type="submit" id="edit-submit" name="op" class="btn_4 submit"><span></span> Create Account</button>
+            <button type="submit" id="edit-submit" name="op" class="btn_1 submit"><span></span> Create Account</button>
           </div>
 
 			    <div class="or">
 		        <p><span class="sb-or">OR</span></p>
           </div>
 
-	  	    <div class="form-actions">
+	  	    <div class="form-actions" style="text-align: center;">
 			      <p>Do you have an account?</p>
-			      <a class="btn_3 submit" href="login.php"> <span> </span> Login Your Account</a>
+			      <a href="login.php"> Login Your Account</a>
 	        </div>
 
         </div>
       </div>
 	  </form>
+  
+    </div>
   </div>
+
 
 
   <?php include_once("footer.php");?>
@@ -280,9 +316,8 @@ $(document).ready(function(){
 
 
 
-<!-- Gender Selection -->
+<!--  Form Input field when error then show border red and scroll - JS start -->
 <script>
-  // Form Input field when error then show border red and scroll - JS start
   function validateForm(){
     var fname = document.forms["myForm"]["fname"].value;
     var uname = document.forms["myForm"]["uname"].value;
@@ -321,7 +356,6 @@ $(document).ready(function(){
     document.getElementById('fname').style.borderColor = "green";
     document.getElementById('fname_error').innerHTML = "";
     }
-
 
 
 
@@ -374,7 +408,6 @@ $(document).ready(function(){
     document.getElementById('uname').style.borderColor = "green";
     document.getElementById('uname_error').innerHTML = "";
     }
-
 
 
 
@@ -431,7 +464,6 @@ $(document).ready(function(){
 
 
       
-
     // Phone number validation
     if (pnumber == "") {
       var pnumberElement = document.getElementById('pnumber');
@@ -483,7 +515,6 @@ $(document).ready(function(){
     document.getElementById('pnumber').style.borderColor = "green";
     document.getElementById('pnumber_error').innerHTML = "";
     }
-
 
 
 
@@ -571,9 +602,8 @@ $(document).ready(function(){
 
 
   }
-  // Form Input field when error then show border red and scroll - JS End
+  //Form Input field when error then show border red and scroll - JS End
 </script>
-
 
 
 
