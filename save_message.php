@@ -4,33 +4,50 @@
 require_once("includes/dbconn.php");
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-  $incoming_id = mysqli_real_escape_string($conn, $_POST['incoming_id']);
-  $outgoing_id = mysqli_real_escape_string($conn, $_POST['outgoing_id']);
-  $message = mysqli_real_escape_string($conn, $_POST['message']);
+    $incoming_id = mysqli_real_escape_string($conn, $_POST['incoming_id']);
+    $outgoing_id = mysqli_real_escape_string($conn, $_POST['outgoing_id']);
+    $message = mysqli_real_escape_string($conn, $_POST['message']);
 
-  // Get the sender's ID from the session or wherever you store it
-  session_start(); // Start the session (you may already have this line in your code)
+    session_start();
+    if (isset($_SESSION['id'])) {
+        $outgoing_id = $_SESSION['id'];
+    } else {
+        echo json_encode(array('success' => false, 'error' => 'User ID not found in session'));
+        exit;
+    }
 
-  if (isset($_SESSION['id'])) {
-    $outgoing_id = $_SESSION['id']; // Replace 'user_id' with the actual session variable storing the sender's ID
-  } else {
-    // If the user ID is not available in the session, handle it as per your application's logic.
-    echo json_encode(array('success' => false, 'error' => 'User ID not found in session'));
-    exit;
-  }
+    $query = "INSERT INTO messages (incoming_msg_user_id, outgoing_msg_user_id, message, msg_date) VALUES ('$incoming_id', '$outgoing_id', '$message', DATE_FORMAT(NOW(), '%e %M %Y, %h:%i:%s %p'))";
+    $result = mysqli_query($conn, $query);
 
-  $query = "INSERT INTO messages (incoming_msg_user_id, outgoing_msg_user_id, message, msg_date) VALUES ('$incoming_id', '$outgoing_id', '$message', DATE_FORMAT(NOW(), '%e %M %Y, %h:%i:%s %p'))";
-  $result = mysqli_query($conn, $query);
+    if ($result) {
+        // Notify the WebSocket server about the new message
+        $payload = array(
+            'event' => 'new_message',
+            'data' => array(
+                'incoming_id' => $incoming_id,
+                'outgoing_id' => $outgoing_id,
+                'message' => $message,
+                'msg_date' => date('j F Y, h:i:s A')
+            )
+        );
+        sendWebSocketMessage(json_encode($payload));
 
-  if ($result) {
-    // If the message is saved successfully
-    echo json_encode(array('success' => true));
-  } else {
-    // If there was an error saving the message
-    echo json_encode(array('success' => false, 'error' => 'Failed to save message'));
-  }
+        echo json_encode(array('success' => true));
+    } else {
+        echo json_encode(array('success' => false, 'error' => 'Failed to save message'));
+    }
+}
+
+// Function to send WebSocket messages
+function sendWebSocketMessage($message) {
+    $context = new ZMQContext();
+    $socket = $context->getSocket(ZMQ::SOCKET_PUSH, 'my pusher');
+    $socket->connect("tcp://127.0.0.1:5555");
+    $socket->send($message);
 }
 ?>
+
+
 
 
 
@@ -50,27 +67,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     <!-- Messages will be displayed here -->
   </div>
 
-  <div class="emoji-container">
-    <button class="emoji-button" onclick="addEmoji('😊')">😊</button>
-    <button class="emoji-button" onclick="addEmoji('🥰')">🥰</button>
-    <button class="emoji-button" onclick="addEmoji('😍')">😍</button>
-    <button class="emoji-button" onclick="addEmoji('❤️')">❤️</button>
-    <button class="emoji-button" onclick="addEmoji('😢')">😢</button>
-    <button class="emoji-button" onclick="addEmoji('😆')">😆</button>
-    <button class="emoji-button" onclick="addEmoji('😡')">😡</button>
-    <!-- <button class="emoji-button" onclick="addEmoji('👍')">👍</button> -->
-    <button class="emoji-button" onclick="addEmoji('👨‍👩‍👧‍👦')">👨‍👩‍👧‍👦</button>
-  </div>
-
-<!-- <div class="message-footer">
-  <form action="#" class="typing-area"> 
-    <input type="text" class="incoming_id" name="incoming_id" value="<?php echo $id; ?>" hidden>
-   <input type="text" name="message" id="messageInput" class="input-field" placeholder="Type a message here..." autocomplete="off"> 
-    <textarea type="text" name="message" id="messageInput" class="input-field" placeholder="Type a message here..." autocomplete="off"></textarea>
-    <button type="button" id="sendMessageButton" onclick="sendMessage()" ><i style="font-size:19px;" class="fa">&#xf1d9;</i></button> <br>
-   </form> 
-</div> -->
-
 <div class="message-footer">
   <input type="text" class="incoming_id" name="incoming_id" value="<?php echo $id; ?>" hidden>
 
@@ -87,6 +83,16 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
 <script>
   var messages = [];
+
+  const socket = new WebSocket('ws://localhost:8080');
+    
+    socket.onmessage = function(event) {
+        const data = JSON.parse(event.data);
+        if (data.event === 'new_message') {
+            const message = data.data;
+            displayReceivedMessage(message);
+        }
+    };
 
   function sendMessage() {
     const incoming_id = document.querySelector(".incoming_id").value;
@@ -148,6 +154,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
       emojis: [], // Add the extracted emojis to the message object
     };
 
+    
+
     // Add the message to the messages array
     messages.push(newMessage);
 
@@ -156,7 +164,20 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
     // Save the message to the server/database (Replace 'save_message.php' with your server endpoint)
     saveMessageToServer(newMessage);
-  }
+  
+          // Send the message to the WebSocket server
+          const payload = {
+            event: 'new_message',
+            data: {
+                incoming_id: incoming_id,
+                outgoing_id: outgoing_id,
+                message: message,
+                msg_date: (new Date()).toLocaleString() // Add the current timestamp to the payload
+            }
+        };
+        socket.send(JSON.stringify(payload));
+    }
+
 
   function displaySentMessage(message) {
     // Create a new message object
@@ -180,12 +201,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     // Display the message
     displayMessage(newMessage);
   }
-</script>
 
 
-
-
-<script>
 function displayMessage(message) {
       var messageBody = document.getElementById("messageBody");
 
@@ -200,47 +217,10 @@ function displayMessage(message) {
       var messageDetails = document.createElement("div");
       messageDetails.classList.add("message-details");
       messageDetails.innerText =
-        message.sentTime + " | " + message.sentDate + " (" + message.sentDay + ")";
+      message.sentTime + " | " + message.sentDate + " (" + message.sentDay + ")";
 
       var messageOptions = document.createElement("div");
       messageOptions.classList.add("message-options");
-
-      var replyButton = document.createElement("button");
-      replyButton.innerText = "Reply";
-      replyButton.addEventListener("click", function () {
-        displayReplyMessage(newMessage, message.content);
-      });
-
-      var removeButton = document.createElement("button");
-      removeButton.innerText = "Remove";
-      removeButton.addEventListener("click", function () {
-        removeMessage(newMessage);
-      });
-
-      var reactionButtons = document.createElement("div");
-      reactionButtons.classList.add("reaction-buttons");
-
-      var reactionEmojis = ["❤️", "😃", "👍", "👎"]; // Add your desired reaction emojis here
-
-      reactionEmojis.forEach(function (emoji) {
-        var reactionButton = document.createElement("button");
-        reactionButton.innerText = emoji;
-        reactionButton.addEventListener("click", function () {
-          addReaction(newMessage, emoji);
-        });
-        reactionButtons.appendChild(reactionButton);
-      });
-
-      messageOptions.appendChild(replyButton);
-      messageOptions.appendChild(removeButton);
-      messageOptions.appendChild(reactionButtons);
-
-      // Restore reactions for the message if they exist
-      if (message.reactions.length > 0) {
-        message.reactions.forEach(function (emoji) {
-          addReaction(newMessage, emoji);
-        });
-      }
 
       newMessage.appendChild(messageContent);
       newMessage.appendChild(messageDetails);
@@ -262,219 +242,104 @@ function displayMessage(message) {
       messageBody.scrollTop = messageBody.scrollHeight;
     }
 
+    
 
     function saveMessageToServer(message) {
-    const xhr = new XMLHttpRequest();
-    xhr.open("POST", "save_message.php", true);
-    xhr.setRequestHeader("Content-Type", "application/json");
+  const xhr = new XMLHttpRequest();
+  xhr.open("POST", "save_message.php", true);
+  xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
 
-    xhr.onreadystatechange = function () {
-      if (xhr.readyState === XMLHttpRequest.DONE) {
-        if (xhr.status === 200) {
-          console.log("Message saved to database successfully!");
-        } else {
-          console.error("Failed to save message to database!");
-        }
-      }
-    };
-  }
-
-    function loadMessages() {
-      // Load the messages array from local storage
-      var storedMessages = localStorage.getItem("messages");
-
-      if (storedMessages) {
-        messages = JSON.parse(storedMessages);
-        messages.forEach(function (message) {
-          displayMessage(message);
-        });
+  xhr.onreadystatechange = function () {
+    if (xhr.readyState === XMLHttpRequest.DONE) {
+      if (xhr.status === 200) {
+        console.log("Message saved to database successfully!");
+      } else {
+        console.error("Failed to save message to database!");
       }
     }
+  };
 
-    function saveMessages() {
-    // Save the messages array to local storage
-    localStorage.setItem("messages", JSON.stringify(messages));
-  }
+  // Prepare the data to be sent in the request
+  const data = "incoming_id=" + encodeURIComponent(incoming_id) + "&outgoing_id=" + encodeURIComponent(outgoing_id) + "&message=" + encodeURIComponent(message);
+
+  // Send the request with the message data
+  xhr.send(data);
+}
+
+
+  function loadMessages() {
+  // Fetch messages from the database and display them
+  fetchAndDisplayMessages();
+}
+
+
+
   
-//here start
+function fetchAndDisplayMessages() {
+  const xhr = new XMLHttpRequest();
+  xhr.open("GET", "get_messages.php", true);
+  xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
 
+  xhr.onload = function () {
+    if (xhr.status === 200) {
+      const response = JSON.parse(xhr.responseText);
+      if (response.success) {
+        // Clear existing messages before adding new ones
+        messages = [];
 
-
-    function displayReplyMessage(parentMessage, parentContent) {
-      // Remove any existing reply container
-      removeReplyContainer();
-
-      var messageBody = document.getElementById("messageBody");
-
-      replyContainer = document.createElement("div");
-      replyContainer.classList.add("reply-container");
-      replyContainer.dataset.messageId = generateMessageId(); // Set a unique ID for the reply container
-
-      var replyMessage = document.createElement("div");
-      replyMessage.classList.add("reply-message");
-      replyMessage.innerText = "Replying to: " + parentContent;
-
-      var cancelReplyLink = document.createElement("a");
-      cancelReplyLink.innerText = "Cancel";
-      cancelReplyLink.style.textDecoration = "underline";
-      cancelReplyLink.style.color = "red";
-      cancelReplyLink.addEventListener("click", function () {
-        removeReplyContainer(replyContainer.dataset.messageId);
-      });
-
-      replyContainer.appendChild(replyMessage);
-      replyContainer.appendChild(cancelReplyLink);
-
-      // Set the background color of the reply container
-      replyContainer.style.backgroundColor = "#ddd";
-
-      // Insert the reply container below the message box area
-      messageBody.appendChild(replyContainer);
-
-      // Save the messages array back to local storage
-      saveMessages();
-    }
-
-
-
-    function removeReplyContainer(replyToMessageId) {
-      if (replyContainer && replyContainer.dataset.messageId === replyToMessageId) {
-        var messageBody = document.getElementById("messageBody");
-        messageBody.removeChild(replyContainer);
-        replyContainer = null;
-
-        // Save the messages array back to local storage
-        saveMessages();
-      }
-    }
-
-
-
-    function removeMessage(messageElement) {
-      var messageBody = document.getElementById("messageBody");
-      messageBody.removeChild(messageElement);
-
-      // Remove the message from the messages array
-      var messageId = messageElement.dataset.messageId;
-      var index = messages.findIndex(function (message) {
-        return message.dataset.messageId === messageId;
-      });
-
-      if (index !== -1) {
-        messages.splice(index, 1);
-      }
-
-      // Save the messages array back to local storage
-      saveMessages();
-    }
-
-    function addEmoji(emoji) {
-      var messageInput = document.getElementById("messageInput");
-      messageInput.value += emoji;
-    }
-
-
-
-    function searchMessages() {
-      var searchInput = document.getElementById("searchInput");
-      var searchText = searchInput.value.toLowerCase();
-
-      // Clear the input field
-      searchInput.value = "";
-
-      var searchResults = messages.filter(function (message) {
-        return message.content.toLowerCase().includes(searchText);
-      });
-
-      displaySearchResults(searchResults);
-    }
-
-    function displaySearchResults(results) {
-      var messageBody = document.getElementById("messageBody");
-      messageBody.innerHTML = "";
-
-      results.forEach(function (message) {
-        displayMessage(message);
-      });
-    }
-
-    function generateMessageId() {
-      return Math.random().toString(36).substr(2, 9);
-    }
-
-
-
-    function addReaction(messageElement, emoji) {
-      // Check if the message already has a reaction from the user
-      var existingReaction = messageElement.querySelector(".reaction");
-      if (existingReaction) {
-        // If the same emoji is clicked again, remove the reaction
-        if (existingReaction.innerText === emoji) {
-          existingReaction.remove();
-          removeReactionFromMessage(messageElement.dataset.messageId, emoji);
-          saveMessages(); // Save the updated messages to local storage
-          return;
-        } else {
-          // If a different emoji is clicked, replace the existing reaction
-          existingReaction.innerText = emoji;
-          updateReactionInMessage(messageElement.dataset.messageId, emoji);
-          saveMessages(); // Save the updated messages to local storage
-          return;
-        }
-      }
-
-      var reaction = document.createElement("span");
-      reaction.classList.add("reaction");
-      reaction.innerText = emoji;
-
-      messageElement.appendChild(reaction);
-      addReactionToMessage(messageElement.dataset.messageId, emoji);
-      saveMessages(); // Save the updated messages to local storage
-    }
-
-    function addReactionToMessage(messageId, emoji) {
-      var message = messages.find(function (message) {
-        return message.dataset.messageId === messageId;
-      });
-
-      if (message) {
-        message.reactions.push(emoji);
-      }
-    }
-
-    function updateReactionInMessage(messageId, emoji) {
-      var message = messages.find(function (message) {
-        return message.dataset.messageId === messageId;
-      });
-
-      if (message) {
-        var reactionIndex = message.reactions.findIndex(function (reaction) {
-          return reaction === emoji;
+        const receivedMessages = response.messages;
+        receivedMessages.forEach(function (message) {
+          if (message.incoming_msg_user_id == <?php echo $id; ?>) {
+            // Display incoming messages
+            displayReceivedMessage(message);
+          } else {
+            // Display outgoing messages
+            displaySentMessage(message);
+          }
         });
-
-        if (reactionIndex !== -1) {
-          message.reactions[reactionIndex] = emoji;
-        }
+      } else {
+        console.error("Failed to fetch messages:", response.error);
       }
+    } else {
+      console.error("Request failed with status:", xhr.status);
     }
+  };
 
-    function removeReactionFromMessage(messageId, emoji) {
-      var message = messages.find(function (message) {
-        return message.dataset.messageId === messageId;
-      });
+  xhr.onerror = function () {
+    console.error("Network error occurred");
+  };
 
-      if (message) {
-        var reactionIndex = message.reactions.findIndex(function (reaction) {
-          return reaction === emoji;
-        });
-
-        if (reactionIndex !== -1) {
-          message.reactions.splice(reactionIndex, 1);
-        }
-      }
-    }
+  xhr.send();
+}
 
 
-    // Load the messages from local storage when the page is loaded
-    loadMessages();
+
+function displayReceivedMessage(message) {
+    // Create a new message object for received messages
+    var newMessage = {
+      content: message.message,
+      sentTime: message.msg_date,
+      reactions: [],
+      emojis: [] // Add the extracted emojis to the message object
+    };
+
+    // Add the message to the messages array
+    messages.push(newMessage);
+
+    // Display the message
+    displayMessage(newMessage);
+  }
+
+  function saveMessages() {
+  // Save the messages array to local storage
+  localStorage.setItem("messages", JSON.stringify(messages));
+  }
+
+  function generateMessageId() {
+    return Math.random().toString(36).substr(2, 9);
+  }
+
+  // Load the messages from local storage when the page is loaded
+  loadMessages();
   </script>
+
