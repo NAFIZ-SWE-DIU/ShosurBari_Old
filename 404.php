@@ -1,33 +1,34 @@
 <?php include_once("includes/basic_includes.php");?>
 <?php include_once("functions.php"); ?>
 
-
 <?php
 $result=search();
 ?>
 <!DOCTYPE HTML>
 <html>
 <head>
-<title>Error 404- ShosurBari</title>
+<title>Error 404 | ShosurBari</title>
+<link rel="icon" href="images/shosurbari-icon.png" type="image/png">
 </head>
 <body>
 
-
-	
-    <!-- 404 Page area Start-->
+   
+   
+   
+<!-- 404 Page area Start-->
     <div class="error-page-area">
         <div class="error-page-wrap">
             <i class="notika-icon notika-close"></i>
-            <h2>ERROR <span class="counter" style="color:#06b6d4;">404!</span></h2>
-            <p>Sorry, But the page you are looking for has not been found. Try checking the URL for an error, then hit the refresh button on your browser or try found something else in our site.</p>
+            <h2>Oops! <span class="counter" style="color:#06b6d4;">Error 404</span></h2>
+            <p>Page Not Found. Please check the URL, refresh your browser, or explore other content on our site.</p>
             <a href="index.php" class="btn">Go to Back Home Page</a>
             <a href="contact.php" class="btn error-btn-mg">Report Problem</a>
         </div>
     </div>
-    <!-- 404 Page area End-->
+<!-- 404 Page area End-->
  
 
-    <style>
+<style>
 .error-page-area{
     min-height:100vh;
     text-align:center;
@@ -38,10 +39,12 @@ $result=search();
     height:100vh;
     width:1px;
 }
+
 .error-page-area:before{
     vertical-align: middle;
     display: inline-block;
 }
+
 .error-page-wrap{
     max-width:580px;
     padding:20px 0;
@@ -61,12 +64,14 @@ $result=search();
     margin-top: -15px;
     margin-bottom: -15px;
 }
+
 .error-page-wrap p{
 	font-size:17px;
 	color:#333;
 	line-height:24px;
     padding: 10px;
 }
+
 .error-page-wrap .btn{
 	background:#06b6d4;
 	color:#fff;
@@ -78,31 +83,24 @@ $result=search();
     padding: 7px;
     text-decoration: none;
 }
+
 .error-page-wrap .btn:hover{
 	background:#0aa4ca;
 	color:#fff;
     padding: 7px;
 }
+
 .error-page-wrap .counter{
 	color:#00c292;
 }
+
 .error-page-wrap i{
 	font-size: 40px;
     color: #00c292;
     padding-bottom: 15px !important;
     display: block;
 }
-
-
-
-
-
-
-
-
-
 /* start */
-
 </style>
 
 
