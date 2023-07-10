@@ -462,9 +462,13 @@ p {
 }
 
 .message-footer {
-  margin-top: 10px;
-  text-align: center;
-  position: relative;
+	margin-top: 10px;
+	text-align: center;
+	position: relative;
+	display: flex;
+    align-items: center;
+    padding: 10px;
+    border-top: 1px solid #ccc;
 }
 
 .message-footer p{
@@ -492,7 +496,7 @@ p {
 }
 
 .message-footer button {
-	padding: 23.8px 10px;
+	padding: 23.7px 10px;
     border-top: 1px solid #0aa4ca;
 	border-bottom: 1px solid #0aa4ca;
     border-right: 1px solid #0aa4ca;
@@ -507,7 +511,7 @@ p {
 	/* background: #0aa4ca; */
   	color: #0aa4ca;
 	background: #fff;
-  	padding: 23.8px 10px;
+  	padding: 23.7px 10px;
 }
 
 /* Styling for sender and received messages */
@@ -696,12 +700,7 @@ input[type="text"]:focus {
 	text-align: center;
 }
 
-.message-footer {
-    display: flex;
-    align-items: center;
-    padding: 10px;
-    border-top: 1px solid #ccc;
-  }
+
 
   #messageInput {
     flex: 1;
@@ -722,6 +721,8 @@ input[type="text"]:focus {
   border: 1px solid #0aa4ca;
   outline: none; /*This line removes the default focus outline */
 }
+
+
 
 </style>
 
@@ -790,7 +791,17 @@ $totalMatch = $skinToneMatch + $religionMatch;
 	<?php include_once("save_message.php");?>
 	<!-- ============================  Navigation End ============================ -->
 
+	<script>
+    var conn = new WebSocket('ws://localhost:8080');
+conn.onopen = function(e) {
+    console.log("Connection established!");
+};
 
+conn.onmessage = function(e) {
+    console.log(e.data);
+};
+
+    </script>
 
 <!-- -- -- -- -- -- -- -- -- -- -- -- -- ---- -- --
 -- -- -- -- -- -- -- -- --- -- -- -- -- -- -- -- --
