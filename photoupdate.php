@@ -171,7 +171,51 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST'){ uploadphoto($id); }
     </script>
 
 
+<style>
+.shosurbari-biodata-form {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  width: 1400px;
+  margin: auto;
+}
 
+.soshurbari-animation-icon {
+  flex-basis: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.soshurbari-animation-icon img{
+  justify-content: flex-end;
+  margin: auto;
+}
+
+@media (max-width: 1400px){
+  .shosurbari-biodata-form{
+    width: 1000px;
+  }
+}
+
+@media (max-width: 1024px) {
+  .soshurbari-animation-icon {
+    display: none;
+  }
+
+  .shosurbari-biodata-form {
+    width: auto;
+}
+}
+</style>
+
+<div class="shosurbari-biodata-form">
+
+        <div class="soshurbari-animation-icon">
+            <div class="sb-icon-laptop">
+                <img src="images/shosurbari-profile.png">
+            </div>
+        </div>
 
     <div class="shosurbari-user-account">
 
@@ -254,6 +298,8 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST'){ uploadphoto($id); }
                     <input type="submit" id="edit-submit" name="update_photo" value="Upload" class="update_photo-btn submit-button" />
                 </form>
             </div>
+        </div>
+
         </div>
     </div>
 
