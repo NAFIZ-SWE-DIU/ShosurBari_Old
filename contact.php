@@ -8,7 +8,8 @@ error_reporting(0);
 
 
 <head>
-<title>Contact Us - ShosurBari</title>
+<title>Contact Us | ShosurBari</title>
+<link rel="icon" href="images/shosurbari-icon.png" type="image/png">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 
@@ -30,20 +31,6 @@ error_reporting(0);
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/16.0.8/css/intlTelInput.css" />
 
 <!--font-Awesome-->
-<script>
-$(document).ready(function(){
-    $(".dropdown").hover(            
-        function() {
-            $('.dropdown-menu', this).stop( true, true ).slideDown("fast");
-            $(this).toggleClass('open');        
-        },
-        function() {
-            $('.dropdown-menu', this).stop( true, true ).slideUp("fast");
-            $(this).toggleClass('open');       
-        }
-    );
-});
-</script>
 </head>
 
 
@@ -65,6 +52,53 @@ $(document).ready(function(){
 		</div>
 	</div>
 
+
+
+  <style>
+.shosurbari-biodata-form {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  width: 1400px;
+  margin: auto;
+}
+
+.soshurbari-animation-icon,
+.shosurbari-animation-form {
+  flex-basis: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.soshurbari-animation-icon img{
+  justify-content: flex-end;
+  margin: auto;
+  height: 430px;
+  width: 425px;
+}
+
+@media (max-width: 1400px){
+  .shosurbari-biodata-form{
+    width: 1000px;
+  }
+}
+
+@media (max-width: 1024px) {
+  .soshurbari-animation-icon {
+    display: none;
+  }
+
+  .shosurbari-animation-form {
+    flex-basis: 100%;
+    justify-content: center;
+  }
+
+  .shosurbari-biodata-form {
+    width: auto;
+}
+}
+</style>
 
 
   <div class="shosurbari-about-contact">
@@ -98,6 +132,17 @@ $(document).ready(function(){
 	</div>
 
 
+
+
+  <div class="shosurbari-biodata-form">
+
+  <div class="soshurbari-animation-icon">
+    <div class="sb-icon-laptop">
+      <img src="images/shosurbari-contact.png">
+    </div>
+  </div>
+
+  <div class="shosurbari-animation-form">
 
   <div class="shosurbari-biodata">
     <form action="" method="POST" name="myForm" onsubmit="return validateForm()">
@@ -142,6 +187,9 @@ $(document).ready(function(){
       </div>
     </form>
   </div>
+  </div>
+  </div>
+
 
 
   <?php include_once("footer.php");?>
