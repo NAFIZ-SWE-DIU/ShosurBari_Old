@@ -1,45 +1,64 @@
 <style>
-    #message-list-container{
-        margin: auto;
-        width: 400px;
-    }
+#message-list-container{
+  margin: auto;
+  width: 400px;
+  border: 2px solid #06b6d4;
+  border-radius: 5px;
+}
 
 .message-list {
   display: flex;
   align-items: center;
-  justify-content: center; /* Center-align the message list */
+  justify-content: center;
+  margin-top: 10px;
   margin-bottom: 10px;
-  border: 1px solid #ccc; /* Add a border */
-  padding: 0px; /* Add padding */
-  width: 400px;
+  padding: 0px;
+  background: #00bbff22;
 }
 
-.profile-img-message {
-    margin-right: 10px;
-    float: left;
-    width: 100px;
-    height: 60px;
-    margin-left: 0;
-    margin-right: 0;
-}
-
-.profile-img-message img {
-    height: 50px;
-    width: 50px;
-    object-fit: cover;
-    border: 4px solid #fff;
-    position: relative;
-    top: 77px;
-    z-index: 5;
-    background: rgb(245, 242, 242);
-    border-radius: 50%;
-    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
-    margin: 0 auto;
-    display: block;
+.message-list:hover{
+  background: #0aa4ca;
+  color: #fff;
 }
 
 .message-content {
   font-size: 14px;
+  font-weight: 600;
+  width: 100%;
+  margin-top: 2px;
+}
+
+.message-content a{
+  color: black;
+}
+
+.message-content a:hover{
+  text-decoration: none;
+  color: #fff;
+}
+
+.profile-img-message {
+  margin-right: 10px;
+  float: left;
+  width: 100%;
+  height: 60px;
+  margin-left: 0;
+  margin-right: 0;
+}
+
+.profile-img-message img {
+  height: 50px;
+  width: 50px;
+  object-fit: cover;
+  border: 4px solid #fff;
+  position: relative;
+  top: 5px;
+  z-index: 5;
+  background: rgb(245, 242, 242);
+  border-radius: 50%;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+  margin: auto auto auto 20px;
+  display: block;
 }
 </style>
 
@@ -142,6 +161,8 @@ error_reporting(0);
         }
       }
       ?>
+
+      
       <div class="message-list">
         <div class="profile-img-message">
           <?php if (!empty($userPic)) { ?>
@@ -154,9 +175,15 @@ error_reporting(0);
             </a>
           <?php } ?>
         </div>
+
         <div class="message-content">
-          <p>User ID: <?php echo $otherUserId; ?></p>
+          <a href="view_profile.php?id=<?php echo $otherUserId; ?>"> <p>বায়োডাটা নং : <?php echo $otherUserId; ?></p>
+
+          <p>জেলা : <?php echo $otherUserId; ?></p> </a>
         </div>
+
+
+        
       </div>
     <?php
     }
@@ -183,7 +210,7 @@ error_reporting(0);
 
 
 
-  <?php include_once("footer.php");?>
+<?php include_once("footer.php");?>
 	<!-- FlexSlider -->
 	<script defer src="js/jquery.flexslider.js"></script>
 		<link rel="stylesheet" href="css/flexslider.css" type="text/css" media="screen" />
