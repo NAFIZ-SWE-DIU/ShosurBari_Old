@@ -198,11 +198,6 @@ if (!isset($_SESSION['id'])) {
 
 
 
-
-
-
-
-
 <?php include_once("footer.php");?>
 	<!-- FlexSlider -->
 	<script defer src="js/jquery.flexslider.js"></script>
