@@ -85,7 +85,8 @@ if (!isset($_SESSION['id'])) {
   // Update user's active status to 0 (logged out)
   $logoutQuery = "UPDATE users SET active_status = 0, last_active_time = ? WHERE id = ?";
   $stmt = $conn->prepare($logoutQuery);
-  $logoutTime = date("D M d Y - h:i A");
+  $logoutTime = date("D h:i A  d M Y");
+  // $logoutTime = date("D M d Y - h:i A");
   $stmt->bind_param("si", $logoutTime, $currentUserId);
   $stmt->execute();
 
@@ -134,11 +135,27 @@ if (!isset($_SESSION['id'])) {
 
 <div class="message-list">
   <div class="profile-img-message">
-    <?php if (!empty($userPic)) { ?>
+    <?php
+    // Retrieve the profile image of the other user
+    $profileImgQuery = "SELECT pic1 FROM photos WHERE user_id = ?";
+    $stmt = $conn->prepare($profileImgQuery);
+    $stmt->bind_param("i", $otherUserId);
+    $stmt->execute();
+    $profileImgResult = $stmt->get_result();
+
+    if ($profileImgResult && $profileImgResult->num_rows > 0) {
+      $profileImgRow = $profileImgResult->fetch_assoc();
+      $userPic = $profileImgRow['pic1'];
+    }
+
+    if (!empty($userPic)) {
+      // Display the user's profile image
+      ?>
       <a href="view_profile.php?id=<?php echo $otherUserId; ?>">
         <img src="profile/<?php echo $otherUserId; ?>/<?php echo $userPic; ?>" />
       </a>
     <?php } else { ?>
+      <!-- Display a default profile image if the user does not have a profile picture -->
       <a href="view_profile.php?id=<?php echo $otherUserId; ?>">
         <img src="images/shosurbari-male-icon.jpg" />
       </a>
@@ -147,8 +164,8 @@ if (!isset($_SESSION['id'])) {
 
   <div class="message-content">
     <a href="view_profile.php?id=<?php echo $otherUserId; ?>">
-      <p>বায়োডাটা নং : <?php echo $otherUserId; ?></p>
-      <p> <span style="color: <?php echo $activeStatusColor; ?>"><?php echo $activeStatusText; ?></span></p>
+      <h6>বায়োডাটা নং : <?php echo $otherUserId; ?></h6>
+      <p><span style="color: <?php echo $activeStatusColor; ?>"><?php echo $activeStatusText; ?></span></p>
     </a>
   </div>
 </div>
@@ -197,6 +214,7 @@ if (!isset($_SESSION['id'])) {
   width: 400px;
   border: 2px solid #06b6d4;
   border-radius: 5px;
+  box-shadow: 0 4px 8px 0 rgb(0 0 0 / 20%), 0 6px 20px 0 rgb(0 0 0 / 19%);
 }
 
 .message-list {
@@ -207,6 +225,8 @@ if (!isset($_SESSION['id'])) {
   margin-bottom: 10px;
   padding: 0px;
   background: #00bbff22;
+  box-shadow: 0 4px 8px 0 rgb(0 0 0 / 20%), 0 6px 20px 0 rgb(0 0 0 / 19%);
+
 }
 
 .message-list:hover{
@@ -219,6 +239,17 @@ if (!isset($_SESSION['id'])) {
   font-weight: 600;
   width: 100%;
   margin-top: 2px;
+  line-height: 18px;
+}
+
+.message-content h6{
+  font-weight: 600;
+  font-size: 16px;
+  margin: auto;
+}
+
+.message-content p{
+  font-size: 12px;
 }
 
 .message-content a{
