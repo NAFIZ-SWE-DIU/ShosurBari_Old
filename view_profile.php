@@ -38,6 +38,10 @@
 	<!-- ============================  Navigation End ============================ -->
 
 
+
+
+
+
 	<div class="UserProfile">  <!-- UserProfile -->
 		<div class="profile-header">
 
@@ -208,21 +212,22 @@
 		$(document).ready(function() {
 		// Smooth scroll to the target section
 		$('.nav-tabs1 a').click(function(event) {
-		event.preventDefault();
+			event.preventDefault();
 
-		var targetOffset = $('.profile-header').offset().top + ($('.profile-header').outerHeight() / 2);
+			var targetOffset = $('.profile-header').offset().top + ($('.profile-header').outerHeight() / 2);
 
-		if ($(window).width() >= 931 && $(window).width() <= 2000) {
-		// Media width between 931px and 2000px
-		targetOffset -= -5; // Adjust the scroll offset as desired (scroll top 50px)
-		} else {
-		targetOffset += 530; // Adjust the scroll offset as desired
-		}
+			if ($(window).width() >= 931 && $(window).width() <= 2000) {
+			// Media width between 931px and 2000px
+			targetOffset -= -5; // Adjust the scroll offset as desired (scroll top 50px)
+			} else if ($(window).width() < 414) {
+			targetOffset += 1270; // Adjust the scroll offset as desired
+			} else {
+			targetOffset += 1130; // Adjust the scroll offset as desired
+			}
 
-
-		$('html, body').animate({
-		scrollTop: targetOffset
-		}, 950);
+			$('html, body').animate({
+			scrollTop: targetOffset
+			}, 950);
 		});
 		});
 		</script>
@@ -2731,7 +2736,6 @@ conn.onmessage = function(e) {
 			</div>
 		</div>
 	</div>
-
 
 
 
