@@ -1,6 +1,5 @@
 <?php
 // save_message.php
-
 require_once("includes/dbconn.php");
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
@@ -50,9 +49,6 @@ function sendWebSocketMessage($message) {
 
 
 
-
-
-
 <!-- HTML content for the chat interface -->
 <div class="message-container">
   <div class="message-header">
@@ -67,18 +63,19 @@ function sendWebSocketMessage($message) {
     <!-- Messages will be displayed here -->
   </div>
 
-<div class="message-footer">
-  <input type="text" class="incoming_id" name="incoming_id" value="<?php echo $id; ?>" hidden>
+  <div class="message-footer">
+    <input type="text" class="incoming_id" name="incoming_id" value="<?php echo $id; ?>" hidden>
+    <textarea type="text" rows="2" id="messageInput" name="message" class="input-field" placeholder="Type your message..." <?php echo isset($_SESSION["id"]) ? "" : "readonly"; ?>></textarea>
+    <button type="button" onclick="sendMessage()" id="sendMessageButton" <?php echo isset($_SESSION["id"]) ? "" : "disabled"; ?>><i style="font-size:19px;" class="fa">&#xf1d9;</i></button> <br>
+    <?php if (!isset($_SESSION["id"])) { ?>
+      <div class="login-alert">
+        <p id="loginMessage">মেসেজ করার জন্য অনুগ্রহ করে আপনার একাউন্ট <a href="login.php">লগইন</a> করুন</p>
+      </div>
+    <?php } ?>
+  </div>
+</div>
 
-  <textarea type="text" rows="2" id="messageInput" name="message" class="input-field" placeholder="Type your message..." <?php echo isset($_SESSION["id"]) ? "" : "readonly"; ?>></textarea>
-  <button type="button" onclick="sendMessage()" id="sendMessageButton" <?php echo isset($_SESSION["id"]) ? "" : "disabled"; ?>><i style="font-size:19px;" class="fa">&#xf1d9;</i></button> <br>
-  <?php if (!isset($_SESSION["id"])) { ?>
-    <div class="login-alert">
-      <p id="loginMessage">মেসেজ করার জন্য অনুগ্রহ করে আপনার একাউন্ট <a href="login.php">লগইন</a> করুন</p>
-    </div>
-  <?php } ?>
-</div>
-</div>
+
 
 
 <script>
@@ -312,6 +309,29 @@ function fetchAndDisplayMessages() {
   xhr.send();
 }
 
+
+function searchMessages() {
+      var searchInput = document.getElementById("searchInput");
+      var searchText = searchInput.value.toLowerCase();
+
+      // Clear the input field
+      searchInput.value = "";
+
+      var searchResults = messages.filter(function (message) {
+        return message.content.toLowerCase().includes(searchText);
+      });
+
+      displaySearchResults(searchResults);
+    }
+
+    function displaySearchResults(results) {
+      var messageBody = document.getElementById("messageBody");
+      messageBody.innerHTML = "";
+
+      results.forEach(function (message) {
+        displayMessage(message);
+      });
+    }
 
 
 function displayReceivedMessage(message) {
