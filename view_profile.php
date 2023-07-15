@@ -38,10 +38,6 @@
 	<!-- ============================  Navigation End ============================ -->
 
 
-
-
-
-
 	<div class="UserProfile">  <!-- UserProfile -->
 		<div class="profile-header">
 
