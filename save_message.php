@@ -48,7 +48,6 @@ function sendWebSocketMessage($message) {
 
 
 
-
 <!-- HTML content for the chat interface -->
 <div class="message-container">
   <div class="message-header">
