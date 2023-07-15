@@ -9,7 +9,8 @@
 
 
 <head>
-<title>Home - ShosurBari</title>
+<title>Home | ShosurBari</title>
+<link rel="icon" href="images/shosurbari-icon.png" type="image/png">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); } </script>
@@ -25,20 +26,6 @@
 <!--font-Awesome-->
 <link href="css/font-awesome.css" rel="stylesheet"> 
 <!--font-Awesome-->
-<script>
-$(document).ready(function(){
-    $(".dropdown").hover(            
-        function() {
-            $('.dropdown-menu', this).stop( true, true ).slideDown("fast");
-            $(this).toggleClass('open');        
-        },
-        function() {
-            $('.dropdown-menu', this).stop( true, true ).slideUp("fast");
-            $(this).toggleClass('open');       
-        }
-    );
-});
-</script>
 </head>
 
 
@@ -107,7 +94,7 @@ $(document).ready(function(){
       <p>Date: <a id="date"> </a> <a id="month"> <a id="year">  </a> </p>
 
       <p>Time: <a id="time">  </a> </p>
-    </div> -->
+    </div>  -->
   </div> 
 
 
@@ -153,7 +140,38 @@ $(document).ready(function(){
   -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- ---
   -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -->
 
+  <style>
+.sb-search-logo-btn {
+  display: flex;
+  align-items: center;
+}
 
+.sb-search-options,
+.sb-search-logo {
+  display: inline-flex;
+}
+
+.sb-search-logo-btn {
+  display: flex;
+  align-items: center;
+}
+
+.sb-search-options,
+.sb-search-logo {
+  display: inline-flex;
+}
+
+@media screen and (max-width: 930px) {
+  .sb-search-options {
+    display: none;
+  }
+
+  .sb-search-logo-btn {
+    justify-content: center;
+  }
+}
+
+</style>
 
 
 
@@ -167,22 +185,19 @@ $(document).ready(function(){
     <h2>Find your perfect Partner</h2>
 
     <div class="sb-search-logo-btn">
+      <div class="sb-search-options">
+        <img src="images/search.png">
+      </div>
 
       <div class="sb-search-logo">
-        <img src="images/find.png">
         <div class="sb-search-btn">
           <p>  মনের মতন জীবন সঙ্গী খুঁজে পেতে সার্চ বাটনে ক্লিক করুন</p>
           <a href="search.php"><button > Search Biodata </button></a>
         </div>
       </div>
-
     </div>
-
   </div>
-
-  <style>
-
-    </style>
+  
 
 
 
@@ -234,7 +249,7 @@ $(document).ready(function(){
 						}
 
 
-                    // 2bd_personal_lifestyle
+        // 2bd_personal_lifestyle
         $sql3 = "SELECT * FROM 2bd_personal_lifestyle WHERE user_id=$profid";
         $result3 = mysqlexec($sql3);
         if ($result3 && mysqli_num_rows($result3) > 0) {
