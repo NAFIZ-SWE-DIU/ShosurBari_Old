@@ -90,7 +90,7 @@ if (!isset($_SESSION['id'])) {
   // Update user's active status to 0 (logged out)
   $logoutQuery = "UPDATE users SET active_status = 0, last_active_time = ? WHERE id = ?";
   $stmt = $conn->prepare($logoutQuery);
-  $logoutTime = date("D h:i A  d M Y");
+  $logoutTime = date("D h:i A - d M Y");
   $stmt->bind_param("si", $logoutTime, $currentUserId);
   $stmt->execute();
 
@@ -252,6 +252,7 @@ if (!isset($_SESSION['id'])) {
   width: 100%;
   margin-top: 2px;
   line-height: 18px;
+  margin-left: -80px;
 }
 
 .message-content h6{
