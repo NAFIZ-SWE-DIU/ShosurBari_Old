@@ -24,8 +24,6 @@ $deactivated = $row['deactivated'];
 
 
 
-
-
 <!DOCTYPE HTML>
 <html>
 
