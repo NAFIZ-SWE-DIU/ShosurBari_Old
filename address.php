@@ -22,7 +22,6 @@ if(isloggedin()){
 <html>
 
 
-
 <head>
 <title>Edit Biodata - ShosurBari</title>
 <meta name="viewport" content="width=device-width, initial-scale=1">
