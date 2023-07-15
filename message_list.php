@@ -73,6 +73,11 @@ if (!isset($_SESSION['id'])) {
   </div>
 
 
+
+  
+
+
+
   <div id="message-list-container">
   <?php
   // Create a MySQLi connection
@@ -86,7 +91,6 @@ if (!isset($_SESSION['id'])) {
   $logoutQuery = "UPDATE users SET active_status = 0, last_active_time = ? WHERE id = ?";
   $stmt = $conn->prepare($logoutQuery);
   $logoutTime = date("D h:i A  d M Y");
-  // $logoutTime = date("D M d Y - h:i A");
   $stmt->bind_param("si", $logoutTime, $currentUserId);
   $stmt->execute();
 
@@ -98,6 +102,8 @@ if (!isset($_SESSION['id'])) {
   $result = $stmt->get_result();
 
   if ($result && $result->num_rows > 0) {
+    $displayedUserIds = array(); // Array to store the displayed user IDs
+
     // Loop through each message list
     while ($row = $result->fetch_assoc()) {
       $senderId = $row['outgoing_msg_user_id'];
@@ -105,6 +111,14 @@ if (!isset($_SESSION['id'])) {
 
       // Determine the ID of the other user involved in the conversation
       $otherUserId = ($senderId == $currentUserId) ? $receiverId : $senderId;
+
+      // Check if the user ID has already been displayed
+      if (in_array($otherUserId, $displayedUserIds)) {
+        continue; // Skip displaying duplicate user IDs
+      }
+
+      // Add the user ID to the displayed user IDs array
+      $displayedUserIds[] = $otherUserId;
 
       // Retrieve the other user's profile details including active status and last active time
       $userQuery = "SELECT * FROM users WHERE id = ?";
@@ -133,43 +147,41 @@ if (!isset($_SESSION['id'])) {
       }
       ?>
 
-<div class="message-list">
-  <div class="profile-img-message">
-    <?php
-    // Retrieve the profile image of the other user
-    $profileImgQuery = "SELECT pic1 FROM photos WHERE user_id = ?";
-    $stmt = $conn->prepare($profileImgQuery);
-    $stmt->bind_param("i", $otherUserId);
-    $stmt->execute();
-    $profileImgResult = $stmt->get_result();
+      <div class="message-list">
+        <!-- Display the user's profile image -->
+        <div class="profile-img-message">
+          <?php
+          $profileImgQuery = "SELECT pic1 FROM photos WHERE user_id = ?";
+          $stmt = $conn->prepare($profileImgQuery);
+          $stmt->bind_param("i", $otherUserId);
+          $stmt->execute();
+          $profileImgResult = $stmt->get_result();
 
-    if ($profileImgResult && $profileImgResult->num_rows > 0) {
-      $profileImgRow = $profileImgResult->fetch_assoc();
-      $userPic = $profileImgRow['pic1'];
-    }
+          if ($profileImgResult && $profileImgResult->num_rows > 0) {
+            $profileImgRow = $profileImgResult->fetch_assoc();
+            $userPic = $profileImgRow['pic1'];
+          }
 
-    if (!empty($userPic)) {
-      // Display the user's profile image
-      ?>
-      <a href="view_profile.php?id=<?php echo $otherUserId; ?>">
-        <img src="profile/<?php echo $otherUserId; ?>/<?php echo $userPic; ?>" />
-      </a>
-    <?php } else { ?>
-      <!-- Display a default profile image if the user does not have a profile picture -->
-      <a href="view_profile.php?id=<?php echo $otherUserId; ?>">
-        <img src="images/shosurbari-male-icon.jpg" />
-      </a>
-    <?php } ?>
-  </div>
+          if (!empty($userPic)) {
+            ?>
+            <a href="view_profile.php?id=<?php echo $otherUserId; ?>">
+              <img src="profile/<?php echo $otherUserId; ?>/<?php echo $userPic; ?>" />
+            </a>
+          <?php } else { ?>
+            <a href="view_profile.php?id=<?php echo $otherUserId; ?>">
+              <img src="images/shosurbari-male-icon.jpg" />
+            </a>
+          <?php } ?>
+        </div>
 
-  <div class="message-content">
-    <a href="view_profile.php?id=<?php echo $otherUserId; ?>">
-      <h6>বায়োডাটা নং : <?php echo $otherUserId; ?></h6>
-      <p><span style="color: <?php echo $activeStatusColor; ?>"><?php echo $activeStatusText; ?></span></p>
-    </a>
-  </div>
-</div>
-
+        <!-- Display the user ID and active status -->
+        <div class="message-content">
+          <a href="view_profile.php?id=<?php echo $otherUserId; ?>">
+            <h6>বায়োডাটা নং : <?php echo $otherUserId; ?></h6>
+            <p><span style="color: <?php echo $activeStatusColor; ?>"><?php echo $activeStatusText; ?></span></p>
+          </a>
+        </div>
+      </div>
 
     <?php
     }
