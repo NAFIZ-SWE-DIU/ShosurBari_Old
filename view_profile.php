@@ -219,8 +219,8 @@
 			if ($(window).width() >= 931 && $(window).width() <= 2000) {
 			// Media width between 931px and 2000px
 			targetOffset -= -5; // Adjust the scroll offset as desired (scroll top 50px)
-			} else if ($(window).width() < 414) {
-			targetOffset += 1270; // Adjust the scroll offset as desired
+			} else if ($(window).width() < 390) {
+			targetOffset += 1230; // Adjust the scroll offset as desired
 			} else {
 			targetOffset += 1130; // Adjust the scroll offset as desired
 			}
