@@ -4,8 +4,6 @@
 <!DOCTYPE HTML>
 <html>
 
-
-
 <head>
 <title>About Us - ShosurBari</title>
 <meta name="viewport" content="width=device-width, initial-scale=1">
