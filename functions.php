@@ -30,6 +30,8 @@
 
 
 
+
+
     /*-- -- -- -- -- -- -- -- -- -- -- -- -- ---- -- --
     -- -- -- -- -- -- -- -- --- -- -- -- -- -- -- -- --
     --                S  T  A  R  T                  --
@@ -61,21 +63,20 @@
     {
         if ($_SERVER['REQUEST_METHOD'] == 'POST') {
             $biodatagender = isset($_POST['biodatagender']) ? $_POST['biodatagender'] : '';
-            $Skin_tones = isset($_POST['Skin_tones']) ? $_POST['Skin_tones'] : '';
-            $maritalstatus = isset($_POST['maritalstatus']) ? $_POST['maritalstatus'] : '';
-            $scndry_edu_method = isset($_POST['scndry_edu_method']) ? $_POST['scndry_edu_method'] : '';
-
+            $Skin_tones = isset($_POST['Skin_tones']) ? $_POST['Skin_tones'] : [];
+    
+            // Remove the "Any Skin Tones" value from the array if present
+            $Skin_tones = array_diff($Skin_tones, ["Any Skin Tones"]);
+    
             // Check if any option is not selected
-            if (empty($biodatagender) || empty($Skin_tones) || empty($maritalstatus) || empty($scndry_edu_method)) {
-                // If any option is not selected, return the page
+            if (empty($biodatagender) && empty($Skin_tones)) {
+                // If no option is selected, return the page
                 return;
             }
-
+    
             $sql = "SELECT * FROM 1bd_personal_physical 
-            LEFT JOIN 6bd_7bd_marital_status ON 1bd_personal_physical.user_id = 6bd_7bd_marital_status.user_id
-            LEFT JOIN 3bd_secondaryedu_method ON 1bd_personal_physical.user_id = 3bd_secondaryedu_method.user_id
             WHERE 1=1";
-
+    
             if (!empty($biodatagender)) {
                 if (!is_array($biodatagender)) {
                     $sql .= " AND biodatagender = '$biodatagender'";
@@ -89,45 +90,29 @@
                     $sql .= ")";
                 }
             }
-
+    
             if (!empty($Skin_tones)) {
-                if (!is_array($Skin_tones)) {
-                    $skinTonesArray = explode(',', $Skin_tones);
-                    $skinTonesCondition = implode("','", $skinTonesArray);
-                    $sql .= " AND Skin_tones IN ('$skinTonesCondition')";
-                }
+                $skinTonesCondition = implode("','", $Skin_tones);
+                $sql .= " AND Skin_tones IN ('$skinTonesCondition')";
             }
-
-            if (!empty($maritalstatus)) {
-                if (!is_array($maritalstatus)) {
-                    $maritalStatusArray = explode(',', $maritalstatus);
-                    $maritalStatusCondition = implode("','", $maritalStatusArray);
-                    $sql .= " AND maritalstatus IN ('$maritalStatusCondition')";
-                }
-            }
-
-            if (!empty($scndry_edu_method)) {
-                if (!is_array($scndry_edu_method)) {
-                    $educationMethodArray = explode(',', $scndry_edu_method);
-                    $educationMethodCondition = implode("','", $educationMethodArray);
-                    $sql .= " AND scndry_edu_method IN ('$educationMethodCondition')";
-                }
-            }
-
+    
             $result = mysqlexec($sql);
-
-            // Check if no matching data found for biodatagender
-            if (empty($result) && !is_array($biodatagender)) {
-                // If no matching data found for biodatagender, return the page
+    
+            // Check if no matching data found for biodatagender and Skin_tones
+            if (empty($result) && !is_array($biodatagender) && empty($Skin_tones)) {
+                // If no matching data found for biodatagender and Skin_tones, return the page
                 return;
-            } elseif (empty($result) && is_array($biodatagender)) {
-                // If no matching data found for any of the biodatagender options, return the page
+            } elseif (empty($result) && is_array($biodatagender) && empty($Skin_tones)) {
+                // If no matching data found for any of the biodatagender options and Skin_tones, return the page
                 return;
             }
-
+    
             return $result;
         }
     }
+    
+    
+    
     /*-- -- -- -- -- -- -- -- -- -- -- -- -- ---- -- --
     -- -- -- -- -- -- -- -- --- -- -- -- -- -- -- -- --
     --                   E   N   D                   --
@@ -435,7 +420,12 @@
 	$mistri_occupation_level=$_POST['mistri_occupation_level'];
 	$occupation_describe=$_POST['occupation_describe'];
 	$dress_code=$_POST['dress_code'];
-	$aboutme=$_POST['aboutme'];		
+	$aboutme=$_POST['aboutme'];
+    $groom_bride__email=$_POST['groom_bride__email'];		
+	$groom_bride__number=$_POST['groom_bride__number'];		
+	$parent_number=$_POST['parent_number'];		
+	$groombride_relational_number=$_POST['groombride_relational_number'];		
+		
 
 
 	//Biodata 3
@@ -568,9 +558,9 @@
 --     Personal & Life Style  / sb-biodata-2     --
 -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -*/
     $sql = "INSERT INTO 2bd_personal_lifestyle
-	(user_id, smoke, occupation_sector, other_occupation_sector, business_occupation_level, student_occupation_level, health_occupation_level, engineer_occupation_level, teacher_occupation_level, defense_occupation_level, foreigner_occupation_level, garments_occupation_level, driver_occupation_level, service_andcommon_occupation_level, mistri_occupation_level, occupation_describe, dress_code, aboutme, profilecreationdate  ) 
+	(user_id, smoke, occupation_sector, other_occupation_sector, business_occupation_level, student_occupation_level, health_occupation_level, engineer_occupation_level, teacher_occupation_level, defense_occupation_level, foreigner_occupation_level, garments_occupation_level, driver_occupation_level, service_andcommon_occupation_level, mistri_occupation_level, occupation_describe, dress_code, aboutme, grrom_bride_email, grrom_bride_number, grrom_bride_family_number, family_number_relation, profilecreationdate  ) 
 	VALUES
-	('$id', '$smoke', '$occupation_sector', '$other_occupation_sector', '$business_occupation_level', '$student_occupation_level', '$health_occupation_level', '$engineer_occupation_level', '$teacher_occupation_level', '$defense_occupation_level', '$foreigner_occupation_level', '$garments_occupation_level', '$driver_occupation_level', '$service_andcommon_occupation_level', '$mistri_occupation_level', '$occupation_describe', '$dress_code', '$aboutme', DATE_FORMAT(NOW(), '%e %M %Y, %h:%i:%s %p'))";
+	('$id', '$smoke', '$occupation_sector', '$other_occupation_sector', '$business_occupation_level', '$student_occupation_level', '$health_occupation_level', '$engineer_occupation_level', '$teacher_occupation_level', '$defense_occupation_level', '$foreigner_occupation_level', '$garments_occupation_level', '$driver_occupation_level', '$service_andcommon_occupation_level', '$mistri_occupation_level', '$occupation_describe', '$dress_code', '$aboutme', '$groom_bride__email', '$groom_bride__number', '$parent_number', '$groombride_relational_number', DATE_FORMAT(NOW(), '%e %M %Y, %h:%i:%s %p'))";
     if (mysqli_query($conn,$sql))
 	{echo " ";}
 
