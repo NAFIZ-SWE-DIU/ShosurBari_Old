@@ -9,7 +9,8 @@ $result=search();
 
 
 <head>
-<title>Search - ShosurBari</title>
+<title>Search | ShosurBari</title>
+<link rel="icon" href="images/shosurbari-icon.png" type="image/png">
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
@@ -26,20 +27,6 @@ $result=search();
 <!--font-Awesome-->
 <link href="css/font-awesome.css" rel="stylesheet"> 
 <!--font-Awesome-->
-<script>
-$(document).ready(function(){
-    $(".dropdown").hover(            
-        function() {
-            $('.dropdown-menu', this).stop( true, true ).slideDown("fast");
-            $(this).toggleClass('open');        
-        },
-        function() {
-            $('.dropdown-menu', this).stop( true, true ).slideUp("fast");
-            $(this).toggleClass('open');       
-        }
-    );
-});
-</script>
 </head>
 
 
@@ -221,45 +208,59 @@ $(document).ready(function(){
 
 
 
-            <!--Biodata Skin Tones Option -->
-            <div class="wrapper">
-              <label class="form-control toggle-next ellipsis">শারীরিক বর্ণ<span style=" color:#06b6d4;">   <i class="fa fa-chevron-down"></i></span></label>
-              <div class="checkboxes" id="Lorems">
-                <div class="inner-wrap">
-                  
-                  
-                    <input type="checkbox" name="Skin_tones[]" value="Any Skin Tones" class="SelectBox all" checked />
-                    <span class="search-options">সকল বর্ণ</span>
-                  <br>
+<!--Biodata Skin Tones Option -->
+<div class="wrapper">
+  <label class="form-control toggle-next ellipsis">শারীরিক বর্ণ<span style=" color:#06b6d4;">   <i class="fa fa-chevron-down"></i></span></label>
+  <div class="checkboxes" id="Lorems">
+    <div class="inner-wrap">
 
-                  
-                    <input type="checkbox" name="Skin_tones[]" value="উজ্জ্বল ফর্সা" class="SelectBox val" />
-                    <span class="search-options">উজ্জ্বল ফর্সা</span>
-                  <br>
+      <input type="checkbox" name="Skin_tones[]" value="Any Skin Tones" class="SelectBox all" onchange="handleAllSkinTones(this)" checked />
+      <span class="search-options">সকল বর্ণ</span>
+      <br>
 
-                  
-                    <input type="checkbox" name="Skin_tones[]" value="ফর্সা" class="SelectBox val" />
-                    <span class="search-options">ফর্সা</span>
-                  <br>
+      <input type="checkbox" name="Skin_tones[]" value="উজ্জ্বল ফর্সা" class="SelectBox val" />
+      <span class="search-options">উজ্জ্বল ফর্সা</span>
+      <br>
 
-                  
-                    <input type="checkbox" name="Skin_tones[]" value="উজ্জ্বল শ্যামবর্ণ" class="SelectBox val" />
-                    <span class="search-options">উজ্জ্বল শ্যামবর্ণ</span>
-                  <br>
+      <input type="checkbox" name="Skin_tones[]" value="ফর্সা" class="SelectBox val" />
+      <span class="search-options">ফর্সা</span>
+      <br>
 
-                  
-                    <input type="checkbox" name="Skin_tones[]" value="শ্যামবর্ণ" class="SelectBox val" />
-                    <span class="search-options">শ্যামবর্ণ</span>
-                   <br>
+      <input type="checkbox" name="Skin_tones[]" value="উজ্জ্বল শ্যামবর্ণ" class="SelectBox val" />
+      <span class="search-options">উজ্জ্বল শ্যামবর্ণ</span>
+      <br>
 
-                  
-                    <input type="checkbox" name="Skin_tones[]" value="কালো" class="SelectBox val" />
-                    <span class="search-options">কালো</span>
-                  
-                  
-                </div>
-              </div>
-            </div>
+      <input type="checkbox" name="Skin_tones[]" value="শ্যামবর্ণ" class="SelectBox val" />
+      <span class="search-options">শ্যামবর্ণ</span>
+      <br>
+
+      <input type="checkbox" name="Skin_tones[]" value="কালো" class="SelectBox val" />
+      <span class="search-options">কালো</span>
+
+    </div>
+  </div>
+</div>
+
+<script>
+function handleAllSkinTones(checkbox) {
+    const otherSkinToneCheckboxes = document.querySelectorAll('.SelectBox.val');
+
+    if (checkbox.checked) {
+        // If "সকল বর্ণ" checkbox is checked, show other skin tone options
+        otherSkinToneCheckboxes.forEach(checkbox => {
+            checkbox.style.display = 'inline';
+        });
+    } else {
+        // If "সকল বর্ণ" checkbox is unchecked, hide other skin tone options
+        otherSkinToneCheckboxes.forEach(checkbox => {
+            checkbox.style.display = 'none';
+        });
+    }
+}
+</script>
+
+
+
 
 
 
