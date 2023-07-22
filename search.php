@@ -1719,134 +1719,173 @@ function handleAllSkinTones(checkbox) {
 
 
 
-      <!--Biodata Religion Option -->
-      <div class="wrapper">
-        <label class="form-control toggle-next ellipsis">ধর্ম  <span style=" color:#06b6d4;">   <i class="fa fa-chevron-down"></i></span></label>
-        <div class="checkboxes" id="Lorems">
-          <div class="inner-wrap">
+<!-- Biodata Religion Option -->
+<div class="wrapper">
+  <label class="form-control toggle-next ellipsis">ধর্ম  <span style=" color:#06b6d4;">   <i class="fa fa-chevron-down"></i></span></label>
+  <div class="checkboxes" id="Lorems">
+    <div class="inner-wrap">
+      <input type="checkbox" name="religion[]" value="Any Religion" class="SelectBox all" onchange="handleAllReligions(this)" checked />
+      <span class="search-options">সকল ধর্ম</span>
+      <br>
 
-            
-              <input type="checkbox" name="religion[]" value="Any Religion" class="SelectBox all" checked />
-              <span class="search-options">সকল ধর্ম</span>
+      <input type="checkbox" name="religion[]" value="ইসলাম ধর্ম" class="SelectBox val" />
+      <span class="search-options">ইসলাম ধর্ম</span>
+      <br>
+
+      <input type="checkbox" name="religion[]" value="হিন্দু ধর্ম" class="SelectBox val" />
+      <span class="search-options">হিন্দু ধর্ম</span>
+      <br>
+
+      <input type="checkbox" name="religion[]" value="খ্রিস্টান ধর্ম" class="SelectBox val" />
+      <span class="search-options">খ্রিস্টান ধর্ম</span>
+      <br>
+
+      <input type="checkbox" name="religion[]" value="বৌদ্ধ ধর্ম" class="SelectBox val" />
+      <span class="search-options">বৌদ্ধ ধর্ম</span>
+      <br>
+
+      <input type="checkbox" name="religion[]" value="অন্যান্য" class="SelectBox val" />
+      <span class="search-options">অন্যান্য</span>
+    </div>
+  </div>
+</div>
+
+<script>
+function handleAllReligions(checkbox) {
+    const otherReligionCheckboxes = document.querySelectorAll('.SelectBox.val');
+
+    if (checkbox.checked) {
+        // If "সকল ধর্ম" checkbox is checked, show other religion options
+        otherReligionCheckboxes.forEach(checkbox => {
+            checkbox.style.display = 'inline';
+        });
+    } else {
+        // If "সকল ধর্ম" checkbox is unchecked, hide other religion options
+        otherReligionCheckboxes.forEach(checkbox => {
+            checkbox.style.display = 'none';
+        });
+    }
+}
+</script>
+
+
+
+
+
+
+<!--Biodata Marital Status Option -->
+<div class="wrapper">
+    <label class="form-control toggle-next ellipsis">বৈবাহিক অবস্থা <span style="color:#06b6d4;"><i class="fa fa-chevron-down"></i></span></label>
+    <div class="checkboxes" id="Lorems">
+        <div class="inner-wrap">
+
+
+        <input type="checkbox" name="maritalstatus[]" value="Any Marital Status" class="SelectBox all" onchange="handleAllMaritalStatus(this)" checked />
+            <span class="search-options"> সকল</span>
             <br>
 
-            
-              <input type="checkbox" name="religion[]" value="ইসলাম ধর্ম" class="SelectBox val" />
-              <span class="search-options">ইসলাম ধর্ম</span>
+
+            <input type="checkbox" name="maritalstatus[]" value="অবিবাহিত" class="SelectBox val" />
+            <span class="search-options">অবিবাহিত </span>
             <br>
 
-            
-              <input type="checkbox" name="religion[]" value="হিন্দু ধর্ম" class="SelectBox val" />
-              <span class="search-options">হিন্দু ধর্ম</span>
+
+            <input type="checkbox" name="maritalstatus[]" value="ডিভোর্স" class="SelectBox val" />
+            <span class="search-options">ডিভোর্স</span>
             <br>
 
-            
-              <input type="checkbox" name="religion[]" value="খ্রিস্টান ধর্ম" class="SelectBox val" />
-              <span class="search-options">খ্রিস্টান ধর্ম</span>
+
+            <input type="checkbox" name="maritalstatus[]" value="বিধবা" class="SelectBox val" />
+            <span class="search-options">বিধবা</span>
             <br>
 
-            
-              <input type="checkbox" name="religion[]" value="বৌদ্ধ ধর্ম" class="SelectBox val" />
-              <span class="search-options">বৌদ্ধ ধর্ম</span>
-            <br> 
-              
-            
-              <input type="checkbox" name="religion[]" value="অন্যান্য" class="SelectBox val" />
-              <span class="search-options">অন্যান্য</span>
-            
-              
-          </div>
+
+            <input type="checkbox" name="maritalstatus[]" value="বিপত্নীক" class="SelectBox val" />
+            <span class="search-options">বিপত্নীক</span>
+            <br>
+
+
+            <input type="checkbox" name="maritalstatus[]" value="বিবাহিত" class="SelectBox val" />
+            <span class="search-options">বিবাহিত</span>
+
+
         </div>
-      </div>
+    </div>
+</div>
 
+<script>
+    function handleAllMaritalStatus(checkbox) {
+        const otherMaritalStatusCheckboxes = document.querySelectorAll('.SelectBox.val');
 
-
-
-
-      <!--Biodata Marital Status Option -->
-      <div class="wrapper">
-        <label class="form-control toggle-next ellipsis">বৈবাহিক অবস্থা <span style=" color:#06b6d4;">   <i class="fa fa-chevron-down"></i></span></label>
-        <div class="checkboxes" id="Lorems">
-          <div class="inner-wrap">
-          
-            
-              <input type="checkbox" name="maritalstatus[]" value="Any Marital Status" class="SelectBox all" checked />
-              <span class="search-options"> সকল</span>
-            <br>
-
-            
-              <input type="checkbox" name="maritalstatus[]" value="অবিবাহিত" class="SelectBox val" />
-              <span class="search-options">অবিবাহিত </span>
-            <br>
-
-            
-              <input type="checkbox" name="maritalstatus[]" value="ডিভোর্স" class="SelectBox val" />
-              <span class="search-options">ডিভোর্স</span>
-            <br>
-
-            
-              <input type="checkbox" name="maritalstatus[]" value="বিধবা" class="SelectBox val" />
-              <span class="search-options">বিধবা</span>
-            <br>
-
-            
-              <input type="checkbox" name="maritalstatus[]" value="বিপত্নীক" class="SelectBox val" />
-              <span class="search-options">বিপত্নীক</span>
-            <br>
-
-            
-              <input type="checkbox" name="maritalstatus[]" value="বিবাহিত" class="SelectBox val" />
-              <span class="search-options">বিবাহিত</span>
-            
-          
-          </div>
-        </div>
-      </div>
+        if (checkbox.checked) {
+            // If "সকল" checkbox is checked, show other marital status options
+            otherMaritalStatusCheckboxes.forEach(checkbox => {
+                checkbox.style.display = 'inline';
+            });
+        } else {
+            // If "সকল" checkbox is unchecked, hide other marital status options
+            otherMaritalStatusCheckboxes.forEach(checkbox => {
+                checkbox.style.display = 'none';
+            });
+        }
+    }
+</script>
 
 
 
 
 
 
-      <!--Biodata Skin Tones Option -->
-      <div class="wrapper">
-        <label class="form-control toggle-next ellipsis">শারীরিক বর্ণ <span style="color:#06b6d4;">   <i class="fa fa-chevron-down"></i></span></label>
-        <div class="checkboxes" id="Lorems">
-          <div class="inner-wrap">
-                
-            
-              <input type="checkbox" name="Skin_tones[]" value="Any Skin Tones" class="SelectBox all" checked />
-              <span class="search-options">সকল বর্ণ</span>
-            <br>
+<!--Biodata Skin Tones Option -->
+<div class="wrapper">
+  <label class="form-control toggle-next ellipsis">শারীরিক বর্ণ<span style=" color:#06b6d4;">   <i class="fa fa-chevron-down"></i></span></label>
+  <div class="checkboxes" id="Lorems">
+    <div class="inner-wrap">
 
-            
-              <input type="checkbox" name="Skin_tones[]" value="উজ্জ্বল ফর্সা" class="SelectBox val" />
-              <span class="search-options">উজ্জ্বল ফর্সা</span>
-            <br>
+      <input type="checkbox" name="Skin_tones[]" value="Any Skin Tones" class="SelectBox all" onchange="handleAllSkinTones(this)" checked />
+      <span class="search-options">সকল বর্ণ</span>
+      <br>
 
-            
-              <input type="checkbox" name="Skin_tones[]" value="ফর্সা" class="SelectBox val" />
-              <span class="search-options">ফর্সা</span>
-            <br>
+      <input type="checkbox" name="Skin_tones[]" value="উজ্জ্বল ফর্সা" class="SelectBox val" />
+      <span class="search-options">উজ্জ্বল ফর্সা</span>
+      <br>
 
-            
-              <input type="checkbox" name="Skin_tones[]" value="উজ্জ্বল শ্যামবর্ণ" class="SelectBox val" />
-              <span class="search-options">উজ্জ্বল শ্যামবর্ণ</span>
-            <br>
+      <input type="checkbox" name="Skin_tones[]" value="ফর্সা" class="SelectBox val" />
+      <span class="search-options">ফর্সা</span>
+      <br>
 
-            
-              <input type="checkbox" name="Skin_tones[]" value="শ্যামবর্ণ" class="SelectBox val" />
-              <span class="search-options">শ্যামবর্ণ</span>
-             <br>
+      <input type="checkbox" name="Skin_tones[]" value="উজ্জ্বল শ্যামবর্ণ" class="SelectBox val" />
+      <span class="search-options">উজ্জ্বল শ্যামবর্ণ</span>
+      <br>
 
-            
-              <input type="checkbox" name="Skin_tones[]" value="কালো" class="SelectBox val" />
-              <span class="search-options">কালো</span>
-            
-          
-          </div>
-        </div>
-      </div>
+      <input type="checkbox" name="Skin_tones[]" value="শ্যামবর্ণ" class="SelectBox val" />
+      <span class="search-options">শ্যামবর্ণ</span>
+      <br>
+
+      <input type="checkbox" name="Skin_tones[]" value="কালো" class="SelectBox val" />
+      <span class="search-options">কালো</span>
+
+    </div>
+  </div>
+</div>
+
+<!-- <script>
+function handleAllSkinTones(checkbox) {
+    const otherSkinToneCheckboxes = document.querySelectorAll('.SelectBox.val');
+
+    if (checkbox.checked) {
+        // If "সকল বর্ণ" checkbox is checked, show other skin tone options
+        otherSkinToneCheckboxes.forEach(checkbox => {
+            checkbox.style.display = 'inline';
+        });
+    } else {
+        // If "সকল বর্ণ" checkbox is unchecked, hide other skin tone options
+        otherSkinToneCheckboxes.forEach(checkbox => {
+            checkbox.style.display = 'none';
+        });
+    }
+}
+</script> -->
 
 
 
