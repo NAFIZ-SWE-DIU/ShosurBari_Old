@@ -64,19 +64,31 @@
         if ($_SERVER['REQUEST_METHOD'] == 'POST') {
             $biodatagender = isset($_POST['biodatagender']) ? $_POST['biodatagender'] : '';
             $Skin_tones = isset($_POST['Skin_tones']) ? $_POST['Skin_tones'] : [];
+            $religions = isset($_POST['religion']) ? $_POST['religion'] : [];
+            $maritalStatus = isset($_POST['maritalstatus']) ? $_POST['maritalstatus'] : [];
     
             // Remove the "Any Skin Tones" value from the array if present
             $Skin_tones = array_diff($Skin_tones, ["Any Skin Tones"]);
+            // Remove the "Any Religion" value from the array if present
+            $religions = array_diff($religions, ["Any Religion"]);
+            // Remove the "Any Marital Status" value from the array if present
+            $maritalStatus = array_diff($maritalStatus, ["Any Marital Status"]);
     
             // Check if any option is not selected
-            if (empty($biodatagender) && empty($Skin_tones)) {
+            if (empty($biodatagender) && empty($Skin_tones) && empty($religions) && empty($maritalStatus)) {
                 // If no option is selected, return the page
                 return;
             }
     
-            $sql = "SELECT * FROM 1bd_personal_physical 
+            // $sql = "SELECT * FROM 1bd_personal_physical WHERE 1=1";
+            $sql = "SELECT * FROM 1bd_personal_physical AS pp
+            LEFT JOIN 6bd_7bd_marital_status AS ms ON pp.user_id = ms.user_id
+            LEFT JOIN 8bd_religion_details AS rd ON pp.user_id = rd.user_id
             WHERE 1=1";
-    
+
+
+
+
             if (!empty($biodatagender)) {
                 if (!is_array($biodatagender)) {
                     $sql .= " AND biodatagender = '$biodatagender'";
@@ -96,20 +108,31 @@
                 $sql .= " AND Skin_tones IN ('$skinTonesCondition')";
             }
     
-            $result = mysqlexec($sql);
-    
-            // Check if no matching data found for biodatagender and Skin_tones
-            if (empty($result) && !is_array($biodatagender) && empty($Skin_tones)) {
-                // If no matching data found for biodatagender and Skin_tones, return the page
-                return;
-            } elseif (empty($result) && is_array($biodatagender) && empty($Skin_tones)) {
-                // If no matching data found for any of the biodatagender options and Skin_tones, return the page
-                return;
+            if (!empty($religions)) {
+                $religionsCondition = implode("','", $religions);
+                $sql .= " AND religion IN ('$religionsCondition')";
             }
     
+            if (!empty($maritalStatus)) {
+                $maritalStatusCondition = implode("','", $maritalStatus);
+                $sql .= " AND maritalstatus IN ('$maritalStatusCondition')";
+            }
+               
+
+            $result = mysqlexec($sql);
+    
+            // Check if no matching data found for biodatagender, Skin_tones, religion, and marital status
+            if (empty($result) && !is_array($biodatagender) && empty($Skin_tones) && empty($religions) && empty($maritalStatus)) {
+                // If no matching data found for biodatagender, Skin_tones, religion, and marital status, return the page
+                return;
+            } elseif (empty($result) && is_array($biodatagender) && empty($Skin_tones) && empty($religions) && empty($maritalStatus)) {
+                // If no matching data found for any of the biodatagender options, Skin_tones, religion, and marital status, return the page
+                return;
+            }
             return $result;
         }
     }
+    
     
     
     
