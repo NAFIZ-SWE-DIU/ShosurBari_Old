@@ -219,10 +219,18 @@
 			if ($(window).width() >= 931 && $(window).width() <= 2000) {
 			// Media width between 931px and 2000px
 			targetOffset -= -5; // Adjust the scroll offset as desired (scroll top 50px)
-			} else if ($(window).width() < 390) {
-			targetOffset += 1230; // Adjust the scroll offset as desired
-			} else {
-			targetOffset += 1130; // Adjust the scroll offset as desired
+			} else if ($(window).width() >= 735 && $(window).width() <= 930) {
+			targetOffset += 635;
+			} else if ($(window).width() >= 385 && $(window).width() <= 734) {
+			targetOffset += 600;
+			} else if ($(window).width() >= 360 && $(window).width() <= 384) {
+			targetOffset += 610; 
+			} else if ($(window).width() >= 353 && $(window).width() <= 359) {
+			targetOffset += 650;
+			} else if ($(window).width() >= 321 && $(window).width() <= 352) {
+			targetOffset += 690;      
+			} else if ($(window).width() >= 260 && $(window).width() <= 320) {
+			targetOffset += 612;
 			}
 
 			$('html, body').animate({
@@ -789,7 +797,9 @@ $totalMatch = $skinToneMatch + $religionMatch;
 
 
 	<!-- ============================  Navigation Start ========================== -->
-	<?php include_once("save_message.php");?>
+	<?php 
+	// include_once("save_message.php");
+	?>
 	<!-- ============================  Navigation End ============================ -->
 
 	<script>
