@@ -24,6 +24,8 @@ $deactivated = $row['deactivated'];
 
 
 
+
+
 <!DOCTYPE HTML>
 <html>
 
@@ -132,7 +134,7 @@ $deactivated = $row['deactivated'];
         </li>
 
         <li><a href="accountupdate.php?id=<?php echo $id;?>">একাউন্ট</a></li>
-        <li><a href="message.php?id=<?php echo $id;?>">মেসেজ</a></li>
+        <!-- <li><a href="message_list.php?id=<?php echo $id;?>">মেসেজ</a></li> -->
         <!-- <li><a href="message_list.php?id=<?php echo $id;?>">মেসেজ List</a></li> -->
       </ul>
     </div>
