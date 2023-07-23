@@ -1609,7 +1609,7 @@ $result=search();
 
 
   <div class="heart-divider">
-    <h1>Find your perfect <span>Partner</span></h1>
+    <h1>পছন্দের <span>জীবনসঙ্গী খুজুন</span></h1>
 		<span class="grey-line"></span>
 			<i class="fa fa-heart pink-heart"></i>
 			<i class="fa fa-heart grey-heart"></i>
@@ -1617,14 +1617,18 @@ $result=search();
 
 
     <script>
-      document.addEventListener("DOMContentLoaded", function() {
-        var countDisplay = document.querySelector(".count-display");
-        if(countDisplay) {
-        countDisplay.innerHTML = "Found " + count + " profiles";
-        }
-      });
+  document.addEventListener("DOMContentLoaded", function() {
+    var countDisplay = document.querySelector(".count-display");
+    if (countDisplay) {
+      // Assuming "count" is a numeric variable containing the count value
+      var banglaNumber = count.toLocaleString("bn-BD");
+
+      countDisplay.innerHTML = "খুঁজে পাওয়া গেছে <span style='color: #0aa4ca;'>" + banglaNumber + "</span> টি বায়োডাটা";
+    }
+  });
     </script>
-    <div class="count-display">Found <span> <script>document.write(count)</script></span> profiles</div>
+    <div class="count-display"> <span> <script>document.write(banglaNumber)</script></span></div>
+
   </div>
 
 
@@ -3440,17 +3444,17 @@ echo '<script> var count = ' . $c_count . '; </script>';
       
     <!--Next & Previous Button For More Profile Show -->
     <div class="pagination">
-      <span id="profiles-show-info" style="color:#06b6d4;"></span>
+      <span id="profiles-show-info" ></span>
       <a href="#" id="prev-page-btn" style="display:none">&laquo; Previous</a>
       <span id="page-numbers"></span>
       <a href="#" id="next-page-btn">Next &raquo;</a>
-      <span id="profiles-info" style="color:#06b6d4;"></span>
+      <span id="profiles-info"></span>
     </div>
 
 
     <script>
       //After Search Number of ShosurBari Users Profiles Show Per Page.
-      const profilesPerPage = 15;
+      const profilesPerPage = 1;
       //Total number of profiles found
       const totalProfiles = <?php echo $c_count ?>;
       //Calculate the total number of pages
@@ -3465,10 +3469,13 @@ echo '<script> var count = ' . $c_count . '; </script>';
 
         //Loop through all pages and generate page numbers
         for (let i = 1; i <= totalPages; i++) {
+
+          const banglaPageNumber = convertToBanglaNumber(i);
           //Create a page number element
           const pageNumberElem = document.createElement("a");
           pageNumberElem.href = "#";
-          pageNumberElem.innerText = i;
+          pageNumberElem.innerText = banglaPageNumber; // Use the Bangla page number
+          // pageNumberElem.innerText = i;
 
           //Add an active class to the current page
           if (i === currentPage) {
@@ -3485,6 +3492,23 @@ echo '<script> var count = ' . $c_count . '; </script>';
           document.getElementById("page-numbers").appendChild(pageNumberElem);
         }
       }
+
+      function convertToBanglaNumber(number) {
+  const banglaNumbers = {
+    0: '০',
+    1: '১',
+    2: '২',
+    3: '৩',
+    4: '৪',
+    5: '৫',
+    6: '৬',
+    7: '৭',
+    8: '৮',
+    9: '৯',
+  };
+
+  return number.toString().replace(/[0-9]/g, (digit) => banglaNumbers[digit]);
+}
 
       //Function to show profiles for the current page
       function showProfiles() {
@@ -3523,7 +3547,7 @@ echo '<script> var count = ' . $c_count . '; </script>';
         //Update the text in the profiles-info span
         const profilesLeft = totalProfiles - endIndex;
         if (totalProfiles > 0) {
-          document.getElementById("profiles-info").textContent = `(${profilesLeft} profiles left)`;
+          document.getElementById("profiles-info").textContent = `(বাকি রয়েছে ${convertToBanglaNumber(profilesLeft)} টি বায়োডাটা)`;
         } else {
           document.getElementById("profiles-info").style.display = "none";
         }
@@ -3533,7 +3557,9 @@ echo '<script> var count = ' . $c_count . '; </script>';
           document.getElementById("prev-page-btn").style.display = "none";
           document.getElementById("next-page-btn").style.display = "none";
         } else {
-          profilesshow = `(Showing ${startIndex + 1} to ${Math.min(endIndex, totalProfiles)} Profiles)`;
+          const startIndexBangla = convertToBanglaNumber(startIndex + 1);
+          const endIndexBangla = convertToBanglaNumber(Math.min(endIndex, totalProfiles));
+          profilesshow = `(এখন দেখছেন ${startIndexBangla} থেকে ${endIndexBangla} পর্যন্ত বায়োডাটা গুলো)`;
           if (startIndex === 0) {
           document.getElementById("prev-page-btn").style.display = "none";
           } else {
