@@ -49,6 +49,7 @@ body a{
 
 h1, h2, h3, h4, h5, h6 {
     margin-top: 0;
+    font-size: 45px;
 }
 
 ul, ol {
@@ -62,7 +63,7 @@ p {
 button{
     transition: background-color 0.3s, color 0.3s;
 }
-  
+
 button:hover {
     background: #0aa4ca;
     color: #fff;
@@ -1348,7 +1349,6 @@ ul#flexiselDemo3 h3 a:hover{
 .grid_1 h1, .grid_2 h2{
 	text-align: center;
     font-family: 'Oswald', sans-serif;
-    font-size: 2.5em;
     color: #000;
     margin-bottom: 0;
     font-weight: 500;
@@ -1949,7 +1949,6 @@ td.day_value {
     margin-bottom: 0px;
     margin-left: auto;
     margin-right: auto;
-    font-size: 33px;
 }
 
 .shosurbari-details h2,
@@ -1959,7 +1958,6 @@ td.day_value {
     margin-bottom: 0px;
     margin-left: auto;
     margin-right: auto;
-    font-size: 25px;
 }
 
 .shosurbari-details p {
@@ -2284,7 +2282,6 @@ small.testi-meta1{
     margin-bottom: 0px;
     margin-left: auto;
     margin-right: auto;
-    font-size: 33px;
 }
 
 .shosurbari-security h2,
@@ -2332,7 +2329,6 @@ ol li{
 
 .shosurbari-faq h1{
 	color: #000;
-    font-size: 33px;
     font-family: 'Oswald', sans-serif;
     margin-bottom:10px;
 }
@@ -2990,7 +2986,6 @@ input[type=submit] {
 }
 .page_header h1{
 	font-family: 'Oswald', sans-serif;
-    font-size: 33px;
     color: #000;
     margin-bottom:1em;
     font-weight: 500;
@@ -3255,7 +3250,7 @@ i.icon_4{
 .pagination a {
     transition: background-color 0.3s ease;
     color: #000;
-    padding: 8px 12px;
+    padding: 5px 12px;
     text-decoration: none;
     font-size: 14px;
     background: #eee;
@@ -3271,6 +3266,10 @@ i.icon_4{
 
 #profiles-show-info{
     margin-bottom: 10px;
+}
+
+.highlight-end, .highlight-start {
+    color: #0aa4ca;
 }
   
 #next-page-btn{
@@ -3369,7 +3368,7 @@ i.icon_4{
 
 .sb_user{
     text-align: center;
-    padding: 10px 10px 10px;
+    padding: 5px;
     border-bottom-left-radius: 5px;
     border-bottom-right-radius: 5px;
 }
@@ -3689,7 +3688,7 @@ label{
 	border: 1px solid #ccc;
 	border-radius: 3px;
     text-align: center;
-    margin-left: -27px;
+    margin-left: -34px;
     margin-right: 19px;
 }
 
@@ -3836,6 +3835,10 @@ td.day_value {
 -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -*/
 @media (max-width:1280px){
 
+    h1, h2, h3, h4, h5, h6 {
+        font-size: 45px;
+    }
+
     .sb-search-page{
         width: 1000px;
     }
@@ -3948,12 +3951,7 @@ ul.profile_item{
     width: 920px;
 }
 
-.banner_info h1 {
-    font-size: 55px;
-}
-
 .banner_info h3 {
-
     font-size: 3.5em;
 }
 
@@ -4262,7 +4260,7 @@ ul.nav_1 li {
 }
 
 .navigationpro ul {
-    width: 655px;
+    width: 582px;
     margin: auto;
 }
 
@@ -4309,8 +4307,8 @@ ul.nav_1 li {
 -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -*/
 @media (max-width:930px){
 
-    .banner_info h1 {
-        font-size: 45px;
+    h1, h2, h3, h4, h5, h6 {
+        font-size: 40px;
     }
 
     .sb-search-page {
@@ -4417,10 +4415,6 @@ ul.nav_1 li {
     padding-right: 1%;
 }
 
-.grid_1 h1, .grid_2 h2, .bg h3{
-    font-size: 2em;
-}
-
 .heart-divider {
    margin-top: 100px;
    margin-bottom: 80px;
@@ -4517,6 +4511,7 @@ ul.nav_1 li {
 .profile_search1 {
     margin-bottom: 2em;
 }
+
 
 .profile_left1 {
     margin-bottom: 3em;
@@ -4641,6 +4636,10 @@ ul.profile_item{
 -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -*/
 @media (max-width: 768px){
 
+    h1, h2, h3, h4, h5, h6 {
+        font-size: 35px;
+    }
+
     .login-navbar-img .img-responsive {
         margin: auto; /* This centers the image */
     }
@@ -4723,7 +4722,6 @@ ul.profile_item{
     }
 
     .banner_info h1 {
-        font-size: 35px;
         line-height: 55px;
     }
 
@@ -5170,7 +5168,6 @@ i.icon_4 {
     }
 
     .banner_info h1 {
-        font-size: 25px;
         line-height: 37px;
     }
 
@@ -5278,10 +5275,6 @@ input#submit-btn {
     font-size: 14px;
 }
 
-.grid_1 h1, .grid_2 h2, .bg h3 {
-    font-size: 1.5em;
-}
-
 .bg_left {
     padding: 10px;
     margin-bottom: 1em;
@@ -5347,10 +5340,6 @@ input#submit-btn {
 
 .suceess_story ul li {
     padding-bottom: 1rem;
-}
-
-.page_header h1 {
-    font-size: 2em;
 }
 
 i.icon_4 {
@@ -5553,6 +5542,10 @@ ul.profile_item{
 -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -*/
 @media (max-width: 600px){
 
+    h1, h2, h3, h4, h5, h6 {
+        font-size: 30px;
+    }
+
     .sb_featured_profile_head {
         width: 94%;
     }
@@ -5569,10 +5562,6 @@ ul.profile_item{
     i .fa{
         font-size: 15px;
         top: 2px;
-    }
-
-    .shosurbari-details h1 {
-        font-size: 29px;
     }
 
     .btn_1 {
@@ -5622,7 +5611,6 @@ ul.profile_item{
     }
 
     .banner_info h1 {
-        font-size: 25px;
         line-height: 37px;
     }
 
@@ -5814,7 +5802,7 @@ ul.profile_item{
 }
 
 .biodatalist{
-    width: 70%;
+    width: 300px;
     margin-left: auto;
     margin-right: auto;
     margin-top: 30px;
@@ -5850,6 +5838,10 @@ ul.profile_item{
 -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -*/
 @media (max-width:480px){
 
+    h1, h2, h3, h4, h5, h6 {
+        font-size: 25px;
+    }
+
     .update-image .camera-wrapper i {
         font-size: 18px;
         padding: 7px;
@@ -5859,13 +5851,6 @@ ul.profile_item{
 
     .form-actions p {
         font-size: 13px;
-    }
-
-    .shosurbari-details h1,
-    .shosurbari-details h2,
-    .shosurbari-details h3,
-    .shosurbari-details h4 {
-        font-size: 26px;
     }
 
     .shosurbari-details p {
@@ -5931,7 +5916,6 @@ ul.profile_item{
     }
 
     .banner_info h1 {
-        font-size: 25px;
         line-height: 37px;
     }
 
@@ -6095,10 +6079,6 @@ p.description {
     line-height: 1.5em;
 }
 
-.tab_box h1 {
-    font-size: 1.1em;
-}
-
 .jobs-item .top-btns li {
     margin-left: 4px;
 }
@@ -6201,14 +6181,6 @@ ul.profile_item{
     font-size: 22px;
 }
 
-.biodatalist{
-    width: 70%;
-    margin-left: auto;
-    margin-right: auto;
-    margin-top: 30px;
-    margin-bottom: auto;
-}
-
 .sb_mobilesearch  .sb_singlebio_mobilesearch {
     width: 194px;
     margin-left: 25px;
@@ -6305,7 +6277,6 @@ ul.profile_item{
     }
 
     .banner_info h1 {
-        font-size: 25px;
         line-height: 35px;
     }
 
@@ -6395,7 +6366,6 @@ ul.profile_item{
 }
 
 .page_header h1 {
-    font-size:1.5em;
     margin-bottom:10px;
 }
 
@@ -6420,18 +6390,6 @@ ul.match_box {
     margin: 0 0 1em 0;
 }
 
-.members_box h1, .terms h2 {
-    font-size: 1.2em;
-}
-
-.members_box1 {
-    margin: 1em 0;
-}
-
-.col-md-9.members_box p{
-    font-size:0.8125em;
-}
-
 ol.terms_list li {
     font-size: 0.8125em;
 } 
@@ -6448,13 +6406,7 @@ ol.terms_list li {
     font-size: 12px;
 }
 
-.paid_people {
-    margin: 2em 0 0 0;
-}
 
-.paid_people h1 {
-    font-size: 1.3em;
-}   
 
 .search_left {
     margin-bottom: 1em;
@@ -6464,7 +6416,7 @@ ol.terms_list li {
     margin: 3em 0 0 0;
 }
 
-.headings h1{
+/* .headings h1{
     font-size:25px;
 }
 
@@ -6486,7 +6438,7 @@ ol.terms_list li {
 
 .headings h6{
     font-size:12px;
-}
+} */
 
 ul.pagination_1 {
     margin: 0 0 2em 0;
@@ -6494,10 +6446,6 @@ ul.pagination_1 {
 
 .members_box2 p {
     margin-bottom: 1em;
-}
-
-.members_box2 h3 {
-    font-size: 1.5em;
 }
 
 .addr dl dt, .addr dl dd {
@@ -6575,11 +6523,7 @@ ul.profile_item{
 }
 
 .biodatalist{
-    width: 80%;
-    margin-left: auto;
-    margin-right: auto;
-    margin-top: 30px;
-    margin-bottom: auto;
+    width: 280px;
 }
 
 
@@ -6646,13 +6590,6 @@ ul.profile_item{
         margin-left: 100px;
     }
 
-    .shosurbari-details h1,
-    .shosurbari-details h2,
-    .shosurbari-details h3,
-    .shosurbari-details h4 {
-        font-size: 24px;
-    }
-
     .shosurbari-details p {
         font-size: 14px;
     }
@@ -6693,7 +6630,6 @@ ul.profile_item{
     }
 
     .banner_info h1 {
-        font-size: 25px;
         line-height: 35px;
     }
 
@@ -6751,10 +6687,6 @@ a.brand img {
 
 .grid_1 {
     padding: 2em 0;
-}
-
-.grid_1 h1, .grid_2 h2, .bg h3 {
-    font-size: 1.3em;
 }
 
 .suceess_story-content-info h4 {
@@ -6929,11 +6861,7 @@ ul.profile_item{
 }
 
 .biodatalist{
-    width: 80%;
-    margin-left: auto;
-    margin-right: auto;
-    margin-top: 30px;
-    margin-bottom: auto;
+    width: 260px;
 }
 
 
@@ -6978,6 +6906,11 @@ ul.profile_item{
 --      Media Responsive / Phone Responsive      --
 -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -*/
 @media (max-width: 350px) {
+
+    h1, h2, h3, h4, h5, h6 {
+        font-size: 23px;
+    }
+
     .message-footer p {
         font-size: 15px;
     }
@@ -7002,7 +6935,6 @@ ul.profile_item{
     }
 
     .banner_info h1 {
-        font-size: 24px;
         line-height: 35px;
     }
 
@@ -7039,14 +6971,6 @@ ul.profile_item{
 
 .sb_biodatanumber{
     font-size: 20px;
-}
-
-.biodatalist{
-    width: 80%;
-    margin-left: auto;
-    margin-right: auto;
-    margin-top: 30px;
-    margin-bottom: auto;
 }
 
 .ellipsis {
@@ -7115,6 +7039,11 @@ ul.profile_item{
 --      Media Responsive / Phone Responsive      --
 -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -*/
 @media (max-width:320px){
+
+    h1, h2, h3, h4, h5, h6 {
+        font-size: 22px;
+    }
+
     .message-footer p {
         font-size: 14px;
     }
@@ -7143,7 +7072,6 @@ ul.profile_item{
     }
 
     .banner_info h1 {
-        font-size: 24px;
         line-height: 35px;
     }
 
@@ -7278,10 +7206,6 @@ a.religion_1 {
 
 .nav>li>a {
     font-size: 12px;
-}
-
-.tab_box h1 {
-    font-size: 0.95em;
 }
 
 .tab_box p {
@@ -7473,11 +7397,7 @@ ul.profile_item{
 }
 
 .biodatalist{
-    width: 80%;
-    margin-left: auto;
-    margin-right: auto;
-    margin-top: 30px;
-    margin-bottom: auto;
+    width: 255px;
 }
 
 .ellipsis {
