@@ -70,6 +70,22 @@
             $country_present_address = isset($_POST['country_present_address']) ? $_POST['country_present_address'] : [];
             $scndry_edu_method = isset($_POST['scndry_edu_method']) ? $_POST['scndry_edu_method'] : [];
     
+            // $allOccupations = isset($_POST['occupation_sector']) && in_array('Any Occupation', $_POST['occupation_sector']);
+            $allOccupations = isset($_POST['occupation_sector']) ? $_POST['occupation_sector'] : [];
+            $student_occupation_level = isset($_POST['student_occupation_level']) ? $_POST['student_occupation_level'] : [];
+            $health_occupation_level = isset($_POST['health_occupation_level']) ? $_POST['health_occupation_level'] : [];
+            $engineer_occupation_level = isset($_POST['engineer_occupation_level']) ? $_POST['engineer_occupation_level'] : [];
+            $teacher_occupation_level = isset($_POST['teacher_occupation_level']) ? $_POST['teacher_occupation_level'] : [];
+            $defense_occupation_level = isset($_POST['defense_occupation_level']) ? $_POST['defense_occupation_level'] : [];
+            $foreigner_occupation_level = isset($_POST['foreigner_occupation_level']) ? $_POST['foreigner_occupation_level'] : [];
+            $garments_occupation_level = isset($_POST['garments_occupation_level']) ? $_POST['garments_occupation_level'] : [];
+            $driver_occupation_level = isset($_POST['driver_occupation_level']) ? $_POST['driver_occupation_level'] : [];
+            $service_common_occupation_level = isset($_POST['service_common_occupation_level']) ? $_POST['service_common_occupation_level'] : [];
+            $mistri_occupation_level = isset($_POST['mistri_occupation_level']) ? $_POST['mistri_occupation_level'] : [];
+
+
+
+
             // Remove the "Any Skin Tones" value from the array if present
             $Skin_tones = array_diff($Skin_tones, ["Any Skin Tones"]);
             // Remove the "Any Religion" value from the array if present
@@ -80,17 +96,27 @@
             $family_class = array_diff($family_class, ["Any Family Class"]);
             $country_present_address = array_diff($country_present_address, ["Any Country"]);
             $scndry_edu_method = array_diff($scndry_edu_method, ["Any Education Method"]);
-
+            //$allOccupations = array_diff($allOccupations, ["Any Occupation"]);
+        // Remove the "Any Occupation" value from the array if present
+        if (($key = array_search("Any Occupation", $allOccupations)) !== false) {
+            unset($allOccupations[$key]);
+        }
 
 
             // Check if any option is not selected
-            if (empty($biodatagender) && empty($Skin_tones) && empty($religions) && empty($maritalStatus) && empty($family_class) && empty($country_present_address) && empty($scndry_edu_method)) {
-                // If no option is selected, return the page
+            if (empty($biodatagender) && empty($Skin_tones) && empty($religions) && empty($maritalStatus) && empty($family_class) && empty($country_present_address) && empty($scndry_edu_method) 
+            && empty($allOccupations) 
+            && empty($student_occupation_level) && empty($health_occupation_level)
+            && empty($engineer_occupation_level) && empty($teacher_occupation_level) && empty($defense_occupation_level)
+            && empty($foreigner_occupation_level) && empty($garments_occupation_level) && empty($driver_occupation_level)
+            && empty($service_common_occupation_level) && empty($mistri_occupation_level)) {
+            //If no option is selected, return the page
                 return;
             }
     
             // $sql = "SELECT * FROM 1bd_personal_physical WHERE 1=1";
             $sql = "SELECT * FROM 1bd_personal_physical AS pp
+            LEFT JOIN 2bd_personal_lifestyle AS pl ON pp.user_id = pl.user_id
             LEFT JOIN 3bd_secondaryedu_method AS sm ON pp.user_id = sm.user_id
             LEFT JOIN 4bd_address_details AS ad ON pp.user_id = ad.user_id
             LEFT JOIN 5bd_family_information AS fi ON pp.user_id = fi.user_id
@@ -146,13 +172,62 @@
             }
                
 
+        // Check if "Any Occupation" is selected
+        if ($allOccupations) {
+            // If "Any Occupation" is selected, return all columns for occupation
+            $sql .= " AND (student_occupation_level IS NOT NULL OR health_occupation_level IS NOT NULL OR engineer_occupation_level IS NOT NULL OR teacher_occupation_level IS NOT NULL OR teacher_occupation_level IS NOT NULL OR defense_occupation_level IS NOT NULL OR foreigner_occupation_level IS NOT NULL OR garments_occupation_level IS NOT NULL OR driver_occupation_level IS NOT NULL OR service_common_occupation_level IS NOT NULL OR mistri_occupation_level IS NOT NULL)";
+        } else {
+            // If specific occupation options are selected, include them in the query
+            if (!empty($student_occupation_level)) {
+                $studentOccupationsCondition = implode("','", $student_occupation_level);
+                $sql .= " AND student_occupation_level IN ('$studentOccupationsCondition')";
+            }
+            if (!empty($health_occupation_level)) {
+                $healthOccupationsCondition = implode("','", $health_occupation_level);
+                $sql .= " AND health_occupation_level IN ('$healthOccupationsCondition')";
+            }
+            if (!empty($engineer_occupation_level)) {
+                $engineerOccupationsCondition = implode("','", $engineer_occupation_level);
+                $sql .= " AND engineer_occupation_level IN ('$engineerOccupationsCondition')";
+            }
+            if (!empty($teacher_occupation_level)) {
+                $teacherOccupationsCondition = implode("','", $teacher_occupation_level);
+                $sql .= " AND teacher_occupation_level IN ('$teacherOccupationsCondition')";
+            }
+            if (!empty($defense_occupation_level)) {
+                $defenseOccupationsCondition = implode("','", $defense_occupation_level);
+                $sql .= " AND defense_occupation_level IN ('$defenseOccupationsCondition')";
+            }
+            if (!empty($foreigner_occupation_level)) {
+                $foreignerOccupationsCondition = implode("','", $foreigner_occupation_level);
+                $sql .= " AND foreigner_occupation_level IN ('$foreignerOccupationsCondition')";
+            }
+            if (!empty($garments_occupation_level)) {
+                $garmentsOccupationsCondition = implode("','", $garments_occupation_level);
+                $sql .= " AND garments_occupation_level IN ('$garmentsOccupationsCondition')";
+            }
+            if (!empty($driver_occupation_level)) {
+                $driverOccupationsCondition = implode("','", $driver_occupation_level);
+                $sql .= " AND driver_occupation_level IN ('$driverOccupationsCondition')";
+            }
+            if (!empty($service_common_occupation_level)) {
+                $serviceOccupationsCondition = implode("','", $service_common_occupation_level);
+                $sql .= " AND service_common_occupation_level IN ('$serviceOccupationsCondition')";
+            }
+            if (!empty($mistri_occupation_level)) {
+                $mistriOccupationsCondition = implode("','", $mistri_occupation_level);
+                $sql .= " AND mistri_occupation_level IN ('$mistriOccupationsCondition')";
+            }
+        }
+
+
             $result = mysqlexec($sql);
     
             // Check if no matching data found for biodatagender, Skin_tones, religion, and marital status
-            if (empty($result) && !is_array($biodatagender) && empty($Skin_tones) && empty($religions) && empty($maritalStatus) && empty($family_class) && empty($country_present_address) && empty($scndry_edu_method)) {
+            if (empty($result) && !is_array($biodatagender) && empty($Skin_tones) && empty($religions) && empty($maritalStatus) && empty($family_class) && empty($country_present_address) && empty($scndry_edu_method) && empty($allOccupations) && empty($student_occupation_level) && empty($health_occupation_level) && empty($engineer_occupation_level) && empty($teacher_occupation_level) && empty($defense_occupation_level) && empty($foreigner_occupation_level) && empty($garments_occupation_level) && empty($driver_occupation_level) && empty($service_common_occupation_level) && empty($mistri_occupation_level)) {
                 // If no matching data found for biodatagender, Skin_tones, religion, and marital status, return the page
                 return;
-            } elseif (empty($result) && is_array($biodatagender) && empty($Skin_tones) && empty($religions) && empty($maritalStatus) && empty($family_class) && empty($country_present_address) && empty($scndry_edu_method)) {
+            } elseif (empty($result) && is_array($biodatagender) && empty($Skin_tones) && empty($religions) && empty($maritalStatus) && empty($family_class) && empty($country_present_address) && empty($scndry_edu_method) && empty($allOccupations) && empty($student_occupation_level) && empty($health_occupation_level) && empty($engineer_occupation_level) && empty($teacher_occupation_level) && empty($defense_occupation_level) && empty($foreigner_occupation_level) && empty($garments_occupation_level) && empty($driver_occupation_level) && empty($service_common_occupation_level) && empty($mistri_occupation_level)) {
                 // If no matching data found for any of the biodatagender options, Skin_tones, religion, and marital status, return the page
                 return;
             }
