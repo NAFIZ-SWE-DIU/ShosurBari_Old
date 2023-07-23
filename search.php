@@ -629,7 +629,7 @@ $result=search();
                 <div class="inner-wrap">
                   
                   
-                <input type="checkbox" name="permanent_address" value="Any District" class="SelectBox all" onchange="handleAllDistricts(this)" checked />
+                <input type="checkbox" name="permanent_division[]" value="Any District" class="SelectBox all" onchange="handleAllDistricts(this)" checked />
                 <span class="search-options">সকল জেলা</span>
                 <br>
 
@@ -2191,7 +2191,7 @@ $result=search();
                 <div class="inner-wrap">
                   
                   
-                <input type="checkbox" name="permanent_address" value="Any District" class="SelectBox all" onchange="handleAllDistricts(this)" checked />
+                <input type="checkbox" name="permanent_division[]" value="Any District" class="SelectBox all" onchange="handleAllDistricts(this)" checked />
                 <span class="search-options">সকল জেলা</span>
                 <br>
 
