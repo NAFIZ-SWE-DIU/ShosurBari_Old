@@ -1632,9 +1632,6 @@ $result=search();
   </div>
 
 
-
-
-
   <!-- -- -- -- -- -- -- -- -- -- -- -- -- ---- -- --
   -- -- -- -- -- -- -- -- --- -- -- -- -- -- -- -- --
   --                 S  T  A  R  T                 --
@@ -3547,7 +3544,7 @@ echo '<script> var count = ' . $c_count . '; </script>';
         //Update the text in the profiles-info span
         const profilesLeft = totalProfiles - endIndex;
         if (totalProfiles > 0) {
-          document.getElementById("profiles-info").textContent = `(বাকি রয়েছে ${convertToBanglaNumber(profilesLeft)} টি বায়োডাটা)`;
+          document.getElementById("profiles-info").innerHTML = `"বাকি রয়েছে <span style="color: #0aa4ca;">${convertToBanglaNumber(profilesLeft)}</span> টি বায়োডাটা"`;
         } else {
           document.getElementById("profiles-info").style.display = "none";
         }
@@ -3559,7 +3556,7 @@ echo '<script> var count = ' . $c_count . '; </script>';
         } else {
           const startIndexBangla = convertToBanglaNumber(startIndex + 1);
           const endIndexBangla = convertToBanglaNumber(Math.min(endIndex, totalProfiles));
-          profilesshow = `(এখন দেখছেন ${startIndexBangla} থেকে ${endIndexBangla} পর্যন্ত বায়োডাটা গুলো)`;
+          profilesshow = `"এখন দেখছেন <span class="highlight-start">${startIndexBangla}</span> থেকে <span class="highlight-end">${endIndexBangla}</span> পর্যন্ত বায়োডাটা গুলো"`;
           if (startIndex === 0) {
           document.getElementById("prev-page-btn").style.display = "none";
           } else {
@@ -3571,7 +3568,7 @@ echo '<script> var count = ' . $c_count . '; </script>';
           document.getElementById("next-page-btn").style.display = "inline";
           }
         }
-        document.getElementById("profiles-show-info").textContent = profilesshow;
+        document.getElementById("profiles-show-info").innerHTML = profilesshow;
       }
       
       // show the profiles for the first page
