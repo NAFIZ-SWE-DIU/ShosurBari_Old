@@ -3451,7 +3451,7 @@ echo '<script> var count = ' . $c_count . '; </script>';
 
     <script>
       //After Search Number of ShosurBari Users Profiles Show Per Page.
-      const profilesPerPage = 1;
+      const profilesPerPage = 15;
       //Total number of profiles found
       const totalProfiles = <?php echo $c_count ?>;
       //Calculate the total number of pages
@@ -3557,6 +3557,10 @@ echo '<script> var count = ' . $c_count . '; </script>';
           const startIndexBangla = convertToBanglaNumber(startIndex + 1);
           const endIndexBangla = convertToBanglaNumber(Math.min(endIndex, totalProfiles));
           profilesshow = `"এখন দেখছেন <span class="highlight-start">${startIndexBangla}</span> থেকে <span class="highlight-end">${endIndexBangla}</span> পর্যন্ত বায়োডাটা গুলো"`;
+          
+          // const startIndexBangla = convertToBanglaNumber(startIndex + 1);
+          // const endIndexBangla = convertToBanglaNumber(Math.min(endIndex, totalProfiles));
+          // profilesshow = `(এখন দেখছেন ${startIndexBangla} থেকে ${endIndexBangla} পর্যন্ত বায়োডাটা গুলো)`;
           if (startIndex === 0) {
           document.getElementById("prev-page-btn").style.display = "none";
           } else {
@@ -3568,6 +3572,7 @@ echo '<script> var count = ' . $c_count . '; </script>';
           document.getElementById("next-page-btn").style.display = "inline";
           }
         }
+        // document.getElementById("profiles-show-info").textContent = profilesshow;
         document.getElementById("profiles-show-info").innerHTML = profilesshow;
       }
       
