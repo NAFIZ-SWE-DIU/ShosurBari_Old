@@ -66,6 +66,9 @@
             $Skin_tones = isset($_POST['Skin_tones']) ? $_POST['Skin_tones'] : [];
             $religions = isset($_POST['religion']) ? $_POST['religion'] : [];
             $maritalStatus = isset($_POST['maritalstatus']) ? $_POST['maritalstatus'] : [];
+            $family_class = isset($_POST['family_class']) ? $_POST['family_class'] : [];
+            $country_present_address = isset($_POST['country_present_address']) ? $_POST['country_present_address'] : [];
+            $scndry_edu_method = isset($_POST['scndry_edu_method']) ? $_POST['scndry_edu_method'] : [];
     
             // Remove the "Any Skin Tones" value from the array if present
             $Skin_tones = array_diff($Skin_tones, ["Any Skin Tones"]);
@@ -73,15 +76,24 @@
             $religions = array_diff($religions, ["Any Religion"]);
             // Remove the "Any Marital Status" value from the array if present
             $maritalStatus = array_diff($maritalStatus, ["Any Marital Status"]);
-    
+            // Remove the "Any Marital Status" value from the array if present
+            $family_class = array_diff($family_class, ["Any Family Class"]);
+            $country_present_address = array_diff($country_present_address, ["Any Country"]);
+            $scndry_edu_method = array_diff($scndry_edu_method, ["Any Education Method"]);
+
+
+
             // Check if any option is not selected
-            if (empty($biodatagender) && empty($Skin_tones) && empty($religions) && empty($maritalStatus)) {
+            if (empty($biodatagender) && empty($Skin_tones) && empty($religions) && empty($maritalStatus) && empty($family_class) && empty($country_present_address) && empty($scndry_edu_method)) {
                 // If no option is selected, return the page
                 return;
             }
     
             // $sql = "SELECT * FROM 1bd_personal_physical WHERE 1=1";
             $sql = "SELECT * FROM 1bd_personal_physical AS pp
+            LEFT JOIN 3bd_secondaryedu_method AS sm ON pp.user_id = sm.user_id
+            LEFT JOIN 4bd_address_details AS ad ON pp.user_id = ad.user_id
+            LEFT JOIN 5bd_family_information AS fi ON pp.user_id = fi.user_id
             LEFT JOIN 6bd_7bd_marital_status AS ms ON pp.user_id = ms.user_id
             LEFT JOIN 8bd_religion_details AS rd ON pp.user_id = rd.user_id
             WHERE 1=1";
@@ -117,15 +129,30 @@
                 $maritalStatusCondition = implode("','", $maritalStatus);
                 $sql .= " AND maritalstatus IN ('$maritalStatusCondition')";
             }
+
+            if (!empty($family_class)) {
+                $familyClassCondition = implode("','", $family_class);
+                $sql .= " AND family_class IN ('$familyClassCondition')";
+            }
+
+            if (!empty($country_present_address)) {
+            $countryAddressCondition = implode("','", $country_present_address);
+            $sql .= " AND country_present_address IN ('$countryAddressCondition')";
+            }
+    
+            if (!empty($scndry_edu_method)) {
+                $edumethodCondition = implode("','", $scndry_edu_method);
+                $sql .= " AND scndry_edu_method IN ('$edumethodCondition')";
+            }
                
 
             $result = mysqlexec($sql);
     
             // Check if no matching data found for biodatagender, Skin_tones, religion, and marital status
-            if (empty($result) && !is_array($biodatagender) && empty($Skin_tones) && empty($religions) && empty($maritalStatus)) {
+            if (empty($result) && !is_array($biodatagender) && empty($Skin_tones) && empty($religions) && empty($maritalStatus) && empty($family_class) && empty($country_present_address) && empty($scndry_edu_method)) {
                 // If no matching data found for biodatagender, Skin_tones, religion, and marital status, return the page
                 return;
-            } elseif (empty($result) && is_array($biodatagender) && empty($Skin_tones) && empty($religions) && empty($maritalStatus)) {
+            } elseif (empty($result) && is_array($biodatagender) && empty($Skin_tones) && empty($religions) && empty($maritalStatus) && empty($family_class) && empty($country_present_address) && empty($scndry_edu_method)) {
                 // If no matching data found for any of the biodatagender options, Skin_tones, religion, and marital status, return the page
                 return;
             }
