@@ -83,7 +83,15 @@
             $service_common_occupation_level = isset($_POST['service_common_occupation_level']) ? $_POST['service_common_occupation_level'] : [];
             $mistri_occupation_level = isset($_POST['mistri_occupation_level']) ? $_POST['mistri_occupation_level'] : [];
 
-
+            $allDistrict = isset($_POST['permanent_division']) ? $_POST['permanent_division'] : [];
+            $home_district_under_barishal = isset($_POST['home_district_under_barishal']) ? $_POST['home_district_under_barishal'] : [];
+            $home_district_under_chattogram = isset($_POST['home_district_under_chattogram']) ? $_POST['home_district_under_chattogram'] : [];
+            $home_district_under_dhaka = isset($_POST['home_district_under_dhaka']) ? $_POST['home_district_under_dhaka'] : [];
+            $home_district_under_khulna = isset($_POST['home_district_under_khulna']) ? $_POST['home_district_under_khulna'] : [];
+            $home_district_under_mymensingh = isset($_POST['home_district_under_mymensingh']) ? $_POST['home_district_under_mymensingh'] : [];
+            $home_district_under_rajshahi = isset($_POST['home_district_under_rajshahi']) ? $_POST['home_district_under_rajshahi'] : [];
+            $home_district_under_rangpur = isset($_POST['home_district_under_rangpur']) ? $_POST['home_district_under_rangpur'] : [];
+            $home_district_under_sylhet = isset($_POST['home_district_under_sylhet']) ? $_POST['home_district_under_sylhet'] : [];
 
 
             // Remove the "Any Skin Tones" value from the array if present
@@ -101,6 +109,10 @@
         if (($key = array_search("Any Occupation", $allOccupations)) !== false) {
             unset($allOccupations[$key]);
         }
+        // Remove the "Any District" value from the array if present
+         if (($key = array_search("Any District", $allDistrict)) !== false) {
+            unset($allDistrict[$key]);
+        }
 
 
             // Check if any option is not selected
@@ -109,7 +121,11 @@
             && empty($student_occupation_level) && empty($health_occupation_level)
             && empty($engineer_occupation_level) && empty($teacher_occupation_level) && empty($defense_occupation_level)
             && empty($foreigner_occupation_level) && empty($garments_occupation_level) && empty($driver_occupation_level)
-            && empty($service_common_occupation_level) && empty($mistri_occupation_level)) {
+            && empty($service_common_occupation_level) && empty($mistri_occupation_level) 
+            && empty($allDistrict) 
+            && empty($home_district_under_barishal) && empty($home_district_under_chattogram) && empty($home_district_under_dhaka)
+            && empty($home_district_under_khulna) && empty($home_district_under_mymensingh) && empty($home_district_under_rajshahi)
+            && empty($home_district_under_rangpur) && empty($home_district_under_sylhet)) {
             //If no option is selected, return the page
                 return;
             }
@@ -172,62 +188,108 @@
             }
                
 
-        // Check if "Any Occupation" is selected
-        if ($allOccupations) {
-            // If "Any Occupation" is selected, return all columns for occupation
-            $sql .= " AND (student_occupation_level IS NOT NULL OR health_occupation_level IS NOT NULL OR engineer_occupation_level IS NOT NULL OR teacher_occupation_level IS NOT NULL OR teacher_occupation_level IS NOT NULL OR defense_occupation_level IS NOT NULL OR foreigner_occupation_level IS NOT NULL OR garments_occupation_level IS NOT NULL OR driver_occupation_level IS NOT NULL OR service_common_occupation_level IS NOT NULL OR mistri_occupation_level IS NOT NULL)";
-        } else {
-            // If specific occupation options are selected, include them in the query
-            if (!empty($student_occupation_level)) {
-                $studentOccupationsCondition = implode("','", $student_occupation_level);
-                $sql .= " AND student_occupation_level IN ('$studentOccupationsCondition')";
-            }
-            if (!empty($health_occupation_level)) {
-                $healthOccupationsCondition = implode("','", $health_occupation_level);
-                $sql .= " AND health_occupation_level IN ('$healthOccupationsCondition')";
-            }
-            if (!empty($engineer_occupation_level)) {
-                $engineerOccupationsCondition = implode("','", $engineer_occupation_level);
-                $sql .= " AND engineer_occupation_level IN ('$engineerOccupationsCondition')";
-            }
-            if (!empty($teacher_occupation_level)) {
-                $teacherOccupationsCondition = implode("','", $teacher_occupation_level);
-                $sql .= " AND teacher_occupation_level IN ('$teacherOccupationsCondition')";
-            }
-            if (!empty($defense_occupation_level)) {
-                $defenseOccupationsCondition = implode("','", $defense_occupation_level);
-                $sql .= " AND defense_occupation_level IN ('$defenseOccupationsCondition')";
-            }
-            if (!empty($foreigner_occupation_level)) {
-                $foreignerOccupationsCondition = implode("','", $foreigner_occupation_level);
-                $sql .= " AND foreigner_occupation_level IN ('$foreignerOccupationsCondition')";
-            }
-            if (!empty($garments_occupation_level)) {
-                $garmentsOccupationsCondition = implode("','", $garments_occupation_level);
-                $sql .= " AND garments_occupation_level IN ('$garmentsOccupationsCondition')";
-            }
-            if (!empty($driver_occupation_level)) {
-                $driverOccupationsCondition = implode("','", $driver_occupation_level);
-                $sql .= " AND driver_occupation_level IN ('$driverOccupationsCondition')";
-            }
-            if (!empty($service_common_occupation_level)) {
-                $serviceOccupationsCondition = implode("','", $service_common_occupation_level);
-                $sql .= " AND service_common_occupation_level IN ('$serviceOccupationsCondition')";
-            }
-            if (!empty($mistri_occupation_level)) {
-                $mistriOccupationsCondition = implode("','", $mistri_occupation_level);
-                $sql .= " AND mistri_occupation_level IN ('$mistriOccupationsCondition')";
-            }
-        }
+                // Check if "Any Occupation" is selected
+                if ($allOccupations) {
+                    // If "Any Occupation" is selected, return all columns for occupation
+                    $sql .= " AND (student_occupation_level IS NOT NULL OR health_occupation_level IS NOT NULL OR engineer_occupation_level IS NOT NULL OR teacher_occupation_level IS NOT NULL OR teacher_occupation_level IS NOT NULL OR defense_occupation_level IS NOT NULL OR foreigner_occupation_level IS NOT NULL OR garments_occupation_level IS NOT NULL OR driver_occupation_level IS NOT NULL OR service_common_occupation_level IS NOT NULL OR mistri_occupation_level IS NOT NULL)";
+                } else {
+                    // If specific occupation options are selected, include them in the query
+                    if (!empty($student_occupation_level)) {
+                        $studentOccupationsCondition = implode("','", $student_occupation_level);
+                        $sql .= " AND student_occupation_level IN ('$studentOccupationsCondition')";
+                    }
+                    if (!empty($health_occupation_level)) {
+                        $healthOccupationsCondition = implode("','", $health_occupation_level);
+                        $sql .= " AND health_occupation_level IN ('$healthOccupationsCondition')";
+                    }
+                    if (!empty($engineer_occupation_level)) {
+                        $engineerOccupationsCondition = implode("','", $engineer_occupation_level);
+                        $sql .= " AND engineer_occupation_level IN ('$engineerOccupationsCondition')";
+                    }
+                    if (!empty($teacher_occupation_level)) {
+                        $teacherOccupationsCondition = implode("','", $teacher_occupation_level);
+                        $sql .= " AND teacher_occupation_level IN ('$teacherOccupationsCondition')";
+                    }
+                    if (!empty($defense_occupation_level)) {
+                        $defenseOccupationsCondition = implode("','", $defense_occupation_level);
+                        $sql .= " AND defense_occupation_level IN ('$defenseOccupationsCondition')";
+                    }
+                    if (!empty($foreigner_occupation_level)) {
+                        $foreignerOccupationsCondition = implode("','", $foreigner_occupation_level);
+                        $sql .= " AND foreigner_occupation_level IN ('$foreignerOccupationsCondition')";
+                    }
+                    if (!empty($garments_occupation_level)) {
+                        $garmentsOccupationsCondition = implode("','", $garments_occupation_level);
+                        $sql .= " AND garments_occupation_level IN ('$garmentsOccupationsCondition')";
+                    }
+                    if (!empty($driver_occupation_level)) {
+                        $driverOccupationsCondition = implode("','", $driver_occupation_level);
+                        $sql .= " AND driver_occupation_level IN ('$driverOccupationsCondition')";
+                    }
+                    if (!empty($service_common_occupation_level)) {
+                        $serviceOccupationsCondition = implode("','", $service_common_occupation_level);
+                        $sql .= " AND service_common_occupation_level IN ('$serviceOccupationsCondition')";
+                    }
+                    if (!empty($mistri_occupation_level)) {
+                        $mistriOccupationsCondition = implode("','", $mistri_occupation_level);
+                        $sql .= " AND mistri_occupation_level IN ('$mistriOccupationsCondition')";
+                    }
+                }
+
+                // Check if "Any District" is selected
+                if ($allDistrict) {
+                    // If "Any District" is selected, return all columns for occupation
+                    $sql .= " AND (home_district_under_barishal IS NOT NULL OR home_district_under_chattogram IS NOT NULL OR home_district_under_dhaka IS NOT NULL OR home_district_under_khulna IS NOT NULL OR home_district_under_mymensingh IS NOT NULL OR home_district_under_rajshahi IS NOT NULL OR home_district_under_rangpur IS NOT NULL OR home_district_under_sylhet IS NOT NULL)";
+                } else {
+                    // If specific occupation options are selected, include them in the query
+                    if (!empty($home_district_under_barishal)) {
+                        $barishalDivisionCondition = implode("','", $home_district_under_barishal);
+                        $sql .= " AND home_district_under_barishal IN ('$barishalDivisionCondition')";
+                    }
+                    if (!empty($home_district_under_chattogram)) {
+                        $chattogramDivisionCondition = implode("','", $home_district_under_chattogram);
+                        $sql .= " AND home_district_under_chattogram IN ('$chattogramDivisionCondition')";
+                    }
+                    if (!empty($home_district_under_dhaka)) {
+                        $dhakaDivisionCondition = implode("','", $home_district_under_dhaka);
+                        $sql .= " AND home_district_under_dhaka IN ('$dhakaDivisionCondition')";
+                    }
+                    if (!empty($home_district_under_khulna)) {
+                        $khulnaDivisionCondition = implode("','", $home_district_under_khulna);
+                        $sql .= " AND home_district_under_khulna IN ('$khulnaDivisionCondition')";
+                    }
+                    if (!empty($home_district_under_mymensingh)) {
+                        $mymensinghDivisionCondition = implode("','", $home_district_under_mymensingh);
+                        $sql .= " AND home_district_under_mymensingh IN ('$mymensinghDivisionCondition')";
+                    }
+                    if (!empty($home_district_under_rajshahi)) {
+                        $rajshahiDivisionCondition = implode("','", $home_district_under_rajshahi);
+                        $sql .= " AND home_district_under_rajshahi IN ('$rajshahiDivisionCondition')";
+                    }
+                    if (!empty($home_district_under_rangpur)) {
+                        $rangpurDivisionCondition = implode("','", $home_district_under_rangpur);
+                        $sql .= " AND home_district_under_rangpur IN ('$rangpurDivisionCondition')";
+                    }
+                    if (!empty($home_district_under_sylhet)) {
+                        $sylhetDivisionCondition = implode("','", $home_district_under_sylhet);
+                        $sql .= " AND home_district_under_sylhet IN ('$sylhetDivisionCondition')";
+                    }
+                }
 
 
             $result = mysqlexec($sql);
     
             // Check if no matching data found for biodatagender, Skin_tones, religion, and marital status
-            if (empty($result) && !is_array($biodatagender) && empty($Skin_tones) && empty($religions) && empty($maritalStatus) && empty($family_class) && empty($country_present_address) && empty($scndry_edu_method) && empty($allOccupations) && empty($student_occupation_level) && empty($health_occupation_level) && empty($engineer_occupation_level) && empty($teacher_occupation_level) && empty($defense_occupation_level) && empty($foreigner_occupation_level) && empty($garments_occupation_level) && empty($driver_occupation_level) && empty($service_common_occupation_level) && empty($mistri_occupation_level)) {
+            if (empty($result) && !is_array($biodatagender) && empty($Skin_tones) && empty($religions) && empty($maritalStatus) && empty($family_class) && empty($country_present_address) && empty($scndry_edu_method) && empty($allOccupations) && empty($student_occupation_level) && empty($health_occupation_level) && empty($engineer_occupation_level) && empty($teacher_occupation_level) && empty($defense_occupation_level) && empty($foreigner_occupation_level) && empty($garments_occupation_level) && empty($driver_occupation_level) && empty($service_common_occupation_level) && empty($mistri_occupation_level) && empty($allDistrict) 
+            && empty($home_district_under_barishal) && empty($home_district_under_chattogram) && empty($home_district_under_dhaka)
+            && empty($home_district_under_khulna) && empty($home_district_under_mymensingh) && empty($home_district_under_rajshahi)
+            && empty($home_district_under_rangpur) && empty($home_district_under_sylhet)) {
                 // If no matching data found for biodatagender, Skin_tones, religion, and marital status, return the page
                 return;
-            } elseif (empty($result) && is_array($biodatagender) && empty($Skin_tones) && empty($religions) && empty($maritalStatus) && empty($family_class) && empty($country_present_address) && empty($scndry_edu_method) && empty($allOccupations) && empty($student_occupation_level) && empty($health_occupation_level) && empty($engineer_occupation_level) && empty($teacher_occupation_level) && empty($defense_occupation_level) && empty($foreigner_occupation_level) && empty($garments_occupation_level) && empty($driver_occupation_level) && empty($service_common_occupation_level) && empty($mistri_occupation_level)) {
+            } elseif (empty($result) && is_array($biodatagender) && empty($Skin_tones) && empty($religions) && empty($maritalStatus) && empty($family_class) && empty($country_present_address) && empty($scndry_edu_method) && empty($allOccupations) && empty($student_occupation_level) && empty($health_occupation_level) && empty($engineer_occupation_level) && empty($teacher_occupation_level) && empty($defense_occupation_level) && empty($foreigner_occupation_level) && empty($garments_occupation_level) && empty($driver_occupation_level) && empty($service_common_occupation_level) && empty($mistri_occupation_level) && empty($allDistrict) 
+            && empty($home_district_under_barishal) && empty($home_district_under_chattogram) && empty($home_district_under_dhaka)
+            && empty($home_district_under_khulna) && empty($home_district_under_mymensingh) && empty($home_district_under_rajshahi)
+            && empty($home_district_under_rangpur) && empty($home_district_under_sylhet)) {
                 // If no matching data found for any of the biodatagender options, Skin_tones, religion, and marital status, return the page
                 return;
             }
