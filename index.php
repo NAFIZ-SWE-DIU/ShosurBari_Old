@@ -26,6 +26,8 @@
 <!--font-Awesome-->
 <link href="css/font-awesome.css" rel="stylesheet"> 
 <!--font-Awesome-->
+<!--Below Link Search Filter Settings Icon Spring -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
 
 
@@ -191,7 +193,7 @@
       <div class="sb-search-logo">
         <div class="sb-search-btn">
           <p>  মনের মতন জীবন সঙ্গী খুঁজে পেতে সার্চ বাটনে ক্লিক করুন</p>
-          <a href="search.php"><button > Search Biodata </button></a>
+          <a href="search.php"><button > <i class="fa fa-gear fa-spin" style="font-size:24px"> </i> বায়োডাটা খুজুন </button></a>
         </div>
       </div>
     </div>
