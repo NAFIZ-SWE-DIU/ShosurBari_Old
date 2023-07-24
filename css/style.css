@@ -1151,6 +1151,7 @@ i.fa1:hover {
     margin-top: 100px;
     margin-bottom: 80px;
     text-align: center;
+    margin-left: 248px;
 }
 
 .grey-line {
@@ -1579,7 +1580,7 @@ a#profile-tab, a#home-tab, a#profile-tab1{
 
 .profile-side {
   	width: 100%;
-  	padding: 90px 0px 10px 0px;
+  	padding: 90px 3px 10px 3px;
 	font-family: "Bree Serif", serif;
   	z-index: 99;
     background: #00bbff22;
@@ -3227,7 +3228,6 @@ i.icon_4{
 }
 
 .count-display {
-    font-size: 1.2em;
     font-weight: 400;
     color: #000000;
     margin-top: 10px;
@@ -4341,7 +4341,7 @@ ul.nav_1 li {
     .profile-side {
         width: 100%;
         text-align: center;
-        padding: 20px;
+        padding: 3px;
         margin: auto;
       }
 
@@ -4858,6 +4858,7 @@ i.icon_4 {
     /* Mobile Search Start / Multiple & Single Search */
 .heart-divider {
     margin-top: 30px;
+    margin-left: auto;
 }
 
 #search-bar {
@@ -4924,12 +4925,12 @@ i.icon_4 {
 
     /* Mobile Search Start / Multiple Search Option */
 .sb_mobilesearch #search-button{
-    width: 180px;
+    width: 150px;
     margin-left: auto;
     margin-right: 50px;
     background: #06b6d4;
     color: #FFF;
-    padding: 10px;
+    padding: 8px;
     border-radius: 5px;
     font-size: 16px;
     text-align: center;
@@ -6550,8 +6551,8 @@ ul.profile_item{
     width: 142%;
 }
 
-.sb_mobilesearch  #search-button {
-    width: 118px;
+.sb_mobilesearch #search-button {
+    width: 123px;
 }
 
 .navigationpro ul {
@@ -6867,14 +6868,14 @@ ul.profile_item{
 
 .sb_mobilesearch  .sb_singlebio_mobilesearch {
     width: 194px;
-    margin-left: 15px;
+    margin-left: 10px;
     margin-right: auto;
 }
 
 .sb_mobilesearch #search-button {
-    width: 114px;
+    width: 123px;
     margin-left: auto;
-    margin-right: 15px;
+    margin-right: 10px;
 }
 
 .sb-register-login{
@@ -6978,12 +6979,12 @@ ul.profile_item{
 }
 
 .sb_mobilesearch  #search-button {
-    width: 101px;
+    width: 113px;
     font-size: 14px;
 }
 
 .sb_mobilesearch  .sb_singlebio_mobilesearch {
-    width: 168px;
+    width: 175px;
     font-size: 14px;
 }
 
@@ -7409,13 +7410,15 @@ ul.profile_item{
 }
 
 .sb_mobilesearch #search-button {
-    width: 96px;
-    font-size: 13px;
+    width: 108px;
+    font-size: 13.5px;
+    margin-right: 5px;
 }
 
 .sb_mobilesearch  .sb_singlebio_mobilesearch {
     width: 157px;
-    font-size: 13px;
+    font-size: 13.5px;
+    margin-right: 5px;
 }
 
 .navigationpro ul {
