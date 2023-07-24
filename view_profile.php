@@ -185,9 +185,9 @@
 		    	<div class="bs-example bs-example-tabs" role="tabpanel" data-example-id="togglable-tabs">
 
 					<ul id="myTab" class="nav nav-tabs nav-tabs1" role="tablist">
-						<li role="presentation" class="active"><a href="#home" id="home-tab" role="tab" data-toggle="tab" aria-controls="home" aria-expanded="true">About Myself</a></li>
-						<li role="presentation"><a href="#profile" role="tab" id="profile-tab" data-toggle="tab" aria-controls="profile">Family Details</a></li>
-						<li role="presentation"><a href="#profile1" role="tab" id="profile-tab1" data-toggle="tab" aria-controls="profile1">Extpected Partner</a></li>
+						<li role="presentation" class="active"><a href="#home" id="home-tab" role="tab" data-toggle="tab" aria-controls="home" aria-expanded="true">আমার তথ্য</a></li>
+						<li role="presentation"><a href="#profile" role="tab" id="profile-tab" data-toggle="tab" aria-controls="profile">পারিবারিক তথ্য</a></li>
+						<li role="presentation"><a href="#profile1" role="tab" id="profile-tab1" data-toggle="tab" aria-controls="profile1">প্রত্যাশিত জীবনসঙ্গী</a></li>
 					</ul>
 				</div>
 			</div>
@@ -312,7 +312,7 @@
 
 			a#profile-tab, a#home-tab, a#profile-tab1 {
 				padding: 10px 10px;
-				font-size: 14px;
+				font-size: 15px;
 			}
 			}
 
@@ -323,8 +323,8 @@
 			}
 
 			a#profile-tab, a#home-tab, a#profile-tab1 {
-				padding: 10px 4px;
-				font-size: 13px;
+				padding: 10px 5px;
+				font-size: 15px;
 			}
 			}
 
@@ -362,8 +362,8 @@
 
 			@media (max-width: 480px){
 			a#profile-tab, a#home-tab, a#profile-tab1 {
-				padding: 8px 3px;
-				font-size: 13px;
+				padding: 8px 5px;
+				font-size: 14px;
 			}
 
 			.nav-tabs1>li{
@@ -373,15 +373,21 @@
 			}
 
 			@media (max-width: 384px){
-
 			a#profile-tab, a#home-tab, a#profile-tab1 {
-				padding: 6px 1px;
-				font-size: 11px;
+				padding: 7px 4px;
+				font-size: 13px;
 			}
 
 			.nav-tabs1>li{
 				margin-left: 2px;
 				margin-right: 2px;
+			}
+			}
+
+			@media (max-width: 350px){
+			a#profile-tab, a#home-tab, a#profile-tab1 {
+				padding: 7px 3px;
+				font-size: 12px;
 			}
 			}
 
