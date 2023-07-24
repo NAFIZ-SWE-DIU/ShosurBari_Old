@@ -192,7 +192,7 @@
 
       <div class="sb-search-logo">
         <div class="sb-search-btn">
-          <p>  মনের মতন জীবন সঙ্গী খুঁজে পেতে সার্চ বাটনে ক্লিক করুন</p>
+          <p>  মনের মতন জীবন সঙ্গী <i class="fa fa-search" style="font-size:24px"> </i>  খুঁজে পেতে নিচের বাটনে ক্লিক করুন</p>
           <a href="search.php"><button > <i class="fa fa-gear fa-spin" style="font-size:24px"> </i> বায়োডাটা খুজুন </button></a>
         </div>
       </div>
