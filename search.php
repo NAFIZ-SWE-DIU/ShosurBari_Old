@@ -27,6 +27,8 @@ $result=search();
 <!--font-Awesome-->
 <link href="css/font-awesome.css" rel="stylesheet"> 
 <!--font-Awesome-->
+<!--Below Link Search Filter Settings Icon Spring -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
 
 
@@ -79,7 +81,7 @@ $result=search();
 
 
         <div id="search-button">
-          Search Filter
+        <p><i class="fa fa-gear fa-spin" style="font-size:24px"> </i> সার্চ ফিল্টার</p>
         </div>
 
       </div>
@@ -1604,9 +1606,10 @@ $result=search();
   -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- ---
   -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -->	
 
-
-
-
+<!-- 
+<div class="heart-area-flex">
+  <div class="blank-heart-area">
+  </div> -->
 
   <div class="heart-divider">
     <h1>পছন্দের <span>জীবনসঙ্গী খুজুন</span></h1>
@@ -1617,21 +1620,19 @@ $result=search();
 
 
     <script>
-  document.addEventListener("DOMContentLoaded", function() {
-    var countDisplay = document.querySelector(".count-display");
-    if (countDisplay) {
-      // Assuming "count" is a numeric variable containing the count value
-      var banglaNumber = count.toLocaleString("bn-BD");
+      document.addEventListener("DOMContentLoaded", function() {
+        var countDisplay = document.querySelector(".count-display");
+        if (countDisplay) {
+          // Assuming "count" is a numeric variable containing the count value
+          var banglaNumber = count.toLocaleString("bn-BD");
 
-      countDisplay.innerHTML = "খুঁজে পাওয়া গেছে <span style='color: #0aa4ca;'>" + banglaNumber + "</span> টি বায়োডাটা";
-    }
-  });
+          countDisplay.innerHTML = "খুঁজে পাওয়া গেছে <span style='color: #0aa4ca;'>" + banglaNumber + "</span> টি বায়োডাটা";
+        }
+      });
     </script>
     <div class="count-display"> <span> <script>document.write(banglaNumber)</script></span></div>
-
   </div>
-
-
+  <!-- </div> -->
   <!-- -- -- -- -- -- -- -- -- -- -- -- -- ---- -- --
   -- -- -- -- -- -- -- -- --- -- -- -- -- -- -- -- --
   --                 S  T  A  R  T                 --
