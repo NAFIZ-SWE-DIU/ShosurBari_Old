@@ -3678,7 +3678,6 @@ label{
 
 .gender-radio-select .gender-option label{
     display: inline-block;
-    padding: 2px;
     transition: all 0.3s;
 	font-weight: 500;
     font-size: 15px;
@@ -3690,6 +3689,11 @@ label{
     text-align: center;
     margin-left: -34px;
     margin-right: 19px;
+    padding-left: 4px;
+    padding-right: 4px;
+    padding-top: 2px;
+    padding-bottom: 1px;
+
 }
 
 .gender-radio-select .gender-option label i{
@@ -4417,7 +4421,7 @@ ul.nav_1 li {
 
 .heart-divider {
    margin-top: 100px;
-   margin-bottom: 80px;
+   margin-bottom: 100px;
 }
 
 .bg_left {
@@ -4988,7 +4992,6 @@ i.icon_4 {
     
 .gender-radio-select .gender-option label {
     display: inline-block;
-    padding: 2px;
     font-size: 15px;
     transition: all 0.3s;
     font-weight: 500;
@@ -4999,6 +5002,10 @@ i.icon_4 {
     border-radius: 3px;
     margin-left: 25px;
     margin-right: -15px;
+    padding-left: 4px;
+    padding-right: 4px;
+    padding-top: 2px;
+    padding-bottom: 1px;
 }
 
 .gender-radio-select .gender-option {
@@ -6038,7 +6045,7 @@ input#submit-btn {
 }
 
 .heart-divider {
-    margin: 1em auto 1em;
+    margin: 2em auto;
 }
 
 .religion_1-title {
@@ -6529,18 +6536,7 @@ ul.profile_item{
 
 
 .gender-radio-select .gender-option label {
-    display: inline-block;
-    padding: 2px;
     font-size: 14px;
-    transition: all 0.3s;
-    font-weight: 500;
-    cursor: pointer;
-    margin-top: 4px;
-    margin-bottom: 4px;
-    border: 1px solid #ccc;
-    border-radius: 3px;
-    margin-left: 25px;
-    margin-right: -15px;
 }
 
 .gender-radio-select .gender-option {
@@ -7145,10 +7141,6 @@ a.brand img {
 
 .navigation {
     margin-right: 20%;
-}
-
-.heart-divider {
-    margin: 10px auto 15px;
 }
 
 .row_1-right h3 {
