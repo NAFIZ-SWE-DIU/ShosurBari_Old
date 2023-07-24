@@ -168,7 +168,7 @@ $result=search();
 
 
         <input type="checkbox" name="maritalstatus[]" value="Any Marital Status" class="SelectBox all" onchange="handleAllMaritalStatus(this)" checked />
-            <span class="search-options"> সকল</span>
+            <span class="search-options"> সকল বৈবাহিক অবস্থা</span>
             <br>
 
 
@@ -212,7 +212,7 @@ $result=search();
     <div class="inner-wrap">
 
       <input type="checkbox" name="Skin_tones[]" value="Any Skin Tones" class="SelectBox all" onchange="handleAllSkinTones(this)" checked />
-      <span class="search-options">সকল বর্ণ</span>
+      <span class="search-options">সকল শারীরিক বর্ণ</span>
       <br>
 
       <input type="checkbox" name="Skin_tones[]" value="উজ্জ্বল ফর্সা" class="SelectBox val" />
@@ -987,38 +987,38 @@ $result=search();
 
       <!--Biodata Family Condition Option -->
       <div class="wrapper">
-        <label class="form-control toggle-next ellipsis">পারিবারিক শ্রেণী <span style=" color:#06b6d4;">   <i class="fa fa-chevron-down"></i></span></label>
+        <label class="form-control toggle-next ellipsis">পারিবারিক অবস্থা <span style=" color:#06b6d4;">   <i class="fa fa-chevron-down"></i></span></label>
         <div class="checkboxes" id="Lorems">
           <div class="inner-wrap">
           
           
           <input type="checkbox" name="family_class[]" value="Any Family Class" class="SelectBox all" onchange="handleAllFamilyClasses(this)" checked />
-          <span class="search-options">সকল শ্রেণী</span>
+          <span class="search-options">সকল পারিবার</span>
           <br>
 
           
             <input type="checkbox" name="family_class[]" value="উচ্চ শ্রেণী" class="SelectBox val" />
-            <span class="search-options">উচ্চ শ্রেণী</span>
+            <span class="search-options">উচ্চবিত্ত</span>
           <br>
 
           
             <input type="checkbox" name="family_class[]" value="উচ্চ মধ্যম শ্রেণী" class="SelectBox val" />
-            <span class="search-options">উচ্চ মধ্যম শ্রেণী</span>
+            <span class="search-options">উচ্চ মধ্যবিত্ত</span>
           <br>
 
           
             <input type="checkbox" name="family_class[]" value="মধ্যম শ্রেণী" class="SelectBox val" />
-            <span class="search-options">মধ্যম শ্রেণী</span>
+            <span class="search-options">মধ্যবিত্ত</span>
           <br>
 
           
             <input type="checkbox" name="family_class[]" value="নিম্নমধ্যম শ্রেণী" class="SelectBox val" />
-            <span class="search-options">নিম্নমধ্যম শ্রেণী</span>
+            <span class="search-options">নিম্নমধ্যবিত্ত</span>
           <br> 
           
           
             <input type="checkbox" name="family_class[]" value="নিম্ন শ্রেণী" class="SelectBox val" />
-            <span class="search-options">নিম্ন শ্রেণী</span>
+            <span class="search-options">নিম্নবিত্ত</span>
           
             
           </div>
@@ -1730,7 +1730,7 @@ $result=search();
 
 
         <input type="checkbox" name="maritalstatus[]" value="Any Marital Status" class="SelectBox all" onchange="handleAllMaritalStatus(this)" checked />
-            <span class="search-options"> সকল</span>
+            <span class="search-options"> সকল বৈবাহিক অবস্থা</span>
             <br>
 
 
@@ -1774,7 +1774,7 @@ $result=search();
     <div class="inner-wrap">
 
       <input type="checkbox" name="Skin_tones[]" value="Any Skin Tones" class="SelectBox all" onchange="handleAllSkinTones(this)" checked />
-      <span class="search-options">সকল বর্ণ</span>
+      <span class="search-options">সকল শারীরিক বর্ণ</span>
       <br>
 
       <input type="checkbox" name="Skin_tones[]" value="উজ্জ্বল ফর্সা" class="SelectBox val" />
@@ -2549,38 +2549,38 @@ $result=search();
 
       <!--Biodata Family Condition Option -->
       <div class="wrapper">
-        <label class="form-control toggle-next ellipsis">পারিবারিক শ্রেণী <span style=" color:#06b6d4;">   <i class="fa fa-chevron-down"></i></span></label>
+        <label class="form-control toggle-next ellipsis">পারিবারিক অবস্থা <span style=" color:#06b6d4;">   <i class="fa fa-chevron-down"></i></span></label>
         <div class="checkboxes" id="Lorems">
           <div class="inner-wrap">
           
           
           <input type="checkbox" name="family_class[]" value="Any Family Class" class="SelectBox all" onchange="handleAllFamilyClasses(this)" checked />
-          <span class="search-options">সকল শ্রেণী</span>
+          <span class="search-options">সকল পারিবার</span>
           <br>
 
           
             <input type="checkbox" name="family_class[]" value="উচ্চ শ্রেণী" class="SelectBox val" />
-            <span class="search-options">উচ্চ শ্রেণী</span>
+            <span class="search-options">উচ্চবিত্ত</span>
           <br>
 
           
             <input type="checkbox" name="family_class[]" value="উচ্চ মধ্যম শ্রেণী" class="SelectBox val" />
-            <span class="search-options">উচ্চ মধ্যম শ্রেণী</span>
+            <span class="search-options">উচ্চ মধ্যবিত্ত</span>
           <br>
 
           
             <input type="checkbox" name="family_class[]" value="মধ্যম শ্রেণী" class="SelectBox val" />
-            <span class="search-options">মধ্যম শ্রেণী</span>
+            <span class="search-options">মধ্যবিত্ত</span>
           <br>
 
           
             <input type="checkbox" name="family_class[]" value="নিম্নমধ্যম শ্রেণী" class="SelectBox val" />
-            <span class="search-options">নিম্নমধ্যম শ্রেণী</span>
+            <span class="search-options">নিম্নমধ্যবিত্ত</span>
           <br> 
           
           
             <input type="checkbox" name="family_class[]" value="নিম্ন শ্রেণী" class="SelectBox val" />
-            <span class="search-options">নিম্ন শ্রেণী</span>
+            <span class="search-options">নিম্নবিত্ত</span>
           
             
           </div>
