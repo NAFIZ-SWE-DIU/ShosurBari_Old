@@ -63,7 +63,7 @@
       <div class="sb-home-reg">
         <?php
           if (!isloggedin()) {
-            echo '<a href="register.php" class="sb-create-account"><button>নতুন একাউন্ট খুলুন</button></a>';
+            echo '<a href="register.php" class="sb-create-account"><button> <i class="fa fa-gear fa-spin" style="font-size:24px"> </i>  নতুন একাউন্ট খুলুন</button></a>';
           }
         ?>
       </div>
