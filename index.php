@@ -185,7 +185,7 @@
 
     <div class="sb-search-logo-btn">
       <div class="sb-search-options">
-        <img src="images/search.png">
+        <img src="images/shosurbari-search.png">
       </div>
 
       <div class="sb-search-logo">
