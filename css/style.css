@@ -704,6 +704,53 @@ ul.nav_1{
 --         SHOSUR BARI - FOOTER SECTION          --
 -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- ---
 -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -*/
+.shosurbari-copy-right {
+    vertical-align: middle;
+  }
+  
+  .shosurbari-copy-right p {
+    display: inline;
+    padding-right: 10px; /* Add some spacing between the text and the image */
+  }
+  
+  
+  .shosurbari-payment {
+    vertical-align: middle;
+    margin-bottom: -30px;
+  }
+  
+  .brn-payment {
+    width: 250px; /* Set the desired width for the image */
+    height: auto; /* Allow the image to adjust its height while maintaining aspect ratio */
+    /* Add any necessary styles for the payment image here */
+  }
+  
+  
+  
+  
+  .footer {
+    /* Add any necessary styles for the footer container here */
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+  }
+  
+  .shosurbari-copy-right,
+  .shosurbari-payment {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .shosurbari-copy-right p {
+    margin: 0; /* Remove default paragraph margins */
+  }
+
+
+
+
+
 .footer{
 	background:#06b6d4;
 	padding:1em 0;
@@ -714,21 +761,24 @@ ul.nav_1{
 .col_2 {
     margin-left: auto;
     margin-right: auto;
-    margin-top: 20px;
+    margin-top: 0px;
+    padding: 25px;
+    padding-right: 0px;
 }
 
 .col_2 h4 {
 	color: #fff;
 	font-size:1.3em;
 	margin-bottom:1em;
-    text-align: center;
+    text-align: left;
 }
 
 .col_2 p {
     color: white;
 	font-size:14px;
 	line-height:1.8em;
-    text-align: center;
+    text-align: justify;
+    padding-right: 50px;
 }
 
 ul.footer_links {
@@ -741,7 +791,9 @@ ul.footer_links {
 ul.footer_links li{
 	font-size:14px;
 	line-height:1.8em;
+    text-align: left;
 }
+
 
 ul.footer_links li a{
     color: white;
@@ -759,7 +811,7 @@ ul.footer_social {
     padding: 0;
     margin: 0 0 1em;
     list-style: none;
-    text-align: center;
+    text-align: right;
 }
 
 ul.footer_social li {
@@ -889,7 +941,8 @@ i.fa1:hover {
 
 /*Banner Message/Info Start*/
 .banner{
-    background:url(../images/bg.png)no-repeat center top;
+    /* background:url(../images/shosurbari-home.png)no-repeat center top; */
+    
     background-size: cover;
     -webkit-background-size: cover;
     -moz-background-size: cover;
@@ -939,8 +992,8 @@ i.fa1:hover {
     border-radius: 10px;
     animation: colorAnimation 10s linear infinite;
     padding: 20px 10px;
-    width: 80%;
-    margin: 60px auto;
+    width: 700px;
+    margin:auto;
     background: #ffffff00;
     backdrop-filter: blur(3px);
 }
@@ -1065,7 +1118,7 @@ i.fa1:hover {
     font-size: 3em;
     /* animation: textAnimation 10s linear infinite; */
     color: #f6b105;
-    margin-bottom: 20px;
+    margin-bottom: 0px;
 }
   
 .sb-search-page p {
@@ -1075,7 +1128,7 @@ i.fa1:hover {
     margin-bottom: 20px;
 }
 
-.sb-search-page .sb-search-btn {
+.sb-search-page .sb-search-btn2 {
     margin-top: 30px;
     margin-left: auto;
     margin-right: auto;
@@ -1084,7 +1137,7 @@ i.fa1:hover {
     text-align: center;
 } 
 
-.sb-search-btn button {
+.sb-search-btn button, .sb-search-btn1 button {
     background: #06b6d4;
     padding: 10px;
     border: 2px solid #f0f0f0;
@@ -1095,7 +1148,7 @@ i.fa1:hover {
     transition: transform 0.3s;
 }
 
-.sb-search-btn button:hover {
+.sb-search-btn button:hover, .sb-search-btn2 button:hover {
     background: #0aa4ca;
     color: #fff;
     transform: scale(1.1);
@@ -1189,6 +1242,9 @@ i.fa1:hover {
 .sb-featured-profiles {
     width: 100%;
     margin: 50px auto 0px auto;
+    background: #00bbff22;
+    padding-top: 30px;
+    padding-bottom: 30px;
 }
 
 .sb_newbiodata{
@@ -1240,8 +1296,9 @@ i.fa1:hover {
     width: 80%;
 }
 
+
 .nbs-flexisel-item:first-child{
-	margin-left:0;
+	margin-left:0px;
 }
 
 .nbs-flexisel-item > img {
@@ -1810,7 +1867,7 @@ button.copylink i {
 
 .sb_user_recentview{
     text-align: center;
-    padding: 3px;
+    padding: 2px;
     border-bottom-left-radius: 5px;
     border-bottom-right-radius: 5px;
 }
@@ -1857,8 +1914,8 @@ button.copylink i {
     text-align: center;
     border: 1px solid #d5d5d5;
     padding: 4px;
-    margin-top: 7px;
-    margin-bottom: 5px;
+    margin-top: 5px;
+    margin-bottom: 3px;
     border-radius: 5px;
     background: #06b6d4;
     color: white;
@@ -3484,14 +3541,19 @@ i.icon_4{
 
 /* Multiple Biodata Search Start*/
 .search-options{
+    margin-left: 20px;
+    list-style: none;
+    margin-top: -22px;
+    display: list-item;
     color: black;
     font-size: 15px;
-    line-height: 27px;
+    line-height: 21px;
+    margin-bottom: -13px;
 }
 
 .label-search-options{
     color: #0aa4ca;
-    font-size: 15px;
+    font-size: 17px;
     font-weight: 500;
     margin-top: 23px;
 }
@@ -3577,6 +3639,8 @@ input[type=submit]:hover {
     overflow: hidden;
     color: #06b6d4;
     border-radius: 4px;
+    font-size: 16px;
+    font-weight: 500;
 }
 
 .apply-selection{
@@ -3599,8 +3663,8 @@ input[type=submit]:hover {
 }
 
 .inner-wrap{
-    padding: 5px 10px;
-    max-height: 160px;
+    padding: 5px;
+    max-height: 200px;
     overflow: auto;
 }
 
@@ -3896,18 +3960,23 @@ td.day_value {
       .nbs-flexisel-item li{
         width: 33%;
       }
-    
+
       .nbs-flexisel-item {
-          float: left;
+        float: left;
         position: relative;
-        margin:-7px;
-        margin-bottom:6px;
-        padding: 6px;
+        margin: auto 0px;
+        padding: 0px;
         line-height: 17px;
         min-height: 220px;
-      }
+    }
 
+    .sb_featured_profile_head {
+        width: 215px;
+    }
 
+    .nbs-flexisel-item:first-child{
+        margin-left: 0px;
+    }
 
 ul.profile_item{
 	padding:0;
@@ -4011,12 +4080,19 @@ ul.profile_item{
 
     .nbs-flexisel-item {
         float: left;
-      position: relative;
-      margin:-7px;
-      margin-bottom:6px;
-      padding: 6px;
-      line-height: 17px;
-      min-height: 220px;
+        position: relative;
+        margin: auto 0px;
+        padding: 0px;
+        line-height: 17px;
+        min-height: 220px;
+    }
+
+    .sb_featured_profile_head {
+        width: 215px;
+    }
+
+    .nbs-flexisel-item:first-child{
+        margin-left: 0px;
     }
   
     .sb_newbiodata .nbs-flexisel-item li{
@@ -4065,9 +4141,27 @@ ul.profile_item{
 --      Media Responsive / Phone Responsive      --
 -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -*/
 @media (max-width:1024px){
+    .nbs-flexisel-item {
+        float: left;
+        position: relative;
+        margin: auto 30px;
+        padding: 0px;
+        line-height: 17px;
+        min-height: 220px;
+    }
+
+    .sb_featured_profile_head {
+        width: 225px;
+    }
+
+    .nbs-flexisel-item:first-child{
+        margin-left: -50px;
+    }
+
     .sb-search-page {
         width: 900px;
     }
+
     .profile-img img {
         height: 168px;
         width: 168px;
@@ -4294,6 +4388,11 @@ ul.nav_1 li {
         margin-left: auto;
         margin-right: auto;
     }
+
+    ul.footer_social {
+        text-align: left;
+    }
+
     }
 
 
@@ -4310,6 +4409,41 @@ ul.nav_1 li {
 --      Media Responsive / Phone Responsive      --
 -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -*/
 @media (max-width:930px){
+
+    .nbs-flexisel-item {
+        float: left;
+        position: relative;
+        margin: auto 30px;
+        padding: 0px;
+        line-height: 17px;
+        min-height: 220px;
+    }
+
+    .sb_featured_profile_head {
+        width: 220px;
+    }
+
+    .nbs-flexisel-item:first-child {
+        margin-left: -54px;
+    }
+
+    .col_2 p{
+        padding-left: 30px;
+        padding-right: 30px;
+    }
+
+    ul.footer_social {
+        text-align: center;
+    }
+    
+    
+    ul.footer_links li{
+        text-align: center;
+    }
+    
+    .col_2 h4 {
+        text-align: center;
+    }
 
     h1, h2, h3, h4, h5, h6 {
         font-size: 40px;
@@ -4445,7 +4579,7 @@ ul.nav_1 li {
 }
 
 .col_2 {
-    margin-bottom: 2em;
+    margin-bottom: 0em;
 }
 
 .col_2 h4 {
@@ -4670,7 +4804,7 @@ ul.profile_item{
     }
 
     .shosurbari-title {
-        margin: 20px auto;
+        margin:auto;
         background: #ffffff00;
         backdrop-filter: blur(5px);
     }
@@ -5047,6 +5181,23 @@ i.icon_4 {
 	width: 56%;
 }
 
+.nbs-flexisel-item {
+    float: left;
+    position: relative;
+    margin: auto 0px;
+    padding: 0px;
+    line-height: 17px;
+    min-height: 220px;
+}
+
+.sb_featured_profile_head {
+    width: 225px;
+}
+
+.nbs-flexisel-item:first-child{
+    margin-left: 0px;
+}
+
 }
 /*-- -- -- -- -- -- -- -- -- -- -- -- -- ---- -- --
 --           max-width:768px / E  N  D           --
@@ -5140,6 +5291,27 @@ i.icon_4 {
 --      Media Responsive / Phone Responsive      --
 -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -*/
 @media (max-width: 736px){
+
+    .nbs-flexisel-item {
+        float: left;
+        position: relative;
+        margin: auto 40px;
+        padding: 0px;
+        line-height: 17px;
+        min-height: 220px;
+    }
+    
+    .sb_featured_profile_head {
+        width: 225px;
+    }
+    
+    .nbs-flexisel-item:first-child{
+        margin-left: -53px;
+    }
+
+    .col_2 {
+        margin-bottom: 2em;
+    }
 
     .banner {
         min-height: 1230px;
@@ -5541,6 +5713,25 @@ ul.profile_item{
 }
 
 
+@media (max-width: 601px){
+
+    .nbs-flexisel-item {
+        float: left;
+        position: relative;
+        margin: auto 65px;
+        padding: 0px;
+        line-height: 17px;
+        min-height: 220px;
+    }
+    
+    .sb_featured_profile_head {
+        width: 225px;
+    }
+    
+    .nbs-flexisel-item:first-child{
+        margin-left: 160px;
+    }
+}
 
 
 
@@ -5549,6 +5740,23 @@ ul.profile_item{
 --      Media Responsive / Phone Responsive      --
 -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -*/
 @media (max-width: 600px){
+
+    .nbs-flexisel-item {
+        float: left;
+        position: relative;
+        margin: auto 0px;
+        padding: 0px;
+        line-height: 17px;
+        min-height: 220px;
+    }
+    
+    .sb_featured_profile_head {
+        width: 225px;
+    }
+    
+    .nbs-flexisel-item:first-child{
+        margin-left: 0px;
+    }
 
     h1, h2, h3, h4, h5, h6 {
         font-size: 30px;
@@ -6131,6 +6339,23 @@ ul.phone li.phone_right p {
     top:20px;
 }
 
+.nbs-flexisel-item {
+    float: left;
+    position: relative;
+    margin: auto 105px;
+    padding: 0px;
+    line-height: 17px;
+    min-height: 220px;
+}
+
+.sb_featured_profile_head {
+    width: 225px;
+}
+
+.nbs-flexisel-item:first-child{
+    margin-left: 70px;
+}
+
 ul.profile_item{
     padding: 0;
     list-style: none;
@@ -6217,16 +6442,6 @@ ul.profile_item{
     margin-right: auto;
 }
 
-.nbs-flexisel-item {
-    float: left;
-    position: relative;
-    margin:-9px;
-    margin-bottom:6px;
-    padding: 6px;
-    line-height: 17px;
-    min-height: 220px;
-}
-
 .sb_user_recentview .sb_value_recentview {
 	width: 44%;
 }
@@ -6250,7 +6465,24 @@ ul.profile_item{
 --      Media Responsive / Phone Responsive      --
 -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -*/
 
-
+@media (max-width: 479px){
+    .nbs-flexisel-item {
+        float: left;
+        position: relative;
+        margin: auto 0px;
+        padding: 0px;
+        line-height: 17px;
+        min-height: 220px;
+    }
+    
+    .sb_featured_profile_head {
+        width: 225px;
+    }
+    
+    .nbs-flexisel-item:first-child{
+        margin-left: 0px;
+    }
+}
 
 
 
@@ -6341,7 +6573,7 @@ ul.profile_item{
 }
 
 .col_2 {
-    margin-bottom: 1em;
+    margin-bottom: 2em;
 }
 
 .about_middle h2 {
@@ -7060,7 +7292,7 @@ ul.profile_item{
     }
 
     .sb-search-page {
-        width: 300px;
+        width: 280px;
         margin-top: -465px;
     }
 
@@ -7402,15 +7634,16 @@ ul.profile_item{
 }
 
 .sb_mobilesearch #search-button {
-    width: 108px;
-    font-size: 13.5px;
-    margin-right: 5px;
+    width: 123px;
+    font-size: 13px;
+    margin-right: 3px;
 }
 
 .sb_mobilesearch  .sb_singlebio_mobilesearch {
-    width: 157px;
-    font-size: 13.5px;
-    margin-right: 5px;
+    width: 190px;
+    font-size: 13px;
+    margin-left: 5px;
+    margin-right: 6px;
 }
 
 .navigationpro ul {
