@@ -9,7 +9,7 @@
     	<div class="col-md-2 col_2">
     		<h4>Help & Support</h4>
     		<ul class="footer_links">
-    			<li><a href="https://www.facebook.com/ShosurBari.Matrimony" target="_blank">24x7 Live help</a></li>
+    			<li><a href="https://www.facebook.com/ShosurBari.bd" target="_blank">24x7 Live help</a></li>
     			<li><a href="contact.php">Feedback</a></li>
     			<li><a href="faq.php">FAQs</a></li>
     		</ul>
@@ -25,9 +25,12 @@
     	</div>
 
     	<div class="col-md-2 col_2">
-    		<h4>Follow Us</h4>
+    		<h6 style="	color: #fff;
+	font-size:1.3em;
+	margin-bottom:1em;
+    ">Follow Us</h6>
     		<ul class="footer_social">
-				<li><a href="https://www.facebook.com/ShosurBari.Matrimony" target="blank"><i class="fa fa-facebook fa1"> </i></a></li>
+				<li><a href="https://www.facebook.com/ShosurBari.bd" target="blank"><i class="fa fa-facebook fa1"> </i></a></li>
 				<li><a href="#"><i class="fa fa-twitter fa1"> </i></a></li>
 				<li><a  href="mailto:shosurbari@gmail.com" target="blank"><i class="fa fa-google-plus fa1"> </i></a></li>
 				<li><a href="#"><i class="fa fa-youtube fa1"> </i></a></li>
@@ -35,6 +38,11 @@
     	</div>
 
     	<div class="clearfix"> </div>
+
+		<div class="shosurbari-payment">
+			<img class="brn-payment" src="images/brn.png">
+		</div>
+
     		<div class="shosurbari-copy-right">
 				<p>
 					Copyright © 2022-23 ShosurBari.com | All Rights Reserved | Developed By -
@@ -52,6 +60,23 @@
 	</div>
 
 </div>
+
+<style>
+	.col_2 h6 {
+	text-align: right;
+}
+@media (max-width: 992px){
+    .col_2 h6 {
+        text-align: left;
+    }
+}
+
+@media (max-width:930px){
+	.col_2 h6 {
+		text-align: center;
+	}
+}
+</style>
 
 
 
