@@ -1044,7 +1044,7 @@
 
 					<div class="shosurbari-home-search">
             <div class="sort-by">
-              <form>
+            <form action="search.php" method="post">
 					      <input type="submit" value="search">
 					    </form>				
 					  </div>
@@ -1213,6 +1213,7 @@ toggleLabels.forEach(label => {
   border:1px solid #fff;
   outline:none;
 }
+
 .sort-by label{
 margin-right:10px;
   font-size: 1.2em;
@@ -1224,155 +1225,6 @@ form {
   margin-top: -19px;
 }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-  .sb-search-page .sb-search-btn2 {
-    margin-top: 30px;
-    margin-left: auto;
-    margin-right: auto;
-    border-radius: 4px;
-    color: #fff;
-    text-align: center;
-} 
-
-.sb-search-btn button, .sb-search-btn2 button {
-    background: #06b6d4;
-    padding: 10px;
-    border: 2px solid #f0f0f0;
-    border-radius: 4px;
-    color: #fff;
-    font-size: 20px;
-    width: 222px;
-    transition: transform 0.3s;
-}
-
-.sb-search-btn button:hover, .sb-search-btn2 button:hover {
-    background: #0aa4ca;
-    color: #fff;
-    transform: scale(1.1);
-}
-  .sb-body-message {
-  text-align: center;
-  margin: auto;
-  max-width: auto; /* Optional: Set a max width to control text width */
-}
-  .sb-home-reg {
-  position: absolute;
-  bottom: 40px;
-  left: 50px;
-  z-index: 1;
-  padding: 20px;
-  /* background-color: rgba(255, 255, 255, 0.8); Add a background color for better visibility */
-}
-
-.sb-search-btn{
-  position: absolute;
-  bottom: -110px;
-  right: 50px;
-  z-index: 1;
-  padding: 20px;
-  /* background-color: rgba(255, 255, 255, 0.8); Add a background color for better visibility */
-}
-
-
-.banner {
-  padding: 0px;
-	width: 100%;
-	height: 500px;
-	max-width: 1200px;
-	position: relative;
-	overflow: hidden;
-	box-sizing: border-box;
-  background: #fff;
-  margin: auto;
-}
-
-.banner-content {
-	width: 100%;
-	height: 100%;
-	box-sizing: border-box;
-	position: relative;
-}
-
-.slide {
-	width: 100%;
-	height: 100%;
-	position: absolute;
-	opacity: 0;
-	transition: opacity 1s;
-	box-sizing: border-box;
-  padding: 15px;
-  background: #00bbff22;
-
-}
-
-.slide img {
-  width: 100%;
-  height: 100%;
-}
-
-
-.slide.active {
-	opacity: 1;
-}
-
-.slide p {
-	font-family: sans-serif;
-	font-size: clamp(1.5em, 5vmax, 3em);
-	position: absolute;
-	z-index: 1;
-	top: 50px;
-	left: 20px;
-	max-width: 540px;
-	color: #e50053;
-	font-weight: 800;
-  text-align: center;
-  /* background: #f0f0f0a8;
-  padding: 7px;
-  border-radius: 30px; */
-}
-
-.slide-indicators {
-	position: absolute;
-	bottom: 0;
-	left: 0;
-	width: 137px;
-	padding: 20px 40px;
-	display: flex;
-}
-
-.slide-indicator {
-	height: 2px;
-	background: #ddd;
-	margin: 0 2px;
-	width: 20px;
-	transition: width 0.2s ease-out;
-}
-
-.slide-indicator.active {
-	background: linear-gradient(to right, #555 50%, #ddd 50%);
-	background-size: 200% 100%;
-	animation: slide linear infinite;
-	animation-duration: var(--duration);
-	width: 67px;
-}
-
 @keyframes slide {
 	0% {
 		background-position: 100% 0;
@@ -1380,24 +1232,6 @@ form {
 	100% {
 		background-position: 0 0;
 	}
-}
-
-section {
-  margin-left: auto;
-  margin-right: auto;
-  width: auto;
-  margin-top: 10px;
-  height: 550px;
-	/* display: flex;
-	gap: 3em;
-	flex-wrap: wrap; */
-	padding: 2em;
-  /* box-shadow: rgb(0, 0, 0) 0px -3px 12px 0px; */
-  /* animation: changeColor 28s infinite; 4 colors x 7 seconds each */
-  background: url(images/shosurbari-matrimony-bd-2.jpg);
-  /* background: linear-gradient(135deg, #ff9a9e, #fad0c4);   
-  background: #f0f0f0;
-  box-shadow: rgb(0, 0, 0) 0px -3px 12px 0px; */
 }
 
 .gender-radio-select .gender-option label {
@@ -1412,19 +1246,6 @@ section {
 .gender-radio-select .gender-option {
     margin-left: 32px;
     margin-right: -16px;
-}
-
-#banner_text{
-  text-align: center;
-  margin-top: 150px;
-}
-
-
-.shosurbari-body-notice{
-  background: #7dffca3b;
-  padding-top: 30px;
-  padding-bottom: 30px;
-  margin: 150px auto;
 }
 </style>
 
@@ -1624,6 +1445,42 @@ function createSlides(data) {
   .sb-search-logo-btn {
     justify-content: center;
   }
+}
+
+@media screen and (max-width: 1024px) {
+  .droop-down {
+    display: block;
+    flex-wrap: wrap;
+    justify-content: center;
+    padding: 10px;
+    height: auto;
+}
+
+.shosurbari-home-search{
+  margin: 10px auto;
+  width: 200px;
+}
+
+.form-control{
+  padding: 5px 10px;
+}
+
+.ellipsis{
+  padding: 5px 10px;
+}
+
+.gender-radio-select .gender-option {
+    margin-left: 30px;
+    margin-right: -60px;
+}
+
+.gender-radio-select {
+    padding: 0;
+}
+
+.gender-radio-select .gender-option label {
+    padding: 2px 4px;
+}
 }
 
 </style>
