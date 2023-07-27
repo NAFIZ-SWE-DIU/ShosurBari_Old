@@ -65,11 +65,6 @@
 	.col_2 h6 {
 	text-align: right;
 }
-@media (max-width: 992px){
-    .col_2 h6 {
-        text-align: left;
-    }
-}
 
 @media (max-width:930px){
 	.col_2 h6 {
