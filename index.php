@@ -1472,6 +1472,7 @@ function createSlides(data) {
 .gender-radio-select .gender-option {
     margin-left: 30px;
     margin-right: -60px;
+    width: 142%;
 }
 
 .gender-radio-select {
