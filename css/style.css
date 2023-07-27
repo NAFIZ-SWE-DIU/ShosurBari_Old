@@ -720,7 +720,7 @@ ul.nav_1{
   }
   
   .brn-payment {
-    width: 250px; /* Set the desired width for the image */
+    width: 230px; /* Set the desired width for the image */
     height: auto; /* Allow the image to adjust its height while maintaining aspect ratio */
     /* Add any necessary styles for the payment image here */
   }
@@ -770,7 +770,7 @@ ul.nav_1{
 	color: #fff;
 	font-size:1.3em;
 	margin-bottom:1em;
-    text-align: left;
+    text-align: right;
 }
 
 .col_2 p {
@@ -778,7 +778,6 @@ ul.nav_1{
 	font-size:14px;
 	line-height:1.8em;
     text-align: justify;
-    padding-right: 50px;
 }
 
 ul.footer_links {
@@ -791,7 +790,7 @@ ul.footer_links {
 ul.footer_links li{
 	font-size:14px;
 	line-height:1.8em;
-    text-align: left;
+    text-align: right;
 }
 
 
@@ -940,59 +939,42 @@ i.fa1:hover {
 /*Banner Section Start*/
 
 /*Banner Message/Info Start*/
-.banner{
-    /* background:url(../images/shosurbari-home.png)no-repeat center top; */
-    
-    background-size: cover;
-    -webkit-background-size: cover;
-    -moz-background-size: cover;
-    -o-background-size: cover;
-    height: 700px; /* Set height to 90% of the viewport height */
-    margin-top: 0px;
+.banner {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    /* Add additional CSS design properties below */
-    border-radius: none;
-    padding: 20px;
-    /* box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1); */
-}
-
-.banner_info {
-    background-color: rgba(255, 255, 255, 0); /* Transparent background */
-    padding: 20px;
+    padding: 0px;
+    width: 100%;
+    height: 500px;
+    max-width: 1200px;
     position: relative;
     overflow: hidden;
+    box-sizing: border-box;
+    background: #fff;
     margin: auto;
-    text-align: center;
-    display: inline-flex;
-    flex-direction: column;
-}
+  }
 
-.banner_info h3 {
-    position: relative;
-    overflow: hidden;
-    font-size: 4em;
-    font-family: 'Oswald', sans-serif;
-    margin-bottom:30px;
-    line-height: 70px;
-}
-
-.banner_info h1 {
-    font-size: 3em;
-    font-family: 'Oswald', sans-serif;
-    margin-bottom: 10px;
-    text-align: center;
-    line-height: 70px;
-    font-weight: 600;
-}
+  section {
+    margin-left: auto;
+    margin-right: auto;
+    width: auto;
+    margin-top: 10px;
+    height: 550px;
+    padding: 2em;
+    /* box-shadow: rgb(0, 0, 0) 0px -3px 12px 0px; */
+    /* animation: changeColor 28s infinite; 4 colors x 7 seconds each */
+    background: url(../images/shosurbari-matrimony-bd-2.jpg);
+    /* background: linear-gradient(135deg, #ff9a9e, #fad0c4);   
+    background: #f0f0f0;
+    box-shadow: rgb(0, 0, 0) 0px -3px 12px 0px; */
+  }
 
 .shosurbari-title{
     border: 1px solid;
     border-radius: 10px;
     animation: colorAnimation 10s linear infinite;
-    padding: 20px 10px;
-    width: 700px;
+    padding: 25px;
+    width: 650px;
     margin:auto;
     background: #ffffff00;
     backdrop-filter: blur(3px);
@@ -1002,7 +984,7 @@ i.fa1:hover {
     font-size: 25px;
     font-family: 'Oswald', sans-serif;
     text-align: center;
-    margin-top: 10px;
+    margin: auto;
     line-height: 45px;
 }
 
@@ -1108,34 +1090,6 @@ i.fa1:hover {
 
 /*Body Section Start*/
 /*Home Search Option Start*/
-.sb-search-page{
-    margin: 70px auto;
-    width: 100%;
-    text-align: center;
-}
-
-.sb-search-page h2 {
-    font-size: 3em;
-    /* animation: textAnimation 10s linear infinite; */
-    color: #f6b105;
-    margin-bottom: 0px;
-}
-  
-.sb-search-page p {
-    font-size: 1.3em;
-    text-align: center;
-    animation: textAnimation 10s linear infinite;
-    margin-bottom: 20px;
-}
-
-.sb-search-page .sb-search-btn2 {
-    margin-top: 30px;
-    margin-left: auto;
-    margin-right: auto;
-    border-radius: 4px;
-    color: #fff;
-    text-align: center;
-} 
 
 .sb-search-btn button, .sb-search-btn1 button {
     background: #06b6d4;
@@ -1434,6 +1388,155 @@ span.m_3{
     margin-left: 34.5%;
     box-shadow: 1px 3px 20px 0px;
 }
+
+.sb-search-page{
+    padding: 25px;
+    text-align: center;
+}
+
+.sb-search-page .sb-search-btn2 {
+    margin-left: auto;
+    margin-right: auto;
+    border-radius: 4px;
+    color: #fff;
+    text-align: center;
+} 
+
+.sb-search-page h2 {
+    line-height: 50px;
+}
+
+.sb-search-btn2 p{
+    color: black;
+    margin: 20px auto;
+}
+
+
+.sb-search-btn button, .sb-search-btn2 button {
+    background: #06b6d4;
+    padding: 10px;
+    border: 2px solid #f0f0f0;
+    border-radius: 4px;
+    color: #fff;
+    font-size: 20px;
+    width: 222px;
+    transition: transform 0.3s;
+}
+
+.sb-search-btn button:hover, .sb-search-btn2 button:hover {
+    background: #0aa4ca;
+    color: #fff;
+    transform: scale(1.1);
+}
+
+  .sb-body-message {
+  text-align: center;
+  margin: auto;
+  max-width: auto; /* Optional: Set a max width to control text width */
+}
+
+  .sb-home-reg {
+  position: absolute;
+  bottom: 40px;
+  left: 50px;
+  z-index: 1;
+  padding: 20px;
+  /* background-color: rgba(255, 255, 255, 0.8); Add a background color for better visibility */
+}
+
+.sb-search-btn{
+  position: absolute;
+  bottom: -110px;
+  right: 50px;
+  z-index: 1;
+  padding: 20px;
+  /* background-color: rgba(255, 255, 255, 0.8); Add a background color for better visibility */
+}
+
+.banner-content {
+	width: 100%;
+	height: 100%;
+	box-sizing: border-box;
+	position: relative;
+}
+
+
+.slide {
+	width: 100%;
+	height: 100%;
+	position: absolute;
+	opacity: 0;
+	transition: opacity 1s;
+	box-sizing: border-box;
+  padding: 15px;
+  background: #00bbff22;
+
+}
+
+.slide img {
+  width: 100%;
+  height: 100%;
+}
+
+.slide.active {
+	opacity: 1;
+}
+
+.slide p {
+	font-family: sans-serif;
+	font-size: clamp(1.5em, 5vmax, 3em);
+	position: absolute;
+	z-index: 1;
+	top: 50px;
+	left: 20px;
+	max-width: 540px;
+	color: #e50053;
+	font-weight: 800;
+  text-align: center;
+  /* background: #f0f0f0a8;
+  padding: 7px;
+  border-radius: 30px; */
+}
+
+.slide-indicators {
+	position: absolute;
+	bottom: 0;
+	left: 0;
+	width: 137px;
+	padding: 20px 40px;
+	display: flex;
+}
+
+.slide-indicator {
+	height: 2px;
+	background: #ddd;
+	margin: 0 2px;
+	width: 20px;
+	transition: width 0.2s ease-out;
+}
+
+.slide-indicator.active {
+	background: linear-gradient(to right, #555 50%, #ddd 50%);
+	background-size: 200% 100%;
+	animation: slide linear infinite;
+	animation-duration: var(--duration);
+	width: 67px;
+}
+
+.shosurbari-body-notice{
+    background: #7dffca3b;
+    padding-top: 30px;
+    padding-bottom: 30px;
+    margin: 150px auto;
+  }
+
+  #banner_text{
+    text-align: center;
+    margin-top: 150px;
+    padding: 25px 50px;
+    line-height: 50px;
+    margin-bottom: 0px;
+  }
 /*Body Section End*/
 /*-- -- -- -- -- -- -- -- -- -- -- -- -- ---- -- --
 -- -- -- -- -- -- -- -- --- -- -- -- -- -- -- -- --
@@ -3809,10 +3912,6 @@ label{
 
 @media (min-width:1600px){
 
-    .sb-search-page{
-        width: 1200px;
-    }
-    
 .contact-bio,
 .copy-sbbio-link {
     width: 50%;
@@ -3846,10 +3945,6 @@ td.day_value {
 }
     
 @media (max-width:1600px){
-
-    .sb-search-page{
-        width: 1200px;
-    }
 
 td.day_label {
     font-size: 15px;
@@ -3905,10 +4000,6 @@ td.day_value {
 
     h1, h2, h3, h4, h5, h6 {
         font-size: 45px;
-    }
-
-    .sb-search-page{
-        width: 1000px;
     }
 
     .profile-nav-info h3 {
@@ -4020,26 +4111,6 @@ ul.profile_item{
     font-size: 14px;
 }
 
-.banner_info{
-    width: 920px;
-}
-
-.banner_info h3 {
-    font-size: 3.5em;
-}
-
-.banner_info h5 {
-    font-size: 1.5em;
-}
-
-.banner_info h6 {
-    font-size: 1.5em;
-}
-
-.banner_info p {
-    font-size: 1em;
-}
-
 .profile-nav-info .address {
     font-size: 14px;
 }
@@ -4115,11 +4186,6 @@ ul.profile_item{
     margin-left: auto;
     margin-right: auto;
 }
-
-.banner_info{
-    width: 950px;
-}
-
 }
 
 @media (min-width:1024px){
@@ -4141,6 +4207,7 @@ ul.profile_item{
 --      Media Responsive / Phone Responsive      --
 -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -*/
 @media (max-width:1024px){
+    
     .nbs-flexisel-item {
         float: left;
         position: relative;
@@ -4156,10 +4223,6 @@ ul.profile_item{
 
     .nbs-flexisel-item:first-child{
         margin-left: -50px;
-    }
-
-    .sb-search-page {
-        width: 900px;
     }
 
     .profile-img img {
@@ -4221,31 +4284,6 @@ ul.profile_item{
         font-size: 14px;
     }
 
-    .banner_info{
-        width: 920px;
-    }
-    
-    .banner_info h3 {
-    
-        font-size: 3em;
-    }
-    
-    .banner_info h4 {
-        font-size: 2em;
-    }
-    
-    .banner_info h5 {
-        font-size: 1em;
-    }
-    
-    .banner_info h6 {
-        font-size: 1em;
-    }
-    
-    .banner_info p {
-        font-size: .7em;
-    }
-
 .hvr-shutter-out-horizontal {
     padding: 8px 25px;
     font-size: 18px;
@@ -4253,11 +4291,6 @@ ul.profile_item{
 
 .profile_search {
     margin:7em 0 0 0;
-}
-
-.banner {
-    height:422px;
-    margin-top: 35px;
 }
 
 .post-meta {
@@ -4390,7 +4423,15 @@ ul.nav_1 li {
     }
 
     ul.footer_social {
-        text-align: left;
+        text-align: right;
+    }
+
+    .col_2 h6 {
+        text-align: right;
+    }
+
+    .brn-payment {
+        width: 180px;
     }
 
     }
@@ -4447,10 +4488,6 @@ ul.nav_1 li {
 
     h1, h2, h3, h4, h5, h6 {
         font-size: 40px;
-    }
-
-    .sb-search-page {
-        width: 700px;
     }
 
     #progressbar li {
@@ -4580,6 +4617,7 @@ ul.nav_1 li {
 
 .col_2 {
     margin-bottom: 0em;
+    padding: 25px;
 }
 
 .col_2 h4 {
@@ -4774,6 +4812,36 @@ ul.profile_item{
 -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -*/
 @media (max-width: 768px){
 
+    .banner{
+    height: 350px;
+    margin-top: 0px;
+    }
+
+    .banner-content {
+        height: 350px;
+    }
+
+    section{
+        height: 405px;
+        margin-top: 10px;
+    }
+
+    .slide{
+        height: 350px;
+    }
+
+    #banner_text{
+        margin-top: 90px;
+    }
+
+    .shosurbari-body-notice {
+        margin: 90px auto;
+    }
+
+    .shosurbar-about {
+        margin-top: 90px;
+    }
+
     h1, h2, h3, h4, h5, h6 {
         font-size: 35px;
     }
@@ -4800,75 +4868,30 @@ ul.profile_item{
     }
 
     .sb-featured-profiles {
-        margin: 102px auto 0px auto;
+        margin: 90px auto 0px auto;
     }
 
     .shosurbari-title {
         margin:auto;
         background: #ffffff00;
         backdrop-filter: blur(5px);
+        width: 80%;
     }
-
-    .sb-search-page {
-        width: 700px;
-        margin-top: -950px;
-    }
-
+    
     .shosurbari-title h4 {
         font-size: 23px;
         line-height: 40px;
         font-weight: 550;
     }
-    
-    .banner_info {
-        margin: -71em 0 0 0;
-    }
-
-    .banner_info h3 {
-        font-size:48px;
-        margin-bottom: 20px;
-        line-height: 60px;
-    }	
-
-    .sb-search-page h2{
-        margin-top: 25px;
-    }
-
-    .sb-search-page p{
-        font-size: 24px;
-    }
-    
-    .banner {
-        min-height: 1655px; 
-    }
-
-    .banner{
-        background:url(../images/sosurbari-mobile-logo4.png)no-repeat center top;
-        background-size: cover;
-        -webkit-background-size: cover;
-        -moz-background-size: cover;
-        -o-background-size: cover;
-        margin-top: 0px;
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        /* Add additional CSS design properties below */
-        border-radius: none;
-        padding: 10px;
-        /* box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1); */
-    
-    }
-
-    .banner_info h1 {
-        line-height: 55px;
-    }
 
     #biodataForm{
         margin: -30px auto;
     }
+
     .navigationpro .dropdown{
         margin: 5px;
     }
+
     .navigationpro {
         display: block;
         margin-top: -50px;
@@ -4924,7 +4947,7 @@ label.gender_1 {
 }
 
 .shosurbari-copy-right {
-    margin: 1em 0 0 0;
+    margin: 3em 0 0 0;
 }
 
 .profile_search {
@@ -5292,6 +5315,10 @@ i.icon_4 {
 -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -*/
 @media (max-width: 736px){
 
+    section{
+        margin-top: 60px;
+    }
+
     .nbs-flexisel-item {
         float: left;
         position: relative;
@@ -5313,54 +5340,19 @@ i.icon_4 {
         margin-bottom: 2em;
     }
 
-    .banner {
-        min-height: 1230px;
-        margin-top: 55px;
-    }
-
-    .sb-search-page .sb-search-btn {
-        margin-top: 0px;
-    }
-
     .sb-search-logo {
         margin: auto;
     }
 
-    .sb-search-page {
-        width: 520px;
-        margin-top: -610px;
-    }
-
-    .sb-search-page p {
-        font-size: 19px;
-    }
-
-    .sb-search-page h2 {
-        font-size: 29px;
-        margin-bottom: 20px;
-    }
-
-    
     .sb-search-btn button {
         padding: 5px;
         font-size: 16px;
         width: 160px;
     }
 
-    .banner_info h1 {
-        line-height: 37px;
-    }
-
-    .banner_info h3 {
-        font-size: 29px;
-        line-height: 30px;
-    }	
-
     .shosurbari-title {
         border: 1px solid;
         border-radius: 6px;
-        padding: 5px 3px;
-        width: 100%;
     }
 
     .shosurbari-title h4 {
@@ -5368,12 +5360,6 @@ i.icon_4 {
         line-height: 35px;
         font-weight: 550;
     }
-    
-    .banner_info {
-        margin: -50em 0 0 0;
-    }
-
-
 
     #progressbar li:before{
         width: 30px;
@@ -5431,10 +5417,6 @@ i.icon_4 {
     margin-bottom:0;
 }
 
-.banner_info h3 {
-    font-size: 2em;
-    margin-bottom:20px;
-}
 
 .profile_search {
     margin: 3em 0 0 0;
@@ -5792,64 +5774,20 @@ ul.profile_item{
         font-size: 21px;
     }
 
-    .banner {
-        min-height: 1030px;
-        margin-top: 55px;
-    }
-
-    .sb-search-page .sb-search-btn {
-        margin-top: 0px;
-    }
-
     .sb-search-logo {
         margin: auto;
     }
 
-    .sb-search-page {
-        width: 410px;
-        margin-top: -550px;
-    }
-
-    .sb-search-page p {
-        font-size: 19px;
-    }
-
-    .sb-search-page h2 {
-        font-size: 29px;
-        margin-bottom: 20px;
-    }
-
-    
     .sb-search-btn button {
         padding: 5px;
         font-size: 16px;
         width: 160px;
     }
 
-    .banner_info h1 {
-        line-height: 37px;
-    }
-
-    .banner_info h3 {
-        font-size: 29px;
-        line-height: 30px;
-    }	
-
-    .shosurbari-title {
-        border: 1px solid;
-        border-radius: 6px;
-        padding: 5px 3px;
-        width: 100%;
-    }
-
     .shosurbari-title h4 {
         font-size: 17px;
         line-height: 30px;
         font-weight: 550;
-    }
-    
-    .banner_info {
-        margin: -42em 0 0 0;
     }
 
     #progressbar li:before{
@@ -6054,6 +5992,10 @@ ul.profile_item{
 -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -*/
 @media (max-width:480px){
 
+    .brn-payment {
+        width: 150px;
+    }
+
     h1, h2, h3, h4, h5, h6 {
         font-size: 25px;
     }
@@ -6097,54 +6039,14 @@ ul.profile_item{
         font-size: 25px;
     }
 
-    .banner {
-        min-height: 1030px;
-        margin-top: 55px;
-    }
-
-    .sb-search-page .sb-search-btn {
-        margin-top: 0px;
-    }
-
     .sb-search-logo {
         margin: auto;
     }
 
-    .sb-search-page {
-        width: 380px;
-        margin-top: -610px;
-    }
-
-    .sb-search-page p {
-        font-size: 17px;
-    }
-
-    .sb-search-page h2 {
-        font-size: 25px;
-        margin-bottom: 20px;
-    }
-
-    
     .sb-search-btn button {
         padding: 5px;
         font-size: 14px;
         width: 170px;
-    }
-
-    .banner_info h1 {
-        line-height: 37px;
-    }
-
-    .banner_info h3 {
-        font-size: 27px;
-        line-height: 30px;
-    }	
-
-    .shosurbari-title {
-        border: 1px solid;
-        border-radius: 6px;
-        padding: 5px 3px;
-        width: 100%;
     }
 
     .shosurbari-title h4 {
@@ -6152,11 +6054,6 @@ ul.profile_item{
         line-height: 30px;
         font-weight: 550;
     }
-    
-    .banner_info {
-        margin: -42em 0 0 0;
-    }
-
 
     .sb-home-reg button {
         font-size: 14px;
@@ -6507,34 +6404,6 @@ ul.profile_item{
         line-height: 25px;
     }
 
-    .sb-search-page {
-        width: 380px;
-        margin-top: -565px;
-    }
-
-    .sb-search-page p {
-        font-size: 16px;
-    }
-
-    .banner_info h1 {
-        line-height: 35px;
-    }
-
-    .banner_info {
-        margin: -36em 0 0 0;
-    }
-
-    .banner_info h3 {
-        font-size: 24px;
-        line-height: 30px;
-        margin-bottom: 10px;
-    }
-    
-
-    .sb-featured-profiles {
-        margin: -70px auto 0px auto;
-    }
-
 .wrap_1 {
     width: 375px;
 }
@@ -6547,11 +6416,6 @@ ul.profile_item{
 .profile_search {
     margin: 1em 0 0 0;
     padding:5px;
-}
-
-.banner {
-    min-height: 935px;
-    margin-top: 50px;
 }
 
 .navigation {
@@ -6839,40 +6703,11 @@ ul.profile_item{
         font-size: 24px;
     }
 
-    .banner {
-        min-height: 860px;
-        zoom: .9;
-    }
-
     .shosurbari-title h4 {
         font-size: 14px;
         line-height: 25px;
     }
-
-    .sb-search-page {
-        width: 300px;
-        margin-top: -465px;
-    }
-
-    .sb-search-page p {
-        font-size: 15px;
-    }
-
-    .banner_info h1 {
-        line-height: 35px;
-    }
-
-    .banner_info {
-        margin: -31em 0 0 0;
-    }
-
-    .banner_info h3 {
-        font-size: 24px;
-        line-height: 30px;
-        margin-bottom: 10px;
-    }
     
-
     #terms-checkbox {
         width: 36px;
     }
@@ -7144,37 +6979,9 @@ ul.profile_item{
         font-size: 15px;
     }
 
-    .banner {
-        min-height: 860px;
-        zoom: .9;
-    }
-
     .shosurbari-title h4 {
         font-size: 13px;
         line-height: 25px;
-    }
-
-    .sb-search-page {
-        width: 300px;
-        margin-top: -465px;
-    }
-
-    .sb-search-page p {
-        font-size: 15px;
-    }
-
-    .banner_info h1 {
-        line-height: 35px;
-    }
-
-    .banner_info {
-        margin: -31em 0 0 0;
-    }
-
-    .banner_info h3 {
-        font-size: 22px;
-        line-height: 30px;
-        margin-bottom: 10px;
     }
 
 .sb_biodata_profile{
@@ -7277,51 +7084,15 @@ ul.profile_item{
         font-size: 14px;
     }
 
-    .banner {
-        min-height: 860px;
-        zoom: .9;
-    }
-
-    .shosurbari-title {
-        padding: 0px 3px;
-    }
-
     .shosurbari-title h4 {
         font-size: 15px;
         line-height: 24px;
-    }
-
-    .sb-search-page {
-        width: 280px;
-        margin-top: -465px;
-    }
-
-    .sb-search-page p {
-        font-size: 13px;
-    }
-
-    .banner_info h1 {
-        line-height: 35px;
-    }
-
-    .banner_info {
-        margin: -29em 0 0 0;
     }
 
     .sb-search-btn button {
         padding: 5px;
         font-size: 15px;
         width: 135px;
-    }
-
-    .banner_info h3 {
-        font-size: 21px;
-        line-height: 30px;
-        margin-bottom: 10px;
-    }
-
-    .sb-search-page h2 {
-        font-size: 21px;
     }
 
     a#profile-tab, a#home-tab, a#profile-tab1 {
@@ -7699,12 +7470,3 @@ ul.profile_item{
   .sb-search-btn{
     margin-bottom: 150px;
   }
-
-  .sb-search-page .sb-search-btn {
-  /* margin-top: 125px; */
-  margin-left: auto;
-  margin-right: auto;
-  border-radius: 4px;
-  color: #fff;
-  text-align: center;
-}
