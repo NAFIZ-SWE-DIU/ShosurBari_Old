@@ -4,7 +4,8 @@
 <!DOCTYPE HTML>
 <html>
 <head>
-<title>Services - ShosurBari</title>
+<title>Services | ShosurBari</title>
+<link rel="icon" href="images/shosurbari-icon.png" type="image/png">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
@@ -21,20 +22,6 @@
 <!--font-Awesome-->
 <link href="css/font-awesome.css" rel="stylesheet"> 
 <!--font-Awesome-->
-<script>
-$(document).ready(function(){
-    $(".dropdown").hover(            
-        function() {
-            $('.dropdown-menu', this).stop( true, true ).slideDown("fast");
-            $(this).toggleClass('open');        
-        },
-        function() {
-            $('.dropdown-menu', this).stop( true, true ).slideUp("fast");
-            $(this).toggleClass('open');       
-        }
-    );
-});
-</script>
 </head>
 
 
@@ -59,7 +46,9 @@ $(document).ready(function(){
 
 
 
-   <div class="shosurbari-trmcnd-prvplcy">
+   <div class="shosurbari-service">
+   <div class="shosurbari-details">
+
    		<div class="page_header">
 			<h1>Our Services</h1>
 			<p>Welcome to ShosurBari.com, your trusted online matrimony service provider. We offer a wide range of services to help you find your perfect life partner. Our platform caters to individuals of all religions, professions, and Bengali communities worldwide. Here is an overview of the services we provide:</p>
@@ -123,6 +112,14 @@ $(document).ready(function(){
     		<div class="clearfix"> </div>
     	</div>	
    	</div>
+	</div>
+
+	<style>
+	html, body{
+    background:#fff;
+}
+	</style>
+
 
 
 	<?php include_once("footer.php");?>
