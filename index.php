@@ -1145,7 +1145,7 @@ toggleLabels.forEach(label => {
   var bannerText = document.getElementById("banner_text");
   var animationDelay = 100; // in milliseconds (adjust the speed here)
 
-  var textToType = "এখানে হাজারেরো বেশি যাচাইকৃত সদস্যর প্রোফাইল রয়েছে";
+  var textToType = "সার্চ ফিল্টার ব্যবহার করে খুঁজেনিন স্বপ্নময় জীবনসঙ্গী";
   var currentText = "";
   var currentIndex = 0;
 
@@ -1181,7 +1181,12 @@ toggleLabels.forEach(label => {
   flex-wrap: wrap;
   justify-content: center; /* Center the content horizontally */
   padding: 10px;
-  height: 150px;
+  height: 125px;
+  background: repeating-linear-gradient(-45deg, #00bbff22 , transparent 30px);
+}
+
+.inner-wrap {
+    max-height: 177px;
 }
 
 /* Style for each search option section */
@@ -1189,7 +1194,7 @@ toggleLabels.forEach(label => {
   display: flex;
   flex-direction: column;
   width: 154px;
-  margin: auto 6px;
+  margin: 20px 6px auto 6px;
   padding: 7px;
     background-color: #f1f1f1;
     box-shadow: 1px 1px 4px #888;
@@ -1417,25 +1422,6 @@ function createSlides(data) {
   -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -->
 
   <style>
-.sb-search-logo-btn {
-  display: flex;
-  align-items: center;
-}
-
-.sb-search-options,
-.sb-search-logo {
-  display: inline-flex;
-}
-
-.sb-search-logo-btn {
-  display: flex;
-  align-items: center;
-}
-
-.sb-search-options,
-.sb-search-logo {
-  display: inline-flex;
-}
 
 @media screen and (max-width: 930px) {
   .sb-search-options {
@@ -1453,6 +1439,7 @@ function createSlides(data) {
     flex-wrap: wrap;
     justify-content: center;
     padding: 10px;
+    padding-bottom: 30px;
     height: auto;
 }
 
@@ -1495,7 +1482,7 @@ function createSlides(data) {
   -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- ---
   -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -->
   <div class="sb-search-page">
-    <h2>সার্চ ফিল্টার ব্যবহার করে খুঁজেনিন স্বপ্নময় জীবনসঙ্গী</h2>
+    <h2>এখানে হাজারেরো বেশি যাচাইকৃত পাত্রপাত্রীর প্রোফাইল রয়েছে</h2>
 
     <div class="sb-search-logo-btn">
       <div class="sb-search-options">
@@ -1628,7 +1615,7 @@ function createSlides(data) {
         $("#flexiselDemo3").flexisel({
           visibleItems: 4,
           animationSpeed: 700,
-          autoPlay:false,
+          autoPlay:true,
           autoPlaySpeed: 5000,    		
           pauseOnHover: true,
           enableResponsiveBreakpoints: true,
@@ -1661,43 +1648,61 @@ function createSlides(data) {
   --    SHOSURBARI HOME PAGE / FEATURED PROFILES   --
   -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- ---
   -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -->
-      <h1 class="shosurbar-about">শ্বশুরবাড়ি ডট কম</h1>
+  <?php
+          require_once("includes/dbconn.php");
+
+        // Query to get male count
+        $maleQuery = "SELECT COUNT(*) as maleCount FROM 1bd_personal_physical WHERE biodatagender = 'পাত্রের বায়োডাটা'";
+        $maleResult = mysqli_query($conn, $maleQuery);
+        $maleData = mysqli_fetch_assoc($maleResult);
+        $maleCount = $maleData['maleCount'];
+
+        // Query to get female count
+        $femaleQuery = "SELECT COUNT(*) as femaleCount FROM 1bd_personal_physical WHERE biodatagender = 'পাত্রীর বায়োডাটা'";
+        $femaleResult = mysqli_query($conn, $femaleQuery);
+        $femaleData = mysqli_fetch_assoc($femaleResult);
+        $femaleCount = $femaleData['femaleCount'];
+
+        // Calculate total biodata count
+        $totalBiodataCount = $maleCount + $femaleCount;
+        
+        mysqli_close($conn);
+    ?>
+
+      <h1 class="shosurbari-about">শ্বশুরবাড়ি সেবা গ্রহীতাদের পরিসংখ্যান</h1>
 <ul class="shosurbar-grrombride-about">
-    <li style="--accent-color:#0B374D">
-        <div class="icon"><i class="fa-brands fa-codepen"></i></div>
-        <div class="title">Codepen</div>
-        <div class="descr">Lorem ipsum dolor sit amet consectetur adipisicing elit. Soluta, impedit?</div>
+    <li style="--accent-color:#0ea5e9">
+      <div class="icon">
+      <img src="images/shosurbari-male-icon.jpg" style="height: 75px; widht: 75px; background: #fff; border-radius: 50%;">
+      </div>
+        <div class="title">সর্বমোট পাত্র</div>
+      <div class="descr"><h2><?php echo $maleCount; ?> </h2></div>
+    </li>
+    <li style="--accent-color:#db2777">
+        <div class="icon">
+        <img src="images/shosurbari-female-icon.png" style="height: 75px; widht: 75px; background: #fff; border-radius: 50%;">
+        </div>
+        <div class="title">সর্বমোট পাত্রী</div>
+        <div class="descr"><h2><?php echo $femaleCount; ?></h2></div>
     </li>
     <li style="--accent-color:#1286A8">
-        <div class="icon"><i class="fa-brands fa-html5"></i></div>
-        <div class="title">HTML 5</div>
-        <div class="descr">Lorem ipsum dolor sit amet consectetur adipisicing elit.</div>
+        <div class="icon">
+        <img src="images/shosurbari-groom-bride.png" style="height: 75px; widht: 75px; background: #fff; border-radius: 50%;">
+        </div>
+        <div class="title">মোট পাত্রপাত্রী</div>
+        <div class="descr"><h2><?php echo $totalBiodataCount; ?></h2></div>
     </li>
-    <li style="--accent-color:#D2B53B">
-        <div class="icon"><i class="fa-brands fa-css3"></i></div>
-        <div class="title">CSS 3</div>
-        <div class="descr">Lorem ipsum dolor sit.</div>
-    </li>
-    <li style="--accent-color:#DA611E">
-        <div class="icon"><i class="fa-brands fa-js"></i></div>
-        <div class="title">Javascript</div>
-        <div class="descr">Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolor laboriosam odio alias.</div>
-    </li>
-    <li style="--accent-color:#AC2A1A">
-        <div class="icon"><i class="fa-brands fa-github"></i></div>
-        <div class="title">Github</div>
-        <div class="descr">Lorem ipsum dolor sit amet consectetur adipisicing elit.</div>
+    <li style="--accent-color:#14b8a6">
+        <div class="icon">
+          <img src="images/shosurbari-success-marriage.jpg" style="height: 75px; widht: 75px; background: #fff; border-radius: 50%;">
+        </div>
+        <div class="title">সফল বিবাহ</div>
+        <div class="descr"><h2>100</h2></div>
     </li>
 </ul>
 
+
 <style>
-
-.shosurbar-about {
-  text-align: center;
-  margin-top: 150px;
-  margin-bottom: 0px;
-}
-
 .shosurbar-grrombride-about {
   --col-gap: 2rem;
   --barH: 1rem;
@@ -1717,6 +1722,8 @@ function createSlides(data) {
   align-items: flex-start;
   list-style: none;
 }
+
+
 .shosurbar-grrombride-about li {
   width: 10em;
   display: grid;
@@ -1792,8 +1799,8 @@ function createSlides(data) {
   font-size: 3rem;
 }
 .shosurbar-grrombride-about li .title {
-  font-size: 1.25rem;
-  font-weight: 700;
+  font-size: 22px;
+  font-weight: 500;
 }
 
 .shosurbar-grrombride-about li .descr {
