@@ -24,7 +24,7 @@ if(isloggedin()){
 
 
 <head>
-<title>Edit Biodata | ShosurBari</title>
+<title>Biodata Post | ShosurBari</title>
 <link rel="icon" href="images/shosurbari-icon.png" type="image/png">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
@@ -57,7 +57,7 @@ if(isloggedin()){
 				<ul>
 					<a href="index.php"><i class="fa fa-home home_1"></i></a>
 					<span class="divider">&nbsp;<|>&nbsp;</span>
-					<li class="current-page"><h4>Edit Biodata</h4></li>
+					<li class="current-page"><h4>Biodata Post</h4></li>
 				</ul>
 
 				<?php
