@@ -13,94 +13,103 @@ $result=search();
 <body>
 
    
-   
-   
-<!-- 404 Page area Start-->
+<div class="shosurbari-error-form">
+    <div class="soshurbari-animation-icon">
+        <div class="sb-icon-laptop">
+            <img src="images/shosurbari-error.png">
+        </div>
+    </div>
+
+    <!-- 404 Page area Start-->
     <div class="error-page-area">
-        <div class="error-page-wrap">
-            <i class="notika-icon notika-close"></i>
-            <h2>Oops! <span class="counter" style="color:#06b6d4;">Error 404</span></h2>
-            <p>Page Not Found. Please check the URL, refresh your browser, or explore other content on our site.</p>
+        <h2>Page Not Found. Please check the URL, refresh your browser, or explore other content on our site.</h2>
+
+        <div class="button-container">
             <a href="index.php" class="btn">Go to Back Home Page</a>
             <a href="contact.php" class="btn error-btn-mg">Report Problem</a>
         </div>
+
     </div>
+</div>
+
 <!-- 404 Page area End-->
  
 
-<style>
-.error-page-area{
-    min-height:100vh;
-    text-align:center;
-    background:#06b6d4;
-}
-.error-page-area:before{
-    content:'';
-    height:100vh;
-    width:1px;
+<style>body {
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background: repeating-linear-gradient(45deg, #f3f3f3 , transparent 30px);
 }
 
-.error-page-area:before{
-    vertical-align: middle;
-    display: inline-block;
+.shosurbari-error-form {
+  text-align: center;
+  background: repeating-linear-gradient(-45deg, #00bbff22 , transparent 30px);
 }
 
-.error-page-wrap{
-    max-width:580px;
-    padding:20px 0;
-    width:60%;
-    position:relative;
-	margin: 0 auto;
-    background:#fff;
-    box-shadow:0 1px 1px rgba(0,0,0,.1);
-    border-radius:2px;
-    vertical-align: middle;
-    display: inline-block;
+.soshurbari-animation-icon {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 20px; /* Add some spacing between the image and the text */
 }
 
-.error-page-wrap h2{
-	font-size: 27px;
-	color: #333;
-    margin-top: -15px;
-    margin-bottom: -15px;
+.sb-icon-laptop img {
+  height: 400px;
+  width: 400px;
+  padding-top: 20px;
 }
 
-.error-page-wrap p{
-	font-size:17px;
-	color:#333;
-	line-height:24px;
-    padding: 10px;
+.error-page-area {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding-bottom: 40px;
 }
 
-.error-page-wrap .btn{
-	background:#06b6d4;
-	color:#fff;
-	border-radius:2px;
-	box-shadow: 0 2px 5px rgba(0,0,0,.16), 0 2px 10px rgba(0,0,0,.12);
-	outline:none;
-	margin:0px 5px;
-	font-size:14px;
-    padding: 7px;
-    text-decoration: none;
+.error-page-area h2 {
+    width: 710px;
+    font-size: 35px;
+    line-height: 40px;
+    margin-bottom: 20px;
+    margin-left: 50px;
+    margin-right: 50px;
+    font-weight: 500;
 }
 
-.error-page-wrap .btn:hover{
+.button-container {
+  display: flex; /* Display buttons in the same row */
+  justify-content: center; /* Center the buttons horizontally */
+  align-items: center; /* Center the buttons vertically */
+}
+
+.btn {
+  display: flex;
+  padding: 10px 20px;
+  background: #06b6d4;
+  color: #fff; /* Set your desired button text color */
+  text-decoration: none;
+  border-radius: 2px;
+  margin: 5px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, .16), 0 2px 10px rgba(0, 0, 0, .12);
+  font-size: 16px;
+  width: auto;
+  text-align: center;
+}
+
+.btn:hover{
 	background:#0aa4ca;
 	color:#fff;
-    padding: 7px;
 }
 
-.error-page-wrap .counter{
-	color:#00c292;
+.error-btn-mg {
+  /* Add any specific styles you need for the "Report Problem" button */
 }
 
-.error-page-wrap i{
-	font-size: 40px;
-    color: #00c292;
-    padding-bottom: 15px !important;
-    display: block;
-}
-/* start */
 </style>
 
 
