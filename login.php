@@ -52,6 +52,8 @@
   width: 1400px;
   margin: auto;
   background: repeating-linear-gradient(-45deg, #00bbff22 , transparent 30px);
+  padding-top: 30px;
+  padding-bottom: 30px
 }
 
 .soshurbari-animation-icon,
