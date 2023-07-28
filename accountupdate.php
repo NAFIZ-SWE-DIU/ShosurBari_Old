@@ -160,6 +160,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST'){ uploadphoto($id); }
     -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- ---
     -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -->
 
+    <div class="shosurbari-biodata-form">
 
     <div class="shosurbari-user-account">
 
@@ -274,6 +275,56 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST'){ uploadphoto($id); }
         </form>
     </div>
 
+    <div class="soshurbari-animation-icon">
+        <div class="sb-icon-laptop">
+            <img src="images/shosurbari-user-account.png">
+        </div>
+    </div>
+
+</div>
+
+<style>
+.shosurbari-biodata-form {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  width: 1130px;
+  margin: auto;
+  background: repeating-linear-gradient(-45deg, #00bbff22 , transparent 30px);
+  padding-top: 30px;
+  padding-bottom: 30px;
+}
+
+.soshurbari-animation-icon {
+  flex-basis: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.soshurbari-animation-icon img{
+  justify-content: flex-end;
+  margin: auto;
+  height: 400px;
+  width: 400px;
+}
+
+@media (max-width: 1280px){
+  .shosurbari-biodata-form{
+    width: 930px;
+  }
+}
+
+@media (max-width: 1024px) {
+  .soshurbari-animation-icon {
+    display: none;
+  }
+
+  .shosurbari-biodata-form {
+    width: auto;
+}
+}
+</style>
 
 
 
