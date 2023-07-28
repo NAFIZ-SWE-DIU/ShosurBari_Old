@@ -151,6 +151,12 @@
 		</div>
 	</div>
 
+	<style>
+	html, body{
+    background:#fff;
+}
+	</style>
+
 	<?php include_once("footer.php");?>
 
 </body>
