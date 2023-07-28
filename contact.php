@@ -59,9 +59,11 @@ error_reporting(0);
   display: flex;
   align-items: center;
   flex-wrap: wrap;
-  width: 1350px;
+  width: 1130px;
   margin: auto;
   background: repeating-linear-gradient(-45deg, #00bbff22 , transparent 30px);
+  padding-top: 30px;
+  padding-bottom: 30px;
 }
 
 .soshurbari-animation-icon,
@@ -81,7 +83,7 @@ error_reporting(0);
 
 @media (max-width: 1400px){
   .shosurbari-biodata-form{
-    width: 980px;
+    width: 930px;
   }
 }
 
@@ -214,7 +216,6 @@ error_reporting(0);
 						</div>
 
 					</blockquote>
-					<small class="testi-meta"><span class="user">Eiusmod tempor incididunt</span></small>
 				</div>
 
 
@@ -235,7 +236,6 @@ error_reporting(0);
 						</div>
 
 					</blockquote>
-					<small class="testi-meta1"><span class="user">Sint occaecat </span></small>
 				</div>
 				<div class="clearfix"> </div>
 			</div>
@@ -260,7 +260,6 @@ error_reporting(0);
 						</div>
 
 					</blockquote>
-					<small class="testi-meta"><span class="user">Eiusmod tempor incididunt</span></small>
 				</div>
 
 				<div class="col-sm-6 testi_grid list-item-1">
@@ -280,7 +279,6 @@ error_reporting(0);
 						</div>
 
 					</blockquote>
-					<small class="testi-meta1"><span class="user">Sint occaecat </span></small>
 				</div>
 				<div class="clearfix"> </div>
 			</div>
