@@ -6,7 +6,8 @@
 
 
 <head>
-<title>FAQ's - ShosurBari</title>
+<title>FAQ's | ShosurBari</title>
+<link rel="icon" href="images/shosurbari-icon.png" type="image/png">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); } </script>
@@ -21,20 +22,6 @@
 <!----font-Awesome----->
 <link href="css/font-awesome.css" rel="stylesheet"> 
 <!----font-Awesome----->
-<script>
-$(document).ready(function(){
-    $(".dropdown").hover(            
-        function() {
-            $('.dropdown-menu', this).stop( true, true ).slideDown("fast");
-            $(this).toggleClass('open');        
-        },
-        function() {
-            $('.dropdown-menu', this).stop( true, true ).slideUp("fast");
-            $(this).toggleClass('open');       
-        }
-    );
-});
-</script>
 </head>
 
 
@@ -49,13 +36,14 @@ $(document).ready(function(){
 				<ul>
 					<a href="index.php"><i class="fa fa-home home_1"></i></a>
 					<span class="divider">&nbsp;<|>&nbsp;</span>
-					<li class="current-page"><h4>About</h4></li>
+					<li class="current-page"><h4>FAQ's</h4></li>
 				</ul>
 			</div>
 		</div>
 	</div>
 
    <div class="shosurbari-faq">
+   <div class="shosurbari-details">
    	  	<h1>Frequent Ask Questions</h1>
    	  	<p>It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout.</p>
    	  	<div class="accordation">
@@ -103,6 +91,7 @@ $(document).ready(function(){
 			</div>
 
 		</div>
+		</div>
    	</div>
    	<div class="clearfix"> </div>
 
@@ -126,6 +115,10 @@ $(document).ready(function(){
 			max-width: 100%;
 			height: 100%;
 		}
+
+	html, body{
+    background:#fff;
+}
 	</style>
 
 	<?php include_once("footer.php");?>
