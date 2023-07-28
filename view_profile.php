@@ -1321,7 +1321,7 @@ conn.onmessage = function(e) {
 							<div role="tabpanel" class="tab-pane fade in active" id="home" aria-labelledby="home-tab">
 								<div class="biodatavalue_list">
 									<table class="biodata_value_data">
-										<h3>শারীরিক তথ্য</h3>
+										<h3>শারীরিক অবস্থা</h3>
 										<tbody>
 
 											<tr class="opened">
