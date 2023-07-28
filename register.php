@@ -62,6 +62,7 @@ error_reporting(0);
   flex-wrap: wrap;
   width: 1400px;
   margin: auto;
+  background: repeating-linear-gradient(-45deg, #00bbff22 , transparent 30px);
 }
 
 .soshurbari-animation-icon,
