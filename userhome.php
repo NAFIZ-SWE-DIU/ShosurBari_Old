@@ -83,7 +83,7 @@ $deactivated = $row['deactivated'];
   </div>
 
 
-  <div class="navigationpro" style="background-color: #fff;">
+  <div class="navigationpro">
 
     <div class="shosurbari-userhome-status">
       <h3><?php echo "Welcome: $username"; ?></h3>
