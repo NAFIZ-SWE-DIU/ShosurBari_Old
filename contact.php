@@ -59,8 +59,9 @@ error_reporting(0);
   display: flex;
   align-items: center;
   flex-wrap: wrap;
-  width: 1400px;
+  width: 1350px;
   margin: auto;
+  background: repeating-linear-gradient(-45deg, #00bbff22 , transparent 30px);
 }
 
 .soshurbari-animation-icon,
@@ -80,7 +81,7 @@ error_reporting(0);
 
 @media (max-width: 1400px){
   .shosurbari-biodata-form{
-    width: 1000px;
+    width: 980px;
   }
 }
 
@@ -96,6 +97,7 @@ error_reporting(0);
 
   .shosurbari-biodata-form {
     width: auto;
+    margin: 30px;
 }
 }
 </style>
@@ -129,6 +131,7 @@ error_reporting(0);
 			</p>
 
 		</div>
+    
 	</div>
 
 
@@ -188,6 +191,101 @@ error_reporting(0);
     </form>
   </div>
   </div>
+
+
+  <div class="about_middle">
+			<h2>Our Team</h2>
+			<div class="about_middle-grid1">
+
+				<div class="col-sm-6 testi_grid list-item-0">
+					<blockquote class="testi_grid_blockquote">
+
+						<figure class="featured-thumbnail">
+							<img src="images/nn.png"  class="img-responsive" alt=""/>
+						</figure>
+
+						<div>
+							<h3>Engr. Nafizul Noyon</h3>
+							<h4>CEO and Software Engineer:</h4>
+							<p>
+								Leading Shosurbari.com with tech expertise, Nafizul ensures a seamless user experience as CEO and developer.
+							</p>
+							<div class="clearfix"></div>
+						</div>
+
+					</blockquote>
+					<small class="testi-meta"><span class="user">Eiusmod tempor incididunt</span></small>
+				</div>
+
+
+				<div class="col-sm-6 testi_grid list-item-1">
+					<blockquote class="testi_grid_blockquote">
+
+						<figure class="featured-thumbnail">
+							<img src="images/nafi.png" class="img-responsive" alt=""/>
+						</figure>
+
+						<div>
+							<h3>Dr. Nasimul Nayem</h3>
+							<h4>Security Consultant:</h4>
+							<p>
+								Nasimul safeguards user data as our security consultant, ensuring privacy and trust on Shosurbari.com.
+							</p>
+							<div class="clearfix"></div>
+						</div>
+
+					</blockquote>
+					<small class="testi-meta1"><span class="user">Sint occaecat </span></small>
+				</div>
+				<div class="clearfix"> </div>
+			</div>
+
+
+			<div class="about_middle-grid2">
+					
+				<div class="col-sm-6 testi_grid list-item-0">
+					<blockquote class="testi_grid_blockquote">
+
+						<figure class="featured-thumbnail">
+							<img src="images/nafizn.png" class="img-responsive" alt=""/>
+						</figure>
+
+						<div>
+							<h3>Engr. Aive Rahman</h3>
+							<h4>Customer Support Specialist:</h4>
+							<p>
+								Aive provides exceptional customer support, ensuring user satisfaction and prompt assistance on our platform.
+							</p>
+							<div class="clearfix"></div>
+						</div>
+
+					</blockquote>
+					<small class="testi-meta"><span class="user">Eiusmod tempor incididunt</span></small>
+				</div>
+
+				<div class="col-sm-6 testi_grid list-item-1">
+					<blockquote class="testi_grid_blockquote">
+
+						<figure class="featured-thumbnail">
+							<img src="images/naf.png" class="img-responsive" alt=""/>
+						</figure>
+
+						<div>
+							<h3>Nafizul Islam Noyon</h3>
+							<h4>Security Consultant:</h4>
+							<p>
+								Leading Shosurbari.com with tech expertise, Nafizul ensures a seamless user experience as CEO and developer.
+							</p>
+							<div class="clearfix"></div>
+						</div>
+
+					</blockquote>
+					<small class="testi-meta1"><span class="user">Sint occaecat </span></small>
+				</div>
+				<div class="clearfix"> </div>
+			</div>
+
+		</div>
   </div>
 
 
