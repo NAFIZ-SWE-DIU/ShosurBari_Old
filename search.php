@@ -1422,55 +1422,55 @@ $result=search();
                   <!-- Common Profession-->
                   <label class="label-search-options"> সার্ভিস/ইন্টারনেট/ফাইন্যান্স/অন্যান্য </label><br>
 
-                  <input type="checkbox" name="service_common_occupation_level[]" value="HR" class="SelectBox val" />
+                  <input type="checkbox" name="service_andcommon_occupation_level[]" value="HR" class="SelectBox val" />
                     <span class="search-options">HR</span>
                   <br>
 
 
-                    <input type="checkbox" name="service_common_occupation_level[]" value="ব্যাংকার" class="SelectBox val" />
+                    <input type="checkbox" name="service_andcommon_occupation_level[]" value="ব্যাংকার" class="SelectBox val" />
                     <span class="search-options">ব্যাংকার</span>
                   <br>
 
-                    <input type="checkbox" name="service_common_occupation_level[]" value="আইনজীবী" class="SelectBox val" />
+                    <input type="checkbox" name="service_andcommon_occupation_level[]" value="আইনজীবী" class="SelectBox val" />
                     <span class="search-options">আইনজীবী</span>
                   <br>
 
 
-                    <input type="checkbox" name="service_common_occupation_level[]" value="উদ্যোক্তা" class="SelectBox val" />
+                    <input type="checkbox" name="service_andcommon_occupation_level[]" value="উদ্যোক্তা" class="SelectBox val" />
                     <span class="search-options">উদ্যোক্তা</span>
                   <br>
 
-                    <input type="checkbox" name="service_common_occupation_level[]" value="ফ্রীলান্সার" class="SelectBox val" />
+                    <input type="checkbox" name="service_andcommon_occupation_level[]" value="ফ্রীলান্সার" class="SelectBox val" />
                     <span class="search-options">ফ্রীলান্সার</span>
                   <br>
 
                   
-                    <input type="checkbox" name="service_common_occupation_level[]" value="ইউটিউবার" class="SelectBox val" />
+                    <input type="checkbox" name="service_andcommon_occupation_level[]" value="ইউটিউবার" class="SelectBox val" />
                     <span class="search-options">ইউটিউবার</span>
                   <br>
 
                   
-                    <input type="checkbox" name="service_common_occupation_level[]" value="গ্রাফিক্স ডিজাইনার" class="SelectBox val" />
+                    <input type="checkbox" name="service_andcommon_occupation_level[]" value="গ্রাফিক্স ডিজাইনার" class="SelectBox val" />
                     <span class="search-options">গ্রাফিক্স ডিজাইনার</span>
                   <br>
 
                   
-                    <input type="checkbox" name="service_common_occupation_level[]" value="সেলস & মার্কেটিং(SR)" class="SelectBox val" />
+                    <input type="checkbox" name="service_andcommon_occupation_level[]" value="সেলস & মার্কেটিং(SR)" class="SelectBox val" />
                     <span class="search-options">সেলস & মার্কেটিং(SR)</span>
                   <br>
 
                   
-                    <input type="checkbox" name="service_common_occupation_level[]" value="আর্ট/দেয়াল লিখন" class="SelectBox val" />
+                    <input type="checkbox" name="service_andcommon_occupation_level[]" value="আর্ট/দেয়াল লিখন" class="SelectBox val" />
                     <span class="search-options">আর্ট/দেয়াল লিখন</span>
                    <br>
 
                   
-                    <input type="checkbox" name="service_common_occupation_level[]" value="নিরাপত্তারক্ষী" class="SelectBox val" />
+                    <input type="checkbox" name="service_andcommon_occupation_level[]" value="নিরাপত্তারক্ষী" class="SelectBox val" />
                     <span class="search-options">নিরাপত্তারক্ষী</span>
                    <br>
 
                   
-                    <input type="checkbox" name="service_common_occupation_level[]" value="রোজ কামলা/শ্রমিক" class="SelectBox val" />
+                    <input type="checkbox" name="service_andcommon_occupation_level[]" value="রোজ কামলা/শ্রমিক" class="SelectBox val" />
                     <span class="search-options">রোজ কামলা/শ্রমিক</span>
                    <br>
 
@@ -2984,55 +2984,55 @@ $result=search();
                   <!-- Common Profession-->
                   <label class="label-search-options"> সার্ভিস/ইন্টারনেট/ফাইন্যান্স/অন্যান্য </label><br>
 
-                  <input type="checkbox" name="service_common_occupation_level[]" value="HR" class="SelectBox val" />
+                  <input type="checkbox" name="service_andcommon_occupation_level[]" value="HR" class="SelectBox val" />
                     <span class="search-options">HR</span>
                   <br>
 
 
-                    <input type="checkbox" name="service_common_occupation_level[]" value="ব্যাংকার" class="SelectBox val" />
+                    <input type="checkbox" name="service_andcommon_occupation_level[]" value="ব্যাংকার" class="SelectBox val" />
                     <span class="search-options">ব্যাংকার</span>
                   <br>
 
-                    <input type="checkbox" name="service_common_occupation_level[]" value="আইনজীবী" class="SelectBox val" />
+                    <input type="checkbox" name="service_andcommon_occupation_level[]" value="আইনজীবী" class="SelectBox val" />
                     <span class="search-options">আইনজীবী</span>
                   <br>
 
 
-                    <input type="checkbox" name="service_common_occupation_level[]" value="উদ্যোক্তা" class="SelectBox val" />
+                    <input type="checkbox" name="service_andcommon_occupation_level[]" value="উদ্যোক্তা" class="SelectBox val" />
                     <span class="search-options">উদ্যোক্তা</span>
                   <br>
 
-                    <input type="checkbox" name="service_common_occupation_level[]" value="ফ্রীলান্সার" class="SelectBox val" />
+                    <input type="checkbox" name="service_andcommon_occupation_level[]" value="ফ্রীলান্সার" class="SelectBox val" />
                     <span class="search-options">ফ্রীলান্সার</span>
                   <br>
 
                   
-                    <input type="checkbox" name="service_common_occupation_level[]" value="ইউটিউবার" class="SelectBox val" />
+                    <input type="checkbox" name="service_andcommon_occupation_level[]" value="ইউটিউবার" class="SelectBox val" />
                     <span class="search-options">ইউটিউবার</span>
                   <br>
 
                   
-                    <input type="checkbox" name="service_common_occupation_level[]" value="গ্রাফিক্স ডিজাইনার" class="SelectBox val" />
+                    <input type="checkbox" name="service_andcommon_occupation_level[]" value="গ্রাফিক্স ডিজাইনার" class="SelectBox val" />
                     <span class="search-options">গ্রাফিক্স ডিজাইনার</span>
                   <br>
 
                   
-                    <input type="checkbox" name="service_common_occupation_level[]" value="সেলস & মার্কেটিং(SR)" class="SelectBox val" />
+                    <input type="checkbox" name="service_andcommon_occupation_level[]" value="সেলস & মার্কেটিং(SR)" class="SelectBox val" />
                     <span class="search-options">সেলস & মার্কেটিং(SR)</span>
                   <br>
 
                   
-                    <input type="checkbox" name="service_common_occupation_level[]" value="আর্ট/দেয়াল লিখন" class="SelectBox val" />
+                    <input type="checkbox" name="service_andcommon_occupation_level[]" value="আর্ট/দেয়াল লিখন" class="SelectBox val" />
                     <span class="search-options">আর্ট/দেয়াল লিখন</span>
                    <br>
 
                   
-                    <input type="checkbox" name="service_common_occupation_level[]" value="নিরাপত্তারক্ষী" class="SelectBox val" />
+                    <input type="checkbox" name="service_andcommon_occupation_level[]" value="নিরাপত্তারক্ষী" class="SelectBox val" />
                     <span class="search-options">নিরাপত্তারক্ষী</span>
                    <br>
 
                   
-                    <input type="checkbox" name="service_common_occupation_level[]" value="রোজ কামলা/শ্রমিক" class="SelectBox val" />
+                    <input type="checkbox" name="service_andcommon_occupation_level[]" value="রোজ কামলা/শ্রমিক" class="SelectBox val" />
                     <span class="search-options">রোজ কামলা/শ্রমিক</span>
                    <br>
 
