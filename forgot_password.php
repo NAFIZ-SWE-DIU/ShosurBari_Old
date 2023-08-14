@@ -2,7 +2,8 @@
 <!DOCTYPE HTML>
 <html>
 <head>
-<title>Forgot Password - ShosurBari</title>
+<title>Forgot Password | ShosurBari</title>
+<link rel="icon" href="images/shosurbari-icon.png" type="image/png">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 
@@ -21,20 +22,9 @@
 <!--font-Awesome-->
 <link href="css/font-awesome.css" rel="stylesheet"> 
 <!--font-Awesome-->
-<script>
-$(document).ready(function(){
-    $(".dropdown").hover(            
-        function() {
-            $('.dropdown-menu', this).stop( true, true ).slideDown("fast");
-            $(this).toggleClass('open');        
-        },
-        function() {
-            $('.dropdown-menu', this).stop( true, true ).slideUp("fast");
-            $(this).toggleClass('open');       
-        }
-    );
-});
-</script>
+<!-- Facebook Icon Link -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<!-- Facebook Icon Link -->
 </head>
 <body>
 <!-- ============================  Navigation Start =========================== -->
@@ -68,7 +58,7 @@ $(document).ready(function(){
         </div>
 
 	    <div class="form-actions">
-            <button  type="submit" id="edit-submit" name="op"  class="btn_2 submit"  style="width: 50%;"> <span> </span>Send to Email</button>
+            <button  type="submit" id="edit-submit" name="op"  class="btn_1 submit"  style="width: 50%;"> <span> </span>Send to Email</button>
         </div>
 
     </div>
@@ -76,18 +66,73 @@ $(document).ready(function(){
 	</form>
 </div>
 
-<?php include_once("footer.php");?>
+<div id="popup" class="popup">
+    <div class="popup-content">
+        <span id="popup-message"></span>
+        <div class="popup-buttons">
+            <button id="close-button">Close</button>
+        </div>
+    </div>
+</div>
 
-</body>
-</html>	
+<script>
+   // Function to show the popup with a message
+    function showPopup(message) {
+        var popup = document.getElementById("popup");
+        var popupMessage = document.getElementById("popup-message");
+        var closeButton = document.getElementById("close-button");
 
+        popupMessage.innerHTML = message; // Use innerHTML to interpret HTML tags
+        popup.style.display = "block";
+
+        closeButton.addEventListener("click", function () {
+            popup.style.display = "none";
+        });
+    }
+</script>
+
+<style>
+.popup {
+    display: none;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: linear-gradient(180deg,#00bbff 0%,rgb(246 246 246) 100%);
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    padding: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    z-index: 1;
+}
+
+.popup-content {
+    text-align: center;
+    color: #000;
+}
+
+.popup-buttons {
+    margin-top: 10px;
+}
+
+#close-button{
+    background: linear-gradient(#06b6d4, #0ea5e9);
+    color: white;
+    border: none;
+    border-radius: 3px;
+}
+#close-button:hover {
+    background: linear-gradient(#0ea5e9, #06b6d4);
+    color: white;
+}
+</style>
 
 <?php
 // Include database configuration file
 include('includes/dbconn.php');
 
 // Check if form is submitted
-if($_SERVER['REQUEST_METHOD'] == "POST"){
+if ($_SERVER['REQUEST_METHOD'] == "POST") {
     
     // Get user's email from form input
     $email = $_POST['email'];
@@ -98,90 +143,90 @@ if($_SERVER['REQUEST_METHOD'] == "POST"){
     // Execute SQL statement
     $result = mysqli_query($conn, $sql);
     
-    // Check if user exists in database
-    if(mysqli_num_rows($result) > 0){
+    // Check if user exists in the database
+    if (mysqli_num_rows($result) > 0) {
         
-        // Fetch user's password from database
+        // Fetch user's password from the database
         $row = mysqli_fetch_assoc($result);
         $password = $row['password'];
-        
-        // Send password to user's email address
+
+        // Set up SMTP configuration for Gmail
         $to = $email;
-        $subject = "Your password for Shosurbari.com";
-        $message = "Your password is: $password";
-        $headers = "From: info@shosurbari.com";
+        $subject = "Your ShosurBari Password";
         
-        if(mail($to, $subject, $message, $headers)){
-            // Password sent successfully
-            echo "Your password has been sent to your email address.";
+        // HTML version of the email body
+        ob_start();
+        include('ForgotPasswordEmailBody.php');
+        $email_body = ob_get_clean();
+        
+        // Plain text version of the email body
+        // $plain_text_message = "Your ShosurBari Password\n\nA request has been made to retrieve the password for logging into your account.\n\nYour password is: $password\n\nYour Email is: $email\n\nLogin your account: https://www.shoshurbari.rf.gd/login.php\n\nNote: Please remember to keep your passwords and usernames secure. Do not share them with anyone.\n\n[fa fa-facebook]:https://www.facebook.com/ShoshurBari.bd\nhttps://www.yourwebsite.com\nhttps://www.facebook.com\nhttps://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css\n\n(c) 2022-23 ShosurBari.com | All Rights Reserved";
+            $plain_text_message = "
+            Your ShosurBari Password
+            
+            A request has been made to retrieve the password for logging into your account.
+            Your password is: $password
+            Your email is: $email
+            Login to your account: https://www.shoshurbari.rf.gd/login.php
+            Note: Please remember to keep your passwords and usernames secure. Do not share them with anyone.
+            
+            (c) 2022-23 ShosurBari.com | All Rights Reserved
+            
+            Connect with us:
+            - Website: https://www.shoshurbari.com
+            - Facebook: https://www.facebook.com/ShoshurBari.bd
+            - Email: support@shoshurbari.com
+            - YouTube: https://www.youtube.com/c/ShoshurBari
+            ";
+        // Headers
+        $headers = "From: nafizulislam.swe@gmail.com\r\n";
+        $headers .= "Content-Type: text/html; charset=UTF-8\r\n";
+
+        // Gmail SMTP configuration
+        $smtp_host = "smtp.gmail.com";
+        $smtp_port = 587;
+        $smtp_username = "nafizulislam.swe@gmail.com"; // Your Gmail email
+        $smtp_password = "qsjjbejxbottlwry"; // Your Gmail password
+        $smtp_secure = "tls"; // Use 'ssl' for SSL encryption
+        
+        // Configure PHPMailer
+        require 'PHPMailer/PHPMailerAutoload.php';
+        
+        $mail = new PHPMailer;
+        $mail->isSMTP();
+        $mail->Host = $smtp_host;
+        $mail->Port = $smtp_port;
+        $mail->SMTPSecure = $smtp_secure;
+        $mail->SMTPAuth = true;
+        $mail->Username = $smtp_username;
+        $mail->Password = $smtp_password;
+        
+        $mail->setFrom($smtp_username, 'ShosurBari');
+        $mail->addAddress($to);
+        $mail->Subject = $subject;
+        $mail->Body = $email_body;
+        $mail->AltBody = $plain_text_message; // Plain text version of the email
+        
+        if ($mail->send()) {
+        // Password sent successfully
+        echo '<script>showPopup("<span style=\"font-size: 22px; color: white; margin-bottom: 15px\">Check Your Email</span><br>Your password has been sent to your email address.");</script>';
         } else {
             // Error sending email
-            echo "There was an error sending your password. Please try again later.";
+            echo '<script>showPopup("<span style=\"font-size: 22px; color: white; margin-bottom: 15px\"> Error Oops!</span><br>There was an error sending your password. Please try again later.");</script>';
         }
-        
-    } else {
-        // User not found in database
-        echo "We couldn't find a user with that email address.";
+        } else {
+            // User not found in the database
+            echo '<script>showPopup("<span style=\"font-size: 22px; color: white; margin-bottom: 15px\"> User Not Found</span><br>We could not find a user with that email address.");</script>';
+        }
     }
-}
 ?>
 
+<?php include_once("footer.php");?>
+
+</body>
+</html>	
 
 
 
 
 
-
-<?php
-/*
-// Include database configuration file
-require_once 'includes/dbconn.php';
-
-// Function to generate random password
-function generatePassword($length = 8) {
-    $chars = 'abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789';
-    $count = strlen($chars);
-    $password = '';
-    for ($i = 0; $i < $length; $i++) {
-        $index = rand(0, $count - 1);
-        $password .= substr($chars, $index, 1);
-    }
-    return $password;
-}
-
-// Check if form is submitted
-if (isset($_POST['submit'])) {
-    // Get input email
-    $email = $_POST['email'];
-
-    // Check if email exists in database
-    $query = "SELECT * FROM users WHERE email = '$email'";
-    $result = mysqli_query($conn, $query);
-
-    if (mysqli_num_rows($result) > 0) {
-        // Generate new password
-        $new_password = generatePassword();
-
-        // Update user's password in database
-        $query = "UPDATE users SET password = '$new_password' WHERE email = '$email'";
-        mysqli_query($conn, $query);
-
-        // Send new password to user's email
-        $to = $email;
-        $subject = 'New Password for Your Account';
-        $message = 'Your new password is: '.$new_password;
-        $headers = 'From: webmaster@example.com' . "\r\n" .
-            'Reply-To: webmaster@example.com' . "\r\n" .
-            'X-Mailer: PHP/' . phpversion();
-
-        mail($to, $subject, $message, $headers);
-
-        // Display success message
-        echo "A new password has been sent to your email address.";
-    } else {
-        // Display error message
-        echo "Email address not found.";
-    }
-}
-*/
-?>
