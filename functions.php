@@ -333,13 +333,14 @@
             $gender=$_POST['gender'];
             $pnumber = $_POST['pnumber'];
             $email = $_POST['email'];
-            $pass_1 = $_POST['pass_1'];
-            $pass_2 = $_POST['pass_2'];
+            $hashed_password = hash('sha256', $_POST['pass_1']);
+            // $pass_1 = $_POST['pass_1'];
+            // $pass_2 = $_POST['pass_2'];
             require_once("includes/dbconn.php");
 
             $sql = "INSERT INTO users 
             ( fullname, username, gender, number, email, password, active, register_date) 
-            VALUES ('$fname', '$uname', '$gender', '$pnumber', '$email', '$pass_1', 1, DATE_FORMAT(NOW(), '%e %M %Y, %h:%i:%s %p'))";
+            VALUES ('$fname', '$uname', '$gender', '$pnumber', '$email', '$hashed_password', 1, DATE_FORMAT(NOW(), '%e %M %Y, %h:%i:%s %p'))";
 
         
 
@@ -583,7 +584,7 @@
 	$day=$_POST['day'];
 	$month=$_POST['month'];
 	$year=$_POST['year'];
-	$dob=$day ."-" . $month . "-" .$year ;
+	$dob=$day ." ". $month . "," .$year ;
 	$height=$_POST['height'];
 	$weight=$_POST['weight'];	
 	$physicalstatus=$_POST['physicalstatus'];
