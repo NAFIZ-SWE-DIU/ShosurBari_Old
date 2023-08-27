@@ -2,9 +2,8 @@
 Your ShosurBari Password
 
 A request has been made to retrieve the password for logging into your account.
-Your password is: <?php echo $password; ?>
+Password: https://www.shoshurbari.rf.gd/new_password.php
 Your email is: <?php echo $email; ?>
-Login to your account: https://www.shoshurbari.rf.gd/login.php
 Note: Please remember to keep your passwords secure. Do not share them with anyone.
 
 Connect with us:
