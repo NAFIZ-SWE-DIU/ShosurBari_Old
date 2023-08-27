@@ -50,7 +50,7 @@
 	<div class="flex-container">
     <div class="sb-register-login">
 
-		    <h2 style="text-align:center; margin-bottom:50px">Reset Password</h2>
+		    <h2 style="text-align:center; margin-bottom:50px">User Verify</h2>
 
 	    <div class="form-group">
             <label for="edit-name">Email <span class="form-required" title="This field is required.">*</span></label>
@@ -58,7 +58,7 @@
         </div>
 
 	    <div class="form-actions">
-            <button  type="submit" id="edit-submit" name="op"  class="btn_1 submit"  style="width: 50%;"> <span> </span>Send to Email</button>
+            <button  type="submit" id="edit-submit" name="op"  class="btn_1 submit"  style="width: 50%;"> <span> </span>User Checking</button>
         </div>
 
     </div>
@@ -121,11 +121,13 @@
     border: none;
     border-radius: 3px;
 }
+
 #close-button:hover {
     background: linear-gradient(#0ea5e9, #06b6d4);
     color: white;
 }
 </style>
+
 
 <?php
 // Include database configuration file
@@ -165,9 +167,8 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
             Your ShosurBari Password
             
             A request has been made to retrieve the password for logging into your account.
-            Your password is: $password
+            Password: https://www.shoshurbari.rf.gd/new_password.php
             Your email is: $email
-            Login to your account: https://www.shoshurbari.rf.gd/login.php
             Note: Please remember to keep your passwords and usernames secure. Do not share them with anyone.
             
             (c) 2022-23 ShosurBari.com | All Rights Reserved
@@ -186,7 +187,7 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
         $smtp_host = "smtp.gmail.com";
         $smtp_port = 587;
         $smtp_username = "nafizulislam.swe@gmail.com"; // Your Gmail email
-        $smtp_password = "qsjjbejxbottlwry"; // Your Gmail password
+        $smtp_password = "dnngvzwetnirboae"; // Your Gmail password
         $smtp_secure = "tls"; // Use 'ssl' for SSL encryption
         
         // Configure PHPMailer
@@ -208,11 +209,13 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
         $mail->AltBody = $plain_text_message; // Plain text version of the email
         
         if ($mail->send()) {
-        // Password sent successfully
-        echo '<script>showPopup("<span style=\"font-size: 22px; color: white; margin-bottom: 15px\">Check Your Email</span><br>Your password has been sent to your email address.");</script>';
+            // Password sent successfully
+
+            echo '<script>showPopup("<span style=\"font-size: 22px; color: white; margin-bottom: 15px\">Check Your Email</span><br>Your Email address successfully Verified");</script>';
+            // echo '<meta http-equiv="refresh" content="3; url=new_password.php">'; // Redirect after 3 seconds
         } else {
             // Error sending email
-            echo '<script>showPopup("<span style=\"font-size: 22px; color: white; margin-bottom: 15px\"> Error Oops!</span><br>There was an error sending your password. Please try again later.");</script>';
+            echo '<script>showPopup("<span style=\"font-size: 22px; color: white; margin-bottom: 15px\"> Error Oops!</span><br>There was an error verifying user Email. Please try again later.");</script>';
         }
         } else {
             // User not found in the database
@@ -225,8 +228,3 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
 
 </body>
 </html>	
-
-
-
-
-
