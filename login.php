@@ -44,14 +44,14 @@
     </div>
   </div>
 
-  <style>
+<style>
 .shosurbari-biodata-form {
   display: flex;
   align-items: center;
   flex-wrap: wrap;
   width: 1400px;
   margin: auto;
-  background: repeating-linear-gradient(-45deg, #00bbff22 , transparent 30px);
+  background: linear-gradient(180deg,#F3F9F9 0%,rgba(238,246,253,0) 100%);
   padding-top: 30px;
   padding-bottom: 30px
 }
@@ -71,7 +71,7 @@
 
 @media (max-width: 1400px){
   .shosurbari-biodata-form{
-    width: 1000px;
+    width: auto;
   }
 }
 
@@ -87,7 +87,7 @@
 
   .shosurbari-biodata-form {
     width: auto;
-}
+  }
 }
 </style>
 
@@ -118,7 +118,8 @@
 
 			    <div class="form-group">
             <!-- <label for="edit-pass">Password <span class="form-required" title="This field is required.">*</span></label> -->
-            <input type="password" id="sb_log_pass" placeholder="Your Password" name="password" value="<?php if(isset($_COOKIE['password'])) { echo $_COOKIE['password']; } ?>" size="60" maxlength="128" class="form-text required">
+            <!-- <input type="password" id="sb_log_pass" placeholder="Your Password" name="password" value="<?php if(isset($_COOKIE['password'])) { echo $_COOKIE['password']; } ?>" size="60" maxlength="128" class="form-text required"> -->
+            <input type="password" id="sb_log_pass" placeholder="Your Password" name="password" value="" size="60" maxlength="128" class="form-text required">
             <span class="show-password" style="color:#0aa4ca;  font-size:15px; top: 2px;"><i style="color:black;  font-size:15px;" class="fa fa-eye" aria-hidden="true"></i></span> 
             <span id="password_error" style="font-size: 16px; margin-top: 0px; background: #ffddee; border-radius: 1px 2px 4px 4px; text-align: center; display: none;"></span>
           </div>
