@@ -9,26 +9,26 @@
     	<div class="col-md-2 col_2">
     		<h4>Help & Support</h4>
     		<ul class="footer_links">
-    			<li><a href="https://www.facebook.com/ShosurBari.bd" target="_blank">24x7 Live help</a></li>
-    			<li><a href="contact.php">Feedback</a></li>
-    			<li><a href="faq.php">FAQs</a></li>
+    			<li><a href="https://www.facebook.com/ShosurBari.bd" target="_blank">24x7 Live help <i class="fa fa-angle-double-left"></i></a></li>
+    			<li><a href="contact.php">Feedback <i class="fa fa-angle-double-left"></i></a></li>
+    			<li><a href="faq.php">FAQs <i class="fa fa-angle-double-left"></i></a></li>
     		</ul>
     	</div>
 
     	<div class="col-md-2 col_2">
     		<h4>Quick Links</h4>
     		<ul class="footer_links">
-				<li><a href="terms.php">Terms and Conditions</a></li>
-    			<li><a href="privacy.php">Privacy Policy</a></li>
-    			<li><a href="services.php">Services</a></li>
+				<li><a href="terms.php">Terms and Conditions <i class="fa fa-angle-double-left"></i></a></li>
+    			<li><a href="privacy.php">Privacy Policy <i class="fa fa-angle-double-left"></i></a></li>
+    			<li><a href="services.php">Services <i class="fa fa-angle-double-left"></i></a></li>
     		</ul>
     	</div>
 
     	<div class="col-md-2 col_2">
     		<h6 style="	color: #fff;
-	font-size:1.3em;
-	margin-bottom:1em;
-    ">Follow Us</h6>
+			font-size:1.3em;
+			margin-bottom:1em;
+			">Follow Us</h6>
     		<ul class="footer_social">
 				<li><a href="https://www.facebook.com/ShosurBari.bd" target="blank"><i class="fa fa-facebook fa1"> </i></a></li>
 				<li><a href="#"><i class="fa fa-twitter fa1"> </i></a></li>
@@ -38,14 +38,13 @@
     	</div>
 
     	<div class="clearfix"> </div>
+			<div class="shosurbari-payment">
+				<img class="brn-payment" src="images/brn.png">
+			</div>
 
-		<div class="shosurbari-payment">
-			<img class="brn-payment" src="images/brn.png">
-		</div>
-
-    		<div class="shosurbari-copy-right">
+			<div class="shosurbari-copy-right">
 				<p>
-					Copyright © 2022-23 ShosurBari.com | All Rights Reserved | Developed By -
+					Copyright © 2022-23 ShosurBari.com | All Rights Reserved | Developed By <i class="fa fa-angle-double-right"></i>
 					<a href="https://www.facebook.com/NAFIZ.SWE.DIU/" target="_blank">
 					<img src="images/noyon.png" alt="Nafiz Noyon" style="width: 35px; height: 35px; border-radius: 50%; object-fit: cover;">
 					</a>
@@ -62,7 +61,7 @@
 </div>
 
 <style>
-	.col_2 h6 {
+.col_2 h6 {
 	text-align: right;
 }
 
