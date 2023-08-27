@@ -1,3 +1,69 @@
+<style>
+/* Style for the warning message */
+.warning-overlay {
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	z-index: 9999;
+	pointer-events: none; /* Allow user interactions on elements behind the overlay */
+}
+
+.warning-message {
+	color: white;
+	font-size: 24px;
+	text-align: center;
+	padding: 10px;
+	border: 2px solid #f0f0f0;
+	background-color: #ff0000a1;
+	border-radius: 3px;
+}
+</style>
+
+
+<script>
+	// Show warning message on right-click or context menu
+	document.addEventListener("contextmenu", function (e) {
+		e.preventDefault();
+		showWarning();
+	});
+
+	// Show warning message on keyboard shortcut for developer tools
+	document.addEventListener("keydown", function (e) {
+		if (e.key === "F12" || (e.ctrlKey && (e.key === "Shift" || e.key === "I" || e.key === "J" || e.key === "C"))) {
+			e.preventDefault();
+			showWarning();
+		}
+	});
+
+	// Function to show the warning overlay and message
+	function showWarning() {
+		const overlay = document.createElement("div");
+		overlay.classList.add("warning-overlay");
+
+		const message = document.createElement("div");
+		message.classList.add("warning-message");
+		message.textContent = "Oops!";
+
+		overlay.appendChild(message);
+		document.body.appendChild(overlay);
+
+		setTimeout(function () {
+			overlay.remove();
+		}, 3000); // Remove the overlay after 3 seconds
+	}
+</script>
+
+
+
+
+
+
+
 <!-- ============================  Navigation Start =========================== -->
 <div class="navbar navbar-inverse-blue navbar">
     <!--<div class="navbar navbar-inverse-blue navbar-fixed-top">-->
