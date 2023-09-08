@@ -1023,16 +1023,16 @@ section {
     background-size: cover;
 }
 
-section::before {
+/* section::before {
     content: "";
     position: absolute;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
-    background-color: #00bbff61; /* Background color on top of the image */
-    z-index: 1; /* Ensure it's on top of the background image */
-}
+    background-color: #00bbff61; 
+    z-index: 1; 
+} */
 
 
 .shosurbari-title{
@@ -1140,33 +1140,12 @@ section::before {
 
 /*Body Section Start*/
 /*Home Search Option Start*/
-  .sb-search-btn{
-    margin-bottom: 150px;
-    position: absolute;
-    bottom: -110px;
-    right: 50px;
-    z-index: 1;
-    padding: 20px;
-    /* background-color: rgba(255, 255, 255, 0.8); Add a background color for better visibility */
-}
-
 .sb-search-btn-banner{
     position: absolute;
-    top: 400px;
+    top: 450px;
     left: 350px;
     z-index: 1;
     padding: 20px;
-}
-
-.sb-search-btn button, .sb-search-btn1 button, .sb-home-reg button {
-    background: linear-gradient(#06b6d4, #0ea5e9);
-    padding: 10px;
-    border: 2px solid #f0f0f0;
-    border-radius: 4px;
-    color: #fff;
-    font-size: 20px;
-    width: 222px;
-    transition: transform 0.3s;
 }
 
 .sb-home-reg2 button {
@@ -1181,14 +1160,7 @@ section::before {
 }
 
 
-.sb-home-reg2 button:hover {
-    background: linear-gradient(#0aa4ca, #0acef1);
-    color: #fff;
-    transform: scale(1.1);
-}
-
-
-.sb-search-btn button:hover, .sb-search-btn2 button:hover, .sb-home-reg button:hover {
+.sb-home-reg2 button:hover, .sb-search-btn-banner button:hover, .sb-search-btn2 button:hover {
     background: linear-gradient(#0aa4ca, #0acef1);
     color: #fff;
     transform: scale(1.1);
@@ -1245,7 +1217,7 @@ section::before {
     font-size: 25px;
 }
 
-.sb-search-btn button, .sb-search-btn2, .sb-search-btn-banner button {
+.sb-search-btn2, .sb-search-btn-banner button {
     background: linear-gradient(#06b6d4, #0ea5e9);
     padding: 10px;
     border: 2px solid #f0f0f0;
@@ -1256,12 +1228,6 @@ section::before {
     transition: transform 0.3s;
 }
 
-.sb-search-btn button:hover, .sb-search-btn2 button:hover, .sb-search-btn-banner:hover {
-    background: linear-gradient(#0aa4ca, #0acef1);
-    color: #fff;
-    transform: scale(1.1);
-}
-
 .sb-body-message {
     text-align: center;
     margin: auto;
@@ -1270,17 +1236,8 @@ section::before {
 
 .sb-home-reg2 {
     position: absolute;
-    top: 400px;
+    top: 450px;
     left: 0px;
-    z-index: 1;
-    padding: 20px;
-    /* background-color: rgba(255, 255, 255, 0.8); Add a background color for better visibility */
-}
-
-.sb-home-reg {
-    position: absolute;
-    bottom: 40px;
-    left: 50px;
     z-index: 1;
     padding: 20px;
     /* background-color: rgba(255, 255, 255, 0.8); Add a background color for better visibility */
@@ -1598,13 +1555,12 @@ span.m_3{
 }
 
 .slide h1 {
-	font-family: sans-serif;
-	font-size: clamp(1.5em, 5vmax, 3em);
+	font-size: clamp(3.5em, 5vmax, 3em);
 	position: absolute;
 	z-index: 1;
 	left: 0px;
-    top: 150px;
-    line-height: 65px;
+    top: 200px;
+    line-height: 80px;
 	width: 750px;
 	color: #e5007df0;
 	font-weight: 800;
@@ -1615,20 +1571,20 @@ span.m_3{
 }
 
 .slide h5 {
-	font-family: sans-serif;
 	font-size: 18px;
 	position: absolute;
 	z-index: 1;
-	top: 300px;
+	top: 390px;
 	left: 0px;
-	width: 450px;
+	width: 600px;
     line-height: 25px;
-	color: #fff;
+	color: #0aa4ca;
     text-align: left;
     margin-top: auto;
-    background: #ffffff00;
+    background: #ffffff14;
+    backdrop-filter: blur(2px);
     border-radius: 20px;
-    padding: 20px;
+    padding: 0px 20px;
 }
 
 .slide-indicators {
@@ -1665,12 +1621,9 @@ span.m_3{
 
 #banner_text{
     text-align: center;
-    margin-top: 150px;
     padding: 50px 50px 15px 50px;
     line-height: 60px;
     margin-bottom: 0px;
-    /* background: repeating-linear-gradient(45deg, #00bbff22 , transparent 30px),
-    repeating-linear-gradient(-45deg, #00bbff22 , transparent 30px); */
     background: linear-gradient(180deg,#F3F9F9 0%,rgba(238,246,253,0) 100%);
 }
 
@@ -1715,7 +1668,7 @@ span.m_3{
 -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -*/
 /*Profile Short Heading Start*/
 .profile-header {
-    background: repeating-linear-gradient(-45deg, #00bbff22 , transparent 30px);    width: 90%;
+    background: linear-gradient(180deg, #00bbff61 0%,rgba(238,246,253,0) 100%);
     display: flex;
     height: 140px;
     position: relative;
@@ -1899,8 +1852,8 @@ span.m_3{
   	padding: 90px 3px 10px 3px;
 	font-family: "Bree Serif", serif;
   	z-index: 99;
-    background: repeating-linear-gradient(-45deg, #00bbff22 , transparent 30px);    border-radius: 0px 0px 4px 4px;
-	margin-left: auto;
+    background: linear-gradient(0deg, #00bbff61 0%,rgba(238,246,253,0) 100%);
+    margin-left: auto;
     margin-right: auto;
 	border-top:0px solid #ccc;
 	border-right:1px solid #ccc;
@@ -4215,6 +4168,44 @@ label{
         padding: 0px;
     }
 
+    .slide h1 {
+        font-size: clamp(3.5em, 5vmax, 3em);
+        left: 0px;
+        top: 100px;
+        line-height: 80px;
+        width: 750px;
+        text-align: left;
+        background: #ffffff00;
+        padding: 20px;
+    }
+    
+    .slide h5 {
+        font-size: 18px;
+        top: 270px;
+        left: 0px;
+        width: 600px;
+        line-height: 25px;
+        margin-top: auto;
+        text-align: left;
+        padding: 20px;
+    }
+    
+    .sb-home-reg2 {
+        position: absolute;
+        top: 350px;
+        left: 0px;
+        z-index: 1;
+        padding: 20px;
+    }
+    
+    .sb-search-btn-banner {
+        position: absolute;
+        top: 350px;
+        left: 350px;
+        z-index: 1;
+        padding: 20px;
+    }
+
     h1, h2, h3, h4, h5, h6 {
         font-size: 45px;
     }
@@ -4354,6 +4345,10 @@ label{
         width: 921px;
         padding: 35px;
     }
+
+    .banner {
+        width: 970px;
+    }
 }
 
 
@@ -4425,6 +4420,12 @@ label{
 --      Media Responsive / Phone Responsive      --
 -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -*/
 @media (max-width:1024px){
+
+    
+    .banner{
+        width: 970px;
+    }
+
     .sb-search-page {
         flex-direction: column;
         text-align: center;
@@ -4658,6 +4659,11 @@ label{
 
 
 @media (max-width: 992px){
+    
+    .banner {
+        width: 750px;
+    }
+
     .navigationpro {
         display: block;
         width: 652px;
@@ -5456,12 +5462,6 @@ label{
     }
     /* Mobile Search End / Multiple Search Option */ 
 
-    .sb-search-btn button, .sb-home-reg button {
-        padding: 8px;
-        font-size: 19px;
-        width: 200px;
-    }
-
     .navigationpro ul {
         width: 280px;
         margin: auto;
@@ -5635,12 +5635,6 @@ label{
 
     .sb-search-logo {
         margin: auto;
-    }
-
-    .sb-search-btn button, .sb-home-reg button {
-        padding: 5px;
-        font-size: 16px;
-        width: 170px;
     }
 
     .shosurbari-title {
@@ -6078,20 +6072,6 @@ label{
         margin: auto;
     }
 
-    .sb-search-btn button, .sb-home-reg button {
-        padding: 7px;
-        font-size: 16px;
-        width: 180px;
-    }
-
-    .sb-home-reg{
-        left: 30px;
-    }
-
-    .sb-search-btn{
-        right: 30px;
-    }
-
     .shosurbari-title h4 {
         font-size: 17px;
         line-height: 30px;
@@ -6379,22 +6359,6 @@ label{
 
     .sb-search-logo {
         margin: auto;
-    }
-
-    .sb-search-btn button, .sb-home-reg button {
-        padding: 7px;
-        font-size: 14px;
-        width: 161px;
-    }
-
-    .sb-home-reg{
-        left: 16px;
-        padding: 10px;
-    }
-
-    .sb-search-btn{
-        right: 16px;
-        padding: 10px;
     }
 
     .shosurbari-title h4 {
@@ -6985,22 +6949,6 @@ label{
         font-size: 21px;
         width: 317px;
         left: 17px;
-    }
-
-    .sb-search-btn button, .sb-home-reg button {
-        padding: 5px;
-        font-size: 13px;
-        width: 148px;
-    }
-
-    .sb-home-reg{
-        left: 8px;
-        padding: 4px;
-    }
-
-    .sb-search-btn{
-        right: 8px;
-        padding: 4px;
     }
 
     .update-image .camera-wrapper i {
