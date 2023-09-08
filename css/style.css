@@ -1001,9 +1001,8 @@ i.fa1:hover {
     justify-content: space-between;
     align-items: center;
     padding: 0px;
-    width: 100%;
-    height: 500px;
-    max-width: 1280px;
+    width: 1170px;
+    height: 95vh;
     position: relative;
     overflow: hidden;
     box-sizing: border-box;
@@ -1016,11 +1015,25 @@ section {
     margin-right: auto;
     width: auto;
     margin-top: 10px;
-    height: 550px;
-    padding: 2em;
-    background: linear-gradient(#0ea5e975, #06c5d4ab);
-    /* background: url(../images/sb-section2.png); */
+    height: 95vh;
+    position: relative; /* Add relative positioning */
+    background-image: url(../images/shosurbari-home.png); /* Background image */
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
 }
+
+section::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #00bbff61; /* Background color on top of the image */
+    z-index: 1; /* Ensure it's on top of the background image */
+}
+
 
 .shosurbari-title{
     border: 1px solid;
@@ -1136,7 +1149,14 @@ section {
     padding: 20px;
     /* background-color: rgba(255, 255, 255, 0.8); Add a background color for better visibility */
 }
-  
+
+.sb-search-btn-banner{
+    position: absolute;
+    top: 400px;
+    left: 350px;
+    z-index: 1;
+    padding: 20px;
+}
 
 .sb-search-btn button, .sb-search-btn1 button, .sb-home-reg button {
     background: linear-gradient(#06b6d4, #0ea5e9);
@@ -1148,6 +1168,25 @@ section {
     width: 222px;
     transition: transform 0.3s;
 }
+
+.sb-home-reg2 button {
+    background: linear-gradient(#06b6d4, #0ea5e9);
+    padding: 10px;
+    border: 2px solid #f0f0f0;
+    border-radius: 4px;
+    color: #fff;
+    font-size: 20px;
+    width: 222px;
+    transition: transform 0.3s;
+}
+
+
+.sb-home-reg2 button:hover {
+    background: linear-gradient(#0aa4ca, #0acef1);
+    color: #fff;
+    transform: scale(1.1);
+}
+
 
 .sb-search-btn button:hover, .sb-search-btn2 button:hover, .sb-home-reg button:hover {
     background: linear-gradient(#0aa4ca, #0acef1);
@@ -1206,7 +1245,7 @@ section {
     font-size: 25px;
 }
 
-.sb-search-btn button, .sb-search-btn2 button {
+.sb-search-btn button, .sb-search-btn2, .sb-search-btn-banner button {
     background: linear-gradient(#06b6d4, #0ea5e9);
     padding: 10px;
     border: 2px solid #f0f0f0;
@@ -1217,7 +1256,7 @@ section {
     transition: transform 0.3s;
 }
 
-.sb-search-btn button:hover, .sb-search-btn2 button:hover {
+.sb-search-btn button:hover, .sb-search-btn2 button:hover, .sb-search-btn-banner:hover {
     background: linear-gradient(#0aa4ca, #0acef1);
     color: #fff;
     transform: scale(1.1);
@@ -1227,6 +1266,15 @@ section {
     text-align: center;
     margin: auto;
     max-width: auto; /* Optional: Set a max width to control text width */
+}
+
+.sb-home-reg2 {
+    position: absolute;
+    top: 400px;
+    left: 0px;
+    z-index: 1;
+    padding: 20px;
+    /* background-color: rgba(255, 255, 255, 0.8); Add a background color for better visibility */
 }
 
 .sb-home-reg {
@@ -1524,6 +1572,11 @@ span.m_3{
 	position: relative;
 }
 
+.english-text {
+    font-size: 18px; 
+    color: #fff;
+  }
+
 .slide {
 	width: 100%;
 	height: 100%;
@@ -1532,33 +1585,50 @@ span.m_3{
 	transition: opacity 1s;
 	box-sizing: border-box;
     padding: 2px;
-    background: #00bbff22;
+    /* background: #00bbff61; */
 }
-
+/* 
 .slide img {
     width: 100%;
     height: 100%;
-}
+} */
 
 .slide.active {
 	opacity: 1;
 }
 
-.slide p {
+.slide h1 {
 	font-family: sans-serif;
 	font-size: clamp(1.5em, 5vmax, 3em);
 	position: absolute;
 	z-index: 1;
-	top: 80px;
-	left: 50px;
-	width: 720px;
-	color: #e50053;
+	left: 0px;
+    top: 150px;
+    line-height: 65px;
+	width: 750px;
+	color: #e5007df0;
 	font-weight: 800;
-    text-align: center;
+    text-align: left;
     background: #ffffff00;
-    backdrop-filter: blur(3px);
-    padding: 20px;
     border-radius: 20px;
+    padding: 20px;
+}
+
+.slide h5 {
+	font-family: sans-serif;
+	font-size: 18px;
+	position: absolute;
+	z-index: 1;
+	top: 300px;
+	left: 0px;
+	width: 450px;
+    line-height: 25px;
+	color: #fff;
+    text-align: left;
+    margin-top: auto;
+    background: #ffffff00;
+    border-radius: 20px;
+    padding: 20px;
 }
 
 .slide-indicators {
@@ -1567,7 +1637,7 @@ span.m_3{
 	left: 0;
 	width: 137px;
 	padding: 20px 40px;
-	display: flex;
+	display: none;
 }
 
 .slide-indicator {
@@ -4138,7 +4208,6 @@ label{
 @media (max-width:1280px){
     section{
         padding: 0px;
-        background: #fff;
         height: auto;
     }
 
@@ -4272,6 +4341,10 @@ label{
     .navigationpro {
         width: 930px;
         padding: 39px;
+    }
+
+    .banner {
+        width: 1170px;
     }
 }
 
