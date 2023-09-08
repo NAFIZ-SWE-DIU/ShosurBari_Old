@@ -58,23 +58,8 @@
       </div>
 
       <div class="slide-indicators" id="slide-indicators" target="_blank"></div>
-
-      <div class="sb-home-reg">
-        <?php
-          if (!isloggedin()) {
-            echo '<a href="register.php" class="sb-create-account"><button> <i class="fa fa-gear fa-spin" style="font-size:24px"> </i> নতুন একাউন্ট খুলুন</button></a>';
-          } else {
-            echo '<a href="biodata_post.php" class="sb-create-account"><button> <i class="fa fa-gear fa-spin" style="font-size:24px"> </i> বায়োডাটা পোস্ট</button></a>';
-          }
-        ?>
-      </div>
-
-      <div class="sb-search-btn">
-        <a href="search.php"><button > <i class="fa fa-gear fa-spin" style="font-size:24px"> </i> বায়োডাটা খুজুন </button></a>
-      </div>
       
     </div>
-
   </section>
 
 
@@ -1189,10 +1174,6 @@ toggleLabels.forEach(label => {
   justify-content: center; /* Center the content horizontally */
   padding: 10px;
   height: 115px;
-  background: repeating-linear-gradient(45deg, #00bbff0d , transparent 30px),
-              repeating-linear-gradient(-45deg, #00bbff0d , transparent 30px)
-  /* background: repeating-linear-gradient(45deg, #00bbff22 , transparent 30px),
-  repeating-linear-gradient(-45deg, #00bbff22 , transparent 30px); */
 }
 
 .inner-wrap {
@@ -1281,7 +1262,7 @@ const json = `
 	"srcset": [
 		"images/sb-banner2.png"
 	],
-	"text": "একাউন্ট খুলুন এবং বায়োডাটা পোস্ট করুন ফ্রিতেই",
+	"text": "নতুন একাউন্ট খুলুন তারপর বায়োডাটা পোস্ট করুন ফ্রিতেই!",
 	"shhosurbari": "We are dedicated to helping you find your perfect life partner through our advanced matchmaking platform."
 }]
 `;
@@ -1608,7 +1589,7 @@ function createSlides(data) {
         $("#flexiselDemo3").flexisel({
           visibleItems: 4,
           animationSpeed: 700,
-          autoPlay:false,
+          autoPlay:true,
           autoPlaySpeed: 5000,    		
           pauseOnHover: true,
           enableResponsiveBreakpoints: true,
