@@ -6,8 +6,6 @@
 
 
 
-
-
 <head>
 <title>Home | ShosurBari</title>
 <link rel="icon" href="images/shosurbari-icon.png" type="image/png">
@@ -40,31 +38,44 @@
   <!-- ============================  Navigation End ============================ -->
  
 
-
   <section>
 
-  <div class="banner" style="--duration: 7s" id="slider-banner">
-  
-    <div class="banner-content" id="banner-content" target="_blank"></div>
+    <div class="banner" style="--duration: 12s" id="slider-banner">
     
-    <div class="slide-indicators" id="slide-indicators" target="_blank"></div>
-  
-  
-    <div class="sb-home-reg">
-    <?php
-      if (!isloggedin()) {
-        echo '<a href="register.php" class="sb-create-account"><button> <i class="fa fa-gear fa-spin" style="font-size:24px"> </i>  নতুন একাউন্ট খুলুন</button></a>';
-      }
-    ?>
-  </div>
+      <div class="banner-content" id="banner-content" target="_blank">
+        <div class="sb-home-reg2">
+          <?php
+            if (!isloggedin()) {
+              echo '<a href="register.php" class="sb-create-account"><button> <i class="fa fa-gear fa-spin" style="font-size:24px"> </i> নতুন একাউন্ট খুলুন</button></a>';
+            } else {
+              echo '<a href="biodata_post.php" class="sb-create-account"><button> <i class="fa fa-gear fa-spin" style="font-size:24px"> </i> বায়োডাটা পোস্ট</button></a>';
+            }
+          ?>
+        </div>
+        <div class="sb-search-btn-banner">
+          <a href="search.php"><button > <i class="fa fa-gear fa-spin" style="font-size:24px"> </i> বায়োডাটা খুজুন </button></a>
+        </div>
+      </div>
 
-    <div class="sb-search-btn">
-      <a href="search.php"><button > <i class="fa fa-gear fa-spin" style="font-size:24px"> </i> বায়োডাটা খুজুন </button></a>
+      <div class="slide-indicators" id="slide-indicators" target="_blank"></div>
+
+      <div class="sb-home-reg">
+        <?php
+          if (!isloggedin()) {
+            echo '<a href="register.php" class="sb-create-account"><button> <i class="fa fa-gear fa-spin" style="font-size:24px"> </i> নতুন একাউন্ট খুলুন</button></a>';
+          } else {
+            echo '<a href="biodata_post.php" class="sb-create-account"><button> <i class="fa fa-gear fa-spin" style="font-size:24px"> </i> বায়োডাটা পোস্ট</button></a>';
+          }
+        ?>
+      </div>
+
+      <div class="sb-search-btn">
+        <a href="search.php"><button > <i class="fa fa-gear fa-spin" style="font-size:24px"> </i> বায়োডাটা খুজুন </button></a>
+      </div>
+      
     </div>
-    
-  </div>
 
-</section>
+  </section>
 
 
 
@@ -181,11 +192,9 @@
                     <span class="search-options">পেরামেডিক্যাল শিক্ষার্থী</span>
                   <br>
 
-                  
                     <input type="checkbox" name="student_occupation_level[]" value="নার্সিং শিক্ষার্থী" class="SelectBox val" />
                     <span class="search-options">নার্সিং শিক্ষার্থী</span>
                   <br>
-
                   
                     <input type="checkbox" name="student_occupation_level[]" value="মিডউইফারী শিক্ষার্থী" class="SelectBox val" />
                     <span class="search-options">মিডউইফারী শিক্ষার্থী</span>
@@ -198,11 +207,9 @@
                     <span class="search-options">মেডিকেল শিক্ষার্থী</span>
                   <br>
 
-                  
                     <input type="checkbox" name="student_occupation_level[]" value="ফার্মেসী শিক্ষার্থী" class="SelectBox val" />
                     <span class="search-options">ফার্মেসী শিক্ষার্থী</span>
                   <br>
-
                   
                     <input type="checkbox" name="student_occupation_level[]" value="বি.এসসি. ইঞ্জিনিয়ারিং শিক্ষার্থী" class="SelectBox val" />
                     <span class="search-options">বি.এসসি. ইঞ্জিনিয়ারিং শিক্ষার্থী</span>
@@ -1181,8 +1188,11 @@ toggleLabels.forEach(label => {
   flex-wrap: wrap;
   justify-content: center; /* Center the content horizontally */
   padding: 10px;
-  height: 125px;
-  background: repeating-linear-gradient(-45deg, #00bbff22 , transparent 30px);
+  height: 115px;
+  background: repeating-linear-gradient(45deg, #00bbff0d , transparent 30px),
+              repeating-linear-gradient(-45deg, #00bbff0d , transparent 30px)
+  /* background: repeating-linear-gradient(45deg, #00bbff22 , transparent 30px),
+  repeating-linear-gradient(-45deg, #00bbff22 , transparent 30px); */
 }
 
 .inner-wrap {
@@ -1209,7 +1219,7 @@ toggleLabels.forEach(label => {
 
 /* Style for the submit button */
 .shosurbari-home-search input[type="submit"] {
-  margin: auto; /* Add some space between the last search option and the submit button */
+  margin: 2px auto; /* Add some space between the last search option and the submit button */
 }
 
 .sort-by select {
@@ -1226,8 +1236,6 @@ margin-right:10px;
 
 form {
   background: none;
-  margin-bottom: 2px;
-  margin-top: -19px;
 }
 
 @keyframes slide {
@@ -1253,7 +1261,6 @@ form {
     margin-right: -16px;
 }
 </style>
-
 <script>
 const intervalText = document.getElementById("interval-text");
 const intervalRange = document.getElementById("interval");
@@ -1264,23 +1271,19 @@ const slideIndicators = document.getElementById("slide-indicators");
 const json = `
 [{
 	"srcset": [
-		"images/shosurbari-home.png"
+		"images/msb-banner2.png"
 	],
-	"text": "একদম ফ্রিতেই একাউন্ট খুলুন এবং বায়োডাটা পোস্ট করুন "
+
+	"text": "আপনার স্বপ্নময় জীবনসঙ্গী এখন শ্বশুরবাড়ি ডট কমে",
+	"shhosurbari": "Your trusted online matrimony service provider catering to individuals from all religions, professions, and Bengali communities worldwide."
 },
-	{
-		"srcset": [
-			"images/shosurbari-home2.png"
-		],
-		"text": "বাংলাদেশী বাঙ্গালী ম্যাট্রিমোনি সার্ভিস"
-	},
-	{
-		"srcset": [
-			"images/shosurbari-home3.jpg"
-		],
-		"text": "আপনার স্বপ্নময় জীবনের সঙ্গী এখন শ্বশুরবাড়ি ডট কমে"
-	}
-]
+{
+	"srcset": [
+		"images/sb-banner2.png"
+	],
+	"text": "একাউন্ট খুলুন এবং বায়োডাটা পোস্ট করুন ফ্রিতেই",
+	"shhosurbari": "We are dedicated to helping you find your perfect life partner through our advanced matchmaking platform."
+}]
 `;
 
 const images = JSON.parse(json);
@@ -1290,29 +1293,20 @@ createSlides(images);
 function createSlides(data) {
   const slides = [];
   const indicators = [];
-  let interval = 7000; // Set the interval to 45 seconds
+  let interval = 12000; // Set the interval to 45 seconds
 
   data.forEach((slideData, index) => {
     const slide = document.createElement("div");
     slide.className = `slide slide-${index}`;
     if (index === 0) slide.classList.add("active");
 
-    const picture = document.createElement("picture");
-
-    slideData.srcset.forEach((src) => {
-      const source = document.createElement("source");
-      source.srcset = src;
-      picture.append(source);
-    });
-
-    const img = document.createElement("img");
-    img.src = slideData.srcset.find((src) => !src.includes('webp'));
-    picture.append(img);
-    slide.append(picture);
-
-    const text = document.createElement("p");
+    const text = document.createElement("h1");
     text.textContent = slideData.text;
     slide.append(text);
+
+    const shhosurbariText = document.createElement("h5"); // Create a paragraph element for shhosurbari text
+    shhosurbariText.textContent = slideData.shhosurbari; // Set the shhosurbari text content
+    slide.append(shhosurbariText); // Append shhosurbari text to the slide
 
     const indicator = document.createElement("div");
     indicator.className = "slide-indicator";
@@ -1345,9 +1339,8 @@ function createSlides(data) {
 
   startSlideshow();
 }
+</script>
 
-
-  </script>
   <!-- -- -- -- -- -- -- -- -- -- -- -- -- ---- -- --
   -- -- -- -- -- -- -- -- --- -- -- -- -- -- -- -- --
   --                   S  T  A  R  T               --
@@ -1491,7 +1484,7 @@ function createSlides(data) {
 
       <div class="sb-search-logo">
         <div class="sb-search-btn2">
-          <p>  মনের মতন জীবন সঙ্গী <i class="fa fa-search" style="font-size:24px"> </i>  খুঁজে পেতে নিচের বাটনে ক্লিক করুন</p>
+          <p> <i class="fa fa-search" style="font-size:24px"> </i>  খুঁজেনিন পছন্দের জীবনসঙ্গী </p>
           <a href="search.php"><button > <i class="fa fa-search" style="font-size:24px"> </i> জীবনসঙ্গী খুজুন </button></a>
         </div>
       </div>
@@ -1615,7 +1608,7 @@ function createSlides(data) {
         $("#flexiselDemo3").flexisel({
           visibleItems: 4,
           animationSpeed: 700,
-          autoPlay:true,
+          autoPlay:false,
           autoPlaySpeed: 5000,    		
           pauseOnHover: true,
           enableResponsiveBreakpoints: true,
@@ -1669,185 +1662,156 @@ function createSlides(data) {
         mysqli_close($conn);
     ?>
 
-      <h1 class="shosurbari-about">শ্বশুরবাড়ি সেবা গ্রহীতাদের পরিসংখ্যান</h1>
-<ul class="shosurbar-grrombride-about">
-    <li style="--accent-color:#0ea5e9">
-      <div class="icon">
-      <img src="images/shosurbari-male-icon.jpg" style="height: 75px; widht: 75px; background: #fff; border-radius: 50%;">
-      </div>
-        <div class="title">সর্বমোট পাত্র</div>
-      <div class="descr"><h2><?php echo $maleCount; ?> </h2></div>
-    </li>
-    <li style="--accent-color:#db2777">
-        <div class="icon">
-        <img src="images/shosurbari-female-icon.png" style="height: 75px; widht: 75px; background: #fff; border-radius: 50%;">
-        </div>
-        <div class="title">সর্বমোট পাত্রী</div>
-        <div class="descr"><h2><?php echo $femaleCount; ?></h2></div>
-    </li>
-    <li style="--accent-color:#1286A8">
-        <div class="icon">
-        <img src="images/shosurbari-groom-bride.png" style="height: 75px; widht: 75px; background: #fff; border-radius: 50%;">
-        </div>
-        <div class="title">মোট পাত্রপাত্রী</div>
-        <div class="descr"><h2><?php echo $totalBiodataCount; ?></h2></div>
-    </li>
-    <li style="--accent-color:#14b8a6">
-        <div class="icon">
-          <img src="images/shosurbari-success-marriage.jpg" style="height: 75px; widht: 75px; background: #fff; border-radius: 50%;">
-        </div>
-        <div class="title">সফল বিবাহ</div>
-        <div class="descr"><h2>100</h2></div>
-    </li>
-</ul>
+
+<h1 class="shosurbari-about">শ্বশুরবাড়ি সেবা গ্রহীতাদের পরিসংখ্যান</h1>
+<div class="shosurbari-user-info">
+<div class="card-wrap">
+  <div class="card-header one">
+    <img src="images/shosurbari-male-icon.jpg" style="height: 75px; widht: 75px; background: #fff; border-radius: 50%;">
+  </div>
+  <div class="card-content">
+    <h1 class="card-title">সর্বমোট পাত্র</h1>
+      <h2><?php echo $maleCount; ?> </h2>
+    <!-- <button class="card-btn one">code</button> -->
+ </div>
+</div>
+
+<div class="card-wrap">
+  <div class="card-header two">
+    <img src="images/shosurbari-female-icon.png" style="height: 75px; widht: 75px; background: #fff; border-radius: 50%;">
+  </div>
+  <div class="card-content">
+    <h1 class="card-title">সর্বমোট পাত্রী</h1>
+    <h2><?php echo $femaleCount; ?></h2>
+    <!-- <button class="card-btn two">css3</button> -->
+ </div>
+</div>
+
+<div class="card-wrap">
+  <div class="card-header three">
+    <img src="images/shosurbari-groom-bride.png" style="height: 75px; widht: 75px; background: #fff; border-radius: 50%;">
+  </div>
+  <div class="card-content">
+    <h1 class="card-title">মোট পাত্রপাত্রী</h1>
+      <h2><?php echo $totalBiodataCount; ?></h2>
+    <!-- <button class="card-btn three">html5</button> -->
+ </div>
+</div>
+
+<div class="card-wrap">
+  <div class="card-header four">
+    <img src="images/shosurbari-success-marriage.jpg" style="height: 75px; widht: 75px; background: #fff; border-radius: 50%;">
+  </div>
+  <div class="card-content">
+    <h1 class="card-title">সফল বিবাহ</h1>
+      <h2>100</h2>
+    <!-- <button class="card-btn four">js</button> -->
+ </div>
+</div>
+</div>
 
 
 <style>
-.shosurbar-grrombride-about {
-  --col-gap: 2rem;
-  --barH: 1rem;
-  --roleH: 2rem;
-  --flapH: 2rem;
-  margin-top: 50px;
-  width: min(60rem, 90%);
-  margin-inline: auto;
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700;900&display=swap');
 
-  display: flex;
-  flex-wrap: wrap;
-
-  gap: var(--col-gap);
-  padding-inline: calc(var(--col-gap) / 2);
-
-  justify-content: center;
-  align-items: flex-start;
-  list-style: none;
+:root{
+  --color-text: #616161;
+  --color-text-btn: #ffffff;
+  --card1-gradient-color1: #06b6d4;
+  --card1-gradient-color2: #2563eb;
+  --card2-gradient-color1: #06b6d4;
+  --card2-gradient-color2: #db2777;
+  --card3-gradient-color1: #06b6d4;
+  --card3-gradient-color2: #f97316;
+  --card4-gradient-color1: #06b6d4;
+  --card4-gradient-color2: #38ef7d;
 }
 
+.card-wrap{
+  width: 220px;
+  background: #fff;
+  border-radius: 20px;
+  border: 5px solid #fff;
+  overflow: hidden;
+  color: var(--color-text);
+  box-shadow: rgba(0, 0, 0, 0.19) 0px 10px 20px, rgba(0, 0, 0, 0.23) 0px 6px 6px;
+  cursor: pointer;
+  transition: all .2s ease-in-out;
+}
+.card-wrap:hover{
+  transform: scale(1.1);
+}
 
-.shosurbar-grrombride-about li {
-  width: 10em;
+.card-header{
+  height: 150px;
+  width: 100%;
+  background: red;
+  border-radius:100% 0% 100% 0% / 0% 50% 50% 100%;
   display: grid;
-  grid-template:
-    "role"
-    "icon"
-    "title"
-    "descr";
-  align-items: flex-start;
-  gap: 1rem;
-  padding-block-end: calc(var(--flapH) + 1rem);
+  place-items: center;
+
+}
+
+.card-content{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 60%;
+  margin: 0 auto;
+}
+
+.card-title{
   text-align: center;
-  background: var(--accent-color);
-  background-image: linear-gradient(
-    rgba(0, 0, 0, 0.6) var(--roleH),
-    rgba(0, 0, 0, 0.4) calc(var(--roleH) + 0.5rem),
-    rgba(0, 0, 0, 0) calc(var(--roleH) + 0.5rem + 5rem)
-  );
-  clip-path: polygon(
-    calc(var(--col-gap) / -2 - 5px) 0,
-    calc(100% + var(--col-gap) / 2 + 5px) 0,
-    calc(100% + var(--col-gap) / 2 + 5px ) calc(100% - var(--flapH)),
-    50% 100%,
-    calc(var(--col-gap) / -2 - 5px) calc(100% - var(--flapH))
-  );
+  text-transform: uppercase;
+  font-size: 16px;
+  margin-top: 10px;
+  margin-bottom: 20px;
 }
 
-/* bar */
-.shosurbar-grrombride-about li::before {
-  content: "";
-  grid-area: role;
-  height: var(--barH);
-  width: calc(100% + var(--col-gap));
-  margin-left: calc(var(--col-gap) / -2);
-  margin-top: calc(var(--roleH) / 2 - var(--barH) / 2);
-  background: grey;
-  z-index: -1;
-  background-image: linear-gradient(
-    rgba(255, 255, 255, 0.4),
-    rgba(255, 255, 255, 0.2) 30%,
-    rgba(255, 255, 255, 0.1) 40%,
-    rgba(0, 0, 0, 0.1) 60%,
-    rgba(0, 0, 0, 0.2) 70%,
-    rgba(0, 0, 0, 0.4)
-  );
+.card-text{
+  text-align: center;
+  font-size: 12px;
+  margin-bottom: 20px;
 }
 
-/* role */
-.shosurbar-grrombride-about li::after {
-  content: "";
-  grid-area: role;
-  background: var(--accent-color);
-  background-image: linear-gradient(
-    rgba(255, 255, 255, 0.4),
-    rgba(255, 255, 255, 0.2) 30%,
-    rgba(255, 255, 255, 0.1) 40%,
-    rgba(0, 0, 0, 0.1) 60%,
-    rgba(0, 0, 0, 0.2) 70%,
-    rgba(0, 0, 0, 0.4)
-  );
-  height: var(--roleH);
+.card-btn{
+  border: none;
+  border-radius: 100px;
+  padding: 5px 30px;
+  color: #fff;
+  margin-bottom: 15px;
+  text-transform: uppercase;
 }
 
-.shosurbar-grrombride-about li .icon,
-.shosurbar-grrombride-about li .title,
-.shosurbar-grrombride-about li .descr {
-  padding-inline: 1rem;
-  color: white;
-  text-shadow: 0 0 0.5rem rgba(0, 0, 0, 0.5);
+.card-header.one{
+  background: linear-gradient(to bottom left, var(--card1-gradient-color1), var(--card1-gradient-color2));
+}
+.card-header.two{
+  background: linear-gradient(to bottom left, var(--card2-gradient-color1), var(--card2-gradient-color2));
+}
+.card-header.three{
+  background: linear-gradient(to bottom left, var(--card3-gradient-color1), var(--card3-gradient-color2));
+}
+.card-header.four{
+  background: linear-gradient(to bottom left, var(--card4-gradient-color1), var(--card4-gradient-color2));
 }
 
-.shosurbar-grrombride-about li .icon {
-  font-size: 3rem;
+.card-btn.one{
+  background: linear-gradient(to left, var(--card1-gradient-color1), var(--card1-gradient-color2));
 }
-.shosurbar-grrombride-about li .title {
-  font-size: 22px;
-  font-weight: 500;
+.card-btn.two{
+  background: linear-gradient(to left, var(--card2-gradient-color1), var(--card2-gradient-color2));
 }
-
-.shosurbar-grrombride-about li .descr {
-  font-size: 0.9rem;
+.card-btn.three{
+  background: linear-gradient(to left, var(--card3-gradient-color1), var(--card3-gradient-color2));
 }
-
-.credits {
-  position: fixed;
-  bottom: 1rem;
-  right: 1rem;
+.card-btn.four{
+  background: linear-gradient(to left, var(--card4-gradient-color1), var(--card4-gradient-color2));
 }
-.credits a {
-  color: var(--color);
-}
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-/* 
-
-
-@keyframes changeColor {
-  0%, 100% {
-    background: linear-gradient(135deg, #ff9a9e, #fad0c4);
-  }
-  25% {
-    background: linear-gradient(135deg, #c8d5b9, #f7f0a4);
-  }
-  50% {
-    background: linear-gradient(135deg, #a0c4ff, #c2e9fb);
-  }
-  75% {
-    background: linear-gradient(135deg, #b5e2fa, #9ed2ff);
-  }
-} */
 </style>
+
+
+
 
   <!-- -- -- -- -- -- -- -- -- -- -- -- -- ---- -- --
   -- -- -- -- -- -- -- -- --- -- -- -- -- -- -- -- --
