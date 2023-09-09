@@ -1,4 +1,4 @@
-<style>
+<!-- <style>
 /* Style for the warning message */
 .warning-overlay {
 	position: fixed;
@@ -56,7 +56,7 @@
 			overlay.remove();
 		}, 3000); // Remove the overlay after 3 seconds
 	}
-</script>
+</script> -->
 
 
 
