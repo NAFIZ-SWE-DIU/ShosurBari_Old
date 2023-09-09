@@ -54,36 +54,36 @@ error_reporting(0);
 
 
 
-  <style>
-.shosurbari-biodata-form {
-  display: flex;
-  align-items: center;
-  flex-wrap: wrap;
-  width: 1130px;
-  margin: auto;
-  background: repeating-linear-gradient(-45deg, #00bbff22 , transparent 30px);
-  padding-top: 30px;
-  padding-bottom: 30px;
-}
+<style>
+  .shosurbari-biodata-form {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    width: 1130px;
+    margin: auto;
+    margin-top: 90px;
+    padding-top: 50px;
+    padding-bottom: 30px;
+  }
 
-.soshurbari-animation-icon,
-.shosurbari-animation-form {
-  flex-basis: 50%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
+  .soshurbari-animation-icon,
+  .shosurbari-animation-form {
+    flex-basis: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
 
-.soshurbari-animation-icon img{
-  justify-content: flex-end;
-  margin: auto;
-  height: 430px;
-  width: 425px;
-}
+  .soshurbari-animation-icon img{
+    justify-content: flex-end;
+    margin: auto;
+    height: 430px;
+    width: 425px;
+  }
 
 @media (max-width: 1400px){
   .shosurbari-biodata-form{
-    width: 930px;
+    width: auto;
   }
 }
 
@@ -100,7 +100,8 @@ error_reporting(0);
   .shosurbari-biodata-form {
     width: auto;
     margin: 30px;
-}
+    margin-top: 90px;
+  }
 }
 </style>
 
@@ -149,11 +150,12 @@ error_reporting(0);
 
   <div class="shosurbari-animation-form">
 
-  <div class="shosurbari-biodata">
+  <div class="shosurbari-animation-form">
     <form action="" method="POST" name="myForm" onsubmit="return validateForm()">
       <div class="flex-container">
         <div class="sb-register-login">
-          <div class="sb-biodata-field" style="background: #06b6d4 !important;">
+
+          <div class="sb-biodata-field">
             <h2>Contact Us</h2>
           </div>
 
