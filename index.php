@@ -1172,8 +1172,12 @@ toggleLabels.forEach(label => {
   display: flex;
   flex-wrap: wrap;
   justify-content: center; /* Center the content horizontally */
-  padding: 10px;
+  padding: 10px 0px;
   height: 115px;
+  width: 1010px;
+  margin: auto;
+  border: 2px solid #f0f0f0;
+  border-radius: 10px;
 }
 
 .inner-wrap {
@@ -1252,18 +1256,18 @@ const slideIndicators = document.getElementById("slide-indicators");
 const json = `
 [{
 	"srcset": [
+		"images/sb-banner2.png"
+	],
+	"text": "নতুন একাউন্ট খুলুন তারপর বায়োডাটা পোস্ট করুন ফ্রিতেই!",
+	"shhosurbari": "We are dedicated to helping you find your perfect life partner through our advanced matchmaking platform."
+},
+{
+	"srcset": [
 		"images/msb-banner2.png"
 	],
 
 	"text": "আপনার স্বপ্নময় জীবনসঙ্গী এখন শ্বশুরবাড়ি ডট কমে",
 	"shhosurbari": "Your trusted online matrimony service provider catering to individuals from all religions, professions, and Bengali communities worldwide."
-},
-{
-	"srcset": [
-		"images/sb-banner2.png"
-	],
-	"text": "নতুন একাউন্ট খুলুন তারপর বায়োডাটা পোস্ট করুন ফ্রিতেই!",
-	"shhosurbari": "We are dedicated to helping you find your perfect life partner through our advanced matchmaking platform."
 }]
 `;
 
@@ -1413,8 +1417,9 @@ function createSlides(data) {
     flex-wrap: wrap;
     justify-content: center;
     padding: 10px;
-    padding-bottom: 30px;
     height: auto;
+    width: 250px;
+
 }
 
 .shosurbari-home-search{
