@@ -51,7 +51,6 @@
   flex-wrap: wrap;
   width: 1400px;
   margin: auto;
-  background: linear-gradient(180deg,#F3F9F9 0%,rgba(238,246,253,0) 100%);
   padding-top: 30px;
   padding-bottom: 30px
 }
