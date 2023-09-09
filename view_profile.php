@@ -241,171 +241,171 @@
 		</script>
 
 
-		<style>
-			/*View Profile Details NavBar Sticky Start*/
-			@media(min-width:2150px){
-				.UserProfile {
-				width: 2000px;
-				margin: auto;
-			}
-			}
+<style>
+/*View Profile Details NavBar Sticky Start*/
+@media(min-width:2150px){
+	.UserProfile {
+		width: 2000px;
+		margin: auto;
+	}
+}
 
-			@media(max-width:2150px){
-			.fixed {
-				position: fixed;
-				top: 64px;
-				right: 5%;
-				width: 55.8%;
-				z-index: 100;
-				margin-left: auto;
-				margin-right: auto;
-				border-radius: 0px 0px 4px 4px;
-				display: flex;
-				justify-content: center;
-				background:#06b6d4;
-			}
+@media(max-width:2150px){
+	.fixed {
+		position: fixed;
+		top: 64px;
+		right: 5%;
+		width: 55.8%;
+		z-index: 100;
+		margin-left: auto;
+		margin-right: auto;
+		border-radius: 0px 0px 4px 4px;
+		display: flex;
+		justify-content: center;
+		background:linear-gradient(#06b6d4, #0ea5e9);
+	}
 
-			a#profile-tab, a#home-tab, a#profile-tab1 {
-				width: 100%;
-				padding: 12px 25px;
-				margin: 5px auto;
-				font-size: 17px;
-			}
+	a#profile-tab, a#home-tab, a#profile-tab1 {
+		width: 100%;
+		padding: 12px 25px;
+		margin: 5px auto;
+		font-size: 17px;
+		border-radius: 3px;
+	}
 
-			.nav-tabs1>li{
-				margin-left: 7px;
-				margin-right: 7px;
-				border-top: 0px solid #06b6d4;
-				border-right: 1px solid #06b6d4;
-				border-bottom: 0px solid #06b6d4;
-				border-left: 1px solid #06b6d4;
-				border-radius: 4px;
-			}
-			}
+	.nav-tabs1>li{
+		margin-left: 7px;
+		margin-right: 7px;
+		border-top: 0px solid #06b6d4;
+		border-right: 1px solid #06b6d4;
+		border-bottom: 0px solid #06b6d4;
+		border-left: 1px solid #06b6d4;
+		border-radius: 4px;
+	}
+}
 
-			@media (max-width:1920px){
-			a#profile-tab, a#home-tab, a#profile-tab1 {
-				padding: 12px 20px;
-				font-size: 17px;
-			}
-			}
+@media (max-width:1920px){
+	a#profile-tab, a#home-tab, a#profile-tab1 {
+		padding: 12px 20px;
+		font-size: 17px;
+	}
+}
 
-			@media (max-width:1600px){
-				a#profile-tab, a#home-tab, a#profile-tab1 {
-				padding: 11px 15px;
-				font-size: 16px;
-			}
-			}
+@media (max-width:1600px){
+		a#profile-tab, a#home-tab, a#profile-tab1 {
+		padding: 11px 15px;
+		font-size: 16px;
+	}
+}
 
-			@media (max-width:1400px){
-				a#profile-tab, a#home-tab, a#profile-tab1 {
-				padding: 11px 13px;
-				font-size: 15px;
-			}
-			}
+@media (max-width:1400px){
+		a#profile-tab, a#home-tab, a#profile-tab1 {
+		padding: 11px 13px;
+		font-size: 15px;
+	}
+}
 
-			@media (max-width:1280px){
-			.fixed {
-				right: 5%;
-				width: 61.2%;
-			}
+@media (max-width:1280px){
+	.fixed {
+		right: 5%;
+		width: 61.2%;
+	}
 
-			a#profile-tab, a#home-tab, a#profile-tab1 {
-				padding: 10px 10px;
-				font-size: 15px;
-			}
-			}
+	a#profile-tab, a#home-tab, a#profile-tab1 {
+		padding: 10px 10px;
+		font-size: 15px;
+	}
+}
 
-			@media (max-width:1024px){
-			.fixed {
-				right: 5%;
-				width: 58.5%;
-			}
+@media (max-width:1024px){
+	.fixed {
+		right: 5%;
+		width: 58.5%;
+	}
 
-			a#profile-tab, a#home-tab, a#profile-tab1 {
-				padding: 10px 5px;
-				font-size: 15px;
-			}
-			}
+	a#profile-tab, a#home-tab, a#profile-tab1 {
+		padding: 10px 5px;
+		font-size: 15px;
+	}
+}
 
-			@media (max-width:930px){
-			.fixed {
-				left: 10px;
-				right: 10px;
-				width: 81%;
-			}
+@media (max-width:930px){
+	.fixed {
+		left: 10px;
+		right: 10px;
+		width: 81%;
+	}
 
-			a#profile-tab, a#home-tab, a#profile-tab1 {
-				width: 100%;
-				padding: 10px 10px;
-				margin: 5px auto;
-				font-size: 14px;
-			}
-			}  
+	a#profile-tab, a#home-tab, a#profile-tab1 {
+		width: 100%;
+		padding: 10px 10px;
+		margin: 5px auto;
+		font-size: 14px;
+	}
+}  
 
-			@media (max-width: 736px){
-			.fixed {
-				top: 110px;
-			}
-			}
+@media (max-width: 736px){
+	.fixed {
+		top: 110px;
+	}
+}
 
-			@media (max-width: 600px){
-			a#profile-tab, a#home-tab, a#profile-tab1 {
-				padding: 8px 10px;
-			}
+@media (max-width: 600px){
+	a#profile-tab, a#home-tab, a#profile-tab1 {
+		padding: 8px 10px;
+	}
 
-			.nav-tabs1>li{
-				margin-left: 4px;
-				margin-right: 4px;
-			}
-			}
+	.nav-tabs1>li{
+		margin-left: 4px;
+		margin-right: 4px;
+	}
+}
 
-			@media (max-width: 480px){
-			a#profile-tab, a#home-tab, a#profile-tab1 {
-				padding: 8px 5px;
-				font-size: 14px;
-			}
+@media (max-width: 480px){
+	a#profile-tab, a#home-tab, a#profile-tab1 {
+		padding: 8px 5px;
+		font-size: 14px;
+	}
 
-			.nav-tabs1>li{
-				margin-left: 3px;
-				margin-right: 3px;
-			}
-			}
+	.nav-tabs1>li{
+		margin-left: 3px;
+		margin-right: 3px;
+	}
+}
 
-			@media (max-width: 384px){
-			a#profile-tab, a#home-tab, a#profile-tab1 {
-				padding: 7px 4px;
-				font-size: 13px;
-			}
+@media (max-width: 384px){
+	a#profile-tab, a#home-tab, a#profile-tab1 {
+		padding: 7px 4px;
+		font-size: 13px;
+	}
 
-			.nav-tabs1>li{
-				margin-left: 2px;
-				margin-right: 2px;
-			}
-			}
+	.nav-tabs1>li{
+		margin-left: 2px;
+		margin-right: 2px;
+	}
+}
 
-			@media (max-width: 350px){
-			a#profile-tab, a#home-tab, a#profile-tab1 {
-				padding: 7px 3px;
-				font-size: 12px;
-			}
-			}
+@media (max-width: 350px){
+	a#profile-tab, a#home-tab, a#profile-tab1 {
+		padding: 7px 3px;
+		font-size: 12px;
+	}
+}
 
-			@media (max-width: 320px){
-			a#profile-tab, a#home-tab, a#profile-tab1 {
-				padding: 6px 2px;
-				font-size: 12px;
-			}
-			.nav-tabs1>li{
-				margin-left: 0px;
-				margin-right: 0px;
-			}
-			}
-			/*View Profile Details NavBar Sticky End*/
+@media (max-width: 320px){
+	a#profile-tab, a#home-tab, a#profile-tab1 {
+		padding: 6px 2px;
+		font-size: 12px;
+	}
+	.nav-tabs1>li{
+		margin-left: 0px;
+		margin-right: 0px;
+	}
+}
+/*View Profile Details NavBar Sticky End*/
 
 
-
-			.match-container {
+.match-container {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -432,48 +432,47 @@ p {
     text-align: center;
 }
 
-
 /* Start Message sent */
 .message-container {
-  width: 100%;
-  padding: 10px;
-  font-family: "Bree Serif", serif;
-  z-index: 99;
-  background: #00bbff22;
-  border-radius: 4px;
-  margin-left: auto;
-  margin-right: auto;
-  margin-bottom: 50px;
-  border: 1px solid #06b6d4;
+	width: 100%;
+	padding: 10px;
+	font-family: "Bree Serif", serif;
+	z-index: 99;
+	background: #00bbff22;
+	border-radius: 4px;
+	margin-left: auto;
+	margin-right: auto;
+	margin-bottom: 50px;
+	border: 1px solid #06b6d4;
 }
 
 .message-sent-details {
-  color: gray;
-  font-size: 12px;
-  margin-top: 5px;
+	color: gray;
+	font-size: 12px;
+	margin-top: 5px;
 }
 
 .message-header {
-  background-color: #f0f0f0;
-  padding: 10px;
-  border-radius: 5px 5px 0px 0px;
+	background-color: #f0f0f0;
+	padding: 10px;
+	border-radius: 5px 5px 0px 0px;
 }
 
 .message-header h3{
-  text-align: center;
-  margin: 0px;
+	text-align: center;
+	margin: 0px;
 }
 
 .message-body {
-  height: 280px;
-  overflow-y: scroll;
-  padding: 10px;
-  border-top: 0px;
-  border-bottom: 10px solid #f0f0f0;
-  border-left: 1px solid #ccc;
-  border-right: 1px solid #ccc;
-  background: #fff;
-  border-radius: 0px 0px 5px 5px;
+	height: 280px;
+	overflow-y: scroll;
+	padding: 10px;
+	border-top: 0px;
+	border-bottom: 10px solid #f0f0f0;
+	border-left: 1px solid #ccc;
+	border-right: 1px solid #ccc;
+	background: #fff;
+	border-radius: 0px 0px 5px 5px;
 }
 
 .message-footer {
@@ -487,7 +486,7 @@ p {
 }
 
 .message-footer p{
-  color: #000;
+  	color: #000;
 }
 
 .login-alert {
@@ -500,14 +499,14 @@ p {
     padding: 0px;
 	border-radius: 4px;
     text-align: center;
-  }
+}
 
 .message-footer input[type="text"] {
-  padding: 5px;
-  width: 83%;
-  border: 1px solid #ccc;
-  border-radius: 4px;
-  box-shadow: 0px 5px 7px 0px rgba(0, 0, 0, 0.3);
+	padding: 5px;
+	width: 83%;
+	border: 1px solid #ccc;
+	border-radius: 4px;
+	box-shadow: 0px 5px 7px 0px rgba(0, 0, 0, 0.3);
 }
 
 .message-footer button {
@@ -531,31 +530,31 @@ p {
 
 /* Styling for sender and received messages */
 .message-sent {
-  text-align: right;
+  	text-align: right;
 	margin-right: 0;
 }
 
 .message-received {
-  text-align: left;
-  margin-left: 0;
+	text-align: left;
+	margin-left: 0;
 }
 
 .message-sent .message-content,
 .message-received .message-content {
-  display: inline-block;
-  padding: 8px;
-  border-radius: 20px 20px 0px 20px;
-  width: 100%;
+	display: inline-block;
+	padding: 8px;
+	border-radius: 20px 20px 0px 20px;
+	width: 100%;
 }
 
 .message-sent .message-content {
-  background: #06b6d4;
-  color: #fff;
+	background: #06b6d4;
+	color: #fff;
 }
 
 .message-received .message-content {
-  background: #67e8f9 ;
-  color: black;
+	background: #67e8f9 ;
+	color: black;
 }
 
 .message-details {
@@ -564,31 +563,32 @@ p {
 	margin-top: 2px;
     margin-bottom: -2px;
 	text-align: right;
-  }
+}
 
 /* Search area start*/
 .search-area {
-  padding: 10px;
-  background-color: #f0f0f0;
-  border-bottom: 1px solid #ccc;
-  text-align: center;
+	padding: 10px;
+	background-color: #f0f0f0;
+	border-bottom: 1px solid #ccc;
+	text-align: center;
 }
 
 .search-area input[type="text"] {
-  padding:2px 5px;
-  width: 70%;
-  height: 25px;
-  border: 1px solid #ccc;
-  border-radius: 3px;
+	padding:2px 5px;
+	width: 70%;
+	height: 25px;
+	border: 1px solid #ccc;
+	border-radius: 3px;
 }
 
 .search-area button {
-  padding: 0px 5px;
-  margin-left: 10px;
-  height: 25px;
-  border: 1px solid #ccc;
-  border-radius: 3px;
+	padding: 0px 5px;
+	margin-left: 10px;
+	height: 25px;
+	border: 1px solid #ccc;
+	border-radius: 3px;
 }
+
 /* Input field border focus color */
 input[type="text"]:focus {
     border-color: #0aa4ca;
@@ -608,13 +608,13 @@ input[type="text"]:focus {
 	margin-right: 0;
 	width: 75%;
 	text-align: justify;
-  }
+}
 
-  .message:hover .message-options {
+.message:hover .message-options {
     display: block;
-  }
+}
 
-  .message-options {
+.message-options {
     display: none;
     position: absolute;
     top: auto;
@@ -624,53 +624,48 @@ input[type="text"]:focus {
     border-radius: 4px;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
 	z-index: 999;
-  }
+}
 
-  .message-options button {
+.message-options button {
     display: block;
     margin-bottom: 2px;
     padding: 2px 4px;
     background-color: transparent;
     border: none;
     cursor: pointer;
-  }
+}
 
-  .message-options button:hover {
+.message-options button:hover {
     background: #0aa4ca;
 	color: #fff;
 	border-radius: 3px;
-  }
+}
 
-  /* Reaction / React / Emoji Start */
-  .react-buttons-container {
-  display: flex;
-  justify-content: flex-end;
-  margin-bottom: 0px;
+/* Reaction / React / Emoji Start */
+.react-buttons-container {
+	display: flex;
+	justify-content: flex-end;
+	margin-bottom: 0px;
 }
 
 .react-button {
-  padding: 5px;
-  background-color: transparent;
-  border: none;
-  cursor: pointer;
-  font-size: 18px;
+	padding: 5px;
+	background-color: transparent;
+	border: none;
+	cursor: pointer;
+	font-size: 18px;
 }
 
 .react-button:hover {
-  color: #333;
+  	color: #333;
 }
 
 .reacted {
-  color: #333;
+  	color: #333;
 }
 
 /* Reply Message area Start */
 .reply-container {
-  /* background: #ddd;
-  border: 1px solid #ccc;
-  padding: 10px;
-  margin-top: 10px; */
-
     position: relative;
     padding: 0px 4px;
     margin-bottom: 0px;
@@ -685,17 +680,17 @@ input[type="text"]:focus {
 }
 
 .reply-container button {
-  background-color: #ffffff;
-  border: 1px solid #000000;
-  color: #000000;
-  padding: 5px 10px;
-  margin-top: 5px;
-  cursor: pointer;
+	background-color: #ffffff;
+	border: 1px solid #000000;
+	color: #000000;
+	padding: 5px 10px;
+	margin-top: 5px;
+	cursor: pointer;
 }
 
 .reply-container button:hover {
-  background-color: #000000;
-  color: #ffffff;
+	background-color: #000000;
+	color: #ffffff;
 }
 
 
@@ -715,9 +710,7 @@ input[type="text"]:focus {
 	text-align: center;
 }
 
-
-
-  #messageInput {
+#messageInput {
     flex: 1;
     resize: none; 
     /* overflow: hidden; */
@@ -729,16 +722,13 @@ input[type="text"]:focus {
 	font-size: 17px;
     line-height: 25px;
 	text-align: justify;
-  }
-
-
-  textarea:focus {
-  border: 1px solid #0aa4ca;
-  outline: none; /*This line removes the default focus outline */
 }
 
 
-
+textarea:focus {
+	border: 1px solid #0aa4ca;
+	outline: none; /*This line removes the default focus outline */
+}
 </style>
 
 
