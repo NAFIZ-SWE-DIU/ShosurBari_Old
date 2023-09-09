@@ -205,10 +205,11 @@ span.divider {
 form {
     max-width: 1100px;
     width: 100%;
-    margin-left: 0;
+    /* margin-left: 0;
     margin-right: auto;
     margin-bottom: auto;
-    margin-top: 0px;
+    margin-top: 0px; */
+    margin: auto;
     background: none;
     /* background: url(../images/shosurbari-big-heart-gif.gif); */
     /* background: url(https://bestanimations.com/media/many-hearts/260842010many-little-heart-make-big-heart-gif.gif); */
@@ -3380,6 +3381,17 @@ i.icon_4{
     display: flex;
     flex-wrap: wrap;
     background: linear-gradient(180deg,#F3F9F9 0%,rgba(238,246,253,0) 100%);
+    padding-top: 30px;
+    padding-bottom: 30px;
+}
+
+.sb-register-login h2{
+    color: #fff;
+    font-size: 28px;
+    width: 100%;
+    margin-top: 0px;
+    background: linear-gradient(#06b6d4, #0ea5e9);
+    border-radius: 4px;
 }
 
 .flex-container{
@@ -4174,20 +4186,17 @@ label{
         top: 100px;
         line-height: 80px;
         width: 750px;
-        text-align: left;
-        background: #ffffff00;
         padding: 20px;
     }
     
     .slide h5 {
         font-size: 18px;
-        top: 270px;
+        top: 290px;
         left: 0px;
         width: 600px;
         line-height: 25px;
         margin-top: auto;
         text-align: left;
-        padding: 20px;
     }
     
     .sb-home-reg2 {
@@ -4708,7 +4717,21 @@ label{
     }
 
     .banner{
-        height: 420px;
+        height: 450px;
+    }
+    .slide h1 {
+        font-size: clamp(2.8em, 5vmax, 3em);
+        top: 30px;
+        line-height: 70px;
+        width: 615px;
+    }
+
+    .slide h5 {
+        top: 200px;
+    }
+
+    .sb-home-reg2, .sb-search-btn-banner {
+        top: 260px;
     }
 
     .nbs-flexisel-item {
@@ -5069,6 +5092,38 @@ label{
 --      Media Responsive / Phone Responsive      --
 -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -*/
 @media (max-width: 768px){
+    .slide h1 {
+        font-size: clamp(2.3em, 5vmax, 3em);
+        top: 20px;
+        line-height: 60px;
+        width: 520px;
+    }
+
+    .slide h5 {
+        top: 163px;
+        width: 445px;
+    }
+
+    .sb-home-reg2{
+        top: 250px;
+        padding: 10px;
+    }
+
+  .sb-search-btn-banner {
+        position: absolute;
+        top: 250px;
+        left: 250px;
+        z-index: 1;
+        padding: 10px;
+    }
+
+    .sb-home-reg2 button, .sb-search-btn-banner button {
+        background: linear-gradient(#06b6d4, #0ea5e9);
+        padding: 10px;
+        font-size: 18px;
+        width: 200px;
+    }
+
     .slide p {
         font-size: 30px;
         width: 450px;
@@ -5089,6 +5144,7 @@ label{
     .banner{
         height: 350px;
         margin-top: 0px;
+        width: 590px;
     }
 
     .slide{
@@ -6001,6 +6057,25 @@ label{
 --      Media Responsive / Phone Responsive      --
 -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -*/
 @media (max-width: 600px){
+    .banner{
+        width: auto;
+    }
+
+    .slide h1 {
+        font-size: clamp(2em, 5vmax, 3em);
+        top: 30px;
+        line-height: 50px;
+        width: 450px;
+    }
+
+    .sb-home-reg2, .sb-search-btn-banner {
+        top: 250px;
+    }
+
+    .slide h5 {
+        top: 160px;
+    }
+
     .slide p {
         font-size: 26px;
         width: 388px;
@@ -6214,10 +6289,22 @@ label{
 --      Media Responsive / Phone Responsive      --
 -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -*/
 @media (max-width: 540px){
-    .banner{
-        height: 260px;
+
+    .slide h1 {
+        font-size: clamp(2em, 5vmax, 3em);
+        top: -20px;
+        line-height: 50px;
+        width: 450px;
     }
-    
+
+    .slide h5 {
+        top: 110px;
+    }
+
+    .sb-home-reg2, .sb-search-btn-banner {
+        top: 200px;
+    }
+
     .slide{
         height: 260px;
     }
@@ -6300,6 +6387,35 @@ label{
 --      Media Responsive / Phone Responsive      --
 -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -*/
 @media (max-width:480px){
+    .banner{
+        height: 280px;
+    }
+
+    .slide h1 {
+        font-size: clamp(1.74em, 5vmax, 3px);
+        top: 5px;
+        line-height: 45px;
+        width: 367px;
+        padding: 10px;
+    }
+
+    .slide h5 {
+        font-size: 17px;
+        top: 95px;
+        width: 367px;
+        padding: 10px;
+    }
+
+    .sb-home-reg2 button, .sb-search-btn-banner button {
+        padding: 7px;
+        font-size: 17px;
+        width: 180px;
+    }
+
+    .sb-search-btn-banner {
+        left: 190px;
+    }
+
     .slide p {
         font-size: 23px;
         width: 346px;
@@ -7350,6 +7466,7 @@ label{
 --      Media Responsive / Phone Responsive      --
 -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -*/
 @media (max-width:320px){
+
     .sb-search-btn button, .sb-home-reg button {
         padding: 3px 1px;
         font-size: 13px;
