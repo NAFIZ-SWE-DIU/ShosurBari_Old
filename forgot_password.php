@@ -50,7 +50,7 @@
 	<div class="flex-container">
     <div class="sb-register-login">
 
-		    <h2 style="text-align:center; margin-bottom:50px">User Verify</h2>
+		    <h2 style="text-align:center; margin-bottom:50px; padding: 10px 5px;">User Verify</h2>
 
 	    <div class="form-group">
             <label for="edit-name">Email <span class="form-required" title="This field is required.">*</span></label>
