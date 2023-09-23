@@ -1024,7 +1024,7 @@ section {
     background-size: cover;
 }
 
-/* section::before {
+section::before {
     content: "";
     position: absolute;
     top: 0;
@@ -1033,7 +1033,7 @@ section {
     height: 100%;
     background-color: #00bbff61; 
     z-index: 1; 
-} */
+}
 
 
 .shosurbari-title{
@@ -1161,18 +1161,26 @@ section {
 }
 
 
-.sb-home-reg2 button:hover, .sb-search-btn-banner button:hover, .sb-search-btn2 button:hover {
+.sb-home-reg2 button:hover, .sb-search-btn-banner button:hover{
     background: linear-gradient(#0aa4ca, #0acef1);
     color: #fff;
     transform: scale(1.1);
+}
+
+.sb-search-btn2 button:hover {
+    background: linear-gradient(#0aa4ca, #0acef1);
+    color: #fff;
+    transform: scale(1.1);
+    border: 1px solid #0acef1;
 }
 
 .sb-search-page {
     display: flex;
     align-items: center;
     flex-wrap: wrap;
-    width: 1400px;
-    margin: auto;
+    width: auto;
+    padding-bottom: 30px;
+    margin: 0px auto;
 }
 
 .sb-search-logo img{
@@ -1184,18 +1192,24 @@ section {
 .sb-search-page .sb-search-btn2 {
     margin-left: auto;
     margin-right: auto;
-    border-radius: 4px;
     color: #fff;
     text-align: center;
     padding-left: 30px;
     padding-right: 30px;
+    padding-bottom: 0px;
+    border: 1px solid;
+    border-radius: 10px;
+    width: 375px;
 } 
   
-.sb-search-page h2 {
+.sb-search-page-notice h2 {
     line-height: 58px;
-    margin: auto;
-    padding: 5px 25px;
+    margin: 150px auto 0px auto;
+    padding-top: 50px;
+    padding-left: 25px;
+    padding-right: 25px;
     text-align: center;
+    background: linear-gradient(180deg,#F3F9F9 0%,rgba(238,246,253,0) 100%);
 }
   
 .sb-search-options,
@@ -1213,7 +1227,7 @@ section {
 }
 
 .sb-search-btn2 p{
-    color: black;
+    color: #fff;
     margin: 20px auto;
     font-size: 25px;
 }
@@ -1224,6 +1238,18 @@ section {
     border: 2px solid #f0f0f0;
     border-radius: 4px;
     color: #fff;
+    font-size: 20px;
+    width: 222px;
+    transition: transform 0.3s;
+}
+
+.sb-search-btn2 button {
+    background: #fff;
+    padding: 10px;
+    margin-bottom: 30px;
+    border: 2px solid #f0f0f0;
+    border-radius: 4px;
+    color: #0ea5e9;
     font-size: 20px;
     width: 222px;
     transition: transform 0.3s;
@@ -1566,9 +1592,9 @@ span.m_3{
 	color: #e5007df0;
 	font-weight: 800;
     text-align: left;
-    background: #ffffff00;
-    border-radius: 20px;
-    padding: 20px;
+    padding: 10px;
+    margin-bottom: 0px;
+    text-align: left;
 }
 
 .slide h5 {
@@ -1579,13 +1605,10 @@ span.m_3{
 	left: 0px;
 	width: 600px;
     line-height: 25px;
-	color: #0aa4ca;
+    color: #fff;
     text-align: left;
     margin-top: auto;
-    background: #ffffff14;
-    backdrop-filter: blur(2px);
-    border-radius: 20px;
-    padding: 0px 20px;
+    padding: 10px;
 }
 
 .slide-indicators {
@@ -1624,7 +1647,8 @@ span.m_3{
     text-align: center;
     padding: 50px 50px 15px 50px;
     line-height: 60px;
-    margin-bottom: 0px;
+    margin-bottom: 15px;
+    margin-top: 150px;
     background: linear-gradient(180deg,#F3F9F9 0%,rgba(238,246,253,0) 100%);
 }
 
@@ -4161,11 +4185,11 @@ label{
 }
 
 
-@media (max-width: 1400px){
+/* @media (max-width: 1400px){
     .sb-search-page {
         width: 1000px;
     }  
-}
+} */
 /*-- -- -- -- -- -- -- -- -- -- -- -- -- ---- -- --
 --          max-width:1280px / S T A R T         --
 --      Media Responsive / Phone Responsive      --
@@ -5174,6 +5198,9 @@ label{
 
     .shosurbari-about {
         margin-top: 90px;
+        padding-left: 40px;
+        padding-right: 40px;
+        line-height: 50px;
     }
 
     .shosurbar-grrombride-about {
@@ -6057,6 +6084,11 @@ label{
 --      Media Responsive / Phone Responsive      --
 -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -*/
 @media (max-width: 600px){
+    .sb-search-page-notice h2{
+        line-height: 40px;
+        margin: 150px auto 40px auto;
+    }
+
     .banner{
         width: auto;
     }
@@ -6387,6 +6419,10 @@ label{
 --      Media Responsive / Phone Responsive      --
 -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -*/
 @media (max-width:480px){
+    .shosurbari-about {
+        line-height: 40px;
+    }
+
     .banner{
         height: 280px;
     }
@@ -6478,7 +6514,6 @@ label{
     }
 
     .shosurbari-title h4 {
-        font-size: 16px;
         line-height: 30px;
         font-weight: 550;
     }
@@ -6809,6 +6844,14 @@ label{
 --      Media Responsive / Phone Responsive      --
 -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -*/
 @media (max-width:414px){
+    .sb-search-btn-banner {
+        left: 185px;
+    }
+
+    .sb-home-reg2 button, .sb-search-btn-banner button {
+        width: 160px;
+    }
+
     .slide p {
         font-size: 22px;
         width: 333px;
@@ -6820,7 +6863,6 @@ label{
     }
 
     .shosurbari-title h4 {
-        font-size: 14px;
         line-height: 25px;
     }
 
@@ -7061,6 +7103,31 @@ label{
 --      Media Responsive / Phone Responsive      --
 -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -*/
 @media (max-width:384px){
+    .sb-home-reg2{
+        top: 165px;
+    }
+
+    .sb-search-btn-banner {
+        top: 212px;
+        left: 0px;
+    }
+
+    .slide h1 {
+        font-size: clamp(1.66em, 5vmax, 3px);
+        top: 6px;
+        line-height: 37px;
+        width: 300px;
+        padding: 10px;
+    }
+
+    .slide h5 {
+        top: 82px;
+    }
+
+    .sb-search-page .sb-search-btn2 {
+        width: 275px;
+    }
+
     .slide p {
         font-size: 21px;
         width: 317px;
@@ -7095,7 +7162,6 @@ label{
     }
 
     .shosurbari-title h4 {
-        font-size: 14px;
         line-height: 25px;
     }
     
@@ -7360,6 +7426,10 @@ label{
 --      Media Responsive / Phone Responsive      --
 -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -*/
 @media (max-width: 350px) {
+    .slide h1, .slide h5 {
+        width: 330px;
+    }
+
     .slide p {
         font-size: 18px;
         width: 274px;
@@ -7375,7 +7445,6 @@ label{
     }
 
     .shosurbari-title h4 {
-        font-size: 13px;
         line-height: 25px;
     }
 
@@ -7492,7 +7561,6 @@ label{
     }
 
     .shosurbari-title h4 {
-        font-size: 15px;
         line-height: 24px;
     }
 
